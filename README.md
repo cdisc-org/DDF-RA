@@ -22,17 +22,13 @@ TODO:
 *-------------------------- DELETE EVERYTHIG ABOVE ---------------------------*
 
 
-# *NAME* 
+# DDF-RA 
 
-This repository should be used for the *Project/Workshop/Hackathon XY* to contain code, minutes, notes, outcomes, discussions and more. It is meant to allow anyone working with the results and discussions to allow flexible collaboration and follow up projects.
+This repository should be used for the *cdisc-org/DDF-RA* project to contain code, minutes, notes, outcomes, discussions and more. It is meant to allow anyone working with the results and discussions to allow flexible collaboration and follow up projects.
 
 ## Description
 
-The main purpose of *Project Name* is to ....
-
-If possible use images as well.
-
-![Image Description](./images/placeholder.png)
+The main purpose of *cdisc-org/DDF-RA* is to create the logical model, API definition, and Controlled Terminology (together know as th "Digital Data Flow Reference Architecture"). This product, in turn, will be used as the basis for another project, Digital Data Flow Reference Implementation. The reference architecture and the reference implementation will provide a standard for anyone who wishes to create a standards-based Study Data Repository (SDR).
 
 ## Contribution
 
@@ -56,7 +52,7 @@ When you re-use the source, keep or copy the license information also in the sou
 
 When you want to re-use and refer to the content, please do so like the following:
 
-> Content based on [Project XY (GitHub)](https://github.com/xy/xy) used under the [CC-BY-4.0](https://creativecommons.org/licenses/by/4.0/) license.
+> Content based on [DDF-RA (GitHub)](https://github.com/cdisc-org/DDF-RA) used under the [CC-BY-4.0](https://creativecommons.org/licenses/by/4.0/) license.
 
 
 
