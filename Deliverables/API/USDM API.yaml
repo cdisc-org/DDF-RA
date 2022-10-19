@@ -1,0 +1,1077 @@
+---
+openapi: 3.0.2
+info:
+  title: Simple API for DDF
+  description: A simple TransCelerate Digital Data Flow (DDF) Study Definitions Repository (SDR) API.
+  version: V1.0-Provisional
+servers:
+- url: https://virtserver.swaggerhub.com/CDISC1/DDF/V1-Provisional
+  description: SwaggerHub API Auto Mocking
+tags:
+- name: Production
+  description: Routes that form the production specification.
+paths:
+  /v1/studyDefinitions:
+    post:
+      tags:
+      - Production
+      summary: Create a study
+      description: Create an entire study including all child element with a single post
+      operationId: create_study_v1_studyDefinitions_post
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Study'
+        required: true
+      responses:
+        "201":
+          description: Successful Response
+          content:
+            application/json:
+              schema:
+                title: Response Create Study V1 Studydefinitions Post
+                type: string
+                format: uuid
+        "400":
+          description: Bad Request
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/defaultErrorResponse'
+        "401":
+          description: Unauthorized
+          headers:
+            WWW_Authenticate:
+              style: simple
+              explode: false
+              schema:
+                type: string
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/defaultErrorResponse'
+        "422":
+          description: Validation Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/HTTPValidationError'
+  /v1/studyDefinitions/{uuid}:
+    get:
+      tags:
+      - Production
+      summary: Return a study
+      description: Return an entire study including all child elements
+      operationId: read_full_study_v1_studyDefinitions__uuid__get
+      parameters:
+      - name: uuid
+        in: path
+        required: true
+        style: simple
+        explode: false
+        schema:
+          title: Uuid
+          type: string
+      responses:
+        "200":
+          description: Successful Response
+          content:
+            application/json:
+              schema: {}
+        "400":
+          description: Bad Request
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/defaultErrorResponse'
+        "401":
+          description: Unauthorized
+          headers:
+            WWW_Authenticate:
+              style: simple
+              explode: false
+              schema:
+                type: string
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/defaultErrorResponse'
+        "422":
+          description: Validation Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/HTTPValidationError'
+  /v1/studyDefinitions/{uuid}/history:
+    get:
+      tags:
+      - Production
+      summary: Read Study History
+      operationId: read_study_history_v1_studyDefinitions__uuid__history_get
+      parameters:
+      - name: uuid
+        in: path
+        required: true
+        style: simple
+        explode: false
+        schema:
+          title: Uuid
+          type: string
+      responses:
+        "200":
+          description: Successful Response
+          content:
+            application/json:
+              schema:
+                title: Response Read Study History V1 Studydefinitions  Uuid  History Get
+                type: array
+                items:
+                  $ref: '#/components/schemas/Study'
+        "400":
+          description: Bad Request
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/defaultErrorResponse'
+        "401":
+          description: Unauthorized
+          headers:
+            WWW_Authenticate:
+              style: simple
+              explode: false
+              schema:
+                type: string
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/defaultErrorResponse'
+  /v1/studyDesigns:
+    get:
+      tags:
+      - Production
+      summary: Study designs for a study
+      description: Returns all the study designs for a specified study.
+      operationId: search_study_design_v1_studyDesigns_get
+      parameters:
+      - name: study_uuid
+        in: query
+        required: true
+        style: form
+        explode: true
+        schema:
+          title: Study Uuid
+          type: string
+          format: uuid
+      responses:
+        "200":
+          description: Successful Response
+          content:
+            application/json:
+              schema:
+                title: Response Search Study Design V1 Studydesigns Get
+                type: array
+                items:
+                  $ref: '#/components/schemas/StudyDesign'
+        "400":
+          description: Bad Request
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/defaultErrorResponse'
+        "401":
+          description: Unauthorized
+          headers:
+            WWW_Authenticate:
+              style: simple
+              explode: false
+              schema:
+                type: string
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/defaultErrorResponse'
+        "422":
+          description: Validation Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/HTTPValidationError'
+components:
+  schemas:
+    Activity:
+      title: Activity
+      required:
+      - activityDesc
+      - activityName
+      type: object
+      properties:
+        uuid:
+          title: Uuid
+          type: string
+          format: uuid
+        activityName:
+          title: Activityname
+          type: string
+        activityDesc:
+          title: Activitydesc
+          type: string
+        previousActivityId:
+          title: Previousactivityid
+          type: string
+          format: uuid
+        nextActivityId:
+          title: Nextactivityid
+          type: string
+          format: uuid
+        definedProcedures:
+          title: Definedprocedures
+          anyOf:
+          - type: array
+            items:
+              $ref: '#/components/schemas/Procedure'
+          - type: array
+            items:
+              type: string
+              format: uuid
+        studyDataCollection:
+          title: Studydatacollection
+          anyOf:
+          - type: array
+            items:
+              $ref: '#/components/schemas/StudyData'
+          - type: array
+            items:
+              type: string
+              format: uuid
+    AnalysisPopulation:
+      title: AnalysisPopulation
+      required:
+      - populationDesc
+      type: object
+      properties:
+        uuid:
+          title: Uuid
+          type: string
+        populationDesc:
+          title: Populationdesc
+          type: string
+    Code:
+      title: Code
+      required:
+      - code
+      - codeSystem
+      - codeSystemVersion
+      - decode
+      type: object
+      properties:
+        uuid:
+          title: Uuid
+          type: string
+          format: uuid
+        code:
+          title: Code
+          type: string
+        codeSystem:
+          title: Codesystem
+          type: string
+        codeSystemVersion:
+          title: Codesystemversion
+          type: string
+        decode:
+          title: Decode
+          type: string
+    Encounter:
+      title: Encounter
+      required:
+      - encounterDesc
+      - encounterName
+      type: object
+      properties:
+        uuid:
+          title: Uuid
+          type: string
+          format: uuid
+        encounterName:
+          title: Encountername
+          type: string
+        encounterDesc:
+          title: Encounterdesc
+          type: string
+        previousEncounterId:
+          title: Previousencounterid
+          type: string
+          format: uuid
+        nextEncounterId:
+          title: Nextencounterid
+          type: string
+          format: uuid
+        encounterType:
+          title: Encountertype
+          anyOf:
+          - $ref: '#/components/schemas/Code'
+          - type: string
+            format: uuid
+        encounterEnvironmentalSetting:
+          title: Encounterenvironmentalsetting
+          anyOf:
+          - $ref: '#/components/schemas/Code'
+          - type: string
+            format: uuid
+        encounterContactMode:
+          title: Encountercontactmode
+          anyOf:
+          - $ref: '#/components/schemas/Code'
+          - type: string
+            format: uuid
+        transitionStartRule:
+          title: Transitionstartrule
+          anyOf:
+          - $ref: '#/components/schemas/TransitionRule'
+          - type: string
+            format: uuid
+        transitionEndRule:
+          title: Transitionendrule
+          anyOf:
+          - $ref: '#/components/schemas/TransitionRule'
+          - type: string
+            format: uuid
+    Endpoint:
+      title: Endpoint
+      required:
+      - endpointDesc
+      - endpointPurposeDesc
+      type: object
+      properties:
+        uuid:
+          title: Uuid
+          type: string
+          format: uuid
+        endpointDesc:
+          title: Endpointdesc
+          type: string
+        endpointPurposeDesc:
+          title: Endpointpurposedesc
+          type: string
+        endpointLevel:
+          title: Endpointlevel
+          anyOf:
+          - $ref: '#/components/schemas/Code'
+          - type: string
+            format: uuid
+    Estimand:
+      title: Estimand
+      required:
+      - analysisPopulation
+      - intercurrentEvents
+      - summaryMeasure
+      - treatment
+      - variableOfInterest
+      type: object
+      properties:
+        uuid:
+          title: Uuid
+          type: string
+          format: uuid
+        summaryMeasure:
+          title: Summarymeasure
+          type: string
+        analysisPopulation:
+          title: Analysispopulation
+          anyOf:
+          - $ref: '#/components/schemas/AnalysisPopulation'
+          - type: string
+            format: uuid
+        treatment:
+          title: Treatment
+          anyOf:
+          - $ref: '#/components/schemas/InvestigationalIntervention'
+          - type: string
+            format: uuid
+        variableOfInterest:
+          title: Variableofinterest
+          anyOf:
+          - $ref: '#/components/schemas/Endpoint'
+          - type: string
+            format: uuid
+        intercurrentEvents:
+          title: Intercurrentevents
+          anyOf:
+          - type: array
+            items:
+              $ref: '#/components/schemas/IntercurrentEvent'
+          - type: array
+            items:
+              type: string
+              format: uuid
+    HTTPValidationError:
+      title: HTTPValidationError
+      type: object
+      properties:
+        detail:
+          title: Detail
+          type: array
+          items:
+            $ref: '#/components/schemas/ValidationError'
+    Indication:
+      title: Indication
+      required:
+      - indicationDesc
+      type: object
+      properties:
+        uuid:
+          title: Uuid
+          type: string
+          format: uuid
+        codes:
+          title: Codes
+          anyOf:
+          - type: array
+            items:
+              $ref: '#/components/schemas/Code'
+          - type: array
+            items:
+              type: string
+              format: uuid
+        indicationDesc:
+          title: Indicationdesc
+          type: string
+    IntercurrentEvent:
+      title: IntercurrentEvent
+      required:
+      - intercurrentEventDesc
+      - intercurrentEventName
+      - intercurrentEventStrategy
+      type: object
+      properties:
+        uuid:
+          title: Uuid
+          type: string
+          format: uuid
+        intercurrentEventName:
+          title: Intercurrenteventname
+          type: string
+        intercurrentEventDesc:
+          title: Intercurrenteventdesc
+          type: string
+        intercurrentEventStrategy:
+          title: Intercurrenteventstrategy
+          type: string
+    InvestigationalIntervention:
+      title: InvestigationalIntervention
+      required:
+      - interventionDesc
+      type: object
+      properties:
+        uuid:
+          title: Uuid
+          type: string
+          format: uuid
+        codes:
+          title: Codes
+          anyOf:
+          - type: array
+            items:
+              $ref: '#/components/schemas/Code'
+          - type: array
+            items:
+              type: string
+              format: uuid
+        interventionDesc:
+          title: Interventiondesc
+          type: string
+    Objective:
+      title: Objective
+      required:
+      - objectiveDesc
+      type: object
+      properties:
+        uuid:
+          title: Uuid
+          type: string
+          format: uuid
+        objectiveDesc:
+          title: Objectivedesc
+          type: string
+        objectiveLevel:
+          title: Objectivelevel
+          anyOf:
+          - $ref: '#/components/schemas/Code'
+          - type: string
+            format: uuid
+        objectiveEndpoints:
+          title: Objectiveendpoints
+          anyOf:
+          - type: array
+            items:
+              $ref: '#/components/schemas/Endpoint'
+          - type: array
+            items:
+              type: string
+              format: uuid
+    Organisation:
+      title: Organisation
+      required:
+      - organisationIdentifier
+      - organisationIdentifierScheme
+      - organisationName
+      - organisationType
+      type: object
+      properties:
+        uuid:
+          title: Uuid
+          type: string
+          format: uuid
+        organisationIdentifierScheme:
+          title: Organisationidentifierscheme
+          type: string
+        organisationIdentifier:
+          title: Organisationidentifier
+          type: string
+        organisationName:
+          title: Organisationname
+          type: string
+        organisationType:
+          title: Organisationtype
+          anyOf:
+          - type: string
+            format: uuid
+          - $ref: '#/components/schemas/Code'
+    Procedure:
+      title: Procedure
+      required:
+      - procedureCode
+      - procedureType
+      type: object
+      properties:
+        uuid:
+          title: Uuid
+          type: string
+          format: uuid
+        procedureType:
+          title: Proceduretype
+          type: string
+        procedureCode:
+          title: Procedurecode
+          anyOf:
+          - $ref: '#/components/schemas/Code'
+          - type: string
+            format: uuid
+    Study:
+      title: Study
+      required:
+      - studyTitle
+      - studyVersion
+      type: object
+      properties:
+        uuid:
+          title: Uuid
+          type: string
+          format: uuid
+        studyTitle:
+          title: Studytitle
+          type: string
+        studyVersion:
+          title: Studyversion
+          type: string
+        studyType:
+          title: Studytype
+          anyOf:
+          - $ref: '#/components/schemas/Code'
+          - type: string
+            format: uuid
+        studyPhase:
+          title: Studyphase
+          anyOf:
+          - $ref: '#/components/schemas/Code'
+          - type: string
+            format: uuid
+        studyIdentifiers:
+          title: Studyidentifiers
+          anyOf:
+          - type: array
+            items:
+              $ref: '#/components/schemas/StudyIdentifier'
+          - type: array
+            items:
+              type: string
+              format: uuid
+        studyProtocolVersions:
+          title: Studyprotocolversions
+          anyOf:
+          - type: array
+            items:
+              $ref: '#/components/schemas/StudyProtocolVersion'
+          - type: array
+            items:
+              type: string
+              format: uuid
+        studyDesigns:
+          title: Studydesigns
+          anyOf:
+          - type: array
+            items:
+              $ref: '#/components/schemas/StudyDesign'
+          - type: array
+            items:
+              type: string
+              format: uuid
+    StudyArm:
+      title: StudyArm
+      required:
+      - studyArmDataOriginDesc
+      - studyArmDataOriginType
+      - studyArmDesc
+      - studyArmName
+      - studyArmType
+      type: object
+      properties:
+        uuid:
+          title: Uuid
+          type: string
+          format: uuid
+        studyArmName:
+          title: Studyarmname
+          type: string
+        studyArmDesc:
+          title: Studyarmdesc
+          type: string
+        studyArmType:
+          title: Studyarmtype
+          anyOf:
+          - $ref: '#/components/schemas/Code'
+          - type: string
+            format: uuid
+        studyArmDataOriginDesc:
+          title: Studyarmdataorigindesc
+          type: string
+        studyArmDataOriginType:
+          title: Studyarmdataorigintype
+          anyOf:
+          - $ref: '#/components/schemas/Code'
+          - type: string
+            format: uuid
+    StudyCell:
+      title: StudyCell
+      type: object
+      properties:
+        uuid:
+          title: Uuid
+          type: string
+          format: uuid
+        studyArm:
+          title: Studyarm
+          anyOf:
+          - $ref: '#/components/schemas/StudyArm'
+          - type: string
+            format: uuid
+        studyEpoch:
+          title: Studyepoch
+          anyOf:
+          - $ref: '#/components/schemas/StudyEpoch'
+          - type: string
+            format: uuid
+        studyElements:
+          title: Studyelements
+          anyOf:
+          - type: array
+            items:
+              $ref: '#/components/schemas/StudyElement'
+          - type: array
+            items:
+              type: string
+              format: uuid
+    StudyData:
+      title: StudyData
+      required:
+      - crfLink
+      - studyDataDesc
+      - studyDataName
+      type: object
+      properties:
+        uuid:
+          title: Uuid
+          type: string
+          format: uuid
+        studyDataName:
+          title: Studydataname
+          type: string
+        studyDataDesc:
+          title: Studydatadesc
+          type: string
+        crfLink:
+          title: Crflink
+          type: string
+    StudyDesign:
+      title: StudyDesign
+      required:
+      - interventionModel
+      - trialIntentTypes
+      - trialType
+      type: object
+      properties:
+        uuid:
+          title: Uuid
+          type: string
+          format: uuid
+        trialIntentTypes:
+          title: Trialintenttypes
+          anyOf:
+          - type: array
+            items:
+              $ref: '#/components/schemas/Code'
+          - type: array
+            items:
+              type: string
+              format: uuid
+        trialType:
+          title: Trialtype
+          anyOf:
+          - $ref: '#/components/schemas/Code'
+          - type: string
+            format: uuid
+        interventionModel:
+          title: Interventionmodel
+          anyOf:
+          - $ref: '#/components/schemas/Code'
+          - type: string
+            format: uuid
+        studyCells:
+          title: Studycells
+          anyOf:
+          - type: array
+            items:
+              $ref: '#/components/schemas/StudyCell'
+          - type: array
+            items:
+              type: string
+              format: uuid
+        studyIndications:
+          title: Studyindications
+          anyOf:
+          - type: array
+            items:
+              $ref: '#/components/schemas/Indication'
+          - type: array
+            items:
+              type: string
+              format: uuid
+        studyInvestigationalInterventions:
+          title: Studyinvestigationalinterventions
+          anyOf:
+          - type: array
+            items:
+              $ref: '#/components/schemas/InvestigationalIntervention'
+          - type: array
+            items:
+              type: string
+              format: uuid
+        studyPopulations:
+          title: Studypopulations
+          anyOf:
+          - type: array
+            items:
+              $ref: '#/components/schemas/StudyDesignPopulation'
+          - type: array
+            items:
+              type: string
+              format: uuid
+        studyObjectives:
+          title: Studyobjectives
+          anyOf:
+          - type: array
+            items:
+              $ref: '#/components/schemas/Objective'
+          - type: array
+            items:
+              type: string
+              format: uuid
+        studyWorkflows:
+          title: Studyworkflows
+          anyOf:
+          - type: array
+            items:
+              $ref: '#/components/schemas/Workflow'
+          - type: array
+            items:
+              type: string
+              format: uuid
+        studyEstimands:
+          title: Studyestimands
+          anyOf:
+          - type: array
+            items:
+              $ref: '#/components/schemas/Estimand'
+          - type: array
+            items:
+              type: string
+              format: uuid
+    StudyDesignPopulation:
+      title: StudyDesignPopulation
+      required:
+      - populationDesc
+      type: object
+      properties:
+        uuid:
+          title: Uuid
+          type: string
+          format: uuid
+        populationDesc:
+          title: Populationdesc
+          type: string
+    StudyElement:
+      title: StudyElement
+      required:
+      - studyElementDesc
+      - studyElementName
+      type: object
+      properties:
+        uuid:
+          title: Uuid
+          type: string
+          format: uuid
+        studyElementName:
+          title: Studyelementname
+          type: string
+        studyElementDesc:
+          title: Studyelementdesc
+          type: string
+        transitionStartRule:
+          title: Transitionstartrule
+          anyOf:
+          - $ref: '#/components/schemas/TransitionRule'
+          - type: string
+            format: uuid
+        transitionEndRule:
+          title: Transitionendrule
+          anyOf:
+          - $ref: '#/components/schemas/TransitionRule'
+          - type: string
+            format: uuid
+    StudyEpoch:
+      title: StudyEpoch
+      required:
+      - encounters
+      - studyEpochDesc
+      - studyEpochName
+      - studyEpochType
+      type: object
+      properties:
+        uuid:
+          title: Uuid
+          type: string
+          format: uuid
+        studyEpochName:
+          title: Studyepochname
+          type: string
+        studyEpochDesc:
+          title: Studyepochdesc
+          type: string
+        previousEpochId:
+          title: Previousepochid
+          type: string
+          format: uuid
+        nextEpochId:
+          title: Nextepochid
+          type: string
+          format: uuid
+        studyEpochType:
+          title: Studyepochtype
+          anyOf:
+          - $ref: '#/components/schemas/Code'
+          - type: string
+            format: uuid
+        encounters:
+          title: Encounters
+          anyOf:
+          - type: array
+            items:
+              $ref: '#/components/schemas/Encounter'
+          - type: array
+            items:
+              type: string
+              format: uuid
+    StudyIdentifier:
+      title: StudyIdentifier
+      required:
+      - studyIdentifier
+      - studyIdentifierScope
+      type: object
+      properties:
+        uuid:
+          title: Uuid
+          type: string
+          format: uuid
+        studyIdentifier:
+          title: Studyidentifier
+          type: string
+        studyIdentifierScope:
+          title: Studyidentifierscope
+          anyOf:
+          - type: string
+            format: uuid
+          - $ref: '#/components/schemas/Organisation'
+    StudyProtocolVersion:
+      title: StudyProtocolVersion
+      required:
+      - briefTitle
+      - officialTitle
+      - protocolEffectiveDate
+      - protocolStatus
+      - protocolVersion
+      - publicTitle
+      - scientificTitle
+      type: object
+      properties:
+        uuid:
+          title: Uuid
+          type: string
+          format: uuid
+        briefTitle:
+          title: Brieftitle
+          type: string
+        officialTitle:
+          title: Officialtitle
+          type: string
+        publicTitle:
+          title: Publictitle
+          type: string
+        scientificTitle:
+          title: Scientifictitle
+          type: string
+        protocolVersion:
+          title: Protocolversion
+          type: string
+        protocolAmendment:
+          title: Protocolamendment
+          type: string
+        protocolEffectiveDate:
+          title: Protocoleffectivedate
+          type: string
+          format: date
+        protocolStatus:
+          title: Protocolstatus
+          anyOf:
+          - type: string
+            format: uuid
+          - $ref: '#/components/schemas/Code'
+    TransitionRule:
+      title: TransitionRule
+      required:
+      - transitionRuleDesc
+      type: object
+      properties:
+        uuid:
+          title: Uuid
+          type: string
+          format: uuid
+        transitionRuleDesc:
+          title: Transitionruledesc
+          type: string
+    ValidationError:
+      title: ValidationError
+      required:
+      - loc
+      - msg
+      - type
+      type: object
+      properties:
+        loc:
+          title: Location
+          type: array
+          items:
+            anyOf:
+            - type: string
+            - type: integer
+        msg:
+          title: Message
+          type: string
+        type:
+          title: Error Type
+          type: string
+    Workflow:
+      title: Workflow
+      required:
+      - workflowDesc
+      type: object
+      properties:
+        uuid:
+          title: Uuid
+          type: string
+          format: uuid
+        workflowDesc:
+          title: Workflowdesc
+          type: string
+        workflowItems:
+          title: Workflowitems
+          anyOf:
+          - type: array
+            items:
+              $ref: '#/components/schemas/WorkflowItem'
+          - type: array
+            items:
+              type: string
+              format: uuid
+    WorkflowItem:
+      title: WorkflowItem
+      required:
+      - workflowItemDesc
+      type: object
+      properties:
+        uuid:
+          title: Uuid
+          type: string
+          format: uuid
+        workflowItemDesc:
+          title: Workflowitemdesc
+          type: string
+        previousWorkflowItemId:
+          title: Previousworkflowitemid
+          type: string
+          format: uuid
+        nextWorkflowItemId:
+          title: Nextworkflowitemid
+          type: string
+          format: uuid
+        workflowItemEncounter:
+          title: Workflowitemencounter
+          anyOf:
+          - $ref: '#/components/schemas/Encounter'
+          - type: string
+            format: uuid
+        workflowItemActivity:
+          title: Workflowitemactivity
+          anyOf:
+          - $ref: '#/components/schemas/Activity'
+          - type: string
+            format: uuid
+    defaultErrorResponse:
+      properties:
+        statusCode:
+          type: string
+          description: HTTP Status Code
+        detail:
+          type: string
+          description: Detail
+        message:
+          type: string
+          description: Message
+  responses:
+    statusBadRequest:
+      description: Bad Request
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/defaultErrorResponse'
+    statusUnauthorized:
+      description: Unauthorized
+      headers:
+        WWW_Authenticate:
+          style: simple
+          explode: false
+          schema:
+            type: string
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/defaultErrorResponse'
