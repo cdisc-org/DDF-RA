@@ -1,20 +1,15 @@
----
 openapi: 3.0.2
 info:
   title: Simple API for DDF
-  description: A simple TransCelerate Digital Data Flow (DDF) Study Definitions Repository (SDR) API.
-  version: V1.0-Provisional
-servers:
-- url: https://virtserver.swaggerhub.com/CDISC1/DDF/V1-Provisional
-  description: SwaggerHub API Auto Mocking
-tags:
-- name: Production
-  description: Routes that form the production specification.
+  description: >-
+    A simple TransCelerate Digital Data Flow (DDF) Study Definitions Repository
+    API.
+  version: 1.1 Provisional (0.24)
 paths:
   /v1/studyDefinitions:
     post:
       tags:
-      - Production
+        - Production
       summary: Create a study
       description: Create an entire study including all child element with a single post
       operationId: create_study_v1_studyDefinitions_post
@@ -25,7 +20,7 @@ paths:
               $ref: '#/components/schemas/Study'
         required: true
       responses:
-        "201":
+        '201':
           description: Successful Response
           content:
             application/json:
@@ -33,25 +28,17 @@ paths:
                 title: Response Create Study V1 Studydefinitions Post
                 type: string
                 format: uuid
-        "400":
+        '400':
           description: Bad Request
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/defaultErrorResponse'
-        "401":
+          message: string
+          detail: string
+          status_code: string
+        '401':
           description: Unauthorized
-          headers:
-            WWW_Authenticate:
-              style: simple
-              explode: false
-              schema:
-                type: string
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/defaultErrorResponse'
-        "422":
+          message: string
+          detail: string
+          status_code: string
+        '422':
           description: Validation Error
           content:
             application/json:
@@ -60,44 +47,34 @@ paths:
   /v1/studyDefinitions/{uuid}:
     get:
       tags:
-      - Production
+        - Production
       summary: Return a study
       description: Return an entire study including all child elements
       operationId: read_full_study_v1_studyDefinitions__uuid__get
       parameters:
-      - name: uuid
-        in: path
-        required: true
-        style: simple
-        explode: false
-        schema:
-          title: Uuid
-          type: string
+        - required: true
+          schema:
+            title: Uuid
+            type: string
+          name: uuid
+          in: path
       responses:
-        "200":
+        '200':
           description: Successful Response
           content:
             application/json:
               schema: {}
-        "400":
+        '400':
           description: Bad Request
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/defaultErrorResponse'
-        "401":
+          message: string
+          detail: string
+          status_code: string
+        '401':
           description: Unauthorized
-          headers:
-            WWW_Authenticate:
-              style: simple
-              explode: false
-              schema:
-                type: string
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/defaultErrorResponse'
-        "422":
+          message: string
+          detail: string
+          status_code: string
+        '422':
           description: Validation Error
           content:
             application/json:
@@ -106,65 +83,62 @@ paths:
   /v1/studyDefinitions/{uuid}/history:
     get:
       tags:
-      - Production
-      summary: Read Study History
+        - Production
+      summary: Returns the study history
+      description: Returns the history for the specified study
       operationId: read_study_history_v1_studyDefinitions__uuid__history_get
       parameters:
-      - name: uuid
-        in: path
-        required: true
-        style: simple
-        explode: false
-        schema:
-          title: Uuid
-          type: string
+        - required: true
+          schema:
+            title: Uuid
+            type: string
+          name: uuid
+          in: path
       responses:
-        "200":
+        '200':
           description: Successful Response
           content:
             application/json:
               schema:
-                title: Response Read Study History V1 Studydefinitions  Uuid  History Get
+                title: >-
+                  Response Read Study History V1 Studydefinitions  Uuid  History
+                  Get
                 type: array
                 items:
                   $ref: '#/components/schemas/Study'
-        "400":
+        '400':
           description: Bad Request
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/defaultErrorResponse'
-        "401":
+          message: string
+          detail: string
+          status_code: string
+        '401':
           description: Unauthorized
-          headers:
-            WWW_Authenticate:
-              style: simple
-              explode: false
-              schema:
-                type: string
+          message: string
+          detail: string
+          status_code: string
+        '422':
+          description: Validation Error
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/defaultErrorResponse'
+                $ref: '#/components/schemas/HTTPValidationError'
   /v1/studyDesigns:
     get:
       tags:
-      - Production
+        - Production
       summary: Study designs for a study
       description: Returns all the study designs for a specified study.
       operationId: search_study_design_v1_studyDesigns_get
       parameters:
-      - name: study_uuid
-        in: query
-        required: true
-        style: form
-        explode: true
-        schema:
-          title: Study Uuid
-          type: string
-          format: uuid
+        - required: true
+          schema:
+            title: Study Uuid
+            type: string
+            format: uuid
+          name: study_uuid
+          in: query
       responses:
-        "200":
+        '200':
           description: Successful Response
           content:
             application/json:
@@ -173,25 +147,17 @@ paths:
                 type: array
                 items:
                   $ref: '#/components/schemas/StudyDesign'
-        "400":
+        '400':
           description: Bad Request
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/defaultErrorResponse'
-        "401":
+          message: string
+          detail: string
+          status_code: string
+        '401':
           description: Unauthorized
-          headers:
-            WWW_Authenticate:
-              style: simple
-              explode: false
-              schema:
-                type: string
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/defaultErrorResponse'
-        "422":
+          message: string
+          detail: string
+          status_code: string
+        '422':
           description: Validation Error
           content:
             application/json:
@@ -202,8 +168,8 @@ components:
     Activity:
       title: Activity
       required:
-      - activityDesc
-      - activityName
+        - activityName
+        - activityDesc
       type: object
       properties:
         uuid:
@@ -227,27 +193,29 @@ components:
         definedProcedures:
           title: Definedprocedures
           anyOf:
-          - type: array
-            items:
-              $ref: '#/components/schemas/Procedure'
-          - type: array
-            items:
-              type: string
-              format: uuid
+            - type: array
+              items:
+                $ref: '#/components/schemas/Procedure'
+            - type: array
+              items:
+                type: string
+                format: uuid
+          default: []
         studyDataCollection:
           title: Studydatacollection
           anyOf:
-          - type: array
-            items:
-              $ref: '#/components/schemas/StudyData'
-          - type: array
-            items:
-              type: string
-              format: uuid
+            - type: array
+              items:
+                $ref: '#/components/schemas/StudyData'
+            - type: array
+              items:
+                type: string
+                format: uuid
+          default: []
     AnalysisPopulation:
       title: AnalysisPopulation
       required:
-      - populationDesc
+        - populationDesc
       type: object
       properties:
         uuid:
@@ -259,10 +227,10 @@ components:
     Code:
       title: Code
       required:
-      - code
-      - codeSystem
-      - codeSystemVersion
-      - decode
+        - code
+        - codeSystem
+        - codeSystemVersion
+        - decode
       type: object
       properties:
         uuid:
@@ -284,8 +252,8 @@ components:
     Encounter:
       title: Encounter
       required:
-      - encounterDesc
-      - encounterName
+        - encounterName
+        - encounterDesc
       type: object
       properties:
         uuid:
@@ -309,38 +277,38 @@ components:
         encounterType:
           title: Encountertype
           anyOf:
-          - $ref: '#/components/schemas/Code'
-          - type: string
-            format: uuid
+            - $ref: '#/components/schemas/Code'
+            - type: string
+              format: uuid
         encounterEnvironmentalSetting:
           title: Encounterenvironmentalsetting
           anyOf:
-          - $ref: '#/components/schemas/Code'
-          - type: string
-            format: uuid
+            - $ref: '#/components/schemas/Code'
+            - type: string
+              format: uuid
         encounterContactMode:
           title: Encountercontactmode
           anyOf:
-          - $ref: '#/components/schemas/Code'
-          - type: string
-            format: uuid
+            - $ref: '#/components/schemas/Code'
+            - type: string
+              format: uuid
         transitionStartRule:
           title: Transitionstartrule
           anyOf:
-          - $ref: '#/components/schemas/TransitionRule'
-          - type: string
-            format: uuid
+            - $ref: '#/components/schemas/TransitionRule'
+            - type: string
+              format: uuid
         transitionEndRule:
           title: Transitionendrule
           anyOf:
-          - $ref: '#/components/schemas/TransitionRule'
-          - type: string
-            format: uuid
+            - $ref: '#/components/schemas/TransitionRule'
+            - type: string
+              format: uuid
     Endpoint:
       title: Endpoint
       required:
-      - endpointDesc
-      - endpointPurposeDesc
+        - endpointDesc
+        - endpointPurposeDesc
       type: object
       properties:
         uuid:
@@ -356,17 +324,17 @@ components:
         endpointLevel:
           title: Endpointlevel
           anyOf:
-          - $ref: '#/components/schemas/Code'
-          - type: string
-            format: uuid
+            - $ref: '#/components/schemas/Code'
+            - type: string
+              format: uuid
     Estimand:
       title: Estimand
       required:
-      - analysisPopulation
-      - intercurrentEvents
-      - summaryMeasure
-      - treatment
-      - variableOfInterest
+        - summaryMeasure
+        - analysisPopulation
+        - treatment
+        - variableOfInterest
+        - intercurrentEvents
       type: object
       properties:
         uuid:
@@ -379,31 +347,31 @@ components:
         analysisPopulation:
           title: Analysispopulation
           anyOf:
-          - $ref: '#/components/schemas/AnalysisPopulation'
-          - type: string
-            format: uuid
+            - $ref: '#/components/schemas/AnalysisPopulation'
+            - type: string
+              format: uuid
         treatment:
           title: Treatment
           anyOf:
-          - $ref: '#/components/schemas/InvestigationalIntervention'
-          - type: string
-            format: uuid
+            - $ref: '#/components/schemas/InvestigationalIntervention'
+            - type: string
+              format: uuid
         variableOfInterest:
           title: Variableofinterest
           anyOf:
-          - $ref: '#/components/schemas/Endpoint'
-          - type: string
-            format: uuid
+            - $ref: '#/components/schemas/Endpoint'
+            - type: string
+              format: uuid
         intercurrentEvents:
           title: Intercurrentevents
           anyOf:
-          - type: array
-            items:
-              $ref: '#/components/schemas/IntercurrentEvent'
-          - type: array
-            items:
-              type: string
-              format: uuid
+            - type: array
+              items:
+                $ref: '#/components/schemas/IntercurrentEvent'
+            - type: array
+              items:
+                type: string
+                format: uuid
     HTTPValidationError:
       title: HTTPValidationError
       type: object
@@ -416,7 +384,7 @@ components:
     Indication:
       title: Indication
       required:
-      - indicationDesc
+        - indicationDesc
       type: object
       properties:
         uuid:
@@ -426,22 +394,22 @@ components:
         codes:
           title: Codes
           anyOf:
-          - type: array
-            items:
-              $ref: '#/components/schemas/Code'
-          - type: array
-            items:
-              type: string
-              format: uuid
+            - type: array
+              items:
+                $ref: '#/components/schemas/Code'
+            - type: array
+              items:
+                type: string
+                format: uuid
         indicationDesc:
           title: Indicationdesc
           type: string
     IntercurrentEvent:
       title: IntercurrentEvent
       required:
-      - intercurrentEventDesc
-      - intercurrentEventName
-      - intercurrentEventStrategy
+        - intercurrentEventName
+        - intercurrentEventDesc
+        - intercurrentEventStrategy
       type: object
       properties:
         uuid:
@@ -460,7 +428,7 @@ components:
     InvestigationalIntervention:
       title: InvestigationalIntervention
       required:
-      - interventionDesc
+        - interventionDesc
       type: object
       properties:
         uuid:
@@ -470,20 +438,20 @@ components:
         codes:
           title: Codes
           anyOf:
-          - type: array
-            items:
-              $ref: '#/components/schemas/Code'
-          - type: array
-            items:
-              type: string
-              format: uuid
+            - type: array
+              items:
+                $ref: '#/components/schemas/Code'
+            - type: array
+              items:
+                type: string
+                format: uuid
         interventionDesc:
           title: Interventiondesc
           type: string
     Objective:
       title: Objective
       required:
-      - objectiveDesc
+        - objectiveDesc
       type: object
       properties:
         uuid:
@@ -496,26 +464,26 @@ components:
         objectiveLevel:
           title: Objectivelevel
           anyOf:
-          - $ref: '#/components/schemas/Code'
-          - type: string
-            format: uuid
+            - $ref: '#/components/schemas/Code'
+            - type: string
+              format: uuid
         objectiveEndpoints:
           title: Objectiveendpoints
           anyOf:
-          - type: array
-            items:
-              $ref: '#/components/schemas/Endpoint'
-          - type: array
-            items:
-              type: string
-              format: uuid
+            - type: array
+              items:
+                $ref: '#/components/schemas/Endpoint'
+            - type: array
+              items:
+                type: string
+                format: uuid
     Organisation:
       title: Organisation
       required:
-      - organisationIdentifier
-      - organisationIdentifierScheme
-      - organisationName
-      - organisationType
+        - organisationIdentifierScheme
+        - organisationIdentifier
+        - organisationName
+        - organisationType
       type: object
       properties:
         uuid:
@@ -534,14 +502,14 @@ components:
         organisationType:
           title: Organisationtype
           anyOf:
-          - type: string
-            format: uuid
-          - $ref: '#/components/schemas/Code'
+            - type: string
+              format: uuid
+            - $ref: '#/components/schemas/Code'
     Procedure:
       title: Procedure
       required:
-      - procedureCode
-      - procedureType
+        - procedureType
+        - procedureCode
       type: object
       properties:
         uuid:
@@ -554,14 +522,14 @@ components:
         procedureCode:
           title: Procedurecode
           anyOf:
-          - $ref: '#/components/schemas/Code'
-          - type: string
-            format: uuid
+            - $ref: '#/components/schemas/Code'
+            - type: string
+              format: uuid
     Study:
       title: Study
       required:
-      - studyTitle
-      - studyVersion
+        - studyTitle
+        - studyVersion
       type: object
       properties:
         uuid:
@@ -577,53 +545,67 @@ components:
         studyType:
           title: Studytype
           anyOf:
-          - $ref: '#/components/schemas/Code'
-          - type: string
-            format: uuid
+            - $ref: '#/components/schemas/Code'
+            - type: string
+              format: uuid
         studyPhase:
           title: Studyphase
           anyOf:
-          - $ref: '#/components/schemas/Code'
-          - type: string
-            format: uuid
+            - $ref: '#/components/schemas/Code'
+            - type: string
+              format: uuid
+        businessTherapeuticAreas:
+          title: Businesstherapeuticareas
+          anyOf:
+            - type: array
+              items:
+                $ref: '#/components/schemas/Code'
+            - type: array
+              items:
+                type: string
+                format: uuid
+          default: []
         studyIdentifiers:
           title: Studyidentifiers
           anyOf:
-          - type: array
-            items:
-              $ref: '#/components/schemas/StudyIdentifier'
-          - type: array
-            items:
-              type: string
-              format: uuid
+            - type: array
+              items:
+                $ref: '#/components/schemas/StudyIdentifier'
+            - type: array
+              items:
+                type: string
+                format: uuid
+          default: []
         studyProtocolVersions:
           title: Studyprotocolversions
           anyOf:
-          - type: array
-            items:
-              $ref: '#/components/schemas/StudyProtocolVersion'
-          - type: array
-            items:
-              type: string
-              format: uuid
+            - type: array
+              items:
+                $ref: '#/components/schemas/StudyProtocolVersion'
+            - type: array
+              items:
+                type: string
+                format: uuid
+          default: []
         studyDesigns:
           title: Studydesigns
           anyOf:
-          - type: array
-            items:
-              $ref: '#/components/schemas/StudyDesign'
-          - type: array
-            items:
-              type: string
-              format: uuid
+            - type: array
+              items:
+                $ref: '#/components/schemas/StudyDesign'
+            - type: array
+              items:
+                type: string
+                format: uuid
+          default: []
     StudyArm:
       title: StudyArm
       required:
-      - studyArmDataOriginDesc
-      - studyArmDataOriginType
-      - studyArmDesc
-      - studyArmName
-      - studyArmType
+        - studyArmName
+        - studyArmDesc
+        - studyArmType
+        - studyArmDataOriginDesc
+        - studyArmDataOriginType
       type: object
       properties:
         uuid:
@@ -639,18 +621,18 @@ components:
         studyArmType:
           title: Studyarmtype
           anyOf:
-          - $ref: '#/components/schemas/Code'
-          - type: string
-            format: uuid
+            - $ref: '#/components/schemas/Code'
+            - type: string
+              format: uuid
         studyArmDataOriginDesc:
           title: Studyarmdataorigindesc
           type: string
         studyArmDataOriginType:
           title: Studyarmdataorigintype
           anyOf:
-          - $ref: '#/components/schemas/Code'
-          - type: string
-            format: uuid
+            - $ref: '#/components/schemas/Code'
+            - type: string
+              format: uuid
     StudyCell:
       title: StudyCell
       type: object
@@ -662,31 +644,32 @@ components:
         studyArm:
           title: Studyarm
           anyOf:
-          - $ref: '#/components/schemas/StudyArm'
-          - type: string
-            format: uuid
+            - $ref: '#/components/schemas/StudyArm'
+            - type: string
+              format: uuid
         studyEpoch:
           title: Studyepoch
           anyOf:
-          - $ref: '#/components/schemas/StudyEpoch'
-          - type: string
-            format: uuid
+            - $ref: '#/components/schemas/StudyEpoch'
+            - type: string
+              format: uuid
         studyElements:
           title: Studyelements
           anyOf:
-          - type: array
-            items:
-              $ref: '#/components/schemas/StudyElement'
-          - type: array
-            items:
-              type: string
-              format: uuid
+            - type: array
+              items:
+                $ref: '#/components/schemas/StudyElement'
+            - type: array
+              items:
+                type: string
+                format: uuid
+          default: []
     StudyData:
       title: StudyData
       required:
-      - crfLink
-      - studyDataDesc
-      - studyDataName
+        - studyDataName
+        - studyDataDesc
+        - crfLink
       type: object
       properties:
         uuid:
@@ -705,9 +688,9 @@ components:
     StudyDesign:
       title: StudyDesign
       required:
-      - interventionModel
-      - trialIntentTypes
-      - trialType
+        - trialIntentTypes
+        - trialType
+        - interventionModel
       type: object
       properties:
         uuid:
@@ -717,99 +700,121 @@ components:
         trialIntentTypes:
           title: Trialintenttypes
           anyOf:
-          - type: array
-            items:
-              $ref: '#/components/schemas/Code'
-          - type: array
-            items:
-              type: string
-              format: uuid
+            - type: array
+              items:
+                $ref: '#/components/schemas/Code'
+            - type: array
+              items:
+                type: string
+                format: uuid
         trialType:
           title: Trialtype
           anyOf:
-          - $ref: '#/components/schemas/Code'
-          - type: string
-            format: uuid
+            - type: array
+              items:
+                $ref: '#/components/schemas/Code'
+            - type: array
+              items:
+                type: string
+                format: uuid
         interventionModel:
           title: Interventionmodel
           anyOf:
-          - $ref: '#/components/schemas/Code'
-          - type: string
-            format: uuid
+            - $ref: '#/components/schemas/Code'
+            - type: string
+              format: uuid
+        therapeuticAreas:
+          title: Therapeuticareas
+          anyOf:
+            - type: array
+              items:
+                $ref: '#/components/schemas/Code'
+            - type: array
+              items:
+                type: string
+                format: uuid
+          default: []
         studyCells:
           title: Studycells
           anyOf:
-          - type: array
-            items:
-              $ref: '#/components/schemas/StudyCell'
-          - type: array
-            items:
-              type: string
-              format: uuid
+            - type: array
+              items:
+                $ref: '#/components/schemas/StudyCell'
+            - type: array
+              items:
+                type: string
+                format: uuid
+          default: []
         studyIndications:
           title: Studyindications
           anyOf:
-          - type: array
-            items:
-              $ref: '#/components/schemas/Indication'
-          - type: array
-            items:
-              type: string
-              format: uuid
+            - type: array
+              items:
+                $ref: '#/components/schemas/Indication'
+            - type: array
+              items:
+                type: string
+                format: uuid
+          default: []
         studyInvestigationalInterventions:
           title: Studyinvestigationalinterventions
           anyOf:
-          - type: array
-            items:
-              $ref: '#/components/schemas/InvestigationalIntervention'
-          - type: array
-            items:
-              type: string
-              format: uuid
+            - type: array
+              items:
+                $ref: '#/components/schemas/InvestigationalIntervention'
+            - type: array
+              items:
+                type: string
+                format: uuid
+          default: []
         studyPopulations:
           title: Studypopulations
           anyOf:
-          - type: array
-            items:
-              $ref: '#/components/schemas/StudyDesignPopulation'
-          - type: array
-            items:
-              type: string
-              format: uuid
+            - type: array
+              items:
+                $ref: '#/components/schemas/StudyDesignPopulation'
+            - type: array
+              items:
+                type: string
+                format: uuid
+          default: []
         studyObjectives:
           title: Studyobjectives
           anyOf:
-          - type: array
-            items:
-              $ref: '#/components/schemas/Objective'
-          - type: array
-            items:
-              type: string
-              format: uuid
+            - type: array
+              items:
+                $ref: '#/components/schemas/Objective'
+            - type: array
+              items:
+                type: string
+                format: uuid
+          default: []
         studyWorkflows:
           title: Studyworkflows
           anyOf:
-          - type: array
-            items:
-              $ref: '#/components/schemas/Workflow'
-          - type: array
-            items:
-              type: string
-              format: uuid
+            - type: array
+              items:
+                $ref: '#/components/schemas/Workflow'
+            - type: array
+              items:
+                type: string
+                format: uuid
+          default: []
         studyEstimands:
           title: Studyestimands
           anyOf:
-          - type: array
-            items:
-              $ref: '#/components/schemas/Estimand'
-          - type: array
-            items:
-              type: string
-              format: uuid
+            - type: array
+              items:
+                $ref: '#/components/schemas/Estimand'
+            - type: array
+              items:
+                type: string
+                format: uuid
+          default: []
     StudyDesignPopulation:
       title: StudyDesignPopulation
       required:
-      - populationDesc
+        - populationDesc
       type: object
       properties:
         uuid:
@@ -822,8 +827,8 @@ components:
     StudyElement:
       title: StudyElement
       required:
-      - studyElementDesc
-      - studyElementName
+        - studyElementName
+        - studyElementDesc
       type: object
       properties:
         uuid:
@@ -839,22 +844,22 @@ components:
         transitionStartRule:
           title: Transitionstartrule
           anyOf:
-          - $ref: '#/components/schemas/TransitionRule'
-          - type: string
-            format: uuid
+            - $ref: '#/components/schemas/TransitionRule'
+            - type: string
+              format: uuid
         transitionEndRule:
           title: Transitionendrule
           anyOf:
-          - $ref: '#/components/schemas/TransitionRule'
-          - type: string
-            format: uuid
+            - $ref: '#/components/schemas/TransitionRule'
+            - type: string
+              format: uuid
     StudyEpoch:
       title: StudyEpoch
       required:
-      - encounters
-      - studyEpochDesc
-      - studyEpochName
-      - studyEpochType
+        - studyEpochName
+        - studyEpochDesc
+        - studyEpochType
+        - encounters
       type: object
       properties:
         uuid:
@@ -867,35 +872,35 @@ components:
         studyEpochDesc:
           title: Studyepochdesc
           type: string
-        previousEpochId:
-          title: Previousepochid
+        previousStudyEpochId:
+          title: Previousstudyepochid
           type: string
           format: uuid
-        nextEpochId:
-          title: Nextepochid
+        nextStudyEpochId:
+          title: Nextstudyepochid
           type: string
           format: uuid
         studyEpochType:
           title: Studyepochtype
           anyOf:
-          - $ref: '#/components/schemas/Code'
-          - type: string
-            format: uuid
+            - $ref: '#/components/schemas/Code'
+            - type: string
+              format: uuid
         encounters:
           title: Encounters
           anyOf:
-          - type: array
-            items:
-              $ref: '#/components/schemas/Encounter'
-          - type: array
-            items:
-              type: string
-              format: uuid
+            - type: array
+              items:
+                $ref: '#/components/schemas/Encounter'
+            - type: array
+              items:
+                type: string
+                format: uuid
     StudyIdentifier:
       title: StudyIdentifier
       required:
-      - studyIdentifier
-      - studyIdentifierScope
+        - studyIdentifier
+        - studyIdentifierScope
       type: object
       properties:
         uuid:
@@ -908,19 +913,19 @@ components:
         studyIdentifierScope:
           title: Studyidentifierscope
           anyOf:
-          - type: string
-            format: uuid
-          - $ref: '#/components/schemas/Organisation'
+            - type: string
+              format: uuid
+            - $ref: '#/components/schemas/Organisation'
     StudyProtocolVersion:
       title: StudyProtocolVersion
       required:
-      - briefTitle
-      - officialTitle
-      - protocolEffectiveDate
-      - protocolStatus
-      - protocolVersion
-      - publicTitle
-      - scientificTitle
+        - briefTitle
+        - officialTitle
+        - publicTitle
+        - scientificTitle
+        - protocolVersion
+        - protocolEffectiveDate
+        - protocolStatus
       type: object
       properties:
         uuid:
@@ -952,13 +957,13 @@ components:
         protocolStatus:
           title: Protocolstatus
           anyOf:
-          - type: string
-            format: uuid
-          - $ref: '#/components/schemas/Code'
+            - type: string
+              format: uuid
+            - $ref: '#/components/schemas/Code'
     TransitionRule:
       title: TransitionRule
       required:
-      - transitionRuleDesc
+        - transitionRuleDesc
       type: object
       properties:
         uuid:
@@ -971,9 +976,9 @@ components:
     ValidationError:
       title: ValidationError
       required:
-      - loc
-      - msg
-      - type
+        - loc
+        - msg
+        - type
       type: object
       properties:
         loc:
@@ -981,8 +986,8 @@ components:
           type: array
           items:
             anyOf:
-            - type: string
-            - type: integer
+              - type: string
+              - type: integer
         msg:
           title: Message
           type: string
@@ -992,7 +997,7 @@ components:
     Workflow:
       title: Workflow
       required:
-      - workflowDesc
+        - workflowDesc
       type: object
       properties:
         uuid:
@@ -1005,17 +1010,17 @@ components:
         workflowItems:
           title: Workflowitems
           anyOf:
-          - type: array
-            items:
-              $ref: '#/components/schemas/WorkflowItem'
-          - type: array
-            items:
-              type: string
-              format: uuid
+            - type: array
+              items:
+                $ref: '#/components/schemas/WorkflowItem'
+            - type: array
+              items:
+                type: string
+                format: uuid
     WorkflowItem:
       title: WorkflowItem
       required:
-      - workflowItemDesc
+        - workflowItemDesc
       type: object
       properties:
         uuid:
@@ -1036,42 +1041,15 @@ components:
         workflowItemEncounter:
           title: Workflowitemencounter
           anyOf:
-          - $ref: '#/components/schemas/Encounter'
-          - type: string
-            format: uuid
+            - $ref: '#/components/schemas/Encounter'
+            - type: string
+              format: uuid
         workflowItemActivity:
           title: Workflowitemactivity
           anyOf:
-          - $ref: '#/components/schemas/Activity'
-          - type: string
-            format: uuid
-    defaultErrorResponse:
-      properties:
-        statusCode:
-          type: string
-          description: HTTP Status Code
-        detail:
-          type: string
-          description: Detail
-        message:
-          type: string
-          description: Message
-  responses:
-    statusBadRequest:
-      description: Bad Request
-      content:
-        application/json:
-          schema:
-            $ref: '#/components/schemas/defaultErrorResponse'
-    statusUnauthorized:
-      description: Unauthorized
-      headers:
-        WWW_Authenticate:
-          style: simple
-          explode: false
-          schema:
-            type: string
-      content:
-        application/json:
-          schema:
-            $ref: '#/components/schemas/defaultErrorResponse'
+            - $ref: '#/components/schemas/Activity'
+            - type: string
+              format: uuid
+tags:
+  - name: Production
+    description: Routes that form the production specification.

@@ -2,21 +2,9 @@
   "openapi": "3.0.2",
   "info": {
     "title": "Simple API for DDF",
-    "description": "A simple TransCelerate Digital Data Flow (DDF) Study Definitions Repository (SDR) API.",
-    "version": "V1.0-Provisional"
+    "description": "A simple TransCelerate Digital Data Flow (DDF) Study Definitions Repository API.",
+    "version": "1.1 Provisional (0.24)"
   },
-  "servers": [
-    {
-      "url": "https://virtserver.swaggerhub.com/CDISC1/DDF/V1-Provisional",
-      "description": "SwaggerHub API Auto Mocking"
-    }
-  ],
-  "tags": [
-    {
-      "name": "Production",
-      "description": "Routes that form the production specification."
-    }
-  ],
   "paths": {
     "/v1/studyDefinitions": {
       "post": {
@@ -51,32 +39,15 @@
           },
           "400": {
             "description": "Bad Request",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/defaultErrorResponse"
-                }
-              }
-            }
+            "message": "string",
+            "detail": "string",
+            "status_code": "string"
           },
           "401": {
             "description": "Unauthorized",
-            "headers": {
-              "WWW_Authenticate": {
-                "style": "simple",
-                "explode": false,
-                "schema": {
-                  "type": "string"
-                }
-              }
-            },
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/defaultErrorResponse"
-                }
-              }
-            }
+            "message": "string",
+            "detail": "string",
+            "status_code": "string"
           },
           "422": {
             "description": "Validation Error",
@@ -101,15 +72,13 @@
         "operationId": "read_full_study_v1_studyDefinitions__uuid__get",
         "parameters": [
           {
-            "name": "uuid",
-            "in": "path",
             "required": true,
-            "style": "simple",
-            "explode": false,
             "schema": {
               "title": "Uuid",
               "type": "string"
-            }
+            },
+            "name": "uuid",
+            "in": "path"
           }
         ],
         "responses": {
@@ -123,32 +92,15 @@
           },
           "400": {
             "description": "Bad Request",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/defaultErrorResponse"
-                }
-              }
-            }
+            "message": "string",
+            "detail": "string",
+            "status_code": "string"
           },
           "401": {
             "description": "Unauthorized",
-            "headers": {
-              "WWW_Authenticate": {
-                "style": "simple",
-                "explode": false,
-                "schema": {
-                  "type": "string"
-                }
-              }
-            },
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/defaultErrorResponse"
-                }
-              }
-            }
+            "message": "string",
+            "detail": "string",
+            "status_code": "string"
           },
           "422": {
             "description": "Validation Error",
@@ -168,19 +120,18 @@
         "tags": [
           "Production"
         ],
-        "summary": "Read Study History",
+        "summary": "Returns the study history",
+        "description": "Returns the history for the specified study",
         "operationId": "read_study_history_v1_studyDefinitions__uuid__history_get",
         "parameters": [
           {
-            "name": "uuid",
-            "in": "path",
             "required": true,
-            "style": "simple",
-            "explode": false,
             "schema": {
               "title": "Uuid",
               "type": "string"
-            }
+            },
+            "name": "uuid",
+            "in": "path"
           }
         ],
         "responses": {
@@ -200,29 +151,22 @@
           },
           "400": {
             "description": "Bad Request",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/defaultErrorResponse"
-                }
-              }
-            }
+            "message": "string",
+            "detail": "string",
+            "status_code": "string"
           },
           "401": {
             "description": "Unauthorized",
-            "headers": {
-              "WWW_Authenticate": {
-                "style": "simple",
-                "explode": false,
-                "schema": {
-                  "type": "string"
-                }
-              }
-            },
+            "message": "string",
+            "detail": "string",
+            "status_code": "string"
+          },
+          "422": {
+            "description": "Validation Error",
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/defaultErrorResponse"
+                  "$ref": "#/components/schemas/HTTPValidationError"
                 }
               }
             }
@@ -240,16 +184,14 @@
         "operationId": "search_study_design_v1_studyDesigns_get",
         "parameters": [
           {
-            "name": "study_uuid",
-            "in": "query",
             "required": true,
-            "style": "form",
-            "explode": true,
             "schema": {
               "title": "Study Uuid",
               "type": "string",
               "format": "uuid"
-            }
+            },
+            "name": "study_uuid",
+            "in": "query"
           }
         ],
         "responses": {
@@ -269,32 +211,15 @@
           },
           "400": {
             "description": "Bad Request",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/defaultErrorResponse"
-                }
-              }
-            }
+            "message": "string",
+            "detail": "string",
+            "status_code": "string"
           },
           "401": {
             "description": "Unauthorized",
-            "headers": {
-              "WWW_Authenticate": {
-                "style": "simple",
-                "explode": false,
-                "schema": {
-                  "type": "string"
-                }
-              }
-            },
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/defaultErrorResponse"
-                }
-              }
-            }
+            "message": "string",
+            "detail": "string",
+            "status_code": "string"
           },
           "422": {
             "description": "Validation Error",
@@ -315,8 +240,8 @@
       "Activity": {
         "title": "Activity",
         "required": [
-          "activityDesc",
-          "activityName"
+          "activityName",
+          "activityDesc"
         ],
         "type": "object",
         "properties": {
@@ -359,7 +284,8 @@
                   "format": "uuid"
                 }
               }
-            ]
+            ],
+            "default": []
           },
           "studyDataCollection": {
             "title": "Studydatacollection",
@@ -377,7 +303,8 @@
                   "format": "uuid"
                 }
               }
-            ]
+            ],
+            "default": []
           }
         }
       },
@@ -434,8 +361,8 @@
       "Encounter": {
         "title": "Encounter",
         "required": [
-          "encounterDesc",
-          "encounterName"
+          "encounterName",
+          "encounterDesc"
         ],
         "type": "object",
         "properties": {
@@ -562,11 +489,11 @@
       "Estimand": {
         "title": "Estimand",
         "required": [
-          "analysisPopulation",
-          "intercurrentEvents",
           "summaryMeasure",
+          "analysisPopulation",
           "treatment",
-          "variableOfInterest"
+          "variableOfInterest",
+          "intercurrentEvents"
         ],
         "type": "object",
         "properties": {
@@ -687,8 +614,8 @@
       "IntercurrentEvent": {
         "title": "IntercurrentEvent",
         "required": [
-          "intercurrentEventDesc",
           "intercurrentEventName",
+          "intercurrentEventDesc",
           "intercurrentEventStrategy"
         ],
         "type": "object",
@@ -799,8 +726,8 @@
       "Organisation": {
         "title": "Organisation",
         "required": [
-          "organisationIdentifier",
           "organisationIdentifierScheme",
+          "organisationIdentifier",
           "organisationName",
           "organisationType"
         ],
@@ -840,8 +767,8 @@
       "Procedure": {
         "title": "Procedure",
         "required": [
-          "procedureCode",
-          "procedureType"
+          "procedureType",
+          "procedureCode"
         ],
         "type": "object",
         "properties": {
@@ -913,6 +840,25 @@
               }
             ]
           },
+          "businessTherapeuticAreas": {
+            "title": "Businesstherapeuticareas",
+            "anyOf": [
+              {
+                "type": "array",
+                "items": {
+                  "$ref": "#/components/schemas/Code"
+                }
+              },
+              {
+                "type": "array",
+                "items": {
+                  "type": "string",
+                  "format": "uuid"
+                }
+              }
+            ],
+            "default": []
+          },
           "studyIdentifiers": {
             "title": "Studyidentifiers",
             "anyOf": [
@@ -929,7 +875,8 @@
                   "format": "uuid"
                 }
               }
-            ]
+            ],
+            "default": []
           },
           "studyProtocolVersions": {
             "title": "Studyprotocolversions",
@@ -947,7 +894,8 @@
                   "format": "uuid"
                 }
               }
-            ]
+            ],
+            "default": []
           },
           "studyDesigns": {
             "title": "Studydesigns",
@@ -965,18 +913,19 @@
                   "format": "uuid"
                 }
               }
-            ]
+            ],
+            "default": []
           }
         }
       },
       "StudyArm": {
         "title": "StudyArm",
         "required": [
-          "studyArmDataOriginDesc",
-          "studyArmDataOriginType",
-          "studyArmDesc",
           "studyArmName",
-          "studyArmType"
+          "studyArmDesc",
+          "studyArmType",
+          "studyArmDataOriginDesc",
+          "studyArmDataOriginType"
         ],
         "type": "object",
         "properties": {
@@ -1072,16 +1021,17 @@
                   "format": "uuid"
                 }
               }
-            ]
+            ],
+            "default": []
           }
         }
       },
       "StudyData": {
         "title": "StudyData",
         "required": [
-          "crfLink",
+          "studyDataName",
           "studyDataDesc",
-          "studyDataName"
+          "crfLink"
         ],
         "type": "object",
         "properties": {
@@ -1107,9 +1057,9 @@
       "StudyDesign": {
         "title": "StudyDesign",
         "required": [
-          "interventionModel",
           "trialIntentTypes",
-          "trialType"
+          "trialType",
+          "interventionModel"
         ],
         "type": "object",
         "properties": {
@@ -1140,11 +1090,17 @@
             "title": "Trialtype",
             "anyOf": [
               {
-                "$ref": "#/components/schemas/Code"
+                "type": "array",
+                "items": {
+                  "$ref": "#/components/schemas/Code"
+                }
               },
               {
-                "type": "string",
-                "format": "uuid"
+                "type": "array",
+                "items": {
+                  "type": "string",
+                  "format": "uuid"
+                }
               }
             ]
           },
@@ -1159,6 +1115,25 @@
                 "format": "uuid"
               }
             ]
+          },
+          "therapeuticAreas": {
+            "title": "Therapeuticareas",
+            "anyOf": [
+              {
+                "type": "array",
+                "items": {
+                  "$ref": "#/components/schemas/Code"
+                }
+              },
+              {
+                "type": "array",
+                "items": {
+                  "type": "string",
+                  "format": "uuid"
+                }
+              }
+            ],
+            "default": []
           },
           "studyCells": {
             "title": "Studycells",
@@ -1176,7 +1151,8 @@
                   "format": "uuid"
                 }
               }
-            ]
+            ],
+            "default": []
           },
           "studyIndications": {
             "title": "Studyindications",
@@ -1194,7 +1170,8 @@
                   "format": "uuid"
                 }
               }
-            ]
+            ],
+            "default": []
           },
           "studyInvestigationalInterventions": {
             "title": "Studyinvestigationalinterventions",
@@ -1212,7 +1189,8 @@
                   "format": "uuid"
                 }
               }
-            ]
+            ],
+            "default": []
           },
           "studyPopulations": {
             "title": "Studypopulations",
@@ -1230,7 +1208,8 @@
                   "format": "uuid"
                 }
               }
-            ]
+            ],
+            "default": []
           },
           "studyObjectives": {
             "title": "Studyobjectives",
@@ -1248,7 +1227,8 @@
                   "format": "uuid"
                 }
               }
-            ]
+            ],
+            "default": []
           },
           "studyWorkflows": {
             "title": "Studyworkflows",
@@ -1266,7 +1246,8 @@
                   "format": "uuid"
                 }
               }
-            ]
+            ],
+            "default": []
           },
           "studyEstimands": {
             "title": "Studyestimands",
@@ -1284,7 +1265,8 @@
                   "format": "uuid"
                 }
               }
-            ]
+            ],
+            "default": []
           }
         }
       },
@@ -1309,8 +1291,8 @@
       "StudyElement": {
         "title": "StudyElement",
         "required": [
-          "studyElementDesc",
-          "studyElementName"
+          "studyElementName",
+          "studyElementDesc"
         ],
         "type": "object",
         "properties": {
@@ -1356,10 +1338,10 @@
       "StudyEpoch": {
         "title": "StudyEpoch",
         "required": [
-          "encounters",
-          "studyEpochDesc",
           "studyEpochName",
-          "studyEpochType"
+          "studyEpochDesc",
+          "studyEpochType",
+          "encounters"
         ],
         "type": "object",
         "properties": {
@@ -1376,13 +1358,13 @@
             "title": "Studyepochdesc",
             "type": "string"
           },
-          "previousEpochId": {
-            "title": "Previousepochid",
+          "previousStudyEpochId": {
+            "title": "Previousstudyepochid",
             "type": "string",
             "format": "uuid"
           },
-          "nextEpochId": {
-            "title": "Nextepochid",
+          "nextStudyEpochId": {
+            "title": "Nextstudyepochid",
             "type": "string",
             "format": "uuid"
           },
@@ -1454,11 +1436,11 @@
         "required": [
           "briefTitle",
           "officialTitle",
-          "protocolEffectiveDate",
-          "protocolStatus",
-          "protocolVersion",
           "publicTitle",
-          "scientificTitle"
+          "scientificTitle",
+          "protocolVersion",
+          "protocolEffectiveDate",
+          "protocolStatus"
         ],
         "type": "object",
         "properties": {
@@ -1648,54 +1630,13 @@
             ]
           }
         }
-      },
-      "defaultErrorResponse": {
-        "properties": {
-          "statusCode": {
-            "type": "string",
-            "description": "HTTP Status Code"
-          },
-          "detail": {
-            "type": "string",
-            "description": "Detail"
-          },
-          "message": {
-            "type": "string",
-            "description": "Message"
-          }
-        }
-      }
-    },
-    "responses": {
-      "statusBadRequest": {
-        "description": "Bad Request",
-        "content": {
-          "application/json": {
-            "schema": {
-              "$ref": "#/components/schemas/defaultErrorResponse"
-            }
-          }
-        }
-      },
-      "statusUnauthorized": {
-        "description": "Unauthorized",
-        "headers": {
-          "WWW_Authenticate": {
-            "style": "simple",
-            "explode": false,
-            "schema": {
-              "type": "string"
-            }
-          }
-        },
-        "content": {
-          "application/json": {
-            "schema": {
-              "$ref": "#/components/schemas/defaultErrorResponse"
-            }
-          }
-        }
       }
     }
-  }
+  },
+  "tags": [
+    {
+      "name": "Production",
+      "description": "Routes that form the production specification."
+    }
+  ]
 }
