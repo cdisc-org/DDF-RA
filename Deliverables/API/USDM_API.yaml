@@ -30,13 +30,13 @@ paths:
                 format: uuid
         '400':
           description: Bad Request
-          message: string
           detail: string
+          message: string
           status_code: string
         '401':
           description: Unauthorized
-          message: string
           detail: string
+          message: string
           status_code: string
         '422':
           description: Validation Error
@@ -44,7 +44,7 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/HTTPValidationError'
-  /v1/studyDefinitions/{uuid}:
+  '/v1/studyDefinitions/{uuid}':
     get:
       tags:
         - Production
@@ -66,13 +66,13 @@ paths:
               schema: {}
         '400':
           description: Bad Request
-          message: string
           detail: string
+          message: string
           status_code: string
         '401':
           description: Unauthorized
-          message: string
           detail: string
+          message: string
           status_code: string
         '422':
           description: Validation Error
@@ -80,7 +80,7 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/HTTPValidationError'
-  /v1/studyDefinitions/{uuid}/history:
+  '/v1/studyDefinitions/{uuid}/history':
     get:
       tags:
         - Production
@@ -108,13 +108,13 @@ paths:
                   $ref: '#/components/schemas/Study'
         '400':
           description: Bad Request
-          message: string
           detail: string
+          message: string
           status_code: string
         '401':
           description: Unauthorized
-          message: string
           detail: string
+          message: string
           status_code: string
         '422':
           description: Validation Error
@@ -149,13 +149,13 @@ paths:
                   $ref: '#/components/schemas/StudyDesign'
         '400':
           description: Bad Request
-          message: string
           detail: string
+          message: string
           status_code: string
         '401':
           description: Unauthorized
-          message: string
           detail: string
+          message: string
           status_code: string
         '422':
           description: Validation Error
@@ -168,14 +168,14 @@ components:
     Activity:
       title: Activity
       required:
+        - activityId
         - activityName
         - activityDesc
       type: object
       properties:
-        uuid:
-          title: Uuid
+        activityId:
+          title: Activityid
           type: string
-          format: uuid
         activityName:
           title: Activityname
           type: string
@@ -185,11 +185,9 @@ components:
         previousActivityId:
           title: Previousactivityid
           type: string
-          format: uuid
         nextActivityId:
           title: Nextactivityid
           type: string
-          format: uuid
         definedProcedures:
           title: Definedprocedures
           anyOf:
@@ -215,11 +213,12 @@ components:
     AnalysisPopulation:
       title: AnalysisPopulation
       required:
+        - analysisPopulationId
         - populationDesc
       type: object
       properties:
-        uuid:
-          title: Uuid
+        analysisPopulationId:
+          title: Analysispopulationid
           type: string
         populationDesc:
           title: Populationdesc
@@ -227,16 +226,16 @@ components:
     Code:
       title: Code
       required:
+        - codeId
         - code
         - codeSystem
         - codeSystemVersion
         - decode
       type: object
       properties:
-        uuid:
-          title: Uuid
+        codeId:
+          title: Codeid
           type: string
-          format: uuid
         code:
           title: Code
           type: string
@@ -252,14 +251,14 @@ components:
     Encounter:
       title: Encounter
       required:
+        - encounterId
         - encounterName
         - encounterDesc
       type: object
       properties:
-        uuid:
-          title: Uuid
+        encounterId:
+          title: Encounterid
           type: string
-          format: uuid
         encounterName:
           title: Encountername
           type: string
@@ -269,11 +268,9 @@ components:
         previousEncounterId:
           title: Previousencounterid
           type: string
-          format: uuid
         nextEncounterId:
           title: Nextencounterid
           type: string
-          format: uuid
         encounterType:
           title: Encountertype
           anyOf:
@@ -307,14 +304,14 @@ components:
     Endpoint:
       title: Endpoint
       required:
+        - endpointId
         - endpointDesc
         - endpointPurposeDesc
       type: object
       properties:
-        uuid:
-          title: Uuid
+        endpointId:
+          title: Endpointid
           type: string
-          format: uuid
         endpointDesc:
           title: Endpointdesc
           type: string
@@ -330,17 +327,15 @@ components:
     Estimand:
       title: Estimand
       required:
+        - estimandId
         - summaryMeasure
         - analysisPopulation
-        - treatment
-        - variableOfInterest
         - intercurrentEvents
       type: object
       properties:
-        uuid:
-          title: Uuid
+        estimandId:
+          title: Estimandid
           type: string
-          format: uuid
         summaryMeasure:
           title: Summarymeasure
           type: string
@@ -352,16 +347,10 @@ components:
               format: uuid
         treatment:
           title: Treatment
-          anyOf:
-            - $ref: '#/components/schemas/InvestigationalIntervention'
-            - type: string
-              format: uuid
+          type: string
         variableOfInterest:
           title: Variableofinterest
-          anyOf:
-            - $ref: '#/components/schemas/Endpoint'
-            - type: string
-              format: uuid
+          type: string
         intercurrentEvents:
           title: Intercurrentevents
           anyOf:
@@ -384,13 +373,16 @@ components:
     Indication:
       title: Indication
       required:
+        - indicationId
         - indicationDesc
       type: object
       properties:
-        uuid:
-          title: Uuid
+        indicationId:
+          title: Indicationid
           type: string
-          format: uuid
+        indicationDesc:
+          title: Indicationdesc
+          type: string
         codes:
           title: Codes
           anyOf:
@@ -401,21 +393,18 @@ components:
               items:
                 type: string
                 format: uuid
-        indicationDesc:
-          title: Indicationdesc
-          type: string
     IntercurrentEvent:
       title: IntercurrentEvent
       required:
+        - intercurrentEventId
         - intercurrentEventName
         - intercurrentEventDesc
         - intercurrentEventStrategy
       type: object
       properties:
-        uuid:
-          title: Uuid
+        intercurrentEventId:
+          title: Intercurrenteventid
           type: string
-          format: uuid
         intercurrentEventName:
           title: Intercurrenteventname
           type: string
@@ -428,13 +417,16 @@ components:
     InvestigationalIntervention:
       title: InvestigationalIntervention
       required:
+        - investigationalInterventionId
         - interventionDesc
       type: object
       properties:
-        uuid:
-          title: Uuid
+        investigationalInterventionId:
+          title: Investigationalinterventionid
           type: string
-          format: uuid
+        interventionDesc:
+          title: Interventiondesc
+          type: string
         codes:
           title: Codes
           anyOf:
@@ -445,19 +437,16 @@ components:
               items:
                 type: string
                 format: uuid
-        interventionDesc:
-          title: Interventiondesc
-          type: string
     Objective:
       title: Objective
       required:
+        - objectiveId
         - objectiveDesc
       type: object
       properties:
-        uuid:
-          title: Uuid
+        objectiveId:
+          title: Objectiveid
           type: string
-          format: uuid
         objectiveDesc:
           title: Objectivedesc
           type: string
@@ -480,16 +469,16 @@ components:
     Organisation:
       title: Organisation
       required:
+        - organizationId
         - organisationIdentifierScheme
         - organisationIdentifier
         - organisationName
         - organisationType
       type: object
       properties:
-        uuid:
-          title: Uuid
+        organizationId:
+          title: Organizationid
           type: string
-          format: uuid
         organisationIdentifierScheme:
           title: Organisationidentifierscheme
           type: string
@@ -508,14 +497,14 @@ components:
     Procedure:
       title: Procedure
       required:
+        - procedureId
         - procedureType
         - procedureCode
       type: object
       properties:
-        uuid:
-          title: Uuid
+        procedureId:
+          title: Procedureid
           type: string
-          format: uuid
         procedureType:
           title: Proceduretype
           type: string
@@ -601,6 +590,7 @@ components:
     StudyArm:
       title: StudyArm
       required:
+        - studyArmId
         - studyArmName
         - studyArmDesc
         - studyArmType
@@ -608,10 +598,9 @@ components:
         - studyArmDataOriginType
       type: object
       properties:
-        uuid:
-          title: Uuid
+        studyArmId:
+          title: Studyarmid
           type: string
-          format: uuid
         studyArmName:
           title: Studyarmname
           type: string
@@ -635,12 +624,13 @@ components:
               format: uuid
     StudyCell:
       title: StudyCell
+      required:
+        - studyCellId
       type: object
       properties:
-        uuid:
-          title: Uuid
+        studyCellId:
+          title: Studycellid
           type: string
-          format: uuid
         studyArm:
           title: Studyarm
           anyOf:
@@ -667,15 +657,15 @@ components:
     StudyData:
       title: StudyData
       required:
+        - studyDataId
         - studyDataName
         - studyDataDesc
         - crfLink
       type: object
       properties:
-        uuid:
-          title: Uuid
+        studyDataId:
+          title: Studydataid
           type: string
-          format: uuid
         studyDataName:
           title: Studydataname
           type: string
@@ -688,15 +678,23 @@ components:
     StudyDesign:
       title: StudyDesign
       required:
+        - studyDesignId
+        - studyDesignName
+        - studyDesignDescription
         - trialIntentTypes
         - trialType
         - interventionModel
       type: object
       properties:
-        uuid:
-          title: Uuid
+        studyDesignId:
+          title: Studydesignid
           type: string
-          format: uuid
+        studyDesignName:
+          title: Studydesignname
+          type: string
+        studyDesignDescription:
+          title: Studydesigndescription
+          type: string
         trialIntentTypes:
           title: Trialintenttypes
           anyOf:
@@ -723,17 +721,6 @@ components:
             - $ref: '#/components/schemas/Code'
             - type: string
               format: uuid
-        therapeuticAreas:
-          title: Therapeuticareas
-          anyOf:
-            - type: array
-              items:
-                $ref: '#/components/schemas/Code'
-            - type: array
-              items:
-                type: string
-                format: uuid
-          default: []
         studyCells:
           title: Studycells
           anyOf:
@@ -767,8 +754,8 @@ components:
                 type: string
                 format: uuid
           default: []
-        studyPopulations:
-          title: Studypopulations
+        studyStudyDesignPopulations:
+          title: Studystudydesignpopulations
           anyOf:
             - type: array
               items:
@@ -800,6 +787,17 @@ components:
                 type: string
                 format: uuid
           default: []
+        therapeuticAreas:
+          title: Therapeuticareas
+          anyOf:
+            - type: array
+              items:
+                $ref: '#/components/schemas/Code'
+            - type: array
+              items:
+                type: string
+                format: uuid
+          default: []
         studyEstimands:
           title: Studyestimands
           anyOf:
@@ -811,30 +809,52 @@ components:
                 type: string
                 format: uuid
           default: []
+        encounters:
+          title: Encounters
+          anyOf:
+            - type: array
+              items:
+                $ref: '#/components/schemas/Encounter'
+            - type: array
+              items:
+                type: string
+                format: uuid
+          default: []
+        activities:
+          title: Activities
+          anyOf:
+            - type: array
+              items:
+                $ref: '#/components/schemas/Activity'
+            - type: array
+              items:
+                type: string
+                format: uuid
+          default: []
     StudyDesignPopulation:
       title: StudyDesignPopulation
       required:
+        - studyDesignPopulationId
         - populationDesc
       type: object
       properties:
-        uuid:
-          title: Uuid
+        studyDesignPopulationId:
+          title: Studydesignpopulationid
           type: string
-          format: uuid
         populationDesc:
           title: Populationdesc
           type: string
     StudyElement:
       title: StudyElement
       required:
+        - studyElementId
         - studyElementName
         - studyElementDesc
       type: object
       properties:
-        uuid:
-          title: Uuid
+        studyElementId:
+          title: Studyelementid
           type: string
-          format: uuid
         studyElementName:
           title: Studyelementname
           type: string
@@ -856,36 +876,36 @@ components:
     StudyEpoch:
       title: StudyEpoch
       required:
+        - studyEpochId
         - studyEpochName
         - studyEpochDesc
         - studyEpochType
+        - previousStudyEpochId
+        - nextStudyEpochId
         - encounters
       type: object
       properties:
-        uuid:
-          title: Uuid
+        studyEpochId:
+          title: Studyepochid
           type: string
-          format: uuid
         studyEpochName:
           title: Studyepochname
           type: string
         studyEpochDesc:
           title: Studyepochdesc
           type: string
-        previousStudyEpochId:
-          title: Previousstudyepochid
-          type: string
-          format: uuid
-        nextStudyEpochId:
-          title: Nextstudyepochid
-          type: string
-          format: uuid
         studyEpochType:
           title: Studyepochtype
           anyOf:
             - $ref: '#/components/schemas/Code'
             - type: string
               format: uuid
+        previousStudyEpochId:
+          title: Previousstudyepochid
+          type: string
+        nextStudyEpochId:
+          title: Nextstudyepochid
+          type: string
         encounters:
           title: Encounters
           anyOf:
@@ -899,14 +919,14 @@ components:
     StudyIdentifier:
       title: StudyIdentifier
       required:
+        - studyIdentifierId
         - studyIdentifier
         - studyIdentifierScope
       type: object
       properties:
-        uuid:
-          title: Uuid
+        studyIdentifierId:
+          title: Studyidentifierid
           type: string
-          format: uuid
         studyIdentifier:
           title: Studyidentifier
           type: string
@@ -919,6 +939,7 @@ components:
     StudyProtocolVersion:
       title: StudyProtocolVersion
       required:
+        - studyProtocolVersionId
         - briefTitle
         - officialTitle
         - publicTitle
@@ -928,10 +949,9 @@ components:
         - protocolStatus
       type: object
       properties:
-        uuid:
-          title: Uuid
+        studyProtocolVersionId:
+          title: Studyprotocolversionid
           type: string
-          format: uuid
         briefTitle:
           title: Brieftitle
           type: string
@@ -963,13 +983,13 @@ components:
     TransitionRule:
       title: TransitionRule
       required:
+        - transitionRuleId
         - transitionRuleDesc
       type: object
       properties:
-        uuid:
-          title: Uuid
+        transitionRuleId:
+          title: Transitionruleid
           type: string
-          format: uuid
         transitionRuleDesc:
           title: Transitionruledesc
           type: string
@@ -997,13 +1017,13 @@ components:
     Workflow:
       title: Workflow
       required:
+        - workflowId
         - workflowDesc
       type: object
       properties:
-        uuid:
-          title: Uuid
+        workflowId:
+          title: Workflowid
           type: string
-          format: uuid
         workflowDesc:
           title: Workflowdesc
           type: string
@@ -1020,36 +1040,28 @@ components:
     WorkflowItem:
       title: WorkflowItem
       required:
+        - workflowItemId
         - workflowItemDesc
       type: object
       properties:
-        uuid:
-          title: Uuid
+        workflowItemId:
+          title: Workflowitemid
           type: string
-          format: uuid
         workflowItemDesc:
           title: Workflowitemdesc
           type: string
         previousWorkflowItemId:
           title: Previousworkflowitemid
           type: string
-          format: uuid
         nextWorkflowItemId:
           title: Nextworkflowitemid
           type: string
-          format: uuid
-        workflowItemEncounter:
-          title: Workflowitemencounter
-          anyOf:
-            - $ref: '#/components/schemas/Encounter'
-            - type: string
-              format: uuid
-        workflowItemActivity:
-          title: Workflowitemactivity
-          anyOf:
-            - $ref: '#/components/schemas/Activity'
-            - type: string
-              format: uuid
+        workflowItemEncounterId:
+          title: Workflowitemencounterid
+          type: string
+        workflowItemActivityId:
+          title: Workflowitemactivityid
+          type: string
 tags:
   - name: Production
     description: Routes that form the production specification.
