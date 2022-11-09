@@ -39,14 +39,14 @@
           },
           "400": {
             "description": "Bad Request",
-            "message": "string",
             "detail": "string",
+            "message": "string",
             "status_code": "string"
           },
           "401": {
             "description": "Unauthorized",
-            "message": "string",
             "detail": "string",
+            "message": "string",
             "status_code": "string"
           },
           "422": {
@@ -92,14 +92,14 @@
           },
           "400": {
             "description": "Bad Request",
-            "message": "string",
             "detail": "string",
+            "message": "string",
             "status_code": "string"
           },
           "401": {
             "description": "Unauthorized",
-            "message": "string",
             "detail": "string",
+            "message": "string",
             "status_code": "string"
           },
           "422": {
@@ -151,14 +151,14 @@
           },
           "400": {
             "description": "Bad Request",
-            "message": "string",
             "detail": "string",
+            "message": "string",
             "status_code": "string"
           },
           "401": {
             "description": "Unauthorized",
-            "message": "string",
             "detail": "string",
+            "message": "string",
             "status_code": "string"
           },
           "422": {
@@ -211,14 +211,14 @@
           },
           "400": {
             "description": "Bad Request",
-            "message": "string",
             "detail": "string",
+            "message": "string",
             "status_code": "string"
           },
           "401": {
             "description": "Unauthorized",
-            "message": "string",
             "detail": "string",
+            "message": "string",
             "status_code": "string"
           },
           "422": {
@@ -240,15 +240,15 @@
       "Activity": {
         "title": "Activity",
         "required": [
+          "activityId",
           "activityName",
           "activityDesc"
         ],
         "type": "object",
         "properties": {
-          "uuid": {
-            "title": "Uuid",
-            "type": "string",
-            "format": "uuid"
+          "activityId": {
+            "title": "Activityid",
+            "type": "string"
           },
           "activityName": {
             "title": "Activityname",
@@ -260,13 +260,11 @@
           },
           "previousActivityId": {
             "title": "Previousactivityid",
-            "type": "string",
-            "format": "uuid"
+            "type": "string"
           },
           "nextActivityId": {
             "title": "Nextactivityid",
-            "type": "string",
-            "format": "uuid"
+            "type": "string"
           },
           "definedProcedures": {
             "title": "Definedprocedures",
@@ -311,12 +309,13 @@
       "AnalysisPopulation": {
         "title": "AnalysisPopulation",
         "required": [
+          "analysisPopulationId",
           "populationDesc"
         ],
         "type": "object",
         "properties": {
-          "uuid": {
-            "title": "Uuid",
+          "analysisPopulationId": {
+            "title": "Analysispopulationid",
             "type": "string"
           },
           "populationDesc": {
@@ -328,6 +327,7 @@
       "Code": {
         "title": "Code",
         "required": [
+          "codeId",
           "code",
           "codeSystem",
           "codeSystemVersion",
@@ -335,10 +335,9 @@
         ],
         "type": "object",
         "properties": {
-          "uuid": {
-            "title": "Uuid",
-            "type": "string",
-            "format": "uuid"
+          "codeId": {
+            "title": "Codeid",
+            "type": "string"
           },
           "code": {
             "title": "Code",
@@ -361,15 +360,15 @@
       "Encounter": {
         "title": "Encounter",
         "required": [
+          "encounterId",
           "encounterName",
           "encounterDesc"
         ],
         "type": "object",
         "properties": {
-          "uuid": {
-            "title": "Uuid",
-            "type": "string",
-            "format": "uuid"
+          "encounterId": {
+            "title": "Encounterid",
+            "type": "string"
           },
           "encounterName": {
             "title": "Encountername",
@@ -381,13 +380,11 @@
           },
           "previousEncounterId": {
             "title": "Previousencounterid",
-            "type": "string",
-            "format": "uuid"
+            "type": "string"
           },
           "nextEncounterId": {
             "title": "Nextencounterid",
-            "type": "string",
-            "format": "uuid"
+            "type": "string"
           },
           "encounterType": {
             "title": "Encountertype",
@@ -454,15 +451,15 @@
       "Endpoint": {
         "title": "Endpoint",
         "required": [
+          "endpointId",
           "endpointDesc",
           "endpointPurposeDesc"
         ],
         "type": "object",
         "properties": {
-          "uuid": {
-            "title": "Uuid",
-            "type": "string",
-            "format": "uuid"
+          "endpointId": {
+            "title": "Endpointid",
+            "type": "string"
           },
           "endpointDesc": {
             "title": "Endpointdesc",
@@ -489,18 +486,16 @@
       "Estimand": {
         "title": "Estimand",
         "required": [
+          "estimandId",
           "summaryMeasure",
           "analysisPopulation",
-          "treatment",
-          "variableOfInterest",
           "intercurrentEvents"
         ],
         "type": "object",
         "properties": {
-          "uuid": {
-            "title": "Uuid",
-            "type": "string",
-            "format": "uuid"
+          "estimandId": {
+            "title": "Estimandid",
+            "type": "string"
           },
           "summaryMeasure": {
             "title": "Summarymeasure",
@@ -520,27 +515,11 @@
           },
           "treatment": {
             "title": "Treatment",
-            "anyOf": [
-              {
-                "$ref": "#/components/schemas/InvestigationalIntervention"
-              },
-              {
-                "type": "string",
-                "format": "uuid"
-              }
-            ]
+            "type": "string"
           },
           "variableOfInterest": {
             "title": "Variableofinterest",
-            "anyOf": [
-              {
-                "$ref": "#/components/schemas/Endpoint"
-              },
-              {
-                "type": "string",
-                "format": "uuid"
-              }
-            ]
+            "type": "string"
           },
           "intercurrentEvents": {
             "title": "Intercurrentevents",
@@ -578,14 +557,18 @@
       "Indication": {
         "title": "Indication",
         "required": [
+          "indicationId",
           "indicationDesc"
         ],
         "type": "object",
         "properties": {
-          "uuid": {
-            "title": "Uuid",
-            "type": "string",
-            "format": "uuid"
+          "indicationId": {
+            "title": "Indicationid",
+            "type": "string"
+          },
+          "indicationDesc": {
+            "title": "Indicationdesc",
+            "type": "string"
           },
           "codes": {
             "title": "Codes",
@@ -604,26 +587,22 @@
                 }
               }
             ]
-          },
-          "indicationDesc": {
-            "title": "Indicationdesc",
-            "type": "string"
           }
         }
       },
       "IntercurrentEvent": {
         "title": "IntercurrentEvent",
         "required": [
+          "intercurrentEventId",
           "intercurrentEventName",
           "intercurrentEventDesc",
           "intercurrentEventStrategy"
         ],
         "type": "object",
         "properties": {
-          "uuid": {
-            "title": "Uuid",
-            "type": "string",
-            "format": "uuid"
+          "intercurrentEventId": {
+            "title": "Intercurrenteventid",
+            "type": "string"
           },
           "intercurrentEventName": {
             "title": "Intercurrenteventname",
@@ -642,14 +621,18 @@
       "InvestigationalIntervention": {
         "title": "InvestigationalIntervention",
         "required": [
+          "investigationalInterventionId",
           "interventionDesc"
         ],
         "type": "object",
         "properties": {
-          "uuid": {
-            "title": "Uuid",
-            "type": "string",
-            "format": "uuid"
+          "investigationalInterventionId": {
+            "title": "Investigationalinterventionid",
+            "type": "string"
+          },
+          "interventionDesc": {
+            "title": "Interventiondesc",
+            "type": "string"
           },
           "codes": {
             "title": "Codes",
@@ -668,24 +651,20 @@
                 }
               }
             ]
-          },
-          "interventionDesc": {
-            "title": "Interventiondesc",
-            "type": "string"
           }
         }
       },
       "Objective": {
         "title": "Objective",
         "required": [
+          "objectiveId",
           "objectiveDesc"
         ],
         "type": "object",
         "properties": {
-          "uuid": {
-            "title": "Uuid",
-            "type": "string",
-            "format": "uuid"
+          "objectiveId": {
+            "title": "Objectiveid",
+            "type": "string"
           },
           "objectiveDesc": {
             "title": "Objectivedesc",
@@ -726,6 +705,7 @@
       "Organisation": {
         "title": "Organisation",
         "required": [
+          "organizationId",
           "organisationIdentifierScheme",
           "organisationIdentifier",
           "organisationName",
@@ -733,10 +713,9 @@
         ],
         "type": "object",
         "properties": {
-          "uuid": {
-            "title": "Uuid",
-            "type": "string",
-            "format": "uuid"
+          "organizationId": {
+            "title": "Organizationid",
+            "type": "string"
           },
           "organisationIdentifierScheme": {
             "title": "Organisationidentifierscheme",
@@ -767,15 +746,15 @@
       "Procedure": {
         "title": "Procedure",
         "required": [
+          "procedureId",
           "procedureType",
           "procedureCode"
         ],
         "type": "object",
         "properties": {
-          "uuid": {
-            "title": "Uuid",
-            "type": "string",
-            "format": "uuid"
+          "procedureId": {
+            "title": "Procedureid",
+            "type": "string"
           },
           "procedureType": {
             "title": "Proceduretype",
@@ -921,6 +900,7 @@
       "StudyArm": {
         "title": "StudyArm",
         "required": [
+          "studyArmId",
           "studyArmName",
           "studyArmDesc",
           "studyArmType",
@@ -929,10 +909,9 @@
         ],
         "type": "object",
         "properties": {
-          "uuid": {
-            "title": "Uuid",
-            "type": "string",
-            "format": "uuid"
+          "studyArmId": {
+            "title": "Studyarmid",
+            "type": "string"
           },
           "studyArmName": {
             "title": "Studyarmname",
@@ -974,12 +953,14 @@
       },
       "StudyCell": {
         "title": "StudyCell",
+        "required": [
+          "studyCellId"
+        ],
         "type": "object",
         "properties": {
-          "uuid": {
-            "title": "Uuid",
-            "type": "string",
-            "format": "uuid"
+          "studyCellId": {
+            "title": "Studycellid",
+            "type": "string"
           },
           "studyArm": {
             "title": "Studyarm",
@@ -1029,16 +1010,16 @@
       "StudyData": {
         "title": "StudyData",
         "required": [
+          "studyDataId",
           "studyDataName",
           "studyDataDesc",
           "crfLink"
         ],
         "type": "object",
         "properties": {
-          "uuid": {
-            "title": "Uuid",
-            "type": "string",
-            "format": "uuid"
+          "studyDataId": {
+            "title": "Studydataid",
+            "type": "string"
           },
           "studyDataName": {
             "title": "Studydataname",
@@ -1057,16 +1038,26 @@
       "StudyDesign": {
         "title": "StudyDesign",
         "required": [
+          "studyDesignId",
+          "studyDesignName",
+          "studyDesignDescription",
           "trialIntentTypes",
           "trialType",
           "interventionModel"
         ],
         "type": "object",
         "properties": {
-          "uuid": {
-            "title": "Uuid",
-            "type": "string",
-            "format": "uuid"
+          "studyDesignId": {
+            "title": "Studydesignid",
+            "type": "string"
+          },
+          "studyDesignName": {
+            "title": "Studydesignname",
+            "type": "string"
+          },
+          "studyDesignDescription": {
+            "title": "Studydesigndescription",
+            "type": "string"
           },
           "trialIntentTypes": {
             "title": "Trialintenttypes",
@@ -1115,25 +1106,6 @@
                 "format": "uuid"
               }
             ]
-          },
-          "therapeuticAreas": {
-            "title": "Therapeuticareas",
-            "anyOf": [
-              {
-                "type": "array",
-                "items": {
-                  "$ref": "#/components/schemas/Code"
-                }
-              },
-              {
-                "type": "array",
-                "items": {
-                  "type": "string",
-                  "format": "uuid"
-                }
-              }
-            ],
-            "default": []
           },
           "studyCells": {
             "title": "Studycells",
@@ -1192,8 +1164,8 @@
             ],
             "default": []
           },
-          "studyPopulations": {
-            "title": "Studypopulations",
+          "studyStudyDesignPopulations": {
+            "title": "Studystudydesignpopulations",
             "anyOf": [
               {
                 "type": "array",
@@ -1249,6 +1221,25 @@
             ],
             "default": []
           },
+          "therapeuticAreas": {
+            "title": "Therapeuticareas",
+            "anyOf": [
+              {
+                "type": "array",
+                "items": {
+                  "$ref": "#/components/schemas/Code"
+                }
+              },
+              {
+                "type": "array",
+                "items": {
+                  "type": "string",
+                  "format": "uuid"
+                }
+              }
+            ],
+            "default": []
+          },
           "studyEstimands": {
             "title": "Studyestimands",
             "anyOf": [
@@ -1267,20 +1258,58 @@
               }
             ],
             "default": []
+          },
+          "encounters": {
+            "title": "Encounters",
+            "anyOf": [
+              {
+                "type": "array",
+                "items": {
+                  "$ref": "#/components/schemas/Encounter"
+                }
+              },
+              {
+                "type": "array",
+                "items": {
+                  "type": "string",
+                  "format": "uuid"
+                }
+              }
+            ],
+            "default": []
+          },
+          "activities": {
+            "title": "Activities",
+            "anyOf": [
+              {
+                "type": "array",
+                "items": {
+                  "$ref": "#/components/schemas/Activity"
+                }
+              },
+              {
+                "type": "array",
+                "items": {
+                  "type": "string",
+                  "format": "uuid"
+                }
+              }
+            ],
+            "default": []
           }
         }
       },
       "StudyDesignPopulation": {
         "title": "StudyDesignPopulation",
         "required": [
+          "studyDesignPopulationId",
           "populationDesc"
         ],
         "type": "object",
         "properties": {
-          "uuid": {
-            "title": "Uuid",
-            "type": "string",
-            "format": "uuid"
+          "studyDesignPopulationId": {
+            "title": "Studydesignpopulationid",
+            "type": "string"
           },
           "populationDesc": {
             "title": "Populationdesc",
@@ -1291,15 +1320,15 @@
       "StudyElement": {
         "title": "StudyElement",
         "required": [
+          "studyElementId",
           "studyElementName",
           "studyElementDesc"
         ],
         "type": "object",
         "properties": {
-          "uuid": {
-            "title": "Uuid",
-            "type": "string",
-            "format": "uuid"
+          "studyElementId": {
+            "title": "Studyelementid",
+            "type": "string"
           },
           "studyElementName": {
             "title": "Studyelementname",
@@ -1338,17 +1367,19 @@
       "StudyEpoch": {
         "title": "StudyEpoch",
         "required": [
+          "studyEpochId",
           "studyEpochName",
           "studyEpochDesc",
           "studyEpochType",
+          "previousStudyEpochId",
+          "nextStudyEpochId",
           "encounters"
         ],
         "type": "object",
         "properties": {
-          "uuid": {
-            "title": "Uuid",
-            "type": "string",
-            "format": "uuid"
+          "studyEpochId": {
+            "title": "Studyepochid",
+            "type": "string"
           },
           "studyEpochName": {
             "title": "Studyepochname",
@@ -1357,16 +1388,6 @@
           "studyEpochDesc": {
             "title": "Studyepochdesc",
             "type": "string"
-          },
-          "previousStudyEpochId": {
-            "title": "Previousstudyepochid",
-            "type": "string",
-            "format": "uuid"
-          },
-          "nextStudyEpochId": {
-            "title": "Nextstudyepochid",
-            "type": "string",
-            "format": "uuid"
           },
           "studyEpochType": {
             "title": "Studyepochtype",
@@ -1379,6 +1400,14 @@
                 "format": "uuid"
               }
             ]
+          },
+          "previousStudyEpochId": {
+            "title": "Previousstudyepochid",
+            "type": "string"
+          },
+          "nextStudyEpochId": {
+            "title": "Nextstudyepochid",
+            "type": "string"
           },
           "encounters": {
             "title": "Encounters",
@@ -1403,15 +1432,15 @@
       "StudyIdentifier": {
         "title": "StudyIdentifier",
         "required": [
+          "studyIdentifierId",
           "studyIdentifier",
           "studyIdentifierScope"
         ],
         "type": "object",
         "properties": {
-          "uuid": {
-            "title": "Uuid",
-            "type": "string",
-            "format": "uuid"
+          "studyIdentifierId": {
+            "title": "Studyidentifierid",
+            "type": "string"
           },
           "studyIdentifier": {
             "title": "Studyidentifier",
@@ -1434,6 +1463,7 @@
       "StudyProtocolVersion": {
         "title": "StudyProtocolVersion",
         "required": [
+          "studyProtocolVersionId",
           "briefTitle",
           "officialTitle",
           "publicTitle",
@@ -1444,10 +1474,9 @@
         ],
         "type": "object",
         "properties": {
-          "uuid": {
-            "title": "Uuid",
-            "type": "string",
-            "format": "uuid"
+          "studyProtocolVersionId": {
+            "title": "Studyprotocolversionid",
+            "type": "string"
           },
           "briefTitle": {
             "title": "Brieftitle",
@@ -1495,14 +1524,14 @@
       "TransitionRule": {
         "title": "TransitionRule",
         "required": [
+          "transitionRuleId",
           "transitionRuleDesc"
         ],
         "type": "object",
         "properties": {
-          "uuid": {
-            "title": "Uuid",
-            "type": "string",
-            "format": "uuid"
+          "transitionRuleId": {
+            "title": "Transitionruleid",
+            "type": "string"
           },
           "transitionRuleDesc": {
             "title": "Transitionruledesc",
@@ -1546,14 +1575,14 @@
       "Workflow": {
         "title": "Workflow",
         "required": [
+          "workflowId",
           "workflowDesc"
         ],
         "type": "object",
         "properties": {
-          "uuid": {
-            "title": "Uuid",
-            "type": "string",
-            "format": "uuid"
+          "workflowId": {
+            "title": "Workflowid",
+            "type": "string"
           },
           "workflowDesc": {
             "title": "Workflowdesc",
@@ -1582,14 +1611,14 @@
       "WorkflowItem": {
         "title": "WorkflowItem",
         "required": [
+          "workflowItemId",
           "workflowItemDesc"
         ],
         "type": "object",
         "properties": {
-          "uuid": {
-            "title": "Uuid",
-            "type": "string",
-            "format": "uuid"
+          "workflowItemId": {
+            "title": "Workflowitemid",
+            "type": "string"
           },
           "workflowItemDesc": {
             "title": "Workflowitemdesc",
@@ -1597,37 +1626,19 @@
           },
           "previousWorkflowItemId": {
             "title": "Previousworkflowitemid",
-            "type": "string",
-            "format": "uuid"
+            "type": "string"
           },
           "nextWorkflowItemId": {
             "title": "Nextworkflowitemid",
-            "type": "string",
-            "format": "uuid"
+            "type": "string"
           },
-          "workflowItemEncounter": {
-            "title": "Workflowitemencounter",
-            "anyOf": [
-              {
-                "$ref": "#/components/schemas/Encounter"
-              },
-              {
-                "type": "string",
-                "format": "uuid"
-              }
-            ]
+          "workflowItemEncounterId": {
+            "title": "Workflowitemencounterid",
+            "type": "string"
           },
-          "workflowItemActivity": {
-            "title": "Workflowitemactivity",
-            "anyOf": [
-              {
-                "$ref": "#/components/schemas/Activity"
-              },
-              {
-                "type": "string",
-                "format": "uuid"
-              }
-            ]
+          "workflowItemActivityId": {
+            "title": "Workflowitemactivityid",
+            "type": "string"
           }
         }
       }
