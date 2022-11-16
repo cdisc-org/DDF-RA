@@ -40,14 +40,14 @@
           "400": {
             "description": "Bad Request",
             "detail": "string",
-            "message": "string",
-            "status_code": "string"
+            "status_code": "string",
+            "message": "string"
           },
           "401": {
             "description": "Unauthorized",
             "detail": "string",
-            "message": "string",
-            "status_code": "string"
+            "status_code": "string",
+            "message": "string"
           },
           "422": {
             "description": "Validation Error",
@@ -93,14 +93,14 @@
           "400": {
             "description": "Bad Request",
             "detail": "string",
-            "message": "string",
-            "status_code": "string"
+            "status_code": "string",
+            "message": "string"
           },
           "401": {
             "description": "Unauthorized",
             "detail": "string",
-            "message": "string",
-            "status_code": "string"
+            "status_code": "string",
+            "message": "string"
           },
           "422": {
             "description": "Validation Error",
@@ -152,14 +152,14 @@
           "400": {
             "description": "Bad Request",
             "detail": "string",
-            "message": "string",
-            "status_code": "string"
+            "status_code": "string",
+            "message": "string"
           },
           "401": {
             "description": "Unauthorized",
             "detail": "string",
-            "message": "string",
-            "status_code": "string"
+            "status_code": "string",
+            "message": "string"
           },
           "422": {
             "description": "Validation Error",
@@ -212,14 +212,14 @@
           "400": {
             "description": "Bad Request",
             "detail": "string",
-            "message": "string",
-            "status_code": "string"
+            "status_code": "string",
+            "message": "string"
           },
           "401": {
             "description": "Unauthorized",
             "detail": "string",
-            "message": "string",
-            "status_code": "string"
+            "status_code": "string",
+            "message": "string"
           },
           "422": {
             "description": "Validation Error",
@@ -242,7 +242,7 @@
         "required": [
           "activityId",
           "activityName",
-          "activityDesc"
+          "activityDescription"
         ],
         "type": "object",
         "properties": {
@@ -254,8 +254,8 @@
             "title": "Activityname",
             "type": "string"
           },
-          "activityDesc": {
-            "title": "Activitydesc",
+          "activityDescription": {
+            "title": "Activitydescription",
             "type": "string"
           },
           "previousActivityId": {
@@ -310,7 +310,7 @@
         "title": "AnalysisPopulation",
         "required": [
           "analysisPopulationId",
-          "populationDesc"
+          "populationDescription"
         ],
         "type": "object",
         "properties": {
@@ -318,8 +318,8 @@
             "title": "Analysispopulationid",
             "type": "string"
           },
-          "populationDesc": {
-            "title": "Populationdesc",
+          "populationDescription": {
+            "title": "Populationdescription",
             "type": "string"
           }
         }
@@ -362,7 +362,7 @@
         "required": [
           "encounterId",
           "encounterName",
-          "encounterDesc"
+          "encounterDescription"
         ],
         "type": "object",
         "properties": {
@@ -374,8 +374,8 @@
             "title": "Encountername",
             "type": "string"
           },
-          "encounterDesc": {
-            "title": "Encounterdesc",
+          "encounterDescription": {
+            "title": "Encounterdescription",
             "type": "string"
           },
           "previousEncounterId": {
@@ -452,8 +452,8 @@
         "title": "Endpoint",
         "required": [
           "endpointId",
-          "endpointDesc",
-          "endpointPurposeDesc"
+          "endpointDescription",
+          "endpointPurposeDescription"
         ],
         "type": "object",
         "properties": {
@@ -461,12 +461,12 @@
             "title": "Endpointid",
             "type": "string"
           },
-          "endpointDesc": {
-            "title": "Endpointdesc",
+          "endpointDescription": {
+            "title": "Endpointdescription",
             "type": "string"
           },
-          "endpointPurposeDesc": {
-            "title": "Endpointpurposedesc",
+          "endpointPurposeDescription": {
+            "title": "Endpointpurposedescription",
             "type": "string"
           },
           "endpointLevel": {
@@ -558,7 +558,7 @@
         "title": "Indication",
         "required": [
           "indicationId",
-          "indicationDesc"
+          "indicationDescription"
         ],
         "type": "object",
         "properties": {
@@ -566,8 +566,8 @@
             "title": "Indicationid",
             "type": "string"
           },
-          "indicationDesc": {
-            "title": "Indicationdesc",
+          "indicationDescription": {
+            "title": "Indicationdescription",
             "type": "string"
           },
           "codes": {
@@ -595,7 +595,7 @@
         "required": [
           "intercurrentEventId",
           "intercurrentEventName",
-          "intercurrentEventDesc",
+          "intercurrentEventDescription",
           "intercurrentEventStrategy"
         ],
         "type": "object",
@@ -608,8 +608,8 @@
             "title": "Intercurrenteventname",
             "type": "string"
           },
-          "intercurrentEventDesc": {
-            "title": "Intercurrenteventdesc",
+          "intercurrentEventDescription": {
+            "title": "Intercurrenteventdescription",
             "type": "string"
           },
           "intercurrentEventStrategy": {
@@ -622,7 +622,7 @@
         "title": "InvestigationalIntervention",
         "required": [
           "investigationalInterventionId",
-          "interventionDesc"
+          "interventionDescription"
         ],
         "type": "object",
         "properties": {
@@ -630,8 +630,8 @@
             "title": "Investigationalinterventionid",
             "type": "string"
           },
-          "interventionDesc": {
-            "title": "Interventiondesc",
+          "interventionDescription": {
+            "title": "Interventiondescription",
             "type": "string"
           },
           "codes": {
@@ -658,7 +658,7 @@
         "title": "Objective",
         "required": [
           "objectiveId",
-          "objectiveDesc"
+          "objectiveDescription"
         ],
         "type": "object",
         "properties": {
@@ -666,8 +666,8 @@
             "title": "Objectiveid",
             "type": "string"
           },
-          "objectiveDesc": {
-            "title": "Objectivedesc",
+          "objectiveDescription": {
+            "title": "Objectivedescription",
             "type": "string"
           },
           "objectiveLevel": {
@@ -902,9 +902,9 @@
         "required": [
           "studyArmId",
           "studyArmName",
-          "studyArmDesc",
+          "studyArmDescription",
           "studyArmType",
-          "studyArmDataOriginDesc",
+          "studyArmDataOriginDescription",
           "studyArmDataOriginType"
         ],
         "type": "object",
@@ -917,8 +917,8 @@
             "title": "Studyarmname",
             "type": "string"
           },
-          "studyArmDesc": {
-            "title": "Studyarmdesc",
+          "studyArmDescription": {
+            "title": "Studyarmdescription",
             "type": "string"
           },
           "studyArmType": {
@@ -933,8 +933,8 @@
               }
             ]
           },
-          "studyArmDataOriginDesc": {
-            "title": "Studyarmdataorigindesc",
+          "studyArmDataOriginDescription": {
+            "title": "Studyarmdataorigindescription",
             "type": "string"
           },
           "studyArmDataOriginType": {
@@ -1012,7 +1012,7 @@
         "required": [
           "studyDataId",
           "studyDataName",
-          "studyDataDesc",
+          "studyDataDescription",
           "crfLink"
         ],
         "type": "object",
@@ -1025,8 +1025,8 @@
             "title": "Studydataname",
             "type": "string"
           },
-          "studyDataDesc": {
-            "title": "Studydatadesc",
+          "studyDataDescription": {
+            "title": "Studydatadescription",
             "type": "string"
           },
           "crfLink": {
@@ -1303,7 +1303,7 @@
         "title": "StudyDesignPopulation",
         "required": [
           "studyDesignPopulationId",
-          "populationDesc"
+          "populationDescription"
         ],
         "type": "object",
         "properties": {
@@ -1311,8 +1311,8 @@
             "title": "Studydesignpopulationid",
             "type": "string"
           },
-          "populationDesc": {
-            "title": "Populationdesc",
+          "populationDescription": {
+            "title": "Populationdescription",
             "type": "string"
           }
         }
@@ -1322,7 +1322,7 @@
         "required": [
           "studyElementId",
           "studyElementName",
-          "studyElementDesc"
+          "studyElementDescription"
         ],
         "type": "object",
         "properties": {
@@ -1334,8 +1334,8 @@
             "title": "Studyelementname",
             "type": "string"
           },
-          "studyElementDesc": {
-            "title": "Studyelementdesc",
+          "studyElementDescription": {
+            "title": "Studyelementdescription",
             "type": "string"
           },
           "transitionStartRule": {
@@ -1369,7 +1369,7 @@
         "required": [
           "studyEpochId",
           "studyEpochName",
-          "studyEpochDesc",
+          "studyEpochDescription",
           "studyEpochType",
           "previousStudyEpochId",
           "nextStudyEpochId",
@@ -1385,8 +1385,8 @@
             "title": "Studyepochname",
             "type": "string"
           },
-          "studyEpochDesc": {
-            "title": "Studyepochdesc",
+          "studyEpochDescription": {
+            "title": "Studyepochdescription",
             "type": "string"
           },
           "studyEpochType": {
@@ -1525,7 +1525,7 @@
         "title": "TransitionRule",
         "required": [
           "transitionRuleId",
-          "transitionRuleDesc"
+          "transitionRuleDescription"
         ],
         "type": "object",
         "properties": {
@@ -1533,8 +1533,8 @@
             "title": "Transitionruleid",
             "type": "string"
           },
-          "transitionRuleDesc": {
-            "title": "Transitionruledesc",
+          "transitionRuleDescription": {
+            "title": "Transitionruledescription",
             "type": "string"
           }
         }
@@ -1576,7 +1576,7 @@
         "title": "Workflow",
         "required": [
           "workflowId",
-          "workflowDesc"
+          "workflowDescription"
         ],
         "type": "object",
         "properties": {
@@ -1584,8 +1584,8 @@
             "title": "Workflowid",
             "type": "string"
           },
-          "workflowDesc": {
-            "title": "Workflowdesc",
+          "workflowDescription": {
+            "title": "Workflowdescription",
             "type": "string"
           },
           "workflowItems": {
@@ -1612,7 +1612,7 @@
         "title": "WorkflowItem",
         "required": [
           "workflowItemId",
-          "workflowItemDesc"
+          "workflowItemDescription"
         ],
         "type": "object",
         "properties": {
@@ -1620,8 +1620,8 @@
             "title": "Workflowitemid",
             "type": "string"
           },
-          "workflowItemDesc": {
-            "title": "Workflowitemdesc",
+          "workflowItemDescription": {
+            "title": "Workflowitemdescription",
             "type": "string"
           },
           "previousWorkflowItemId": {
