@@ -3,7 +3,7 @@
   "info": {
     "title": "Simple API for DDF",
     "description": "A simple TransCelerate Digital Data Flow (DDF) Study Definitions Repository API.",
-    "version": "1.1 Provisional (0.24)"
+    "version": "1.2 Provisional (0.26)"
   },
   "paths": {
     "/v1/studyDefinitions": {
@@ -240,70 +240,46 @@
       "Activity": {
         "title": "Activity",
         "required": [
+          "activityId",
           "activityName",
-          "activityDesc"
+          "activityDescription"
         ],
         "type": "object",
         "properties": {
-          "uuid": {
-            "title": "Uuid",
-            "type": "string",
-            "format": "uuid"
+          "activityId": {
+            "title": "Activityid",
+            "type": "string"
           },
           "activityName": {
             "title": "Activityname",
             "type": "string"
           },
-          "activityDesc": {
-            "title": "Activitydesc",
+          "activityDescription": {
+            "title": "Activitydescription",
             "type": "string"
           },
           "previousActivityId": {
             "title": "Previousactivityid",
-            "type": "string",
-            "format": "uuid"
+            "type": "string"
           },
           "nextActivityId": {
             "title": "Nextactivityid",
-            "type": "string",
-            "format": "uuid"
+            "type": "string"
           },
           "definedProcedures": {
             "title": "Definedprocedures",
-            "anyOf": [
-              {
-                "type": "array",
-                "items": {
-                  "$ref": "#/components/schemas/Procedure"
-                }
-              },
-              {
-                "type": "array",
-                "items": {
-                  "type": "string",
-                  "format": "uuid"
-                }
-              }
-            ],
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/Procedure"
+            },
             "default": []
           },
           "studyDataCollection": {
             "title": "Studydatacollection",
-            "anyOf": [
-              {
-                "type": "array",
-                "items": {
-                  "$ref": "#/components/schemas/StudyData"
-                }
-              },
-              {
-                "type": "array",
-                "items": {
-                  "type": "string",
-                  "format": "uuid"
-                }
-              }
-            ],
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/StudyData"
+            },
             "default": []
           }
         }
@@ -311,16 +287,17 @@
       "AnalysisPopulation": {
         "title": "AnalysisPopulation",
         "required": [
-          "populationDesc"
+          "analysisPopulationId",
+          "populationDescription"
         ],
         "type": "object",
         "properties": {
-          "uuid": {
-            "title": "Uuid",
+          "analysisPopulationId": {
+            "title": "Analysispopulationid",
             "type": "string"
           },
-          "populationDesc": {
-            "title": "Populationdesc",
+          "populationDescription": {
+            "title": "Populationdescription",
             "type": "string"
           }
         }
@@ -328,6 +305,7 @@
       "Code": {
         "title": "Code",
         "required": [
+          "codeId",
           "code",
           "codeSystem",
           "codeSystemVersion",
@@ -335,10 +313,9 @@
         ],
         "type": "object",
         "properties": {
-          "uuid": {
-            "title": "Uuid",
-            "type": "string",
-            "format": "uuid"
+          "codeId": {
+            "title": "Codeid",
+            "type": "string"
           },
           "code": {
             "title": "Code",
@@ -361,204 +338,110 @@
       "Encounter": {
         "title": "Encounter",
         "required": [
+          "encounterId",
           "encounterName",
-          "encounterDesc"
+          "encounterDescription"
         ],
         "type": "object",
         "properties": {
-          "uuid": {
-            "title": "Uuid",
-            "type": "string",
-            "format": "uuid"
+          "encounterId": {
+            "title": "Encounterid",
+            "type": "string"
           },
           "encounterName": {
             "title": "Encountername",
             "type": "string"
           },
-          "encounterDesc": {
-            "title": "Encounterdesc",
+          "encounterDescription": {
+            "title": "Encounterdescription",
             "type": "string"
           },
           "previousEncounterId": {
             "title": "Previousencounterid",
-            "type": "string",
-            "format": "uuid"
+            "type": "string"
           },
           "nextEncounterId": {
             "title": "Nextencounterid",
-            "type": "string",
-            "format": "uuid"
+            "type": "string"
           },
           "encounterType": {
-            "title": "Encountertype",
-            "anyOf": [
-              {
-                "$ref": "#/components/schemas/Code"
-              },
-              {
-                "type": "string",
-                "format": "uuid"
-              }
-            ]
+            "$ref": "#/components/schemas/Code"
           },
           "encounterEnvironmentalSetting": {
-            "title": "Encounterenvironmentalsetting",
-            "anyOf": [
-              {
-                "$ref": "#/components/schemas/Code"
-              },
-              {
-                "type": "string",
-                "format": "uuid"
-              }
-            ]
+            "$ref": "#/components/schemas/Code"
           },
           "encounterContactMode": {
-            "title": "Encountercontactmode",
-            "anyOf": [
-              {
-                "$ref": "#/components/schemas/Code"
-              },
-              {
-                "type": "string",
-                "format": "uuid"
-              }
-            ]
+            "$ref": "#/components/schemas/Code"
           },
           "transitionStartRule": {
-            "title": "Transitionstartrule",
-            "anyOf": [
-              {
-                "$ref": "#/components/schemas/TransitionRule"
-              },
-              {
-                "type": "string",
-                "format": "uuid"
-              }
-            ]
+            "$ref": "#/components/schemas/TransitionRule"
           },
           "transitionEndRule": {
-            "title": "Transitionendrule",
-            "anyOf": [
-              {
-                "$ref": "#/components/schemas/TransitionRule"
-              },
-              {
-                "type": "string",
-                "format": "uuid"
-              }
-            ]
+            "$ref": "#/components/schemas/TransitionRule"
           }
         }
       },
       "Endpoint": {
         "title": "Endpoint",
         "required": [
-          "endpointDesc",
-          "endpointPurposeDesc"
+          "endpointId",
+          "endpointDescription",
+          "endpointPurposeDescription"
         ],
         "type": "object",
         "properties": {
-          "uuid": {
-            "title": "Uuid",
-            "type": "string",
-            "format": "uuid"
-          },
-          "endpointDesc": {
-            "title": "Endpointdesc",
+          "endpointId": {
+            "title": "Endpointid",
             "type": "string"
           },
-          "endpointPurposeDesc": {
-            "title": "Endpointpurposedesc",
+          "endpointDescription": {
+            "title": "Endpointdescription",
+            "type": "string"
+          },
+          "endpointPurposeDescription": {
+            "title": "Endpointpurposedescription",
             "type": "string"
           },
           "endpointLevel": {
-            "title": "Endpointlevel",
-            "anyOf": [
-              {
-                "$ref": "#/components/schemas/Code"
-              },
-              {
-                "type": "string",
-                "format": "uuid"
-              }
-            ]
+            "$ref": "#/components/schemas/Code"
           }
         }
       },
       "Estimand": {
         "title": "Estimand",
         "required": [
+          "estimandId",
           "summaryMeasure",
-          "analysisPopulation",
-          "treatment",
-          "variableOfInterest",
-          "intercurrentEvents"
+          "analysisPopulation"
         ],
         "type": "object",
         "properties": {
-          "uuid": {
-            "title": "Uuid",
-            "type": "string",
-            "format": "uuid"
+          "estimandId": {
+            "title": "Estimandid",
+            "type": "string"
           },
           "summaryMeasure": {
             "title": "Summarymeasure",
             "type": "string"
           },
           "analysisPopulation": {
-            "title": "Analysispopulation",
-            "anyOf": [
-              {
-                "$ref": "#/components/schemas/AnalysisPopulation"
-              },
-              {
-                "type": "string",
-                "format": "uuid"
-              }
-            ]
+            "$ref": "#/components/schemas/AnalysisPopulation"
           },
           "treatment": {
             "title": "Treatment",
-            "anyOf": [
-              {
-                "$ref": "#/components/schemas/InvestigationalIntervention"
-              },
-              {
-                "type": "string",
-                "format": "uuid"
-              }
-            ]
+            "type": "string"
           },
           "variableOfInterest": {
             "title": "Variableofinterest",
-            "anyOf": [
-              {
-                "$ref": "#/components/schemas/Endpoint"
-              },
-              {
-                "type": "string",
-                "format": "uuid"
-              }
-            ]
+            "type": "string"
           },
           "intercurrentEvents": {
             "title": "Intercurrentevents",
-            "anyOf": [
-              {
-                "type": "array",
-                "items": {
-                  "$ref": "#/components/schemas/IntercurrentEvent"
-                }
-              },
-              {
-                "type": "array",
-                "items": {
-                  "type": "string",
-                  "format": "uuid"
-                }
-              }
-            ]
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/IntercurrentEvent"
+            },
+            "default": []
           }
         }
       },
@@ -578,59 +461,49 @@
       "Indication": {
         "title": "Indication",
         "required": [
-          "indicationDesc"
+          "indicationId",
+          "indicationDescription"
         ],
         "type": "object",
         "properties": {
-          "uuid": {
-            "title": "Uuid",
-            "type": "string",
-            "format": "uuid"
+          "indicationId": {
+            "title": "Indicationid",
+            "type": "string"
+          },
+          "indicationDescription": {
+            "title": "Indicationdescription",
+            "type": "string"
           },
           "codes": {
             "title": "Codes",
-            "anyOf": [
-              {
-                "type": "array",
-                "items": {
-                  "$ref": "#/components/schemas/Code"
-                }
-              },
-              {
-                "type": "array",
-                "items": {
-                  "type": "string",
-                  "format": "uuid"
-                }
-              }
-            ]
-          },
-          "indicationDesc": {
-            "title": "Indicationdesc",
-            "type": "string"
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/Code"
+            },
+            "default": []
           }
         }
       },
       "IntercurrentEvent": {
         "title": "IntercurrentEvent",
         "required": [
+          "intercurrentEventId",
           "intercurrentEventName",
-          "intercurrentEventDesc",
+          "intercurrentEventDescription",
           "intercurrentEventStrategy"
         ],
         "type": "object",
         "properties": {
-          "uuid": {
-            "title": "Uuid",
-            "type": "string",
-            "format": "uuid"
+          "intercurrentEventId": {
+            "title": "Intercurrenteventid",
+            "type": "string"
           },
           "intercurrentEventName": {
             "title": "Intercurrenteventname",
             "type": "string"
           },
-          "intercurrentEventDesc": {
-            "title": "Intercurrenteventdesc",
+          "intercurrentEventDescription": {
+            "title": "Intercurrenteventdescription",
             "type": "string"
           },
           "intercurrentEventStrategy": {
@@ -642,90 +515,62 @@
       "InvestigationalIntervention": {
         "title": "InvestigationalIntervention",
         "required": [
-          "interventionDesc"
+          "investigationalInterventionId",
+          "interventionDescription"
         ],
         "type": "object",
         "properties": {
-          "uuid": {
-            "title": "Uuid",
-            "type": "string",
-            "format": "uuid"
+          "investigationalInterventionId": {
+            "title": "Investigationalinterventionid",
+            "type": "string"
+          },
+          "interventionDescription": {
+            "title": "Interventiondescription",
+            "type": "string"
           },
           "codes": {
             "title": "Codes",
-            "anyOf": [
-              {
-                "type": "array",
-                "items": {
-                  "$ref": "#/components/schemas/Code"
-                }
-              },
-              {
-                "type": "array",
-                "items": {
-                  "type": "string",
-                  "format": "uuid"
-                }
-              }
-            ]
-          },
-          "interventionDesc": {
-            "title": "Interventiondesc",
-            "type": "string"
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/Code"
+            },
+            "default": []
           }
         }
       },
       "Objective": {
         "title": "Objective",
         "required": [
-          "objectiveDesc"
+          "objectiveId",
+          "objectiveDescription"
         ],
         "type": "object",
         "properties": {
-          "uuid": {
-            "title": "Uuid",
-            "type": "string",
-            "format": "uuid"
+          "objectiveId": {
+            "title": "Objectiveid",
+            "type": "string"
           },
-          "objectiveDesc": {
-            "title": "Objectivedesc",
+          "objectiveDescription": {
+            "title": "Objectivedescription",
             "type": "string"
           },
           "objectiveLevel": {
-            "title": "Objectivelevel",
-            "anyOf": [
-              {
-                "$ref": "#/components/schemas/Code"
-              },
-              {
-                "type": "string",
-                "format": "uuid"
-              }
-            ]
+            "$ref": "#/components/schemas/Code"
           },
           "objectiveEndpoints": {
             "title": "Objectiveendpoints",
-            "anyOf": [
-              {
-                "type": "array",
-                "items": {
-                  "$ref": "#/components/schemas/Endpoint"
-                }
-              },
-              {
-                "type": "array",
-                "items": {
-                  "type": "string",
-                  "format": "uuid"
-                }
-              }
-            ]
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/Endpoint"
+            },
+            "default": []
           }
         }
       },
       "Organisation": {
         "title": "Organisation",
         "required": [
+          "organizationId",
           "organisationIdentifierScheme",
           "organisationIdentifier",
           "organisationName",
@@ -733,10 +578,9 @@
         ],
         "type": "object",
         "properties": {
-          "uuid": {
-            "title": "Uuid",
-            "type": "string",
-            "format": "uuid"
+          "organizationId": {
+            "title": "Organizationid",
+            "type": "string"
           },
           "organisationIdentifierScheme": {
             "title": "Organisationidentifierscheme",
@@ -751,47 +595,29 @@
             "type": "string"
           },
           "organisationType": {
-            "title": "Organisationtype",
-            "anyOf": [
-              {
-                "type": "string",
-                "format": "uuid"
-              },
-              {
-                "$ref": "#/components/schemas/Code"
-              }
-            ]
+            "$ref": "#/components/schemas/Code"
           }
         }
       },
       "Procedure": {
         "title": "Procedure",
         "required": [
+          "procedureId",
           "procedureType",
           "procedureCode"
         ],
         "type": "object",
         "properties": {
-          "uuid": {
-            "title": "Uuid",
-            "type": "string",
-            "format": "uuid"
+          "procedureId": {
+            "title": "Procedureid",
+            "type": "string"
           },
           "procedureType": {
             "title": "Proceduretype",
             "type": "string"
           },
           "procedureCode": {
-            "title": "Procedurecode",
-            "anyOf": [
-              {
-                "$ref": "#/components/schemas/Code"
-              },
-              {
-                "type": "string",
-                "format": "uuid"
-              }
-            ]
+            "$ref": "#/components/schemas/Code"
           }
         }
       },
@@ -803,8 +629,8 @@
         ],
         "type": "object",
         "properties": {
-          "uuid": {
-            "title": "Uuid",
+          "studyId": {
+            "title": "Studyid",
             "type": "string",
             "format": "uuid"
           },
@@ -817,103 +643,41 @@
             "type": "string"
           },
           "studyType": {
-            "title": "Studytype",
-            "anyOf": [
-              {
-                "$ref": "#/components/schemas/Code"
-              },
-              {
-                "type": "string",
-                "format": "uuid"
-              }
-            ]
+            "$ref": "#/components/schemas/Code"
           },
           "studyPhase": {
-            "title": "Studyphase",
-            "anyOf": [
-              {
-                "$ref": "#/components/schemas/Code"
-              },
-              {
-                "type": "string",
-                "format": "uuid"
-              }
-            ]
+            "$ref": "#/components/schemas/Code"
           },
           "businessTherapeuticAreas": {
             "title": "Businesstherapeuticareas",
-            "anyOf": [
-              {
-                "type": "array",
-                "items": {
-                  "$ref": "#/components/schemas/Code"
-                }
-              },
-              {
-                "type": "array",
-                "items": {
-                  "type": "string",
-                  "format": "uuid"
-                }
-              }
-            ],
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/Code"
+            },
             "default": []
           },
           "studyIdentifiers": {
             "title": "Studyidentifiers",
-            "anyOf": [
-              {
-                "type": "array",
-                "items": {
-                  "$ref": "#/components/schemas/StudyIdentifier"
-                }
-              },
-              {
-                "type": "array",
-                "items": {
-                  "type": "string",
-                  "format": "uuid"
-                }
-              }
-            ],
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/StudyIdentifier"
+            },
             "default": []
           },
           "studyProtocolVersions": {
             "title": "Studyprotocolversions",
-            "anyOf": [
-              {
-                "type": "array",
-                "items": {
-                  "$ref": "#/components/schemas/StudyProtocolVersion"
-                }
-              },
-              {
-                "type": "array",
-                "items": {
-                  "type": "string",
-                  "format": "uuid"
-                }
-              }
-            ],
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/StudyProtocolVersion"
+            },
             "default": []
           },
           "studyDesigns": {
             "title": "Studydesigns",
-            "anyOf": [
-              {
-                "type": "array",
-                "items": {
-                  "$ref": "#/components/schemas/StudyDesign"
-                }
-              },
-              {
-                "type": "array",
-                "items": {
-                  "type": "string",
-                  "format": "uuid"
-                }
-              }
-            ],
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/StudyDesign"
+            },
             "default": []
           }
         }
@@ -921,107 +685,62 @@
       "StudyArm": {
         "title": "StudyArm",
         "required": [
+          "studyArmId",
           "studyArmName",
-          "studyArmDesc",
+          "studyArmDescription",
           "studyArmType",
-          "studyArmDataOriginDesc",
+          "studyArmDataOriginDescription",
           "studyArmDataOriginType"
         ],
         "type": "object",
         "properties": {
-          "uuid": {
-            "title": "Uuid",
-            "type": "string",
-            "format": "uuid"
+          "studyArmId": {
+            "title": "Studyarmid",
+            "type": "string"
           },
           "studyArmName": {
             "title": "Studyarmname",
             "type": "string"
           },
-          "studyArmDesc": {
-            "title": "Studyarmdesc",
+          "studyArmDescription": {
+            "title": "Studyarmdescription",
             "type": "string"
           },
           "studyArmType": {
-            "title": "Studyarmtype",
-            "anyOf": [
-              {
-                "$ref": "#/components/schemas/Code"
-              },
-              {
-                "type": "string",
-                "format": "uuid"
-              }
-            ]
+            "$ref": "#/components/schemas/Code"
           },
-          "studyArmDataOriginDesc": {
-            "title": "Studyarmdataorigindesc",
+          "studyArmDataOriginDescription": {
+            "title": "Studyarmdataorigindescription",
             "type": "string"
           },
           "studyArmDataOriginType": {
-            "title": "Studyarmdataorigintype",
-            "anyOf": [
-              {
-                "$ref": "#/components/schemas/Code"
-              },
-              {
-                "type": "string",
-                "format": "uuid"
-              }
-            ]
+            "$ref": "#/components/schemas/Code"
           }
         }
       },
       "StudyCell": {
         "title": "StudyCell",
+        "required": [
+          "studyCellId"
+        ],
         "type": "object",
         "properties": {
-          "uuid": {
-            "title": "Uuid",
-            "type": "string",
-            "format": "uuid"
+          "studyCellId": {
+            "title": "Studycellid",
+            "type": "string"
           },
           "studyArm": {
-            "title": "Studyarm",
-            "anyOf": [
-              {
-                "$ref": "#/components/schemas/StudyArm"
-              },
-              {
-                "type": "string",
-                "format": "uuid"
-              }
-            ]
+            "$ref": "#/components/schemas/StudyArm"
           },
           "studyEpoch": {
-            "title": "Studyepoch",
-            "anyOf": [
-              {
-                "$ref": "#/components/schemas/StudyEpoch"
-              },
-              {
-                "type": "string",
-                "format": "uuid"
-              }
-            ]
+            "$ref": "#/components/schemas/StudyEpoch"
           },
           "studyElements": {
             "title": "Studyelements",
-            "anyOf": [
-              {
-                "type": "array",
-                "items": {
-                  "$ref": "#/components/schemas/StudyElement"
-                }
-              },
-              {
-                "type": "array",
-                "items": {
-                  "type": "string",
-                  "format": "uuid"
-                }
-              }
-            ],
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/StudyElement"
+            },
             "default": []
           }
         }
@@ -1029,23 +748,23 @@
       "StudyData": {
         "title": "StudyData",
         "required": [
+          "studyDataId",
           "studyDataName",
-          "studyDataDesc",
+          "studyDataDescription",
           "crfLink"
         ],
         "type": "object",
         "properties": {
-          "uuid": {
-            "title": "Uuid",
-            "type": "string",
-            "format": "uuid"
+          "studyDataId": {
+            "title": "Studydataid",
+            "type": "string"
           },
           "studyDataName": {
             "title": "Studydataname",
             "type": "string"
           },
-          "studyDataDesc": {
-            "title": "Studydatadesc",
+          "studyDataDescription": {
+            "title": "Studydatadescription",
             "type": "string"
           },
           "crfLink": {
@@ -1057,215 +776,122 @@
       "StudyDesign": {
         "title": "StudyDesign",
         "required": [
-          "trialIntentTypes",
-          "trialType",
+          "studyDesignId",
+          "studyDesignName",
+          "studyDesignDescription",
           "interventionModel"
         ],
         "type": "object",
         "properties": {
-          "uuid": {
-            "title": "Uuid",
-            "type": "string",
-            "format": "uuid"
+          "studyDesignId": {
+            "title": "Studydesignid",
+            "type": "string"
+          },
+          "studyDesignName": {
+            "title": "Studydesignname",
+            "type": "string"
+          },
+          "studyDesignDescription": {
+            "title": "Studydesigndescription",
+            "type": "string"
           },
           "trialIntentTypes": {
             "title": "Trialintenttypes",
-            "anyOf": [
-              {
-                "type": "array",
-                "items": {
-                  "$ref": "#/components/schemas/Code"
-                }
-              },
-              {
-                "type": "array",
-                "items": {
-                  "type": "string",
-                  "format": "uuid"
-                }
-              }
-            ]
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/Code"
+            },
+            "default": []
           },
           "trialType": {
             "title": "Trialtype",
-            "anyOf": [
-              {
-                "type": "array",
-                "items": {
-                  "$ref": "#/components/schemas/Code"
-                }
-              },
-              {
-                "type": "array",
-                "items": {
-                  "type": "string",
-                  "format": "uuid"
-                }
-              }
-            ]
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/Code"
+            },
+            "default": []
           },
           "interventionModel": {
-            "title": "Interventionmodel",
-            "anyOf": [
-              {
-                "$ref": "#/components/schemas/Code"
-              },
-              {
-                "type": "string",
-                "format": "uuid"
-              }
-            ]
-          },
-          "therapeuticAreas": {
-            "title": "Therapeuticareas",
-            "anyOf": [
-              {
-                "type": "array",
-                "items": {
-                  "$ref": "#/components/schemas/Code"
-                }
-              },
-              {
-                "type": "array",
-                "items": {
-                  "type": "string",
-                  "format": "uuid"
-                }
-              }
-            ],
-            "default": []
+            "$ref": "#/components/schemas/Code"
           },
           "studyCells": {
             "title": "Studycells",
-            "anyOf": [
-              {
-                "type": "array",
-                "items": {
-                  "$ref": "#/components/schemas/StudyCell"
-                }
-              },
-              {
-                "type": "array",
-                "items": {
-                  "type": "string",
-                  "format": "uuid"
-                }
-              }
-            ],
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/StudyCell"
+            },
             "default": []
           },
           "studyIndications": {
             "title": "Studyindications",
-            "anyOf": [
-              {
-                "type": "array",
-                "items": {
-                  "$ref": "#/components/schemas/Indication"
-                }
-              },
-              {
-                "type": "array",
-                "items": {
-                  "type": "string",
-                  "format": "uuid"
-                }
-              }
-            ],
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/Indication"
+            },
             "default": []
           },
           "studyInvestigationalInterventions": {
             "title": "Studyinvestigationalinterventions",
-            "anyOf": [
-              {
-                "type": "array",
-                "items": {
-                  "$ref": "#/components/schemas/InvestigationalIntervention"
-                }
-              },
-              {
-                "type": "array",
-                "items": {
-                  "type": "string",
-                  "format": "uuid"
-                }
-              }
-            ],
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/InvestigationalIntervention"
+            },
             "default": []
           },
-          "studyPopulations": {
-            "title": "Studypopulations",
-            "anyOf": [
-              {
-                "type": "array",
-                "items": {
-                  "$ref": "#/components/schemas/StudyDesignPopulation"
-                }
-              },
-              {
-                "type": "array",
-                "items": {
-                  "type": "string",
-                  "format": "uuid"
-                }
-              }
-            ],
+          "studyStudyDesignPopulations": {
+            "title": "Studystudydesignpopulations",
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/StudyDesignPopulation"
+            },
             "default": []
           },
           "studyObjectives": {
             "title": "Studyobjectives",
-            "anyOf": [
-              {
-                "type": "array",
-                "items": {
-                  "$ref": "#/components/schemas/Objective"
-                }
-              },
-              {
-                "type": "array",
-                "items": {
-                  "type": "string",
-                  "format": "uuid"
-                }
-              }
-            ],
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/Objective"
+            },
             "default": []
           },
           "studyWorkflows": {
             "title": "Studyworkflows",
-            "anyOf": [
-              {
-                "type": "array",
-                "items": {
-                  "$ref": "#/components/schemas/Workflow"
-                }
-              },
-              {
-                "type": "array",
-                "items": {
-                  "type": "string",
-                  "format": "uuid"
-                }
-              }
-            ],
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/Workflow"
+            },
+            "default": []
+          },
+          "therapeuticAreas": {
+            "title": "Therapeuticareas",
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/Code"
+            },
             "default": []
           },
           "studyEstimands": {
             "title": "Studyestimands",
-            "anyOf": [
-              {
-                "type": "array",
-                "items": {
-                  "$ref": "#/components/schemas/Estimand"
-                }
-              },
-              {
-                "type": "array",
-                "items": {
-                  "type": "string",
-                  "format": "uuid"
-                }
-              }
-            ],
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/Estimand"
+            },
+            "default": []
+          },
+          "encounters": {
+            "title": "Encounters",
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/Encounter"
+            },
+            "default": []
+          },
+          "activities": {
+            "title": "Activities",
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/Activity"
+            },
             "default": []
           }
         }
@@ -1273,17 +899,17 @@
       "StudyDesignPopulation": {
         "title": "StudyDesignPopulation",
         "required": [
-          "populationDesc"
+          "studyDesignPopulationId",
+          "populationDescription"
         ],
         "type": "object",
         "properties": {
-          "uuid": {
-            "title": "Uuid",
-            "type": "string",
-            "format": "uuid"
+          "studyDesignPopulationId": {
+            "title": "Studydesignpopulationid",
+            "type": "string"
           },
-          "populationDesc": {
-            "title": "Populationdesc",
+          "populationDescription": {
+            "title": "Populationdescription",
             "type": "string"
           }
         }
@@ -1291,149 +917,103 @@
       "StudyElement": {
         "title": "StudyElement",
         "required": [
+          "studyElementId",
           "studyElementName",
-          "studyElementDesc"
+          "studyElementDescription"
         ],
         "type": "object",
         "properties": {
-          "uuid": {
-            "title": "Uuid",
-            "type": "string",
-            "format": "uuid"
+          "studyElementId": {
+            "title": "Studyelementid",
+            "type": "string"
           },
           "studyElementName": {
             "title": "Studyelementname",
             "type": "string"
           },
-          "studyElementDesc": {
-            "title": "Studyelementdesc",
+          "studyElementDescription": {
+            "title": "Studyelementdescription",
             "type": "string"
           },
           "transitionStartRule": {
-            "title": "Transitionstartrule",
-            "anyOf": [
-              {
-                "$ref": "#/components/schemas/TransitionRule"
-              },
-              {
-                "type": "string",
-                "format": "uuid"
-              }
-            ]
+            "$ref": "#/components/schemas/TransitionRule"
           },
           "transitionEndRule": {
-            "title": "Transitionendrule",
-            "anyOf": [
-              {
-                "$ref": "#/components/schemas/TransitionRule"
-              },
-              {
-                "type": "string",
-                "format": "uuid"
-              }
-            ]
+            "$ref": "#/components/schemas/TransitionRule"
           }
         }
       },
       "StudyEpoch": {
         "title": "StudyEpoch",
         "required": [
+          "studyEpochId",
           "studyEpochName",
-          "studyEpochDesc",
+          "studyEpochDescription",
           "studyEpochType",
-          "encounters"
+          "previousStudyEpochId",
+          "nextStudyEpochId"
         ],
         "type": "object",
         "properties": {
-          "uuid": {
-            "title": "Uuid",
-            "type": "string",
-            "format": "uuid"
+          "studyEpochId": {
+            "title": "Studyepochid",
+            "type": "string"
           },
           "studyEpochName": {
             "title": "Studyepochname",
             "type": "string"
           },
-          "studyEpochDesc": {
-            "title": "Studyepochdesc",
+          "studyEpochDescription": {
+            "title": "Studyepochdescription",
             "type": "string"
+          },
+          "studyEpochType": {
+            "$ref": "#/components/schemas/Code"
           },
           "previousStudyEpochId": {
             "title": "Previousstudyepochid",
-            "type": "string",
-            "format": "uuid"
+            "type": "string"
           },
           "nextStudyEpochId": {
             "title": "Nextstudyepochid",
-            "type": "string",
-            "format": "uuid"
-          },
-          "studyEpochType": {
-            "title": "Studyepochtype",
-            "anyOf": [
-              {
-                "$ref": "#/components/schemas/Code"
-              },
-              {
-                "type": "string",
-                "format": "uuid"
-              }
-            ]
+            "type": "string"
           },
           "encounters": {
             "title": "Encounters",
-            "anyOf": [
-              {
-                "type": "array",
-                "items": {
-                  "$ref": "#/components/schemas/Encounter"
-                }
-              },
-              {
-                "type": "array",
-                "items": {
-                  "type": "string",
-                  "format": "uuid"
-                }
-              }
-            ]
+            "type": "array",
+            "items": {
+              "type": "string"
+            },
+            "default": []
           }
         }
       },
       "StudyIdentifier": {
         "title": "StudyIdentifier",
         "required": [
+          "studyIdentifierId",
           "studyIdentifier",
           "studyIdentifierScope"
         ],
         "type": "object",
         "properties": {
-          "uuid": {
-            "title": "Uuid",
-            "type": "string",
-            "format": "uuid"
+          "studyIdentifierId": {
+            "title": "Studyidentifierid",
+            "type": "string"
           },
           "studyIdentifier": {
             "title": "Studyidentifier",
             "type": "string"
           },
           "studyIdentifierScope": {
-            "title": "Studyidentifierscope",
-            "anyOf": [
-              {
-                "type": "string",
-                "format": "uuid"
-              },
-              {
-                "$ref": "#/components/schemas/Organisation"
-              }
-            ]
+            "$ref": "#/components/schemas/Organisation"
           }
         }
       },
       "StudyProtocolVersion": {
         "title": "StudyProtocolVersion",
         "required": [
+          "studyProtocolVersionId",
           "briefTitle",
           "officialTitle",
           "publicTitle",
@@ -1444,10 +1024,9 @@
         ],
         "type": "object",
         "properties": {
-          "uuid": {
-            "title": "Uuid",
-            "type": "string",
-            "format": "uuid"
+          "studyProtocolVersionId": {
+            "title": "Studyprotocolversionid",
+            "type": "string"
           },
           "briefTitle": {
             "title": "Brieftitle",
@@ -1479,33 +1058,24 @@
             "format": "date"
           },
           "protocolStatus": {
-            "title": "Protocolstatus",
-            "anyOf": [
-              {
-                "type": "string",
-                "format": "uuid"
-              },
-              {
-                "$ref": "#/components/schemas/Code"
-              }
-            ]
+            "$ref": "#/components/schemas/Code"
           }
         }
       },
       "TransitionRule": {
         "title": "TransitionRule",
         "required": [
-          "transitionRuleDesc"
+          "transitionRuleId",
+          "transitionRuleDescription"
         ],
         "type": "object",
         "properties": {
-          "uuid": {
-            "title": "Uuid",
-            "type": "string",
-            "format": "uuid"
+          "transitionRuleId": {
+            "title": "Transitionruleid",
+            "type": "string"
           },
-          "transitionRuleDesc": {
-            "title": "Transitionruledesc",
+          "transitionRuleDescription": {
+            "title": "Transitionruledescription",
             "type": "string"
           }
         }
@@ -1546,88 +1116,60 @@
       "Workflow": {
         "title": "Workflow",
         "required": [
-          "workflowDesc"
+          "workflowId",
+          "workflowDescription"
         ],
         "type": "object",
         "properties": {
-          "uuid": {
-            "title": "Uuid",
-            "type": "string",
-            "format": "uuid"
+          "workflowId": {
+            "title": "Workflowid",
+            "type": "string"
           },
-          "workflowDesc": {
-            "title": "Workflowdesc",
+          "workflowDescription": {
+            "title": "Workflowdescription",
             "type": "string"
           },
           "workflowItems": {
             "title": "Workflowitems",
-            "anyOf": [
-              {
-                "type": "array",
-                "items": {
-                  "$ref": "#/components/schemas/WorkflowItem"
-                }
-              },
-              {
-                "type": "array",
-                "items": {
-                  "type": "string",
-                  "format": "uuid"
-                }
-              }
-            ]
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/WorkflowItem"
+            },
+            "default": []
           }
         }
       },
       "WorkflowItem": {
         "title": "WorkflowItem",
         "required": [
-          "workflowItemDesc"
+          "workflowItemId",
+          "workflowItemDescription"
         ],
         "type": "object",
         "properties": {
-          "uuid": {
-            "title": "Uuid",
-            "type": "string",
-            "format": "uuid"
+          "workflowItemId": {
+            "title": "Workflowitemid",
+            "type": "string"
           },
-          "workflowItemDesc": {
-            "title": "Workflowitemdesc",
+          "workflowItemDescription": {
+            "title": "Workflowitemdescription",
             "type": "string"
           },
           "previousWorkflowItemId": {
             "title": "Previousworkflowitemid",
-            "type": "string",
-            "format": "uuid"
+            "type": "string"
           },
           "nextWorkflowItemId": {
             "title": "Nextworkflowitemid",
-            "type": "string",
-            "format": "uuid"
+            "type": "string"
           },
-          "workflowItemEncounter": {
-            "title": "Workflowitemencounter",
-            "anyOf": [
-              {
-                "$ref": "#/components/schemas/Encounter"
-              },
-              {
-                "type": "string",
-                "format": "uuid"
-              }
-            ]
+          "workflowItemEncounterId": {
+            "title": "Workflowitemencounterid",
+            "type": "string"
           },
-          "workflowItemActivity": {
-            "title": "Workflowitemactivity",
-            "anyOf": [
-              {
-                "$ref": "#/components/schemas/Activity"
-              },
-              {
-                "type": "string",
-                "format": "uuid"
-              }
-            ]
+          "workflowItemActivityId": {
+            "title": "Workflowitemactivityid",
+            "type": "string"
           }
         }
       }
