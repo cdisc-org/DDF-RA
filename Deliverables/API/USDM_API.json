@@ -3,7 +3,7 @@
   "info": {
     "title": "Simple API for DDF",
     "description": "A simple TransCelerate Digital Data Flow (DDF) Study Definitions Repository API.",
-    "version": "1.2 Provisional (0.26)"
+    "version": "1.3 Provisional (0.27)"
   },
   "paths": {
     "/v1/studyDefinitions": {
@@ -39,15 +39,15 @@
           },
           "400": {
             "description": "Bad Request",
-            "message": "string",
             "detail": "string",
-            "status_code": "string"
+            "status_code": "string",
+            "message": "string"
           },
           "401": {
             "description": "Unauthorized",
-            "message": "string",
             "detail": "string",
-            "status_code": "string"
+            "status_code": "string",
+            "message": "string"
           },
           "422": {
             "description": "Validation Error",
@@ -92,15 +92,15 @@
           },
           "400": {
             "description": "Bad Request",
-            "message": "string",
             "detail": "string",
-            "status_code": "string"
+            "status_code": "string",
+            "message": "string"
           },
           "401": {
             "description": "Unauthorized",
-            "message": "string",
             "detail": "string",
-            "status_code": "string"
+            "status_code": "string",
+            "message": "string"
           },
           "422": {
             "description": "Validation Error",
@@ -151,15 +151,15 @@
           },
           "400": {
             "description": "Bad Request",
-            "message": "string",
             "detail": "string",
-            "status_code": "string"
+            "status_code": "string",
+            "message": "string"
           },
           "401": {
             "description": "Unauthorized",
-            "message": "string",
             "detail": "string",
-            "status_code": "string"
+            "status_code": "string",
+            "message": "string"
           },
           "422": {
             "description": "Validation Error",
@@ -211,15 +211,15 @@
           },
           "400": {
             "description": "Bad Request",
-            "message": "string",
             "detail": "string",
-            "status_code": "string"
+            "status_code": "string",
+            "message": "string"
           },
           "401": {
             "description": "Unauthorized",
-            "message": "string",
             "detail": "string",
-            "status_code": "string"
+            "status_code": "string",
+            "message": "string"
           },
           "422": {
             "description": "Validation Error",
@@ -242,7 +242,8 @@
         "required": [
           "activityId",
           "activityName",
-          "activityDescription"
+          "activityDescription",
+          "activityIsOptional"
         ],
         "type": "object",
         "properties": {
@@ -281,6 +282,10 @@
               "$ref": "#/components/schemas/StudyData"
             },
             "default": []
+          },
+          "activityIsOptional": {
+            "title": "Activityisoptional",
+            "type": "boolean"
           }
         }
       },
@@ -370,8 +375,13 @@
           "encounterEnvironmentalSetting": {
             "$ref": "#/components/schemas/Code"
           },
-          "encounterContactMode": {
-            "$ref": "#/components/schemas/Code"
+          "encounterContactModes": {
+            "title": "Encountercontactmodes",
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/Code"
+            },
+            "default": []
           },
           "transitionStartRule": {
             "$ref": "#/components/schemas/TransitionRule"
@@ -604,7 +614,8 @@
         "required": [
           "procedureId",
           "procedureType",
-          "procedureCode"
+          "procedureCode",
+          "procedureIsOptional"
         ],
         "type": "object",
         "properties": {
@@ -618,6 +629,10 @@
           },
           "procedureCode": {
             "$ref": "#/components/schemas/Code"
+          },
+          "procedureIsOptional": {
+            "title": "Procedureisoptional",
+            "type": "boolean"
           }
         }
       },
