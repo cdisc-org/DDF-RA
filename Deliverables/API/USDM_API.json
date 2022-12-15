@@ -3,7 +3,7 @@
   "info": {
     "title": "Simple API for DDF",
     "description": "A simple TransCelerate Digital Data Flow (DDF) Study Definitions Repository API.",
-    "version": "1.4 Provisional (0.28)"
+    "version": "1.5 Provisional (0.29)"
   },
   "paths": {
     "/v1/studyDefinitions": {
@@ -39,15 +39,15 @@
           },
           "400": {
             "description": "Bad Request",
-            "detail": "string",
             "message": "string",
-            "status_code": "string"
+            "status_code": "string",
+            "detail": "string"
           },
           "401": {
             "description": "Unauthorized",
-            "detail": "string",
             "message": "string",
-            "status_code": "string"
+            "status_code": "string",
+            "detail": "string"
           },
           "422": {
             "description": "Validation Error",
@@ -92,15 +92,15 @@
           },
           "400": {
             "description": "Bad Request",
-            "detail": "string",
             "message": "string",
-            "status_code": "string"
+            "status_code": "string",
+            "detail": "string"
           },
           "401": {
             "description": "Unauthorized",
-            "detail": "string",
             "message": "string",
-            "status_code": "string"
+            "status_code": "string",
+            "detail": "string"
           },
           "422": {
             "description": "Validation Error",
@@ -121,17 +121,6 @@
         "summary": "Update a study",
         "description": "Update an entire study including all child element with a single put",
         "operationId": "update_study_v1_studyDefinitions__uuid__put",
-        "parameters": [
-          {
-            "required": true,
-            "schema": {
-              "title": "Uuid",
-              "type": "string"
-            },
-            "name": "uuid",
-            "in": "path"
-          }
-        ],
         "requestBody": {
           "content": {
             "application/json": {
@@ -157,15 +146,15 @@
           },
           "400": {
             "description": "Bad Request",
-            "detail": "string",
             "message": "string",
-            "status_code": "string"
+            "status_code": "string",
+            "detail": "string"
           },
           "401": {
             "description": "Unauthorized",
-            "detail": "string",
             "message": "string",
-            "status_code": "string"
+            "status_code": "string",
+            "detail": "string"
           },
           "422": {
             "description": "Validation Error",
@@ -216,15 +205,15 @@
           },
           "400": {
             "description": "Bad Request",
-            "detail": "string",
             "message": "string",
-            "status_code": "string"
+            "status_code": "string",
+            "detail": "string"
           },
           "401": {
             "description": "Unauthorized",
-            "detail": "string",
             "message": "string",
-            "status_code": "string"
+            "status_code": "string",
+            "detail": "string"
           },
           "422": {
             "description": "Validation Error",
@@ -276,15 +265,15 @@
           },
           "400": {
             "description": "Bad Request",
-            "detail": "string",
             "message": "string",
-            "status_code": "string"
+            "status_code": "string",
+            "detail": "string"
           },
           "401": {
             "description": "Unauthorized",
-            "detail": "string",
             "message": "string",
-            "status_code": "string"
+            "status_code": "string",
+            "detail": "string"
           },
           "422": {
             "description": "Validation Error",
@@ -308,8 +297,7 @@
           "activityId",
           "activityName",
           "activityDescription",
-          "activityIsOptional",
-          "activityIsOptionalReason"
+          "activityIsOptional"
         ],
         "type": "object",
         "properties": {
@@ -355,6 +343,49 @@
           },
           "activityIsOptionalReason": {
             "title": "Activityisoptionalreason",
+            "type": "string"
+          }
+        }
+      },
+      "Address": {
+        "title": "Address",
+        "required": [
+          "text",
+          "line",
+          "city",
+          "district",
+          "state",
+          "postalCode",
+          "country"
+        ],
+        "type": "object",
+        "properties": {
+          "text": {
+            "title": "Text",
+            "type": "string"
+          },
+          "line": {
+            "title": "Line",
+            "type": "string"
+          },
+          "city": {
+            "title": "City",
+            "type": "string"
+          },
+          "district": {
+            "title": "District",
+            "type": "string"
+          },
+          "state": {
+            "title": "State",
+            "type": "string"
+          },
+          "postalCode": {
+            "title": "Postalcode",
+            "type": "string"
+          },
+          "country": {
+            "title": "Country",
             "type": "string"
           }
         }
@@ -701,6 +732,9 @@
           },
           "organisationType": {
             "$ref": "#/components/schemas/Code"
+          },
+          "organizationLegalAddress": {
+            "$ref": "#/components/schemas/Address"
           }
         }
       },
@@ -740,7 +774,9 @@
         "title": "Study",
         "required": [
           "studyTitle",
-          "studyVersion"
+          "studyVersion",
+          "studyRationale",
+          "studyAcronym"
         ],
         "type": "object",
         "properties": {
@@ -794,6 +830,14 @@
               "$ref": "#/components/schemas/StudyDesign"
             },
             "default": []
+          },
+          "studyRationale": {
+            "title": "Studyrationale",
+            "type": "string"
+          },
+          "studyAcronym": {
+            "title": "Studyacronym",
+            "type": "string"
           }
         }
       },
@@ -894,7 +938,8 @@
           "studyDesignId",
           "studyDesignName",
           "studyDesignDescription",
-          "interventionModel"
+          "interventionModel",
+          "studyDesignRationale"
         ],
         "type": "object",
         "properties": {
@@ -1008,6 +1053,10 @@
               "$ref": "#/components/schemas/Activity"
             },
             "default": []
+          },
+          "studyDesignRationale": {
+            "title": "Studydesignrationale",
+            "type": "string"
           }
         }
       },
@@ -1015,7 +1064,10 @@
         "title": "StudyDesignPopulation",
         "required": [
           "studyDesignPopulationId",
-          "populationDescription"
+          "populationDescription",
+          "plannedNumberOfParticipants",
+          "plannedMaximumAgeOfParticipants",
+          "plannedMinimumAgeOfParticipants"
         ],
         "type": "object",
         "properties": {
@@ -1026,6 +1078,26 @@
           "populationDescription": {
             "title": "Populationdescription",
             "type": "string"
+          },
+          "plannedNumberOfParticipants": {
+            "title": "Plannednumberofparticipants",
+            "type": "integer"
+          },
+          "plannedMaximumAgeOfParticipants": {
+            "title": "Plannedmaximumageofparticipants",
+            "type": "string"
+          },
+          "plannedMinimumAgeOfParticipants": {
+            "title": "Plannedminimumageofparticipants",
+            "type": "string"
+          },
+          "plannedSexOfParticipants": {
+            "title": "Plannedsexofparticipants",
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/Code"
+            },
+            "default": []
           }
         }
       },

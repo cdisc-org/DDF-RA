@@ -4,7 +4,7 @@ info:
   description: >-
     A simple TransCelerate Digital Data Flow (DDF) Study Definitions Repository
     API.
-  version: 1.4 Provisional (0.28)
+  version: 1.5 Provisional (0.29)
 paths:
   /v1/studyDefinitions:
     post:
@@ -30,21 +30,21 @@ paths:
                 format: uuid
         '400':
           description: Bad Request
-          detail: string
           message: string
           status_code: string
+          detail: string
         '401':
           description: Unauthorized
-          detail: string
           message: string
           status_code: string
+          detail: string
         '422':
           description: Validation Error
           content:
             application/json:
               schema:
                 $ref: '#/components/schemas/HTTPValidationError'
-  '/v1/studyDefinitions/{uuid}':
+  /v1/studyDefinitions/{uuid}:
     get:
       tags:
         - Production
@@ -66,14 +66,14 @@ paths:
               schema: {}
         '400':
           description: Bad Request
-          detail: string
           message: string
           status_code: string
+          detail: string
         '401':
           description: Unauthorized
-          detail: string
           message: string
           status_code: string
+          detail: string
         '422':
           description: Validation Error
           content:
@@ -86,13 +86,6 @@ paths:
       summary: Update a study
       description: Update an entire study including all child element with a single put
       operationId: update_study_v1_studyDefinitions__uuid__put
-      parameters:
-        - required: true
-          schema:
-            title: Uuid
-            type: string
-          name: uuid
-          in: path
       requestBody:
         content:
           application/json:
@@ -110,21 +103,21 @@ paths:
                 format: uuid
         '400':
           description: Bad Request
-          detail: string
           message: string
           status_code: string
+          detail: string
         '401':
           description: Unauthorized
-          detail: string
           message: string
           status_code: string
+          detail: string
         '422':
           description: Validation Error
           content:
             application/json:
               schema:
                 $ref: '#/components/schemas/HTTPValidationError'
-  '/v1/studyDefinitions/{uuid}/history':
+  /v1/studyDefinitions/{uuid}/history:
     get:
       tags:
         - Production
@@ -152,14 +145,14 @@ paths:
                   $ref: '#/components/schemas/Study'
         '400':
           description: Bad Request
-          detail: string
           message: string
           status_code: string
+          detail: string
         '401':
           description: Unauthorized
-          detail: string
           message: string
           status_code: string
+          detail: string
         '422':
           description: Validation Error
           content:
@@ -193,14 +186,14 @@ paths:
                   $ref: '#/components/schemas/StudyDesign'
         '400':
           description: Bad Request
-          detail: string
           message: string
           status_code: string
+          detail: string
         '401':
           description: Unauthorized
-          detail: string
           message: string
           status_code: string
+          detail: string
         '422':
           description: Validation Error
           content:
@@ -216,7 +209,6 @@ components:
         - activityName
         - activityDescription
         - activityIsOptional
-        - activityIsOptionalReason
       type: object
       properties:
         activityId:
@@ -251,6 +243,39 @@ components:
           type: boolean
         activityIsOptionalReason:
           title: Activityisoptionalreason
+          type: string
+    Address:
+      title: Address
+      required:
+        - text
+        - line
+        - city
+        - district
+        - state
+        - postalCode
+        - country
+      type: object
+      properties:
+        text:
+          title: Text
+          type: string
+        line:
+          title: Line
+          type: string
+        city:
+          title: City
+          type: string
+        district:
+          title: District
+          type: string
+        state:
+          title: State
+          type: string
+        postalCode:
+          title: Postalcode
+          type: string
+        country:
+          title: Country
           type: string
     AliasCode:
       title: AliasCode
@@ -505,6 +530,8 @@ components:
           type: string
         organisationType:
           $ref: '#/components/schemas/Code'
+        organizationLegalAddress:
+          $ref: '#/components/schemas/Address'
     Procedure:
       title: Procedure
       required:
@@ -534,6 +561,8 @@ components:
       required:
         - studyTitle
         - studyVersion
+        - studyRationale
+        - studyAcronym
       type: object
       properties:
         studyId:
@@ -574,6 +603,12 @@ components:
           items:
             $ref: '#/components/schemas/StudyDesign'
           default: []
+        studyRationale:
+          title: Studyrationale
+          type: string
+        studyAcronym:
+          title: Studyacronym
+          type: string
     StudyArm:
       title: StudyArm
       required:
@@ -648,6 +683,7 @@ components:
         - studyDesignName
         - studyDesignDescription
         - interventionModel
+        - studyDesignRationale
       type: object
       properties:
         studyDesignId:
@@ -733,11 +769,17 @@ components:
           items:
             $ref: '#/components/schemas/Activity'
           default: []
+        studyDesignRationale:
+          title: Studydesignrationale
+          type: string
     StudyDesignPopulation:
       title: StudyDesignPopulation
       required:
         - studyDesignPopulationId
         - populationDescription
+        - plannedNumberOfParticipants
+        - plannedMaximumAgeOfParticipants
+        - plannedMinimumAgeOfParticipants
       type: object
       properties:
         studyDesignPopulationId:
@@ -746,6 +788,21 @@ components:
         populationDescription:
           title: Populationdescription
           type: string
+        plannedNumberOfParticipants:
+          title: Plannednumberofparticipants
+          type: integer
+        plannedMaximumAgeOfParticipants:
+          title: Plannedmaximumageofparticipants
+          type: string
+        plannedMinimumAgeOfParticipants:
+          title: Plannedminimumageofparticipants
+          type: string
+        plannedSexOfParticipants:
+          title: Plannedsexofparticipants
+          type: array
+          items:
+            $ref: '#/components/schemas/Code'
+          default: []
     StudyElement:
       title: StudyElement
       required:
