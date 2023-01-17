@@ -39,14 +39,14 @@
           },
           "400": {
             "description": "Bad Request",
-            "message": "string",
             "status_code": "string",
+            "message": "string",
             "detail": "string"
           },
           "401": {
             "description": "Unauthorized",
-            "message": "string",
             "status_code": "string",
+            "message": "string",
             "detail": "string"
           },
           "422": {
@@ -92,14 +92,14 @@
           },
           "400": {
             "description": "Bad Request",
-            "message": "string",
             "status_code": "string",
+            "message": "string",
             "detail": "string"
           },
           "401": {
             "description": "Unauthorized",
-            "message": "string",
             "status_code": "string",
+            "message": "string",
             "detail": "string"
           },
           "422": {
@@ -121,6 +121,17 @@
         "summary": "Update a study",
         "description": "Update an entire study including all child element with a single put",
         "operationId": "update_study_v1_studyDefinitions__uuid__put",
+        "parameters": [
+          {
+            "required": true,
+            "schema": {
+              "title": "Uuid",
+              "type": "string"
+            },
+            "name": "uuid",
+            "in": "path"
+          }
+        ],
         "requestBody": {
           "content": {
             "application/json": {
@@ -146,14 +157,14 @@
           },
           "400": {
             "description": "Bad Request",
-            "message": "string",
             "status_code": "string",
+            "message": "string",
             "detail": "string"
           },
           "401": {
             "description": "Unauthorized",
-            "message": "string",
             "status_code": "string",
+            "message": "string",
             "detail": "string"
           },
           "422": {
@@ -205,14 +216,14 @@
           },
           "400": {
             "description": "Bad Request",
-            "message": "string",
             "status_code": "string",
+            "message": "string",
             "detail": "string"
           },
           "401": {
             "description": "Unauthorized",
-            "message": "string",
             "status_code": "string",
+            "message": "string",
             "detail": "string"
           },
           "422": {
@@ -265,14 +276,14 @@
           },
           "400": {
             "description": "Bad Request",
-            "message": "string",
             "status_code": "string",
+            "message": "string",
             "detail": "string"
           },
           "401": {
             "description": "Unauthorized",
-            "message": "string",
             "status_code": "string",
+            "message": "string",
             "detail": "string"
           },
           "422": {

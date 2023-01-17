@@ -30,13 +30,13 @@ paths:
                 format: uuid
         '400':
           description: Bad Request
-          message: string
           status_code: string
+          message: string
           detail: string
         '401':
           description: Unauthorized
-          message: string
           status_code: string
+          message: string
           detail: string
         '422':
           description: Validation Error
@@ -44,7 +44,7 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/HTTPValidationError'
-  /v1/studyDefinitions/{uuid}:
+  '/v1/studyDefinitions/{uuid}':
     get:
       tags:
         - Production
@@ -66,13 +66,13 @@ paths:
               schema: {}
         '400':
           description: Bad Request
-          message: string
           status_code: string
+          message: string
           detail: string
         '401':
           description: Unauthorized
-          message: string
           status_code: string
+          message: string
           detail: string
         '422':
           description: Validation Error
@@ -86,6 +86,13 @@ paths:
       summary: Update a study
       description: Update an entire study including all child element with a single put
       operationId: update_study_v1_studyDefinitions__uuid__put
+      parameters:
+        - required: true
+          schema:
+            title: Uuid
+            type: string
+          name: uuid
+          in: path
       requestBody:
         content:
           application/json:
@@ -103,13 +110,13 @@ paths:
                 format: uuid
         '400':
           description: Bad Request
-          message: string
           status_code: string
+          message: string
           detail: string
         '401':
           description: Unauthorized
-          message: string
           status_code: string
+          message: string
           detail: string
         '422':
           description: Validation Error
@@ -117,7 +124,7 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/HTTPValidationError'
-  /v1/studyDefinitions/{uuid}/history:
+  '/v1/studyDefinitions/{uuid}/history':
     get:
       tags:
         - Production
@@ -145,13 +152,13 @@ paths:
                   $ref: '#/components/schemas/Study'
         '400':
           description: Bad Request
-          message: string
           status_code: string
+          message: string
           detail: string
         '401':
           description: Unauthorized
-          message: string
           status_code: string
+          message: string
           detail: string
         '422':
           description: Validation Error
@@ -186,13 +193,13 @@ paths:
                   $ref: '#/components/schemas/StudyDesign'
         '400':
           description: Bad Request
-          message: string
           status_code: string
+          message: string
           detail: string
         '401':
           description: Unauthorized
-          message: string
           status_code: string
+          message: string
           detail: string
         '422':
           description: Validation Error
