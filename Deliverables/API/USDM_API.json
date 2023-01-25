@@ -3,7 +3,7 @@
   "info": {
     "title": "Simple API for DDF",
     "description": "A simple TransCelerate Digital Data Flow (DDF) Study Definitions Repository API.",
-    "version": "1.5 Provisional (0.29)"
+    "version": "1.6 Provisional (0.30)"
   },
   "paths": {
     "/v1/studyDefinitions": {
@@ -308,7 +308,8 @@
           "activityId",
           "activityName",
           "activityDescription",
-          "activityIsOptional"
+          "activityIsConditional",
+          "activityIsConditionalReason"
         ],
         "type": "object",
         "properties": {
@@ -348,12 +349,12 @@
             },
             "default": []
           },
-          "activityIsOptional": {
-            "title": "Activityisoptional",
+          "activityIsConditional": {
+            "title": "Activityisconditional",
             "type": "boolean"
           },
-          "activityIsOptionalReason": {
-            "title": "Activityisoptionalreason",
+          "activityIsConditionalReason": {
+            "title": "Activityisconditionalreason",
             "type": "string"
           }
         }
@@ -396,8 +397,7 @@
             "type": "string"
           },
           "country": {
-            "title": "Country",
-            "type": "string"
+            "$ref": "#/components/schemas/Code"
           }
         }
       },
@@ -755,8 +755,8 @@
           "procedureId",
           "procedureType",
           "procedureCode",
-          "procedureIsOptional",
-          "procedureIsOptionalReason"
+          "procedureIsConditional",
+          "procedureIsConditionalReason"
         ],
         "type": "object",
         "properties": {
@@ -771,12 +771,12 @@
           "procedureCode": {
             "$ref": "#/components/schemas/Code"
           },
-          "procedureIsOptional": {
-            "title": "Procedureisoptional",
+          "procedureIsConditional": {
+            "title": "Procedureisconditional",
             "type": "boolean"
           },
-          "procedureIsOptionalReason": {
-            "title": "Procedureisoptionalreason",
+          "procedureIsConditionalReason": {
+            "title": "Procedureisconditionalreason",
             "type": "string"
           }
         }
@@ -1068,6 +1068,9 @@
           "studyDesignRationale": {
             "title": "Studydesignrationale",
             "type": "string"
+          },
+          "studyDesignBlindingScheme": {
+            "$ref": "#/components/schemas/AliasCode"
           }
         }
       },

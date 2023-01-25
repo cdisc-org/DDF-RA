@@ -4,7 +4,7 @@ info:
   description: >-
     A simple TransCelerate Digital Data Flow (DDF) Study Definitions Repository
     API.
-  version: 1.5 Provisional (0.29)
+  version: 1.6 Provisional (0.30)
 paths:
   /v1/studyDefinitions:
     post:
@@ -215,7 +215,8 @@ components:
         - activityId
         - activityName
         - activityDescription
-        - activityIsOptional
+        - activityIsConditional
+        - activityIsConditionalReason
       type: object
       properties:
         activityId:
@@ -245,11 +246,11 @@ components:
           items:
             $ref: '#/components/schemas/StudyData'
           default: []
-        activityIsOptional:
-          title: Activityisoptional
+        activityIsConditional:
+          title: Activityisconditional
           type: boolean
-        activityIsOptionalReason:
-          title: Activityisoptionalreason
+        activityIsConditionalReason:
+          title: Activityisconditionalreason
           type: string
     Address:
       title: Address
@@ -282,8 +283,7 @@ components:
           title: Postalcode
           type: string
         country:
-          title: Country
-          type: string
+          $ref: '#/components/schemas/Code'
     AliasCode:
       title: AliasCode
       required:
@@ -545,8 +545,8 @@ components:
         - procedureId
         - procedureType
         - procedureCode
-        - procedureIsOptional
-        - procedureIsOptionalReason
+        - procedureIsConditional
+        - procedureIsConditionalReason
       type: object
       properties:
         procedureId:
@@ -557,11 +557,11 @@ components:
           type: string
         procedureCode:
           $ref: '#/components/schemas/Code'
-        procedureIsOptional:
-          title: Procedureisoptional
+        procedureIsConditional:
+          title: Procedureisconditional
           type: boolean
-        procedureIsOptionalReason:
-          title: Procedureisoptionalreason
+        procedureIsConditionalReason:
+          title: Procedureisconditionalreason
           type: string
     Study:
       title: Study
@@ -779,6 +779,8 @@ components:
         studyDesignRationale:
           title: Studydesignrationale
           type: string
+        studyDesignBlindingScheme:
+          $ref: '#/components/schemas/AliasCode'
     StudyDesignPopulation:
       title: StudyDesignPopulation
       required:
