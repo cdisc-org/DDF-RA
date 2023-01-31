@@ -30,14 +30,14 @@ paths:
                 format: uuid
         '400':
           description: Bad Request
+          message: string
           status_code: string
           detail: string
-          message: string
         '401':
           description: Unauthorized
+          message: string
           status_code: string
           detail: string
-          message: string
         '422':
           description: Validation Error
           content:
@@ -66,14 +66,14 @@ paths:
               schema: {}
         '400':
           description: Bad Request
+          message: string
           status_code: string
           detail: string
-          message: string
         '401':
           description: Unauthorized
+          message: string
           status_code: string
           detail: string
-          message: string
         '422':
           description: Validation Error
           content:
@@ -110,14 +110,14 @@ paths:
                 format: uuid
         '400':
           description: Bad Request
+          message: string
           status_code: string
           detail: string
-          message: string
         '401':
           description: Unauthorized
+          message: string
           status_code: string
           detail: string
-          message: string
         '422':
           description: Validation Error
           content:
@@ -152,14 +152,14 @@ paths:
                   $ref: '#/components/schemas/Study'
         '400':
           description: Bad Request
+          message: string
           status_code: string
           detail: string
-          message: string
         '401':
           description: Unauthorized
+          message: string
           status_code: string
           detail: string
-          message: string
         '422':
           description: Validation Error
           content:
@@ -193,14 +193,14 @@ paths:
                   $ref: '#/components/schemas/StudyDesign'
         '400':
           description: Bad Request
+          message: string
           status_code: string
           detail: string
-          message: string
         '401':
           description: Unauthorized
+          message: string
           status_code: string
           detail: string
-          message: string
         '422':
           description: Validation Error
           content:
@@ -217,9 +217,6 @@ components:
         - activityDescription
         - activityIsConditional
         - activityIsConditionalReason
-        - biomedicalConcept
-        - bcCategories
-        - bcSurrogates
       type: object
       properties:
         activityId:
@@ -255,12 +252,24 @@ components:
         activityIsConditionalReason:
           title: Activityisconditionalreason
           type: string
-        biomedicalConcept:
-          $ref: '#/components/schemas/BiomedicalConcept'
+        biomedicalConcepts:
+          title: Biomedicalconcepts
+          type: array
+          items:
+            $ref: '#/components/schemas/BiomedicalConcept'
+          default: []
         bcCategories:
-          $ref: '#/components/schemas/BiomedicalConceptCategory'
+          title: Bccategories
+          type: array
+          items:
+            $ref: '#/components/schemas/BiomedicalConceptCategory'
+          default: []
         bcSurrogates:
-          $ref: '#/components/schemas/BiomedicalConceptSurrogate'
+          title: Bcsurrogates
+          type: array
+          items:
+            $ref: '#/components/schemas/BiomedicalConceptSurrogate'
+          default: []
     Address:
       title: Address
       required:
@@ -330,6 +339,7 @@ components:
         - biomedicalConceptId
         - bcName
         - bcReference
+        - bcConceptDefinition
       type: object
       properties:
         biomedicalConceptId:
@@ -353,6 +363,8 @@ components:
           items:
             $ref: '#/components/schemas/BiomedicalConceptProperty'
           default: []
+        bcConceptDefinition:
+          $ref: '#/components/schemas/AliasCode'
     BiomedicalConceptCategory:
       title: BiomedicalConceptCategory
       required:
@@ -396,6 +408,7 @@ components:
         - bcPropertyRequired
         - bcPropertyEnabled
         - bcPropertyDatatype
+        - bcPropertyDefinition
       type: object
       properties:
         bcPropertyId:
@@ -419,6 +432,8 @@ components:
           items:
             $ref: '#/components/schemas/ResponseCode'
           default: []
+        bcPropertyDefinition:
+          $ref: '#/components/schemas/AliasCode'
     BiomedicalConceptSurrogate:
       title: BiomedicalConceptSurrogate
       required:
