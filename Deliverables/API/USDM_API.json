@@ -39,15 +39,15 @@
           },
           "400": {
             "description": "Bad Request",
+            "message": "string",
             "status_code": "string",
-            "detail": "string",
-            "message": "string"
+            "detail": "string"
           },
           "401": {
             "description": "Unauthorized",
+            "message": "string",
             "status_code": "string",
-            "detail": "string",
-            "message": "string"
+            "detail": "string"
           },
           "422": {
             "description": "Validation Error",
@@ -92,15 +92,15 @@
           },
           "400": {
             "description": "Bad Request",
+            "message": "string",
             "status_code": "string",
-            "detail": "string",
-            "message": "string"
+            "detail": "string"
           },
           "401": {
             "description": "Unauthorized",
+            "message": "string",
             "status_code": "string",
-            "detail": "string",
-            "message": "string"
+            "detail": "string"
           },
           "422": {
             "description": "Validation Error",
@@ -157,15 +157,15 @@
           },
           "400": {
             "description": "Bad Request",
+            "message": "string",
             "status_code": "string",
-            "detail": "string",
-            "message": "string"
+            "detail": "string"
           },
           "401": {
             "description": "Unauthorized",
+            "message": "string",
             "status_code": "string",
-            "detail": "string",
-            "message": "string"
+            "detail": "string"
           },
           "422": {
             "description": "Validation Error",
@@ -216,15 +216,15 @@
           },
           "400": {
             "description": "Bad Request",
+            "message": "string",
             "status_code": "string",
-            "detail": "string",
-            "message": "string"
+            "detail": "string"
           },
           "401": {
             "description": "Unauthorized",
+            "message": "string",
             "status_code": "string",
-            "detail": "string",
-            "message": "string"
+            "detail": "string"
           },
           "422": {
             "description": "Validation Error",
@@ -276,15 +276,15 @@
           },
           "400": {
             "description": "Bad Request",
+            "message": "string",
             "status_code": "string",
-            "detail": "string",
-            "message": "string"
+            "detail": "string"
           },
           "401": {
             "description": "Unauthorized",
+            "message": "string",
             "status_code": "string",
-            "detail": "string",
-            "message": "string"
+            "detail": "string"
           },
           "422": {
             "description": "Validation Error",
@@ -309,10 +309,7 @@
           "activityName",
           "activityDescription",
           "activityIsConditional",
-          "activityIsConditionalReason",
-          "biomedicalConcept",
-          "bcCategories",
-          "bcSurrogates"
+          "activityIsConditionalReason"
         ],
         "type": "object",
         "properties": {
@@ -360,14 +357,29 @@
             "title": "Activityisconditionalreason",
             "type": "string"
           },
-          "biomedicalConcept": {
-            "$ref": "#/components/schemas/BiomedicalConcept"
+          "biomedicalConcepts": {
+            "title": "Biomedicalconcepts",
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/BiomedicalConcept"
+            },
+            "default": []
           },
           "bcCategories": {
-            "$ref": "#/components/schemas/BiomedicalConceptCategory"
+            "title": "Bccategories",
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/BiomedicalConceptCategory"
+            },
+            "default": []
           },
           "bcSurrogates": {
-            "$ref": "#/components/schemas/BiomedicalConceptSurrogate"
+            "title": "Bcsurrogates",
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/BiomedicalConceptSurrogate"
+            },
+            "default": []
           }
         }
       },
@@ -461,7 +473,8 @@
         "required": [
           "biomedicalConceptId",
           "bcName",
-          "bcReference"
+          "bcReference",
+          "bcConceptDefinition"
         ],
         "type": "object",
         "properties": {
@@ -492,6 +505,9 @@
               "$ref": "#/components/schemas/BiomedicalConceptProperty"
             },
             "default": []
+          },
+          "bcConceptDefinition": {
+            "$ref": "#/components/schemas/AliasCode"
           }
         }
       },
@@ -549,7 +565,8 @@
           "bcPropertyName",
           "bcPropertyRequired",
           "bcPropertyEnabled",
-          "bcPropertyDatatype"
+          "bcPropertyDatatype",
+          "bcPropertyDefinition"
         ],
         "type": "object",
         "properties": {
@@ -580,6 +597,9 @@
               "$ref": "#/components/schemas/ResponseCode"
             },
             "default": []
+          },
+          "bcPropertyDefinition": {
+            "$ref": "#/components/schemas/AliasCode"
           }
         }
       },
