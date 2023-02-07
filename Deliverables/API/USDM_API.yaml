@@ -370,14 +370,14 @@ components:
         biomedicalConceptCategoryId:
           title: Biomedicalconceptcategoryid
           type: string
-        bcCategoryParents:
-          title: Bccategoryparents
+        bcCategoryParentIds:
+          title: Bccategoryparentids
           type: array
           items:
             type: string
           default: []
-        bcCategoryChildren:
-          title: Bccategorychildren
+        bcCategoryChildrenIds:
+          title: Bccategorychildrenids
           type: array
           items:
             type: string
@@ -910,20 +910,20 @@ components:
           type: string
         studyDesignBlindingScheme:
           $ref: '#/components/schemas/AliasCode'
-        biomedicalConceptIds:
-          title: Biomedicalconceptids
+        biomedicalConcepts:
+          title: Biomedicalconcepts
           type: array
           items:
             $ref: '#/components/schemas/BiomedicalConcept'
           default: []
-        bcCategoryIds:
-          title: Bccategoryids
+        bcCategories:
+          title: Bccategories
           type: array
           items:
             $ref: '#/components/schemas/BiomedicalConceptCategory'
           default: []
-        bcSurrogateIds:
-          title: Bcsurrogateids
+        bcSurrogates:
+          title: Bcsurrogates
           type: array
           items:
             $ref: '#/components/schemas/BiomedicalConceptSurrogate'
