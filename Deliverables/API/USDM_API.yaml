@@ -6,13 +6,13 @@ info:
     API.
   version: 2.0 Provisional (0.32)
 paths:
-  /v1/studyDefinitions:
+  /v2/studyDefinitions:
     post:
       tags:
         - Production
       summary: Create a study
       description: Create an entire study including all child element with a single post
-      operationId: create_study_v1_studyDefinitions_post
+      operationId: create_study_v2_studyDefinitions_post
       requestBody:
         content:
           application/json:
@@ -25,32 +25,32 @@ paths:
           content:
             application/json:
               schema:
-                title: Response Create Study V1 Studydefinitions Post
+                title: Response Create Study V2 Studydefinitions Post
                 type: string
                 format: uuid
         '400':
           description: Bad Request
-          status_code: string
-          message: string
           detail: string
+          message: string
+          status_code: string
         '401':
           description: Unauthorized
-          status_code: string
-          message: string
           detail: string
+          message: string
+          status_code: string
         '422':
           description: Validation Error
           content:
             application/json:
               schema:
                 $ref: '#/components/schemas/HTTPValidationError'
-  '/v1/studyDefinitions/{uuid}':
+  '/v2/studyDefinitions/{uuid}':
     get:
       tags:
         - Production
       summary: Return a study
       description: Return an entire study including all child elements
-      operationId: read_full_study_v1_studyDefinitions__uuid__get
+      operationId: read_full_study_v2_studyDefinitions__uuid__get
       parameters:
         - required: true
           schema:
@@ -66,14 +66,14 @@ paths:
               schema: {}
         '400':
           description: Bad Request
-          status_code: string
-          message: string
           detail: string
+          message: string
+          status_code: string
         '401':
           description: Unauthorized
-          status_code: string
-          message: string
           detail: string
+          message: string
+          status_code: string
         '422':
           description: Validation Error
           content:
@@ -85,7 +85,7 @@ paths:
         - Production
       summary: Update a study
       description: Update an entire study including all child element with a single put
-      operationId: update_study_v1_studyDefinitions__uuid__put
+      operationId: update_study_v2_studyDefinitions__uuid__put
       parameters:
         - required: true
           schema:
@@ -105,32 +105,32 @@ paths:
           content:
             application/json:
               schema:
-                title: Response Update Study V1 Studydefinitions  Uuid  Put
+                title: Response Update Study V2 Studydefinitions  Uuid  Put
                 type: string
                 format: uuid
         '400':
           description: Bad Request
-          status_code: string
-          message: string
           detail: string
+          message: string
+          status_code: string
         '401':
           description: Unauthorized
-          status_code: string
-          message: string
           detail: string
+          message: string
+          status_code: string
         '422':
           description: Validation Error
           content:
             application/json:
               schema:
                 $ref: '#/components/schemas/HTTPValidationError'
-  '/v1/studyDefinitions/{uuid}/history':
+  '/v2/studyDefinitions/{uuid}/history':
     get:
       tags:
         - Production
       summary: Returns the study history
       description: Returns the history for the specified study
-      operationId: read_study_history_v1_studyDefinitions__uuid__history_get
+      operationId: read_study_history_v2_studyDefinitions__uuid__history_get
       parameters:
         - required: true
           schema:
@@ -145,34 +145,34 @@ paths:
             application/json:
               schema:
                 title: >-
-                  Response Read Study History V1 Studydefinitions  Uuid  History
+                  Response Read Study History V2 Studydefinitions  Uuid  History
                   Get
                 type: array
                 items:
                   $ref: '#/components/schemas/Study'
         '400':
           description: Bad Request
-          status_code: string
-          message: string
           detail: string
+          message: string
+          status_code: string
         '401':
           description: Unauthorized
-          status_code: string
-          message: string
           detail: string
+          message: string
+          status_code: string
         '422':
           description: Validation Error
           content:
             application/json:
               schema:
                 $ref: '#/components/schemas/HTTPValidationError'
-  /v1/studyDesigns:
+  /v2/studyDesigns:
     get:
       tags:
         - Production
       summary: Study designs for a study
       description: Returns all the study designs for a specified study.
-      operationId: search_study_design_v1_studyDesigns_get
+      operationId: search_study_design_v2_studyDesigns_get
       parameters:
         - required: true
           schema:
@@ -187,20 +187,20 @@ paths:
           content:
             application/json:
               schema:
-                title: Response Search Study Design V1 Studydesigns Get
+                title: Response Search Study Design V2 Studydesigns Get
                 type: array
                 items:
                   $ref: '#/components/schemas/StudyDesign'
         '400':
           description: Bad Request
-          status_code: string
-          message: string
           detail: string
+          message: string
+          status_code: string
         '401':
           description: Unauthorized
-          status_code: string
-          message: string
           detail: string
+          message: string
+          status_code: string
         '422':
           description: Validation Error
           content:
