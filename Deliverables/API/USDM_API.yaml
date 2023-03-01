@@ -4,7 +4,7 @@ info:
   description: >-
     A simple TransCelerate Digital Data Flow (DDF) Study Definitions Repository
     API.
-  version: 1.7 Provisional (0.31)
+  version: 2.0 Provisional (0.32)
 paths:
   /v1/studyDefinitions:
     post:
@@ -31,13 +31,13 @@ paths:
         '400':
           description: Bad Request
           status_code: string
-          detail: string
           message: string
+          detail: string
         '401':
           description: Unauthorized
           status_code: string
-          detail: string
           message: string
+          detail: string
         '422':
           description: Validation Error
           content:
@@ -67,13 +67,13 @@ paths:
         '400':
           description: Bad Request
           status_code: string
-          detail: string
           message: string
+          detail: string
         '401':
           description: Unauthorized
           status_code: string
-          detail: string
           message: string
+          detail: string
         '422':
           description: Validation Error
           content:
@@ -111,13 +111,13 @@ paths:
         '400':
           description: Bad Request
           status_code: string
-          detail: string
           message: string
+          detail: string
         '401':
           description: Unauthorized
           status_code: string
-          detail: string
           message: string
+          detail: string
         '422':
           description: Validation Error
           content:
@@ -153,13 +153,13 @@ paths:
         '400':
           description: Bad Request
           status_code: string
-          detail: string
           message: string
+          detail: string
         '401':
           description: Unauthorized
           status_code: string
-          detail: string
           message: string
+          detail: string
         '422':
           description: Validation Error
           content:
@@ -194,13 +194,13 @@ paths:
         '400':
           description: Bad Request
           status_code: string
-          detail: string
           message: string
+          detail: string
         '401':
           description: Unauthorized
           status_code: string
-          detail: string
           message: string
+          detail: string
         '422':
           description: Validation Error
           content:
@@ -217,6 +217,7 @@ components:
         - activityDescription
         - activityIsConditional
         - activityIsConditionalReason
+        - activityTimelineId
       type: object
       properties:
         activityId:
@@ -264,6 +265,9 @@ components:
           items:
             type: string
           default: []
+        activityTimelineId:
+          title: Activitytimelineid
+          type: string
     Address:
       title: Address
       required:
@@ -511,6 +515,9 @@ components:
           $ref: '#/components/schemas/TransitionRule'
         transitionEndRule:
           $ref: '#/components/schemas/TransitionRule'
+        encounterScheduledAtTimingId:
+          title: Encounterscheduledattimingid
+          type: string
     Endpoint:
       title: Endpoint
       required:
@@ -713,6 +720,92 @@ components:
           type: boolean
         code:
           $ref: '#/components/schemas/Code'
+    ScheduleTimeline:
+      title: ScheduleTimeline
+      required:
+        - scheduleTimelineId
+        - scheduleTimelineName
+        - scheduleTimelineDescription
+        - entryCondition
+        - scheduleTimelineEntryId
+      type: object
+      properties:
+        scheduleTimelineId:
+          title: Scheduletimelineid
+          type: string
+        scheduleTimelineName:
+          title: Scheduletimelinename
+          type: string
+        scheduleTimelineDescription:
+          title: Scheduletimelinedescription
+          type: string
+        entryCondition:
+          title: Entrycondition
+          type: string
+        scheduleTimelineEntryId:
+          title: Scheduletimelineentryid
+          type: string
+        scheduleTimelineExits:
+          title: Scheduletimelineexits
+          type: array
+          items:
+            $ref: '#/components/schemas/ScheduleTimelineExit'
+          default: []
+        scheduleTimelineInstances:
+          title: Scheduletimelineinstances
+          type: array
+          items:
+            $ref: '#/components/schemas/ScheduledInstance'
+          default: []
+    ScheduleTimelineExit:
+      title: ScheduleTimelineExit
+      required:
+        - scheduleTimelineExitId
+      type: object
+      properties:
+        scheduleTimelineExitId:
+          title: Scheduletimelineexitid
+          type: string
+    ScheduledInstance:
+      title: ScheduledInstance
+      required:
+        - scheduledInstanceId
+        - scheduledInstanceType
+        - scheduleSequenceNumber
+        - scheduleTimelineExitId
+        - scheduledInstanceEncounterId
+        - scheduledInstanceTimelineId
+      type: object
+      properties:
+        scheduledInstanceId:
+          title: Scheduledinstanceid
+          type: string
+        scheduledInstanceType:
+          $ref: '#/components/schemas/ScheduledInstanceType'
+        scheduleSequenceNumber:
+          title: Schedulesequencenumber
+          type: integer
+        scheduleTimelineExitId:
+          title: Scheduletimelineexitid
+          type: string
+        scheduledInstanceEncounterId:
+          title: Scheduledinstanceencounterid
+          type: string
+        scheduledInstanceTimings:
+          title: Scheduledinstancetimings
+          type: array
+          items:
+            $ref: '#/components/schemas/Timing'
+          default: []
+        scheduledInstanceTimelineId:
+          title: Scheduledinstancetimelineid
+          type: string
+    ScheduledInstanceType:
+      title: ScheduledInstanceType
+      enum:
+        - 1
+        - 2
+      description: An enumeration.
     Study:
       title: Study
       required:
@@ -875,11 +968,11 @@ components:
           items:
             $ref: '#/components/schemas/Objective'
           default: []
-        studyWorkflows:
-          title: Studyworkflows
+        studyScheduleTimelines:
+          title: Studyscheduletimelines
           type: array
           items:
-            $ref: '#/components/schemas/Workflow'
+            $ref: '#/components/schemas/ScheduleTimeline'
           default: []
         therapeuticAreas:
           title: Therapeuticareas
@@ -1070,6 +1163,37 @@ components:
           format: date
         protocolStatus:
           $ref: '#/components/schemas/Code'
+    Timing:
+      title: Timing
+      required:
+        - timingId
+        - timingType
+        - timingValue
+        - timingRelativeToFrom
+        - timingWindow
+        - relativeFromScheduledInstanceId
+        - relativeToScheduledInstanceId
+      type: object
+      properties:
+        timingId:
+          title: Timingid
+          type: string
+        timingType:
+          $ref: '#/components/schemas/Code'
+        timingValue:
+          title: Timingvalue
+          type: string
+        timingRelativeToFrom:
+          $ref: '#/components/schemas/Code'
+        timingWindow:
+          title: Timingwindow
+          type: string
+        relativeFromScheduledInstanceId:
+          title: Relativefromscheduledinstanceid
+          type: string
+        relativeToScheduledInstanceId:
+          title: Relativetoscheduledinstanceid
+          type: string
     TransitionRule:
       title: TransitionRule
       required:
@@ -1103,50 +1227,6 @@ components:
           type: string
         type:
           title: Error Type
-          type: string
-    Workflow:
-      title: Workflow
-      required:
-        - workflowId
-        - workflowDescription
-      type: object
-      properties:
-        workflowId:
-          title: Workflowid
-          type: string
-        workflowDescription:
-          title: Workflowdescription
-          type: string
-        workflowItems:
-          title: Workflowitems
-          type: array
-          items:
-            $ref: '#/components/schemas/WorkflowItem'
-          default: []
-    WorkflowItem:
-      title: WorkflowItem
-      required:
-        - workflowItemId
-        - workflowItemDescription
-      type: object
-      properties:
-        workflowItemId:
-          title: Workflowitemid
-          type: string
-        workflowItemDescription:
-          title: Workflowitemdescription
-          type: string
-        previousWorkflowItemId:
-          title: Previousworkflowitemid
-          type: string
-        nextWorkflowItemId:
-          title: Nextworkflowitemid
-          type: string
-        workflowItemEncounterId:
-          title: Workflowitemencounterid
-          type: string
-        workflowItemActivityId:
-          title: Workflowitemactivityid
           type: string
 tags:
   - name: Production
