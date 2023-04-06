@@ -4,7 +4,7 @@ info:
   description: >-
     A simple TransCelerate Digital Data Flow (DDF) Study Definitions Repository
     API.
-  version: 2.0 Provisional (0.32)
+  version: 2.1 Provisional (0.33)
 paths:
   /v2/studyDefinitions:
     post:
@@ -30,14 +30,14 @@ paths:
                 format: uuid
         '400':
           description: Bad Request
-          detail: string
           message: string
           status_code: string
+          detail: string
         '401':
           description: Unauthorized
-          detail: string
           message: string
           status_code: string
+          detail: string
         '422':
           description: Validation Error
           content:
@@ -66,14 +66,14 @@ paths:
               schema: {}
         '400':
           description: Bad Request
-          detail: string
           message: string
           status_code: string
+          detail: string
         '401':
           description: Unauthorized
-          detail: string
           message: string
           status_code: string
+          detail: string
         '422':
           description: Validation Error
           content:
@@ -110,14 +110,14 @@ paths:
                 format: uuid
         '400':
           description: Bad Request
-          detail: string
           message: string
           status_code: string
+          detail: string
         '401':
           description: Unauthorized
-          detail: string
           message: string
           status_code: string
+          detail: string
         '422':
           description: Validation Error
           content:
@@ -152,14 +152,14 @@ paths:
                   $ref: '#/components/schemas/Study'
         '400':
           description: Bad Request
-          detail: string
           message: string
           status_code: string
+          detail: string
         '401':
           description: Unauthorized
-          detail: string
           message: string
           status_code: string
+          detail: string
         '422':
           description: Validation Error
           content:
@@ -193,14 +193,14 @@ paths:
                   $ref: '#/components/schemas/StudyDesign'
         '400':
           description: Bad Request
-          detail: string
           message: string
           status_code: string
+          detail: string
         '401':
           description: Unauthorized
-          detail: string
           message: string
           status_code: string
+          detail: string
         '422':
           description: Validation Error
           content:
@@ -217,7 +217,6 @@ components:
         - activityDescription
         - activityIsConditional
         - activityIsConditionalReason
-        - activityTimelineId
       type: object
       properties:
         activityId:
@@ -271,6 +270,7 @@ components:
     Address:
       title: Address
       required:
+        - addressId
         - text
         - line
         - city
@@ -280,6 +280,9 @@ components:
         - country
       type: object
       properties:
+        addressId:
+          title: Addressid
+          type: string
         text:
           title: Text
           type: string
@@ -657,15 +660,15 @@ components:
     Organisation:
       title: Organisation
       required:
-        - organizationId
+        - organisationId
         - organisationIdentifierScheme
         - organisationIdentifier
         - organisationName
         - organisationType
       type: object
       properties:
-        organizationId:
-          title: Organizationid
+        organisationId:
+          title: Organisationid
           type: string
         organisationIdentifierScheme:
           title: Organisationidentifierscheme
@@ -685,6 +688,8 @@ components:
       required:
         - procedureId
         - procedureType
+        - procedureName
+        - procedureDescription
         - procedureCode
         - procedureIsConditional
         - procedureIsConditionalReason
@@ -695,6 +700,12 @@ components:
           type: string
         procedureType:
           title: Proceduretype
+          type: string
+        procedureName:
+          title: Procedurename
+          type: string
+        procedureDescription:
+          title: Proceduredescription
           type: string
         procedureCode:
           $ref: '#/components/schemas/Code'
@@ -727,7 +738,6 @@ components:
         - scheduleTimelineName
         - scheduleTimelineDescription
         - entryCondition
-        - scheduleTimelineEntryId
       type: object
       properties:
         scheduleTimelineId:
@@ -772,9 +782,6 @@ components:
         - scheduledInstanceId
         - scheduledInstanceType
         - scheduleSequenceNumber
-        - scheduleTimelineExitId
-        - scheduledInstanceEncounterId
-        - scheduledInstanceTimelineId
       type: object
       properties:
         scheduledInstanceId:
@@ -1080,8 +1087,6 @@ components:
         - studyEpochName
         - studyEpochDescription
         - studyEpochType
-        - previousStudyEpochId
-        - nextStudyEpochId
       type: object
       properties:
         studyEpochId:
@@ -1171,8 +1176,6 @@ components:
         - timingValue
         - timingRelativeToFrom
         - timingWindow
-        - relativeFromScheduledInstanceId
-        - relativeToScheduledInstanceId
       type: object
       properties:
         timingId:

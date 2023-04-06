@@ -3,7 +3,7 @@
   "info": {
     "title": "Simple API for DDF",
     "description": "A simple TransCelerate Digital Data Flow (DDF) Study Definitions Repository API.",
-    "version": "2.0 Provisional (0.32)"
+    "version": "2.1 Provisional (0.33)"
   },
   "paths": {
     "/v2/studyDefinitions": {
@@ -39,15 +39,15 @@
           },
           "400": {
             "description": "Bad Request",
-            "detail": "string",
             "message": "string",
-            "status_code": "string"
+            "status_code": "string",
+            "detail": "string"
           },
           "401": {
             "description": "Unauthorized",
-            "detail": "string",
             "message": "string",
-            "status_code": "string"
+            "status_code": "string",
+            "detail": "string"
           },
           "422": {
             "description": "Validation Error",
@@ -92,15 +92,15 @@
           },
           "400": {
             "description": "Bad Request",
-            "detail": "string",
             "message": "string",
-            "status_code": "string"
+            "status_code": "string",
+            "detail": "string"
           },
           "401": {
             "description": "Unauthorized",
-            "detail": "string",
             "message": "string",
-            "status_code": "string"
+            "status_code": "string",
+            "detail": "string"
           },
           "422": {
             "description": "Validation Error",
@@ -157,15 +157,15 @@
           },
           "400": {
             "description": "Bad Request",
-            "detail": "string",
             "message": "string",
-            "status_code": "string"
+            "status_code": "string",
+            "detail": "string"
           },
           "401": {
             "description": "Unauthorized",
-            "detail": "string",
             "message": "string",
-            "status_code": "string"
+            "status_code": "string",
+            "detail": "string"
           },
           "422": {
             "description": "Validation Error",
@@ -216,15 +216,15 @@
           },
           "400": {
             "description": "Bad Request",
-            "detail": "string",
             "message": "string",
-            "status_code": "string"
+            "status_code": "string",
+            "detail": "string"
           },
           "401": {
             "description": "Unauthorized",
-            "detail": "string",
             "message": "string",
-            "status_code": "string"
+            "status_code": "string",
+            "detail": "string"
           },
           "422": {
             "description": "Validation Error",
@@ -276,15 +276,15 @@
           },
           "400": {
             "description": "Bad Request",
-            "detail": "string",
             "message": "string",
-            "status_code": "string"
+            "status_code": "string",
+            "detail": "string"
           },
           "401": {
             "description": "Unauthorized",
-            "detail": "string",
             "message": "string",
-            "status_code": "string"
+            "status_code": "string",
+            "detail": "string"
           },
           "422": {
             "description": "Validation Error",
@@ -309,8 +309,7 @@
           "activityName",
           "activityDescription",
           "activityIsConditional",
-          "activityIsConditionalReason",
-          "activityTimelineId"
+          "activityIsConditionalReason"
         ],
         "type": "object",
         "properties": {
@@ -383,6 +382,7 @@
       "Address": {
         "title": "Address",
         "required": [
+          "addressId",
           "text",
           "line",
           "city",
@@ -393,6 +393,10 @@
         ],
         "type": "object",
         "properties": {
+          "addressId": {
+            "title": "Addressid",
+            "type": "string"
+          },
           "text": {
             "title": "Text",
             "type": "string"
@@ -905,7 +909,7 @@
       "Organisation": {
         "title": "Organisation",
         "required": [
-          "organizationId",
+          "organisationId",
           "organisationIdentifierScheme",
           "organisationIdentifier",
           "organisationName",
@@ -913,8 +917,8 @@
         ],
         "type": "object",
         "properties": {
-          "organizationId": {
-            "title": "Organizationid",
+          "organisationId": {
+            "title": "Organisationid",
             "type": "string"
           },
           "organisationIdentifierScheme": {
@@ -942,6 +946,8 @@
         "required": [
           "procedureId",
           "procedureType",
+          "procedureName",
+          "procedureDescription",
           "procedureCode",
           "procedureIsConditional",
           "procedureIsConditionalReason"
@@ -954,6 +960,14 @@
           },
           "procedureType": {
             "title": "Proceduretype",
+            "type": "string"
+          },
+          "procedureName": {
+            "title": "Procedurename",
+            "type": "string"
+          },
+          "procedureDescription": {
+            "title": "Proceduredescription",
             "type": "string"
           },
           "procedureCode": {
@@ -997,8 +1011,7 @@
           "scheduleTimelineId",
           "scheduleTimelineName",
           "scheduleTimelineDescription",
-          "entryCondition",
-          "scheduleTimelineEntryId"
+          "entryCondition"
         ],
         "type": "object",
         "properties": {
@@ -1058,10 +1071,7 @@
         "required": [
           "scheduledInstanceId",
           "scheduledInstanceType",
-          "scheduleSequenceNumber",
-          "scheduleTimelineExitId",
-          "scheduledInstanceEncounterId",
-          "scheduledInstanceTimelineId"
+          "scheduleSequenceNumber"
         ],
         "type": "object",
         "properties": {
@@ -1471,9 +1481,7 @@
           "studyEpochId",
           "studyEpochName",
           "studyEpochDescription",
-          "studyEpochType",
-          "previousStudyEpochId",
-          "nextStudyEpochId"
+          "studyEpochType"
         ],
         "type": "object",
         "properties": {
@@ -1591,9 +1599,7 @@
           "timingType",
           "timingValue",
           "timingRelativeToFrom",
-          "timingWindow",
-          "relativeFromScheduledInstanceId",
-          "relativeToScheduledInstanceId"
+          "timingWindow"
         ],
         "type": "object",
         "properties": {
