@@ -39,15 +39,15 @@
           },
           "400": {
             "description": "Bad Request",
+            "detail": "string",
             "message": "string",
-            "status_code": "string",
-            "detail": "string"
+            "status_code": "string"
           },
           "401": {
             "description": "Unauthorized",
+            "detail": "string",
             "message": "string",
-            "status_code": "string",
-            "detail": "string"
+            "status_code": "string"
           },
           "422": {
             "description": "Validation Error",
@@ -92,15 +92,15 @@
           },
           "400": {
             "description": "Bad Request",
+            "detail": "string",
             "message": "string",
-            "status_code": "string",
-            "detail": "string"
+            "status_code": "string"
           },
           "401": {
             "description": "Unauthorized",
+            "detail": "string",
             "message": "string",
-            "status_code": "string",
-            "detail": "string"
+            "status_code": "string"
           },
           "422": {
             "description": "Validation Error",
@@ -157,15 +157,15 @@
           },
           "400": {
             "description": "Bad Request",
+            "detail": "string",
             "message": "string",
-            "status_code": "string",
-            "detail": "string"
+            "status_code": "string"
           },
           "401": {
             "description": "Unauthorized",
+            "detail": "string",
             "message": "string",
-            "status_code": "string",
-            "detail": "string"
+            "status_code": "string"
           },
           "422": {
             "description": "Validation Error",
@@ -216,15 +216,15 @@
           },
           "400": {
             "description": "Bad Request",
+            "detail": "string",
             "message": "string",
-            "status_code": "string",
-            "detail": "string"
+            "status_code": "string"
           },
           "401": {
             "description": "Unauthorized",
+            "detail": "string",
             "message": "string",
-            "status_code": "string",
-            "detail": "string"
+            "status_code": "string"
           },
           "422": {
             "description": "Validation Error",
@@ -276,15 +276,15 @@
           },
           "400": {
             "description": "Bad Request",
+            "detail": "string",
             "message": "string",
-            "status_code": "string",
-            "detail": "string"
+            "status_code": "string"
           },
           "401": {
             "description": "Unauthorized",
+            "detail": "string",
             "message": "string",
-            "status_code": "string",
-            "detail": "string"
+            "status_code": "string"
           },
           "422": {
             "description": "Validation Error",
@@ -349,24 +349,24 @@
             "title": "Activityisconditionalreason",
             "type": "string"
           },
-          "biomedicalConcepts": {
-            "title": "Biomedicalconcepts",
+          "biomedicalConceptIds": {
+            "title": "Biomedicalconceptids",
             "type": "array",
             "items": {
               "type": "string"
             },
             "default": []
           },
-          "bcCategories": {
-            "title": "Bccategories",
+          "bcCategoryIds": {
+            "title": "Bccategoryids",
             "type": "array",
             "items": {
               "type": "string"
             },
             "default": []
           },
-          "bcSurrogates": {
-            "title": "Bcsurrogates",
+          "bcSurrogateIds": {
+            "title": "Bcsurrogateids",
             "type": "array",
             "items": {
               "type": "string"
@@ -1316,8 +1316,8 @@
             },
             "default": []
           },
-          "studyStudyDesignPopulations": {
-            "title": "Studystudydesignpopulations",
+          "studyPopulations": {
+            "title": "Studypopulations",
             "type": "array",
             "items": {
               "$ref": "#/components/schemas/StudyDesignPopulation"
@@ -1508,8 +1508,8 @@
             "title": "Nextstudyepochid",
             "type": "string"
           },
-          "encounters": {
-            "title": "Encounters",
+          "encounterIds": {
+            "title": "Encounterids",
             "type": "array",
             "items": {
               "type": "string"

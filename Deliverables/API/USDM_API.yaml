@@ -30,14 +30,14 @@ paths:
                 format: uuid
         '400':
           description: Bad Request
+          detail: string
           message: string
           status_code: string
-          detail: string
         '401':
           description: Unauthorized
+          detail: string
           message: string
           status_code: string
-          detail: string
         '422':
           description: Validation Error
           content:
@@ -66,14 +66,14 @@ paths:
               schema: {}
         '400':
           description: Bad Request
+          detail: string
           message: string
           status_code: string
-          detail: string
         '401':
           description: Unauthorized
+          detail: string
           message: string
           status_code: string
-          detail: string
         '422':
           description: Validation Error
           content:
@@ -110,14 +110,14 @@ paths:
                 format: uuid
         '400':
           description: Bad Request
+          detail: string
           message: string
           status_code: string
-          detail: string
         '401':
           description: Unauthorized
+          detail: string
           message: string
           status_code: string
-          detail: string
         '422':
           description: Validation Error
           content:
@@ -152,14 +152,14 @@ paths:
                   $ref: '#/components/schemas/Study'
         '400':
           description: Bad Request
+          detail: string
           message: string
           status_code: string
-          detail: string
         '401':
           description: Unauthorized
+          detail: string
           message: string
           status_code: string
-          detail: string
         '422':
           description: Validation Error
           content:
@@ -193,14 +193,14 @@ paths:
                   $ref: '#/components/schemas/StudyDesign'
         '400':
           description: Bad Request
+          detail: string
           message: string
           status_code: string
-          detail: string
         '401':
           description: Unauthorized
+          detail: string
           message: string
           status_code: string
-          detail: string
         '422':
           description: Validation Error
           content:
@@ -246,20 +246,20 @@ components:
         activityIsConditionalReason:
           title: Activityisconditionalreason
           type: string
-        biomedicalConcepts:
-          title: Biomedicalconcepts
+        biomedicalConceptIds:
+          title: Biomedicalconceptids
           type: array
           items:
             type: string
           default: []
-        bcCategories:
-          title: Bccategories
+        bcCategoryIds:
+          title: Bccategoryids
           type: array
           items:
             type: string
           default: []
-        bcSurrogates:
-          title: Bcsurrogates
+        bcSurrogateIds:
+          title: Bcsurrogateids
           type: array
           items:
             type: string
@@ -963,8 +963,8 @@ components:
           items:
             $ref: '#/components/schemas/InvestigationalIntervention'
           default: []
-        studyStudyDesignPopulations:
-          title: Studystudydesignpopulations
+        studyPopulations:
+          title: Studypopulations
           type: array
           items:
             $ref: '#/components/schemas/StudyDesignPopulation'
@@ -1106,8 +1106,8 @@ components:
         nextStudyEpochId:
           title: Nextstudyepochid
           type: string
-        encounters:
-          title: Encounters
+        encounterIds:
+          title: Encounterids
           type: array
           items:
             type: string
