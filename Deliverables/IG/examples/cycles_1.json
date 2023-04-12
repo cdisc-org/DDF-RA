@@ -107,14 +107,14 @@
       "studyDesignDescription": "The main design for the study",
       "trialIntentTypes": [
         {
-          "codeId": "Code_35",
+          "codeId": "Code_46",
           "code": "C15714",
           "codeSystem": "http://www.cdisc.org",
           "codeSystemVersion": "2022-12-16",
           "decode": "Basic Research"
         },
         {
-          "codeId": "Code_36",
+          "codeId": "Code_47",
           "code": "C139174",
           "codeSystem": "http://www.cdisc.org",
           "codeSystemVersion": "2022-12-16",
@@ -123,7 +123,7 @@
       ],
       "trialType": [
         {
-          "codeId": "Code_37",
+          "codeId": "Code_48",
           "code": "C49666",
           "codeSystem": "http://www.cdisc.org",
           "codeSystemVersion": "2022-12-16",
@@ -131,7 +131,7 @@
         }
       ],
       "interventionModel": {
-        "codeId": "Code_38",
+        "codeId": "Code_49",
         "code": "C82639",
         "codeSystem": "http://www.cdisc.org",
         "codeSystemVersion": "2022-12-16",
@@ -144,10 +144,16 @@
             "studyArmId": "StudyArm_1",
             "studyArmName": "Active",
             "studyArmDescription": "Active",
-            "studyArmType": "",
+            "studyArmType": {
+              "codeId": "Code_54",
+              "code": "C174266",
+              "codeSystem": "http://www.cdisc.org",
+              "codeSystemVersion": "2022-12-16",
+              "decode": "Experimental Arm"
+            },
             "studyArmDataOriginDescription": "",
             "studyArmDataOriginType": {
-              "codeId": "Code_42",
+              "codeId": "Code_53",
               "code": "C188866",
               "codeSystem": "http://www.cdisc.org",
               "codeSystemVersion": "2022-12-16",
@@ -159,7 +165,7 @@
             "studyEpochName": "Screening",
             "studyEpochDescription": "Screening",
             "studyEpochType": {
-              "codeId": "Code_39",
+              "codeId": "Code_50",
               "code": "C165873",
               "codeSystem": "http://www.cdisc.org",
               "codeSystemVersion": "2022-12-16",
@@ -193,10 +199,16 @@
             "studyArmId": "StudyArm_1",
             "studyArmName": "Active",
             "studyArmDescription": "Active",
-            "studyArmType": "",
+            "studyArmType": {
+              "codeId": "Code_54",
+              "code": "C174266",
+              "codeSystem": "http://www.cdisc.org",
+              "codeSystemVersion": "2022-12-16",
+              "decode": "Experimental Arm"
+            },
             "studyArmDataOriginDescription": "",
             "studyArmDataOriginType": {
-              "codeId": "Code_42",
+              "codeId": "Code_53",
               "code": "C188866",
               "codeSystem": "http://www.cdisc.org",
               "codeSystemVersion": "2022-12-16",
@@ -208,7 +220,7 @@
             "studyEpochName": "Treatment",
             "studyEpochDescription": "Treatment",
             "studyEpochType": {
-              "codeId": "Code_40",
+              "codeId": "Code_51",
               "code": "C165873",
               "codeSystem": "http://www.cdisc.org",
               "codeSystemVersion": "2022-12-16",
@@ -250,10 +262,16 @@
             "studyArmId": "StudyArm_1",
             "studyArmName": "Active",
             "studyArmDescription": "Active",
-            "studyArmType": "",
+            "studyArmType": {
+              "codeId": "Code_54",
+              "code": "C174266",
+              "codeSystem": "http://www.cdisc.org",
+              "codeSystemVersion": "2022-12-16",
+              "decode": "Experimental Arm"
+            },
             "studyArmDataOriginDescription": "",
             "studyArmDataOriginType": {
-              "codeId": "Code_42",
+              "codeId": "Code_53",
               "code": "C188866",
               "codeSystem": "http://www.cdisc.org",
               "codeSystemVersion": "2022-12-16",
@@ -265,7 +283,7 @@
             "studyEpochName": "Follow-Up",
             "studyEpochDescription": "Follow-Up",
             "studyEpochType": {
-              "codeId": "Code_41",
+              "codeId": "Code_52",
               "code": "C165873",
               "codeSystem": "http://www.cdisc.org",
               "codeSystemVersion": "2022-12-16",
@@ -299,10 +317,16 @@
             "studyArmId": "StudyArm_2",
             "studyArmName": "Placebo",
             "studyArmDescription": "Placebo",
-            "studyArmType": "",
+            "studyArmType": {
+              "codeId": "Code_56",
+              "code": "C174266",
+              "codeSystem": "http://www.cdisc.org",
+              "codeSystemVersion": "2022-12-16",
+              "decode": "Experimental Arm"
+            },
             "studyArmDataOriginDescription": "",
             "studyArmDataOriginType": {
-              "codeId": "Code_43",
+              "codeId": "Code_55",
               "code": "C188866",
               "codeSystem": "http://www.cdisc.org",
               "codeSystemVersion": "2022-12-16",
@@ -314,7 +338,7 @@
             "studyEpochName": "Screening",
             "studyEpochDescription": "Screening",
             "studyEpochType": {
-              "codeId": "Code_39",
+              "codeId": "Code_50",
               "code": "C165873",
               "codeSystem": "http://www.cdisc.org",
               "codeSystemVersion": "2022-12-16",
@@ -348,10 +372,16 @@
             "studyArmId": "StudyArm_2",
             "studyArmName": "Placebo",
             "studyArmDescription": "Placebo",
-            "studyArmType": "",
+            "studyArmType": {
+              "codeId": "Code_56",
+              "code": "C174266",
+              "codeSystem": "http://www.cdisc.org",
+              "codeSystemVersion": "2022-12-16",
+              "decode": "Experimental Arm"
+            },
             "studyArmDataOriginDescription": "",
             "studyArmDataOriginType": {
-              "codeId": "Code_43",
+              "codeId": "Code_55",
               "code": "C188866",
               "codeSystem": "http://www.cdisc.org",
               "codeSystemVersion": "2022-12-16",
@@ -363,7 +393,7 @@
             "studyEpochName": "Treatment",
             "studyEpochDescription": "Treatment",
             "studyEpochType": {
-              "codeId": "Code_40",
+              "codeId": "Code_51",
               "code": "C165873",
               "codeSystem": "http://www.cdisc.org",
               "codeSystemVersion": "2022-12-16",
@@ -405,10 +435,16 @@
             "studyArmId": "StudyArm_2",
             "studyArmName": "Placebo",
             "studyArmDescription": "Placebo",
-            "studyArmType": "",
+            "studyArmType": {
+              "codeId": "Code_56",
+              "code": "C174266",
+              "codeSystem": "http://www.cdisc.org",
+              "codeSystemVersion": "2022-12-16",
+              "decode": "Experimental Arm"
+            },
             "studyArmDataOriginDescription": "",
             "studyArmDataOriginType": {
-              "codeId": "Code_43",
+              "codeId": "Code_55",
               "code": "C188866",
               "codeSystem": "http://www.cdisc.org",
               "codeSystemVersion": "2022-12-16",
@@ -420,7 +456,7 @@
             "studyEpochName": "Follow-Up",
             "studyEpochDescription": "Follow-Up",
             "studyEpochType": {
-              "codeId": "Code_41",
+              "codeId": "Code_52",
               "code": "C165873",
               "codeSystem": "http://www.cdisc.org",
               "codeSystemVersion": "2022-12-16",
@@ -455,7 +491,7 @@
           "indicationDescription": "An indication",
           "codes": [
             {
-              "codeId": "Code_86",
+              "codeId": "Code_162",
               "code": "12345",
               "codeSystem": "SNOMED",
               "codeSystemVersion": "January 31, 2018",
@@ -468,7 +504,7 @@
           "indicationDescription": "An indication",
           "codes": [
             {
-              "codeId": "Code_89",
+              "codeId": "Code_165",
               "code": "345678",
               "codeSystem": "SNOMED",
               "codeSystemVersion": "January 31, 2018",
@@ -483,14 +519,14 @@
           "interventionDescription": "An intervention",
           "codes": [
             {
-              "codeId": "Code_87",
+              "codeId": "Code_163",
               "code": "X",
               "codeSystem": "ICD-10",
               "codeSystemVersion": "",
               "decode": "Y"
             },
             {
-              "codeId": "Code_88",
+              "codeId": "Code_164",
               "code": "A",
               "codeSystem": "SNOMED",
               "codeSystemVersion": "January 31, 2018",
@@ -503,14 +539,14 @@
           "interventionDescription": "An intervention",
           "codes": [
             {
-              "codeId": "Code_90",
+              "codeId": "Code_166",
               "code": "DD",
               "codeSystem": "ICD-10",
               "codeSystemVersion": "",
               "decode": "CC"
             },
             {
-              "codeId": "Code_91",
+              "codeId": "Code_167",
               "code": "A",
               "codeSystem": "SNOMED",
               "codeSystemVersion": "January 31, 2018",
@@ -519,7 +555,7 @@
           ]
         }
       ],
-      "studyStudyDesignPopulations": [
+      "studyPopulations": [
         {
           "studyDesignPopulationId": "StudyDesignPopulation_1",
           "populationDescription": "Pop 1",
@@ -550,7 +586,7 @@
           "objectiveId": "Objective_1",
           "objectiveDescription": "Obj Desc",
           "objectiveLevel": {
-            "codeId": "Code_95",
+            "codeId": "Code_171",
             "code": "C85826",
             "codeSystem": "http://www.cdisc.org",
             "codeSystemVersion": "2022-12-16",
@@ -562,7 +598,7 @@
               "endpointDescription": "End Desc",
               "endpointPurposeDescription": "",
               "endpointLevel": {
-                "codeId": "Code_96",
+                "codeId": "Code_172",
                 "code": "C94496",
                 "codeSystem": "http://www.cdisc.org",
                 "codeSystemVersion": "2022-12-16",
@@ -595,19 +631,19 @@
                 {
                   "timingId": "Timing_1",
                   "timingType": {
-                    "codeId": "Code_44",
-                    "code": "NEXT",
+                    "codeId": "Code_58",
+                    "code": "C99901x1",
                     "codeSystem": "http://www.cdisc.org",
                     "codeSystemVersion": "2022-12-16",
-                    "decode": "next"
+                    "decode": "After"
                   },
                   "timingValue": "0..30 Days",
                   "timingRelativeToFrom": {
-                    "codeId": "Code_45",
-                    "code": "START TO START",
+                    "codeId": "Code_61",
+                    "code": "C99900x1",
                     "codeSystem": "http://www.cdisc.org",
                     "codeSystemVersion": "2022-12-16",
-                    "decode": "Start to start"
+                    "decode": "Start to Start"
                   },
                   "timingWindow": "",
                   "relativeFromScheduledInstanceId": "ScheduledActivityInstance_1",
@@ -631,19 +667,19 @@
                 {
                   "timingId": "Timing_12",
                   "timingType": {
-                    "codeId": "Code_66",
-                    "code": "ANCHOR",
+                    "codeId": "Code_112",
+                    "code": "C99901x3",
                     "codeSystem": "http://www.cdisc.org",
                     "codeSystemVersion": "2022-12-16",
-                    "decode": "anchor"
+                    "decode": "Fixed Reference"
                   },
                   "timingValue": "Day 1",
                   "timingRelativeToFrom": {
-                    "codeId": "Code_67",
-                    "code": "START TO START",
+                    "codeId": "Code_116",
+                    "code": "C99900x1",
                     "codeSystem": "http://www.cdisc.org",
                     "codeSystemVersion": "2022-12-16",
-                    "decode": "Start to start"
+                    "decode": "Start to Start"
                   },
                   "timingWindow": "",
                   "relativeFromScheduledInstanceId": "ScheduledActivityInstance_12",
@@ -663,19 +699,19 @@
                 {
                   "timingId": "Timing_2",
                   "timingType": {
-                    "codeId": "Code_46",
-                    "code": "CYCLE START",
+                    "codeId": "Code_65",
+                    "code": "C99901x3",
                     "codeSystem": "http://www.cdisc.org",
                     "codeSystemVersion": "2022-12-16",
-                    "decode": "cycle start"
+                    "decode": "Fixed Reference"
                   },
                   "timingValue": "",
                   "timingRelativeToFrom": {
-                    "codeId": "Code_47",
-                    "code": "START TO START",
+                    "codeId": "Code_66",
+                    "code": "C99900x1",
                     "codeSystem": "http://www.cdisc.org",
                     "codeSystemVersion": "2022-12-16",
-                    "decode": "Start to start"
+                    "decode": "Start to Start"
                   },
                   "timingWindow": "",
                   "relativeFromScheduledInstanceId": "ScheduledActivityInstance_2",
@@ -698,19 +734,19 @@
                 {
                   "timingId": "Timing_13",
                   "timingType": {
-                    "codeId": "Code_68",
-                    "code": "PREVIOUS",
+                    "codeId": "Code_119",
+                    "code": "C99901x2",
                     "codeSystem": "http://www.cdisc.org",
                     "codeSystemVersion": "2022-12-16",
-                    "decode": "previous"
+                    "decode": "Before"
                   },
                   "timingValue": "15 Days",
                   "timingRelativeToFrom": {
-                    "codeId": "Code_69",
-                    "code": "START TO START",
+                    "codeId": "Code_121",
+                    "code": "C99900x1",
                     "codeSystem": "http://www.cdisc.org",
                     "codeSystemVersion": "2022-12-16",
-                    "decode": "Start to start"
+                    "decode": "Start to Start"
                   },
                   "timingWindow": "",
                   "relativeFromScheduledInstanceId": "ScheduledActivityInstance_13",
@@ -730,19 +766,19 @@
                 {
                   "timingId": "Timing_3",
                   "timingType": {
-                    "codeId": "Code_48",
-                    "code": "PREVIOUS",
+                    "codeId": "Code_69",
+                    "code": "C99901x2",
                     "codeSystem": "http://www.cdisc.org",
                     "codeSystemVersion": "2022-12-16",
-                    "decode": "previous"
+                    "decode": "Before"
                   },
                   "timingValue": "+14 Days",
                   "timingRelativeToFrom": {
-                    "codeId": "Code_49",
-                    "code": "START TO START",
+                    "codeId": "Code_71",
+                    "code": "C99900x1",
                     "codeSystem": "http://www.cdisc.org",
                     "codeSystemVersion": "2022-12-16",
-                    "decode": "Start to start"
+                    "decode": "Start to Start"
                   },
                   "timingWindow": "",
                   "relativeFromScheduledInstanceId": "ScheduledActivityInstance_3",
@@ -764,19 +800,19 @@
                 {
                   "timingId": "Timing_14",
                   "timingType": {
-                    "codeId": "Code_70",
-                    "code": "ANCHOR",
+                    "codeId": "Code_122",
+                    "code": "C99901x3",
                     "codeSystem": "http://www.cdisc.org",
                     "codeSystemVersion": "2022-12-16",
-                    "decode": "anchor"
+                    "decode": "Fixed Reference"
                   },
                   "timingValue": "Day 16",
                   "timingRelativeToFrom": {
-                    "codeId": "Code_71",
-                    "code": "START TO START",
+                    "codeId": "Code_126",
+                    "code": "C99900x1",
                     "codeSystem": "http://www.cdisc.org",
                     "codeSystemVersion": "2022-12-16",
-                    "decode": "Start to start"
+                    "decode": "Start to Start"
                   },
                   "timingWindow": "",
                   "relativeFromScheduledInstanceId": "ScheduledActivityInstance_14",
@@ -796,19 +832,19 @@
                 {
                   "timingId": "Timing_4",
                   "timingType": {
-                    "codeId": "Code_50",
-                    "code": "CYCLE START",
+                    "codeId": "Code_75",
+                    "code": "C99901x3",
                     "codeSystem": "http://www.cdisc.org",
                     "codeSystemVersion": "2022-12-16",
-                    "decode": "cycle start"
+                    "decode": "Fixed Reference"
                   },
                   "timingValue": "",
                   "timingRelativeToFrom": {
-                    "codeId": "Code_51",
-                    "code": "START TO START",
+                    "codeId": "Code_76",
+                    "code": "C99900x1",
                     "codeSystem": "http://www.cdisc.org",
                     "codeSystemVersion": "2022-12-16",
-                    "decode": "Start to start"
+                    "decode": "Start to Start"
                   },
                   "timingWindow": "",
                   "relativeFromScheduledInstanceId": "ScheduledActivityInstance_4",
@@ -830,19 +866,19 @@
                 {
                   "timingId": "Timing_15",
                   "timingType": {
-                    "codeId": "Code_72",
-                    "code": "PREVIOUS",
+                    "codeId": "Code_129",
+                    "code": "C99901x2",
                     "codeSystem": "http://www.cdisc.org",
                     "codeSystemVersion": "2022-12-16",
-                    "decode": "previous"
+                    "decode": "Before"
                   },
                   "timingValue": "15 Days",
                   "timingRelativeToFrom": {
-                    "codeId": "Code_73",
-                    "code": "START TO START",
+                    "codeId": "Code_131",
+                    "code": "C99900x1",
                     "codeSystem": "http://www.cdisc.org",
                     "codeSystemVersion": "2022-12-16",
-                    "decode": "Start to start"
+                    "decode": "Start to Start"
                   },
                   "timingWindow": "",
                   "relativeFromScheduledInstanceId": "ScheduledActivityInstance_15",
@@ -862,19 +898,19 @@
                 {
                   "timingId": "Timing_5",
                   "timingType": {
-                    "codeId": "Code_52",
-                    "code": "PREVIOUS",
+                    "codeId": "Code_79",
+                    "code": "C99901x2",
                     "codeSystem": "http://www.cdisc.org",
                     "codeSystemVersion": "2022-12-16",
-                    "decode": "previous"
+                    "decode": "Before"
                   },
                   "timingValue": "+14 Days",
                   "timingRelativeToFrom": {
-                    "codeId": "Code_53",
-                    "code": "START TO START",
+                    "codeId": "Code_81",
+                    "code": "C99900x1",
                     "codeSystem": "http://www.cdisc.org",
                     "codeSystemVersion": "2022-12-16",
-                    "decode": "Start to start"
+                    "decode": "Start to Start"
                   },
                   "timingWindow": "",
                   "relativeFromScheduledInstanceId": "ScheduledActivityInstance_5",
@@ -896,19 +932,19 @@
                 {
                   "timingId": "Timing_16",
                   "timingType": {
-                    "codeId": "Code_74",
-                    "code": "ANCHOR",
+                    "codeId": "Code_132",
+                    "code": "C99901x3",
                     "codeSystem": "http://www.cdisc.org",
                     "codeSystemVersion": "2022-12-16",
-                    "decode": "anchor"
+                    "decode": "Fixed Reference"
                   },
                   "timingValue": "Day 31",
                   "timingRelativeToFrom": {
-                    "codeId": "Code_75",
-                    "code": "START TO START",
+                    "codeId": "Code_136",
+                    "code": "C99900x1",
                     "codeSystem": "http://www.cdisc.org",
                     "codeSystemVersion": "2022-12-16",
-                    "decode": "Start to start"
+                    "decode": "Start to Start"
                   },
                   "timingWindow": "",
                   "relativeFromScheduledInstanceId": "ScheduledActivityInstance_16",
@@ -928,19 +964,19 @@
                 {
                   "timingId": "Timing_6",
                   "timingType": {
-                    "codeId": "Code_54",
-                    "code": "CYCLE START",
+                    "codeId": "Code_85",
+                    "code": "C99901x3",
                     "codeSystem": "http://www.cdisc.org",
                     "codeSystemVersion": "2022-12-16",
-                    "decode": "cycle start"
+                    "decode": "Fixed Reference"
                   },
                   "timingValue": "",
                   "timingRelativeToFrom": {
-                    "codeId": "Code_55",
-                    "code": "START TO START",
+                    "codeId": "Code_86",
+                    "code": "C99900x1",
                     "codeSystem": "http://www.cdisc.org",
                     "codeSystemVersion": "2022-12-16",
-                    "decode": "Start to start"
+                    "decode": "Start to Start"
                   },
                   "timingWindow": "",
                   "relativeFromScheduledInstanceId": "ScheduledActivityInstance_6",
@@ -962,19 +998,19 @@
                 {
                   "timingId": "Timing_17",
                   "timingType": {
-                    "codeId": "Code_76",
-                    "code": "PREVIOUS",
+                    "codeId": "Code_139",
+                    "code": "C99901x2",
                     "codeSystem": "http://www.cdisc.org",
                     "codeSystemVersion": "2022-12-16",
-                    "decode": "previous"
+                    "decode": "Before"
                   },
                   "timingValue": "15 Days",
                   "timingRelativeToFrom": {
-                    "codeId": "Code_77",
-                    "code": "START TO START",
+                    "codeId": "Code_141",
+                    "code": "C99900x1",
                     "codeSystem": "http://www.cdisc.org",
                     "codeSystemVersion": "2022-12-16",
-                    "decode": "Start to start"
+                    "decode": "Start to Start"
                   },
                   "timingWindow": "",
                   "relativeFromScheduledInstanceId": "ScheduledActivityInstance_17",
@@ -994,19 +1030,19 @@
                 {
                   "timingId": "Timing_7",
                   "timingType": {
-                    "codeId": "Code_56",
-                    "code": "PREVIOUS",
+                    "codeId": "Code_89",
+                    "code": "C99901x2",
                     "codeSystem": "http://www.cdisc.org",
                     "codeSystemVersion": "2022-12-16",
-                    "decode": "previous"
+                    "decode": "Before"
                   },
                   "timingValue": "+14 Days",
                   "timingRelativeToFrom": {
-                    "codeId": "Code_57",
-                    "code": "START TO START",
+                    "codeId": "Code_91",
+                    "code": "C99900x1",
                     "codeSystem": "http://www.cdisc.org",
                     "codeSystemVersion": "2022-12-16",
-                    "decode": "Start to start"
+                    "decode": "Start to Start"
                   },
                   "timingWindow": "",
                   "relativeFromScheduledInstanceId": "ScheduledActivityInstance_7",
@@ -1026,19 +1062,19 @@
                 {
                   "timingId": "Timing_18",
                   "timingType": {
-                    "codeId": "Code_78",
-                    "code": "ANCHOR",
+                    "codeId": "Code_142",
+                    "code": "C99901x3",
                     "codeSystem": "http://www.cdisc.org",
                     "codeSystemVersion": "2022-12-16",
-                    "decode": "anchor"
+                    "decode": "Fixed Reference"
                   },
                   "timingValue": "Day 46",
                   "timingRelativeToFrom": {
-                    "codeId": "Code_79",
-                    "code": "START TO START",
+                    "codeId": "Code_146",
+                    "code": "C99900x1",
                     "codeSystem": "http://www.cdisc.org",
                     "codeSystemVersion": "2022-12-16",
-                    "decode": "Start to start"
+                    "decode": "Start to Start"
                   },
                   "timingWindow": "",
                   "relativeFromScheduledInstanceId": "ScheduledActivityInstance_18",
@@ -1058,19 +1094,19 @@
                 {
                   "timingId": "Timing_8",
                   "timingType": {
-                    "codeId": "Code_58",
-                    "code": "CYCLE START",
+                    "codeId": "Code_95",
+                    "code": "C99901x3",
                     "codeSystem": "http://www.cdisc.org",
                     "codeSystemVersion": "2022-12-16",
-                    "decode": "cycle start"
+                    "decode": "Fixed Reference"
                   },
                   "timingValue": "",
                   "timingRelativeToFrom": {
-                    "codeId": "Code_59",
-                    "code": "START TO START",
+                    "codeId": "Code_96",
+                    "code": "C99900x1",
                     "codeSystem": "http://www.cdisc.org",
                     "codeSystemVersion": "2022-12-16",
-                    "decode": "Start to start"
+                    "decode": "Start to Start"
                   },
                   "timingWindow": "",
                   "relativeFromScheduledInstanceId": "ScheduledActivityInstance_8",
@@ -1092,19 +1128,19 @@
                 {
                   "timingId": "Timing_19",
                   "timingType": {
-                    "codeId": "Code_80",
-                    "code": "PREVIOUS",
+                    "codeId": "Code_149",
+                    "code": "C99901x2",
                     "codeSystem": "http://www.cdisc.org",
                     "codeSystemVersion": "2022-12-16",
-                    "decode": "previous"
+                    "decode": "Before"
                   },
                   "timingValue": "15 Days",
                   "timingRelativeToFrom": {
-                    "codeId": "Code_81",
-                    "code": "START TO START",
+                    "codeId": "Code_151",
+                    "code": "C99900x1",
                     "codeSystem": "http://www.cdisc.org",
                     "codeSystemVersion": "2022-12-16",
-                    "decode": "Start to start"
+                    "decode": "Start to Start"
                   },
                   "timingWindow": "",
                   "relativeFromScheduledInstanceId": "ScheduledActivityInstance_19",
@@ -1143,19 +1179,19 @@
                 {
                   "timingId": "Timing_20",
                   "timingType": {
-                    "codeId": "Code_82",
-                    "code": "ANCHOR",
+                    "codeId": "Code_152",
+                    "code": "C99901x3",
                     "codeSystem": "http://www.cdisc.org",
                     "codeSystemVersion": "2022-12-16",
-                    "decode": "anchor"
+                    "decode": "Fixed Reference"
                   },
                   "timingValue": "Day 211",
                   "timingRelativeToFrom": {
-                    "codeId": "Code_83",
-                    "code": "START TO START",
+                    "codeId": "Code_156",
+                    "code": "C99900x1",
                     "codeSystem": "http://www.cdisc.org",
                     "codeSystemVersion": "2022-12-16",
-                    "decode": "Start to start"
+                    "decode": "Start to Start"
                   },
                   "timingWindow": "",
                   "relativeFromScheduledInstanceId": "ScheduledActivityInstance_21",
@@ -1175,19 +1211,19 @@
                 {
                   "timingId": "Timing_9",
                   "timingType": {
-                    "codeId": "Code_60",
-                    "code": "CYCLE START",
+                    "codeId": "Code_100",
+                    "code": "C99901x3",
                     "codeSystem": "http://www.cdisc.org",
                     "codeSystemVersion": "2022-12-16",
-                    "decode": "cycle start"
+                    "decode": "Fixed Reference"
                   },
                   "timingValue": "",
                   "timingRelativeToFrom": {
-                    "codeId": "Code_61",
-                    "code": "START TO START",
+                    "codeId": "Code_101",
+                    "code": "C99900x1",
                     "codeSystem": "http://www.cdisc.org",
                     "codeSystemVersion": "2022-12-16",
-                    "decode": "Start to start"
+                    "decode": "Start to Start"
                   },
                   "timingWindow": "",
                   "relativeFromScheduledInstanceId": "ScheduledActivityInstance_9",
@@ -1209,19 +1245,19 @@
                 {
                   "timingId": "Timing_21",
                   "timingType": {
-                    "codeId": "Code_84",
-                    "code": "PREVIOUS",
+                    "codeId": "Code_159",
+                    "code": "C99901x2",
                     "codeSystem": "http://www.cdisc.org",
                     "codeSystemVersion": "2022-12-16",
-                    "decode": "previous"
+                    "decode": "Before"
                   },
                   "timingValue": "15 Days",
                   "timingRelativeToFrom": {
-                    "codeId": "Code_85",
-                    "code": "START TO START",
+                    "codeId": "Code_161",
+                    "code": "C99900x1",
                     "codeSystem": "http://www.cdisc.org",
                     "codeSystemVersion": "2022-12-16",
-                    "decode": "Start to start"
+                    "decode": "Start to Start"
                   },
                   "timingWindow": "",
                   "relativeFromScheduledInstanceId": "ScheduledActivityInstance_22",
@@ -1260,19 +1296,19 @@
                 {
                   "timingId": "Timing_10",
                   "timingType": {
-                    "codeId": "Code_62",
-                    "code": "PREVIOUS",
+                    "codeId": "Code_104",
+                    "code": "C99901x2",
                     "codeSystem": "http://www.cdisc.org",
                     "codeSystemVersion": "2022-12-16",
-                    "decode": "previous"
+                    "decode": "Before"
                   },
                   "timingValue": "Within 30 days of last dose",
                   "timingRelativeToFrom": {
-                    "codeId": "Code_63",
-                    "code": "START TO START",
+                    "codeId": "Code_106",
+                    "code": "C99900x1",
                     "codeSystem": "http://www.cdisc.org",
                     "codeSystemVersion": "2022-12-16",
-                    "decode": "Start to start"
+                    "decode": "Start to Start"
                   },
                   "timingWindow": "",
                   "relativeFromScheduledInstanceId": "ScheduledActivityInstance_10",
@@ -1294,19 +1330,19 @@
                 {
                   "timingId": "Timing_11",
                   "timingType": {
-                    "codeId": "Code_64",
-                    "code": "PREVIOUS",
+                    "codeId": "Code_109",
+                    "code": "C99901x2",
                     "codeSystem": "http://www.cdisc.org",
                     "codeSystemVersion": "2022-12-16",
-                    "decode": "previous"
+                    "decode": "Before"
                   },
                   "timingValue": "+12 weeks",
                   "timingRelativeToFrom": {
-                    "codeId": "Code_65",
-                    "code": "START TO START",
+                    "codeId": "Code_111",
+                    "code": "C99900x1",
                     "codeSystem": "http://www.cdisc.org",
                     "codeSystemVersion": "2022-12-16",
-                    "decode": "Start to start"
+                    "decode": "Start to Start"
                   },
                   "timingWindow": "",
                   "relativeFromScheduledInstanceId": "ScheduledActivityInstance_11",
@@ -1321,14 +1357,14 @@
       ],
       "therapeuticAreas": [
         {
-          "codeId": "Code_32",
+          "codeId": "Code_43",
           "code": "T2_DIABETES",
           "codeSystem": "SPONSOR",
           "codeSystemVersion": "12",
           "decode": "Type 2 diabetes"
         },
         {
-          "codeId": "Code_33",
+          "codeId": "Code_44",
           "code": "73211009",
           "codeSystem": "SNOMED",
           "codeSystemVersion": "January 31, 2018",
@@ -1376,7 +1412,15 @@
             "codeSystemVersion": "2022-12-16",
             "decode": "Clinic"
           },
-          "encounterContactModes": [],
+          "encounterContactModes": [
+            {
+              "codeId": "Code_12",
+              "code": "C175574",
+              "codeSystem": "http://www.cdisc.org",
+              "codeSystemVersion": "2022-12-16",
+              "decode": "In Person"
+            }
+          ],
           "transitionStartRule": {
             "transitionRuleId": "TransitionRule_1",
             "transitionRuleDescription": "Subject identifier"
@@ -1394,20 +1438,28 @@
           "previousEncounterId": "Encounter_1",
           "nextEncounterId": "Encounter_3",
           "encounterType": {
-            "codeId": "Code_12",
+            "codeId": "Code_13",
             "code": "C25716",
             "codeSystem": "http://www.cdisc.org",
             "codeSystemVersion": "2022-12-16",
             "decode": "Visit"
           },
           "encounterEnvironmentalSetting": {
-            "codeId": "Code_13",
+            "codeId": "Code_14",
             "code": "C51282",
             "codeSystem": "http://www.cdisc.org",
             "codeSystemVersion": "2022-12-16",
             "decode": "Clinic"
           },
-          "encounterContactModes": [],
+          "encounterContactModes": [
+            {
+              "codeId": "Code_15",
+              "code": "C175574",
+              "codeSystem": "http://www.cdisc.org",
+              "codeSystemVersion": "2022-12-16",
+              "decode": "In Person"
+            }
+          ],
           "transitionStartRule": {
             "transitionRuleId": "TransitionRule_3",
             "transitionRuleDescription": "Radomized"
@@ -1422,31 +1474,6 @@
           "previousEncounterId": "Encounter_2",
           "nextEncounterId": "Encounter_4",
           "encounterType": {
-            "codeId": "Code_14",
-            "code": "C25716",
-            "codeSystem": "http://www.cdisc.org",
-            "codeSystemVersion": "2022-12-16",
-            "decode": "Visit"
-          },
-          "encounterEnvironmentalSetting": {
-            "codeId": "Code_15",
-            "code": "C51282",
-            "codeSystem": "http://www.cdisc.org",
-            "codeSystemVersion": "2022-12-16",
-            "decode": "Clinic"
-          },
-          "encounterContactModes": [],
-          "transitionStartRule": null,
-          "transitionEndRule": null,
-          "encounterScheduledAtTimingId": null
-        },
-        {
-          "encounterId": "Encounter_4",
-          "encounterName": "Day 1",
-          "encounterDescription": "Cycle 2, Day 1",
-          "previousEncounterId": "Encounter_3",
-          "nextEncounterId": "Encounter_5",
-          "encounterType": {
             "codeId": "Code_16",
             "code": "C25716",
             "codeSystem": "http://www.cdisc.org",
@@ -1460,7 +1487,48 @@
             "codeSystemVersion": "2022-12-16",
             "decode": "Clinic"
           },
-          "encounterContactModes": [],
+          "encounterContactModes": [
+            {
+              "codeId": "Code_18",
+              "code": "C175574",
+              "codeSystem": "http://www.cdisc.org",
+              "codeSystemVersion": "2022-12-16",
+              "decode": "In Person"
+            }
+          ],
+          "transitionStartRule": null,
+          "transitionEndRule": null,
+          "encounterScheduledAtTimingId": null
+        },
+        {
+          "encounterId": "Encounter_4",
+          "encounterName": "Day 1",
+          "encounterDescription": "Cycle 2, Day 1",
+          "previousEncounterId": "Encounter_3",
+          "nextEncounterId": "Encounter_5",
+          "encounterType": {
+            "codeId": "Code_19",
+            "code": "C25716",
+            "codeSystem": "http://www.cdisc.org",
+            "codeSystemVersion": "2022-12-16",
+            "decode": "Visit"
+          },
+          "encounterEnvironmentalSetting": {
+            "codeId": "Code_20",
+            "code": "C51282",
+            "codeSystem": "http://www.cdisc.org",
+            "codeSystemVersion": "2022-12-16",
+            "decode": "Clinic"
+          },
+          "encounterContactModes": [
+            {
+              "codeId": "Code_21",
+              "code": "C175574",
+              "codeSystem": "http://www.cdisc.org",
+              "codeSystemVersion": "2022-12-16",
+              "decode": "In Person"
+            }
+          ],
           "transitionStartRule": null,
           "transitionEndRule": null,
           "encounterScheduledAtTimingId": null
@@ -1471,56 +1539,6 @@
           "encounterDescription": "Cycle 2, Day 15",
           "previousEncounterId": "Encounter_4",
           "nextEncounterId": "Encounter_6",
-          "encounterType": {
-            "codeId": "Code_18",
-            "code": "C25716",
-            "codeSystem": "http://www.cdisc.org",
-            "codeSystemVersion": "2022-12-16",
-            "decode": "Visit"
-          },
-          "encounterEnvironmentalSetting": {
-            "codeId": "Code_19",
-            "code": "C51282",
-            "codeSystem": "http://www.cdisc.org",
-            "codeSystemVersion": "2022-12-16",
-            "decode": "Clinic"
-          },
-          "encounterContactModes": [],
-          "transitionStartRule": null,
-          "transitionEndRule": null,
-          "encounterScheduledAtTimingId": null
-        },
-        {
-          "encounterId": "Encounter_6",
-          "encounterName": "Day 1",
-          "encounterDescription": "Cycle 3, Day 1",
-          "previousEncounterId": "Encounter_5",
-          "nextEncounterId": "Encounter_7",
-          "encounterType": {
-            "codeId": "Code_20",
-            "code": "C25716",
-            "codeSystem": "http://www.cdisc.org",
-            "codeSystemVersion": "2022-12-16",
-            "decode": "Visit"
-          },
-          "encounterEnvironmentalSetting": {
-            "codeId": "Code_21",
-            "code": "C51282",
-            "codeSystem": "http://www.cdisc.org",
-            "codeSystemVersion": "2022-12-16",
-            "decode": "Clinic"
-          },
-          "encounterContactModes": [],
-          "transitionStartRule": null,
-          "transitionEndRule": null,
-          "encounterScheduledAtTimingId": null
-        },
-        {
-          "encounterId": "Encounter_7",
-          "encounterName": "Day 15",
-          "encounterDescription": "Cycle 3, Day 15",
-          "previousEncounterId": "Encounter_6",
-          "nextEncounterId": "Encounter_8",
           "encounterType": {
             "codeId": "Code_22",
             "code": "C25716",
@@ -1535,67 +1553,58 @@
             "codeSystemVersion": "2022-12-16",
             "decode": "Clinic"
           },
-          "encounterContactModes": [],
+          "encounterContactModes": [
+            {
+              "codeId": "Code_24",
+              "code": "C175574",
+              "codeSystem": "http://www.cdisc.org",
+              "codeSystemVersion": "2022-12-16",
+              "decode": "In Person"
+            }
+          ],
           "transitionStartRule": null,
           "transitionEndRule": null,
           "encounterScheduledAtTimingId": null
         },
         {
-          "encounterId": "Encounter_8",
+          "encounterId": "Encounter_6",
           "encounterName": "Day 1",
-          "encounterDescription": "Cycle 4 to 12, Day 1",
-          "previousEncounterId": "Encounter_7",
-          "nextEncounterId": "Encounter_9",
+          "encounterDescription": "Cycle 3, Day 1",
+          "previousEncounterId": "Encounter_5",
+          "nextEncounterId": "Encounter_7",
           "encounterType": {
-            "codeId": "Code_24",
-            "code": "C25716",
-            "codeSystem": "http://www.cdisc.org",
-            "codeSystemVersion": "2022-12-16",
-            "decode": "Visit"
-          },
-          "encounterEnvironmentalSetting": {
             "codeId": "Code_25",
-            "code": "C51282",
-            "codeSystem": "http://www.cdisc.org",
-            "codeSystemVersion": "2022-12-16",
-            "decode": "Clinic"
-          },
-          "encounterContactModes": [],
-          "transitionStartRule": null,
-          "transitionEndRule": null,
-          "encounterScheduledAtTimingId": null
-        },
-        {
-          "encounterId": "Encounter_9",
-          "encounterName": "Day 1",
-          "encounterDescription": "Cycle 13 onwards, Day 15",
-          "previousEncounterId": "Encounter_8",
-          "nextEncounterId": "Encounter_10",
-          "encounterType": {
-            "codeId": "Code_26",
             "code": "C25716",
             "codeSystem": "http://www.cdisc.org",
             "codeSystemVersion": "2022-12-16",
             "decode": "Visit"
           },
           "encounterEnvironmentalSetting": {
-            "codeId": "Code_27",
+            "codeId": "Code_26",
             "code": "C51282",
             "codeSystem": "http://www.cdisc.org",
             "codeSystemVersion": "2022-12-16",
             "decode": "Clinic"
           },
-          "encounterContactModes": [],
+          "encounterContactModes": [
+            {
+              "codeId": "Code_27",
+              "code": "C175574",
+              "codeSystem": "http://www.cdisc.org",
+              "codeSystemVersion": "2022-12-16",
+              "decode": "In Person"
+            }
+          ],
           "transitionStartRule": null,
           "transitionEndRule": null,
           "encounterScheduledAtTimingId": null
         },
         {
-          "encounterId": "Encounter_10",
-          "encounterName": "EOT Visit",
-          "encounterDescription": "End of Treatment Visit",
-          "previousEncounterId": "Encounter_9",
-          "nextEncounterId": "Encounter_11",
+          "encounterId": "Encounter_7",
+          "encounterName": "Day 15",
+          "encounterDescription": "Cycle 3, Day 15",
+          "previousEncounterId": "Encounter_6",
+          "nextEncounterId": "Encounter_8",
           "encounterType": {
             "codeId": "Code_28",
             "code": "C25716",
@@ -1610,7 +1619,114 @@
             "codeSystemVersion": "2022-12-16",
             "decode": "Clinic"
           },
-          "encounterContactModes": [],
+          "encounterContactModes": [
+            {
+              "codeId": "Code_30",
+              "code": "C175574",
+              "codeSystem": "http://www.cdisc.org",
+              "codeSystemVersion": "2022-12-16",
+              "decode": "In Person"
+            }
+          ],
+          "transitionStartRule": null,
+          "transitionEndRule": null,
+          "encounterScheduledAtTimingId": null
+        },
+        {
+          "encounterId": "Encounter_8",
+          "encounterName": "Day 1",
+          "encounterDescription": "Cycle 4 to 12, Day 1",
+          "previousEncounterId": "Encounter_7",
+          "nextEncounterId": "Encounter_9",
+          "encounterType": {
+            "codeId": "Code_31",
+            "code": "C25716",
+            "codeSystem": "http://www.cdisc.org",
+            "codeSystemVersion": "2022-12-16",
+            "decode": "Visit"
+          },
+          "encounterEnvironmentalSetting": {
+            "codeId": "Code_32",
+            "code": "C51282",
+            "codeSystem": "http://www.cdisc.org",
+            "codeSystemVersion": "2022-12-16",
+            "decode": "Clinic"
+          },
+          "encounterContactModes": [
+            {
+              "codeId": "Code_33",
+              "code": "C175574",
+              "codeSystem": "http://www.cdisc.org",
+              "codeSystemVersion": "2022-12-16",
+              "decode": "In Person"
+            }
+          ],
+          "transitionStartRule": null,
+          "transitionEndRule": null,
+          "encounterScheduledAtTimingId": null
+        },
+        {
+          "encounterId": "Encounter_9",
+          "encounterName": "Day 1",
+          "encounterDescription": "Cycle 13 onwards, Day 15",
+          "previousEncounterId": "Encounter_8",
+          "nextEncounterId": "Encounter_10",
+          "encounterType": {
+            "codeId": "Code_34",
+            "code": "C25716",
+            "codeSystem": "http://www.cdisc.org",
+            "codeSystemVersion": "2022-12-16",
+            "decode": "Visit"
+          },
+          "encounterEnvironmentalSetting": {
+            "codeId": "Code_35",
+            "code": "C51282",
+            "codeSystem": "http://www.cdisc.org",
+            "codeSystemVersion": "2022-12-16",
+            "decode": "Clinic"
+          },
+          "encounterContactModes": [
+            {
+              "codeId": "Code_36",
+              "code": "C175574",
+              "codeSystem": "http://www.cdisc.org",
+              "codeSystemVersion": "2022-12-16",
+              "decode": "In Person"
+            }
+          ],
+          "transitionStartRule": null,
+          "transitionEndRule": null,
+          "encounterScheduledAtTimingId": null
+        },
+        {
+          "encounterId": "Encounter_10",
+          "encounterName": "EOT Visit",
+          "encounterDescription": "End of Treatment Visit",
+          "previousEncounterId": "Encounter_9",
+          "nextEncounterId": "Encounter_11",
+          "encounterType": {
+            "codeId": "Code_37",
+            "code": "C25716",
+            "codeSystem": "http://www.cdisc.org",
+            "codeSystemVersion": "2022-12-16",
+            "decode": "Visit"
+          },
+          "encounterEnvironmentalSetting": {
+            "codeId": "Code_38",
+            "code": "C51282",
+            "codeSystem": "http://www.cdisc.org",
+            "codeSystemVersion": "2022-12-16",
+            "decode": "Clinic"
+          },
+          "encounterContactModes": [
+            {
+              "codeId": "Code_39",
+              "code": "C175574",
+              "codeSystem": "http://www.cdisc.org",
+              "codeSystemVersion": "2022-12-16",
+              "decode": "In Person"
+            }
+          ],
           "transitionStartRule": null,
           "transitionEndRule": {
             "transitionRuleId": "TransitionRule_4",
@@ -1625,20 +1741,28 @@
           "previousEncounterId": "Encounter_10",
           "nextEncounterId": null,
           "encounterType": {
-            "codeId": "Code_30",
+            "codeId": "Code_40",
             "code": "C25716",
             "codeSystem": "http://www.cdisc.org",
             "codeSystemVersion": "2022-12-16",
             "decode": "Visit"
           },
           "encounterEnvironmentalSetting": {
-            "codeId": "Code_31",
+            "codeId": "Code_41",
             "code": "C18002",
             "codeSystem": "http://www.cdisc.org",
             "codeSystemVersion": "2022-12-16",
             "decode": "Home"
           },
-          "encounterContactModes": [],
+          "encounterContactModes": [
+            {
+              "codeId": "Code_42",
+              "code": "C171537",
+              "codeSystem": "http://www.cdisc.org",
+              "codeSystemVersion": "2022-12-16",
+              "decode": "Telephone Call"
+            }
+          ],
           "transitionStartRule": null,
           "transitionEndRule": null,
           "encounterScheduledAtTimingId": null
@@ -1697,7 +1821,7 @@
       "studyDesignBlindingScheme": {
         "aliasCodeId": "AliasCode_2",
         "standardCode": {
-          "codeId": "Code_34",
+          "codeId": "Code_45",
           "code": "C49659",
           "codeSystem": "http://www.cdisc.org",
           "codeSystemVersion": "2022-12-16",
