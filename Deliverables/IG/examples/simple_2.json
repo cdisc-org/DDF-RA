@@ -84,14 +84,14 @@
       "studyDesignDescription": "The main design for the study",
       "trialIntentTypes": [
         {
-          "codeId": "Code_20",
+          "codeId": "Code_26",
           "code": "C15714",
           "codeSystem": "http://www.cdisc.org",
           "codeSystemVersion": "2022-12-16",
           "decode": "Basic Research"
         },
         {
-          "codeId": "Code_21",
+          "codeId": "Code_27",
           "code": "C139174",
           "codeSystem": "http://www.cdisc.org",
           "codeSystemVersion": "2022-12-16",
@@ -100,7 +100,7 @@
       ],
       "trialType": [
         {
-          "codeId": "Code_22",
+          "codeId": "Code_28",
           "code": "C49666",
           "codeSystem": "http://www.cdisc.org",
           "codeSystemVersion": "2022-12-16",
@@ -108,7 +108,7 @@
         }
       ],
       "interventionModel": {
-        "codeId": "Code_23",
+        "codeId": "Code_29",
         "code": "C82639",
         "codeSystem": "http://www.cdisc.org",
         "codeSystemVersion": "2022-12-16",
@@ -120,17 +120,17 @@
           "studyArm": {
             "studyArmId": "StudyArm_1",
             "studyArmName": "Active",
-            "studyArmDescription": "Active",
+            "studyArmDescription": "Active Substance",
             "studyArmType": {
-              "codeId": "Code_27",
-              "code": "C174266",
+              "codeId": "Code_17",
+              "code": "C174267",
               "codeSystem": "http://www.cdisc.org",
               "codeSystemVersion": "2022-12-16",
-              "decode": "Experimental Arm"
+              "decode": "Active Comparator Arm"
             },
-            "studyArmDataOriginDescription": "",
+            "studyArmDataOriginDescription": "Data collected from subjects",
             "studyArmDataOriginType": {
-              "codeId": "Code_26",
+              "codeId": "Code_18",
               "code": "C188866",
               "codeSystem": "http://www.cdisc.org",
               "codeSystemVersion": "2022-12-16",
@@ -140,13 +140,13 @@
           "studyEpoch": {
             "studyEpochId": "StudyEpoch_1",
             "studyEpochName": "Treatment",
-            "studyEpochDescription": "Treatment",
+            "studyEpochDescription": "Treatment Epoch",
             "studyEpochType": {
-              "codeId": "Code_24",
-              "code": "C165873",
+              "codeId": "Code_21",
+              "code": "C101526",
               "codeSystem": "http://www.cdisc.org",
               "codeSystemVersion": "2022-12-16",
-              "decode": "OBSERVATION"
+              "decode": "Treatment Epoch"
             },
             "previousStudyEpochId": null,
             "nextStudyEpochId": "StudyEpoch_2",
@@ -176,17 +176,17 @@
           "studyArm": {
             "studyArmId": "StudyArm_1",
             "studyArmName": "Active",
-            "studyArmDescription": "Active",
+            "studyArmDescription": "Active Substance",
             "studyArmType": {
-              "codeId": "Code_27",
-              "code": "C174266",
+              "codeId": "Code_17",
+              "code": "C174267",
               "codeSystem": "http://www.cdisc.org",
               "codeSystemVersion": "2022-12-16",
-              "decode": "Experimental Arm"
+              "decode": "Active Comparator Arm"
             },
-            "studyArmDataOriginDescription": "",
+            "studyArmDataOriginDescription": "Data collected from subjects",
             "studyArmDataOriginType": {
-              "codeId": "Code_26",
+              "codeId": "Code_18",
               "code": "C188866",
               "codeSystem": "http://www.cdisc.org",
               "codeSystemVersion": "2022-12-16",
@@ -196,13 +196,13 @@
           "studyEpoch": {
             "studyEpochId": "StudyEpoch_2",
             "studyEpochName": "Follow-Up",
-            "studyEpochDescription": "Follow-Up",
+            "studyEpochDescription": "Follow-up Epoch",
             "studyEpochType": {
-              "codeId": "Code_25",
-              "code": "C165873",
+              "codeId": "Code_22",
+              "code": "C99158",
               "codeSystem": "http://www.cdisc.org",
               "codeSystemVersion": "2022-12-16",
-              "decode": "OBSERVATION"
+              "decode": "Clinical Study Follow-up"
             },
             "previousStudyEpochId": "StudyEpoch_1",
             "nextStudyEpochId": null,
@@ -233,15 +233,15 @@
             "studyArmName": "Placebo",
             "studyArmDescription": "Placebo",
             "studyArmType": {
-              "codeId": "Code_29",
-              "code": "C174266",
+              "codeId": "Code_19",
+              "code": "C174268",
               "codeSystem": "http://www.cdisc.org",
               "codeSystemVersion": "2022-12-16",
-              "decode": "Experimental Arm"
+              "decode": "Placebo Comparator Arm"
             },
-            "studyArmDataOriginDescription": "",
+            "studyArmDataOriginDescription": "Data collected from subjects",
             "studyArmDataOriginType": {
-              "codeId": "Code_28",
+              "codeId": "Code_20",
               "code": "C188866",
               "codeSystem": "http://www.cdisc.org",
               "codeSystemVersion": "2022-12-16",
@@ -251,13 +251,13 @@
           "studyEpoch": {
             "studyEpochId": "StudyEpoch_1",
             "studyEpochName": "Treatment",
-            "studyEpochDescription": "Treatment",
+            "studyEpochDescription": "Treatment Epoch",
             "studyEpochType": {
-              "codeId": "Code_24",
-              "code": "C165873",
+              "codeId": "Code_21",
+              "code": "C101526",
               "codeSystem": "http://www.cdisc.org",
               "codeSystemVersion": "2022-12-16",
-              "decode": "OBSERVATION"
+              "decode": "Treatment Epoch"
             },
             "previousStudyEpochId": null,
             "nextStudyEpochId": "StudyEpoch_2",
@@ -289,15 +289,15 @@
             "studyArmName": "Placebo",
             "studyArmDescription": "Placebo",
             "studyArmType": {
-              "codeId": "Code_29",
-              "code": "C174266",
+              "codeId": "Code_19",
+              "code": "C174268",
               "codeSystem": "http://www.cdisc.org",
               "codeSystemVersion": "2022-12-16",
-              "decode": "Experimental Arm"
+              "decode": "Placebo Comparator Arm"
             },
-            "studyArmDataOriginDescription": "",
+            "studyArmDataOriginDescription": "Data collected from subjects",
             "studyArmDataOriginType": {
-              "codeId": "Code_28",
+              "codeId": "Code_20",
               "code": "C188866",
               "codeSystem": "http://www.cdisc.org",
               "codeSystemVersion": "2022-12-16",
@@ -307,13 +307,13 @@
           "studyEpoch": {
             "studyEpochId": "StudyEpoch_2",
             "studyEpochName": "Follow-Up",
-            "studyEpochDescription": "Follow-Up",
+            "studyEpochDescription": "Follow-up Epoch",
             "studyEpochType": {
-              "codeId": "Code_25",
-              "code": "C165873",
+              "codeId": "Code_22",
+              "code": "C99158",
               "codeSystem": "http://www.cdisc.org",
               "codeSystemVersion": "2022-12-16",
-              "decode": "OBSERVATION"
+              "decode": "Clinical Study Follow-up"
             },
             "previousStudyEpochId": "StudyEpoch_1",
             "nextStudyEpochId": null,
@@ -476,8 +476,8 @@
           "scheduleTimelineInstances": [
             {
               "scheduledInstanceId": "ScheduledActivityInstance_4",
-              "scheduledInstanceType": 1,
-              "scheduleSequenceNumber": 0,
+              "scheduledInstanceType": "ACTIVITY",
+              "scheduleSequenceNumber": 1,
               "scheduleTimelineExitId": "",
               "scheduledInstanceEncounterId": "",
               "scheduledInstanceTimings": [
@@ -508,8 +508,8 @@
             },
             {
               "scheduledInstanceId": "ScheduledActivityInstance_1",
-              "scheduledInstanceType": 1,
-              "scheduleSequenceNumber": 0,
+              "scheduledInstanceType": "ACTIVITY",
+              "scheduleSequenceNumber": 2,
               "scheduleTimelineExitId": "",
               "scheduledInstanceEncounterId": "Encounter_1",
               "scheduledInstanceTimings": [
@@ -542,8 +542,8 @@
             },
             {
               "scheduledInstanceId": "ScheduledActivityInstance_5",
-              "scheduledInstanceType": 1,
-              "scheduleSequenceNumber": 0,
+              "scheduledInstanceType": "ACTIVITY",
+              "scheduleSequenceNumber": 3,
               "scheduleTimelineExitId": "",
               "scheduledInstanceEncounterId": "",
               "scheduledInstanceTimings": [
@@ -574,8 +574,8 @@
             },
             {
               "scheduledInstanceId": "ScheduledActivityInstance_6",
-              "scheduledInstanceType": 2,
-              "scheduleSequenceNumber": 0,
+              "scheduledInstanceType": "DECISION",
+              "scheduleSequenceNumber": 4,
               "scheduleTimelineExitId": "",
               "scheduledInstanceEncounterId": "",
               "scheduledInstanceTimings": [],
@@ -593,8 +593,8 @@
             },
             {
               "scheduledInstanceId": "ScheduledActivityInstance_2",
-              "scheduledInstanceType": 1,
-              "scheduleSequenceNumber": 0,
+              "scheduledInstanceType": "ACTIVITY",
+              "scheduleSequenceNumber": 5,
               "scheduleTimelineExitId": "",
               "scheduledInstanceEncounterId": "Encounter_2",
               "scheduledInstanceTimings": [
@@ -627,8 +627,8 @@
             },
             {
               "scheduledInstanceId": "ScheduledActivityInstance_3",
-              "scheduledInstanceType": 1,
-              "scheduleSequenceNumber": 0,
+              "scheduledInstanceType": "ACTIVITY",
+              "scheduleSequenceNumber": 6,
               "scheduleTimelineExitId": "",
               "scheduledInstanceEncounterId": "Encounter_3",
               "scheduledInstanceTimings": [
@@ -664,14 +664,14 @@
       ],
       "therapeuticAreas": [
         {
-          "codeId": "Code_17",
+          "codeId": "Code_23",
           "code": "T2_DIABETES",
           "codeSystem": "SPONSOR",
           "codeSystemVersion": "12",
           "decode": "Type 2 diabetes"
         },
         {
-          "codeId": "Code_18",
+          "codeId": "Code_24",
           "code": "73211009",
           "codeSystem": "SNOMED",
           "codeSystemVersion": "January 31, 2018",
@@ -846,7 +846,7 @@
       "studyDesignBlindingScheme": {
         "aliasCodeId": "AliasCode_2",
         "standardCode": {
-          "codeId": "Code_19",
+          "codeId": "Code_25",
           "code": "C49659",
           "codeSystem": "http://www.cdisc.org",
           "codeSystemVersion": "2022-12-16",
