@@ -1,0 +1,206 @@
+status,class_name,property_name,data_type
+Class - NEW,Address,,
+,,country,Code
+,,city,String
+,,line,String
+,,district,String
+,,postalCode,String
+,,state,String
+,,text,String
+Class - NEW,AliasCode,,
+,,standardCodeAliases,List<Code>
+,,aliasCodeId,String
+,,standardCode,Code
+Class - NEW,BiomedicalConcept,,
+,,bcConceptCode,AliasCode
+,,bcProperties,List<BiomedicalConceptProperty>
+,,bcSynonyms,List<String>
+,,bcReference,String
+,,biomedicalConceptId,String
+,,bcName,String
+Class - NEW,BiomedicalConceptCategory,,
+,,bcCategoryParentIds,List<String>
+,,bcCategoryDescription,String
+,,bcCategoryMemberIds,List<String>
+,,bcCategoryName,String
+,,bcCategoryChildrenIds,List<String>
+,,biomedicalConceptCategoryId,String
+Class - NEW,BiomedicalConceptProperty,,
+,,bcPropertyDatatype,String
+,,bcPropertyName,String
+,,bcPropertyId,String
+,,bcPropertyConceptCode,AliasCode
+,,bcPropertyResponseCodes,List<ResponseCode>
+,,bcPropertyEnabled,boolean
+,,bcPropertyRequired,boolean
+Class - NEW,BiomedicalConceptSurrogate,,
+,,bcSurrogateName,String
+,,bcSurrogateId,String
+,,bcSurrogateDescription,String
+,,bcSurrogateReference,String
+Class - NEW,Condition,,
+,,conditionId,String
+,,conditionDescription,String
+Class - NEW,Exit,,
+,,exitId,String
+Class - NEW,ResponseCode,,
+,,code,Code
+,,responseCodeId,String
+,,responseCodeEnabled,boolean
+Class - NEW,ScheduleTimeline,,
+,,scheduleTimelineName,String
+,,scheduleTimelineId,String
+,,entryScheduledInstanceId,String
+,,scheduleTimelineIinstances,List<ScheduledInstance>
+,,entryCondition,String
+,,scheduleTimelineDescription,String
+,,scheduleTimelineExits,List<Exit>
+Class - NEW,ScheduledActivityInstance,,
+,,activityIds,List<String>
+Class - NEW,ScheduledDecisionInstance,,
+,,booleanCondition,String
+,,trueTimingId,String
+,,falseTimingId,String
+,,conditionTimings,List<Timing>
+,,conditions,List<String>
+Class - NEW,ScheduledInstance,,
+,,entryScheduleSequenceId,String
+,,scheduledInstanceId,String
+,,scheduledInstanceEncounterId,String
+,,scheduleTimelineExitId,String
+,,scheduledInstanceTimingIds,List<String>
+,,scheduleSequenceNumber,Integer
+Class - NEW,Timepoint,,
+,,nextTimepointIds,List<String>
+,,previousTimepointIds,List<String>
+,,timepointScheduledAt,Timing
+,,timepointDescription,String
+,,timepointEncounterId,String
+,,timepointExitId,String
+,,timepointCondition,Condition
+,,timepointId,String
+,,entryTimelineId,String
+,,timepointActivityIds,List<String>
+,,timepointType,Code
+Class - NEW,Timing,,
+,,timingRelativeToFrom,Code
+,,timingId,String
+,,timingType,Code
+,,timingWindow,String
+,,relativeFromScheduledInstanceId,String
+,,relativeToScheduledInstanceId,String
+,,timingValue,String
+Class - DELETED,PointInTime,,
+,,pointInTimeType,Code
+,,endDate,Date
+,,uuid,UUID
+,,startDate,Date
+Class - DELETED,StudyData,,
+,,crfLink,URI
+,,studyDataDesc,String
+,,studyDataName,String
+,,uuid,UUID
+Class - DELETED,Workflow,,
+,,workflowItems,List<WorkflowItem>
+,,workflowDesc,String
+,,uuid,UUID
+Class - DELETED,WorkflowItem,,
+,,workflowItemDesc,String
+,,workflowItemEncounter,Encounter
+,,previousWorkflowItemId,UUID
+,,uuid,UUID
+,,workflowItemActivity,Activity
+,,nextWorkflowItemId,UUID
+,,,
+Property - NEW,Study,businessTherapeuticAreas,List<Code>
+Property - NEW,Study,studyAcronym,String
+Property - NEW,Study,studyId,UUID
+Property - NEW,Study,studyRationale,String
+Property - NEW,Organization,organizationId,String
+Property - NEW,Organization,organizationLegalAddress,Address
+Property - NEW,Indication,indicationDescription,String
+Property - NEW,Indication,indicationId,String
+Property - NEW,StudyEpoch,encounters,List<Encounter>
+Property - NEW,StudyEpoch,studyEpochDescription,String
+Property - NEW,StudyEpoch,studyEpochId,String
+Property - NEW,StudyProtocolVersion,studyProtocolVersionId,String
+Property - NEW,Estimand,estimandId,String
+Property - NEW,StudyArm,studyArmDataOriginDescription,String
+Property - NEW,StudyArm,studyArmDescription,String
+Property - NEW,StudyArm,studyArmId,String
+Property - NEW,StudyDesignPopulation,plannedMaximumAgeOfParticipants,String
+Property - NEW,StudyDesignPopulation,plannedMinimumAgeOfParticipants,String
+Property - NEW,StudyDesignPopulation,plannedNumberOfParticipants,int
+Property - NEW,StudyDesignPopulation,plannedSexOfParticipants,List<Code>
+Property - NEW,StudyDesignPopulation,populationDescription,String
+Property - NEW,StudyDesignPopulation,studyDesignPopulationId,String
+Property - NEW,Activity,activityDescription,String
+Property - NEW,Activity,activityId,String
+Property - NEW,Activity,activityIsConditional,boolean
+Property - NEW,Activity,activityIsConditionalReason,String
+Property - NEW,Activity,activityScheduleTimelineEntryId,String
+Property - NEW,Activity,bcCategoryIds,List<String>
+Property - NEW,Activity,bcSurrogateIds,List<String>
+Property - NEW,Activity,biomedicalConceptIds,List<String>
+Property - NEW,Code,codeId,String
+Property - NEW,StudyDesign,activities,List<Activity>
+Property - NEW,StudyDesign,bcCategories,List<BiomedicalConceptCategory>
+Property - NEW,StudyDesign,bcSurrogates,List<BiomedicalConceptSurrogate>
+Property - NEW,StudyDesign,biomedicalConcepts,List<BiomedicalConcept>
+Property - NEW,StudyDesign,encounters,List<Encounter>
+Property - NEW,StudyDesign,interventionModel,Code
+Property - NEW,StudyDesign,studyDesignBlindingScheme,AliasCode
+Property - NEW,StudyDesign,studyDesignDescription,String
+Property - NEW,StudyDesign,studyDesignId,String
+Property - NEW,StudyDesign,studyDesignName,String
+Property - NEW,StudyDesign,studyDesignRationale,String
+Property - NEW,StudyDesign,studyPopulations,List<StudyDesignPopulation>
+Property - NEW,StudyDesign,studyScheduleTimelines,List<ScheduleTimeline>
+Property - NEW,StudyDesign,therapeuticAreas,List<Code>
+Property - NEW,StudyDesign,trialIntentType,List<Code>
+Property - NEW,StudyIdentifier,studyIdentifierId,String
+Property - NEW,Objective,objectiveDescription,String
+Property - NEW,Objective,objectiveId,String
+Property - NEW,AnalysisPopulation,analysisPopulationId,String
+Property - NEW,AnalysisPopulation,populationDescription,String
+Property - NEW,Endpoint,endpointDescription,String
+Property - NEW,Endpoint,endpointId,String
+Property - NEW,Endpoint,endpointPurposeDescription,String
+Property - NEW,StudyCell,studyCellId,String
+Property - NEW,Encounter,encounterContactModes,List<Code>
+Property - NEW,Encounter,encounterDescription,String
+Property - NEW,Encounter,encounterId,String
+Property - NEW,Encounter,encounterScheduledAt,Timing
+Property - NEW,Procedure,procedureId,String
+Property - NEW,Procedure,procedureIsConditional,boolean
+Property - NEW,Procedure,procedureIsConditionalReason,String
+Property - NEW,InvestigationalIntervention,interventionDescription,String
+Property - NEW,InvestigationalIntervention,investigationalInterventionId,String
+Property - NEW,StudyElement,studyElementDescription,String
+Property - NEW,StudyElement,studyElementId,String
+Property - NEW,StudyElement,transitionEndRule,Condition
+Property - NEW,StudyElement,transitionStartRule,Condition
+Property - NEW,IntercurrentEvent,intercurrentEventDescription,String
+Property - NEW,IntercurrentEvent,intercurrentEventId,String
+Property - NEW,IntercurrentEvent,intercurrentEventStrategy,String
+Property - DELETED,Indication,indicationDesc,String
+Property - DELETED,StudyEpoch,studyEpochDesc,String
+Property - DELETED,Estimand,uuid,UUID
+Property - DELETED,StudyArm,studyArmDataOriginDesc,String
+Property - DELETED,StudyArm,studyArmDesc,String
+Property - DELETED,StudyDesignPopulation,populationDesc,String
+Property - DELETED,Activity,activityDesc,String
+Property - DELETED,StudyDesign,interventionalModel,Code
+Property - DELETED,StudyDesign,studyStudyDesignPopulations,List<StudyDesignPopulation>
+Property - DELETED,StudyDesign,studyWorkflows,List<Workflow>
+Property - DELETED,StudyDesign,trialIntentTypes,List<Code>
+Property - DELETED,Objective,objectiveDesc,String
+Property - DELETED,AnalysisPopulation,populationDesc,String
+Property - DELETED,Endpoint,endpointDesc,String
+Property - DELETED,Endpoint,endpointPurpose,String
+Property - DELETED,Encounter,encounterContactMode,Code
+Property - DELETED,Encounter,encounterDesc,String
+Property - DELETED,InvestigationalIntervention,interventionDesc,String
+Property - DELETED,StudyElement,studyElementDesc,String
+Property - DELETED,StudyElement,transitionEndTransitionRule,TransitionRule
+Property - DELETED,IntercurrentEvent,intercurrentEventDesc,String
