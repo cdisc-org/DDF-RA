@@ -1,0 +1,21 @@
+status,class_name,property_name,data_type
+,,,
+Property - NEW,BiomedicalConceptCategory,bcCategoryChildIds,List<String>
+Property - NEW,BiomedicalConceptCategory,bcCategoryCode,AliasCode
+Property - NEW,StudyDesign,studyArms,List<StudyArm>
+Property - NEW,StudyDesign,studyElements,List<StudyElement>
+Property - NEW,StudyDesign,studyEpochs,List<StudyEpoch>
+Property - NEW,ScheduledInstance,defaultConditionId,String
+Property - NEW,ScheduledInstance,epochId,String
+Property - NEW,ScheduleTimeline,mainTimeline,boolean
+Property - NEW,StudyCell,studyArmId,String
+Property - NEW,StudyCell,studyElementIds,List<String>
+Property - NEW,Timing,timingDescription,String
+Property - DELETED,BiomedicalConceptCategory,bcCategoryChildrenIds,List<String>
+Property - DELETED,BiomedicalConceptCategory,bcCategoryParentIds,List<String>
+Property - DELETED,StudyEpoch,encounterIds,List<String>
+Property - DELETED,ScheduledInstance,scheduleSequenceNumber,Integer
+Property - DELETED,ScheduledInstance,scheduledInstanceEncounterId,String
+Property - DELETED,StudyCell,studyArm,StudyArm
+Property - DELETED,StudyCell,studyElements,List<StudyElement>
+Property - DELETED,StudyCell,studyEpoch,StudyEpoch
