@@ -4,7 +4,7 @@ info:
   description: >-
     A simple TransCelerate Digital Data Flow (DDF) Study Definitions Repository
     API.
-  version: 2.1 Provisional (0.33)
+  version: 1.14 Provisional (0.34)
 paths:
   /v2/studyDefinitions:
     post:
@@ -30,50 +30,51 @@ paths:
                 format: uuid
         '400':
           description: Bad Request
+          status_code: string
           detail: string
           message: string
-          status_code: string
         '401':
           description: Unauthorized
+          status_code: string
           detail: string
           message: string
-          status_code: string
         '422':
           description: Validation Error
           content:
             application/json:
               schema:
                 $ref: '#/components/schemas/HTTPValidationError'
-  '/v2/studyDefinitions/{uuid}':
+  /v2/studyDefinitions/{studyId}:
     get:
       tags:
         - Production
       summary: Return a study
       description: Return an entire study including all child elements
-      operationId: read_full_study_v2_studyDefinitions__uuid__get
+      operationId: read_full_study_v2_studyDefinitions__studyId__get
       parameters:
         - required: true
           schema:
-            title: Uuid
+            title: Studyid
             type: string
-          name: uuid
+          name: studyId
           in: path
       responses:
         '200':
           description: Successful Response
           content:
             application/json:
-              schema: {}
+              schema:
+                $ref: '#/components/schemas/Study'
         '400':
           description: Bad Request
+          status_code: string
           detail: string
           message: string
-          status_code: string
         '401':
           description: Unauthorized
+          status_code: string
           detail: string
           message: string
-          status_code: string
         '422':
           description: Validation Error
           content:
@@ -85,13 +86,13 @@ paths:
         - Production
       summary: Update a study
       description: Update an entire study including all child element with a single put
-      operationId: update_study_v2_studyDefinitions__uuid__put
+      operationId: update_study_v2_studyDefinitions__studyId__put
       parameters:
         - required: true
           schema:
-            title: Uuid
+            title: Studyid
             type: string
-          name: uuid
+          name: studyId
           in: path
       requestBody:
         content:
@@ -105,38 +106,38 @@ paths:
           content:
             application/json:
               schema:
-                title: Response Update Study V2 Studydefinitions  Uuid  Put
+                title: Response Update Study V2 Studydefinitions  Studyid  Put
                 type: string
                 format: uuid
         '400':
           description: Bad Request
+          status_code: string
           detail: string
           message: string
-          status_code: string
         '401':
           description: Unauthorized
+          status_code: string
           detail: string
           message: string
-          status_code: string
         '422':
           description: Validation Error
           content:
             application/json:
               schema:
                 $ref: '#/components/schemas/HTTPValidationError'
-  '/v2/studyDefinitions/{uuid}/history':
+  /v2/studyDefinitions/{studyId}/history:
     get:
       tags:
         - Production
       summary: Returns the study history
       description: Returns the history for the specified study
-      operationId: read_study_history_v2_studyDefinitions__uuid__history_get
+      operationId: read_study_history_v2_studyDefinitions__studyId__history_get
       parameters:
         - required: true
           schema:
-            title: Uuid
+            title: Studyid
             type: string
-          name: uuid
+          name: studyId
           in: path
       responses:
         '200':
@@ -145,21 +146,21 @@ paths:
             application/json:
               schema:
                 title: >-
-                  Response Read Study History V2 Studydefinitions  Uuid  History
-                  Get
+                  Response Read Study History V2 Studydefinitions  Studyid 
+                  History Get
                 type: array
                 items:
                   $ref: '#/components/schemas/Study'
         '400':
           description: Bad Request
+          status_code: string
           detail: string
           message: string
-          status_code: string
         '401':
           description: Unauthorized
+          status_code: string
           detail: string
           message: string
-          status_code: string
         '422':
           description: Validation Error
           content:
@@ -176,10 +177,10 @@ paths:
       parameters:
         - required: true
           schema:
-            title: Study Uuid
+            title: Studyid
             type: string
             format: uuid
-          name: study_uuid
+          name: studyId
           in: query
       responses:
         '200':
@@ -193,14 +194,14 @@ paths:
                   $ref: '#/components/schemas/StudyDesign'
         '400':
           description: Bad Request
+          status_code: string
           detail: string
           message: string
-          status_code: string
         '401':
           description: Unauthorized
+          status_code: string
           detail: string
           message: string
-          status_code: string
         '422':
           description: Validation Error
           content:
@@ -214,9 +215,7 @@ components:
       required:
         - activityId
         - activityName
-        - activityDescription
         - activityIsConditional
-        - activityIsConditionalReason
       type: object
       properties:
         activityId:
@@ -371,20 +370,13 @@ components:
       required:
         - biomedicalConceptCategoryId
         - bcCategoryName
-        - bcCategoryDescription
       type: object
       properties:
         biomedicalConceptCategoryId:
           title: Biomedicalconceptcategoryid
           type: string
-        bcCategoryParentIds:
-          title: Bccategoryparentids
-          type: array
-          items:
-            type: string
-          default: []
-        bcCategoryChildrenIds:
-          title: Bccategorychildrenids
+        bcCategoryChildIds:
+          title: Bccategorychildids
           type: array
           items:
             type: string
@@ -401,6 +393,8 @@ components:
           items:
             type: string
           default: []
+        bcCategoryCode:
+          $ref: '#/components/schemas/AliasCode'
     BiomedicalConceptProperty:
       title: BiomedicalConceptProperty
       required:
@@ -440,7 +434,6 @@ components:
       required:
         - bcSurrogateId
         - bcSurrogateName
-        - bcSurrogateDescription
         - bcSurrogateReference
       type: object
       properties:
@@ -486,7 +479,6 @@ components:
       required:
         - encounterId
         - encounterName
-        - encounterDescription
       type: object
       properties:
         encounterId:
@@ -601,7 +593,6 @@ components:
       required:
         - intercurrentEventId
         - intercurrentEventName
-        - intercurrentEventDescription
         - intercurrentEventStrategy
       type: object
       properties:
@@ -689,10 +680,8 @@ components:
         - procedureId
         - procedureType
         - procedureName
-        - procedureDescription
         - procedureCode
         - procedureIsConditional
-        - procedureIsConditionalReason
       type: object
       properties:
         procedureId:
@@ -734,12 +723,15 @@ components:
     ScheduleTimeline:
       title: ScheduleTimeline
       required:
+        - mainTimeline
         - scheduleTimelineId
         - scheduleTimelineName
-        - scheduleTimelineDescription
         - entryCondition
       type: object
       properties:
+        mainTimeline:
+          title: Maintimeline
+          type: boolean
         scheduleTimelineId:
           title: Scheduletimelineid
           type: string
@@ -781,22 +773,19 @@ components:
       required:
         - scheduledInstanceId
         - scheduledInstanceType
-        - scheduleSequenceNumber
       type: object
       properties:
         scheduledInstanceId:
           title: Scheduledinstanceid
           type: string
         scheduledInstanceType:
-          $ref: '#/components/schemas/ScheduledInstanceType'
-        scheduleSequenceNumber:
-          title: Schedulesequencenumber
-          type: integer
+          title: Scheduledinstancetype
+          enum:
+            - ACTIVITY
+            - DECISION
+          type: string
         scheduleTimelineExitId:
           title: Scheduletimelineexitid
-          type: string
-        scheduledInstanceEncounterId:
-          title: Scheduledinstanceencounterid
           type: string
         scheduledInstanceTimings:
           title: Scheduledinstancetimings
@@ -807,12 +796,12 @@ components:
         scheduledInstanceTimelineId:
           title: Scheduledinstancetimelineid
           type: string
-    ScheduledInstanceType:
-      title: ScheduledInstanceType
-      enum:
-        - 1
-        - 2
-      description: An enumeration.
+        defaultConditionId:
+          title: Defaultconditionid
+          type: string
+        epochId:
+          title: Epochid
+          type: string
     Study:
       title: Study
       required:
@@ -871,7 +860,6 @@ components:
       required:
         - studyArmId
         - studyArmName
-        - studyArmDescription
         - studyArmType
         - studyArmDataOriginDescription
         - studyArmDataOriginType
@@ -897,15 +885,19 @@ components:
       title: StudyCell
       required:
         - studyCellId
+        - studyArmId
+        - studyEpochId
       type: object
       properties:
         studyCellId:
           title: Studycellid
           type: string
-        studyArm:
-          $ref: '#/components/schemas/StudyArm'
-        studyEpoch:
-          $ref: '#/components/schemas/StudyEpoch'
+        studyArmId:
+          title: Studyarmid
+          type: string
+        studyEpochId:
+          title: Studyepochid
+          type: string
         studyElements:
           title: Studyelements
           type: array
@@ -917,7 +909,6 @@ components:
       required:
         - studyDesignId
         - studyDesignName
-        - studyDesignDescription
         - interventionModel
         - studyDesignRationale
       type: object
@@ -1028,6 +1019,24 @@ components:
           items:
             $ref: '#/components/schemas/BiomedicalConceptSurrogate'
           default: []
+        studyArms:
+          title: Studyarms
+          type: array
+          items:
+            $ref: '#/components/schemas/StudyArm'
+          default: []
+        studyEpochs:
+          title: Studyepochs
+          type: array
+          items:
+            $ref: '#/components/schemas/StudyEpoch'
+          default: []
+        studyElements:
+          title: Studyelements
+          type: array
+          items:
+            $ref: '#/components/schemas/StudyElement'
+          default: []
     StudyDesignPopulation:
       title: StudyDesignPopulation
       required:
@@ -1046,6 +1055,7 @@ components:
           type: string
         plannedNumberOfParticipants:
           title: Plannednumberofparticipants
+          minimum: 0
           type: integer
         plannedMaximumAgeOfParticipants:
           title: Plannedmaximumageofparticipants
@@ -1064,7 +1074,6 @@ components:
       required:
         - studyElementId
         - studyElementName
-        - studyElementDescription
       type: object
       properties:
         studyElementId:
@@ -1085,7 +1094,6 @@ components:
       required:
         - studyEpochId
         - studyEpochName
-        - studyEpochDescription
         - studyEpochType
       type: object
       properties:
@@ -1106,12 +1114,6 @@ components:
         nextStudyEpochId:
           title: Nextstudyepochid
           type: string
-        encounterIds:
-          title: Encounterids
-          type: array
-          items:
-            type: string
-          default: []
     StudyIdentifier:
       title: StudyIdentifier
       required:
@@ -1175,7 +1177,6 @@ components:
         - timingType
         - timingValue
         - timingRelativeToFrom
-        - timingWindow
       type: object
       properties:
         timingId:
@@ -1186,16 +1187,25 @@ components:
         timingValue:
           title: Timingvalue
           type: string
+        timingDescription:
+          title: Timingdescription
+          type: string
         timingRelativeToFrom:
           $ref: '#/components/schemas/Code'
-        timingWindow:
-          title: Timingwindow
-          type: string
         relativeFromScheduledInstanceId:
           title: Relativefromscheduledinstanceid
           type: string
         relativeToScheduledInstanceId:
           title: Relativetoscheduledinstanceid
+          type: string
+        timingWindowLower:
+          title: Timingwindowlower
+          type: string
+        timingWindowUpper:
+          title: Timingwindowupper
+          type: string
+        timingWindow:
+          title: Timingwindow
           type: string
     TransitionRule:
       title: TransitionRule

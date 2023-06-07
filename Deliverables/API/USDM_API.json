@@ -3,7 +3,7 @@
   "info": {
     "title": "Simple API for DDF",
     "description": "A simple TransCelerate Digital Data Flow (DDF) Study Definitions Repository API.",
-    "version": "2.1 Provisional (0.33)"
+    "version": "1.14 Provisional (0.34)"
   },
   "paths": {
     "/v2/studyDefinitions": {
@@ -39,15 +39,15 @@
           },
           "400": {
             "description": "Bad Request",
+            "status_code": "string",
             "detail": "string",
-            "message": "string",
-            "status_code": "string"
+            "message": "string"
           },
           "401": {
             "description": "Unauthorized",
+            "status_code": "string",
             "detail": "string",
-            "message": "string",
-            "status_code": "string"
+            "message": "string"
           },
           "422": {
             "description": "Validation Error",
@@ -62,22 +62,22 @@
         }
       }
     },
-    "/v2/studyDefinitions/{uuid}": {
+    "/v2/studyDefinitions/{studyId}": {
       "get": {
         "tags": [
           "Production"
         ],
         "summary": "Return a study",
         "description": "Return an entire study including all child elements",
-        "operationId": "read_full_study_v2_studyDefinitions__uuid__get",
+        "operationId": "read_full_study_v2_studyDefinitions__studyId__get",
         "parameters": [
           {
             "required": true,
             "schema": {
-              "title": "Uuid",
+              "title": "Studyid",
               "type": "string"
             },
-            "name": "uuid",
+            "name": "studyId",
             "in": "path"
           }
         ],
@@ -86,21 +86,23 @@
             "description": "Successful Response",
             "content": {
               "application/json": {
-                "schema": {}
+                "schema": {
+                  "$ref": "#/components/schemas/Study"
+                }
               }
             }
           },
           "400": {
             "description": "Bad Request",
+            "status_code": "string",
             "detail": "string",
-            "message": "string",
-            "status_code": "string"
+            "message": "string"
           },
           "401": {
             "description": "Unauthorized",
+            "status_code": "string",
             "detail": "string",
-            "message": "string",
-            "status_code": "string"
+            "message": "string"
           },
           "422": {
             "description": "Validation Error",
@@ -120,15 +122,15 @@
         ],
         "summary": "Update a study",
         "description": "Update an entire study including all child element with a single put",
-        "operationId": "update_study_v2_studyDefinitions__uuid__put",
+        "operationId": "update_study_v2_studyDefinitions__studyId__put",
         "parameters": [
           {
             "required": true,
             "schema": {
-              "title": "Uuid",
+              "title": "Studyid",
               "type": "string"
             },
-            "name": "uuid",
+            "name": "studyId",
             "in": "path"
           }
         ],
@@ -148,7 +150,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "title": "Response Update Study V2 Studydefinitions  Uuid  Put",
+                  "title": "Response Update Study V2 Studydefinitions  Studyid  Put",
                   "type": "string",
                   "format": "uuid"
                 }
@@ -157,15 +159,15 @@
           },
           "400": {
             "description": "Bad Request",
+            "status_code": "string",
             "detail": "string",
-            "message": "string",
-            "status_code": "string"
+            "message": "string"
           },
           "401": {
             "description": "Unauthorized",
+            "status_code": "string",
             "detail": "string",
-            "message": "string",
-            "status_code": "string"
+            "message": "string"
           },
           "422": {
             "description": "Validation Error",
@@ -180,22 +182,22 @@
         }
       }
     },
-    "/v2/studyDefinitions/{uuid}/history": {
+    "/v2/studyDefinitions/{studyId}/history": {
       "get": {
         "tags": [
           "Production"
         ],
         "summary": "Returns the study history",
         "description": "Returns the history for the specified study",
-        "operationId": "read_study_history_v2_studyDefinitions__uuid__history_get",
+        "operationId": "read_study_history_v2_studyDefinitions__studyId__history_get",
         "parameters": [
           {
             "required": true,
             "schema": {
-              "title": "Uuid",
+              "title": "Studyid",
               "type": "string"
             },
-            "name": "uuid",
+            "name": "studyId",
             "in": "path"
           }
         ],
@@ -205,7 +207,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "title": "Response Read Study History V2 Studydefinitions  Uuid  History Get",
+                  "title": "Response Read Study History V2 Studydefinitions  Studyid  History Get",
                   "type": "array",
                   "items": {
                     "$ref": "#/components/schemas/Study"
@@ -216,15 +218,15 @@
           },
           "400": {
             "description": "Bad Request",
+            "status_code": "string",
             "detail": "string",
-            "message": "string",
-            "status_code": "string"
+            "message": "string"
           },
           "401": {
             "description": "Unauthorized",
+            "status_code": "string",
             "detail": "string",
-            "message": "string",
-            "status_code": "string"
+            "message": "string"
           },
           "422": {
             "description": "Validation Error",
@@ -251,11 +253,11 @@
           {
             "required": true,
             "schema": {
-              "title": "Study Uuid",
+              "title": "Studyid",
               "type": "string",
               "format": "uuid"
             },
-            "name": "study_uuid",
+            "name": "studyId",
             "in": "query"
           }
         ],
@@ -276,15 +278,15 @@
           },
           "400": {
             "description": "Bad Request",
+            "status_code": "string",
             "detail": "string",
-            "message": "string",
-            "status_code": "string"
+            "message": "string"
           },
           "401": {
             "description": "Unauthorized",
+            "status_code": "string",
             "detail": "string",
-            "message": "string",
-            "status_code": "string"
+            "message": "string"
           },
           "422": {
             "description": "Validation Error",
@@ -307,9 +309,7 @@
         "required": [
           "activityId",
           "activityName",
-          "activityDescription",
-          "activityIsConditional",
-          "activityIsConditionalReason"
+          "activityIsConditional"
         ],
         "type": "object",
         "properties": {
@@ -516,8 +516,7 @@
         "title": "BiomedicalConceptCategory",
         "required": [
           "biomedicalConceptCategoryId",
-          "bcCategoryName",
-          "bcCategoryDescription"
+          "bcCategoryName"
         ],
         "type": "object",
         "properties": {
@@ -525,16 +524,8 @@
             "title": "Biomedicalconceptcategoryid",
             "type": "string"
           },
-          "bcCategoryParentIds": {
-            "title": "Bccategoryparentids",
-            "type": "array",
-            "items": {
-              "type": "string"
-            },
-            "default": []
-          },
-          "bcCategoryChildrenIds": {
-            "title": "Bccategorychildrenids",
+          "bcCategoryChildIds": {
+            "title": "Bccategorychildids",
             "type": "array",
             "items": {
               "type": "string"
@@ -556,6 +547,9 @@
               "type": "string"
             },
             "default": []
+          },
+          "bcCategoryCode": {
+            "$ref": "#/components/schemas/AliasCode"
           }
         }
       },
@@ -609,7 +603,6 @@
         "required": [
           "bcSurrogateId",
           "bcSurrogateName",
-          "bcSurrogateDescription",
           "bcSurrogateReference"
         ],
         "type": "object",
@@ -669,8 +662,7 @@
         "title": "Encounter",
         "required": [
           "encounterId",
-          "encounterName",
-          "encounterDescription"
+          "encounterName"
         ],
         "type": "object",
         "properties": {
@@ -828,7 +820,6 @@
         "required": [
           "intercurrentEventId",
           "intercurrentEventName",
-          "intercurrentEventDescription",
           "intercurrentEventStrategy"
         ],
         "type": "object",
@@ -947,10 +938,8 @@
           "procedureId",
           "procedureType",
           "procedureName",
-          "procedureDescription",
           "procedureCode",
-          "procedureIsConditional",
-          "procedureIsConditionalReason"
+          "procedureIsConditional"
         ],
         "type": "object",
         "properties": {
@@ -1008,13 +997,17 @@
       "ScheduleTimeline": {
         "title": "ScheduleTimeline",
         "required": [
+          "mainTimeline",
           "scheduleTimelineId",
           "scheduleTimelineName",
-          "scheduleTimelineDescription",
           "entryCondition"
         ],
         "type": "object",
         "properties": {
+          "mainTimeline": {
+            "title": "Maintimeline",
+            "type": "boolean"
+          },
           "scheduleTimelineId": {
             "title": "Scheduletimelineid",
             "type": "string"
@@ -1070,8 +1063,7 @@
         "title": "ScheduledInstance",
         "required": [
           "scheduledInstanceId",
-          "scheduledInstanceType",
-          "scheduleSequenceNumber"
+          "scheduledInstanceType"
         ],
         "type": "object",
         "properties": {
@@ -1080,18 +1072,15 @@
             "type": "string"
           },
           "scheduledInstanceType": {
-            "$ref": "#/components/schemas/ScheduledInstanceType"
-          },
-          "scheduleSequenceNumber": {
-            "title": "Schedulesequencenumber",
-            "type": "integer"
+            "title": "Scheduledinstancetype",
+            "enum": [
+              "ACTIVITY",
+              "DECISION"
+            ],
+            "type": "string"
           },
           "scheduleTimelineExitId": {
             "title": "Scheduletimelineexitid",
-            "type": "string"
-          },
-          "scheduledInstanceEncounterId": {
-            "title": "Scheduledinstanceencounterid",
             "type": "string"
           },
           "scheduledInstanceTimings": {
@@ -1105,16 +1094,16 @@
           "scheduledInstanceTimelineId": {
             "title": "Scheduledinstancetimelineid",
             "type": "string"
+          },
+          "defaultConditionId": {
+            "title": "Defaultconditionid",
+            "type": "string"
+          },
+          "epochId": {
+            "title": "Epochid",
+            "type": "string"
           }
         }
-      },
-      "ScheduledInstanceType": {
-        "title": "ScheduledInstanceType",
-        "enum": [
-          1,
-          2
-        ],
-        "description": "An enumeration."
       },
       "Study": {
         "title": "Study",
@@ -1192,7 +1181,6 @@
         "required": [
           "studyArmId",
           "studyArmName",
-          "studyArmDescription",
           "studyArmType",
           "studyArmDataOriginDescription",
           "studyArmDataOriginType"
@@ -1226,7 +1214,9 @@
       "StudyCell": {
         "title": "StudyCell",
         "required": [
-          "studyCellId"
+          "studyCellId",
+          "studyArmId",
+          "studyEpochId"
         ],
         "type": "object",
         "properties": {
@@ -1234,11 +1224,13 @@
             "title": "Studycellid",
             "type": "string"
           },
-          "studyArm": {
-            "$ref": "#/components/schemas/StudyArm"
+          "studyArmId": {
+            "title": "Studyarmid",
+            "type": "string"
           },
-          "studyEpoch": {
-            "$ref": "#/components/schemas/StudyEpoch"
+          "studyEpochId": {
+            "title": "Studyepochid",
+            "type": "string"
           },
           "studyElements": {
             "title": "Studyelements",
@@ -1255,7 +1247,6 @@
         "required": [
           "studyDesignId",
           "studyDesignName",
-          "studyDesignDescription",
           "interventionModel",
           "studyDesignRationale"
         ],
@@ -1402,6 +1393,30 @@
               "$ref": "#/components/schemas/BiomedicalConceptSurrogate"
             },
             "default": []
+          },
+          "studyArms": {
+            "title": "Studyarms",
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/StudyArm"
+            },
+            "default": []
+          },
+          "studyEpochs": {
+            "title": "Studyepochs",
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/StudyEpoch"
+            },
+            "default": []
+          },
+          "studyElements": {
+            "title": "Studyelements",
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/StudyElement"
+            },
+            "default": []
           }
         }
       },
@@ -1426,6 +1441,7 @@
           },
           "plannedNumberOfParticipants": {
             "title": "Plannednumberofparticipants",
+            "minimum": 0,
             "type": "integer"
           },
           "plannedMaximumAgeOfParticipants": {
@@ -1450,8 +1466,7 @@
         "title": "StudyElement",
         "required": [
           "studyElementId",
-          "studyElementName",
-          "studyElementDescription"
+          "studyElementName"
         ],
         "type": "object",
         "properties": {
@@ -1480,7 +1495,6 @@
         "required": [
           "studyEpochId",
           "studyEpochName",
-          "studyEpochDescription",
           "studyEpochType"
         ],
         "type": "object",
@@ -1507,14 +1521,6 @@
           "nextStudyEpochId": {
             "title": "Nextstudyepochid",
             "type": "string"
-          },
-          "encounterIds": {
-            "title": "Encounterids",
-            "type": "array",
-            "items": {
-              "type": "string"
-            },
-            "default": []
           }
         }
       },
@@ -1598,8 +1604,7 @@
           "timingId",
           "timingType",
           "timingValue",
-          "timingRelativeToFrom",
-          "timingWindow"
+          "timingRelativeToFrom"
         ],
         "type": "object",
         "properties": {
@@ -1614,12 +1619,12 @@
             "title": "Timingvalue",
             "type": "string"
           },
+          "timingDescription": {
+            "title": "Timingdescription",
+            "type": "string"
+          },
           "timingRelativeToFrom": {
             "$ref": "#/components/schemas/Code"
-          },
-          "timingWindow": {
-            "title": "Timingwindow",
-            "type": "string"
           },
           "relativeFromScheduledInstanceId": {
             "title": "Relativefromscheduledinstanceid",
@@ -1627,6 +1632,18 @@
           },
           "relativeToScheduledInstanceId": {
             "title": "Relativetoscheduledinstanceid",
+            "type": "string"
+          },
+          "timingWindowLower": {
+            "title": "Timingwindowlower",
+            "type": "string"
+          },
+          "timingWindowUpper": {
+            "title": "Timingwindowupper",
+            "type": "string"
+          },
+          "timingWindow": {
+            "title": "Timingwindow",
             "type": "string"
           }
         }
