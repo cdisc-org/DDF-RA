@@ -40,14 +40,14 @@
           "400": {
             "description": "Bad Request",
             "status_code": "string",
-            "message": "string",
-            "detail": "string"
+            "detail": "string",
+            "message": "string"
           },
           "401": {
             "description": "Unauthorized",
             "status_code": "string",
-            "message": "string",
-            "detail": "string"
+            "detail": "string",
+            "message": "string"
           },
           "422": {
             "description": "Validation Error",
@@ -95,14 +95,14 @@
           "400": {
             "description": "Bad Request",
             "status_code": "string",
-            "message": "string",
-            "detail": "string"
+            "detail": "string",
+            "message": "string"
           },
           "401": {
             "description": "Unauthorized",
             "status_code": "string",
-            "message": "string",
-            "detail": "string"
+            "detail": "string",
+            "message": "string"
           },
           "422": {
             "description": "Validation Error",
@@ -160,14 +160,14 @@
           "400": {
             "description": "Bad Request",
             "status_code": "string",
-            "message": "string",
-            "detail": "string"
+            "detail": "string",
+            "message": "string"
           },
           "401": {
             "description": "Unauthorized",
             "status_code": "string",
-            "message": "string",
-            "detail": "string"
+            "detail": "string",
+            "message": "string"
           },
           "422": {
             "description": "Validation Error",
@@ -219,14 +219,14 @@
           "400": {
             "description": "Bad Request",
             "status_code": "string",
-            "message": "string",
-            "detail": "string"
+            "detail": "string",
+            "message": "string"
           },
           "401": {
             "description": "Unauthorized",
             "status_code": "string",
-            "message": "string",
-            "detail": "string"
+            "detail": "string",
+            "message": "string"
           },
           "422": {
             "description": "Validation Error",
@@ -279,14 +279,14 @@
           "400": {
             "description": "Bad Request",
             "status_code": "string",
-            "message": "string",
-            "detail": "string"
+            "detail": "string",
+            "message": "string"
           },
           "401": {
             "description": "Unauthorized",
             "status_code": "string",
-            "message": "string",
-            "detail": "string"
+            "detail": "string",
+            "message": "string"
           },
           "422": {
             "description": "Validation Error",
@@ -1248,7 +1248,10 @@
           "studyDesignId",
           "studyDesignName",
           "interventionModel",
-          "studyDesignRationale"
+          "studyCells",
+          "studyDesignRationale",
+          "studyArms",
+          "studyEpochs"
         ],
         "type": "object",
         "properties": {
@@ -1288,8 +1291,7 @@
             "type": "array",
             "items": {
               "$ref": "#/components/schemas/StudyCell"
-            },
-            "default": []
+            }
           },
           "studyIndications": {
             "title": "Studyindications",
@@ -1399,16 +1401,14 @@
             "type": "array",
             "items": {
               "$ref": "#/components/schemas/StudyArm"
-            },
-            "default": []
+            }
           },
           "studyEpochs": {
             "title": "Studyepochs",
             "type": "array",
             "items": {
               "$ref": "#/components/schemas/StudyEpoch"
-            },
-            "default": []
+            }
           },
           "studyElements": {
             "title": "Studyelements",

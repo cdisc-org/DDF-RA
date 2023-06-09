@@ -31,13 +31,13 @@ paths:
         '400':
           description: Bad Request
           status_code: string
-          message: string
           detail: string
+          message: string
         '401':
           description: Unauthorized
           status_code: string
-          message: string
           detail: string
+          message: string
         '422':
           description: Validation Error
           content:
@@ -68,13 +68,13 @@ paths:
         '400':
           description: Bad Request
           status_code: string
-          message: string
           detail: string
+          message: string
         '401':
           description: Unauthorized
           status_code: string
-          message: string
           detail: string
+          message: string
         '422':
           description: Validation Error
           content:
@@ -112,13 +112,13 @@ paths:
         '400':
           description: Bad Request
           status_code: string
-          message: string
           detail: string
+          message: string
         '401':
           description: Unauthorized
           status_code: string
-          message: string
           detail: string
+          message: string
         '422':
           description: Validation Error
           content:
@@ -154,13 +154,13 @@ paths:
         '400':
           description: Bad Request
           status_code: string
-          message: string
           detail: string
+          message: string
         '401':
           description: Unauthorized
           status_code: string
-          message: string
           detail: string
+          message: string
         '422':
           description: Validation Error
           content:
@@ -195,13 +195,13 @@ paths:
         '400':
           description: Bad Request
           status_code: string
-          message: string
           detail: string
+          message: string
         '401':
           description: Unauthorized
           status_code: string
-          message: string
           detail: string
+          message: string
         '422':
           description: Validation Error
           content:
@@ -910,7 +910,10 @@ components:
         - studyDesignId
         - studyDesignName
         - interventionModel
+        - studyCells
         - studyDesignRationale
+        - studyArms
+        - studyEpochs
       type: object
       properties:
         studyDesignId:
@@ -941,7 +944,6 @@ components:
           type: array
           items:
             $ref: '#/components/schemas/StudyCell'
-          default: []
         studyIndications:
           title: Studyindications
           type: array
@@ -1024,13 +1026,11 @@ components:
           type: array
           items:
             $ref: '#/components/schemas/StudyArm'
-          default: []
         studyEpochs:
           title: Studyepochs
           type: array
           items:
             $ref: '#/components/schemas/StudyEpoch'
-          default: []
         studyElements:
           title: Studyelements
           type: array
