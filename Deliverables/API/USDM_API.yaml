@@ -4,7 +4,7 @@ info:
   description: >-
     A simple TransCelerate Digital Data Flow (DDF) Study Definitions Repository
     API.
-  version: 1.14 Provisional (0.34)
+  version: 1.14.1 Provisional (0.35)
 paths:
   /v2/studyDefinitions:
     post:
@@ -31,13 +31,13 @@ paths:
         '400':
           description: Bad Request
           status_code: string
-          detail: string
           message: string
+          detail: string
         '401':
           description: Unauthorized
           status_code: string
-          detail: string
           message: string
+          detail: string
         '422':
           description: Validation Error
           content:
@@ -68,13 +68,13 @@ paths:
         '400':
           description: Bad Request
           status_code: string
-          detail: string
           message: string
+          detail: string
         '401':
           description: Unauthorized
           status_code: string
-          detail: string
           message: string
+          detail: string
         '422':
           description: Validation Error
           content:
@@ -112,13 +112,13 @@ paths:
         '400':
           description: Bad Request
           status_code: string
-          detail: string
           message: string
+          detail: string
         '401':
           description: Unauthorized
           status_code: string
-          detail: string
           message: string
+          detail: string
         '422':
           description: Validation Error
           content:
@@ -154,13 +154,13 @@ paths:
         '400':
           description: Bad Request
           status_code: string
-          detail: string
           message: string
+          detail: string
         '401':
           description: Unauthorized
           status_code: string
-          detail: string
           message: string
+          detail: string
         '422':
           description: Validation Error
           content:
@@ -195,13 +195,13 @@ paths:
         '400':
           description: Bad Request
           status_code: string
-          detail: string
           message: string
+          detail: string
         '401':
           description: Unauthorized
           status_code: string
-          detail: string
           message: string
+          detail: string
         '422':
           description: Validation Error
           content:
@@ -898,11 +898,11 @@ components:
         studyEpochId:
           title: Studyepochid
           type: string
-        studyElements:
-          title: Studyelements
+        studyElementIds:
+          title: Studyelementids
           type: array
           items:
-            $ref: '#/components/schemas/StudyElement'
+            type: string
           default: []
     StudyDesign:
       title: StudyDesign

@@ -3,7 +3,7 @@
   "info": {
     "title": "Simple API for DDF",
     "description": "A simple TransCelerate Digital Data Flow (DDF) Study Definitions Repository API.",
-    "version": "1.14 Provisional (0.34)"
+    "version": "1.14.1 Provisional (0.35)"
   },
   "paths": {
     "/v2/studyDefinitions": {
@@ -40,14 +40,14 @@
           "400": {
             "description": "Bad Request",
             "status_code": "string",
-            "detail": "string",
-            "message": "string"
+            "message": "string",
+            "detail": "string"
           },
           "401": {
             "description": "Unauthorized",
             "status_code": "string",
-            "detail": "string",
-            "message": "string"
+            "message": "string",
+            "detail": "string"
           },
           "422": {
             "description": "Validation Error",
@@ -95,14 +95,14 @@
           "400": {
             "description": "Bad Request",
             "status_code": "string",
-            "detail": "string",
-            "message": "string"
+            "message": "string",
+            "detail": "string"
           },
           "401": {
             "description": "Unauthorized",
             "status_code": "string",
-            "detail": "string",
-            "message": "string"
+            "message": "string",
+            "detail": "string"
           },
           "422": {
             "description": "Validation Error",
@@ -160,14 +160,14 @@
           "400": {
             "description": "Bad Request",
             "status_code": "string",
-            "detail": "string",
-            "message": "string"
+            "message": "string",
+            "detail": "string"
           },
           "401": {
             "description": "Unauthorized",
             "status_code": "string",
-            "detail": "string",
-            "message": "string"
+            "message": "string",
+            "detail": "string"
           },
           "422": {
             "description": "Validation Error",
@@ -219,14 +219,14 @@
           "400": {
             "description": "Bad Request",
             "status_code": "string",
-            "detail": "string",
-            "message": "string"
+            "message": "string",
+            "detail": "string"
           },
           "401": {
             "description": "Unauthorized",
             "status_code": "string",
-            "detail": "string",
-            "message": "string"
+            "message": "string",
+            "detail": "string"
           },
           "422": {
             "description": "Validation Error",
@@ -279,14 +279,14 @@
           "400": {
             "description": "Bad Request",
             "status_code": "string",
-            "detail": "string",
-            "message": "string"
+            "message": "string",
+            "detail": "string"
           },
           "401": {
             "description": "Unauthorized",
             "status_code": "string",
-            "detail": "string",
-            "message": "string"
+            "message": "string",
+            "detail": "string"
           },
           "422": {
             "description": "Validation Error",
@@ -1232,11 +1232,11 @@
             "title": "Studyepochid",
             "type": "string"
           },
-          "studyElements": {
-            "title": "Studyelements",
+          "studyElementIds": {
+            "title": "Studyelementids",
             "type": "array",
             "items": {
-              "$ref": "#/components/schemas/StudyElement"
+              "type": "string"
             },
             "default": []
           }
