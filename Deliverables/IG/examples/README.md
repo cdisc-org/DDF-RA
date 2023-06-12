@@ -7,15 +7,15 @@ There are two forms of examples:
 
 # Study Examples
 
-Each study example includes the source spreadsheet, the protocol and the resulting USDM API JSON file. Three study examples are included currently:
+Each study example is held in a separate directory and includes the source spreadsheet, the protocol and the resulting USDM API JSON file. Three study examples are included currently:
 
 - The old CDISC Pilot Study
 - An Eli Lilly Diabetes Study (NCT03421379)
 - A Roche COVID Pnumonia Study (NCT04320615)
 
-# Simple Examples
+# Other Examples
 
-Each example includes the source spreadsheet and the resulting USDM API JSON file. 
+These are in the "Other" directory. Each example includes the source spreadsheet and the resulting USDM API JSON file. 
 
 - Simple 1, an basi cexample of the use of the spreadsheet
 - Cycles 1, an example of using the study cycle construct
