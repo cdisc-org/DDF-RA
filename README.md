@@ -4,7 +4,7 @@ This repository should be used for the *cdisc-org/DDF-RA* project to contain cod
 
 ## Description
 
-The main purpose of *cdisc-org/DDF-RA* is to create the logical model (USDM), API definition, Implementation Guide (IG), and Controlled Terminology (CT) (together known as the "Digital Data Flow Reference Architecture"). This product, in turn, will be used as the basis for another project, Digital Data Flow Reference Implementation. The reference architecture and the reference implementation will provide a standard for anyone who wishes to create a standards-based Study Data Repository (SDR).
+The main purpose of *cdisc-org/DDF-RA* is to create the logical model (USDM), API definition, Implementation Guide (IG), and Controlled Terminology (CT) (together known as the "Digital Data Flow Reference Architecture"). This product, in turn, will be used as the basis for another project led by TransCelerate, Digital Data Flow. The reference architecture will provide a standard for anyone who wishes to create conformant standards-based technologies, which produce or consume study definitions.
 
 ## Contribution
 
