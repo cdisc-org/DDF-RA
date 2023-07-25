@@ -3,7 +3,7 @@
   "info": {
     "title": "Simple API for DDF",
     "description": "A simple TransCelerate Digital Data Flow (DDF) Study Definitions Repository API.",
-    "version": "1.15 Provisional (0.36)"
+    "version": "2.1 Provisional (0.36)"
   },
   "paths": {
     "/v2/studyDefinitions": {
@@ -152,7 +152,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/Study"
+                  "$ref": "#/components/schemas/Wrapper"
                 }
               }
             }
@@ -209,7 +209,7 @@
                 "schema": {
                   "type": "array",
                   "items": {
-                    "$ref": "#/components/schemas/Study"
+                    "$ref": "#/components/schemas/Wrapper"
                   },
                   "title": "Response Read Study History V2 Studydefinitions  Studyid  History Get"
                 }
@@ -1896,6 +1896,18 @@
           "type"
         ],
         "title": "ValidationError"
+      },
+      "Wrapper": {
+        "properties": {
+          "study": {
+            "$ref": "#/components/schemas/Study"
+          }
+        },
+        "type": "object",
+        "required": [
+          "study"
+        ],
+        "title": "Wrapper"
       }
     }
   },

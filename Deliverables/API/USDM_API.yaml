@@ -4,7 +4,7 @@ info:
   description: >-
     A simple TransCelerate Digital Data Flow (DDF) Study Definitions Repository
     API.
-  version: 1.15 Provisional (0.36)
+  version: 2.1 Provisional (0.36)
 paths:
   /v2/studyDefinitions:
     post:
@@ -108,7 +108,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/Study'
+                $ref: '#/components/schemas/Wrapper'
         '400':
           status_code: string
           detail: string
@@ -147,7 +147,7 @@ paths:
               schema:
                 type: array
                 items:
-                  $ref: '#/components/schemas/Study'
+                  $ref: '#/components/schemas/Wrapper'
                 title: >-
                   Response Read Study History V2 Studydefinitions  Studyid 
                   History Get
@@ -1258,6 +1258,14 @@ components:
         - msg
         - type
       title: ValidationError
+    Wrapper:
+      properties:
+        study:
+          $ref: '#/components/schemas/Study'
+      type: object
+      required:
+        - study
+      title: Wrapper
 tags:
   - name: Production
     description: Routes that form the production specification.
