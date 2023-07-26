@@ -6,19 +6,19 @@
     "version": "2.1 Provisional (0.36)"
   },
   "paths": {
-    "/v2/studyDefinitions": {
+    "/v3/studyDefinitions": {
       "post": {
         "tags": [
           "Production"
         ],
         "summary": "Create a study",
         "description": "Create an entire study including all child element with a single post",
-        "operationId": "create_study_v2_studyDefinitions_post",
+        "operationId": "create_study_v3_studyDefinitions_post",
         "requestBody": {
           "content": {
             "application/json": {
               "schema": {
-                "$ref": "#/components/schemas/Study"
+                "$ref": "#/components/schemas/Wrapper"
               }
             }
           },
@@ -32,7 +32,7 @@
                 "schema": {
                   "type": "string",
                   "format": "uuid",
-                  "title": "Response Create Study V2 Studydefinitions Post"
+                  "title": "Response Create Study V3 Studydefinitions Post"
                 }
               }
             }
@@ -62,14 +62,14 @@
         }
       }
     },
-    "/v2/studyDefinitions/{studyId}": {
+    "/v3/studyDefinitions/{studyId}": {
       "put": {
         "tags": [
           "Production"
         ],
         "summary": "Update a study",
         "description": "Update an entire study including all child element with a single put",
-        "operationId": "update_study_v2_studyDefinitions__studyId__put",
+        "operationId": "update_study_v3_studyDefinitions__studyId__put",
         "parameters": [
           {
             "name": "studyId",
@@ -86,7 +86,7 @@
           "content": {
             "application/json": {
               "schema": {
-                "$ref": "#/components/schemas/Study"
+                "$ref": "#/components/schemas/Wrapper"
               }
             }
           }
@@ -99,7 +99,7 @@
                 "schema": {
                   "type": "string",
                   "format": "uuid",
-                  "title": "Response Update Study V2 Studydefinitions  Studyid  Put"
+                  "title": "Response Update Study V3 Studydefinitions  Studyid  Put"
                 }
               }
             }
@@ -134,7 +134,7 @@
         ],
         "summary": "Return a study",
         "description": "Return an entire study including all child elements",
-        "operationId": "read_full_study_v2_studyDefinitions__studyId__get",
+        "operationId": "read_full_study_v3_studyDefinitions__studyId__get",
         "parameters": [
           {
             "name": "studyId",
@@ -182,14 +182,14 @@
         }
       }
     },
-    "/v2/studyDefinitions/{studyId}/history": {
+    "/v3/studyDefinitions/{studyId}/history": {
       "get": {
         "tags": [
           "Production"
         ],
         "summary": "Returns the study history",
         "description": "Returns the history for the specified study",
-        "operationId": "read_study_history_v2_studyDefinitions__studyId__history_get",
+        "operationId": "read_study_history_v3_studyDefinitions__studyId__history_get",
         "parameters": [
           {
             "name": "studyId",
@@ -211,7 +211,7 @@
                   "items": {
                     "$ref": "#/components/schemas/Wrapper"
                   },
-                  "title": "Response Read Study History V2 Studydefinitions  Studyid  History Get"
+                  "title": "Response Read Study History V3 Studydefinitions  Studyid  History Get"
                 }
               }
             }
@@ -241,14 +241,14 @@
         }
       }
     },
-    "/v2/studyDesigns": {
+    "/v3/studyDesigns": {
       "get": {
         "tags": [
           "Production"
         ],
         "summary": "Study designs for a study",
         "description": "Returns all the study designs for a specified study.",
-        "operationId": "search_study_design_v2_studyDesigns_get",
+        "operationId": "search_study_design_v3_studyDesigns_get",
         "parameters": [
           {
             "name": "studyId",
@@ -271,7 +271,7 @@
                   "items": {
                     "$ref": "#/components/schemas/StudyDesign"
                   },
-                  "title": "Response Search Study Design V2 Studydesigns Get"
+                  "title": "Response Search Study Design V3 Studydesigns Get"
                 }
               }
             }
