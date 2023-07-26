@@ -1,11 +1,12 @@
 status,class_name,property_name,data_type
 ,,,
 Property - NEW,BiomedicalConceptCategory,bcCategoryChildren,List<BiomedicalConceptCategory>
-Property - NEW,BiomedicalConceptCategory,bcCategoryMembers,BiomedicalConceptCategory
+Property - NEW,BiomedicalConceptCategory,bcCategoryMembers,BiomedicalConcept
 Property - NEW,BiomedicalConceptCategory,description,String
 Property - NEW,BiomedicalConceptCategory,id,String
 Property - NEW,BiomedicalConceptCategory,name,String
 Property - NEW,Organization,id,String
+Property - NEW,Address,id,String
 Property - NEW,Indication,description,String
 Property - NEW,Indication,id,String
 Property - NEW,StudyEpoch,description,String
