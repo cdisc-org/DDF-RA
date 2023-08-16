@@ -308,10 +308,12 @@
         "properties": {
           "id": {
             "type": "string",
+            "minLength": 1,
             "title": "Id"
           },
           "name": {
             "type": "string",
+            "minLength": 1,
             "title": "Name"
           },
           "description": {
@@ -401,6 +403,8 @@
         },
         "type": "object",
         "required": [
+          "id",
+          "name",
           "activityIsConditional"
         ],
         "title": "Activity"
@@ -409,6 +413,7 @@
         "properties": {
           "id": {
             "type": "string",
+            "minLength": 1,
             "title": "Id"
           },
           "text": {
@@ -441,6 +446,7 @@
         },
         "type": "object",
         "required": [
+          "id",
           "text",
           "line",
           "city",
@@ -455,6 +461,7 @@
         "properties": {
           "id": {
             "type": "string",
+            "minLength": 1,
             "title": "Id"
           },
           "standardCode": {
@@ -471,6 +478,7 @@
         },
         "type": "object",
         "required": [
+          "id",
           "standardCode"
         ],
         "title": "AliasCode"
@@ -479,6 +487,7 @@
         "properties": {
           "id": {
             "type": "string",
+            "minLength": 1,
             "title": "Id"
           },
           "description": {
@@ -487,17 +496,22 @@
           }
         },
         "type": "object",
+        "required": [
+          "id"
+        ],
         "title": "AnalysisPopulation"
       },
       "BiomedicalConcept": {
         "properties": {
           "id": {
             "type": "string",
+            "minLength": 1,
             "title": "Id"
           },
-          "bcName": {
+          "name": {
             "type": "string",
-            "title": "Bcname"
+            "minLength": 1,
+            "title": "Name"
           },
           "bcSynonyms": {
             "items": {
@@ -525,7 +539,8 @@
         },
         "type": "object",
         "required": [
-          "bcName",
+          "id",
+          "name",
           "bcReference",
           "bcConceptCode"
         ],
@@ -535,10 +550,12 @@
         "properties": {
           "id": {
             "type": "string",
+            "minLength": 1,
             "title": "Id"
           },
           "name": {
             "type": "string",
+            "minLength": 1,
             "title": "Name"
           },
           "description": {
@@ -573,17 +590,23 @@
           }
         },
         "type": "object",
+        "required": [
+          "id",
+          "name"
+        ],
         "title": "BiomedicalConceptCategory"
       },
       "BiomedicalConceptProperty": {
         "properties": {
           "id": {
             "type": "string",
+            "minLength": 1,
             "title": "Id"
           },
-          "bcPropertyName": {
+          "name": {
             "type": "string",
-            "title": "Bcpropertyname"
+            "minLength": 1,
+            "title": "Name"
           },
           "bcPropertyRequired": {
             "type": "boolean",
@@ -611,7 +634,8 @@
         },
         "type": "object",
         "required": [
-          "bcPropertyName",
+          "id",
+          "name",
           "bcPropertyRequired",
           "bcPropertyEnabled",
           "bcPropertyDatatype",
@@ -623,10 +647,12 @@
         "properties": {
           "id": {
             "type": "string",
+            "minLength": 1,
             "title": "Id"
           },
           "name": {
             "type": "string",
+            "minLength": 1,
             "title": "Name"
           },
           "description": {
@@ -640,6 +666,8 @@
         },
         "type": "object",
         "required": [
+          "id",
+          "name",
           "bcSurrogateReference"
         ],
         "title": "BiomedicalConceptSurrogate"
@@ -648,6 +676,7 @@
         "properties": {
           "id": {
             "type": "string",
+            "minLength": 1,
             "title": "Id"
           },
           "code": {
@@ -669,6 +698,7 @@
         },
         "type": "object",
         "required": [
+          "id",
           "code",
           "codeSystem",
           "codeSystemVersion",
@@ -676,14 +706,58 @@
         ],
         "title": "Code"
       },
-      "Encounter": {
+      "Content": {
         "properties": {
           "id": {
             "type": "string",
+            "minLength": 1,
             "title": "Id"
           },
           "name": {
             "type": "string",
+            "minLength": 1,
+            "title": "Name"
+          },
+          "sectionNumber": {
+            "type": "string",
+            "title": "Sectionnumber"
+          },
+          "sectionTitle": {
+            "type": "string",
+            "title": "Sectiontitle"
+          },
+          "text": {
+            "type": "string",
+            "title": "Text"
+          },
+          "contentChildIds": {
+            "items": {
+              "type": "string"
+            },
+            "type": "array",
+            "title": "Contentchildids",
+            "default": []
+          }
+        },
+        "type": "object",
+        "required": [
+          "id",
+          "name",
+          "sectionNumber",
+          "sectionTitle"
+        ],
+        "title": "Content"
+      },
+      "Encounter": {
+        "properties": {
+          "id": {
+            "type": "string",
+            "minLength": 1,
+            "title": "Id"
+          },
+          "name": {
+            "type": "string",
+            "minLength": 1,
             "title": "Name"
           },
           "description": {
@@ -773,21 +847,26 @@
           }
         },
         "type": "object",
+        "required": [
+          "id",
+          "name"
+        ],
         "title": "Encounter"
       },
       "Endpoint": {
         "properties": {
           "id": {
             "type": "string",
+            "minLength": 1,
             "title": "Id"
           },
           "description": {
             "type": "string",
             "title": "Description"
           },
-          "endpointPurposeDescription": {
+          "purpose": {
             "type": "string",
-            "title": "Endpointpurposedescription"
+            "title": "Purpose"
           },
           "endpointLevel": {
             "anyOf": [
@@ -802,7 +881,8 @@
         },
         "type": "object",
         "required": [
-          "endpointPurposeDescription"
+          "id",
+          "purpose"
         ],
         "title": "Endpoint"
       },
@@ -810,6 +890,7 @@
         "properties": {
           "id": {
             "type": "string",
+            "minLength": 1,
             "title": "Id"
           },
           "summaryMeasure": {
@@ -852,6 +933,7 @@
         },
         "type": "object",
         "required": [
+          "id",
           "summaryMeasure",
           "analysisPopulation"
         ],
@@ -874,7 +956,13 @@
         "properties": {
           "id": {
             "type": "string",
+            "minLength": 1,
             "title": "Id"
+          },
+          "name": {
+            "type": "string",
+            "minLength": 1,
+            "title": "Name"
           },
           "description": {
             "type": "string",
@@ -890,16 +978,22 @@
           }
         },
         "type": "object",
+        "required": [
+          "id",
+          "name"
+        ],
         "title": "Indication"
       },
       "IntercurrentEvent": {
         "properties": {
           "id": {
             "type": "string",
+            "minLength": 1,
             "title": "Id"
           },
           "name": {
             "type": "string",
+            "minLength": 1,
             "title": "Name"
           },
           "description": {
@@ -913,6 +1007,8 @@
         },
         "type": "object",
         "required": [
+          "id",
+          "name",
           "intercurrentEventStrategy"
         ],
         "title": "IntercurrentEvent"
@@ -921,6 +1017,7 @@
         "properties": {
           "id": {
             "type": "string",
+            "minLength": 1,
             "title": "Id"
           },
           "description": {
@@ -937,13 +1034,22 @@
           }
         },
         "type": "object",
+        "required": [
+          "id"
+        ],
         "title": "InvestigationalIntervention"
       },
       "Objective": {
         "properties": {
           "id": {
             "type": "string",
+            "minLength": 1,
             "title": "Id"
+          },
+          "name": {
+            "type": "string",
+            "minLength": 1,
+            "title": "Name"
           },
           "description": {
             "type": "string",
@@ -969,27 +1075,33 @@
           }
         },
         "type": "object",
+        "required": [
+          "id",
+          "name"
+        ],
         "title": "Objective"
       },
-      "Organisation": {
+      "Organization": {
         "properties": {
           "id": {
             "type": "string",
+            "minLength": 1,
             "title": "Id"
           },
-          "organisationIdentifierScheme": {
+          "name": {
             "type": "string",
-            "title": "Organisationidentifierscheme"
+            "minLength": 1,
+            "title": "Name"
           },
-          "organisationIdentifier": {
+          "organizationIdentifierScheme": {
             "type": "string",
-            "title": "Organisationidentifier"
+            "title": "Organizationidentifierscheme"
           },
-          "organisationName": {
+          "organizationIdentifier": {
             "type": "string",
-            "title": "Organisationname"
+            "title": "Organizationidentifier"
           },
-          "organisationType": {
+          "organizationType": {
             "$ref": "#/components/schemas/Code"
           },
           "organizationLegalAddress": {
@@ -1005,21 +1117,24 @@
         },
         "type": "object",
         "required": [
-          "organisationIdentifierScheme",
-          "organisationIdentifier",
-          "organisationName",
-          "organisationType"
+          "id",
+          "name",
+          "organizationIdentifierScheme",
+          "organizationIdentifier",
+          "organizationType"
         ],
-        "title": "Organisation"
+        "title": "Organization"
       },
       "Procedure": {
         "properties": {
           "id": {
             "type": "string",
+            "minLength": 1,
             "title": "Id"
           },
           "name": {
             "type": "string",
+            "minLength": 1,
             "title": "Name"
           },
           "description": {
@@ -1051,6 +1166,8 @@
         },
         "type": "object",
         "required": [
+          "id",
+          "name",
           "procedureType",
           "procedureCode",
           "procedureIsConditional"
@@ -1061,6 +1178,7 @@
         "properties": {
           "id": {
             "type": "string",
+            "minLength": 1,
             "title": "Id"
           },
           "responseCodeEnabled": {
@@ -1073,6 +1191,7 @@
         },
         "type": "object",
         "required": [
+          "id",
           "responseCodeEnabled",
           "code"
         ],
@@ -1082,10 +1201,12 @@
         "properties": {
           "id": {
             "type": "string",
+            "minLength": 1,
             "title": "Id"
           },
           "name": {
             "type": "string",
+            "minLength": 1,
             "title": "Name"
           },
           "description": {
@@ -1130,6 +1251,8 @@
         },
         "type": "object",
         "required": [
+          "id",
+          "name",
           "mainTimeline",
           "entryCondition"
         ],
@@ -1139,16 +1262,21 @@
         "properties": {
           "id": {
             "type": "string",
+            "minLength": 1,
             "title": "Id"
           }
         },
         "type": "object",
+        "required": [
+          "id"
+        ],
         "title": "ScheduleTimelineExit"
       },
       "ScheduledInstance": {
         "properties": {
           "id": {
             "type": "string",
+            "minLength": 1,
             "title": "Id"
           },
           "scheduledInstanceType": {
@@ -1214,6 +1342,7 @@
         },
         "type": "object",
         "required": [
+          "id",
           "scheduledInstanceType"
         ],
         "title": "ScheduledInstance"
@@ -1314,10 +1443,12 @@
         "properties": {
           "id": {
             "type": "string",
+            "minLength": 1,
             "title": "Id"
           },
           "name": {
             "type": "string",
+            "minLength": 1,
             "title": "Name"
           },
           "description": {
@@ -1337,6 +1468,8 @@
         },
         "type": "object",
         "required": [
+          "id",
+          "name",
           "studyArmType",
           "studyArmDataOriginDescription",
           "studyArmDataOriginType"
@@ -1347,6 +1480,7 @@
         "properties": {
           "id": {
             "type": "string",
+            "minLength": 1,
             "title": "Id"
           },
           "studyArmId": {
@@ -1368,6 +1502,7 @@
         },
         "type": "object",
         "required": [
+          "id",
           "studyArmId",
           "studyEpochId"
         ],
@@ -1377,10 +1512,12 @@
         "properties": {
           "id": {
             "type": "string",
+            "minLength": 1,
             "title": "Id"
           },
           "name": {
             "type": "string",
+            "minLength": 1,
             "title": "Name"
           },
           "description": {
@@ -1544,15 +1681,25 @@
             "type": "array",
             "title": "Studyelements",
             "default": []
+          },
+          "contents": {
+            "items": {
+              "$ref": "#/components/schemas/Content"
+            },
+            "type": "array",
+            "title": "Contents"
           }
         },
         "type": "object",
         "required": [
+          "id",
+          "name",
           "interventionModel",
           "studyCells",
           "studyDesignRationale",
           "studyArms",
-          "studyEpochs"
+          "studyEpochs",
+          "contents"
         ],
         "title": "StudyDesign"
       },
@@ -1560,7 +1707,13 @@
         "properties": {
           "id": {
             "type": "string",
+            "minLength": 1,
             "title": "Id"
+          },
+          "name": {
+            "type": "string",
+            "minLength": 1,
+            "title": "Name"
           },
           "description": {
             "type": "string",
@@ -1590,6 +1743,8 @@
         },
         "type": "object",
         "required": [
+          "id",
+          "name",
           "plannedNumberOfParticipants",
           "plannedMaximumAgeOfParticipants",
           "plannedMinimumAgeOfParticipants"
@@ -1600,10 +1755,12 @@
         "properties": {
           "id": {
             "type": "string",
+            "minLength": 1,
             "title": "Id"
           },
           "name": {
             "type": "string",
+            "minLength": 1,
             "title": "Name"
           },
           "description": {
@@ -1632,16 +1789,22 @@
           }
         },
         "type": "object",
+        "required": [
+          "id",
+          "name"
+        ],
         "title": "StudyElement"
       },
       "StudyEpoch": {
         "properties": {
           "id": {
             "type": "string",
+            "minLength": 1,
             "title": "Id"
           },
           "name": {
             "type": "string",
+            "minLength": 1,
             "title": "Name"
           },
           "description": {
@@ -1676,6 +1839,8 @@
         },
         "type": "object",
         "required": [
+          "id",
+          "name",
           "studyEpochType"
         ],
         "title": "StudyEpoch"
@@ -1684,6 +1849,7 @@
         "properties": {
           "id": {
             "type": "string",
+            "minLength": 1,
             "title": "Id"
           },
           "studyIdentifier": {
@@ -1691,11 +1857,12 @@
             "title": "Studyidentifier"
           },
           "studyIdentifierScope": {
-            "$ref": "#/components/schemas/Organisation"
+            "$ref": "#/components/schemas/Organization"
           }
         },
         "type": "object",
         "required": [
+          "id",
           "studyIdentifier",
           "studyIdentifierScope"
         ],
@@ -1705,6 +1872,7 @@
         "properties": {
           "id": {
             "type": "string",
+            "minLength": 1,
             "title": "Id"
           },
           "briefTitle": {
@@ -1749,6 +1917,7 @@
         },
         "type": "object",
         "required": [
+          "id",
           "briefTitle",
           "officialTitle",
           "publicTitle",
@@ -1763,7 +1932,17 @@
         "properties": {
           "id": {
             "type": "string",
+            "minLength": 1,
             "title": "Id"
+          },
+          "name": {
+            "type": "string",
+            "minLength": 1,
+            "title": "Name"
+          },
+          "description": {
+            "type": "string",
+            "title": "Description"
           },
           "timingType": {
             "$ref": "#/components/schemas/Code"
@@ -1771,17 +1950,6 @@
           "timingValue": {
             "type": "string",
             "title": "Timingvalue"
-          },
-          "timingDescription": {
-            "anyOf": [
-              {
-                "type": "string"
-              },
-              {
-                "type": "null"
-              }
-            ],
-            "title": "Timingdescription"
           },
           "timingRelativeToFrom": {
             "$ref": "#/components/schemas/Code"
@@ -1840,10 +2008,16 @@
               }
             ],
             "title": "Timingwindow"
+          },
+          "label": {
+            "type": "string",
+            "title": "Label"
           }
         },
         "type": "object",
         "required": [
+          "id",
+          "name",
           "timingType",
           "timingValue",
           "timingRelativeToFrom"
@@ -1854,6 +2028,7 @@
         "properties": {
           "id": {
             "type": "string",
+            "minLength": 1,
             "title": "Id"
           },
           "description": {
@@ -1862,6 +2037,9 @@
           }
         },
         "type": "object",
+        "required": [
+          "id"
+        ],
         "title": "TransitionRule"
       },
       "ValidationError": {

@@ -214,9 +214,11 @@ components:
       properties:
         id:
           type: string
+          minLength: 1
           title: Id
         name:
           type: string
+          minLength: 1
           title: Name
         description:
           type: string
@@ -270,12 +272,15 @@ components:
           title: Activitytimelineid
       type: object
       required:
+        - id
+        - name
         - activityIsConditional
       title: Activity
     Address:
       properties:
         id:
           type: string
+          minLength: 1
           title: Id
         text:
           type: string
@@ -299,6 +304,7 @@ components:
           $ref: '#/components/schemas/Code'
       type: object
       required:
+        - id
         - text
         - line
         - city
@@ -311,6 +317,7 @@ components:
       properties:
         id:
           type: string
+          minLength: 1
           title: Id
         standardCode:
           $ref: '#/components/schemas/Code'
@@ -322,26 +329,32 @@ components:
           default: []
       type: object
       required:
+        - id
         - standardCode
       title: AliasCode
     AnalysisPopulation:
       properties:
         id:
           type: string
+          minLength: 1
           title: Id
         description:
           type: string
           title: Description
       type: object
+      required:
+        - id
       title: AnalysisPopulation
     BiomedicalConcept:
       properties:
         id:
           type: string
+          minLength: 1
           title: Id
-        bcName:
+        name:
           type: string
-          title: Bcname
+          minLength: 1
+          title: Name
         bcSynonyms:
           items:
             type: string
@@ -361,7 +374,8 @@ components:
           $ref: '#/components/schemas/AliasCode'
       type: object
       required:
-        - bcName
+        - id
+        - name
         - bcReference
         - bcConceptCode
       title: BiomedicalConcept
@@ -369,9 +383,11 @@ components:
       properties:
         id:
           type: string
+          minLength: 1
           title: Id
         name:
           type: string
+          minLength: 1
           title: Name
         description:
           type: string
@@ -393,15 +409,20 @@ components:
             - $ref: '#/components/schemas/AliasCode'
             - type: 'null'
       type: object
+      required:
+        - id
+        - name
       title: BiomedicalConceptCategory
     BiomedicalConceptProperty:
       properties:
         id:
           type: string
+          minLength: 1
           title: Id
-        bcPropertyName:
+        name:
           type: string
-          title: Bcpropertyname
+          minLength: 1
+          title: Name
         bcPropertyRequired:
           type: boolean
           title: Bcpropertyrequired
@@ -421,7 +442,8 @@ components:
           $ref: '#/components/schemas/AliasCode'
       type: object
       required:
-        - bcPropertyName
+        - id
+        - name
         - bcPropertyRequired
         - bcPropertyEnabled
         - bcPropertyDatatype
@@ -431,9 +453,11 @@ components:
       properties:
         id:
           type: string
+          minLength: 1
           title: Id
         name:
           type: string
+          minLength: 1
           title: Name
         description:
           type: string
@@ -443,12 +467,15 @@ components:
           title: Bcsurrogatereference
       type: object
       required:
+        - id
+        - name
         - bcSurrogateReference
       title: BiomedicalConceptSurrogate
     Code:
       properties:
         id:
           type: string
+          minLength: 1
           title: Id
         code:
           type: string
@@ -464,18 +491,53 @@ components:
           title: Decode
       type: object
       required:
+        - id
         - code
         - codeSystem
         - codeSystemVersion
         - decode
       title: Code
+    Content:
+      properties:
+        id:
+          type: string
+          minLength: 1
+          title: Id
+        name:
+          type: string
+          minLength: 1
+          title: Name
+        sectionNumber:
+          type: string
+          title: Sectionnumber
+        sectionTitle:
+          type: string
+          title: Sectiontitle
+        text:
+          type: string
+          title: Text
+        contentChildIds:
+          items:
+            type: string
+          type: array
+          title: Contentchildids
+          default: []
+      type: object
+      required:
+        - id
+        - name
+        - sectionNumber
+        - sectionTitle
+      title: Content
     Encounter:
       properties:
         id:
           type: string
+          minLength: 1
           title: Id
         name:
           type: string
+          minLength: 1
           title: Name
         description:
           type: string
@@ -518,30 +580,36 @@ components:
             - type: 'null'
           title: Encounterscheduledattimingid
       type: object
+      required:
+        - id
+        - name
       title: Encounter
     Endpoint:
       properties:
         id:
           type: string
+          minLength: 1
           title: Id
         description:
           type: string
           title: Description
-        endpointPurposeDescription:
+        purpose:
           type: string
-          title: Endpointpurposedescription
+          title: Purpose
         endpointLevel:
           anyOf:
             - $ref: '#/components/schemas/Code'
             - type: 'null'
       type: object
       required:
-        - endpointPurposeDescription
+        - id
+        - purpose
       title: Endpoint
     Estimand:
       properties:
         id:
           type: string
+          minLength: 1
           title: Id
         summaryMeasure:
           type: string
@@ -566,6 +634,7 @@ components:
           default: []
       type: object
       required:
+        - id
         - summaryMeasure
         - analysisPopulation
       title: Estimand
@@ -582,7 +651,12 @@ components:
       properties:
         id:
           type: string
+          minLength: 1
           title: Id
+        name:
+          type: string
+          minLength: 1
+          title: Name
         description:
           type: string
           title: Description
@@ -593,14 +667,19 @@ components:
           title: Codes
           default: []
       type: object
+      required:
+        - id
+        - name
       title: Indication
     IntercurrentEvent:
       properties:
         id:
           type: string
+          minLength: 1
           title: Id
         name:
           type: string
+          minLength: 1
           title: Name
         description:
           type: string
@@ -610,12 +689,15 @@ components:
           title: Intercurrenteventstrategy
       type: object
       required:
+        - id
+        - name
         - intercurrentEventStrategy
       title: IntercurrentEvent
     InvestigationalIntervention:
       properties:
         id:
           type: string
+          minLength: 1
           title: Id
         description:
           type: string
@@ -627,12 +709,19 @@ components:
           title: Codes
           default: []
       type: object
+      required:
+        - id
       title: InvestigationalIntervention
     Objective:
       properties:
         id:
           type: string
+          minLength: 1
           title: Id
+        name:
+          type: string
+          minLength: 1
+          title: Name
         description:
           type: string
           title: Description
@@ -647,22 +736,27 @@ components:
           title: Objectiveendpoints
           default: []
       type: object
+      required:
+        - id
+        - name
       title: Objective
-    Organisation:
+    Organization:
       properties:
         id:
           type: string
+          minLength: 1
           title: Id
-        organisationIdentifierScheme:
+        name:
           type: string
-          title: Organisationidentifierscheme
-        organisationIdentifier:
+          minLength: 1
+          title: Name
+        organizationIdentifierScheme:
           type: string
-          title: Organisationidentifier
-        organisationName:
+          title: Organizationidentifierscheme
+        organizationIdentifier:
           type: string
-          title: Organisationname
-        organisationType:
+          title: Organizationidentifier
+        organizationType:
           $ref: '#/components/schemas/Code'
         organizationLegalAddress:
           anyOf:
@@ -670,18 +764,21 @@ components:
             - type: 'null'
       type: object
       required:
-        - organisationIdentifierScheme
-        - organisationIdentifier
-        - organisationName
-        - organisationType
-      title: Organisation
+        - id
+        - name
+        - organizationIdentifierScheme
+        - organizationIdentifier
+        - organizationType
+      title: Organization
     Procedure:
       properties:
         id:
           type: string
+          minLength: 1
           title: Id
         name:
           type: string
+          minLength: 1
           title: Name
         description:
           type: string
@@ -701,6 +798,8 @@ components:
           title: Procedureisconditionalreason
       type: object
       required:
+        - id
+        - name
         - procedureType
         - procedureCode
         - procedureIsConditional
@@ -709,6 +808,7 @@ components:
       properties:
         id:
           type: string
+          minLength: 1
           title: Id
         responseCodeEnabled:
           type: boolean
@@ -717,6 +817,7 @@ components:
           $ref: '#/components/schemas/Code'
       type: object
       required:
+        - id
         - responseCodeEnabled
         - code
       title: ResponseCode
@@ -724,9 +825,11 @@ components:
       properties:
         id:
           type: string
+          minLength: 1
           title: Id
         name:
           type: string
+          minLength: 1
           title: Name
         description:
           type: string
@@ -756,6 +859,8 @@ components:
           default: []
       type: object
       required:
+        - id
+        - name
         - mainTimeline
         - entryCondition
       title: ScheduleTimeline
@@ -763,13 +868,17 @@ components:
       properties:
         id:
           type: string
+          minLength: 1
           title: Id
       type: object
+      required:
+        - id
       title: ScheduleTimelineExit
     ScheduledInstance:
       properties:
         id:
           type: string
+          minLength: 1
           title: Id
         scheduledInstanceType:
           type: string
@@ -805,6 +914,7 @@ components:
           title: Epochid
       type: object
       required:
+        - id
         - scheduledInstanceType
       title: ScheduledInstance
     Study:
@@ -870,9 +980,11 @@ components:
       properties:
         id:
           type: string
+          minLength: 1
           title: Id
         name:
           type: string
+          minLength: 1
           title: Name
         description:
           type: string
@@ -886,6 +998,8 @@ components:
           $ref: '#/components/schemas/Code'
       type: object
       required:
+        - id
+        - name
         - studyArmType
         - studyArmDataOriginDescription
         - studyArmDataOriginType
@@ -894,6 +1008,7 @@ components:
       properties:
         id:
           type: string
+          minLength: 1
           title: Id
         studyArmId:
           type: string
@@ -909,6 +1024,7 @@ components:
           default: []
       type: object
       required:
+        - id
         - studyArmId
         - studyEpochId
       title: StudyCell
@@ -916,9 +1032,11 @@ components:
       properties:
         id:
           type: string
+          minLength: 1
           title: Id
         name:
           type: string
+          minLength: 1
           title: Name
         description:
           type: string
@@ -1037,19 +1155,32 @@ components:
           type: array
           title: Studyelements
           default: []
+        contents:
+          items:
+            $ref: '#/components/schemas/Content'
+          type: array
+          title: Contents
       type: object
       required:
+        - id
+        - name
         - interventionModel
         - studyCells
         - studyDesignRationale
         - studyArms
         - studyEpochs
+        - contents
       title: StudyDesign
     StudyDesignPopulation:
       properties:
         id:
           type: string
+          minLength: 1
           title: Id
+        name:
+          type: string
+          minLength: 1
+          title: Name
         description:
           type: string
           title: Description
@@ -1071,6 +1202,8 @@ components:
           default: []
       type: object
       required:
+        - id
+        - name
         - plannedNumberOfParticipants
         - plannedMaximumAgeOfParticipants
         - plannedMinimumAgeOfParticipants
@@ -1079,9 +1212,11 @@ components:
       properties:
         id:
           type: string
+          minLength: 1
           title: Id
         name:
           type: string
+          minLength: 1
           title: Name
         description:
           type: string
@@ -1095,14 +1230,19 @@ components:
             - $ref: '#/components/schemas/TransitionRule'
             - type: 'null'
       type: object
+      required:
+        - id
+        - name
       title: StudyElement
     StudyEpoch:
       properties:
         id:
           type: string
+          minLength: 1
           title: Id
         name:
           type: string
+          minLength: 1
           title: Name
         description:
           type: string
@@ -1121,20 +1261,24 @@ components:
           title: Nextstudyepochid
       type: object
       required:
+        - id
+        - name
         - studyEpochType
       title: StudyEpoch
     StudyIdentifier:
       properties:
         id:
           type: string
+          minLength: 1
           title: Id
         studyIdentifier:
           type: string
           title: Studyidentifier
         studyIdentifierScope:
-          $ref: '#/components/schemas/Organisation'
+          $ref: '#/components/schemas/Organization'
       type: object
       required:
+        - id
         - studyIdentifier
         - studyIdentifierScope
       title: StudyIdentifier
@@ -1142,6 +1286,7 @@ components:
       properties:
         id:
           type: string
+          minLength: 1
           title: Id
         briefTitle:
           type: string
@@ -1171,6 +1316,7 @@ components:
           $ref: '#/components/schemas/Code'
       type: object
       required:
+        - id
         - briefTitle
         - officialTitle
         - publicTitle
@@ -1183,17 +1329,20 @@ components:
       properties:
         id:
           type: string
+          minLength: 1
           title: Id
+        name:
+          type: string
+          minLength: 1
+          title: Name
+        description:
+          type: string
+          title: Description
         timingType:
           $ref: '#/components/schemas/Code'
         timingValue:
           type: string
           title: Timingvalue
-        timingDescription:
-          anyOf:
-            - type: string
-            - type: 'null'
-          title: Timingdescription
         timingRelativeToFrom:
           $ref: '#/components/schemas/Code'
         relativeFromScheduledInstanceId:
@@ -1221,8 +1370,13 @@ components:
             - type: string
             - type: 'null'
           title: Timingwindow
+        label:
+          type: string
+          title: Label
       type: object
       required:
+        - id
+        - name
         - timingType
         - timingValue
         - timingRelativeToFrom
@@ -1231,11 +1385,14 @@ components:
       properties:
         id:
           type: string
+          minLength: 1
           title: Id
         description:
           type: string
           title: Description
       type: object
+      required:
+        - id
       title: TransitionRule
     ValidationError:
       properties:
