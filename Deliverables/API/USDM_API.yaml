@@ -4,7 +4,7 @@ info:
   description: >-
     A simple TransCelerate Digital Data Flow (DDF) Study Definitions Repository
     API.
-  version: 2.2 Provisional (0.37)
+  version: 2.3 Provisional (0.38)
 paths:
   /v3/studyDefinitions:
     post:
@@ -220,6 +220,9 @@ components:
           type: string
           minLength: 1
           title: Name
+        label:
+          type: string
+          title: Label
         description:
           type: string
           title: Description
@@ -355,6 +358,9 @@ components:
           type: string
           minLength: 1
           title: Name
+        label:
+          type: string
+          title: Label
         bcSynonyms:
           items:
             type: string
@@ -370,14 +376,14 @@ components:
           type: array
           title: Bcproperties
           default: []
-        bcConceptCode:
+        code:
           $ref: '#/components/schemas/AliasCode'
       type: object
       required:
         - id
         - name
         - bcReference
-        - bcConceptCode
+        - code
       title: BiomedicalConcept
     BiomedicalConceptCategory:
       properties:
@@ -389,6 +395,9 @@ components:
           type: string
           minLength: 1
           title: Name
+        label:
+          type: string
+          title: Label
         description:
           type: string
           title: Description
@@ -404,7 +413,7 @@ components:
           type: array
           title: Bccategorymemberids
           default: []
-        bcCategoryCode:
+        code:
           anyOf:
             - $ref: '#/components/schemas/AliasCode'
             - type: 'null'
@@ -423,6 +432,9 @@ components:
           type: string
           minLength: 1
           title: Name
+        label:
+          type: string
+          title: Label
         bcPropertyRequired:
           type: boolean
           title: Bcpropertyrequired
@@ -438,7 +450,7 @@ components:
           type: array
           title: Bcpropertyresponsecodes
           default: []
-        bcPropertyConceptCode:
+        code:
           $ref: '#/components/schemas/AliasCode'
       type: object
       required:
@@ -447,7 +459,7 @@ components:
         - bcPropertyRequired
         - bcPropertyEnabled
         - bcPropertyDatatype
-        - bcPropertyConceptCode
+        - code
       title: BiomedicalConceptProperty
     BiomedicalConceptSurrogate:
       properties:
@@ -459,6 +471,9 @@ components:
           type: string
           minLength: 1
           title: Name
+        label:
+          type: string
+          title: Label
         description:
           type: string
           title: Description
@@ -539,9 +554,16 @@ components:
           type: string
           minLength: 1
           title: Name
+        label:
+          type: string
+          title: Label
         description:
           type: string
           title: Description
+        type:
+          anyOf:
+            - $ref: '#/components/schemas/Code'
+            - type: 'null'
         previousEncounterId:
           anyOf:
             - type: string
@@ -552,10 +574,11 @@ components:
             - type: string
             - type: 'null'
           title: Nextencounterid
-        encounterType:
+        encounterScheduledAtTimingId:
           anyOf:
-            - $ref: '#/components/schemas/Code'
+            - type: string
             - type: 'null'
+          title: Encounterscheduledattimingid
         encounterEnvironmentalSetting:
           anyOf:
             - $ref: '#/components/schemas/Code'
@@ -574,11 +597,6 @@ components:
           anyOf:
             - $ref: '#/components/schemas/TransitionRule'
             - type: 'null'
-        encounterScheduledAtTimingId:
-          anyOf:
-            - type: string
-            - type: 'null'
-          title: Encounterscheduledattimingid
       type: object
       required:
         - id
@@ -657,6 +675,9 @@ components:
           type: string
           minLength: 1
           title: Name
+        label:
+          type: string
+          title: Label
         description:
           type: string
           title: Description
@@ -681,6 +702,9 @@ components:
           type: string
           minLength: 1
           title: Name
+        label:
+          type: string
+          title: Label
         description:
           type: string
           title: Description
@@ -722,6 +746,9 @@ components:
           type: string
           minLength: 1
           title: Name
+        label:
+          type: string
+          title: Label
         description:
           type: string
           title: Description
@@ -750,14 +777,17 @@ components:
           type: string
           minLength: 1
           title: Name
+        label:
+          type: string
+          title: Label
+        type:
+          $ref: '#/components/schemas/Code'
         organizationIdentifierScheme:
           type: string
           title: Organizationidentifierscheme
         organizationIdentifier:
           type: string
           title: Organizationidentifier
-        organizationType:
-          $ref: '#/components/schemas/Code'
         organizationLegalAddress:
           anyOf:
             - $ref: '#/components/schemas/Address'
@@ -766,9 +796,9 @@ components:
       required:
         - id
         - name
+        - type
         - organizationIdentifierScheme
         - organizationIdentifier
-        - organizationType
       title: Organization
     Procedure:
       properties:
@@ -780,13 +810,16 @@ components:
           type: string
           minLength: 1
           title: Name
+        label:
+          type: string
+          title: Label
         description:
           type: string
           title: Description
         procedureType:
           type: string
           title: Proceduretype
-        procedureCode:
+        code:
           $ref: '#/components/schemas/Code'
         procedureIsConditional:
           type: boolean
@@ -801,7 +834,7 @@ components:
         - id
         - name
         - procedureType
-        - procedureCode
+        - code
         - procedureIsConditional
       title: Procedure
     ResponseCode:
@@ -831,6 +864,9 @@ components:
           type: string
           minLength: 1
           title: Name
+        label:
+          type: string
+          title: Label
         description:
           type: string
           title: Description
@@ -880,12 +916,12 @@ components:
           type: string
           minLength: 1
           title: Id
-        scheduledInstanceType:
+        instanceType:
           type: string
           enum:
             - ACTIVITY
             - DECISION
-          title: Scheduledinstancetype
+          title: Instancetype
         scheduledInstanceTimings:
           items:
             $ref: '#/components/schemas/Timing'
@@ -915,7 +951,7 @@ components:
       type: object
       required:
         - id
-        - scheduledInstanceType
+        - instanceType
       title: ScheduledInstance
     Study:
       properties:
@@ -931,7 +967,7 @@ components:
         studyVersion:
           type: string
           title: Studyversion
-        studyType:
+        type:
           anyOf:
             - $ref: '#/components/schemas/Code'
             - type: 'null'
@@ -989,7 +1025,7 @@ components:
         description:
           type: string
           title: Description
-        studyArmType:
+        type:
           $ref: '#/components/schemas/Code'
         studyArmDataOriginDescription:
           type: string
@@ -1000,7 +1036,7 @@ components:
       required:
         - id
         - name
-        - studyArmType
+        - type
         - studyArmDataOriginDescription
         - studyArmDataOriginType
       title: StudyArm
@@ -1038,6 +1074,9 @@ components:
           type: string
           minLength: 1
           title: Name
+        label:
+          type: string
+          title: Label
         description:
           type: string
           title: Description
@@ -1053,55 +1092,19 @@ components:
           type: array
           title: Trialtype
           default: []
-        interventionModel:
-          $ref: '#/components/schemas/Code'
-        studyCells:
-          items:
-            $ref: '#/components/schemas/StudyCell'
-          type: array
-          title: Studycells
-        studyIndications:
-          items:
-            $ref: '#/components/schemas/Indication'
-          type: array
-          title: Studyindications
-          default: []
-        studyInvestigationalInterventions:
-          items:
-            $ref: '#/components/schemas/InvestigationalIntervention'
-          type: array
-          title: Studyinvestigationalinterventions
-          default: []
-        studyPopulations:
-          items:
-            $ref: '#/components/schemas/StudyDesignPopulation'
-          type: array
-          title: Studypopulations
-          default: []
-        studyObjectives:
-          items:
-            $ref: '#/components/schemas/Objective'
-          type: array
-          title: Studyobjectives
-          default: []
-        studyScheduleTimelines:
-          items:
-            $ref: '#/components/schemas/ScheduleTimeline'
-          type: array
-          title: Studyscheduletimelines
-          default: []
         therapeuticAreas:
           items:
             $ref: '#/components/schemas/Code'
           type: array
           title: Therapeuticareas
           default: []
-        studyEstimands:
+        interventionModel:
+          $ref: '#/components/schemas/Code'
+        content:
           items:
-            $ref: '#/components/schemas/Estimand'
+            $ref: '#/components/schemas/Content'
           type: array
-          title: Studyestimands
-          default: []
+          title: Content
         encounters:
           items:
             $ref: '#/components/schemas/Encounter'
@@ -1114,13 +1117,6 @@ components:
           type: array
           title: Activities
           default: []
-        studyDesignRationale:
-          type: string
-          title: Studydesignrationale
-        studyDesignBlindingScheme:
-          anyOf:
-            - $ref: '#/components/schemas/AliasCode'
-            - type: 'null'
         biomedicalConcepts:
           items:
             $ref: '#/components/schemas/BiomedicalConcept'
@@ -1144,6 +1140,18 @@ components:
             $ref: '#/components/schemas/StudyArm'
           type: array
           title: Studyarms
+        studyCells:
+          items:
+            $ref: '#/components/schemas/StudyCell'
+          type: array
+          title: Studycells
+        studyDesignBlindingScheme:
+          anyOf:
+            - $ref: '#/components/schemas/AliasCode'
+            - type: 'null'
+        studyDesignRationale:
+          type: string
+          title: Studydesignrationale
         studyEpochs:
           items:
             $ref: '#/components/schemas/StudyEpoch'
@@ -1155,21 +1163,52 @@ components:
           type: array
           title: Studyelements
           default: []
-        contents:
+        studyEstimands:
           items:
-            $ref: '#/components/schemas/Content'
+            $ref: '#/components/schemas/Estimand'
           type: array
-          title: Contents
+          title: Studyestimands
+          default: []
+        studyIndications:
+          items:
+            $ref: '#/components/schemas/Indication'
+          type: array
+          title: Studyindications
+          default: []
+        studyInvestigationalInterventions:
+          items:
+            $ref: '#/components/schemas/InvestigationalIntervention'
+          type: array
+          title: Studyinvestigationalinterventions
+          default: []
+        studyObjectives:
+          items:
+            $ref: '#/components/schemas/Objective'
+          type: array
+          title: Studyobjectives
+          default: []
+        studyPopulations:
+          items:
+            $ref: '#/components/schemas/StudyDesignPopulation'
+          type: array
+          title: Studypopulations
+          default: []
+        studyScheduleTimelines:
+          items:
+            $ref: '#/components/schemas/ScheduleTimeline'
+          type: array
+          title: Studyscheduletimelines
+          default: []
       type: object
       required:
         - id
         - name
         - interventionModel
+        - content
+        - studyArms
         - studyCells
         - studyDesignRationale
-        - studyArms
         - studyEpochs
-        - contents
       title: StudyDesign
     StudyDesignPopulation:
       properties:
@@ -1181,6 +1220,9 @@ components:
           type: string
           minLength: 1
           title: Name
+        label:
+          type: string
+          title: Label
         description:
           type: string
           title: Description
@@ -1218,6 +1260,9 @@ components:
           type: string
           minLength: 1
           title: Name
+        label:
+          type: string
+          title: Label
         description:
           type: string
           title: Description
@@ -1244,10 +1289,13 @@ components:
           type: string
           minLength: 1
           title: Name
+        label:
+          type: string
+          title: Label
         description:
           type: string
           title: Description
-        studyEpochType:
+        type:
           $ref: '#/components/schemas/Code'
         previousStudyEpochId:
           anyOf:
@@ -1263,7 +1311,7 @@ components:
       required:
         - id
         - name
-        - studyEpochType
+        - type
       title: StudyEpoch
     StudyIdentifier:
       properties:
@@ -1335,10 +1383,13 @@ components:
           type: string
           minLength: 1
           title: Name
+        label:
+          type: string
+          title: Label
         description:
           type: string
           title: Description
-        timingType:
+        type:
           $ref: '#/components/schemas/Code'
         timingValue:
           type: string
@@ -1370,14 +1421,11 @@ components:
             - type: string
             - type: 'null'
           title: Timingwindow
-        label:
-          type: string
-          title: Label
       type: object
       required:
         - id
         - name
-        - timingType
+        - type
         - timingValue
         - timingRelativeToFrom
       title: Timing

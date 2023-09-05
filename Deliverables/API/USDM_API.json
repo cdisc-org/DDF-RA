@@ -3,7 +3,7 @@
   "info": {
     "title": "Simple API for DDF",
     "description": "A simple TransCelerate Digital Data Flow (DDF) Study Definitions Repository API.",
-    "version": "2.2 Provisional (0.37)"
+    "version": "2.3 Provisional (0.38)"
   },
   "paths": {
     "/v3/studyDefinitions": {
@@ -316,6 +316,10 @@
             "minLength": 1,
             "title": "Name"
           },
+          "label": {
+            "type": "string",
+            "title": "Label"
+          },
           "description": {
             "type": "string",
             "title": "Description"
@@ -513,6 +517,10 @@
             "minLength": 1,
             "title": "Name"
           },
+          "label": {
+            "type": "string",
+            "title": "Label"
+          },
           "bcSynonyms": {
             "items": {
               "type": "string"
@@ -533,7 +541,7 @@
             "title": "Bcproperties",
             "default": []
           },
-          "bcConceptCode": {
+          "code": {
             "$ref": "#/components/schemas/AliasCode"
           }
         },
@@ -542,7 +550,7 @@
           "id",
           "name",
           "bcReference",
-          "bcConceptCode"
+          "code"
         ],
         "title": "BiomedicalConcept"
       },
@@ -557,6 +565,10 @@
             "type": "string",
             "minLength": 1,
             "title": "Name"
+          },
+          "label": {
+            "type": "string",
+            "title": "Label"
           },
           "description": {
             "type": "string",
@@ -578,7 +590,7 @@
             "title": "Bccategorymemberids",
             "default": []
           },
-          "bcCategoryCode": {
+          "code": {
             "anyOf": [
               {
                 "$ref": "#/components/schemas/AliasCode"
@@ -608,6 +620,10 @@
             "minLength": 1,
             "title": "Name"
           },
+          "label": {
+            "type": "string",
+            "title": "Label"
+          },
           "bcPropertyRequired": {
             "type": "boolean",
             "title": "Bcpropertyrequired"
@@ -628,7 +644,7 @@
             "title": "Bcpropertyresponsecodes",
             "default": []
           },
-          "bcPropertyConceptCode": {
+          "code": {
             "$ref": "#/components/schemas/AliasCode"
           }
         },
@@ -639,7 +655,7 @@
           "bcPropertyRequired",
           "bcPropertyEnabled",
           "bcPropertyDatatype",
-          "bcPropertyConceptCode"
+          "code"
         ],
         "title": "BiomedicalConceptProperty"
       },
@@ -654,6 +670,10 @@
             "type": "string",
             "minLength": 1,
             "title": "Name"
+          },
+          "label": {
+            "type": "string",
+            "title": "Label"
           },
           "description": {
             "type": "string",
@@ -760,9 +780,23 @@
             "minLength": 1,
             "title": "Name"
           },
+          "label": {
+            "type": "string",
+            "title": "Label"
+          },
           "description": {
             "type": "string",
             "title": "Description"
+          },
+          "type": {
+            "anyOf": [
+              {
+                "$ref": "#/components/schemas/Code"
+              },
+              {
+                "type": "null"
+              }
+            ]
           },
           "previousEncounterId": {
             "anyOf": [
@@ -786,15 +820,16 @@
             ],
             "title": "Nextencounterid"
           },
-          "encounterType": {
+          "encounterScheduledAtTimingId": {
             "anyOf": [
               {
-                "$ref": "#/components/schemas/Code"
+                "type": "string"
               },
               {
                 "type": "null"
               }
-            ]
+            ],
+            "title": "Encounterscheduledattimingid"
           },
           "encounterEnvironmentalSetting": {
             "anyOf": [
@@ -833,17 +868,6 @@
                 "type": "null"
               }
             ]
-          },
-          "encounterScheduledAtTimingId": {
-            "anyOf": [
-              {
-                "type": "string"
-              },
-              {
-                "type": "null"
-              }
-            ],
-            "title": "Encounterscheduledattimingid"
           }
         },
         "type": "object",
@@ -964,6 +988,10 @@
             "minLength": 1,
             "title": "Name"
           },
+          "label": {
+            "type": "string",
+            "title": "Label"
+          },
           "description": {
             "type": "string",
             "title": "Description"
@@ -995,6 +1023,10 @@
             "type": "string",
             "minLength": 1,
             "title": "Name"
+          },
+          "label": {
+            "type": "string",
+            "title": "Label"
           },
           "description": {
             "type": "string",
@@ -1051,6 +1083,10 @@
             "minLength": 1,
             "title": "Name"
           },
+          "label": {
+            "type": "string",
+            "title": "Label"
+          },
           "description": {
             "type": "string",
             "title": "Description"
@@ -1093,6 +1129,13 @@
             "minLength": 1,
             "title": "Name"
           },
+          "label": {
+            "type": "string",
+            "title": "Label"
+          },
+          "type": {
+            "$ref": "#/components/schemas/Code"
+          },
           "organizationIdentifierScheme": {
             "type": "string",
             "title": "Organizationidentifierscheme"
@@ -1100,9 +1143,6 @@
           "organizationIdentifier": {
             "type": "string",
             "title": "Organizationidentifier"
-          },
-          "organizationType": {
-            "$ref": "#/components/schemas/Code"
           },
           "organizationLegalAddress": {
             "anyOf": [
@@ -1119,9 +1159,9 @@
         "required": [
           "id",
           "name",
+          "type",
           "organizationIdentifierScheme",
-          "organizationIdentifier",
-          "organizationType"
+          "organizationIdentifier"
         ],
         "title": "Organization"
       },
@@ -1137,6 +1177,10 @@
             "minLength": 1,
             "title": "Name"
           },
+          "label": {
+            "type": "string",
+            "title": "Label"
+          },
           "description": {
             "type": "string",
             "title": "Description"
@@ -1145,7 +1189,7 @@
             "type": "string",
             "title": "Proceduretype"
           },
-          "procedureCode": {
+          "code": {
             "$ref": "#/components/schemas/Code"
           },
           "procedureIsConditional": {
@@ -1169,7 +1213,7 @@
           "id",
           "name",
           "procedureType",
-          "procedureCode",
+          "code",
           "procedureIsConditional"
         ],
         "title": "Procedure"
@@ -1208,6 +1252,10 @@
             "type": "string",
             "minLength": 1,
             "title": "Name"
+          },
+          "label": {
+            "type": "string",
+            "title": "Label"
           },
           "description": {
             "type": "string",
@@ -1279,13 +1327,13 @@
             "minLength": 1,
             "title": "Id"
           },
-          "scheduledInstanceType": {
+          "instanceType": {
             "type": "string",
             "enum": [
               "ACTIVITY",
               "DECISION"
             ],
-            "title": "Scheduledinstancetype"
+            "title": "Instancetype"
           },
           "scheduledInstanceTimings": {
             "items": {
@@ -1343,7 +1391,7 @@
         "type": "object",
         "required": [
           "id",
-          "scheduledInstanceType"
+          "instanceType"
         ],
         "title": "ScheduledInstance"
       },
@@ -1369,7 +1417,7 @@
             "type": "string",
             "title": "Studyversion"
           },
-          "studyType": {
+          "type": {
             "anyOf": [
               {
                 "$ref": "#/components/schemas/Code"
@@ -1455,7 +1503,7 @@
             "type": "string",
             "title": "Description"
           },
-          "studyArmType": {
+          "type": {
             "$ref": "#/components/schemas/Code"
           },
           "studyArmDataOriginDescription": {
@@ -1470,7 +1518,7 @@
         "required": [
           "id",
           "name",
-          "studyArmType",
+          "type",
           "studyArmDataOriginDescription",
           "studyArmDataOriginType"
         ],
@@ -1520,6 +1568,10 @@
             "minLength": 1,
             "title": "Name"
           },
+          "label": {
+            "type": "string",
+            "title": "Label"
+          },
           "description": {
             "type": "string",
             "title": "Description"
@@ -1540,56 +1592,6 @@
             "title": "Trialtype",
             "default": []
           },
-          "interventionModel": {
-            "$ref": "#/components/schemas/Code"
-          },
-          "studyCells": {
-            "items": {
-              "$ref": "#/components/schemas/StudyCell"
-            },
-            "type": "array",
-            "title": "Studycells"
-          },
-          "studyIndications": {
-            "items": {
-              "$ref": "#/components/schemas/Indication"
-            },
-            "type": "array",
-            "title": "Studyindications",
-            "default": []
-          },
-          "studyInvestigationalInterventions": {
-            "items": {
-              "$ref": "#/components/schemas/InvestigationalIntervention"
-            },
-            "type": "array",
-            "title": "Studyinvestigationalinterventions",
-            "default": []
-          },
-          "studyPopulations": {
-            "items": {
-              "$ref": "#/components/schemas/StudyDesignPopulation"
-            },
-            "type": "array",
-            "title": "Studypopulations",
-            "default": []
-          },
-          "studyObjectives": {
-            "items": {
-              "$ref": "#/components/schemas/Objective"
-            },
-            "type": "array",
-            "title": "Studyobjectives",
-            "default": []
-          },
-          "studyScheduleTimelines": {
-            "items": {
-              "$ref": "#/components/schemas/ScheduleTimeline"
-            },
-            "type": "array",
-            "title": "Studyscheduletimelines",
-            "default": []
-          },
           "therapeuticAreas": {
             "items": {
               "$ref": "#/components/schemas/Code"
@@ -1598,13 +1600,15 @@
             "title": "Therapeuticareas",
             "default": []
           },
-          "studyEstimands": {
+          "interventionModel": {
+            "$ref": "#/components/schemas/Code"
+          },
+          "content": {
             "items": {
-              "$ref": "#/components/schemas/Estimand"
+              "$ref": "#/components/schemas/Content"
             },
             "type": "array",
-            "title": "Studyestimands",
-            "default": []
+            "title": "Content"
           },
           "encounters": {
             "items": {
@@ -1621,20 +1625,6 @@
             "type": "array",
             "title": "Activities",
             "default": []
-          },
-          "studyDesignRationale": {
-            "type": "string",
-            "title": "Studydesignrationale"
-          },
-          "studyDesignBlindingScheme": {
-            "anyOf": [
-              {
-                "$ref": "#/components/schemas/AliasCode"
-              },
-              {
-                "type": "null"
-              }
-            ]
           },
           "biomedicalConcepts": {
             "items": {
@@ -1667,6 +1657,27 @@
             "type": "array",
             "title": "Studyarms"
           },
+          "studyCells": {
+            "items": {
+              "$ref": "#/components/schemas/StudyCell"
+            },
+            "type": "array",
+            "title": "Studycells"
+          },
+          "studyDesignBlindingScheme": {
+            "anyOf": [
+              {
+                "$ref": "#/components/schemas/AliasCode"
+              },
+              {
+                "type": "null"
+              }
+            ]
+          },
+          "studyDesignRationale": {
+            "type": "string",
+            "title": "Studydesignrationale"
+          },
           "studyEpochs": {
             "items": {
               "$ref": "#/components/schemas/StudyEpoch"
@@ -1682,12 +1693,53 @@
             "title": "Studyelements",
             "default": []
           },
-          "contents": {
+          "studyEstimands": {
             "items": {
-              "$ref": "#/components/schemas/Content"
+              "$ref": "#/components/schemas/Estimand"
             },
             "type": "array",
-            "title": "Contents"
+            "title": "Studyestimands",
+            "default": []
+          },
+          "studyIndications": {
+            "items": {
+              "$ref": "#/components/schemas/Indication"
+            },
+            "type": "array",
+            "title": "Studyindications",
+            "default": []
+          },
+          "studyInvestigationalInterventions": {
+            "items": {
+              "$ref": "#/components/schemas/InvestigationalIntervention"
+            },
+            "type": "array",
+            "title": "Studyinvestigationalinterventions",
+            "default": []
+          },
+          "studyObjectives": {
+            "items": {
+              "$ref": "#/components/schemas/Objective"
+            },
+            "type": "array",
+            "title": "Studyobjectives",
+            "default": []
+          },
+          "studyPopulations": {
+            "items": {
+              "$ref": "#/components/schemas/StudyDesignPopulation"
+            },
+            "type": "array",
+            "title": "Studypopulations",
+            "default": []
+          },
+          "studyScheduleTimelines": {
+            "items": {
+              "$ref": "#/components/schemas/ScheduleTimeline"
+            },
+            "type": "array",
+            "title": "Studyscheduletimelines",
+            "default": []
           }
         },
         "type": "object",
@@ -1695,11 +1747,11 @@
           "id",
           "name",
           "interventionModel",
+          "content",
+          "studyArms",
           "studyCells",
           "studyDesignRationale",
-          "studyArms",
-          "studyEpochs",
-          "contents"
+          "studyEpochs"
         ],
         "title": "StudyDesign"
       },
@@ -1714,6 +1766,10 @@
             "type": "string",
             "minLength": 1,
             "title": "Name"
+          },
+          "label": {
+            "type": "string",
+            "title": "Label"
           },
           "description": {
             "type": "string",
@@ -1763,6 +1819,10 @@
             "minLength": 1,
             "title": "Name"
           },
+          "label": {
+            "type": "string",
+            "title": "Label"
+          },
           "description": {
             "type": "string",
             "title": "Description"
@@ -1807,11 +1867,15 @@
             "minLength": 1,
             "title": "Name"
           },
+          "label": {
+            "type": "string",
+            "title": "Label"
+          },
           "description": {
             "type": "string",
             "title": "Description"
           },
-          "studyEpochType": {
+          "type": {
             "$ref": "#/components/schemas/Code"
           },
           "previousStudyEpochId": {
@@ -1841,7 +1905,7 @@
         "required": [
           "id",
           "name",
-          "studyEpochType"
+          "type"
         ],
         "title": "StudyEpoch"
       },
@@ -1940,11 +2004,15 @@
             "minLength": 1,
             "title": "Name"
           },
+          "label": {
+            "type": "string",
+            "title": "Label"
+          },
           "description": {
             "type": "string",
             "title": "Description"
           },
-          "timingType": {
+          "type": {
             "$ref": "#/components/schemas/Code"
           },
           "timingValue": {
@@ -2008,17 +2076,13 @@
               }
             ],
             "title": "Timingwindow"
-          },
-          "label": {
-            "type": "string",
-            "title": "Label"
           }
         },
         "type": "object",
         "required": [
           "id",
           "name",
-          "timingType",
+          "type",
           "timingValue",
           "timingRelativeToFrom"
         ],
