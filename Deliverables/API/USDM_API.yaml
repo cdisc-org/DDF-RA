@@ -1030,7 +1030,7 @@ components:
         studyArmDataOriginDescription:
           type: string
           title: Studyarmdataorigindescription
-        studyArmDataOriginType:
+        dataOriginType:
           $ref: '#/components/schemas/Code'
       type: object
       required:
@@ -1038,7 +1038,7 @@ components:
         - name
         - type
         - studyArmDataOriginDescription
-        - studyArmDataOriginType
+        - dataOriginType
       title: StudyArm
     StudyCell:
       properties:
@@ -1086,11 +1086,11 @@ components:
           type: array
           title: Trialintenttypes
           default: []
-        trialType:
+        trialTypes:
           items:
             $ref: '#/components/schemas/Code'
           type: array
-          title: Trialtype
+          title: Trialtypes
           default: []
         therapeuticAreas:
           items:

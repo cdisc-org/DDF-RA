@@ -1510,7 +1510,7 @@
             "type": "string",
             "title": "Studyarmdataorigindescription"
           },
-          "studyArmDataOriginType": {
+          "dataOriginType": {
             "$ref": "#/components/schemas/Code"
           }
         },
@@ -1520,7 +1520,7 @@
           "name",
           "type",
           "studyArmDataOriginDescription",
-          "studyArmDataOriginType"
+          "dataOriginType"
         ],
         "title": "StudyArm"
       },
@@ -1584,12 +1584,12 @@
             "title": "Trialintenttypes",
             "default": []
           },
-          "trialType": {
+          "trialTypes": {
             "items": {
               "$ref": "#/components/schemas/Code"
             },
             "type": "array",
-            "title": "Trialtype",
+            "title": "Trialtypes",
             "default": []
           },
           "therapeuticAreas": {
