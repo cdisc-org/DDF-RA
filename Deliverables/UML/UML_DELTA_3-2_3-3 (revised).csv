@@ -1,0 +1,58 @@
+status,class_name,property_name,data_type
+Class - NEW,SyntaxTemplate,,
+,,dictionary,SyntaxTemplateDictionary
+,,name,String
+,,description,String
+,,id,String
+,,label,String
+,,text,String
+Class - NEW,SyntaxTemplateDictionary,,
+,,name,String
+,,description,String
+,,id,String
+,,label,String
+,,parameterMap,"Map<String,Object>"
+,,,
+Property - NEW,BiomedicalConceptCategory,code,AliasCode
+Property - NEW,BiomedicalConceptCategory,label,String
+Property - NEW,Organization,label,String
+Property - NEW,Organization,type,Code
+Property - NEW,Indication,label,String
+Property - NEW,StudyEpoch,label,String
+Property - NEW,StudyEpoch,type,Code
+Property - NEW,StudyArm,dataOriginType,Code
+Property - NEW,StudyArm,label,String
+Property - NEW,StudyArm,type,Code
+Property - NEW,StudyDesignPopulation,label,String
+Property - NEW,Activity,label,String
+Property - NEW,StudyDesign,label,String
+Property - NEW,StudyDesign,trialTypes,List<Code>
+Property - NEW,Encounter,label,String
+Property - NEW,Encounter,type,Code
+Property - NEW,Procedure,code,Code
+Property - NEW,Procedure,label,String
+Property - NEW,BiomedicalConceptSurrogate,label,String
+Property - NEW,StudyElement,label,String
+Property - NEW,ScheduledInstance,instanceType,ScheduledInstanceType
+Property - NEW,BiomedicalConceptProperty,code,AliasCode
+Property - NEW,BiomedicalConceptProperty,label,String
+Property - NEW,IntercurrentEvent,label,String
+Property - NEW,Study,type,Code
+Property - NEW,BiomedicalConcept,code,AliasCode
+Property - NEW,BiomedicalConcept,label,String
+Property - NEW,Objective,label,String
+Property - NEW,ScheduleTimeline,label,String
+Property - NEW,Timing,type,Code
+Property - DELETED,BiomedicalConceptCategory,bcCategoryCode,AliasCode
+Property - DELETED,Organization,organizationType,Code
+Property - DELETED,StudyEpoch,studyEpochType,Code
+Property - DELETED,StudyArm,studyArmDataOriginType,Code
+Property - DELETED,StudyArm,studyArmType,Code
+Property - DELETED,StudyDesign,trialType,List<Code>
+Property - DELETED,Encounter,encounterType,Code
+Property - DELETED,Procedure,procedureCode,Code
+Property - DELETED,ScheduledInstance,scheduledInstanceType,ScheduledInstanceType
+Property - DELETED,BiomedicalConceptProperty,bcPropertyConceptCode,AliasCode
+Property - DELETED,Study,studyType,Code
+Property - DELETED,BiomedicalConcept,bcConceptCode,AliasCode
+Property - DELETED,Timing,timingType,Code
