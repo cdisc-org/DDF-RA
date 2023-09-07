@@ -1603,12 +1603,12 @@
           "interventionModel": {
             "$ref": "#/components/schemas/Code"
           },
-          "content": {
+          "contents": {
             "items": {
               "$ref": "#/components/schemas/Content"
             },
             "type": "array",
-            "title": "Content"
+            "title": "Contents"
           },
           "encounters": {
             "items": {
@@ -1747,7 +1747,7 @@
           "id",
           "name",
           "interventionModel",
-          "content",
+          "contents",
           "studyArms",
           "studyCells",
           "studyDesignRationale",
