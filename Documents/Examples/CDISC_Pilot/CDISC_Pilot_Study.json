@@ -1,9 +1,9 @@
 {
   "study": {
     "id": null,
-    "studyTitle": "Safety and Efficacy of the Xanomeline Transdermal Therapeutic System (TTS) in Patients with Mild to Moderate Alzheimer\\\u2019s Disease",
+    "studyTitle": "Safety and Efficacy of the Xanomeline Transdermal Therapeutic System (TTS) in Patients with Mild to Moderate Alzheimer's Disease",
     "studyVersion": "1",
-    "studyType": {
+    "type": {
       "id": "Code_1",
       "code": "C98388",
       "codeSystem": "http://www.cdisc.org",
@@ -35,17 +35,18 @@
         "id": "StudyIdentifier_1",
         "studyIdentifier": "H2Q-MC-LZZT",
         "studyIdentifierScope": {
-          "id": "Organisation_1",
-          "organisationIdentifierScheme": "DUNS",
-          "organisationIdentifier": "00-642-1325",
-          "organisationName": "Eli Lilly",
-          "organisationType": {
+          "id": "Organization_1",
+          "name": "Eli Lilly",
+          "label": "",
+          "type": {
             "id": "Code_5",
             "code": "C70793",
             "codeSystem": "http://www.cdisc.org",
             "codeSystemVersion": "2022-12-16",
             "decode": "Clinical Study Sponsor"
           },
+          "organizationIdentifierScheme": "DUNS",
+          "organizationIdentifier": "00-642-1325",
           "organizationLegalAddress": null
         }
       }
@@ -54,8 +55,8 @@
       {
         "id": "StudyProtocolVersion_1",
         "briefTitle": "Xanomeline (LY246708)",
-        "officialTitle": "Safety and Efficacy of the Xanomeline\nTransdermal Therapeutic System (TTS) in Patients\nwith Mild to Moderate Alzheimer\\\u2019s Disease",
-        "publicTitle": "Safety and Efficacy of the Xanomeline Transdermal\nTherapeutic System (TTS) in Patients with Mild to\nModerate Alzheimer\\'s Disease",
+        "officialTitle": "Safety and Efficacy of the Xanomeline Transdermal Therapeutic System (TTS) in Patients with Mild to Moderate Alzheimer's Disease",
+        "publicTitle": "Safety and Efficacy of the Xanomeline Transdermal Therapeutic System (TTS) in Patients with Mild to Moderate Alzheimer's Disease",
         "scientificTitle": "None set",
         "protocolVersion": "1",
         "protocolAmendment": "",
@@ -73,6 +74,7 @@
       {
         "id": "StudyDesign_1",
         "name": "Study Design 1",
+        "label": "",
         "description": "The main design for the study",
         "trialIntentTypes": [
           {
@@ -83,7 +85,7 @@
             "decode": "Treatment Study"
           }
         ],
-        "trialType": [
+        "trialTypes": [
           {
             "id": "Code_76",
             "code": "C49666",
@@ -238,6 +240,8 @@
         "studyIndications": [
           {
             "id": "Indication_1",
+            "name": "IND1",
+            "label": "",
             "description": "Alzheimer's disease",
             "codes": [
               {
@@ -251,6 +255,8 @@
           },
           {
             "id": "Indication_2",
+            "name": "IND2",
+            "label": "",
             "description": "Alzheimer's disease",
             "codes": [
               {
@@ -267,6 +273,8 @@
         "studyPopulations": [
           {
             "id": "StudyDesignPopulation_1",
+            "name": "POP 1",
+            "label": "",
             "description": "Patients with Probable Mild to Moderate Alzheimer\\'s Disease",
             "plannedNumberOfParticipants": 300,
             "plannedMaximumAgeOfParticipants": "100 years",
@@ -285,6 +293,8 @@
         "studyObjectives": [
           {
             "id": "Objective_1",
+            "name": "OBJ1",
+            "label": "",
             "description": "To determine if there is a statistically significant relationship (overall Type 1 error\nrate, alpha=0.05) between the change in both the ADAS-Cog (11) and CIBIC+\nscores, and drug dose (0, 50 cm2 [54 mg], and 75 cm2 [81 mg]).",
             "objectiveLevel": {
               "id": "Code_252",
@@ -296,8 +306,8 @@
             "objectiveEndpoints": [
               {
                 "id": "Endpoint_1",
-                "description": "Alzheimer\\'s Disease Assessment Scale - Cognitive Subscale, total of 11 items\n[ADAS-Cog (11)] at Week 24",
-                "endpointPurposeDescription": "None provided",
+                "description": "Alzheimer's Disease Assessment Scale - Cognitive Subscale, total of 11 items [ADAS-Cog (11)] at Week 24",
+                "purpose": "None provided",
                 "endpointLevel": {
                   "id": "Code_251",
                   "code": "C94496",
@@ -308,8 +318,8 @@
               },
               {
                 "id": "Endpoint_2",
-                "description": "Video-referenced Clinician\u2019s Interview-based Impression of Change (CIBIC+) at\nWeek 24",
-                "endpointPurposeDescription": "None provided",
+                "description": "Video-referenced Clinician\u2019s Interview-based Impression of Change (CIBIC+) at Week 24",
+                "purpose": "None provided",
                 "endpointLevel": {
                   "id": "Code_253",
                   "code": "C94496",
@@ -322,6 +332,8 @@
           },
           {
             "id": "Objective_2",
+            "name": "OBJ2",
+            "label": "",
             "description": "To document the safety profile of the xanomeline TTS.",
             "objectiveLevel": {
               "id": "Code_255",
@@ -334,7 +346,7 @@
               {
                 "id": "Endpoint_3",
                 "description": "Adverse events",
-                "endpointPurposeDescription": "None provided",
+                "purpose": "None provided",
                 "endpointLevel": {
                   "id": "Code_254",
                   "code": "C94496",
@@ -346,7 +358,7 @@
               {
                 "id": "Endpoint_4",
                 "description": "Vital signs (weight, standing and supine blood pressure, heart rate)",
-                "endpointPurposeDescription": "None provided",
+                "purpose": "None provided",
                 "endpointLevel": {
                   "id": "Code_256",
                   "code": "C94496",
@@ -358,7 +370,7 @@
               {
                 "id": "Endpoint_5",
                 "description": "Laboratory evaluations (Change from Baseline)",
-                "endpointPurposeDescription": "The change from baseline laboratory value will be \ncalculated as the difference between the baseline lab value and the endpoint value (i.e.,\nthe value at the specified visit) or the end of treatment observation",
+                "purpose": "The change from baseline laboratory value will be  calculated as the difference between the baseline lab value and the endpoint value (i.e., the value at the specified visit) or the end of treatment observation",
                 "endpointLevel": {
                   "id": "Code_257",
                   "code": "C94496",
@@ -371,6 +383,8 @@
           },
           {
             "id": "Objective_3",
+            "name": "OBJ3",
+            "label": "",
             "description": "To assess the dose-dependent improvement in behavior. Improved scores on the\nRevised Neuropsychiatric Inventory (NPI-X) will indicate improvement in these\nareas.",
             "objectiveLevel": {
               "id": "Code_259",
@@ -382,8 +396,8 @@
             "objectiveEndpoints": [
               {
                 "id": "Endpoint_6",
-                "description": "Alzheimer\\'s Disease Assessment Scale - Cognitive Subscale, total of 11 items\n[ADAS-Cog (11)] at Weeks 8 and 16",
-                "endpointPurposeDescription": "None provided",
+                "description": "Alzheimer's Disease Assessment Scale - Cognitive Subscale, total of 11 items [ADAS-Cog (11)] at Weeks 8 and 16",
+                "purpose": "None provided",
                 "endpointLevel": {
                   "id": "Code_258",
                   "code": "C139173",
@@ -394,8 +408,8 @@
               },
               {
                 "id": "Endpoint_7",
-                "description": "Video-referenced Clinician\\\u2019s Interview-based Impression of Change (CIBIC+) at\nWeeks 8 and 16",
-                "endpointPurposeDescription": "None provided",
+                "description": "Video-referenced Clinician\u2019s Interview-based Impression of Change (CIBIC+) at Weeks 8 and 16",
+                "purpose": "None provided",
                 "endpointLevel": {
                   "id": "Code_260",
                   "code": "C139173",
@@ -407,7 +421,7 @@
               {
                 "id": "Endpoint_8",
                 "description": "Mean Revised Neuropsychiatric Inventory (NPI-X) from Week 4 to Week 24",
-                "endpointPurposeDescription": "None provided",
+                "purpose": "None provided",
                 "endpointLevel": {
                   "id": "Code_261",
                   "code": "C139173",
@@ -423,6 +437,7 @@
           {
             "id": "ScheduleTimeline_1",
             "name": "Main Timeline",
+            "label": "Main Timeline",
             "description": "This is the main timeline for the study design.",
             "mainTimeline": true,
             "entryCondition": "Potential subject identified",
@@ -435,12 +450,14 @@
             "scheduleTimelineInstances": [
               {
                 "id": "ScheduledActivityInstance_1",
-                "scheduledInstanceType": "ACTIVITY",
-                "scheduleTimelineExitId": null,
+                "instanceType": "ACTIVITY",
                 "scheduledInstanceTimings": [
                   {
                     "id": "Timing_1",
-                    "timingType": {
+                    "name": "TIMING_3",
+                    "label": "",
+                    "description": null,
+                    "type": {
                       "id": "Code_82",
                       "code": "C99901x2",
                       "codeSystem": "http://www.cdisc.org",
@@ -448,7 +465,6 @@
                       "decode": "Before"
                     },
                     "timingValue": "PT0M",
-                    "timingDescription": null,
                     "timingRelativeToFrom": {
                       "id": "Code_84",
                       "code": "C99900x1",
@@ -464,6 +480,7 @@
                   }
                 ],
                 "scheduledInstanceTimelineId": null,
+                "scheduleTimelineExitId": null,
                 "defaultConditionId": "ScheduledActivityInstance_2",
                 "epochId": "StudyEpoch_1",
                 "activityIds": [
@@ -495,12 +512,14 @@
               },
               {
                 "id": "ScheduledActivityInstance_2",
-                "scheduledInstanceType": "ACTIVITY",
-                "scheduleTimelineExitId": null,
+                "instanceType": "ACTIVITY",
                 "scheduledInstanceTimings": [
                   {
                     "id": "Timing_2",
-                    "timingType": {
+                    "name": "TIMING_4",
+                    "label": "",
+                    "description": "24 Hours",
+                    "type": {
                       "id": "Code_87",
                       "code": "C99901x2",
                       "codeSystem": "http://www.cdisc.org",
@@ -508,7 +527,6 @@
                       "decode": "Before"
                     },
                     "timingValue": "PT24H",
-                    "timingDescription": "24 Hours",
                     "timingRelativeToFrom": {
                       "id": "Code_89",
                       "code": "C99900x1",
@@ -524,6 +542,7 @@
                   }
                 ],
                 "scheduledInstanceTimelineId": null,
+                "scheduleTimelineExitId": null,
                 "defaultConditionId": "ScheduledActivityInstance_3",
                 "epochId": "StudyEpoch_1",
                 "activityIds": [
@@ -535,12 +554,14 @@
               },
               {
                 "id": "ScheduledActivityInstance_3",
-                "scheduledInstanceType": "ACTIVITY",
-                "scheduleTimelineExitId": null,
+                "instanceType": "ACTIVITY",
                 "scheduledInstanceTimings": [
                   {
                     "id": "Timing_3",
-                    "timingType": {
+                    "name": "TIMING_5",
+                    "label": "",
+                    "description": null,
+                    "type": {
                       "id": "Code_90",
                       "code": "C99901x3",
                       "codeSystem": "http://www.cdisc.org",
@@ -548,7 +569,6 @@
                       "decode": "Fixed Reference"
                     },
                     "timingValue": "PT0M",
-                    "timingDescription": null,
                     "timingRelativeToFrom": {
                       "id": "Code_94",
                       "code": "C99900x1",
@@ -564,6 +584,7 @@
                   }
                 ],
                 "scheduledInstanceTimelineId": null,
+                "scheduleTimelineExitId": null,
                 "defaultConditionId": "ScheduledActivityInstance_4",
                 "epochId": "StudyEpoch_2",
                 "activityIds": [
@@ -583,12 +604,14 @@
               },
               {
                 "id": "ScheduledActivityInstance_4",
-                "scheduledInstanceType": "ACTIVITY",
-                "scheduleTimelineExitId": null,
+                "instanceType": "ACTIVITY",
                 "scheduledInstanceTimings": [
                   {
                     "id": "Timing_4",
-                    "timingType": {
+                    "name": "TIMING_6",
+                    "label": "",
+                    "description": "+13 Days",
+                    "type": {
                       "id": "Code_96",
                       "code": "C99901x1",
                       "codeSystem": "http://www.cdisc.org",
@@ -596,7 +619,6 @@
                       "decode": "After"
                     },
                     "timingValue": "P13D",
-                    "timingDescription": "+13 Days",
                     "timingRelativeToFrom": {
                       "id": "Code_99",
                       "code": "C99900x1",
@@ -612,6 +634,7 @@
                   }
                 ],
                 "scheduledInstanceTimelineId": null,
+                "scheduleTimelineExitId": null,
                 "defaultConditionId": "ScheduledActivityInstance_5",
                 "epochId": "StudyEpoch_2",
                 "activityIds": [
@@ -623,12 +646,14 @@
               },
               {
                 "id": "ScheduledActivityInstance_5",
-                "scheduledInstanceType": "ACTIVITY",
-                "scheduleTimelineExitId": null,
+                "instanceType": "ACTIVITY",
                 "scheduledInstanceTimings": [
                   {
                     "id": "Timing_5",
-                    "timingType": {
+                    "name": "TIMING_7",
+                    "label": "",
+                    "description": "+1 Days",
+                    "type": {
                       "id": "Code_101",
                       "code": "C99901x1",
                       "codeSystem": "http://www.cdisc.org",
@@ -636,7 +661,6 @@
                       "decode": "After"
                     },
                     "timingValue": "P1D",
-                    "timingDescription": "+1 Days",
                     "timingRelativeToFrom": {
                       "id": "Code_104",
                       "code": "C99900x1",
@@ -652,6 +676,7 @@
                   }
                 ],
                 "scheduledInstanceTimelineId": null,
+                "scheduleTimelineExitId": null,
                 "defaultConditionId": "ScheduledActivityInstance_6",
                 "epochId": "StudyEpoch_2",
                 "activityIds": [
@@ -670,12 +695,14 @@
               },
               {
                 "id": "ScheduledActivityInstance_6",
-                "scheduledInstanceType": "ACTIVITY",
-                "scheduleTimelineExitId": null,
+                "instanceType": "ACTIVITY",
                 "scheduledInstanceTimings": [
                   {
                     "id": "Timing_6",
-                    "timingType": {
+                    "name": "TIMING_8",
+                    "label": "",
+                    "description": "+14 Days",
+                    "type": {
                       "id": "Code_106",
                       "code": "C99901x1",
                       "codeSystem": "http://www.cdisc.org",
@@ -683,7 +710,6 @@
                       "decode": "After"
                     },
                     "timingValue": "P14D",
-                    "timingDescription": "+14 Days",
                     "timingRelativeToFrom": {
                       "id": "Code_109",
                       "code": "C99900x1",
@@ -699,6 +725,7 @@
                   }
                 ],
                 "scheduledInstanceTimelineId": null,
+                "scheduleTimelineExitId": null,
                 "defaultConditionId": "ScheduledActivityInstance_7",
                 "epochId": "StudyEpoch_3",
                 "activityIds": [
@@ -716,12 +743,14 @@
               },
               {
                 "id": "ScheduledActivityInstance_7",
-                "scheduledInstanceType": "ACTIVITY",
-                "scheduleTimelineExitId": null,
+                "instanceType": "ACTIVITY",
                 "scheduledInstanceTimings": [
                   {
                     "id": "Timing_7",
-                    "timingType": {
+                    "name": "TIMING_9",
+                    "label": "",
+                    "description": "+1 Days",
+                    "type": {
                       "id": "Code_111",
                       "code": "C99901x1",
                       "codeSystem": "http://www.cdisc.org",
@@ -729,7 +758,6 @@
                       "decode": "After"
                     },
                     "timingValue": "P1D",
-                    "timingDescription": "+1 Days",
                     "timingRelativeToFrom": {
                       "id": "Code_114",
                       "code": "C99900x1",
@@ -745,6 +773,7 @@
                   }
                 ],
                 "scheduledInstanceTimelineId": null,
+                "scheduleTimelineExitId": null,
                 "defaultConditionId": "ScheduledActivityInstance_8",
                 "epochId": "StudyEpoch_3",
                 "activityIds": [
@@ -754,12 +783,14 @@
               },
               {
                 "id": "ScheduledActivityInstance_8",
-                "scheduledInstanceType": "ACTIVITY",
-                "scheduleTimelineExitId": null,
+                "instanceType": "ACTIVITY",
                 "scheduledInstanceTimings": [
                   {
                     "id": "Timing_8",
-                    "timingType": {
+                    "name": "TIMING_10",
+                    "label": "",
+                    "description": "+13 Days",
+                    "type": {
                       "id": "Code_116",
                       "code": "C99901x1",
                       "codeSystem": "http://www.cdisc.org",
@@ -767,7 +798,6 @@
                       "decode": "After"
                     },
                     "timingValue": "P13D",
-                    "timingDescription": "+13 Days",
                     "timingRelativeToFrom": {
                       "id": "Code_119",
                       "code": "C99900x1",
@@ -783,6 +813,7 @@
                   }
                 ],
                 "scheduledInstanceTimelineId": null,
+                "scheduleTimelineExitId": null,
                 "defaultConditionId": "ScheduledActivityInstance_9",
                 "epochId": "StudyEpoch_3",
                 "activityIds": [
@@ -800,12 +831,14 @@
               },
               {
                 "id": "ScheduledActivityInstance_9",
-                "scheduledInstanceType": "ACTIVITY",
-                "scheduleTimelineExitId": null,
+                "instanceType": "ACTIVITY",
                 "scheduledInstanceTimings": [
                   {
                     "id": "Timing_9",
-                    "timingType": {
+                    "name": "TIMING_11",
+                    "label": "",
+                    "description": "+14 Days",
+                    "type": {
                       "id": "Code_121",
                       "code": "C99901x1",
                       "codeSystem": "http://www.cdisc.org",
@@ -813,7 +846,6 @@
                       "decode": "After"
                     },
                     "timingValue": "P14D",
-                    "timingDescription": "+14 Days",
                     "timingRelativeToFrom": {
                       "id": "Code_124",
                       "code": "C99900x1",
@@ -829,6 +861,7 @@
                   }
                 ],
                 "scheduledInstanceTimelineId": null,
+                "scheduleTimelineExitId": null,
                 "defaultConditionId": "ScheduledActivityInstance_10",
                 "epochId": "StudyEpoch_3",
                 "activityIds": [
@@ -848,12 +881,14 @@
               },
               {
                 "id": "ScheduledActivityInstance_10",
-                "scheduledInstanceType": "ACTIVITY",
-                "scheduleTimelineExitId": null,
+                "instanceType": "ACTIVITY",
                 "scheduledInstanceTimings": [
                   {
                     "id": "Timing_10",
-                    "timingType": {
+                    "name": "TIMING_12",
+                    "label": "",
+                    "description": "+1 Days",
+                    "type": {
                       "id": "Code_126",
                       "code": "C99901x1",
                       "codeSystem": "http://www.cdisc.org",
@@ -861,7 +896,6 @@
                       "decode": "After"
                     },
                     "timingValue": "P1D",
-                    "timingDescription": "+1 Days",
                     "timingRelativeToFrom": {
                       "id": "Code_129",
                       "code": "C99900x1",
@@ -877,6 +911,7 @@
                   }
                 ],
                 "scheduledInstanceTimelineId": null,
+                "scheduleTimelineExitId": null,
                 "defaultConditionId": "ScheduledActivityInstance_11",
                 "epochId": "StudyEpoch_3",
                 "activityIds": [
@@ -886,12 +921,14 @@
               },
               {
                 "id": "ScheduledActivityInstance_11",
-                "scheduledInstanceType": "ACTIVITY",
-                "scheduleTimelineExitId": null,
+                "instanceType": "ACTIVITY",
                 "scheduledInstanceTimings": [
                   {
                     "id": "Timing_11",
-                    "timingType": {
+                    "name": "TIMING_13",
+                    "label": "",
+                    "description": "+27 Days",
+                    "type": {
                       "id": "Code_131",
                       "code": "C99901x1",
                       "codeSystem": "http://www.cdisc.org",
@@ -899,7 +936,6 @@
                       "decode": "After"
                     },
                     "timingValue": "P27D",
-                    "timingDescription": "+27 Days",
                     "timingRelativeToFrom": {
                       "id": "Code_134",
                       "code": "C99900x1",
@@ -915,6 +951,7 @@
                   }
                 ],
                 "scheduledInstanceTimelineId": null,
+                "scheduleTimelineExitId": null,
                 "defaultConditionId": "ScheduledActivityInstance_12",
                 "epochId": "StudyEpoch_3",
                 "activityIds": [
@@ -933,12 +970,14 @@
               },
               {
                 "id": "ScheduledActivityInstance_12",
-                "scheduledInstanceType": "ACTIVITY",
-                "scheduleTimelineExitId": null,
+                "instanceType": "ACTIVITY",
                 "scheduledInstanceTimings": [
                   {
                     "id": "Timing_12",
-                    "timingType": {
+                    "name": "TIMING_14",
+                    "label": "",
+                    "description": "+1 Days",
+                    "type": {
                       "id": "Code_136",
                       "code": "C99901x1",
                       "codeSystem": "http://www.cdisc.org",
@@ -946,7 +985,6 @@
                       "decode": "After"
                     },
                     "timingValue": "P1D",
-                    "timingDescription": "+1 Days",
                     "timingRelativeToFrom": {
                       "id": "Code_139",
                       "code": "C99900x1",
@@ -962,6 +1000,7 @@
                   }
                 ],
                 "scheduledInstanceTimelineId": null,
+                "scheduleTimelineExitId": null,
                 "defaultConditionId": "ScheduledActivityInstance_13",
                 "epochId": "StudyEpoch_3",
                 "activityIds": [
@@ -971,12 +1010,14 @@
               },
               {
                 "id": "ScheduledActivityInstance_13",
-                "scheduledInstanceType": "ACTIVITY",
-                "scheduleTimelineExitId": null,
+                "instanceType": "ACTIVITY",
                 "scheduledInstanceTimings": [
                   {
                     "id": "Timing_13",
-                    "timingType": {
+                    "name": "TIMING_15",
+                    "label": "",
+                    "description": "+27 Days",
+                    "type": {
                       "id": "Code_141",
                       "code": "C99901x1",
                       "codeSystem": "http://www.cdisc.org",
@@ -984,7 +1025,6 @@
                       "decode": "After"
                     },
                     "timingValue": "P27D",
-                    "timingDescription": "+27 Days",
                     "timingRelativeToFrom": {
                       "id": "Code_144",
                       "code": "C99900x1",
@@ -1000,6 +1040,7 @@
                   }
                 ],
                 "scheduledInstanceTimelineId": null,
+                "scheduleTimelineExitId": null,
                 "defaultConditionId": "ScheduledActivityInstance_14",
                 "epochId": "StudyEpoch_3",
                 "activityIds": [
@@ -1019,12 +1060,14 @@
               },
               {
                 "id": "ScheduledActivityInstance_14",
-                "scheduledInstanceType": "ACTIVITY",
-                "scheduleTimelineExitId": null,
+                "instanceType": "ACTIVITY",
                 "scheduledInstanceTimings": [
                   {
                     "id": "Timing_14",
-                    "timingType": {
+                    "name": "TIMING_16",
+                    "label": "",
+                    "description": "+1 Days",
+                    "type": {
                       "id": "Code_146",
                       "code": "C99901x1",
                       "codeSystem": "http://www.cdisc.org",
@@ -1032,7 +1075,6 @@
                       "decode": "After"
                     },
                     "timingValue": "P1D",
-                    "timingDescription": "+1 Days",
                     "timingRelativeToFrom": {
                       "id": "Code_149",
                       "code": "C99900x1",
@@ -1048,6 +1090,7 @@
                   }
                 ],
                 "scheduledInstanceTimelineId": null,
+                "scheduleTimelineExitId": null,
                 "defaultConditionId": "ScheduledActivityInstance_15",
                 "epochId": "StudyEpoch_3",
                 "activityIds": [
@@ -1057,12 +1100,14 @@
               },
               {
                 "id": "ScheduledActivityInstance_15",
-                "scheduledInstanceType": "ACTIVITY",
-                "scheduleTimelineExitId": null,
+                "instanceType": "ACTIVITY",
                 "scheduledInstanceTimings": [
                   {
                     "id": "Timing_15",
-                    "timingType": {
+                    "name": "TIMING_17",
+                    "label": "",
+                    "description": "+27 Days",
+                    "type": {
                       "id": "Code_151",
                       "code": "C99901x1",
                       "codeSystem": "http://www.cdisc.org",
@@ -1070,7 +1115,6 @@
                       "decode": "After"
                     },
                     "timingValue": "P27D",
-                    "timingDescription": "+27 Days",
                     "timingRelativeToFrom": {
                       "id": "Code_154",
                       "code": "C99900x1",
@@ -1086,6 +1130,7 @@
                   }
                 ],
                 "scheduledInstanceTimelineId": null,
+                "scheduleTimelineExitId": null,
                 "defaultConditionId": "ScheduledActivityInstance_16",
                 "epochId": "StudyEpoch_3",
                 "activityIds": [
@@ -1103,12 +1148,14 @@
               },
               {
                 "id": "ScheduledActivityInstance_16",
-                "scheduledInstanceType": "ACTIVITY",
-                "scheduleTimelineExitId": null,
+                "instanceType": "ACTIVITY",
                 "scheduledInstanceTimings": [
                   {
                     "id": "Timing_16",
-                    "timingType": {
+                    "name": "TIMING_18",
+                    "label": "",
+                    "description": "+1 Days",
+                    "type": {
                       "id": "Code_156",
                       "code": "C99901x1",
                       "codeSystem": "http://www.cdisc.org",
@@ -1116,7 +1163,6 @@
                       "decode": "After"
                     },
                     "timingValue": "P1D",
-                    "timingDescription": "+1 Days",
                     "timingRelativeToFrom": {
                       "id": "Code_159",
                       "code": "C99900x1",
@@ -1132,6 +1178,7 @@
                   }
                 ],
                 "scheduledInstanceTimelineId": null,
+                "scheduleTimelineExitId": null,
                 "defaultConditionId": "ScheduledActivityInstance_17",
                 "epochId": "StudyEpoch_3",
                 "activityIds": [
@@ -1141,12 +1188,14 @@
               },
               {
                 "id": "ScheduledActivityInstance_17",
-                "scheduledInstanceType": "ACTIVITY",
-                "scheduleTimelineExitId": null,
+                "instanceType": "ACTIVITY",
                 "scheduledInstanceTimings": [
                   {
                     "id": "Timing_17",
-                    "timingType": {
+                    "name": "TIMING_19",
+                    "label": "",
+                    "description": "+27 Days",
+                    "type": {
                       "id": "Code_161",
                       "code": "C99901x1",
                       "codeSystem": "http://www.cdisc.org",
@@ -1154,7 +1203,6 @@
                       "decode": "After"
                     },
                     "timingValue": "P27D",
-                    "timingDescription": "+27 Days",
                     "timingRelativeToFrom": {
                       "id": "Code_164",
                       "code": "C99900x1",
@@ -1170,6 +1218,7 @@
                   }
                 ],
                 "scheduledInstanceTimelineId": null,
+                "scheduleTimelineExitId": null,
                 "defaultConditionId": "ScheduledActivityInstance_18",
                 "epochId": "StudyEpoch_4",
                 "activityIds": [
@@ -1190,12 +1239,14 @@
               },
               {
                 "id": "ScheduledActivityInstance_18",
-                "scheduledInstanceType": "ACTIVITY",
-                "scheduleTimelineExitId": null,
+                "instanceType": "ACTIVITY",
                 "scheduledInstanceTimings": [
                   {
                     "id": "Timing_18",
-                    "timingType": {
+                    "name": "TIMING_20",
+                    "label": "",
+                    "description": "+14 Days",
+                    "type": {
                       "id": "Code_166",
                       "code": "C99901x1",
                       "codeSystem": "http://www.cdisc.org",
@@ -1203,7 +1254,6 @@
                       "decode": "After"
                     },
                     "timingValue": "P14D",
-                    "timingDescription": "+14 Days",
                     "timingRelativeToFrom": {
                       "id": "Code_169",
                       "code": "C99900x1",
@@ -1219,6 +1269,7 @@
                   }
                 ],
                 "scheduledInstanceTimelineId": null,
+                "scheduleTimelineExitId": null,
                 "defaultConditionId": null,
                 "epochId": "StudyEpoch_5",
                 "activityIds": [
@@ -1259,16 +1310,18 @@
           {
             "id": "Encounter_1",
             "name": "Screening 1",
+            "label": "",
             "description": "Screening encounter",
-            "previousEncounterId": null,
-            "nextEncounterId": "Encounter_2",
-            "encounterType": {
+            "type": {
               "id": "Code_7",
               "code": "C25716",
               "codeSystem": "http://www.cdisc.org",
               "codeSystemVersion": "2022-12-16",
               "decode": "Visit"
             },
+            "previousEncounterId": null,
+            "nextEncounterId": "Encounter_2",
+            "encounterScheduledAtTimingId": null,
             "encounterEnvironmentalSetting": {
               "id": "Code_8",
               "code": "C51282",
@@ -1292,22 +1345,23 @@
             "transitionEndRule": {
               "id": "TransitionRule_2",
               "description": "completion of screening activities"
-            },
-            "encounterScheduledAtTimingId": null
+            }
           },
           {
             "id": "Encounter_2",
             "name": "Screening 2",
+            "label": "",
             "description": "Screening encounter - Ambulatory ECG Placement",
-            "previousEncounterId": "Encounter_1",
-            "nextEncounterId": "Encounter_3",
-            "encounterType": {
+            "type": {
               "id": "Code_10",
               "code": "C25716",
               "codeSystem": "http://www.cdisc.org",
               "codeSystemVersion": "2022-12-16",
               "decode": "Visit"
             },
+            "previousEncounterId": "Encounter_1",
+            "nextEncounterId": "Encounter_3",
+            "encounterScheduledAtTimingId": null,
             "encounterEnvironmentalSetting": {
               "id": "Code_11",
               "code": "C51282",
@@ -1328,22 +1382,23 @@
             "transitionEndRule": {
               "id": "TransitionRule_3",
               "description": "subject leaves clinic after connection of ambulatory ECG machine"
-            },
-            "encounterScheduledAtTimingId": null
+            }
           },
           {
             "id": "Encounter_3",
             "name": "Baseline",
+            "label": "",
             "description": "Baseline encounter - Ambulatory ECG Removal",
-            "previousEncounterId": "Encounter_2",
-            "nextEncounterId": "Encounter_4",
-            "encounterType": {
+            "type": {
               "id": "Code_13",
               "code": "C25716",
               "codeSystem": "http://www.cdisc.org",
               "codeSystemVersion": "2022-12-16",
               "decode": "Visit"
             },
+            "previousEncounterId": "Encounter_2",
+            "nextEncounterId": "Encounter_4",
+            "encounterScheduledAtTimingId": null,
             "encounterEnvironmentalSetting": {
               "id": "Code_14",
               "code": "C51282",
@@ -1367,22 +1422,23 @@
             "transitionEndRule": {
               "id": "TransitionRule_5",
               "description": "Radomized"
-            },
-            "encounterScheduledAtTimingId": null
+            }
           },
           {
             "id": "Encounter_4",
             "name": "Week 1",
+            "label": "",
             "description": "Day 13 - Ambulatory ECG Placement",
-            "previousEncounterId": "Encounter_3",
-            "nextEncounterId": "Encounter_5",
-            "encounterType": {
+            "type": {
               "id": "Code_16",
               "code": "C25716",
               "codeSystem": "http://www.cdisc.org",
               "codeSystemVersion": "2022-12-16",
               "decode": "Visit"
             },
+            "previousEncounterId": "Encounter_3",
+            "nextEncounterId": "Encounter_5",
+            "encounterScheduledAtTimingId": null,
             "encounterEnvironmentalSetting": {
               "id": "Code_17",
               "code": "C51282",
@@ -1400,22 +1456,23 @@
               }
             ],
             "transitionStartRule": null,
-            "transitionEndRule": null,
-            "encounterScheduledAtTimingId": null
+            "transitionEndRule": null
           },
           {
             "id": "Encounter_5",
             "name": "Week 2",
+            "label": "",
             "description": "Day 14",
-            "previousEncounterId": "Encounter_4",
-            "nextEncounterId": "Encounter_6",
-            "encounterType": {
+            "type": {
               "id": "Code_19",
               "code": "C25716",
               "codeSystem": "http://www.cdisc.org",
               "codeSystemVersion": "2022-12-16",
               "decode": "Visit"
             },
+            "previousEncounterId": "Encounter_4",
+            "nextEncounterId": "Encounter_6",
+            "encounterScheduledAtTimingId": null,
             "encounterEnvironmentalSetting": {
               "id": "Code_20",
               "code": "C51282",
@@ -1433,22 +1490,23 @@
               }
             ],
             "transitionStartRule": null,
-            "transitionEndRule": null,
-            "encounterScheduledAtTimingId": null
+            "transitionEndRule": null
           },
           {
             "id": "Encounter_6",
             "name": "Week 4",
+            "label": "",
             "description": "Day 28",
-            "previousEncounterId": "Encounter_5",
-            "nextEncounterId": "Encounter_7",
-            "encounterType": {
+            "type": {
               "id": "Code_22",
               "code": "C25716",
               "codeSystem": "http://www.cdisc.org",
               "codeSystemVersion": "2022-12-16",
               "decode": "Visit"
             },
+            "previousEncounterId": "Encounter_5",
+            "nextEncounterId": "Encounter_7",
+            "encounterScheduledAtTimingId": null,
             "encounterEnvironmentalSetting": {
               "id": "Code_23",
               "code": "C51282",
@@ -1466,22 +1524,23 @@
               }
             ],
             "transitionStartRule": null,
-            "transitionEndRule": null,
-            "encounterScheduledAtTimingId": null
+            "transitionEndRule": null
           },
           {
             "id": "Encounter_7",
             "name": "Week 5",
+            "label": "",
             "description": "Day 30 - Ambulatory ECG \u00a0Removal",
-            "previousEncounterId": "Encounter_6",
-            "nextEncounterId": "Encounter_8",
-            "encounterType": {
+            "type": {
               "id": "Code_25",
               "code": "C25716",
               "codeSystem": "http://www.cdisc.org",
               "codeSystemVersion": "2022-12-16",
               "decode": "Visit"
             },
+            "previousEncounterId": "Encounter_6",
+            "nextEncounterId": "Encounter_8",
+            "encounterScheduledAtTimingId": null,
             "encounterEnvironmentalSetting": {
               "id": "Code_26",
               "code": "C51282",
@@ -1499,22 +1558,23 @@
               }
             ],
             "transitionStartRule": null,
-            "transitionEndRule": null,
-            "encounterScheduledAtTimingId": null
+            "transitionEndRule": null
           },
           {
             "id": "Encounter_8",
             "name": "Week 6",
+            "label": "",
             "description": "Day 42",
-            "previousEncounterId": "Encounter_7",
-            "nextEncounterId": "Encounter_9",
-            "encounterType": {
+            "type": {
               "id": "Code_28",
               "code": "C25716",
               "codeSystem": "http://www.cdisc.org",
               "codeSystemVersion": "2022-12-16",
               "decode": "Visit"
             },
+            "previousEncounterId": "Encounter_7",
+            "nextEncounterId": "Encounter_9",
+            "encounterScheduledAtTimingId": null,
             "encounterEnvironmentalSetting": {
               "id": "Code_29",
               "code": "C51282",
@@ -1532,22 +1592,23 @@
               }
             ],
             "transitionStartRule": null,
-            "transitionEndRule": null,
-            "encounterScheduledAtTimingId": null
+            "transitionEndRule": null
           },
           {
             "id": "Encounter_9",
             "name": "Week 8",
+            "label": "",
             "description": "Day 56",
-            "previousEncounterId": "Encounter_8",
-            "nextEncounterId": "Encounter_10",
-            "encounterType": {
+            "type": {
               "id": "Code_31",
               "code": "C25716",
               "codeSystem": "http://www.cdisc.org",
               "codeSystemVersion": "2022-12-16",
               "decode": "Visit"
             },
+            "previousEncounterId": "Encounter_8",
+            "nextEncounterId": "Encounter_10",
+            "encounterScheduledAtTimingId": null,
             "encounterEnvironmentalSetting": {
               "id": "Code_32",
               "code": "C51282",
@@ -1565,22 +1626,23 @@
               }
             ],
             "transitionStartRule": null,
-            "transitionEndRule": null,
-            "encounterScheduledAtTimingId": null
+            "transitionEndRule": null
           },
           {
             "id": "Encounter_10",
             "name": "Week\u00a010\u00a0(T)",
+            "label": "",
             "description": "Day 70",
-            "previousEncounterId": "Encounter_9",
-            "nextEncounterId": "Encounter_11",
-            "encounterType": {
+            "type": {
               "id": "Code_34",
               "code": "C25716",
               "codeSystem": "http://www.cdisc.org",
               "codeSystemVersion": "2022-12-16",
               "decode": "Visit"
             },
+            "previousEncounterId": "Encounter_9",
+            "nextEncounterId": "Encounter_11",
+            "encounterScheduledAtTimingId": null,
             "encounterEnvironmentalSetting": {
               "id": "Code_35",
               "code": "C18002",
@@ -1598,22 +1660,23 @@
               }
             ],
             "transitionStartRule": null,
-            "transitionEndRule": null,
-            "encounterScheduledAtTimingId": null
+            "transitionEndRule": null
           },
           {
             "id": "Encounter_11",
             "name": "Week 12",
+            "label": "",
             "description": "Day 84",
-            "previousEncounterId": "Encounter_10",
-            "nextEncounterId": "Encounter_12",
-            "encounterType": {
+            "type": {
               "id": "Code_37",
               "code": "C25716",
               "codeSystem": "http://www.cdisc.org",
               "codeSystemVersion": "2022-12-16",
               "decode": "Visit"
             },
+            "previousEncounterId": "Encounter_10",
+            "nextEncounterId": "Encounter_12",
+            "encounterScheduledAtTimingId": null,
             "encounterEnvironmentalSetting": {
               "id": "Code_38",
               "code": "C51282",
@@ -1631,22 +1694,23 @@
               }
             ],
             "transitionStartRule": null,
-            "transitionEndRule": null,
-            "encounterScheduledAtTimingId": null
+            "transitionEndRule": null
           },
           {
             "id": "Encounter_12",
             "name": "Week 14 (T)",
+            "label": "",
             "description": "Day 98",
-            "previousEncounterId": "Encounter_11",
-            "nextEncounterId": "Encounter_13",
-            "encounterType": {
+            "type": {
               "id": "Code_40",
               "code": "C25716",
               "codeSystem": "http://www.cdisc.org",
               "codeSystemVersion": "2022-12-16",
               "decode": "Visit"
             },
+            "previousEncounterId": "Encounter_11",
+            "nextEncounterId": "Encounter_13",
+            "encounterScheduledAtTimingId": null,
             "encounterEnvironmentalSetting": {
               "id": "Code_41",
               "code": "C18002",
@@ -1664,22 +1728,23 @@
               }
             ],
             "transitionStartRule": null,
-            "transitionEndRule": null,
-            "encounterScheduledAtTimingId": null
+            "transitionEndRule": null
           },
           {
             "id": "Encounter_13",
             "name": "Week 16",
+            "label": "",
             "description": "Day 112",
-            "previousEncounterId": "Encounter_12",
-            "nextEncounterId": "Encounter_14",
-            "encounterType": {
+            "type": {
               "id": "Code_43",
               "code": "C25716",
               "codeSystem": "http://www.cdisc.org",
               "codeSystemVersion": "2022-12-16",
               "decode": "Visit"
             },
+            "previousEncounterId": "Encounter_12",
+            "nextEncounterId": "Encounter_14",
+            "encounterScheduledAtTimingId": null,
             "encounterEnvironmentalSetting": {
               "id": "Code_44",
               "code": "C51282",
@@ -1697,22 +1762,23 @@
               }
             ],
             "transitionStartRule": null,
-            "transitionEndRule": null,
-            "encounterScheduledAtTimingId": null
+            "transitionEndRule": null
           },
           {
             "id": "Encounter_14",
             "name": "Week 18 (T)",
+            "label": "",
             "description": "Day 126",
-            "previousEncounterId": "Encounter_13",
-            "nextEncounterId": "Encounter_15",
-            "encounterType": {
+            "type": {
               "id": "Code_46",
               "code": "C25716",
               "codeSystem": "http://www.cdisc.org",
               "codeSystemVersion": "2022-12-16",
               "decode": "Visit"
             },
+            "previousEncounterId": "Encounter_13",
+            "nextEncounterId": "Encounter_15",
+            "encounterScheduledAtTimingId": null,
             "encounterEnvironmentalSetting": {
               "id": "Code_47",
               "code": "C18002",
@@ -1730,22 +1796,23 @@
               }
             ],
             "transitionStartRule": null,
-            "transitionEndRule": null,
-            "encounterScheduledAtTimingId": null
+            "transitionEndRule": null
           },
           {
             "id": "Encounter_15",
             "name": "Week 20",
+            "label": "",
             "description": "Day 140",
-            "previousEncounterId": "Encounter_14",
-            "nextEncounterId": "Encounter_16",
-            "encounterType": {
+            "type": {
               "id": "Code_49",
               "code": "C25716",
               "codeSystem": "http://www.cdisc.org",
               "codeSystemVersion": "2022-12-16",
               "decode": "Visit"
             },
+            "previousEncounterId": "Encounter_14",
+            "nextEncounterId": "Encounter_16",
+            "encounterScheduledAtTimingId": null,
             "encounterEnvironmentalSetting": {
               "id": "Code_50",
               "code": "C51282",
@@ -1763,22 +1830,23 @@
               }
             ],
             "transitionStartRule": null,
-            "transitionEndRule": null,
-            "encounterScheduledAtTimingId": null
+            "transitionEndRule": null
           },
           {
             "id": "Encounter_16",
             "name": "Week 22 (T)",
+            "label": "",
             "description": "Day 154",
-            "previousEncounterId": "Encounter_15",
-            "nextEncounterId": "Encounter_17",
-            "encounterType": {
+            "type": {
               "id": "Code_52",
               "code": "C25716",
               "codeSystem": "http://www.cdisc.org",
               "codeSystemVersion": "2022-12-16",
               "decode": "Visit"
             },
+            "previousEncounterId": "Encounter_15",
+            "nextEncounterId": "Encounter_17",
+            "encounterScheduledAtTimingId": null,
             "encounterEnvironmentalSetting": {
               "id": "Code_53",
               "code": "C18002",
@@ -1796,22 +1864,23 @@
               }
             ],
             "transitionStartRule": null,
-            "transitionEndRule": null,
-            "encounterScheduledAtTimingId": null
+            "transitionEndRule": null
           },
           {
             "id": "Encounter_17",
             "name": "Week 24",
+            "label": "",
             "description": "Day 168",
-            "previousEncounterId": "Encounter_16",
-            "nextEncounterId": "Encounter_18",
-            "encounterType": {
+            "type": {
               "id": "Code_55",
               "code": "C25716",
               "codeSystem": "http://www.cdisc.org",
               "codeSystemVersion": "2022-12-16",
               "decode": "Visit"
             },
+            "previousEncounterId": "Encounter_16",
+            "nextEncounterId": "Encounter_18",
+            "encounterScheduledAtTimingId": null,
             "encounterEnvironmentalSetting": {
               "id": "Code_56",
               "code": "C51282",
@@ -1829,22 +1898,23 @@
               }
             ],
             "transitionStartRule": null,
-            "transitionEndRule": null,
-            "encounterScheduledAtTimingId": null
+            "transitionEndRule": null
           },
           {
             "id": "Encounter_18",
             "name": "Week 26",
+            "label": "",
             "description": "Day 182",
-            "previousEncounterId": "Encounter_17",
-            "nextEncounterId": null,
-            "encounterType": {
+            "type": {
               "id": "Code_58",
               "code": "C25716",
               "codeSystem": "http://www.cdisc.org",
               "codeSystemVersion": "2022-12-16",
               "decode": "Visit"
             },
+            "previousEncounterId": "Encounter_17",
+            "nextEncounterId": null,
+            "encounterScheduledAtTimingId": null,
             "encounterEnvironmentalSetting": {
               "id": "Code_59",
               "code": "C51282",
@@ -1865,14 +1935,14 @@
             "transitionEndRule": {
               "id": "TransitionRule_6",
               "description": "End of treatment"
-            },
-            "encounterScheduledAtTimingId": null
+            }
           }
         ],
         "activities": [
           {
             "id": "Activity_1",
             "name": "Informed consent",
+            "label": null,
             "description": "Informed consent",
             "previousActivityId": null,
             "nextActivityId": "Activity_2",
@@ -1887,6 +1957,7 @@
           {
             "id": "Activity_2",
             "name": "Inclusion/exclusion criteria",
+            "label": null,
             "description": "Inclusion/exclusion criteria",
             "previousActivityId": "Activity_1",
             "nextActivityId": "Activity_3",
@@ -1901,6 +1972,7 @@
           {
             "id": "Activity_3",
             "name": "Patient number assigned",
+            "label": null,
             "description": "Patient number assigned",
             "previousActivityId": "Activity_2",
             "nextActivityId": "Activity_4",
@@ -1915,6 +1987,7 @@
           {
             "id": "Activity_4",
             "name": "Demographics",
+            "label": null,
             "description": "Demographics",
             "previousActivityId": "Activity_3",
             "nextActivityId": "Activity_5",
@@ -1934,6 +2007,7 @@
           {
             "id": "Activity_5",
             "name": "Hachinski <= 4",
+            "label": null,
             "description": "Hachinski <= 4",
             "previousActivityId": "Activity_4",
             "nextActivityId": "Activity_6",
@@ -1948,6 +2022,7 @@
           {
             "id": "Activity_6",
             "name": "MMSE 10-23",
+            "label": null,
             "description": "MMSE 10-23",
             "previousActivityId": "Activity_5",
             "nextActivityId": "Activity_7",
@@ -1962,6 +2037,7 @@
           {
             "id": "Activity_7",
             "name": "Physical examination",
+            "label": null,
             "description": "Physical examination",
             "previousActivityId": "Activity_6",
             "nextActivityId": "Activity_8",
@@ -1976,6 +2052,7 @@
           {
             "id": "Activity_8",
             "name": "Medical history",
+            "label": null,
             "description": "Medical history",
             "previousActivityId": "Activity_7",
             "nextActivityId": "Activity_9",
@@ -1990,6 +2067,7 @@
           {
             "id": "Activity_9",
             "name": "Habits",
+            "label": null,
             "description": "Habits",
             "previousActivityId": "Activity_8",
             "nextActivityId": "Activity_10",
@@ -2004,6 +2082,7 @@
           {
             "id": "Activity_10",
             "name": "Chest X-ray",
+            "label": null,
             "description": "Chest X-ray",
             "previousActivityId": "Activity_9",
             "nextActivityId": "Activity_11",
@@ -2018,6 +2097,7 @@
           {
             "id": "Activity_11",
             "name": "Apo E genotyping",
+            "label": null,
             "description": "Apo E genotyping",
             "previousActivityId": "Activity_10",
             "nextActivityId": "Activity_12",
@@ -2032,6 +2112,7 @@
           {
             "id": "Activity_12",
             "name": "Patient randomised",
+            "label": null,
             "description": "Patient randomised",
             "previousActivityId": "Activity_11",
             "nextActivityId": "Activity_13",
@@ -2046,6 +2127,7 @@
           {
             "id": "Activity_13",
             "name": "Vital signs /Temperature",
+            "label": null,
             "description": "Vital signs /Temperature",
             "previousActivityId": "Activity_12",
             "nextActivityId": "Activity_14",
@@ -2066,6 +2148,7 @@
           {
             "id": "Activity_14",
             "name": "Ambulatory ECG placed",
+            "label": null,
             "description": "Ambulatory ECG placed",
             "previousActivityId": "Activity_13",
             "nextActivityId": "Activity_15",
@@ -2080,6 +2163,7 @@
           {
             "id": "Activity_15",
             "name": "Ambulatory ECG removed",
+            "label": null,
             "description": "Ambulatory ECG removed",
             "previousActivityId": "Activity_14",
             "nextActivityId": "Activity_16",
@@ -2094,6 +2178,7 @@
           {
             "id": "Activity_16",
             "name": "ECG",
+            "label": null,
             "description": "ECG",
             "previousActivityId": "Activity_15",
             "nextActivityId": "Activity_17",
@@ -2108,6 +2193,7 @@
           {
             "id": "Activity_17",
             "name": "Placebo TTS test",
+            "label": null,
             "description": "Placebo TTS test",
             "previousActivityId": "Activity_16",
             "nextActivityId": "Activity_18",
@@ -2122,6 +2208,7 @@
           {
             "id": "Activity_18",
             "name": "CT scan",
+            "label": null,
             "description": "CT scan",
             "previousActivityId": "Activity_17",
             "nextActivityId": "Activity_19",
@@ -2136,6 +2223,7 @@
           {
             "id": "Activity_19",
             "name": "Concomitant medications",
+            "label": null,
             "description": "Concomitant medications",
             "previousActivityId": "Activity_18",
             "nextActivityId": "Activity_20",
@@ -2150,6 +2238,7 @@
           {
             "id": "Activity_20",
             "name": "Hematology",
+            "label": null,
             "description": "Hematology",
             "previousActivityId": "Activity_19",
             "nextActivityId": "Activity_21",
@@ -2164,6 +2253,7 @@
           {
             "id": "Activity_21",
             "name": "Chemistry",
+            "label": null,
             "description": "Chemistry",
             "previousActivityId": "Activity_20",
             "nextActivityId": "Activity_22",
@@ -2186,6 +2276,7 @@
           {
             "id": "Activity_22",
             "name": "Uninalysis",
+            "label": null,
             "description": "Uninalysis",
             "previousActivityId": "Activity_21",
             "nextActivityId": "Activity_23",
@@ -2200,6 +2291,7 @@
           {
             "id": "Activity_23",
             "name": "Plasma Specimen\n(Xanomeline)",
+            "label": null,
             "description": "Plasma Specimen\n(Xanomeline)",
             "previousActivityId": "Activity_22",
             "nextActivityId": "Activity_24",
@@ -2214,6 +2306,7 @@
           {
             "id": "Activity_24",
             "name": "Hemoglobin A1C",
+            "label": null,
             "description": "Hemoglobin A1C",
             "previousActivityId": "Activity_23",
             "nextActivityId": "Activity_25",
@@ -2230,6 +2323,7 @@
           {
             "id": "Activity_25",
             "name": "Study drug record\nMedications dispensed\nMedications returned",
+            "label": null,
             "description": "Study drug record\nMedications dispensed\nMedications returned",
             "previousActivityId": "Activity_24",
             "nextActivityId": "Activity_26",
@@ -2244,6 +2338,7 @@
           {
             "id": "Activity_26",
             "name": "TTS Acceptability Survey",
+            "label": null,
             "description": "TTS Acceptability Survey",
             "previousActivityId": "Activity_25",
             "nextActivityId": "Activity_27",
@@ -2258,6 +2353,7 @@
           {
             "id": "Activity_27",
             "name": "ADAS-Cog",
+            "label": null,
             "description": "ADAS-Cog",
             "previousActivityId": "Activity_26",
             "nextActivityId": "Activity_28",
@@ -2272,6 +2368,7 @@
           {
             "id": "Activity_28",
             "name": "CIBIC+",
+            "label": null,
             "description": "CIBIC+",
             "previousActivityId": "Activity_27",
             "nextActivityId": "Activity_29",
@@ -2286,6 +2383,7 @@
           {
             "id": "Activity_29",
             "name": "DAD",
+            "label": null,
             "description": "DAD",
             "previousActivityId": "Activity_28",
             "nextActivityId": "Activity_30",
@@ -2300,6 +2398,7 @@
           {
             "id": "Activity_30",
             "name": "NPI-X",
+            "label": null,
             "description": "NPI-X",
             "previousActivityId": "Activity_29",
             "nextActivityId": "Activity_31",
@@ -2314,6 +2413,7 @@
           {
             "id": "Activity_31",
             "name": "Adverse events",
+            "label": null,
             "description": "Adverse events",
             "previousActivityId": "Activity_30",
             "nextActivityId": null,
@@ -2343,13 +2443,15 @@
         "biomedicalConcepts": [
           {
             "id": "BiomedicalConcept_1",
-            "bcName": "Sex",
+            "name": "Sex",
+            "label": "Sex",
             "bcSynonyms": [],
             "bcReference": "/mdr/bc/packages/2023-03-31/biomedicalconcepts/C28421",
             "bcProperties": [
               {
                 "id": "BiomedicalConceptProperty_1",
-                "bcPropertyName": "Sex",
+                "name": "Sex",
+                "label": "Sex",
                 "bcPropertyRequired": true,
                 "bcPropertyEnabled": true,
                 "bcPropertyDatatype": "string",
@@ -2388,7 +2490,7 @@
                     }
                   }
                 ],
-                "bcPropertyConceptCode": {
+                "code": {
                   "id": "AliasCode_4",
                   "standardCode": {
                     "id": "Code_174",
@@ -2401,7 +2503,7 @@
                 }
               }
             ],
-            "bcConceptCode": {
+            "code": {
               "id": "AliasCode_3",
               "standardCode": {
                 "id": "Code_170",
@@ -2415,7 +2517,8 @@
           },
           {
             "id": "BiomedicalConcept_2",
-            "bcName": "Race",
+            "name": "Race",
+            "label": "Race",
             "bcSynonyms": [
               "Racial Group"
             ],
@@ -2423,7 +2526,8 @@
             "bcProperties": [
               {
                 "id": "BiomedicalConceptProperty_2",
-                "bcPropertyName": "Race",
+                "name": "Race",
+                "label": "Race",
                 "bcPropertyRequired": true,
                 "bcPropertyEnabled": true,
                 "bcPropertyDatatype": "string",
@@ -2440,7 +2544,7 @@
                     }
                   }
                 ],
-                "bcPropertyConceptCode": {
+                "code": {
                   "id": "AliasCode_6",
                   "standardCode": {
                     "id": "Code_177",
@@ -2453,7 +2557,7 @@
                 }
               }
             ],
-            "bcConceptCode": {
+            "code": {
               "id": "AliasCode_5",
               "standardCode": {
                 "id": "Code_175",
@@ -2467,7 +2571,8 @@
           },
           {
             "id": "BiomedicalConcept_3",
-            "bcName": "Systolic Blood Pressure",
+            "name": "Systolic Blood Pressure",
+            "label": "Systolic Blood Pressure",
             "bcSynonyms": [
               "SYSBP"
             ],
@@ -2475,12 +2580,13 @@
             "bcProperties": [
               {
                 "id": "BiomedicalConceptProperty_3",
-                "bcPropertyName": "Vital Signs Result",
+                "name": "Vital Signs Result",
+                "label": "Vital Signs Result",
                 "bcPropertyRequired": true,
                 "bcPropertyEnabled": true,
                 "bcPropertyDatatype": "decimal",
                 "bcPropertyResponseCodes": [],
-                "bcPropertyConceptCode": {
+                "code": {
                   "id": "AliasCode_8",
                   "standardCode": {
                     "id": "Code_179",
@@ -2494,7 +2600,8 @@
               },
               {
                 "id": "BiomedicalConceptProperty_4",
-                "bcPropertyName": "Unit of Pressure",
+                "name": "Unit of Pressure",
+                "label": "Unit of Pressure",
                 "bcPropertyRequired": true,
                 "bcPropertyEnabled": true,
                 "bcPropertyDatatype": "string",
@@ -2511,7 +2618,7 @@
                     }
                   }
                 ],
-                "bcPropertyConceptCode": {
+                "code": {
                   "id": "AliasCode_9",
                   "standardCode": {
                     "id": "Code_181",
@@ -2525,12 +2632,13 @@
               },
               {
                 "id": "BiomedicalConceptProperty_5",
-                "bcPropertyName": "Vital Signs Location",
+                "name": "Vital Signs Location",
+                "label": "Vital Signs Location",
                 "bcPropertyRequired": true,
                 "bcPropertyEnabled": true,
                 "bcPropertyDatatype": "string",
                 "bcPropertyResponseCodes": [],
-                "bcPropertyConceptCode": {
+                "code": {
                   "id": "AliasCode_10",
                   "standardCode": {
                     "id": "Code_182",
@@ -2544,12 +2652,13 @@
               },
               {
                 "id": "BiomedicalConceptProperty_6",
-                "bcPropertyName": "Vital Signs Laterality",
+                "name": "Vital Signs Laterality",
+                "label": "Vital Signs Laterality",
                 "bcPropertyRequired": true,
                 "bcPropertyEnabled": true,
                 "bcPropertyDatatype": "string",
                 "bcPropertyResponseCodes": [],
-                "bcPropertyConceptCode": {
+                "code": {
                   "id": "AliasCode_11",
                   "standardCode": {
                     "id": "Code_183",
@@ -2563,12 +2672,13 @@
               },
               {
                 "id": "BiomedicalConceptProperty_7",
-                "bcPropertyName": "Test Method",
+                "name": "Test Method",
+                "label": "Test Method",
                 "bcPropertyRequired": true,
                 "bcPropertyEnabled": true,
                 "bcPropertyDatatype": "string",
                 "bcPropertyResponseCodes": [],
-                "bcPropertyConceptCode": {
+                "code": {
                   "id": "AliasCode_12",
                   "standardCode": {
                     "id": "Code_184",
@@ -2582,12 +2692,13 @@
               },
               {
                 "id": "BiomedicalConceptProperty_8",
-                "bcPropertyName": "Vital Signs Position",
+                "name": "Vital Signs Position",
+                "label": "Vital Signs Position",
                 "bcPropertyRequired": true,
                 "bcPropertyEnabled": true,
                 "bcPropertyDatatype": "string",
                 "bcPropertyResponseCodes": [],
-                "bcPropertyConceptCode": {
+                "code": {
                   "id": "AliasCode_13",
                   "standardCode": {
                     "id": "Code_185",
@@ -2600,7 +2711,7 @@
                 }
               }
             ],
-            "bcConceptCode": {
+            "code": {
               "id": "AliasCode_7",
               "standardCode": {
                 "id": "Code_178",
@@ -2614,7 +2725,8 @@
           },
           {
             "id": "BiomedicalConcept_4",
-            "bcName": "Diastolic Blood Pressure",
+            "name": "Diastolic Blood Pressure",
+            "label": "Diastolic Blood Pressure",
             "bcSynonyms": [
               "DIABP"
             ],
@@ -2622,12 +2734,13 @@
             "bcProperties": [
               {
                 "id": "BiomedicalConceptProperty_9",
-                "bcPropertyName": "Vital Signs Result",
+                "name": "Vital Signs Result",
+                "label": "Vital Signs Result",
                 "bcPropertyRequired": true,
                 "bcPropertyEnabled": true,
                 "bcPropertyDatatype": "decimal",
                 "bcPropertyResponseCodes": [],
-                "bcPropertyConceptCode": {
+                "code": {
                   "id": "AliasCode_15",
                   "standardCode": {
                     "id": "Code_187",
@@ -2641,7 +2754,8 @@
               },
               {
                 "id": "BiomedicalConceptProperty_10",
-                "bcPropertyName": "Unit of Pressure",
+                "name": "Unit of Pressure",
+                "label": "Unit of Pressure",
                 "bcPropertyRequired": true,
                 "bcPropertyEnabled": true,
                 "bcPropertyDatatype": "string",
@@ -2658,7 +2772,7 @@
                     }
                   }
                 ],
-                "bcPropertyConceptCode": {
+                "code": {
                   "id": "AliasCode_16",
                   "standardCode": {
                     "id": "Code_189",
@@ -2672,12 +2786,13 @@
               },
               {
                 "id": "BiomedicalConceptProperty_11",
-                "bcPropertyName": "Vital Signs Location",
+                "name": "Vital Signs Location",
+                "label": "Vital Signs Location",
                 "bcPropertyRequired": true,
                 "bcPropertyEnabled": true,
                 "bcPropertyDatatype": "string",
                 "bcPropertyResponseCodes": [],
-                "bcPropertyConceptCode": {
+                "code": {
                   "id": "AliasCode_17",
                   "standardCode": {
                     "id": "Code_190",
@@ -2691,12 +2806,13 @@
               },
               {
                 "id": "BiomedicalConceptProperty_12",
-                "bcPropertyName": "Vital Signs Laterality",
+                "name": "Vital Signs Laterality",
+                "label": "Vital Signs Laterality",
                 "bcPropertyRequired": true,
                 "bcPropertyEnabled": true,
                 "bcPropertyDatatype": "string",
                 "bcPropertyResponseCodes": [],
-                "bcPropertyConceptCode": {
+                "code": {
                   "id": "AliasCode_18",
                   "standardCode": {
                     "id": "Code_191",
@@ -2710,12 +2826,13 @@
               },
               {
                 "id": "BiomedicalConceptProperty_13",
-                "bcPropertyName": "Test Method",
+                "name": "Test Method",
+                "label": "Test Method",
                 "bcPropertyRequired": true,
                 "bcPropertyEnabled": true,
                 "bcPropertyDatatype": "string",
                 "bcPropertyResponseCodes": [],
-                "bcPropertyConceptCode": {
+                "code": {
                   "id": "AliasCode_19",
                   "standardCode": {
                     "id": "Code_192",
@@ -2729,12 +2846,13 @@
               },
               {
                 "id": "BiomedicalConceptProperty_14",
-                "bcPropertyName": "Vital Signs Position",
+                "name": "Vital Signs Position",
+                "label": "Vital Signs Position",
                 "bcPropertyRequired": true,
                 "bcPropertyEnabled": true,
                 "bcPropertyDatatype": "string",
                 "bcPropertyResponseCodes": [],
-                "bcPropertyConceptCode": {
+                "code": {
                   "id": "AliasCode_20",
                   "standardCode": {
                     "id": "Code_193",
@@ -2747,7 +2865,7 @@
                 }
               }
             ],
-            "bcConceptCode": {
+            "code": {
               "id": "AliasCode_14",
               "standardCode": {
                 "id": "Code_186",
@@ -2761,7 +2879,8 @@
           },
           {
             "id": "BiomedicalConcept_5",
-            "bcName": "Body Temperature",
+            "name": "Body Temperature",
+            "label": "Body Temperature",
             "bcSynonyms": [
               "Temperature"
             ],
@@ -2769,12 +2888,13 @@
             "bcProperties": [
               {
                 "id": "BiomedicalConceptProperty_15",
-                "bcPropertyName": "Vital Signs Result",
+                "name": "Vital Signs Result",
+                "label": "Vital Signs Result",
                 "bcPropertyRequired": true,
                 "bcPropertyEnabled": true,
                 "bcPropertyDatatype": "decimal",
                 "bcPropertyResponseCodes": [],
-                "bcPropertyConceptCode": {
+                "code": {
                   "id": "AliasCode_22",
                   "standardCode": {
                     "id": "Code_195",
@@ -2788,7 +2908,8 @@
               },
               {
                 "id": "BiomedicalConceptProperty_16",
-                "bcPropertyName": "Unit of Temperature",
+                "name": "Unit of Temperature",
+                "label": "Unit of Temperature",
                 "bcPropertyRequired": true,
                 "bcPropertyEnabled": true,
                 "bcPropertyDatatype": "string",
@@ -2805,7 +2926,7 @@
                     }
                   }
                 ],
-                "bcPropertyConceptCode": {
+                "code": {
                   "id": "AliasCode_23",
                   "standardCode": {
                     "id": "Code_197",
@@ -2819,12 +2940,13 @@
               },
               {
                 "id": "BiomedicalConceptProperty_17",
-                "bcPropertyName": "Vital Signs Location",
+                "name": "Vital Signs Location",
+                "label": "Vital Signs Location",
                 "bcPropertyRequired": true,
                 "bcPropertyEnabled": true,
                 "bcPropertyDatatype": "string",
                 "bcPropertyResponseCodes": [],
-                "bcPropertyConceptCode": {
+                "code": {
                   "id": "AliasCode_24",
                   "standardCode": {
                     "id": "Code_198",
@@ -2837,7 +2959,7 @@
                 }
               }
             ],
-            "bcConceptCode": {
+            "code": {
               "id": "AliasCode_21",
               "standardCode": {
                 "id": "Code_194",
@@ -2851,7 +2973,8 @@
           },
           {
             "id": "BiomedicalConcept_6",
-            "bcName": "Body Weight",
+            "name": "Body Weight",
+            "label": "Body Weight",
             "bcSynonyms": [
               "Weight"
             ],
@@ -2859,12 +2982,13 @@
             "bcProperties": [
               {
                 "id": "BiomedicalConceptProperty_18",
-                "bcPropertyName": "Vital Signs Result",
+                "name": "Vital Signs Result",
+                "label": "Vital Signs Result",
                 "bcPropertyRequired": true,
                 "bcPropertyEnabled": true,
                 "bcPropertyDatatype": "decimal",
                 "bcPropertyResponseCodes": [],
-                "bcPropertyConceptCode": {
+                "code": {
                   "id": "AliasCode_26",
                   "standardCode": {
                     "id": "Code_200",
@@ -2878,7 +3002,8 @@
               },
               {
                 "id": "BiomedicalConceptProperty_19",
-                "bcPropertyName": "Unit of Weight",
+                "name": "Unit of Weight",
+                "label": "Unit of Weight",
                 "bcPropertyRequired": true,
                 "bcPropertyEnabled": true,
                 "bcPropertyDatatype": "string",
@@ -2917,7 +3042,7 @@
                     }
                   }
                 ],
-                "bcPropertyConceptCode": {
+                "code": {
                   "id": "AliasCode_27",
                   "standardCode": {
                     "id": "Code_204",
@@ -2930,7 +3055,7 @@
                 }
               }
             ],
-            "bcConceptCode": {
+            "code": {
               "id": "AliasCode_25",
               "standardCode": {
                 "id": "Code_199",
@@ -2944,7 +3069,8 @@
           },
           {
             "id": "BiomedicalConcept_7",
-            "bcName": "Body Height",
+            "name": "Body Height",
+            "label": "Body Height",
             "bcSynonyms": [
               "Height"
             ],
@@ -2952,12 +3078,13 @@
             "bcProperties": [
               {
                 "id": "BiomedicalConceptProperty_20",
-                "bcPropertyName": "Vital Signs Result",
+                "name": "Vital Signs Result",
+                "label": "Vital Signs Result",
                 "bcPropertyRequired": true,
                 "bcPropertyEnabled": true,
                 "bcPropertyDatatype": "decimal",
                 "bcPropertyResponseCodes": [],
-                "bcPropertyConceptCode": {
+                "code": {
                   "id": "AliasCode_29",
                   "standardCode": {
                     "id": "Code_206",
@@ -2971,7 +3098,8 @@
               },
               {
                 "id": "BiomedicalConceptProperty_21",
-                "bcPropertyName": "Unit of Height",
+                "name": "Unit of Height",
+                "label": "Unit of Height",
                 "bcPropertyRequired": true,
                 "bcPropertyEnabled": true,
                 "bcPropertyDatatype": "string",
@@ -3021,7 +3149,7 @@
                     }
                   }
                 ],
-                "bcPropertyConceptCode": {
+                "code": {
                   "id": "AliasCode_30",
                   "standardCode": {
                     "id": "Code_211",
@@ -3034,7 +3162,7 @@
                 }
               }
             ],
-            "bcConceptCode": {
+            "code": {
               "id": "AliasCode_28",
               "standardCode": {
                 "id": "Code_205",
@@ -3048,7 +3176,8 @@
           },
           {
             "id": "BiomedicalConcept_8",
-            "bcName": "Alanine Aminotransferase Measurement",
+            "name": "Alanine Aminotransferase Measurement",
+            "label": "Alanine Aminotransferase Measurement",
             "bcSynonyms": [
               "ALT",
               "SGPT"
@@ -3057,12 +3186,13 @@
             "bcProperties": [
               {
                 "id": "BiomedicalConceptProperty_22",
-                "bcPropertyName": "Laboratory Test Result",
+                "name": "Laboratory Test Result",
+                "label": "Laboratory Test Result",
                 "bcPropertyRequired": true,
                 "bcPropertyEnabled": true,
                 "bcPropertyDatatype": "decimal",
                 "bcPropertyResponseCodes": [],
-                "bcPropertyConceptCode": {
+                "code": {
                   "id": "AliasCode_32",
                   "standardCode": {
                     "id": "Code_213",
@@ -3076,12 +3206,13 @@
               },
               {
                 "id": "BiomedicalConceptProperty_23",
-                "bcPropertyName": "Laboratory Test Fasting Status",
+                "name": "Laboratory Test Fasting Status",
+                "label": "Laboratory Test Fasting Status",
                 "bcPropertyRequired": true,
                 "bcPropertyEnabled": true,
                 "bcPropertyDatatype": "boolean",
                 "bcPropertyResponseCodes": [],
-                "bcPropertyConceptCode": {
+                "code": {
                   "id": "AliasCode_33",
                   "standardCode": {
                     "id": "Code_214",
@@ -3095,12 +3226,13 @@
               },
               {
                 "id": "BiomedicalConceptProperty_24",
-                "bcPropertyName": "Unit of Catalytic Activity Concentration",
+                "name": "Unit of Catalytic Activity Concentration",
+                "label": "Unit of Catalytic Activity Concentration",
                 "bcPropertyRequired": true,
                 "bcPropertyEnabled": true,
                 "bcPropertyDatatype": "string",
                 "bcPropertyResponseCodes": [],
-                "bcPropertyConceptCode": {
+                "code": {
                   "id": "AliasCode_34",
                   "standardCode": {
                     "id": "Code_215",
@@ -3114,12 +3246,13 @@
               },
               {
                 "id": "BiomedicalConceptProperty_25",
-                "bcPropertyName": "Biospecimen Type",
+                "name": "Biospecimen Type",
+                "label": "Biospecimen Type",
                 "bcPropertyRequired": true,
                 "bcPropertyEnabled": true,
                 "bcPropertyDatatype": "string",
                 "bcPropertyResponseCodes": [],
-                "bcPropertyConceptCode": {
+                "code": {
                   "id": "AliasCode_35",
                   "standardCode": {
                     "id": "Code_216",
@@ -3132,7 +3265,7 @@
                 }
               }
             ],
-            "bcConceptCode": {
+            "code": {
               "id": "AliasCode_31",
               "standardCode": {
                 "id": "Code_212",
@@ -3146,7 +3279,8 @@
           },
           {
             "id": "BiomedicalConcept_9",
-            "bcName": "Albumin Measurement",
+            "name": "Albumin Measurement",
+            "label": "Albumin Measurement",
             "bcSynonyms": [
               "Albumin"
             ],
@@ -3154,12 +3288,13 @@
             "bcProperties": [
               {
                 "id": "BiomedicalConceptProperty_26",
-                "bcPropertyName": "Laboratory Test Result",
+                "name": "Laboratory Test Result",
+                "label": "Laboratory Test Result",
                 "bcPropertyRequired": true,
                 "bcPropertyEnabled": true,
                 "bcPropertyDatatype": "decimal",
                 "bcPropertyResponseCodes": [],
-                "bcPropertyConceptCode": {
+                "code": {
                   "id": "AliasCode_37",
                   "standardCode": {
                     "id": "Code_218",
@@ -3173,12 +3308,13 @@
               },
               {
                 "id": "BiomedicalConceptProperty_27",
-                "bcPropertyName": "Laboratory Test Fasting Status",
+                "name": "Laboratory Test Fasting Status",
+                "label": "Laboratory Test Fasting Status",
                 "bcPropertyRequired": true,
                 "bcPropertyEnabled": true,
                 "bcPropertyDatatype": "boolean",
                 "bcPropertyResponseCodes": [],
-                "bcPropertyConceptCode": {
+                "code": {
                   "id": "AliasCode_38",
                   "standardCode": {
                     "id": "Code_219",
@@ -3192,12 +3328,13 @@
               },
               {
                 "id": "BiomedicalConceptProperty_28",
-                "bcPropertyName": "Unit of Mass or Substance Concentration",
+                "name": "Unit of Mass or Substance Concentration",
+                "label": "Unit of Mass or Substance Concentration",
                 "bcPropertyRequired": true,
                 "bcPropertyEnabled": true,
                 "bcPropertyDatatype": "string",
                 "bcPropertyResponseCodes": [],
-                "bcPropertyConceptCode": {
+                "code": {
                   "id": "AliasCode_39",
                   "standardCode": {
                     "id": "Code_220",
@@ -3211,12 +3348,13 @@
               },
               {
                 "id": "BiomedicalConceptProperty_29",
-                "bcPropertyName": "Biospecimen Type",
+                "name": "Biospecimen Type",
+                "label": "Biospecimen Type",
                 "bcPropertyRequired": true,
                 "bcPropertyEnabled": true,
                 "bcPropertyDatatype": "string",
                 "bcPropertyResponseCodes": [],
-                "bcPropertyConceptCode": {
+                "code": {
                   "id": "AliasCode_40",
                   "standardCode": {
                     "id": "Code_221",
@@ -3229,7 +3367,7 @@
                 }
               }
             ],
-            "bcConceptCode": {
+            "code": {
               "id": "AliasCode_36",
               "standardCode": {
                 "id": "Code_217",
@@ -3243,7 +3381,8 @@
           },
           {
             "id": "BiomedicalConcept_10",
-            "bcName": "Alkaline Phosphatase Measurement",
+            "name": "Alkaline Phosphatase Measurement",
+            "label": "Alkaline Phosphatase Measurement",
             "bcSynonyms": [
               "Alkaline Phosphatase"
             ],
@@ -3251,12 +3390,13 @@
             "bcProperties": [
               {
                 "id": "BiomedicalConceptProperty_30",
-                "bcPropertyName": "Laboratory Test Result",
+                "name": "Laboratory Test Result",
+                "label": "Laboratory Test Result",
                 "bcPropertyRequired": true,
                 "bcPropertyEnabled": true,
                 "bcPropertyDatatype": "decimal",
                 "bcPropertyResponseCodes": [],
-                "bcPropertyConceptCode": {
+                "code": {
                   "id": "AliasCode_42",
                   "standardCode": {
                     "id": "Code_223",
@@ -3270,12 +3410,13 @@
               },
               {
                 "id": "BiomedicalConceptProperty_31",
-                "bcPropertyName": "Laboratory Test Fasting Status",
+                "name": "Laboratory Test Fasting Status",
+                "label": "Laboratory Test Fasting Status",
                 "bcPropertyRequired": true,
                 "bcPropertyEnabled": true,
                 "bcPropertyDatatype": "boolean",
                 "bcPropertyResponseCodes": [],
-                "bcPropertyConceptCode": {
+                "code": {
                   "id": "AliasCode_43",
                   "standardCode": {
                     "id": "Code_224",
@@ -3289,12 +3430,13 @@
               },
               {
                 "id": "BiomedicalConceptProperty_32",
-                "bcPropertyName": "Unit of Catalytic Activity Concentration",
+                "name": "Unit of Catalytic Activity Concentration",
+                "label": "Unit of Catalytic Activity Concentration",
                 "bcPropertyRequired": true,
                 "bcPropertyEnabled": true,
                 "bcPropertyDatatype": "string",
                 "bcPropertyResponseCodes": [],
-                "bcPropertyConceptCode": {
+                "code": {
                   "id": "AliasCode_44",
                   "standardCode": {
                     "id": "Code_225",
@@ -3308,12 +3450,13 @@
               },
               {
                 "id": "BiomedicalConceptProperty_33",
-                "bcPropertyName": "Biospecimen Type",
+                "name": "Biospecimen Type",
+                "label": "Biospecimen Type",
                 "bcPropertyRequired": true,
                 "bcPropertyEnabled": true,
                 "bcPropertyDatatype": "string",
                 "bcPropertyResponseCodes": [],
-                "bcPropertyConceptCode": {
+                "code": {
                   "id": "AliasCode_45",
                   "standardCode": {
                     "id": "Code_226",
@@ -3326,7 +3469,7 @@
                 }
               }
             ],
-            "bcConceptCode": {
+            "code": {
               "id": "AliasCode_41",
               "standardCode": {
                 "id": "Code_222",
@@ -3340,7 +3483,8 @@
           },
           {
             "id": "BiomedicalConcept_11",
-            "bcName": "Aspartate Aminotransferase Measurement",
+            "name": "Aspartate Aminotransferase Measurement",
+            "label": "Aspartate Aminotransferase Measurement",
             "bcSynonyms": [
               "AST",
               "SGOT"
@@ -3349,12 +3493,13 @@
             "bcProperties": [
               {
                 "id": "BiomedicalConceptProperty_34",
-                "bcPropertyName": "Laboratory Test Result",
+                "name": "Laboratory Test Result",
+                "label": "Laboratory Test Result",
                 "bcPropertyRequired": true,
                 "bcPropertyEnabled": true,
                 "bcPropertyDatatype": "decimal",
                 "bcPropertyResponseCodes": [],
-                "bcPropertyConceptCode": {
+                "code": {
                   "id": "AliasCode_47",
                   "standardCode": {
                     "id": "Code_228",
@@ -3368,12 +3513,13 @@
               },
               {
                 "id": "BiomedicalConceptProperty_35",
-                "bcPropertyName": "Laboratory Test Fasting Status",
+                "name": "Laboratory Test Fasting Status",
+                "label": "Laboratory Test Fasting Status",
                 "bcPropertyRequired": true,
                 "bcPropertyEnabled": true,
                 "bcPropertyDatatype": "boolean",
                 "bcPropertyResponseCodes": [],
-                "bcPropertyConceptCode": {
+                "code": {
                   "id": "AliasCode_48",
                   "standardCode": {
                     "id": "Code_229",
@@ -3387,12 +3533,13 @@
               },
               {
                 "id": "BiomedicalConceptProperty_36",
-                "bcPropertyName": "Unit of Catalytic Activity Concentration",
+                "name": "Unit of Catalytic Activity Concentration",
+                "label": "Unit of Catalytic Activity Concentration",
                 "bcPropertyRequired": true,
                 "bcPropertyEnabled": true,
                 "bcPropertyDatatype": "string",
                 "bcPropertyResponseCodes": [],
-                "bcPropertyConceptCode": {
+                "code": {
                   "id": "AliasCode_49",
                   "standardCode": {
                     "id": "Code_230",
@@ -3406,12 +3553,13 @@
               },
               {
                 "id": "BiomedicalConceptProperty_37",
-                "bcPropertyName": "Biospecimen Type",
+                "name": "Biospecimen Type",
+                "label": "Biospecimen Type",
                 "bcPropertyRequired": true,
                 "bcPropertyEnabled": true,
                 "bcPropertyDatatype": "string",
                 "bcPropertyResponseCodes": [],
-                "bcPropertyConceptCode": {
+                "code": {
                   "id": "AliasCode_50",
                   "standardCode": {
                     "id": "Code_231",
@@ -3424,7 +3572,7 @@
                 }
               }
             ],
-            "bcConceptCode": {
+            "code": {
               "id": "AliasCode_46",
               "standardCode": {
                 "id": "Code_227",
@@ -3438,7 +3586,8 @@
           },
           {
             "id": "BiomedicalConcept_12",
-            "bcName": "Creatinine Measurement",
+            "name": "Creatinine Measurement",
+            "label": "Creatinine Measurement",
             "bcSynonyms": [
               "Creatinine"
             ],
@@ -3446,12 +3595,13 @@
             "bcProperties": [
               {
                 "id": "BiomedicalConceptProperty_38",
-                "bcPropertyName": "Laboratory Test Result",
+                "name": "Laboratory Test Result",
+                "label": "Laboratory Test Result",
                 "bcPropertyRequired": true,
                 "bcPropertyEnabled": true,
                 "bcPropertyDatatype": "decimal",
                 "bcPropertyResponseCodes": [],
-                "bcPropertyConceptCode": {
+                "code": {
                   "id": "AliasCode_52",
                   "standardCode": {
                     "id": "Code_233",
@@ -3465,12 +3615,13 @@
               },
               {
                 "id": "BiomedicalConceptProperty_39",
-                "bcPropertyName": "Laboratory Test Fasting Status",
+                "name": "Laboratory Test Fasting Status",
+                "label": "Laboratory Test Fasting Status",
                 "bcPropertyRequired": true,
                 "bcPropertyEnabled": true,
                 "bcPropertyDatatype": "boolean",
                 "bcPropertyResponseCodes": [],
-                "bcPropertyConceptCode": {
+                "code": {
                   "id": "AliasCode_53",
                   "standardCode": {
                     "id": "Code_234",
@@ -3484,12 +3635,13 @@
               },
               {
                 "id": "BiomedicalConceptProperty_40",
-                "bcPropertyName": "Unit of Mass or Substance Concentration",
+                "name": "Unit of Mass or Substance Concentration",
+                "label": "Unit of Mass or Substance Concentration",
                 "bcPropertyRequired": true,
                 "bcPropertyEnabled": true,
                 "bcPropertyDatatype": "string",
                 "bcPropertyResponseCodes": [],
-                "bcPropertyConceptCode": {
+                "code": {
                   "id": "AliasCode_54",
                   "standardCode": {
                     "id": "Code_235",
@@ -3503,12 +3655,13 @@
               },
               {
                 "id": "BiomedicalConceptProperty_41",
-                "bcPropertyName": "Biospecimen Type",
+                "name": "Biospecimen Type",
+                "label": "Biospecimen Type",
                 "bcPropertyRequired": true,
                 "bcPropertyEnabled": true,
                 "bcPropertyDatatype": "string",
                 "bcPropertyResponseCodes": [],
-                "bcPropertyConceptCode": {
+                "code": {
                   "id": "AliasCode_55",
                   "standardCode": {
                     "id": "Code_236",
@@ -3521,7 +3674,7 @@
                 }
               }
             ],
-            "bcConceptCode": {
+            "code": {
               "id": "AliasCode_51",
               "standardCode": {
                 "id": "Code_232",
@@ -3535,7 +3688,8 @@
           },
           {
             "id": "BiomedicalConcept_13",
-            "bcName": "Potassium Measurement",
+            "name": "Potassium Measurement",
+            "label": "Potassium Measurement",
             "bcSynonyms": [
               "Potassium",
               "K"
@@ -3544,12 +3698,13 @@
             "bcProperties": [
               {
                 "id": "BiomedicalConceptProperty_42",
-                "bcPropertyName": "Laboratory Test Result",
+                "name": "Laboratory Test Result",
+                "label": "Laboratory Test Result",
                 "bcPropertyRequired": true,
                 "bcPropertyEnabled": true,
                 "bcPropertyDatatype": "decimal",
                 "bcPropertyResponseCodes": [],
-                "bcPropertyConceptCode": {
+                "code": {
                   "id": "AliasCode_57",
                   "standardCode": {
                     "id": "Code_238",
@@ -3563,12 +3718,13 @@
               },
               {
                 "id": "BiomedicalConceptProperty_43",
-                "bcPropertyName": "Laboratory Test Fasting Status",
+                "name": "Laboratory Test Fasting Status",
+                "label": "Laboratory Test Fasting Status",
                 "bcPropertyRequired": true,
                 "bcPropertyEnabled": true,
                 "bcPropertyDatatype": "boolean",
                 "bcPropertyResponseCodes": [],
-                "bcPropertyConceptCode": {
+                "code": {
                   "id": "AliasCode_58",
                   "standardCode": {
                     "id": "Code_239",
@@ -3582,12 +3738,13 @@
               },
               {
                 "id": "BiomedicalConceptProperty_44",
-                "bcPropertyName": "Molarity Unit",
+                "name": "Molarity Unit",
+                "label": "Molarity Unit",
                 "bcPropertyRequired": true,
                 "bcPropertyEnabled": true,
                 "bcPropertyDatatype": "string",
                 "bcPropertyResponseCodes": [],
-                "bcPropertyConceptCode": {
+                "code": {
                   "id": "AliasCode_59",
                   "standardCode": {
                     "id": "Code_240",
@@ -3601,12 +3758,13 @@
               },
               {
                 "id": "BiomedicalConceptProperty_45",
-                "bcPropertyName": "Biospecimen Type",
+                "name": "Biospecimen Type",
+                "label": "Biospecimen Type",
                 "bcPropertyRequired": true,
                 "bcPropertyEnabled": true,
                 "bcPropertyDatatype": "string",
                 "bcPropertyResponseCodes": [],
-                "bcPropertyConceptCode": {
+                "code": {
                   "id": "AliasCode_60",
                   "standardCode": {
                     "id": "Code_241",
@@ -3619,7 +3777,7 @@
                 }
               }
             ],
-            "bcConceptCode": {
+            "code": {
               "id": "AliasCode_56",
               "standardCode": {
                 "id": "Code_237",
@@ -3633,7 +3791,8 @@
           },
           {
             "id": "BiomedicalConcept_14",
-            "bcName": "Sodium Measurement",
+            "name": "Sodium Measurement",
+            "label": "Sodium Measurement",
             "bcSynonyms": [
               "Sodium",
               "NA"
@@ -3642,12 +3801,13 @@
             "bcProperties": [
               {
                 "id": "BiomedicalConceptProperty_46",
-                "bcPropertyName": "Laboratory Test Result",
+                "name": "Laboratory Test Result",
+                "label": "Laboratory Test Result",
                 "bcPropertyRequired": true,
                 "bcPropertyEnabled": true,
                 "bcPropertyDatatype": "decimal",
                 "bcPropertyResponseCodes": [],
-                "bcPropertyConceptCode": {
+                "code": {
                   "id": "AliasCode_62",
                   "standardCode": {
                     "id": "Code_243",
@@ -3661,12 +3821,13 @@
               },
               {
                 "id": "BiomedicalConceptProperty_47",
-                "bcPropertyName": "Laboratory Test Fasting Status",
+                "name": "Laboratory Test Fasting Status",
+                "label": "Laboratory Test Fasting Status",
                 "bcPropertyRequired": true,
                 "bcPropertyEnabled": true,
                 "bcPropertyDatatype": "boolean",
                 "bcPropertyResponseCodes": [],
-                "bcPropertyConceptCode": {
+                "code": {
                   "id": "AliasCode_63",
                   "standardCode": {
                     "id": "Code_244",
@@ -3680,12 +3841,13 @@
               },
               {
                 "id": "BiomedicalConceptProperty_48",
-                "bcPropertyName": "Molarity Unit",
+                "name": "Molarity Unit",
+                "label": "Molarity Unit",
                 "bcPropertyRequired": true,
                 "bcPropertyEnabled": true,
                 "bcPropertyDatatype": "string",
                 "bcPropertyResponseCodes": [],
-                "bcPropertyConceptCode": {
+                "code": {
                   "id": "AliasCode_64",
                   "standardCode": {
                     "id": "Code_245",
@@ -3699,12 +3861,13 @@
               },
               {
                 "id": "BiomedicalConceptProperty_49",
-                "bcPropertyName": "Biospecimen Type",
+                "name": "Biospecimen Type",
+                "label": "Biospecimen Type",
                 "bcPropertyRequired": true,
                 "bcPropertyEnabled": true,
                 "bcPropertyDatatype": "string",
                 "bcPropertyResponseCodes": [],
-                "bcPropertyConceptCode": {
+                "code": {
                   "id": "AliasCode_65",
                   "standardCode": {
                     "id": "Code_246",
@@ -3717,7 +3880,7 @@
                 }
               }
             ],
-            "bcConceptCode": {
+            "code": {
               "id": "AliasCode_61",
               "standardCode": {
                 "id": "Code_242",
@@ -3731,11 +3894,12 @@
           },
           {
             "id": "BiomedicalConcept_15",
-            "bcName": "Adverse Event",
+            "name": "Adverse Event",
+            "label": "Adverse Event",
             "bcSynonyms": [],
             "bcReference": "/mdr/bc/packages/2023-07-06/biomedicalconcepts/C41331",
             "bcProperties": [],
-            "bcConceptCode": {
+            "code": {
               "id": "AliasCode_66",
               "standardCode": {
                 "id": "Code_247",
@@ -3753,12 +3917,14 @@
           {
             "id": "BiomedicalConceptSurrogate_1",
             "name": "Date of Birth",
+            "label": "Date of Birth",
             "description": "Date of Birth",
             "bcSurrogateReference": "None set"
           },
           {
             "id": "BiomedicalConceptSurrogate_2",
             "name": "HbA1c",
+            "label": "HbA1c",
             "description": "HbA1c",
             "bcSurrogateReference": "None set"
           }
@@ -3767,8 +3933,9 @@
           {
             "id": "StudyArm_1",
             "name": "Placebo",
+            "label": "",
             "description": "Placebo",
-            "studyArmType": {
+            "type": {
               "id": "Code_61",
               "code": "C174268",
               "codeSystem": "http://www.cdisc.org",
@@ -3776,7 +3943,7 @@
               "decode": "Placebo Comparator Arm"
             },
             "studyArmDataOriginDescription": "Data collected from subjects",
-            "studyArmDataOriginType": {
+            "dataOriginType": {
               "id": "Code_62",
               "code": "C188866",
               "codeSystem": "http://www.cdisc.org",
@@ -3787,8 +3954,9 @@
           {
             "id": "StudyArm_2",
             "name": "Xanomeline Low Dose",
+            "label": "",
             "description": "Active Substance",
-            "studyArmType": {
+            "type": {
               "id": "Code_63",
               "code": "C174267",
               "codeSystem": "http://www.cdisc.org",
@@ -3796,7 +3964,7 @@
               "decode": "Active Comparator Arm"
             },
             "studyArmDataOriginDescription": "Data collected from subjects",
-            "studyArmDataOriginType": {
+            "dataOriginType": {
               "id": "Code_64",
               "code": "C188866",
               "codeSystem": "http://www.cdisc.org",
@@ -3807,8 +3975,9 @@
           {
             "id": "StudyArm_3",
             "name": "Xanomeline High Dose",
+            "label": "",
             "description": "Active Substance",
-            "studyArmType": {
+            "type": {
               "id": "Code_65",
               "code": "C174267",
               "codeSystem": "http://www.cdisc.org",
@@ -3816,7 +3985,7 @@
               "decode": "Active Comparator Arm"
             },
             "studyArmDataOriginDescription": "Data collected from subjects",
-            "studyArmDataOriginType": {
+            "dataOriginType": {
               "id": "Code_66",
               "code": "C188866",
               "codeSystem": "http://www.cdisc.org",
@@ -3829,8 +3998,9 @@
           {
             "id": "StudyEpoch_1",
             "name": "Screening",
+            "label": "",
             "description": "Screening Epoch",
-            "studyEpochType": {
+            "type": {
               "id": "Code_67",
               "code": "C48262",
               "codeSystem": "http://www.cdisc.org",
@@ -3843,8 +4013,9 @@
           {
             "id": "StudyEpoch_2",
             "name": "Treatment 1",
+            "label": "",
             "description": "Treatment Epoch",
-            "studyEpochType": {
+            "type": {
               "id": "Code_68",
               "code": "C101526",
               "codeSystem": "http://www.cdisc.org",
@@ -3857,8 +4028,9 @@
           {
             "id": "StudyEpoch_3",
             "name": "Treatment 2",
+            "label": "",
             "description": "Treatment Epoch",
-            "studyEpochType": {
+            "type": {
               "id": "Code_69",
               "code": "C101526",
               "codeSystem": "http://www.cdisc.org",
@@ -3871,8 +4043,9 @@
           {
             "id": "StudyEpoch_4",
             "name": "Treatment 3",
+            "label": "",
             "description": "Treatment Epoch",
-            "studyEpochType": {
+            "type": {
               "id": "Code_70",
               "code": "C101526",
               "codeSystem": "http://www.cdisc.org",
@@ -3885,8 +4058,9 @@
           {
             "id": "StudyEpoch_5",
             "name": "Follow-Up",
+            "label": "",
             "description": "Follow-up Epoch",
-            "studyEpochType": {
+            "type": {
               "id": "Code_71",
               "code": "C99158",
               "codeSystem": "http://www.cdisc.org",
@@ -3901,6 +4075,7 @@
           {
             "id": "StudyElement_1",
             "name": "Screening",
+            "label": "",
             "description": "Screening Element",
             "transitionStartRule": {
               "id": "TransitionRule_7",
@@ -3914,6 +4089,7 @@
           {
             "id": "StudyElement_2",
             "name": "Placebo",
+            "label": "",
             "description": "Placebo TTS (adhesive patches)",
             "transitionStartRule": {
               "id": "TransitionRule_9",
@@ -3924,6 +4100,7 @@
           {
             "id": "StudyElement_7",
             "name": "Follow_up",
+            "label": "",
             "description": "Follow Up Element",
             "transitionStartRule": {
               "id": "TransitionRule_14",
@@ -3937,6 +4114,7 @@
           {
             "id": "StudyElement_3",
             "name": "Low",
+            "label": "",
             "description": "Xanomeline TTS (adhesive patches) 50 cm2, 54 mg",
             "transitionStartRule": {
               "id": "TransitionRule_10",
@@ -3947,6 +4125,7 @@
           {
             "id": "StudyElement_4",
             "name": "High_Start",
+            "label": "",
             "description": "Xanomeline TTS (adhesive patches) 50 cm2, 54 mg",
             "transitionStartRule": {
               "id": "TransitionRule_11",
@@ -3957,6 +4136,7 @@
           {
             "id": "StudyElement_5",
             "name": "High_Middle",
+            "label": "",
             "description": "Xanomeline TTS (adhesive patches) 50 cm2, 54 mg + 25 cm2, 27 mg",
             "transitionStartRule": {
               "id": "TransitionRule_12",
@@ -3967,12 +4147,1240 @@
           {
             "id": "StudyElement_6",
             "name": "High_End",
+            "label": "",
             "description": "Xanomeline TTS (adhesive patches) 50 cm2, 54 mg",
             "transitionStartRule": {
               "id": "TransitionRule_13",
               "description": "Administration\u00a0of\u00a0first\u00a0dose\u00a0(from\u00a0patches\u00a0supplied\u00a0at\u00a0Visit\u00a012)"
             },
             "transitionEndRule": null
+          }
+        ],
+        "contents": [
+          {
+            "id": "Content_1",
+            "name": "ROOT",
+            "sectionNumber": "0",
+            "sectionTitle": "Root",
+            "text": "",
+            "contentChildIds": [
+              "Content_2",
+              "Content_3",
+              "Content_7",
+              "Content_10",
+              "Content_12",
+              "Content_21",
+              "Content_32",
+              "Content_52",
+              "Content_60",
+              "Content_94",
+              "Content_109",
+              "Content_115",
+              "Content_119",
+              "Content_124",
+              "Content_132",
+              "Content_133"
+            ]
+          },
+          {
+            "id": "Content_2",
+            "name": "SECTION 0",
+            "sectionNumber": "0",
+            "sectionTitle": "TITLE PAGE",
+            "text": "<table>\n  <tr>\n    <th style=\"vertical-align: top; text-align: left\"><p>Protocol Full Title:</p></th>\n    <td style=\"vertical-align: top; text-align: left\"><p><usdm:ref klass=\"StudyProtocolVersion\" id=\"StudyProtocolVersion_1\" attribute=\"officialTitle\"/></p></td>\n  </tr>\n  <tr>\n    <th style=\"vertical-align: top; text-align: left\"><p>Protocol Number:</p></th>\n    <td style=\"vertical-align: top; text-align: left\"><p><usdm:ref klass=\"StudyIdentifier\" id=\"StudyIdentifier_1\" attribute=\"studyIdentifier\"/></p></td>\n  </tr>\n  <tr>\n    <th style=\"vertical-align: top; text-align: left\"><p>Version:</p></th>\n    <td style=\"vertical-align: top; text-align: left\"><p><usdm:ref klass=\"\" namexref=\"\" attribute=\"\"/></p></td>\n  </tr>\n  <tr>\n    <th style=\"vertical-align: top; text-align: left\"><p>Amendment Number:</p></th>\n    <td style=\"vertical-align: top; text-align: left\"><p><usdm:ref klass=\"\" namexref=\"\" attribute=\"\"/></p></td>\n  </tr>\n  <tr>\n    <th style=\"vertical-align: top; text-align: left\"><p>Amendment Scope:</p></th>\n    <td style=\"vertical-align: top; text-align: left\"><p><usdm:ref klass=\"\" namexref=\"\" attribute=\"\"/></p></td>\n  </tr>\n  <tr>\n    <th style=\"vertical-align: top; text-align: left\"><p>Compound Number(s):</p></th>\n    <td style=\"vertical-align: top; text-align: left\"><p><usdm:ref klass=\"\" namexref=\"\" attribute=\"\"/></p></td>\n  </tr> \n  <tr>\n    <th style=\"vertical-align: top; text-align: left\"><p>Compound Name(s):</p></th>\n    <td style=\"vertical-align: top; text-align: left\"><p><usdm:ref klass=\"\" namexref=\"\" attribute=\"\"/></p></td>\n  </tr>  \n  <tr>\n    <th style=\"vertical-align: top; text-align: left\"><p>Trial Phase:</p></th>\n    <td style=\"vertical-align: top; text-align: left\"><p><usdm:ref klass=\"Code\" id=\"Code_2\" attribute=\"decode\"/></p></td>\n  </tr>\n  <tr>\n    <th style=\"vertical-align: top; text-align: left\"><p>Acronym:</p></th>\n    <td style=\"vertical-align: top; text-align: left\"><p><usdm:ref klass=\"Study\" namexref=\"STUDY\" attribute=\"studyAcronym\"/></p></td>\n  </tr>\n  <tr>\n    <th style=\"vertical-align: top; text-align: left\"><p>Short Title:</p></th>\n    <td style=\"vertical-align: top; text-align: left\"><p><usdm:ref klass=\"StudyProtocolVersion\" id=\"StudyProtocolVersion_1\" attribute=\"briefTitle\"/></p></td>\n  </tr>\n  <tr>\n    <th style=\"vertical-align: top; text-align: left\"><p>Sponsor Name and Address:</p></th>\n    <td style=\"vertical-align: top; text-align: left\"><p><usdm:ref klass=\"\" namexref=\"\" attribute=\"\"/></p></td>\n  </tr>\n</table>",
+            "contentChildIds": []
+          },
+          {
+            "id": "Content_3",
+            "name": "SECTION 1",
+            "sectionNumber": "1",
+            "sectionTitle": "PROTOCOL SUMMARY",
+            "text": "",
+            "contentChildIds": [
+              "Content_4",
+              "Content_5",
+              "Content_6"
+            ]
+          },
+          {
+            "id": "Content_4",
+            "name": "SECTION 1.1",
+            "sectionNumber": "1.1",
+            "sectionTitle": "Protocol Synopsis",
+            "text": "",
+            "contentChildIds": []
+          },
+          {
+            "id": "Content_5",
+            "name": "SECTION 1.2",
+            "sectionNumber": "1.2",
+            "sectionTitle": "Trial Schema",
+            "text": "",
+            "contentChildIds": []
+          },
+          {
+            "id": "Content_6",
+            "name": "SECTION 1.3",
+            "sectionNumber": "1.3",
+            "sectionTitle": "Schedule of Activities",
+            "text": "",
+            "contentChildIds": []
+          },
+          {
+            "id": "Content_7",
+            "name": "SECTION 2",
+            "sectionNumber": "2",
+            "sectionTitle": "INTRODUCTION",
+            "text": "",
+            "contentChildIds": [
+              "Content_8",
+              "Content_9"
+            ]
+          },
+          {
+            "id": "Content_8",
+            "name": "SECTION 2.1",
+            "sectionNumber": "2.1",
+            "sectionTitle": "Purpose of Trial",
+            "text": "",
+            "contentChildIds": []
+          },
+          {
+            "id": "Content_9",
+            "name": "SECTION 2.2",
+            "sectionNumber": "2.2",
+            "sectionTitle": "Summary of Benefits and Risks",
+            "text": "",
+            "contentChildIds": []
+          },
+          {
+            "id": "Content_10",
+            "name": "SECTION 3",
+            "sectionNumber": "3",
+            "sectionTitle": "TRIAL OBJECTIVES, ENDPOINTS AND ESTIMANDS",
+            "text": "",
+            "contentChildIds": [
+              "Content_11"
+            ]
+          },
+          {
+            "id": "Content_11",
+            "name": "SECTION 3.1",
+            "sectionNumber": "3.1",
+            "sectionTitle": "Primary Objectives",
+            "text": "<table>\n  <tr>\n    <th style=\"vertical-align: top\"><p>Primary Objective</p></th>\n    <th style=\"vertical-align: top\"><p>Primary Endpoint</p></th>\n  </tr>\n  <tr>\n    <td style=\"vertical-align: top\"><p><usdm:ref klass=\"Objective\" namexref=\"OBJ1\" attribute=\"description\"/></p></td>\n    <td style=\"vertical-align: top\">\n      <p><usdm:ref klass=\"Endpoint\" namexref=\"END1\" attribute=\"description\"/></p>\n      <p><usdm:ref klass=\"Endpoint\" namexref=\"END2\" attribute=\"description\"/></p>\n    </td>\n  </tr>\n  <tr>\n    <td style=\"vertical-align: top\"><p><usdm:ref klass=\"Objective\" namexref=\"OBJ2\" attribute=\"description\"/></p></td>\n    <td style=\"vertical-align: top\">\n      <p><usdm:ref klass=\"Endpoint\" namexref=\"END3\" attribute=\"description\"/></p>\n      <p><usdm:ref klass=\"Endpoint\" namexref=\"END4\" attribute=\"description\"/></p>\n      <p><usdm:ref klass=\"Endpoint\" namexref=\"END5\" attribute=\"description\"/></p>\n    </td>\n  </tr>\n</table>",
+            "contentChildIds": []
+          },
+          {
+            "id": "Content_12",
+            "name": "SECTION 4",
+            "sectionNumber": "4",
+            "sectionTitle": "TRIAL DESIGN",
+            "text": "",
+            "contentChildIds": [
+              "Content_13",
+              "Content_15",
+              "Content_19",
+              "Content_20"
+            ]
+          },
+          {
+            "id": "Content_13",
+            "name": "SECTION 4.1",
+            "sectionNumber": "4.1",
+            "sectionTitle": "Description of Trial Design",
+            "text": "",
+            "contentChildIds": [
+              "Content_14"
+            ]
+          },
+          {
+            "id": "Content_14",
+            "name": "SECTION 4.1.1",
+            "sectionNumber": "4.1.1",
+            "sectionTitle": "Participant Input into Design",
+            "text": "",
+            "contentChildIds": []
+          },
+          {
+            "id": "Content_15",
+            "name": "SECTION 4.2",
+            "sectionNumber": "4.2",
+            "sectionTitle": "Rationale for Trial Design",
+            "text": "",
+            "contentChildIds": [
+              "Content_16",
+              "Content_17",
+              "Content_18"
+            ]
+          },
+          {
+            "id": "Content_16",
+            "name": "SECTION 4.2.1",
+            "sectionNumber": "4.2.1",
+            "sectionTitle": "Rationale for Comparator",
+            "text": "",
+            "contentChildIds": []
+          },
+          {
+            "id": "Content_17",
+            "name": "SECTION 4.2.2",
+            "sectionNumber": "4.2.2",
+            "sectionTitle": "Rationale for Adaptive or Novel Trial Design",
+            "text": "",
+            "contentChildIds": []
+          },
+          {
+            "id": "Content_18",
+            "name": "SECTION 4.2.3",
+            "sectionNumber": "4.2.3",
+            "sectionTitle": "Other Trial Design Considerations",
+            "text": "",
+            "contentChildIds": []
+          },
+          {
+            "id": "Content_19",
+            "name": "SECTION 4.3",
+            "sectionNumber": "4.3",
+            "sectionTitle": "Access to Trial Intervention After End of Trial",
+            "text": "",
+            "contentChildIds": []
+          },
+          {
+            "id": "Content_20",
+            "name": "SECTION 4.4",
+            "sectionNumber": "4.4",
+            "sectionTitle": "Start of Trial and End of Trial",
+            "text": "",
+            "contentChildIds": []
+          },
+          {
+            "id": "Content_21",
+            "name": "SECTION 5",
+            "sectionNumber": "5",
+            "sectionTitle": "TRIAL POPULATION",
+            "text": "",
+            "contentChildIds": [
+              "Content_22",
+              "Content_23",
+              "Content_24",
+              "Content_25",
+              "Content_26",
+              "Content_31"
+            ]
+          },
+          {
+            "id": "Content_22",
+            "name": "SECTION 5.1",
+            "sectionNumber": "5.1",
+            "sectionTitle": "Selection of Trial Population",
+            "text": "",
+            "contentChildIds": []
+          },
+          {
+            "id": "Content_23",
+            "name": "SECTION 5.2",
+            "sectionNumber": "5.2",
+            "sectionTitle": "Rationale for Trial Population",
+            "text": "",
+            "contentChildIds": []
+          },
+          {
+            "id": "Content_24",
+            "name": "SECTION 5.3",
+            "sectionNumber": "5.3",
+            "sectionTitle": "Inclusion Criteria",
+            "text": "<p>Patients may be included in the study only if they meet <strong>all</strong> the following criteria:</p>\n<table>\n  <tr>\n    <td style=\"vertical-align: top\">[1]</td>\n    <td style=\"vertical-align: top\">\n      Males and postmenopausal females at least 50 years of age.\n    </td>\n  </tr>\n  <tr>\n    <td style=\"vertical-align: top\">[2]</td>\n    <td style=\"vertical-align: top\">Diagnosis of probable AD as defined by National Institute of Neurological and Communicative Disorders and Stroke\n      (NINCDS) and the Alzheimer\u2019s Disease and Related Disorders Association (ADRDA) guidelines (Attachment LZZT.7).\n  </tr>\n  <tr>\n    <td style=\"vertical-align: top\">[3]</td>\n    <td style=\"vertical-align: top\">MMSE score of 10 to 23.</td> \n  </tr>\n  <tr>\n    <td style=\"vertical-align: top\">[4]</td>\n    <td style=\"vertical-align: top\">Hachinski Ischemic Scale score of \u22644 (Attachment LZZT.8).</td>\n  </tr>\n  <tr>\n    <td style=\"vertical-align: top\">[5]</td>\n    <td style=\"vertical-align: top\">CNS imaging (CT scan or MRI of brain) compatible with AD within past 1 year.\n      The following findings are incompatible with AD:\n      <ol type=\"a\">\n        <li>Large vessel strokes\n          <ol type=\"1\">\n            <li>Any definite area of encephalomalacia consistent with ischemic necrosis in any cerebral artery\n              territory.</li>\n            <li>Large, confluent areas of encephalomalacia in parieto-occipital or frontal regions consistent with\n              watershed infarcts. The above are exclusionary. Exceptions are made for small areas of cortical asymmetry\n              which may represent a small cortical stroke or a focal area of atrophy provided there is no abnormal\n              signal intensity in the immediately underlying parenchyma. Only one such questionable area allowed per\n              scan, and size is restricted to \u22641cm in frontal/parietal/temporal cortices and \u22642 cm in occipital cortex.\n            </li>\n          </ol>\n        </li>\n        <li>Small vessel ischemia\n          <ol type=\"1\">\n            <li>Lacunar infarct is defined as an area of abnormal intensity seen on CT scan or on both T1 and T2\n              weighted MRI images in the basal ganglia, thalamus or deep white matter which is \u22641 cm in maximal\n              diameter. A maximum of one lacune is allowed per scan.</li>\n            <li>Leukoariosis or leukoencephalopathy is regarded as an abnormality seen on T2 but not T1 weighted MRIs,\n              or on CT. This is accepted if mild or moderate in extent, meaning involvement of less than 25% of cortical\n              white matter.</li>\n          </ol>\n        </li>\n        <li>Miscellaneous\n          <ol type=\"1\">\n            <li>Benign small extra-axial tumors (ie, meningiomas) are accepted if they do not contact or indent the\n              brain parenchyma.</li>\n            <li>extra-axial arachnoid cysts are accepted if they do not indent or deform the brain parenchyma.</li>\n          </ol>\n        </li>\n      </ol>\n    </td>\n  </tr>\n  <tr>\n    <td style=\"vertical-align: top\">[6]</td>\n    <td style=\"vertical-align: top\">Investigator has obtained informed consent signed by the patient (and/or legal representative) and by the\n      caregiver.</td>\n  </tr>\n  <tr>\n    <td style=\"vertical-align: top\">[7]</td>\n    <td style=\"vertical-align: top\">Geographic proximity to investigator\u2019s site that allows adequate follow-up.</td>\n  </tr>\n  <tr>\n    <td style=\"vertical-align: top\">[8]</td>\n    <td style=\"vertical-align: top\">A reliable caregiver who is in frequent or daily contact with the patient and who will accompany the patient to\n      the office and/or be available by telephone at designated times, will monitor administration of prescribed\n      medications, and will be responsible for the overall care of the patient at home. The caregiver and the patient\n      must be able to communicate in English and willing to comply with 26 weeks of transdermal therapy.</td>\n  </tr>\n<table>",
+            "contentChildIds": []
+          },
+          {
+            "id": "Content_25",
+            "name": "SECTION 5.4",
+            "sectionNumber": "5.4",
+            "sectionTitle": "Exclusion Criteria",
+            "text": "",
+            "contentChildIds": []
+          },
+          {
+            "id": "Content_26",
+            "name": "SECTION 5.5",
+            "sectionNumber": "5.5",
+            "sectionTitle": "Lifestyle Considerations",
+            "text": "",
+            "contentChildIds": [
+              "Content_27",
+              "Content_28",
+              "Content_29",
+              "Content_30"
+            ]
+          },
+          {
+            "id": "Content_27",
+            "name": "SECTION 5.5.1",
+            "sectionNumber": "5.5.1",
+            "sectionTitle": "Meals and Dietary Restrictions",
+            "text": "",
+            "contentChildIds": []
+          },
+          {
+            "id": "Content_28",
+            "name": "SECTION 5.5.2",
+            "sectionNumber": "5.5.2",
+            "sectionTitle": "Caffeine, Alcohol, Tobacco, and Other Habits",
+            "text": "",
+            "contentChildIds": []
+          },
+          {
+            "id": "Content_29",
+            "name": "SECTION 5.5.3",
+            "sectionNumber": "5.5.3",
+            "sectionTitle": "Physical Activity",
+            "text": "",
+            "contentChildIds": []
+          },
+          {
+            "id": "Content_30",
+            "name": "SECTION 5.5.4",
+            "sectionNumber": "5.5.4",
+            "sectionTitle": "Other Activity",
+            "text": "",
+            "contentChildIds": []
+          },
+          {
+            "id": "Content_31",
+            "name": "SECTION 5.6",
+            "sectionNumber": "5.6",
+            "sectionTitle": "Screen Failures",
+            "text": "",
+            "contentChildIds": []
+          },
+          {
+            "id": "Content_32",
+            "name": "SECTION 6",
+            "sectionNumber": "6",
+            "sectionTitle": "TRIAL INTERVENTION AND CONCOMITANT THERAPY",
+            "text": "",
+            "contentChildIds": [
+              "Content_33",
+              "Content_34",
+              "Content_35",
+              "Content_37",
+              "Content_38",
+              "Content_42",
+              "Content_46",
+              "Content_47"
+            ]
+          },
+          {
+            "id": "Content_33",
+            "name": "SECTION 6.1",
+            "sectionNumber": "6.1",
+            "sectionTitle": "Description of Trial Intervention",
+            "text": "",
+            "contentChildIds": []
+          },
+          {
+            "id": "Content_34",
+            "name": "SECTION 6.2",
+            "sectionNumber": "6.2",
+            "sectionTitle": "Rationale for Trial Intervention",
+            "text": "",
+            "contentChildIds": []
+          },
+          {
+            "id": "Content_35",
+            "name": "SECTION 6.3",
+            "sectionNumber": "6.3",
+            "sectionTitle": "Dosing and Administration",
+            "text": "",
+            "contentChildIds": [
+              "Content_36"
+            ]
+          },
+          {
+            "id": "Content_36",
+            "name": "SECTION 6.3.1",
+            "sectionNumber": "6.3.1",
+            "sectionTitle": "Trial Intervention Dose Modification",
+            "text": "",
+            "contentChildIds": []
+          },
+          {
+            "id": "Content_37",
+            "name": "SECTION 6.4",
+            "sectionNumber": "6.4",
+            "sectionTitle": "Treatment of Overdose",
+            "text": "",
+            "contentChildIds": []
+          },
+          {
+            "id": "Content_38",
+            "name": "SECTION 6.5",
+            "sectionNumber": "6.5",
+            "sectionTitle": "Preparation, Handling, Storage and Accountability",
+            "text": "",
+            "contentChildIds": [
+              "Content_39",
+              "Content_40",
+              "Content_41"
+            ]
+          },
+          {
+            "id": "Content_39",
+            "name": "SECTION 6.5.1",
+            "sectionNumber": "6.5.1",
+            "sectionTitle": "Preparation of Trial Intervention",
+            "text": "",
+            "contentChildIds": []
+          },
+          {
+            "id": "Content_40",
+            "name": "SECTION 6.5.2",
+            "sectionNumber": "6.5.2",
+            "sectionTitle": "Handling and Storage of Trial Intervention",
+            "text": "",
+            "contentChildIds": []
+          },
+          {
+            "id": "Content_41",
+            "name": "SECTION 6.5.3",
+            "sectionNumber": "6.5.3",
+            "sectionTitle": "Accountability of Trial Intervention",
+            "text": "",
+            "contentChildIds": []
+          },
+          {
+            "id": "Content_42",
+            "name": "SECTION 6.6",
+            "sectionNumber": "6.6",
+            "sectionTitle": "Participant Assignment, Randomisation and Blinding",
+            "text": "",
+            "contentChildIds": [
+              "Content_43",
+              "Content_44",
+              "Content_45"
+            ]
+          },
+          {
+            "id": "Content_43",
+            "name": "SECTION 6.6.1",
+            "sectionNumber": "6.6.1",
+            "sectionTitle": "Participant Assignment",
+            "text": "",
+            "contentChildIds": []
+          },
+          {
+            "id": "Content_44",
+            "name": "SECTION 6.6.2",
+            "sectionNumber": "6.6.2",
+            "sectionTitle": "Randomisation",
+            "text": "",
+            "contentChildIds": []
+          },
+          {
+            "id": "Content_45",
+            "name": "SECTION 6.6.3",
+            "sectionNumber": "6.6.3",
+            "sectionTitle": "Blinding and Unblinding",
+            "text": "<p>The study will be double-blind. To further preserve the blinding of the study, only a minimum number of Lilly and CRO personnel will see the randomization table and codes before the study is complete.</p>\n<p>Emergency codes generated by a computer drug-labeling system will be available to the investigator. These codes, which reveal the patients treatment group, may be opened during the study only if the choice of follow-up treatment depends on the patient\u2019s therapy assignment.</p>\n<p>The investigator should make every effort to contact the clinical research physician prior to unblinding a patient\u2019s therapy assignment. If a patient\u2019s therapy assignment is unblinded, Lilly must be notified immediately by telephone. After the study, the investigator must return all sealed and any opened codes.</p>",
+            "contentChildIds": []
+          },
+          {
+            "id": "Content_46",
+            "name": "SECTION 6.7",
+            "sectionNumber": "6.7",
+            "sectionTitle": "Trial Intervention Compliance",
+            "text": "",
+            "contentChildIds": []
+          },
+          {
+            "id": "Content_47",
+            "name": "SECTION 6.8",
+            "sectionNumber": "6.8",
+            "sectionTitle": "Concomitant Therapy",
+            "text": "",
+            "contentChildIds": [
+              "Content_48",
+              "Content_49",
+              "Content_50",
+              "Content_51"
+            ]
+          },
+          {
+            "id": "Content_48",
+            "name": "SECTION 6.8.1",
+            "sectionNumber": "6.8.1",
+            "sectionTitle": "Prohibited Concomitant Therapy",
+            "text": "",
+            "contentChildIds": []
+          },
+          {
+            "id": "Content_49",
+            "name": "SECTION 6.8.2",
+            "sectionNumber": "6.8.2",
+            "sectionTitle": "Permitted Concomitant Therapy",
+            "text": "",
+            "contentChildIds": []
+          },
+          {
+            "id": "Content_50",
+            "name": "SECTION 6.8.3",
+            "sectionNumber": "6.8.3",
+            "sectionTitle": "Rescue Therapy",
+            "text": "",
+            "contentChildIds": []
+          },
+          {
+            "id": "Content_51",
+            "name": "SECTION 6.8.4",
+            "sectionNumber": "6.8.4",
+            "sectionTitle": "Other Therapy",
+            "text": "",
+            "contentChildIds": []
+          },
+          {
+            "id": "Content_52",
+            "name": "SECTION 7",
+            "sectionNumber": "7",
+            "sectionTitle": "DISCONTINUATION OF TRIAL INTERVENTION AND PARTICIPANT WITHDRAWAL FROM TRIAL",
+            "text": "",
+            "contentChildIds": [
+              "Content_53",
+              "Content_57",
+              "Content_58",
+              "Content_59"
+            ]
+          },
+          {
+            "id": "Content_53",
+            "name": "SECTION 7.1",
+            "sectionNumber": "7.1",
+            "sectionTitle": "Discontinuation of Trial Intervention",
+            "text": "",
+            "contentChildIds": [
+              "Content_54",
+              "Content_55",
+              "Content_56"
+            ]
+          },
+          {
+            "id": "Content_54",
+            "name": "SECTION 7.1.1",
+            "sectionNumber": "7.1.1",
+            "sectionTitle": "Criteria for Permanent Discontinuation of Trial Intervention",
+            "text": "",
+            "contentChildIds": []
+          },
+          {
+            "id": "Content_55",
+            "name": "SECTION 7.1.2",
+            "sectionNumber": "7.1.2",
+            "sectionTitle": "Temporary Discontinuation or Interruption of Trial Intervention",
+            "text": "",
+            "contentChildIds": []
+          },
+          {
+            "id": "Content_56",
+            "name": "SECTION 7.1.3",
+            "sectionNumber": "7.1.3",
+            "sectionTitle": "Rechallenge",
+            "text": "",
+            "contentChildIds": []
+          },
+          {
+            "id": "Content_57",
+            "name": "SECTION 7.2",
+            "sectionNumber": "7.2",
+            "sectionTitle": "Participant Withdrawal from the Trial",
+            "text": "",
+            "contentChildIds": []
+          },
+          {
+            "id": "Content_58",
+            "name": "SECTION 7.3",
+            "sectionNumber": "7.3",
+            "sectionTitle": "Lost to Follow-Up",
+            "text": "",
+            "contentChildIds": []
+          },
+          {
+            "id": "Content_59",
+            "name": "SECTION 7.4",
+            "sectionNumber": "7.4",
+            "sectionTitle": "Trial Stopping Rules",
+            "text": "",
+            "contentChildIds": []
+          },
+          {
+            "id": "Content_60",
+            "name": "SECTION 8",
+            "sectionNumber": "8",
+            "sectionTitle": "TRIAL ASSESSMENTS AND PROCEDURES",
+            "text": "",
+            "contentChildIds": [
+              "Content_61",
+              "Content_62",
+              "Content_63",
+              "Content_69",
+              "Content_80",
+              "Content_83",
+              "Content_89",
+              "Content_90",
+              "Content_91",
+              "Content_92"
+            ]
+          },
+          {
+            "id": "Content_61",
+            "name": "SECTION 8.1",
+            "sectionNumber": "8.1",
+            "sectionTitle": "Screening/Baseline Assessments and Procedures",
+            "text": "",
+            "contentChildIds": []
+          },
+          {
+            "id": "Content_62",
+            "name": "SECTION 8.2",
+            "sectionNumber": "8.2",
+            "sectionTitle": "Efficacy Assessments and Procedures",
+            "text": "",
+            "contentChildIds": []
+          },
+          {
+            "id": "Content_63",
+            "name": "SECTION 8.3",
+            "sectionNumber": "8.3",
+            "sectionTitle": "Safety Assessments and Procedures",
+            "text": "",
+            "contentChildIds": [
+              "Content_64",
+              "Content_65",
+              "Content_66",
+              "Content_67",
+              "Content_68"
+            ]
+          },
+          {
+            "id": "Content_64",
+            "name": "SECTION 8.3.1",
+            "sectionNumber": "8.3.1",
+            "sectionTitle": "Physical Examination",
+            "text": "",
+            "contentChildIds": []
+          },
+          {
+            "id": "Content_65",
+            "name": "SECTION 8.3.2",
+            "sectionNumber": "8.3.2",
+            "sectionTitle": "Vital Signs",
+            "text": "",
+            "contentChildIds": []
+          },
+          {
+            "id": "Content_66",
+            "name": "SECTION 8.3.3",
+            "sectionNumber": "8.3.3",
+            "sectionTitle": "Electrocardiograms",
+            "text": "",
+            "contentChildIds": []
+          },
+          {
+            "id": "Content_67",
+            "name": "SECTION 8.3.4",
+            "sectionNumber": "8.3.4",
+            "sectionTitle": "Clinical Laboratory Assessments",
+            "text": "",
+            "contentChildIds": []
+          },
+          {
+            "id": "Content_68",
+            "name": "SECTION 8.3.5",
+            "sectionNumber": "8.3.5",
+            "sectionTitle": "Suicidal Ideation and Behaviour Risk Monitoring",
+            "text": "",
+            "contentChildIds": []
+          },
+          {
+            "id": "Content_69",
+            "name": "SECTION 8.4",
+            "sectionNumber": "8.4",
+            "sectionTitle": "Adverse Events and Serious Adverse Events",
+            "text": "",
+            "contentChildIds": [
+              "Content_70",
+              "Content_71",
+              "Content_72",
+              "Content_73",
+              "Content_74",
+              "Content_75",
+              "Content_76",
+              "Content_77",
+              "Content_78",
+              "Content_79"
+            ]
+          },
+          {
+            "id": "Content_70",
+            "name": "SECTION 8.4.1",
+            "sectionNumber": "8.4.1",
+            "sectionTitle": "Definitions of AE and SAE",
+            "text": "",
+            "contentChildIds": []
+          },
+          {
+            "id": "Content_71",
+            "name": "SECTION 8.4.2",
+            "sectionNumber": "8.4.2",
+            "sectionTitle": "Time Period and Frequency for Collecting AE and SAE Information",
+            "text": "",
+            "contentChildIds": []
+          },
+          {
+            "id": "Content_72",
+            "name": "SECTION 8.4.3",
+            "sectionNumber": "8.4.3",
+            "sectionTitle": "Identifying AEs and SAEs",
+            "text": "",
+            "contentChildIds": []
+          },
+          {
+            "id": "Content_73",
+            "name": "SECTION 8.4.4",
+            "sectionNumber": "8.4.4",
+            "sectionTitle": "Recording of AEs and SAEs",
+            "text": "",
+            "contentChildIds": []
+          },
+          {
+            "id": "Content_74",
+            "name": "SECTION 8.4.5",
+            "sectionNumber": "8.4.5",
+            "sectionTitle": "Follow-up of AEs and SAEs",
+            "text": "",
+            "contentChildIds": []
+          },
+          {
+            "id": "Content_75",
+            "name": "SECTION 8.4.6",
+            "sectionNumber": "8.4.6",
+            "sectionTitle": "Reporting of SAEs",
+            "text": "",
+            "contentChildIds": []
+          },
+          {
+            "id": "Content_76",
+            "name": "SECTION 8.4.7",
+            "sectionNumber": "8.4.7",
+            "sectionTitle": "Regulatory Reporting Requirements for SAEs",
+            "text": "",
+            "contentChildIds": []
+          },
+          {
+            "id": "Content_77",
+            "name": "SECTION 8.4.8",
+            "sectionNumber": "8.4.8",
+            "sectionTitle": "Serious and Unexpected Adverse Reaction Reporting",
+            "text": "",
+            "contentChildIds": []
+          },
+          {
+            "id": "Content_78",
+            "name": "SECTION 8.4.9",
+            "sectionNumber": "8.4.9",
+            "sectionTitle": "Adverse Events of Special Interest",
+            "text": "",
+            "contentChildIds": []
+          },
+          {
+            "id": "Content_79",
+            "name": "SECTION 8.4.10",
+            "sectionNumber": "8.4.10",
+            "sectionTitle": "Disease-related Events or Outcomes Not Qualifying as AEs or SAEs",
+            "text": "",
+            "contentChildIds": []
+          },
+          {
+            "id": "Content_80",
+            "name": "SECTION 8.5",
+            "sectionNumber": "8.5",
+            "sectionTitle": "Pregnancy and Postpartum Information",
+            "text": "",
+            "contentChildIds": [
+              "Content_81",
+              "Content_82"
+            ]
+          },
+          {
+            "id": "Content_81",
+            "name": "SECTION 8.5.1",
+            "sectionNumber": "8.5.1",
+            "sectionTitle": "Participants Who Become Pregnant During the Trial",
+            "text": "",
+            "contentChildIds": []
+          },
+          {
+            "id": "Content_82",
+            "name": "SECTION 8.5.2",
+            "sectionNumber": "8.5.2",
+            "sectionTitle": "Participants Whose Partners Become Pregnant",
+            "text": "",
+            "contentChildIds": []
+          },
+          {
+            "id": "Content_83",
+            "name": "SECTION 8.6",
+            "sectionNumber": "8.6",
+            "sectionTitle": "Medical Device Product Complaints for Drug/Device Combination Products",
+            "text": "",
+            "contentChildIds": [
+              "Content_84",
+              "Content_85",
+              "Content_86",
+              "Content_87",
+              "Content_88"
+            ]
+          },
+          {
+            "id": "Content_84",
+            "name": "SECTION 8.6.1",
+            "sectionNumber": "8.6.1",
+            "sectionTitle": "Definition of Medical Device Product Complaints",
+            "text": "",
+            "contentChildIds": []
+          },
+          {
+            "id": "Content_85",
+            "name": "SECTION 8.6.2",
+            "sectionNumber": "8.6.2",
+            "sectionTitle": "Recording of Medical Device Product Complaints",
+            "text": "",
+            "contentChildIds": []
+          },
+          {
+            "id": "Content_86",
+            "name": "SECTION 8.6.3",
+            "sectionNumber": "8.6.3",
+            "sectionTitle": "Time Period and Frequency for Collecting Medical Device Product Complaints .",
+            "text": "",
+            "contentChildIds": []
+          },
+          {
+            "id": "Content_87",
+            "name": "SECTION 8.6.4",
+            "sectionNumber": "8.6.4",
+            "sectionTitle": "Follow-Up of Medical Device Product Complaints",
+            "text": "",
+            "contentChildIds": []
+          },
+          {
+            "id": "Content_88",
+            "name": "SECTION 8.6.5",
+            "sectionNumber": "8.6.5",
+            "sectionTitle": "Regulatory Reporting Requirements for Medical Device Product Complaints",
+            "text": "",
+            "contentChildIds": []
+          },
+          {
+            "id": "Content_89",
+            "name": "SECTION 8.7",
+            "sectionNumber": "8.7",
+            "sectionTitle": "Pharmacokinetics",
+            "text": "",
+            "contentChildIds": []
+          },
+          {
+            "id": "Content_90",
+            "name": "SECTION 8.8",
+            "sectionNumber": "8.8",
+            "sectionTitle": "Genetics",
+            "text": "",
+            "contentChildIds": []
+          },
+          {
+            "id": "Content_91",
+            "name": "SECTION 8.9",
+            "sectionNumber": "8.9",
+            "sectionTitle": "Biomarkers",
+            "text": "",
+            "contentChildIds": []
+          },
+          {
+            "id": "Content_92",
+            "name": "SECTION 8.1",
+            "sectionNumber": "8.1",
+            "sectionTitle": "Immunogenicity Assessments",
+            "text": "",
+            "contentChildIds": [
+              "Content_93"
+            ]
+          },
+          {
+            "id": "Content_93",
+            "name": "SECTION 8.1.1",
+            "sectionNumber": "8.1.1",
+            "sectionTitle": "Medical Resource Utilisation and Health Economics",
+            "text": "",
+            "contentChildIds": []
+          },
+          {
+            "id": "Content_94",
+            "name": "SECTION 9",
+            "sectionNumber": "9",
+            "sectionTitle": "STATISTICAL CONSIDERATIONS",
+            "text": "",
+            "contentChildIds": [
+              "Content_95",
+              "Content_96",
+              "Content_102",
+              "Content_103",
+              "Content_104",
+              "Content_105",
+              "Content_106",
+              "Content_107",
+              "Content_108"
+            ]
+          },
+          {
+            "id": "Content_95",
+            "name": "SECTION 9.1",
+            "sectionNumber": "9.1",
+            "sectionTitle": "Analysis Sets",
+            "text": "",
+            "contentChildIds": []
+          },
+          {
+            "id": "Content_96",
+            "name": "SECTION 9.2",
+            "sectionNumber": "9.2",
+            "sectionTitle": "Analyses Supporting Primary Objective(s)",
+            "text": "",
+            "contentChildIds": [
+              "Content_97",
+              "Content_98",
+              "Content_99",
+              "Content_100",
+              "Content_101"
+            ]
+          },
+          {
+            "id": "Content_97",
+            "name": "SECTION 9.2.1",
+            "sectionNumber": "9.2.1",
+            "sectionTitle": "Statistical Model, Hypothesis, and Method of Analysis",
+            "text": "",
+            "contentChildIds": []
+          },
+          {
+            "id": "Content_98",
+            "name": "SECTION 9.2.2",
+            "sectionNumber": "9.2.2",
+            "sectionTitle": "Handling of Intercurrent Events of Primary Estimand(s)",
+            "text": "",
+            "contentChildIds": []
+          },
+          {
+            "id": "Content_99",
+            "name": "SECTION 9.2.3",
+            "sectionNumber": "9.2.3",
+            "sectionTitle": "Handling of Missing Data",
+            "text": "",
+            "contentChildIds": []
+          },
+          {
+            "id": "Content_100",
+            "name": "SECTION 9.2.4",
+            "sectionNumber": "9.2.4",
+            "sectionTitle": "Sensitivity Analysis",
+            "text": "",
+            "contentChildIds": []
+          },
+          {
+            "id": "Content_101",
+            "name": "SECTION 9.2.5",
+            "sectionNumber": "9.2.5",
+            "sectionTitle": "Supplementary Analysis",
+            "text": "",
+            "contentChildIds": []
+          },
+          {
+            "id": "Content_102",
+            "name": "SECTION 9.3",
+            "sectionNumber": "9.3",
+            "sectionTitle": "Analysis Supporting Secondary Objective(s)",
+            "text": "",
+            "contentChildIds": []
+          },
+          {
+            "id": "Content_103",
+            "name": "SECTION 9.4",
+            "sectionNumber": "9.4",
+            "sectionTitle": "Analysis of Exploratory Objective(s)",
+            "text": "",
+            "contentChildIds": []
+          },
+          {
+            "id": "Content_104",
+            "name": "SECTION 9.5",
+            "sectionNumber": "9.5",
+            "sectionTitle": "Safety Analyses",
+            "text": "",
+            "contentChildIds": []
+          },
+          {
+            "id": "Content_105",
+            "name": "SECTION 9.6",
+            "sectionNumber": "9.6",
+            "sectionTitle": "Other Analyses",
+            "text": "",
+            "contentChildIds": []
+          },
+          {
+            "id": "Content_106",
+            "name": "SECTION 9.7",
+            "sectionNumber": "9.7",
+            "sectionTitle": "Interim Analyses",
+            "text": "",
+            "contentChildIds": []
+          },
+          {
+            "id": "Content_107",
+            "name": "SECTION 9.8",
+            "sectionNumber": "9.8",
+            "sectionTitle": "Sample Size Determination",
+            "text": "",
+            "contentChildIds": []
+          },
+          {
+            "id": "Content_108",
+            "name": "SECTION 9.9",
+            "sectionNumber": "9.9",
+            "sectionTitle": "Protocol Deviations",
+            "text": "",
+            "contentChildIds": []
+          },
+          {
+            "id": "Content_109",
+            "name": "SECTION 10",
+            "sectionNumber": "10",
+            "sectionTitle": "GENERAL CONSIDERATIONS: REGULATORY, ETHICAL, AND TRIAL OVERSIGHT",
+            "text": "",
+            "contentChildIds": [
+              "Content_110",
+              "Content_111",
+              "Content_112",
+              "Content_113",
+              "Content_114"
+            ]
+          },
+          {
+            "id": "Content_110",
+            "name": "SECTION 10.1",
+            "sectionNumber": "10.1",
+            "sectionTitle": "Regulatory and Ethical Considerations",
+            "text": "",
+            "contentChildIds": []
+          },
+          {
+            "id": "Content_111",
+            "name": "SECTION 10.2",
+            "sectionNumber": "10.2",
+            "sectionTitle": "Committees",
+            "text": "",
+            "contentChildIds": []
+          },
+          {
+            "id": "Content_112",
+            "name": "SECTION 10.3",
+            "sectionNumber": "10.3",
+            "sectionTitle": "Informed Consent Process",
+            "text": "",
+            "contentChildIds": []
+          },
+          {
+            "id": "Content_113",
+            "name": "SECTION 10.4",
+            "sectionNumber": "10.4",
+            "sectionTitle": "Data Protection",
+            "text": "",
+            "contentChildIds": []
+          },
+          {
+            "id": "Content_114",
+            "name": "SECTION 10.5",
+            "sectionNumber": "10.5",
+            "sectionTitle": "Early Site Closure or Trial Termination",
+            "text": "",
+            "contentChildIds": []
+          },
+          {
+            "id": "Content_115",
+            "name": "SECTION 11",
+            "sectionNumber": "11",
+            "sectionTitle": "GENERAL CONSIDERATIONS: RISK MANAGEMENT AND QUALITY ASSURANCE",
+            "text": "",
+            "contentChildIds": [
+              "Content_116",
+              "Content_117",
+              "Content_118"
+            ]
+          },
+          {
+            "id": "Content_116",
+            "name": "SECTION 11.1",
+            "sectionNumber": "11.1",
+            "sectionTitle": "Quality Tolerance Limits",
+            "text": "",
+            "contentChildIds": []
+          },
+          {
+            "id": "Content_117",
+            "name": "SECTION 11.2",
+            "sectionNumber": "11.2",
+            "sectionTitle": "Data Quality Assurance",
+            "text": "",
+            "contentChildIds": []
+          },
+          {
+            "id": "Content_118",
+            "name": "SECTION 11.3",
+            "sectionNumber": "11.3",
+            "sectionTitle": "Source Data",
+            "text": "",
+            "contentChildIds": []
+          },
+          {
+            "id": "Content_119",
+            "name": "SECTION 12",
+            "sectionNumber": "12",
+            "sectionTitle": "APPENDIX: ADVERSE EVENTS AND SERIOUS ADVERSE EVENTS - DEFINITIONS, SEVERITY, AND CAUSALITY",
+            "text": "",
+            "contentChildIds": [
+              "Content_120",
+              "Content_121",
+              "Content_122",
+              "Content_123"
+            ]
+          },
+          {
+            "id": "Content_120",
+            "name": "SECTION 12.1",
+            "sectionNumber": "12.1",
+            "sectionTitle": "Further Details and Clarifications on the AE Definition",
+            "text": "",
+            "contentChildIds": []
+          },
+          {
+            "id": "Content_121",
+            "name": "SECTION 12.2",
+            "sectionNumber": "12.2",
+            "sectionTitle": "Further Details and Clarifications on the SAE Definition",
+            "text": "",
+            "contentChildIds": []
+          },
+          {
+            "id": "Content_122",
+            "name": "SECTION 12.3",
+            "sectionNumber": "12.3",
+            "sectionTitle": "Severity",
+            "text": "",
+            "contentChildIds": []
+          },
+          {
+            "id": "Content_123",
+            "name": "SECTION 12.4",
+            "sectionNumber": "12.4",
+            "sectionTitle": "Causality",
+            "text": "",
+            "contentChildIds": []
+          },
+          {
+            "id": "Content_124",
+            "name": "SECTION 13",
+            "sectionNumber": "13",
+            "sectionTitle": "APPENDIX: DEFINITIONS AND SUPPORTING OPERATIONAL DETAILS",
+            "text": "",
+            "contentChildIds": [
+              "Content_125",
+              "Content_129",
+              "Content_130",
+              "Content_131"
+            ]
+          },
+          {
+            "id": "Content_125",
+            "name": "SECTION 13.1",
+            "sectionNumber": "13.1",
+            "sectionTitle": "Contraception and Pregnancy Testing",
+            "text": "",
+            "contentChildIds": [
+              "Content_126",
+              "Content_127",
+              "Content_128"
+            ]
+          },
+          {
+            "id": "Content_126",
+            "name": "SECTION 13.1.1",
+            "sectionNumber": "13.1.1",
+            "sectionTitle": "Definitions Related to Childbearing Potential",
+            "text": "",
+            "contentChildIds": []
+          },
+          {
+            "id": "Content_127",
+            "name": "SECTION 13.1.2",
+            "sectionNumber": "13.1.2",
+            "sectionTitle": "Contraception",
+            "text": "",
+            "contentChildIds": []
+          },
+          {
+            "id": "Content_128",
+            "name": "SECTION 13.1.3",
+            "sectionNumber": "13.1.3",
+            "sectionTitle": "Pregnancy Testing",
+            "text": "",
+            "contentChildIds": []
+          },
+          {
+            "id": "Content_129",
+            "name": "SECTION 13.2",
+            "sectionNumber": "13.2",
+            "sectionTitle": "Clinical Laboratory Tests",
+            "text": "",
+            "contentChildIds": []
+          },
+          {
+            "id": "Content_130",
+            "name": "SECTION 13.3",
+            "sectionNumber": "13.3",
+            "sectionTitle": "Country/Region-Specific Differences",
+            "text": "",
+            "contentChildIds": []
+          },
+          {
+            "id": "Content_131",
+            "name": "SECTION 13.4",
+            "sectionNumber": "13.4",
+            "sectionTitle": "Prior Protocol Amendments",
+            "text": "",
+            "contentChildIds": []
+          },
+          {
+            "id": "Content_132",
+            "name": "SECTION 14",
+            "sectionNumber": "14",
+            "sectionTitle": "APPENDIX: GLOSSARY OF TERMS",
+            "text": "",
+            "contentChildIds": []
+          },
+          {
+            "id": "Content_133",
+            "name": "SECTION 15",
+            "sectionNumber": "15",
+            "sectionTitle": "APPENDIX: REFERENCES",
+            "text": "",
+            "contentChildIds": []
           }
         ]
       }
