@@ -1100,11 +1100,11 @@ components:
           default: []
         interventionModel:
           $ref: '#/components/schemas/Code'
-        content:
+        contents:
           items:
             $ref: '#/components/schemas/Content'
           type: array
-          title: Content
+          title: Contents
         encounters:
           items:
             $ref: '#/components/schemas/Encounter'
@@ -1204,7 +1204,7 @@ components:
         - id
         - name
         - interventionModel
-        - content
+        - contents
         - studyArms
         - studyCells
         - studyDesignRationale
