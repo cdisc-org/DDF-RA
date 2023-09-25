@@ -3,7 +3,7 @@
   "info": {
     "title": "Simple API for DDF",
     "description": "A simple TransCelerate Digital Data Flow (DDF) Study Definitions Repository API.",
-    "version": "2.3 Provisional (0.38)"
+    "version": "2.4 Provisional (0.39)"
   },
   "paths": {
     "/v3/studyDefinitions": {
@@ -422,42 +422,48 @@
           },
           "text": {
             "type": "string",
-            "title": "Text"
+            "title": "Text",
+            "default": ""
           },
           "line": {
             "type": "string",
-            "title": "Line"
+            "title": "Line",
+            "default": ""
           },
           "city": {
             "type": "string",
-            "title": "City"
+            "title": "City",
+            "default": ""
           },
           "district": {
             "type": "string",
-            "title": "District"
+            "title": "District",
+            "default": ""
           },
           "state": {
             "type": "string",
-            "title": "State"
+            "title": "State",
+            "default": ""
           },
           "postalCode": {
             "type": "string",
-            "title": "Postalcode"
+            "title": "Postalcode",
+            "default": ""
           },
           "country": {
-            "$ref": "#/components/schemas/Code"
+            "anyOf": [
+              {
+                "$ref": "#/components/schemas/Code"
+              },
+              {
+                "type": "null"
+              }
+            ]
           }
         },
         "type": "object",
         "required": [
-          "id",
-          "text",
-          "line",
-          "city",
-          "district",
-          "state",
-          "postalCode",
-          "country"
+          "id"
         ],
         "title": "Address"
       },
@@ -494,14 +500,29 @@
             "minLength": 1,
             "title": "Id"
           },
+          "name": {
+            "type": "string",
+            "minLength": 1,
+            "title": "Name"
+          },
+          "label": {
+            "type": "string",
+            "title": "Label"
+          },
           "description": {
             "type": "string",
             "title": "Description"
+          },
+          "text": {
+            "type": "string",
+            "title": "Text"
           }
         },
         "type": "object",
         "required": [
-          "id"
+          "id",
+          "name",
+          "text"
         ],
         "title": "AnalysisPopulation"
       },
@@ -681,14 +702,14 @@
           },
           "bcSurrogateReference": {
             "type": "string",
-            "title": "Bcsurrogatereference"
+            "title": "Bcsurrogatereference",
+            "default": ""
           }
         },
         "type": "object",
         "required": [
           "id",
-          "name",
-          "bcSurrogateReference"
+          "name"
         ],
         "title": "BiomedicalConceptSurrogate"
       },
@@ -884,15 +905,32 @@
             "minLength": 1,
             "title": "Id"
           },
+          "name": {
+            "type": "string",
+            "minLength": 1,
+            "title": "Name"
+          },
+          "label": {
+            "type": "string",
+            "title": "Label"
+          },
           "description": {
             "type": "string",
             "title": "Description"
+          },
+          "text": {
+            "type": "string",
+            "title": "Text"
+          },
+          "parameterMap": {
+            "type": "object",
+            "title": "Parametermap"
           },
           "purpose": {
             "type": "string",
             "title": "Purpose"
           },
-          "endpointLevel": {
+          "level": {
             "anyOf": [
               {
                 "$ref": "#/components/schemas/Code"
@@ -906,6 +944,8 @@
         "type": "object",
         "required": [
           "id",
+          "name",
+          "parameterMap",
           "purpose"
         ],
         "title": "Endpoint"
@@ -1091,7 +1131,15 @@
             "type": "string",
             "title": "Description"
           },
-          "objectiveLevel": {
+          "text": {
+            "type": "string",
+            "title": "Text"
+          },
+          "parameterMap": {
+            "type": "object",
+            "title": "Parametermap"
+          },
+          "level": {
             "anyOf": [
               {
                 "$ref": "#/components/schemas/Code"
@@ -1113,7 +1161,8 @@
         "type": "object",
         "required": [
           "id",
-          "name"
+          "name",
+          "parameterMap"
         ],
         "title": "Objective"
       },
@@ -1608,7 +1657,8 @@
               "$ref": "#/components/schemas/Content"
             },
             "type": "array",
-            "title": "Contents"
+            "title": "Contents",
+            "default": []
           },
           "encounters": {
             "items": {
@@ -1747,7 +1797,6 @@
           "id",
           "name",
           "interventionModel",
-          "contents",
           "studyArms",
           "studyCells",
           "studyDesignRationale",
@@ -1971,8 +2020,15 @@
             "title": "Protocolamendment"
           },
           "protocolEffectiveDate": {
-            "type": "string",
-            "format": "date",
+            "anyOf": [
+              {
+                "type": "string",
+                "format": "date"
+              },
+              {
+                "type": "null"
+              }
+            ],
             "title": "Protocoleffectivedate"
           },
           "protocolStatus": {
@@ -1987,7 +2043,6 @@
           "publicTitle",
           "scientificTitle",
           "protocolVersion",
-          "protocolEffectiveDate",
           "protocolStatus"
         ],
         "title": "StudyProtocolVersion"
@@ -2095,14 +2150,29 @@
             "minLength": 1,
             "title": "Id"
           },
+          "name": {
+            "type": "string",
+            "minLength": 1,
+            "title": "Name"
+          },
+          "label": {
+            "type": "string",
+            "title": "Label"
+          },
           "description": {
             "type": "string",
             "title": "Description"
+          },
+          "text": {
+            "type": "string",
+            "title": "Text"
           }
         },
         "type": "object",
         "required": [
-          "id"
+          "id",
+          "name",
+          "text"
         ],
         "title": "TransitionRule"
       },
