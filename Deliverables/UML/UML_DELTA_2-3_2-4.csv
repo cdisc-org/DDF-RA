@@ -1,0 +1,37 @@
+status,class_name,property_name,data_type
+Class - NEW,EligibilityCriteria,,
+,,identifier,String
+,,previousCriterion,List<EligibilityCriteria>
+,,name,String
+,,description,String
+,,id,String
+,,label,String
+,,category,Code
+,,nextCriterion,List<EligibilityCriteria>
+Class - NEW,NarritiveContent,,
+,,sectionTitle,String
+,,sectionNumber,String
+,,name,String
+,,contentChildren,List<Content>
+,,id,String
+,,text,String
+Class - DELETED,Content,,
+,,sectionTitle,String
+,,sectionNumber,String
+,,name,String
+,,contentChildren,List<Content>
+,,id,String
+,,text,String
+,,,
+Property - NEW,TransitionRule,label,String
+Property - NEW,TransitionRule,name,String
+Property - NEW,TransitionRule,text,String
+Property - NEW,Endpoint,label,String
+Property - NEW,Endpoint,level,Code
+Property - NEW,Endpoint,name,String
+Property - NEW,Objective,level,Code
+Property - NEW,AnalysisPopulation,label,String
+Property - NEW,AnalysisPopulation,name,String
+Property - NEW,AnalysisPopulation,text,String
+Property - DELETED,Endpoint,endpointLevel,Code
+Property - DELETED,Objective,objectiveLevel,Code
