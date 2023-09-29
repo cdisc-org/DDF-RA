@@ -4,7 +4,7 @@ info:
   description: >-
     A simple TransCelerate Digital Data Flow (DDF) Study Definitions Repository
     API.
-  version: 2.3 Provisional (0.38)
+  version: 2.4 Provisional (0.39)
 paths:
   /v3/studyDefinitions:
     post:
@@ -288,33 +288,34 @@ components:
         text:
           type: string
           title: Text
+          default: ''
         line:
           type: string
           title: Line
+          default: ''
         city:
           type: string
           title: City
+          default: ''
         district:
           type: string
           title: District
+          default: ''
         state:
           type: string
           title: State
+          default: ''
         postalCode:
           type: string
           title: Postalcode
+          default: ''
         country:
-          $ref: '#/components/schemas/Code'
+          anyOf:
+            - $ref: '#/components/schemas/Code'
+            - type: 'null'
       type: object
       required:
         - id
-        - text
-        - line
-        - city
-        - district
-        - state
-        - postalCode
-        - country
       title: Address
     AliasCode:
       properties:
@@ -341,12 +342,24 @@ components:
           type: string
           minLength: 1
           title: Id
+        name:
+          type: string
+          minLength: 1
+          title: Name
+        label:
+          type: string
+          title: Label
         description:
           type: string
           title: Description
+        text:
+          type: string
+          title: Text
       type: object
       required:
         - id
+        - name
+        - text
       title: AnalysisPopulation
     BiomedicalConcept:
       properties:
@@ -480,11 +493,11 @@ components:
         bcSurrogateReference:
           type: string
           title: Bcsurrogatereference
+          default: ''
       type: object
       required:
         - id
         - name
-        - bcSurrogateReference
       title: BiomedicalConceptSurrogate
     Code:
       properties:
@@ -608,19 +621,34 @@ components:
           type: string
           minLength: 1
           title: Id
+        name:
+          type: string
+          minLength: 1
+          title: Name
+        label:
+          type: string
+          title: Label
         description:
           type: string
           title: Description
+        text:
+          type: string
+          title: Text
+        parameterMap:
+          type: object
+          title: Parametermap
         purpose:
           type: string
           title: Purpose
-        endpointLevel:
+        level:
           anyOf:
             - $ref: '#/components/schemas/Code'
             - type: 'null'
       type: object
       required:
         - id
+        - name
+        - parameterMap
         - purpose
       title: Endpoint
     Estimand:
@@ -752,7 +780,13 @@ components:
         description:
           type: string
           title: Description
-        objectiveLevel:
+        text:
+          type: string
+          title: Text
+        parameterMap:
+          type: object
+          title: Parametermap
+        level:
           anyOf:
             - $ref: '#/components/schemas/Code'
             - type: 'null'
@@ -766,6 +800,7 @@ components:
       required:
         - id
         - name
+        - parameterMap
       title: Objective
     Organization:
       properties:
@@ -1105,6 +1140,7 @@ components:
             $ref: '#/components/schemas/Content'
           type: array
           title: Contents
+          default: []
         encounters:
           items:
             $ref: '#/components/schemas/Encounter'
@@ -1204,7 +1240,6 @@ components:
         - id
         - name
         - interventionModel
-        - contents
         - studyArms
         - studyCells
         - studyDesignRationale
@@ -1357,8 +1392,10 @@ components:
             - type: 'null'
           title: Protocolamendment
         protocolEffectiveDate:
-          type: string
-          format: date
+          anyOf:
+            - type: string
+              format: date
+            - type: 'null'
           title: Protocoleffectivedate
         protocolStatus:
           $ref: '#/components/schemas/Code'
@@ -1370,7 +1407,6 @@ components:
         - publicTitle
         - scientificTitle
         - protocolVersion
-        - protocolEffectiveDate
         - protocolStatus
       title: StudyProtocolVersion
     Timing:
@@ -1435,12 +1471,24 @@ components:
           type: string
           minLength: 1
           title: Id
+        name:
+          type: string
+          minLength: 1
+          title: Name
+        label:
+          type: string
+          title: Label
         description:
           type: string
           title: Description
+        text:
+          type: string
+          title: Text
       type: object
       required:
         - id
+        - name
+        - text
       title: TransitionRule
     ValidationError:
       properties:
