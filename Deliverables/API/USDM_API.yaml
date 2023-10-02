@@ -17,7 +17,7 @@ paths:
         content:
           application/json:
             schema:
-              $ref: '#/components/schemas/Wrapper'
+              $ref: '#/components/schemas/Wrapper-Input'
         required: true
       responses:
         '201':
@@ -63,7 +63,7 @@ paths:
         content:
           application/json:
             schema:
-              $ref: '#/components/schemas/Wrapper'
+              $ref: '#/components/schemas/Wrapper-Input'
       responses:
         '200':
           description: Successful Response
@@ -108,7 +108,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/Wrapper'
+                $ref: '#/components/schemas/Wrapper-Output'
         '400':
           status_code: string
           detail: string
@@ -147,7 +147,7 @@ paths:
               schema:
                 type: array
                 items:
-                  $ref: '#/components/schemas/Wrapper'
+                  $ref: '#/components/schemas/Wrapper-Output'
                 title: >-
                   Response Read Study History V3 Studydefinitions  Studyid 
                   History Get
@@ -190,7 +190,7 @@ paths:
               schema:
                 type: array
                 items:
-                  $ref: '#/components/schemas/StudyDesign'
+                  $ref: '#/components/schemas/StudyDesign-Output'
                 title: Response Search Study Design V3 Studydesigns Get
         '400':
           status_code: string
@@ -210,7 +210,76 @@ paths:
                 $ref: '#/components/schemas/HTTPValidationError'
 components:
   schemas:
-    Activity:
+    Activity-Input:
+      properties:
+        id:
+          type: string
+          minLength: 1
+          title: Id
+        name:
+          type: string
+          minLength: 1
+          title: Name
+        label:
+          type: string
+          title: Label
+        description:
+          type: string
+          title: Description
+        previousActivityId:
+          anyOf:
+            - type: string
+            - type: 'null'
+          title: Previousactivityid
+        nextActivityId:
+          anyOf:
+            - type: string
+            - type: 'null'
+          title: Nextactivityid
+        definedProcedures:
+          items:
+            $ref: '#/components/schemas/Procedure'
+          type: array
+          title: Definedprocedures
+          default: []
+        activityIsConditional:
+          type: boolean
+          title: Activityisconditional
+        activityIsConditionalReason:
+          anyOf:
+            - type: string
+            - type: 'null'
+          title: Activityisconditionalreason
+        biomedicalConceptIds:
+          items:
+            type: string
+          type: array
+          title: Biomedicalconceptids
+          default: []
+        bcCategoryIds:
+          items:
+            type: string
+          type: array
+          title: Bccategoryids
+          default: []
+        bcSurrogateIds:
+          items:
+            type: string
+          type: array
+          title: Bcsurrogateids
+          default: []
+        activityTimelineId:
+          anyOf:
+            - type: string
+            - type: 'null'
+          title: Activitytimelineid
+      type: object
+      required:
+        - id
+        - name
+        - activityIsConditional
+      title: Activity
+    Activity-Output:
       properties:
         id:
           type: string
@@ -361,7 +430,7 @@ components:
         - name
         - text
       title: AnalysisPopulation
-    BiomedicalConcept:
+    BiomedicalConcept-Input:
       properties:
         id:
           type: string
@@ -385,7 +454,7 @@ components:
           title: Bcreference
         bcProperties:
           items:
-            $ref: '#/components/schemas/BiomedicalConceptProperty'
+            $ref: '#/components/schemas/BiomedicalConceptProperty-Input'
           type: array
           title: Bcproperties
           default: []
@@ -398,7 +467,44 @@ components:
         - bcReference
         - code
       title: BiomedicalConcept
-    BiomedicalConceptCategory:
+    BiomedicalConcept-Output:
+      properties:
+        id:
+          type: string
+          minLength: 1
+          title: Id
+        name:
+          type: string
+          minLength: 1
+          title: Name
+        label:
+          type: string
+          title: Label
+        bcSynonyms:
+          items:
+            type: string
+          type: array
+          title: Bcsynonyms
+          default: []
+        bcReference:
+          type: string
+          title: Bcreference
+        bcProperties:
+          items:
+            $ref: '#/components/schemas/BiomedicalConceptProperty-Output'
+          type: array
+          title: Bcproperties
+          default: []
+        code:
+          $ref: '#/components/schemas/AliasCode'
+      type: object
+      required:
+        - id
+        - name
+        - bcReference
+        - code
+      title: BiomedicalConcept
+    BiomedicalConceptCategory-Input:
       properties:
         id:
           type: string
@@ -435,7 +541,83 @@ components:
         - id
         - name
       title: BiomedicalConceptCategory
-    BiomedicalConceptProperty:
+    BiomedicalConceptCategory-Output:
+      properties:
+        id:
+          type: string
+          minLength: 1
+          title: Id
+        name:
+          type: string
+          minLength: 1
+          title: Name
+        label:
+          type: string
+          title: Label
+        description:
+          type: string
+          title: Description
+        bcCategoryChildIds:
+          items:
+            type: string
+          type: array
+          title: Bccategorychildids
+          default: []
+        bcCategoryMemberIds:
+          items:
+            type: string
+          type: array
+          title: Bccategorymemberids
+          default: []
+        code:
+          anyOf:
+            - $ref: '#/components/schemas/AliasCode'
+            - type: 'null'
+      type: object
+      required:
+        - id
+        - name
+      title: BiomedicalConceptCategory
+    BiomedicalConceptProperty-Input:
+      properties:
+        id:
+          type: string
+          minLength: 1
+          title: Id
+        name:
+          type: string
+          minLength: 1
+          title: Name
+        label:
+          type: string
+          title: Label
+        bcPropertyRequired:
+          type: boolean
+          title: Bcpropertyrequired
+        bcPropertyEnabled:
+          type: boolean
+          title: Bcpropertyenabled
+        bcPropertyDatatype:
+          type: string
+          title: Bcpropertydatatype
+        bcPropertyResponseCodes:
+          items:
+            $ref: '#/components/schemas/ResponseCode'
+          type: array
+          title: Bcpropertyresponsecodes
+          default: []
+        code:
+          $ref: '#/components/schemas/AliasCode'
+      type: object
+      required:
+        - id
+        - name
+        - bcPropertyRequired
+        - bcPropertyEnabled
+        - bcPropertyDatatype
+        - code
+      title: BiomedicalConceptProperty
+    BiomedicalConceptProperty-Output:
       properties:
         id:
           type: string
@@ -525,38 +707,6 @@ components:
         - codeSystemVersion
         - decode
       title: Code
-    Content:
-      properties:
-        id:
-          type: string
-          minLength: 1
-          title: Id
-        name:
-          type: string
-          minLength: 1
-          title: Name
-        sectionNumber:
-          type: string
-          title: Sectionnumber
-        sectionTitle:
-          type: string
-          title: Sectiontitle
-        text:
-          type: string
-          title: Text
-        contentChildIds:
-          items:
-            type: string
-          type: array
-          title: Contentchildids
-          default: []
-      type: object
-      required:
-        - id
-        - name
-        - sectionNumber
-        - sectionTitle
-      title: Content
     Encounter:
       properties:
         id:
@@ -764,7 +914,39 @@ components:
       required:
         - id
       title: InvestigationalIntervention
-    Objective:
+    NarrativeContent:
+      properties:
+        id:
+          type: string
+          minLength: 1
+          title: Id
+        name:
+          type: string
+          minLength: 1
+          title: Name
+        sectionNumber:
+          type: string
+          title: Sectionnumber
+        sectionTitle:
+          type: string
+          title: Sectiontitle
+        text:
+          type: string
+          title: Text
+        contentChildIds:
+          items:
+            type: string
+          type: array
+          title: Contentchildids
+          default: []
+      type: object
+      required:
+        - id
+        - name
+        - sectionNumber
+        - sectionTitle
+      title: NarrativeContent
+    Objective-Input:
       properties:
         id:
           type: string
@@ -802,7 +984,78 @@ components:
         - name
         - parameterMap
       title: Objective
-    Organization:
+    Objective-Output:
+      properties:
+        id:
+          type: string
+          minLength: 1
+          title: Id
+        name:
+          type: string
+          minLength: 1
+          title: Name
+        label:
+          type: string
+          title: Label
+        description:
+          type: string
+          title: Description
+        text:
+          type: string
+          title: Text
+        parameterMap:
+          type: object
+          title: Parametermap
+        level:
+          anyOf:
+            - $ref: '#/components/schemas/Code'
+            - type: 'null'
+        objectiveEndpoints:
+          items:
+            $ref: '#/components/schemas/Endpoint'
+          type: array
+          title: Objectiveendpoints
+          default: []
+      type: object
+      required:
+        - id
+        - name
+        - parameterMap
+      title: Objective
+    Organization-Input:
+      properties:
+        id:
+          type: string
+          minLength: 1
+          title: Id
+        name:
+          type: string
+          minLength: 1
+          title: Name
+        label:
+          type: string
+          title: Label
+        type:
+          $ref: '#/components/schemas/Code'
+        organizationIdentifierScheme:
+          type: string
+          title: Organizationidentifierscheme
+        organizationIdentifier:
+          type: string
+          title: Organizationidentifier
+        organizationLegalAddress:
+          anyOf:
+            - $ref: '#/components/schemas/Address'
+            - type: 'null'
+      type: object
+      required:
+        - id
+        - name
+        - type
+        - organizationIdentifierScheme
+        - organizationIdentifier
+      title: Organization
+    Organization-Output:
       properties:
         id:
           type: string
@@ -889,7 +1142,7 @@ components:
         - responseCodeEnabled
         - code
       title: ResponseCode
-    ScheduleTimeline:
+    ScheduleTimeline-Input:
       properties:
         id:
           type: string
@@ -924,7 +1177,53 @@ components:
           default: []
         scheduleTimelineInstances:
           items:
-            $ref: '#/components/schemas/ScheduledInstance'
+            $ref: '#/components/schemas/ScheduledInstance-Input'
+          type: array
+          title: Scheduletimelineinstances
+          default: []
+      type: object
+      required:
+        - id
+        - name
+        - mainTimeline
+        - entryCondition
+      title: ScheduleTimeline
+    ScheduleTimeline-Output:
+      properties:
+        id:
+          type: string
+          minLength: 1
+          title: Id
+        name:
+          type: string
+          minLength: 1
+          title: Name
+        label:
+          type: string
+          title: Label
+        description:
+          type: string
+          title: Description
+        mainTimeline:
+          type: boolean
+          title: Maintimeline
+        entryCondition:
+          type: string
+          title: Entrycondition
+        scheduleTimelineEntryId:
+          anyOf:
+            - type: string
+            - type: 'null'
+          title: Scheduletimelineentryid
+        scheduleTimelineExits:
+          items:
+            $ref: '#/components/schemas/ScheduleTimelineExit'
+          type: array
+          title: Scheduletimelineexits
+          default: []
+        scheduleTimelineInstances:
+          items:
+            $ref: '#/components/schemas/ScheduledInstance-Output'
           type: array
           title: Scheduletimelineinstances
           default: []
@@ -945,7 +1244,7 @@ components:
       required:
         - id
       title: ScheduleTimelineExit
-    ScheduledInstance:
+    ScheduledInstance-Input:
       properties:
         id:
           type: string
@@ -988,7 +1287,50 @@ components:
         - id
         - instanceType
       title: ScheduledInstance
-    Study:
+    ScheduledInstance-Output:
+      properties:
+        id:
+          type: string
+          minLength: 1
+          title: Id
+        instanceType:
+          type: string
+          enum:
+            - ACTIVITY
+            - DECISION
+          title: Instancetype
+        scheduledInstanceTimings:
+          items:
+            $ref: '#/components/schemas/Timing'
+          type: array
+          title: Scheduledinstancetimings
+          default: []
+        scheduledInstanceTimelineId:
+          anyOf:
+            - type: string
+            - type: 'null'
+          title: Scheduledinstancetimelineid
+        scheduleTimelineExitId:
+          anyOf:
+            - type: string
+            - type: 'null'
+          title: Scheduletimelineexitid
+        defaultConditionId:
+          anyOf:
+            - type: string
+            - type: 'null'
+          title: Defaultconditionid
+        epochId:
+          anyOf:
+            - type: string
+            - type: 'null'
+          title: Epochid
+      type: object
+      required:
+        - id
+        - instanceType
+      title: ScheduledInstance
+    Study-Input:
       properties:
         id:
           anyOf:
@@ -1018,7 +1360,7 @@ components:
           default: []
         studyIdentifiers:
           items:
-            $ref: '#/components/schemas/StudyIdentifier'
+            $ref: '#/components/schemas/StudyIdentifier-Input'
           type: array
           title: Studyidentifiers
           default: []
@@ -1030,7 +1372,66 @@ components:
           default: []
         studyDesigns:
           items:
-            $ref: '#/components/schemas/StudyDesign'
+            $ref: '#/components/schemas/StudyDesign-Input'
+          type: array
+          title: Studydesigns
+          default: []
+        studyRationale:
+          type: string
+          title: Studyrationale
+        studyAcronym:
+          type: string
+          title: Studyacronym
+      type: object
+      required:
+        - studyTitle
+        - studyVersion
+        - studyRationale
+        - studyAcronym
+      title: Study
+    Study-Output:
+      properties:
+        id:
+          anyOf:
+            - type: string
+              format: uuid
+            - type: 'null'
+          title: Id
+        studyTitle:
+          type: string
+          title: Studytitle
+        studyVersion:
+          type: string
+          title: Studyversion
+        type:
+          anyOf:
+            - $ref: '#/components/schemas/Code'
+            - type: 'null'
+        studyPhase:
+          anyOf:
+            - $ref: '#/components/schemas/AliasCode'
+            - type: 'null'
+        businessTherapeuticAreas:
+          items:
+            $ref: '#/components/schemas/Code'
+          type: array
+          title: Businesstherapeuticareas
+          default: []
+        studyIdentifiers:
+          items:
+            $ref: '#/components/schemas/StudyIdentifier-Output'
+          type: array
+          title: Studyidentifiers
+          default: []
+        studyProtocolVersions:
+          items:
+            $ref: '#/components/schemas/StudyProtocolVersion'
+          type: array
+          title: Studyprotocolversions
+          default: []
+        studyDesigns:
+          items:
+            $ref: '#/components/schemas/StudyDesign-Output'
           type: array
           title: Studydesigns
           default: []
@@ -1099,7 +1500,7 @@ components:
         - studyArmId
         - studyEpochId
       title: StudyCell
-    StudyDesign:
+    StudyDesign-Input:
       properties:
         id:
           type: string
@@ -1137,7 +1538,7 @@ components:
           $ref: '#/components/schemas/Code'
         contents:
           items:
-            $ref: '#/components/schemas/Content'
+            $ref: '#/components/schemas/NarrativeContent'
           type: array
           title: Contents
           default: []
@@ -1149,19 +1550,19 @@ components:
           default: []
         activities:
           items:
-            $ref: '#/components/schemas/Activity'
+            $ref: '#/components/schemas/Activity-Input'
           type: array
           title: Activities
           default: []
         biomedicalConcepts:
           items:
-            $ref: '#/components/schemas/BiomedicalConcept'
+            $ref: '#/components/schemas/BiomedicalConcept-Input'
           type: array
           title: Biomedicalconcepts
           default: []
         bcCategories:
           items:
-            $ref: '#/components/schemas/BiomedicalConceptCategory'
+            $ref: '#/components/schemas/BiomedicalConceptCategory-Input'
           type: array
           title: Bccategories
           default: []
@@ -1219,7 +1620,7 @@ components:
           default: []
         studyObjectives:
           items:
-            $ref: '#/components/schemas/Objective'
+            $ref: '#/components/schemas/Objective-Input'
           type: array
           title: Studyobjectives
           default: []
@@ -1231,7 +1632,153 @@ components:
           default: []
         studyScheduleTimelines:
           items:
-            $ref: '#/components/schemas/ScheduleTimeline'
+            $ref: '#/components/schemas/ScheduleTimeline-Input'
+          type: array
+          title: Studyscheduletimelines
+          default: []
+      type: object
+      required:
+        - id
+        - name
+        - interventionModel
+        - studyArms
+        - studyCells
+        - studyDesignRationale
+        - studyEpochs
+      title: StudyDesign
+    StudyDesign-Output:
+      properties:
+        id:
+          type: string
+          minLength: 1
+          title: Id
+        name:
+          type: string
+          minLength: 1
+          title: Name
+        label:
+          type: string
+          title: Label
+        description:
+          type: string
+          title: Description
+        trialIntentTypes:
+          items:
+            $ref: '#/components/schemas/Code'
+          type: array
+          title: Trialintenttypes
+          default: []
+        trialTypes:
+          items:
+            $ref: '#/components/schemas/Code'
+          type: array
+          title: Trialtypes
+          default: []
+        therapeuticAreas:
+          items:
+            $ref: '#/components/schemas/Code'
+          type: array
+          title: Therapeuticareas
+          default: []
+        interventionModel:
+          $ref: '#/components/schemas/Code'
+        contents:
+          items:
+            $ref: '#/components/schemas/NarrativeContent'
+          type: array
+          title: Contents
+          default: []
+        encounters:
+          items:
+            $ref: '#/components/schemas/Encounter'
+          type: array
+          title: Encounters
+          default: []
+        activities:
+          items:
+            $ref: '#/components/schemas/Activity-Output'
+          type: array
+          title: Activities
+          default: []
+        biomedicalConcepts:
+          items:
+            $ref: '#/components/schemas/BiomedicalConcept-Output'
+          type: array
+          title: Biomedicalconcepts
+          default: []
+        bcCategories:
+          items:
+            $ref: '#/components/schemas/BiomedicalConceptCategory-Output'
+          type: array
+          title: Bccategories
+          default: []
+        bcSurrogates:
+          items:
+            $ref: '#/components/schemas/BiomedicalConceptSurrogate'
+          type: array
+          title: Bcsurrogates
+          default: []
+        studyArms:
+          items:
+            $ref: '#/components/schemas/StudyArm'
+          type: array
+          title: Studyarms
+        studyCells:
+          items:
+            $ref: '#/components/schemas/StudyCell'
+          type: array
+          title: Studycells
+        studyDesignBlindingScheme:
+          anyOf:
+            - $ref: '#/components/schemas/AliasCode'
+            - type: 'null'
+        studyDesignRationale:
+          type: string
+          title: Studydesignrationale
+        studyEpochs:
+          items:
+            $ref: '#/components/schemas/StudyEpoch'
+          type: array
+          title: Studyepochs
+        studyElements:
+          items:
+            $ref: '#/components/schemas/StudyElement'
+          type: array
+          title: Studyelements
+          default: []
+        studyEstimands:
+          items:
+            $ref: '#/components/schemas/Estimand'
+          type: array
+          title: Studyestimands
+          default: []
+        studyIndications:
+          items:
+            $ref: '#/components/schemas/Indication'
+          type: array
+          title: Studyindications
+          default: []
+        studyInvestigationalInterventions:
+          items:
+            $ref: '#/components/schemas/InvestigationalIntervention'
+          type: array
+          title: Studyinvestigationalinterventions
+          default: []
+        studyObjectives:
+          items:
+            $ref: '#/components/schemas/Objective-Output'
+          type: array
+          title: Studyobjectives
+          default: []
+        studyPopulations:
+          items:
+            $ref: '#/components/schemas/StudyDesignPopulation'
+          type: array
+          title: Studypopulations
+          default: []
+        studyScheduleTimelines:
+          items:
+            $ref: '#/components/schemas/ScheduleTimeline-Output'
           type: array
           title: Studyscheduletimelines
           default: []
@@ -1348,7 +1895,7 @@ components:
         - name
         - type
       title: StudyEpoch
-    StudyIdentifier:
+    StudyIdentifier-Input:
       properties:
         id:
           type: string
@@ -1358,7 +1905,24 @@ components:
           type: string
           title: Studyidentifier
         studyIdentifierScope:
-          $ref: '#/components/schemas/Organization'
+          $ref: '#/components/schemas/Organization-Input'
+      type: object
+      required:
+        - id
+        - studyIdentifier
+        - studyIdentifierScope
+      title: StudyIdentifier
+    StudyIdentifier-Output:
+      properties:
+        id:
+          type: string
+          minLength: 1
+          title: Id
+        studyIdentifier:
+          type: string
+          title: Studyidentifier
+        studyIdentifierScope:
+          $ref: '#/components/schemas/Organization-Output'
       type: object
       required:
         - id
@@ -1511,10 +2075,18 @@ components:
         - msg
         - type
       title: ValidationError
-    Wrapper:
+    Wrapper-Input:
       properties:
         study:
-          $ref: '#/components/schemas/Study'
+          $ref: '#/components/schemas/Study-Input'
+      type: object
+      required:
+        - study
+      title: Wrapper
+    Wrapper-Output:
+      properties:
+        study:
+          $ref: '#/components/schemas/Study-Output'
       type: object
       required:
         - study
