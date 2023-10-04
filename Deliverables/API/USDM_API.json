@@ -1139,35 +1139,38 @@
             "type": "string",
             "title": "Description"
           },
+          "instanceType": {
+            "type": "string",
+            "enum": [
+              "ENDPOINT",
+              "OBJECTIVE",
+              "ELIGIBILITY_CRITERIA"
+            ],
+            "title": "Instancetype"
+          },
           "text": {
             "type": "string",
             "title": "Text"
           },
-          "parameterMap": {
-            "type": "object",
-            "title": "Parametermap"
+          "dictionary": {
+            "$ref": "#/components/schemas/SyntaxTemplateDictionary"
           },
           "purpose": {
             "type": "string",
             "title": "Purpose"
           },
           "level": {
-            "anyOf": [
-              {
-                "$ref": "#/components/schemas/Code"
-              },
-              {
-                "type": "null"
-              }
-            ]
+            "$ref": "#/components/schemas/Code"
           }
         },
         "type": "object",
         "required": [
           "id",
           "name",
-          "parameterMap",
-          "purpose"
+          "instanceType",
+          "dictionary",
+          "purpose",
+          "level"
         ],
         "title": "Endpoint"
       },
@@ -1394,13 +1397,21 @@
             "type": "string",
             "title": "Description"
           },
+          "instanceType": {
+            "type": "string",
+            "enum": [
+              "ENDPOINT",
+              "OBJECTIVE",
+              "ELIGIBILITY_CRITERIA"
+            ],
+            "title": "Instancetype"
+          },
           "text": {
             "type": "string",
             "title": "Text"
           },
-          "parameterMap": {
-            "type": "object",
-            "title": "Parametermap"
+          "dictionary": {
+            "$ref": "#/components/schemas/SyntaxTemplateDictionary"
           },
           "level": {
             "anyOf": [
@@ -1425,7 +1436,8 @@
         "required": [
           "id",
           "name",
-          "parameterMap"
+          "instanceType",
+          "dictionary"
         ],
         "title": "Objective"
       },
@@ -1449,13 +1461,21 @@
             "type": "string",
             "title": "Description"
           },
+          "instanceType": {
+            "type": "string",
+            "enum": [
+              "ENDPOINT",
+              "OBJECTIVE",
+              "ELIGIBILITY_CRITERIA"
+            ],
+            "title": "Instancetype"
+          },
           "text": {
             "type": "string",
             "title": "Text"
           },
-          "parameterMap": {
-            "type": "object",
-            "title": "Parametermap"
+          "dictionary": {
+            "$ref": "#/components/schemas/SyntaxTemplateDictionary"
           },
           "level": {
             "anyOf": [
@@ -1480,7 +1500,8 @@
         "required": [
           "id",
           "name",
-          "parameterMap"
+          "instanceType",
+          "dictionary"
         ],
         "title": "Objective"
       },
@@ -2146,6 +2167,10 @@
             "minLength": 1,
             "title": "Name"
           },
+          "label": {
+            "type": "string",
+            "title": "Label"
+          },
           "description": {
             "type": "string",
             "title": "Description"
@@ -2623,7 +2648,7 @@
           },
           "plannedNumberOfParticipants": {
             "type": "integer",
-            "minimum": 0,
+            "minimum": 0.0,
             "title": "Plannednumberofparticipants"
           },
           "plannedMaximumAgeOfParticipants": {
@@ -2866,6 +2891,43 @@
           "protocolStatus"
         ],
         "title": "StudyProtocolVersion"
+      },
+      "SyntaxTemplateDictionary": {
+        "properties": {
+          "id": {
+            "type": "string",
+            "minLength": 1,
+            "title": "Id"
+          },
+          "name": {
+            "type": "string",
+            "minLength": 1,
+            "title": "Name"
+          },
+          "label": {
+            "type": "string",
+            "title": "Label"
+          },
+          "description": {
+            "type": "string",
+            "title": "Description"
+          },
+          "text": {
+            "type": "string",
+            "title": "Text"
+          },
+          "parameterMap": {
+            "type": "object",
+            "title": "Parametermap"
+          }
+        },
+        "type": "object",
+        "required": [
+          "id",
+          "name",
+          "parameterMap"
+        ],
+        "title": "SyntaxTemplateDictionary"
       },
       "Timing": {
         "properties": {
