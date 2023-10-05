@@ -1,0 +1,125 @@
+status,class_name,property_name,data_type
+Class - NEW,NarrativeContent,,
+,,sectionTitle,String
+,,sectionNumber,String
+,,name,String
+,,id,String
+,,text,String
+Class - DELETED,NarritiveContent,,
+,,sectionTitle,String
+,,sectionNumber,String
+,,name,String
+,,contentChildren,List<Content>
+,,id,String
+,,text,String
+,,,
+Property - NEW,Procedure,proceudreIsConditionalReason,String
+Property - DELETED,BiomedicalConceptCategory,bcCategoryChildren,List<BiomedicalConceptCategory>
+Property - DELETED,BiomedicalConceptCategory,bcCategoryMembers,List<BiomedicalConcept>
+Property - DELETED,BiomedicalConceptCategory,code,AliasCode
+Property - DELETED,Organization,organizationLegalAddress,Address
+Property - DELETED,Organization,type,Code
+Property - DELETED,Address,country,Code
+Property - DELETED,Indication,codes,List<Code>
+Property - DELETED,StudyEpoch,nextStudyEpoch,StudyEpoch
+Property - DELETED,StudyEpoch,previousStudyEpoch,StudyEpoch
+Property - DELETED,StudyEpoch,type,Code
+Property - DELETED,StudyProtocolVersion,protocolStatus,Code
+Property - DELETED,Estimand,analysisPopulation,AnalysisPopulation
+Property - DELETED,Estimand,intercurrentEvents,List<IntercurrentEvent>
+Property - DELETED,Estimand,treatment,InvestigationalIntervention
+Property - DELETED,Estimand,variableOfInterest,Endpoint
+Property - DELETED,StudyArm,dataOriginType,Code
+Property - DELETED,StudyArm,type,Code
+Property - DELETED,StudyDesignPopulation,plannedSexOfParticipants,List<Code>
+Property - DELETED,Activity,activityTimeline,ScheduleTimeline
+Property - DELETED,Activity,bcCategories,List<BiomedicalConceptCategory>
+Property - DELETED,Activity,bcSurrogates,List<BiomedicalConceptSurrogate>
+Property - DELETED,Activity,biomedicalConcepts,List<BiomedicalConcept>
+Property - DELETED,Activity,definedProcedures,List<Procedure>
+Property - DELETED,Activity,nextActivity,Activity
+Property - DELETED,Activity,previousActivity,Activity
+Property - DELETED,StudyDesign,activities,List<Activity>
+Property - DELETED,StudyDesign,contents,List<Content>
+Property - DELETED,StudyDesign,encounters,List<Encounter>
+Property - DELETED,StudyDesign,interventionModel,Code
+Property - DELETED,StudyDesign,studyArms,List<StudyArm>
+Property - DELETED,StudyDesign,studyCells,List<StudyCell>
+Property - DELETED,StudyDesign,studyDesignBlindingScheme,AliasCode
+Property - DELETED,StudyDesign,studyElements,List<StudyElement>
+Property - DELETED,StudyDesign,studyEpochs,List<StudyEpoch>
+Property - DELETED,StudyDesign,studyEstimands,List<Estimand>
+Property - DELETED,StudyDesign,studyIndications,List<Indication>
+Property - DELETED,StudyDesign,studyInvestigationalInterventions,List<InvestigationalIntervention>
+Property - DELETED,StudyDesign,studyObjectives,List<Objective>
+Property - DELETED,StudyDesign,studyPopulations,List<StudyDesignPopulation>
+Property - DELETED,StudyDesign,studyScheduleTimelines,List<ScheduleTimeline>
+Property - DELETED,StudyDesign,therapeuticAreas,List<Code>
+Property - DELETED,StudyDesign,trialIntentTypes,List<Code>
+Property - DELETED,StudyDesign,trialTypes,List<Code>
+Property - DELETED,Endpoint,description,String
+Property - DELETED,Endpoint,id,String
+Property - DELETED,Endpoint,label,String
+Property - DELETED,Endpoint,level,Code
+Property - DELETED,Endpoint,name,String
+Property - DELETED,SyntaxTemplate,dictionary,SyntaxTemplateDictionary
+Property - DELETED,SyntaxTemplate,instanceType,SyntaxTemplateType
+Property - DELETED,Encounter,encounterContactModes,List<Code>
+Property - DELETED,Encounter,encounterEnvironmentalSetting,Code
+Property - DELETED,Encounter,encounterScheduledAtTiming,Timing
+Property - DELETED,Encounter,nextEncounter,Encounter
+Property - DELETED,Encounter,previousEncounter,Encounter
+Property - DELETED,Encounter,transitionEndRule,TransitionRule
+Property - DELETED,Encounter,transitionStartRule,TransitionRule
+Property - DELETED,Encounter,type,Code
+Property - DELETED,Procedure,code,Code
+Property - DELETED,Procedure,procedureIsConditionalReason,String
+Property - DELETED,StudyElement,transitionEndRule,TransitionRule
+Property - DELETED,StudyElement,transitionStartRule,TransitionRule
+Property - DELETED,ScheduledInstance,defaultCondition,ScheduledInstance
+Property - DELETED,ScheduledInstance,epoch,StudyEpoch
+Property - DELETED,ScheduledInstance,instanceType,ScheduledInstanceType
+Property - DELETED,ScheduledInstance,scheduleTimelineExit,ScheduleTimelineExit
+Property - DELETED,ScheduledInstance,scheduledInstanceTimeline,ScheduleTimeline
+Property - DELETED,ScheduledInstance,scheduledInstanceTimings,List<Timing>
+Property - DELETED,BiomedicalConceptProperty,bcPropertyResponseCodes,List<ResponseCode>
+Property - DELETED,BiomedicalConceptProperty,code,AliasCode
+Property - DELETED,SyntaxTemplateDictionary,id,String
+Property - DELETED,Study,businessTherapeuticAreas,List<Code>
+Property - DELETED,Study,studyDesigns,List<StudyDesign>
+Property - DELETED,Study,studyIdentifiers,List<StudyIdentifier>
+Property - DELETED,Study,studyPhase,AliasCode
+Property - DELETED,Study,studyProtocolVersions,List<StudyProtocolVersion>
+Property - DELETED,Study,type,Code
+Property - DELETED,ResponseCode,code,Code
+Property - DELETED,EligibilityCriteria,category,Code
+Property - DELETED,EligibilityCriteria,description,String
+Property - DELETED,EligibilityCriteria,id,String
+Property - DELETED,EligibilityCriteria,label,String
+Property - DELETED,EligibilityCriteria,name,String
+Property - DELETED,EligibilityCriteria,nextCriterion,List<EligibilityCriteria>
+Property - DELETED,EligibilityCriteria,previousCriterion,List<EligibilityCriteria>
+Property - DELETED,StudyIdentifier,studyIdentifierScope,Organization
+Property - DELETED,BiomedicalConcept,bcProperties,List<BiomedicalConceptProperty>
+Property - DELETED,BiomedicalConcept,code,AliasCode
+Property - DELETED,Objective,description,String
+Property - DELETED,Objective,id,String
+Property - DELETED,Objective,label,String
+Property - DELETED,Objective,level,Code
+Property - DELETED,Objective,name,String
+Property - DELETED,Objective,objectiveEndpoints,List<Endpoint>
+Property - DELETED,ScheduleTimeline,scheduleTimelineEntry,ScheduledInstance
+Property - DELETED,ScheduleTimeline,scheduleTimelineExits,List<ScheduleTimelineExit>
+Property - DELETED,ScheduleTimeline,scheduleTimelineInstances,List<ScheduledInstance>
+Property - DELETED,StudyCell,studyArm,StudyArm
+Property - DELETED,StudyCell,studyElements,List<StudyElement>
+Property - DELETED,StudyCell,studyEpoch,StudyEpoch
+Property - DELETED,AliasCode,standardCode,Code
+Property - DELETED,AliasCode,standardCodeAliases,List<Code>
+Property - DELETED,InvestigationalIntervention,codes,List<Code>
+Property - DELETED,Timing,relativeFromScheduledInstance,ScheduledInstance
+Property - DELETED,Timing,relativeToScheduledInstance,ScheduledInstance
+Property - DELETED,Timing,timingRelativeToFrom,Code
+Property - DELETED,Timing,type,Code
+Property - DELETED,ScheduledActivityInstance,activities,List<Activity>
+Property - DELETED,ScheduledActivityInstance,scheduledActivityInstanceEncounter,Encounter
