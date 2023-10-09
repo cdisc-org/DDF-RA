@@ -13,7 +13,6 @@ Class - DELETED,NarritiveContent,,
 ,,id,String
 ,,text,String
 ,,,
-Property - NEW,Procedure,proceudreIsConditionalReason,String
 Property - DELETED,BiomedicalConceptCategory,bcCategoryChildren,List<BiomedicalConceptCategory>
 Property - DELETED,BiomedicalConceptCategory,bcCategoryMembers,List<BiomedicalConcept>
 Property - DELETED,BiomedicalConceptCategory,code,AliasCode
@@ -73,7 +72,6 @@ Property - DELETED,Encounter,transitionEndRule,TransitionRule
 Property - DELETED,Encounter,transitionStartRule,TransitionRule
 Property - DELETED,Encounter,type,Code
 Property - DELETED,Procedure,code,Code
-Property - DELETED,Procedure,procedureIsConditionalReason,String
 Property - DELETED,StudyElement,transitionEndRule,TransitionRule
 Property - DELETED,StudyElement,transitionStartRule,TransitionRule
 Property - DELETED,ScheduledInstance,defaultCondition,ScheduledInstance
@@ -84,7 +82,6 @@ Property - DELETED,ScheduledInstance,scheduledInstanceTimeline,ScheduleTimeline
 Property - DELETED,ScheduledInstance,scheduledInstanceTimings,List<Timing>
 Property - DELETED,BiomedicalConceptProperty,bcPropertyResponseCodes,List<ResponseCode>
 Property - DELETED,BiomedicalConceptProperty,code,AliasCode
-Property - DELETED,SyntaxTemplateDictionary,id,String
 Property - DELETED,Study,businessTherapeuticAreas,List<Code>
 Property - DELETED,Study,studyDesigns,List<StudyDesign>
 Property - DELETED,Study,studyIdentifiers,List<StudyIdentifier>
