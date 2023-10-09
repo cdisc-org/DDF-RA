@@ -1,0 +1,62 @@
+status,class_name,property_name,data_type
+Class - NEW,Enrolment,,
+,,quantity,String
+,,name,String
+,,description,String
+,,id,String
+,,label,String
+Class - NEW,GeographicScope,,
+,,name,String
+,,description,String
+,,id,String
+,,label,String
+Class - NEW,GovernanceDate,,
+,,date,Date
+,,name,String
+,,description,String
+,,id,String
+,,label,String
+Class - NEW,ScheduleInstance,,
+Class - NEW,StudyAmendment,,
+,,summary,String
+,,number,String
+,,substantialImpact,Boolean
+,,id,String
+Class - NEW,StudyAmendmentReason,,
+,,otherReason,String
+,,id,String
+Class - NEW,StudyProtocolDocument,,
+,,name,String
+,,description,String
+,,id,String
+,,label,String
+Class - NEW,StudyProtocolDocumentVersion,,
+,,publicTitle,String
+,,scientificTitle,String
+,,briefTitle,String
+,,protocolVersion,String
+,,id,String
+,,officialTitle,String
+Class - NEW,StudyVersion,,
+,,studyRationale,String
+,,studyVersion,String
+,,id,String
+,,studyTitle,String
+,,studyAcronym,String
+Class - DELETED,StudyProtocolVersion,,
+,,publicTitle,String
+,,scientificTitle,String
+,,briefTitle,String
+,,protocolVersion,String
+,,protocolAmendment,String
+,,id,String
+,,protocolEffectiveDate,Date
+,,officialTitle,String
+,,,
+Property - NEW,Study,description,String
+Property - NEW,Study,label,String
+Property - NEW,Study,name,String
+Property - DELETED,Study,studyAcronym,String
+Property - DELETED,Study,studyRationale,String
+Property - DELETED,Study,studyTitle,String
+Property - DELETED,Study,studyVersion,String
