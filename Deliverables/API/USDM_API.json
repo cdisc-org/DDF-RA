@@ -3,7 +3,7 @@
   "info": {
     "title": "Simple API for DDF",
     "description": "A simple TransCelerate Digital Data Flow (DDF) Study Definitions Repository API.",
-    "version": "2.4 Provisional (0.39)"
+    "version": "2.4.1 Provisional (0.40)"
   },
   "paths": {
     "/v3/studyDefinitions": {
@@ -1726,7 +1726,14 @@
           },
           "scheduleTimelineInstances": {
             "items": {
-              "$ref": "#/components/schemas/ScheduledInstance-Input"
+              "anyOf": [
+                {
+                  "$ref": "#/components/schemas/ScheduledActivityInstance-Input"
+                },
+                {
+                  "$ref": "#/components/schemas/ScheduledDecisionInstance-Input"
+                }
+              ]
             },
             "type": "array",
             "title": "Scheduletimelineinstances",
@@ -1791,7 +1798,14 @@
           },
           "scheduleTimelineInstances": {
             "items": {
-              "$ref": "#/components/schemas/ScheduledInstance-Output"
+              "anyOf": [
+                {
+                  "$ref": "#/components/schemas/ScheduledActivityInstance-Output"
+                },
+                {
+                  "$ref": "#/components/schemas/ScheduledDecisionInstance-Output"
+                }
+              ]
             },
             "type": "array",
             "title": "Scheduletimelineinstances",
@@ -1821,7 +1835,7 @@
         ],
         "title": "ScheduleTimelineExit"
       },
-      "ScheduledInstance-Input": {
+      "ScheduledActivityInstance-Input": {
         "properties": {
           "id": {
             "type": "string",
@@ -1887,6 +1901,25 @@
               }
             ],
             "title": "Epochid"
+          },
+          "activityIds": {
+            "items": {
+              "type": "string"
+            },
+            "type": "array",
+            "title": "Activityids",
+            "default": []
+          },
+          "scheduledActivityInstanceEncounterId": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Scheduledactivityinstanceencounterid"
           }
         },
         "type": "object",
@@ -1894,9 +1927,9 @@
           "id",
           "instanceType"
         ],
-        "title": "ScheduledInstance"
+        "title": "ScheduledActivityInstance"
       },
-      "ScheduledInstance-Output": {
+      "ScheduledActivityInstance-Output": {
         "properties": {
           "id": {
             "type": "string",
@@ -1962,6 +1995,25 @@
               }
             ],
             "title": "Epochid"
+          },
+          "activityIds": {
+            "items": {
+              "type": "string"
+            },
+            "type": "array",
+            "title": "Activityids",
+            "default": []
+          },
+          "scheduledActivityInstanceEncounterId": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Scheduledactivityinstanceencounterid"
           }
         },
         "type": "object",
@@ -1969,7 +2021,173 @@
           "id",
           "instanceType"
         ],
-        "title": "ScheduledInstance"
+        "title": "ScheduledActivityInstance"
+      },
+      "ScheduledDecisionInstance-Input": {
+        "properties": {
+          "id": {
+            "type": "string",
+            "minLength": 1,
+            "title": "Id"
+          },
+          "instanceType": {
+            "type": "string",
+            "enum": [
+              "ACTIVITY",
+              "DECISION"
+            ],
+            "title": "Instancetype"
+          },
+          "scheduledInstanceTimings": {
+            "items": {
+              "$ref": "#/components/schemas/Timing"
+            },
+            "type": "array",
+            "title": "Scheduledinstancetimings",
+            "default": []
+          },
+          "scheduledInstanceTimelineId": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Scheduledinstancetimelineid"
+          },
+          "scheduleTimelineExitId": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Scheduletimelineexitid"
+          },
+          "defaultConditionId": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Defaultconditionid"
+          },
+          "epochId": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Epochid"
+          },
+          "conditionAssignments": {
+            "additionalProperties": {
+              "type": "string"
+            },
+            "type": "object",
+            "title": "Conditionassignments",
+            "default": []
+          }
+        },
+        "type": "object",
+        "required": [
+          "id",
+          "instanceType"
+        ],
+        "title": "ScheduledDecisionInstance"
+      },
+      "ScheduledDecisionInstance-Output": {
+        "properties": {
+          "id": {
+            "type": "string",
+            "minLength": 1,
+            "title": "Id"
+          },
+          "instanceType": {
+            "type": "string",
+            "enum": [
+              "ACTIVITY",
+              "DECISION"
+            ],
+            "title": "Instancetype"
+          },
+          "scheduledInstanceTimings": {
+            "items": {
+              "$ref": "#/components/schemas/Timing"
+            },
+            "type": "array",
+            "title": "Scheduledinstancetimings",
+            "default": []
+          },
+          "scheduledInstanceTimelineId": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Scheduledinstancetimelineid"
+          },
+          "scheduleTimelineExitId": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Scheduletimelineexitid"
+          },
+          "defaultConditionId": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Defaultconditionid"
+          },
+          "epochId": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Epochid"
+          },
+          "conditionAssignments": {
+            "additionalProperties": {
+              "type": "string"
+            },
+            "type": "object",
+            "title": "Conditionassignments",
+            "default": []
+          }
+        },
+        "type": "object",
+        "required": [
+          "id",
+          "instanceType"
+        ],
+        "title": "ScheduledDecisionInstance"
       },
       "Study-Input": {
         "properties": {
