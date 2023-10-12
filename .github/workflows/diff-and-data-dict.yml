@@ -62,16 +62,15 @@ jobs:
       - name: Copy and rename the generated dataDictionary to the current branch
         run: cp usdm-dictionary-generator/dataDictionary.MD "currentRelease/Deliverables/UML/."
       - name: If current branch is not main, copy and rename the generated diff to the current branch
-        if: github.ref_name == github.event.repository.default_branch
+        if: github.ref_name != github.event.repository.default_branch
         run: cp usdm-dictionary-generator/UML_DELTA.csv "currentRelease/Deliverables/UML/UML_DELTA_${PREVIOUS_VERSION}_${CURRENT_VERSION}.csv"
       - name: Commit and push the new files to the current branch
         run: |
           cd currentRelease
-          date > generated.txt
           git config user.name github-actions
           git config user.email github-actions@github.com
           git add .
-          git commit -m "generated"
+          git commit -m "Generate Diff and Data Dict"
           git push
 
 # Running locally:
