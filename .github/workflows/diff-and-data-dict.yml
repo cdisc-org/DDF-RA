@@ -37,16 +37,10 @@ jobs:
         with:
           path: prevRelease/Deliverables/API/USDM_API.json
           prop_path: info.version
-      - name: Get the version number from the version string (1.1.1)
-        id: split
-        uses: winterjung/split@v2
-        with:
-          msg: ${{steps.prevVersion.outputs.prop}}
-      - name: Save the previous and current version numbers
+      - name: Get the previous and current version numbers
         run: |
-          PREVIOUS_VERSION=${{steps.split.outputs._0}}
-          PREVIOUS_VERSION="${PREVIOUS_VERSION//./-}"
-          CURRENT_VERSION=${GITHUB_REF_NAME//release-/}
+          echo "PREVIOUS_VERSION=$(echo ${{steps.prevVersion.outputs.propStr}} | cut -d ' ' -f1 | tr . -)" >> $GITHUB_ENV
+          echo "CURRENT_VERSION=${GITHUB_REF_NAME//release-/}" >> $GITHUB_ENV
       - name: Copy the files needed by the usdm dictionary generator
         run: |
           cp prevRelease/Deliverables/UML/USDM_UML.xmi usdm-dictionary-generator/src/main/resources/prevRelease/.
@@ -63,12 +57,12 @@ jobs:
         run: cp usdm-dictionary-generator/dataDictionary.MD "currentRelease/Deliverables/UML/."
       - name: If current branch is not main, copy and rename the generated diff to the current branch
         if: github.ref_name != github.event.repository.default_branch
-        run: cp usdm-dictionary-generator/UML_DELTA.csv "currentRelease/Deliverables/UML/UML_DELTA_${PREVIOUS_VERSION}_${CURRENT_VERSION}.csv"
+        run: cp usdm-dictionary-generator/UML_DELTA.csv "currentRelease/Deliverables/UML/UML_DELTA_${{ env.PREVIOUS_VERSION}}_${{ env.CURRENT_VERSION}}.csv"
       - name: Commit and push the new files to the current branch
         run: |
           cd currentRelease
           git config user.name github-actions
-          git config user.email github-actions@github.com
+          git config user.email github-actions@cdisc.org
           git add .
           git commit -m "Generate Diff and Data Dict"
           git push
