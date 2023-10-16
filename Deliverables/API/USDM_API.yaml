@@ -723,6 +723,61 @@ components:
       - codeSystemVersion
       - decode
       title: Code
+    EligibilityCriteria:
+      properties:
+        id:
+          type: string
+          minLength: 1
+          title: Id
+        name:
+          type: string
+          minLength: 1
+          title: Name
+        label:
+          type: string
+          title: Label
+          default: ''
+        description:
+          type: string
+          title: Description
+          default: ''
+        instanceType:
+          type: string
+          enum:
+          - ENDPOINT
+          - OBJECTIVE
+          - ELIGIBILITY_CRITERIA
+          title: Instancetype
+        text:
+          type: string
+          title: Text
+        dictionary:
+          $ref: '#/components/schemas/SyntaxTemplateDictionary'
+        category:
+          $ref: '#/components/schemas/Code'
+        identifier:
+          type: string
+          title: Identifier
+        nextCriterionId:
+          anyOf:
+          - type: string
+          - type: 'null'
+          title: Nextcriterionid
+        previousCriterionId:
+          anyOf:
+          - type: string
+          - type: 'null'
+          title: Previouscriterionid
+      type: object
+      required:
+      - id
+      - name
+      - instanceType
+      - text
+      - dictionary
+      - category
+      - identifier
+      title: EligibilityCriteria
     Encounter:
       properties:
         id:
@@ -822,6 +877,7 @@ components:
       - id
       - name
       - instanceType
+      - text
       - dictionary
       - purpose
       - level
@@ -848,7 +904,6 @@ components:
             $ref: '#/components/schemas/IntercurrentEvent'
           type: array
           title: Intercurrentevents
-          default: []
       type: object
       required:
       - id
@@ -856,6 +911,7 @@ components:
       - analysisPopulation
       - treatmentId
       - variableOfInterestId
+      - intercurrentEvents
       title: Estimand
     GeographicScope:
       properties:
@@ -1111,6 +1167,7 @@ components:
       - id
       - name
       - instanceType
+      - text
       - dictionary
       title: Objective
     Objective-Output:
@@ -1158,6 +1215,7 @@ components:
       - id
       - name
       - instanceType
+      - text
       - dictionary
       title: Objective
     Organization-Input:
@@ -1543,11 +1601,11 @@ components:
             type: string
           type: object
           title: Conditionassignments
-          default: []
       type: object
       required:
       - id
       - instanceType
+      - conditionAssignments
       title: ScheduledDecisionInstance
     ScheduledDecisionInstance-Output:
       properties:
@@ -1592,11 +1650,11 @@ components:
             type: string
           type: object
           title: Conditionassignments
-          default: []
       type: object
       required:
       - id
       - instanceType
+      - conditionAssignments
       title: ScheduledDecisionInstance
     Study-Input:
       properties:
@@ -1761,11 +1819,11 @@ components:
         otherReason:
           type: string
           title: Otherreason
+          default: ''
       type: object
       required:
       - id
       - code
-      - otherReason
       title: StudyAmendmentReason
     StudyArm:
       properties:
@@ -1960,6 +2018,12 @@ components:
           anyOf:
           - $ref: '#/components/schemas/StudyProtocolDocumentVersion-Input'
           - type: 'null'
+        studyEligibilityCritieria:
+          items:
+            $ref: '#/components/schemas/EligibilityCriteria'
+          type: array
+          title: Studyeligibilitycritieria
+          default: []
       type: object
       required:
       - id
@@ -2106,6 +2170,12 @@ components:
           anyOf:
           - $ref: '#/components/schemas/StudyProtocolDocumentVersion-Output'
           - type: 'null'
+        studyEligibilityCritieria:
+          items:
+            $ref: '#/components/schemas/EligibilityCriteria'
+          type: array
+          title: Studyeligibilitycritieria
+          default: []
       type: object
       required:
       - id
