@@ -64,7 +64,7 @@ jobs:
           git config user.name github-actions
           git config user.email github-actions@cdisc.org
           git add .
-          git commit -m "Generate Diff and Data Dict"
+          git diff-index --quiet HEAD || git commit -m "Generate Diff and Data Dict"
           git push
 
 # Running locally:
