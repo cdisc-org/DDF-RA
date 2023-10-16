@@ -1,22 +1,12 @@
 status,class_name,property_name,data_type
-Class - NEW,Enrolment,,
-,,quantity,String
-,,name,String
-,,description,String
-,,id,String
-,,label,String
 Class - NEW,GeographicScope,,
-,,name,String
-,,description,String
 ,,id,String
-,,label,String
 Class - NEW,GovernanceDate,,
-,,date,Date
+,,dateValue,Date
 ,,name,String
 ,,description,String
 ,,id,String
 ,,label,String
-Class - NEW,ScheduleInstance,,
 Class - NEW,StudyAmendment,,
 ,,summary,String
 ,,number,String
@@ -43,6 +33,8 @@ Class - NEW,StudyVersion,,
 ,,id,String
 ,,studyTitle,String
 ,,studyAcronym,String
+Class - NEW,SubjectEnrollment,,
+,,quantity,String
 Class - DELETED,StudyProtocolVersion,,
 ,,publicTitle,String
 ,,scientificTitle,String
