@@ -3,7 +3,7 @@ info:
   title: Simple API for DDF
   description: A simple TransCelerate Digital Data Flow (DDF) Study Definitions Repository
     API.
-  version: 2.4.1 Provisional (0.40)
+  version: '2.5'
 paths:
   /v3/studyDefinitions:
     post:
@@ -223,9 +223,11 @@ components:
         label:
           type: string
           title: Label
+          default: ''
         description:
           type: string
           title: Description
+          default: ''
         previousActivityId:
           anyOf:
           - type: string
@@ -292,9 +294,11 @@ components:
         label:
           type: string
           title: Label
+          default: ''
         description:
           type: string
           title: Description
+          default: ''
         previousActivityId:
           anyOf:
           - type: string
@@ -418,9 +422,11 @@ components:
         label:
           type: string
           title: Label
+          default: ''
         description:
           type: string
           title: Description
+          default: ''
         text:
           type: string
           title: Text
@@ -443,6 +449,7 @@ components:
         label:
           type: string
           title: Label
+          default: ''
         bcSynonyms:
           items:
             type: string
@@ -480,6 +487,7 @@ components:
         label:
           type: string
           title: Label
+          default: ''
         bcSynonyms:
           items:
             type: string
@@ -517,9 +525,11 @@ components:
         label:
           type: string
           title: Label
+          default: ''
         description:
           type: string
           title: Description
+          default: ''
         bcCategoryChildIds:
           items:
             type: string
@@ -554,9 +564,11 @@ components:
         label:
           type: string
           title: Label
+          default: ''
         description:
           type: string
           title: Description
+          default: ''
         bcCategoryChildIds:
           items:
             type: string
@@ -591,6 +603,7 @@ components:
         label:
           type: string
           title: Label
+          default: ''
         bcPropertyRequired:
           type: boolean
           title: Bcpropertyrequired
@@ -630,6 +643,7 @@ components:
         label:
           type: string
           title: Label
+          default: ''
         bcPropertyRequired:
           type: boolean
           title: Bcpropertyrequired
@@ -669,9 +683,11 @@ components:
         label:
           type: string
           title: Label
+          default: ''
         description:
           type: string
           title: Description
+          default: ''
         bcSurrogateReference:
           type: string
           title: Bcsurrogatereference
@@ -720,13 +736,13 @@ components:
         label:
           type: string
           title: Label
+          default: ''
         description:
           type: string
           title: Description
+          default: ''
         type:
-          anyOf:
-          - $ref: '#/components/schemas/Code'
-          - type: 'null'
+          $ref: '#/components/schemas/Code'
         previousEncounterId:
           anyOf:
           - type: string
@@ -764,6 +780,7 @@ components:
       required:
       - id
       - name
+      - type
       title: Encounter
     Endpoint:
       properties:
@@ -778,9 +795,11 @@ components:
         label:
           type: string
           title: Label
+          default: ''
         description:
           type: string
           title: Description
+          default: ''
         instanceType:
           type: string
           enum:
@@ -819,14 +838,10 @@ components:
         analysisPopulation:
           $ref: '#/components/schemas/AnalysisPopulation'
         treatmentId:
-          anyOf:
-          - type: string
-          - type: 'null'
+          type: string
           title: Treatmentid
         variableOfInterestId:
-          anyOf:
-          - type: string
-          - type: 'null'
+          type: string
           title: Variableofinterestid
         intercurrentEvents:
           items:
@@ -839,7 +854,99 @@ components:
       - id
       - summaryMeasure
       - analysisPopulation
+      - treatmentId
+      - variableOfInterestId
       title: Estimand
+    GeographicScope:
+      properties:
+        id:
+          type: string
+          minLength: 1
+          title: Id
+        type:
+          $ref: '#/components/schemas/Code'
+        code:
+          $ref: '#/components/schemas/Code'
+      type: object
+      required:
+      - id
+      - type
+      - code
+      title: GeographicScope
+    GovernanceDate-Input:
+      properties:
+        id:
+          type: string
+          minLength: 1
+          title: Id
+        name:
+          type: string
+          minLength: 1
+          title: Name
+        label:
+          type: string
+          title: Label
+          default: ''
+        description:
+          type: string
+          title: Description
+          default: ''
+        type:
+          $ref: '#/components/schemas/Code'
+        dataValue:
+          type: string
+          format: date
+          title: Datavalue
+        geographicScopes:
+          items:
+            $ref: '#/components/schemas/GeographicScope'
+          type: array
+          title: Geographicscopes
+      type: object
+      required:
+      - id
+      - name
+      - type
+      - dataValue
+      - geographicScopes
+      title: GovernanceDate
+    GovernanceDate-Output:
+      properties:
+        id:
+          type: string
+          minLength: 1
+          title: Id
+        name:
+          type: string
+          minLength: 1
+          title: Name
+        label:
+          type: string
+          title: Label
+          default: ''
+        description:
+          type: string
+          title: Description
+          default: ''
+        type:
+          $ref: '#/components/schemas/Code'
+        dataValue:
+          type: string
+          format: date
+          title: Datavalue
+        geographicScopes:
+          items:
+            $ref: '#/components/schemas/GeographicScope'
+          type: array
+          title: Geographicscopes
+      type: object
+      required:
+      - id
+      - name
+      - type
+      - dataValue
+      - geographicScopes
+      title: GovernanceDate
     HTTPValidationError:
       properties:
         detail:
@@ -862,9 +969,11 @@ components:
         label:
           type: string
           title: Label
+          default: ''
         description:
           type: string
           title: Description
+          default: ''
         codes:
           items:
             $ref: '#/components/schemas/Code'
@@ -889,9 +998,11 @@ components:
         label:
           type: string
           title: Label
+          default: ''
         description:
           type: string
           title: Description
+          default: ''
         intercurrentEventStrategy:
           type: string
           title: Intercurrenteventstrategy
@@ -910,6 +1021,7 @@ components:
         description:
           type: string
           title: Description
+          default: ''
         codes:
           items:
             $ref: '#/components/schemas/Code'
@@ -937,7 +1049,9 @@ components:
           type: string
           title: Sectiontitle
         text:
-          type: string
+          anyOf:
+          - type: string
+          - type: 'null'
           title: Text
         contentChildIds:
           items:
@@ -965,9 +1079,11 @@ components:
         label:
           type: string
           title: Label
+          default: ''
         description:
           type: string
           title: Description
+          default: ''
         instanceType:
           type: string
           enum:
@@ -1010,9 +1126,11 @@ components:
         label:
           type: string
           title: Label
+          default: ''
         description:
           type: string
           title: Description
+          default: ''
         instanceType:
           type: string
           enum:
@@ -1055,6 +1173,7 @@ components:
         label:
           type: string
           title: Label
+          default: ''
         type:
           $ref: '#/components/schemas/Code'
         organizationIdentifierScheme:
@@ -1088,6 +1207,7 @@ components:
         label:
           type: string
           title: Label
+          default: ''
         type:
           $ref: '#/components/schemas/Code'
         organizationIdentifierScheme:
@@ -1121,9 +1241,11 @@ components:
         label:
           type: string
           title: Label
+          default: ''
         description:
           type: string
           title: Description
+          default: ''
         procedureType:
           type: string
           title: Proceduretype
@@ -1175,9 +1297,11 @@ components:
         label:
           type: string
           title: Label
+          default: ''
         description:
           type: string
           title: Description
+          default: ''
         mainTimeline:
           type: boolean
           title: Maintimeline
@@ -1185,9 +1309,7 @@ components:
           type: string
           title: Entrycondition
         scheduleTimelineEntryId:
-          anyOf:
-          - type: string
-          - type: 'null'
+          type: string
           title: Scheduletimelineentryid
         scheduleTimelineExits:
           items:
@@ -1209,6 +1331,7 @@ components:
       - name
       - mainTimeline
       - entryCondition
+      - scheduleTimelineEntryId
       title: ScheduleTimeline
     ScheduleTimeline-Output:
       properties:
@@ -1223,9 +1346,11 @@ components:
         label:
           type: string
           title: Label
+          default: ''
         description:
           type: string
           title: Description
+          default: ''
         mainTimeline:
           type: boolean
           title: Maintimeline
@@ -1233,9 +1358,7 @@ components:
           type: string
           title: Entrycondition
         scheduleTimelineEntryId:
-          anyOf:
-          - type: string
-          - type: 'null'
+          type: string
           title: Scheduletimelineentryid
         scheduleTimelineExits:
           items:
@@ -1257,6 +1380,7 @@ components:
       - name
       - mainTimeline
       - entryCondition
+      - scheduleTimelineEntryId
       title: ScheduleTimeline
     ScheduleTimelineExit:
       properties:
@@ -1482,56 +1606,31 @@ components:
             format: uuid
           - type: 'null'
           title: Id
-        studyTitle:
+        name:
           type: string
-          title: Studytitle
-        studyVersion:
+          minLength: 1
+          title: Name
+        description:
           type: string
-          title: Studyversion
-        type:
+          title: Description
+          default: ''
+        label:
+          type: string
+          title: Label
+          default: ''
+        versions:
+          items:
+            $ref: '#/components/schemas/StudyVersion-Input'
+          type: array
+          title: Versions
+          default: []
+        documentedBy:
           anyOf:
-          - $ref: '#/components/schemas/Code'
+          - $ref: '#/components/schemas/StudyProtocolDocument-Input'
           - type: 'null'
-        studyPhase:
-          anyOf:
-          - $ref: '#/components/schemas/AliasCode'
-          - type: 'null'
-        businessTherapeuticAreas:
-          items:
-            $ref: '#/components/schemas/Code'
-          type: array
-          title: Businesstherapeuticareas
-          default: []
-        studyIdentifiers:
-          items:
-            $ref: '#/components/schemas/StudyIdentifier-Input'
-          type: array
-          title: Studyidentifiers
-          default: []
-        studyProtocolVersions:
-          items:
-            $ref: '#/components/schemas/StudyProtocolVersion'
-          type: array
-          title: Studyprotocolversions
-          default: []
-        studyDesigns:
-          items:
-            $ref: '#/components/schemas/StudyDesign-Input'
-          type: array
-          title: Studydesigns
-          default: []
-        studyRationale:
-          type: string
-          title: Studyrationale
-        studyAcronym:
-          type: string
-          title: Studyacronym
       type: object
       required:
-      - studyTitle
-      - studyVersion
-      - studyRationale
-      - studyAcronym
+      - name
       title: Study
     Study-Output:
       properties:
@@ -1541,57 +1640,133 @@ components:
             format: uuid
           - type: 'null'
           title: Id
-        studyTitle:
+        name:
           type: string
-          title: Studytitle
-        studyVersion:
+          minLength: 1
+          title: Name
+        description:
           type: string
-          title: Studyversion
-        type:
+          title: Description
+          default: ''
+        label:
+          type: string
+          title: Label
+          default: ''
+        versions:
+          items:
+            $ref: '#/components/schemas/StudyVersion-Output'
+          type: array
+          title: Versions
+          default: []
+        documentedBy:
           anyOf:
-          - $ref: '#/components/schemas/Code'
+          - $ref: '#/components/schemas/StudyProtocolDocument-Output'
           - type: 'null'
-        studyPhase:
-          anyOf:
-          - $ref: '#/components/schemas/AliasCode'
-          - type: 'null'
-        businessTherapeuticAreas:
-          items:
-            $ref: '#/components/schemas/Code'
-          type: array
-          title: Businesstherapeuticareas
-          default: []
-        studyIdentifiers:
-          items:
-            $ref: '#/components/schemas/StudyIdentifier-Output'
-          type: array
-          title: Studyidentifiers
-          default: []
-        studyProtocolVersions:
-          items:
-            $ref: '#/components/schemas/StudyProtocolVersion'
-          type: array
-          title: Studyprotocolversions
-          default: []
-        studyDesigns:
-          items:
-            $ref: '#/components/schemas/StudyDesign-Output'
-          type: array
-          title: Studydesigns
-          default: []
-        studyRationale:
-          type: string
-          title: Studyrationale
-        studyAcronym:
-          type: string
-          title: Studyacronym
       type: object
       required:
-      - studyTitle
-      - studyVersion
-      - studyRationale
-      - studyAcronym
+      - name
       title: Study
+    StudyAmendment-Input:
+      properties:
+        id:
+          type: string
+          minLength: 1
+          title: Id
+        number:
+          type: string
+          title: Number
+        summary:
+          type: string
+          title: Summary
+        substantialImpact:
+          type: boolean
+          title: Substantialimpact
+        primaryReason:
+          $ref: '#/components/schemas/StudyAmendmentReason'
+        secondaryReasons:
+          items:
+            $ref: '#/components/schemas/StudyAmendmentReason'
+          type: array
+          title: Secondaryreasons
+          default: []
+        enrollments:
+          items:
+            $ref: '#/components/schemas/SubjectEnrollment'
+          type: array
+          title: Enrollments
+        previousId:
+          anyOf:
+          - type: string
+          - type: 'null'
+          title: Previousid
+      type: object
+      required:
+      - id
+      - number
+      - summary
+      - substantialImpact
+      - primaryReason
+      - enrollments
+      title: StudyAmendment
+    StudyAmendment-Output:
+      properties:
+        id:
+          type: string
+          minLength: 1
+          title: Id
+        number:
+          type: string
+          title: Number
+        summary:
+          type: string
+          title: Summary
+        substantialImpact:
+          type: boolean
+          title: Substantialimpact
+        primaryReason:
+          $ref: '#/components/schemas/StudyAmendmentReason'
+        secondaryReasons:
+          items:
+            $ref: '#/components/schemas/StudyAmendmentReason'
+          type: array
+          title: Secondaryreasons
+          default: []
+        enrollments:
+          items:
+            $ref: '#/components/schemas/SubjectEnrollment'
+          type: array
+          title: Enrollments
+        previousId:
+          anyOf:
+          - type: string
+          - type: 'null'
+          title: Previousid
+      type: object
+      required:
+      - id
+      - number
+      - summary
+      - substantialImpact
+      - primaryReason
+      - enrollments
+      title: StudyAmendment
+    StudyAmendmentReason:
+      properties:
+        id:
+          type: string
+          minLength: 1
+          title: Id
+        code:
+          $ref: '#/components/schemas/Code'
+        otherReason:
+          type: string
+          title: Otherreason
+      type: object
+      required:
+      - id
+      - code
+      - otherReason
+      title: StudyAmendmentReason
     StudyArm:
       properties:
         id:
@@ -1605,9 +1780,11 @@ components:
         label:
           type: string
           title: Label
+          default: ''
         description:
           type: string
           title: Description
+          default: ''
         type:
           $ref: '#/components/schemas/Code'
         studyArmDataOriginDescription:
@@ -1660,9 +1837,11 @@ components:
         label:
           type: string
           title: Label
+          default: ''
         description:
           type: string
           title: Description
+          default: ''
         trialIntentTypes:
           items:
             $ref: '#/components/schemas/Code'
@@ -1683,12 +1862,6 @@ components:
           default: []
         interventionModel:
           $ref: '#/components/schemas/Code'
-        contents:
-          items:
-            $ref: '#/components/schemas/NarrativeContent'
-          type: array
-          title: Contents
-          default: []
         encounters:
           items:
             $ref: '#/components/schemas/Encounter'
@@ -1783,6 +1956,10 @@ components:
           type: array
           title: Studyscheduletimelines
           default: []
+        documentVersion:
+          anyOf:
+          - $ref: '#/components/schemas/StudyProtocolDocumentVersion-Input'
+          - type: 'null'
       type: object
       required:
       - id
@@ -1806,9 +1983,11 @@ components:
         label:
           type: string
           title: Label
+          default: ''
         description:
           type: string
           title: Description
+          default: ''
         trialIntentTypes:
           items:
             $ref: '#/components/schemas/Code'
@@ -1829,12 +2008,6 @@ components:
           default: []
         interventionModel:
           $ref: '#/components/schemas/Code'
-        contents:
-          items:
-            $ref: '#/components/schemas/NarrativeContent'
-          type: array
-          title: Contents
-          default: []
         encounters:
           items:
             $ref: '#/components/schemas/Encounter'
@@ -1929,6 +2102,10 @@ components:
           type: array
           title: Studyscheduletimelines
           default: []
+        documentVersion:
+          anyOf:
+          - $ref: '#/components/schemas/StudyProtocolDocumentVersion-Output'
+          - type: 'null'
       type: object
       required:
       - id
@@ -1952,9 +2129,11 @@ components:
         label:
           type: string
           title: Label
+          default: ''
         description:
           type: string
           title: Description
+          default: ''
         plannedNumberOfParticipants:
           type: integer
           minimum: 0.0
@@ -1992,9 +2171,11 @@ components:
         label:
           type: string
           title: Label
+          default: ''
         description:
           type: string
           title: Description
+          default: ''
         transitionStartRule:
           anyOf:
           - $ref: '#/components/schemas/TransitionRule'
@@ -2021,9 +2202,11 @@ components:
         label:
           type: string
           title: Label
+          default: ''
         description:
           type: string
           title: Description
+          default: ''
         type:
           $ref: '#/components/schemas/Code'
         previousStudyEpochId:
@@ -2076,7 +2259,65 @@ components:
       - studyIdentifier
       - studyIdentifierScope
       title: StudyIdentifier
-    StudyProtocolVersion:
+    StudyProtocolDocument-Input:
+      properties:
+        id:
+          type: string
+          minLength: 1
+          title: Id
+        name:
+          type: string
+          minLength: 1
+          title: Name
+        label:
+          type: string
+          title: Label
+          default: ''
+        description:
+          type: string
+          title: Description
+          default: ''
+        versions:
+          items:
+            $ref: '#/components/schemas/StudyProtocolDocumentVersion-Input'
+          type: array
+          title: Versions
+          default: []
+      type: object
+      required:
+      - id
+      - name
+      title: StudyProtocolDocument
+    StudyProtocolDocument-Output:
+      properties:
+        id:
+          type: string
+          minLength: 1
+          title: Id
+        name:
+          type: string
+          minLength: 1
+          title: Name
+        label:
+          type: string
+          title: Label
+          default: ''
+        description:
+          type: string
+          title: Description
+          default: ''
+        versions:
+          items:
+            $ref: '#/components/schemas/StudyProtocolDocumentVersion-Output'
+          type: array
+          title: Versions
+          default: []
+      type: object
+      required:
+      - id
+      - name
+      title: StudyProtocolDocument
+    StudyProtocolDocumentVersion-Input:
       properties:
         id:
           type: string
@@ -2097,19 +2338,26 @@ components:
         protocolVersion:
           type: string
           title: Protocolversion
-        protocolAmendment:
-          anyOf:
-          - type: string
-          - type: 'null'
-          title: Protocolamendment
-        protocolEffectiveDate:
-          anyOf:
-          - type: string
-            format: date
-          - type: 'null'
-          title: Protocoleffectivedate
         protocolStatus:
           $ref: '#/components/schemas/Code'
+        dateValues:
+          items:
+            $ref: '#/components/schemas/GovernanceDate-Input'
+          type: array
+          title: Datevalues
+          default: []
+        contents:
+          items:
+            $ref: '#/components/schemas/NarrativeContent'
+          type: array
+          title: Contents
+          default: []
+        childrenIds:
+          items:
+            type: string
+          type: array
+          title: Childrenids
+          default: []
       type: object
       required:
       - id
@@ -2119,7 +2367,214 @@ components:
       - scientificTitle
       - protocolVersion
       - protocolStatus
-      title: StudyProtocolVersion
+      title: StudyProtocolDocumentVersion
+    StudyProtocolDocumentVersion-Output:
+      properties:
+        id:
+          type: string
+          minLength: 1
+          title: Id
+        briefTitle:
+          type: string
+          title: Brieftitle
+        officialTitle:
+          type: string
+          title: Officialtitle
+        publicTitle:
+          type: string
+          title: Publictitle
+        scientificTitle:
+          type: string
+          title: Scientifictitle
+        protocolVersion:
+          type: string
+          title: Protocolversion
+        protocolStatus:
+          $ref: '#/components/schemas/Code'
+        dateValues:
+          items:
+            $ref: '#/components/schemas/GovernanceDate-Output'
+          type: array
+          title: Datevalues
+          default: []
+        contents:
+          items:
+            $ref: '#/components/schemas/NarrativeContent'
+          type: array
+          title: Contents
+          default: []
+        childrenIds:
+          items:
+            type: string
+          type: array
+          title: Childrenids
+          default: []
+      type: object
+      required:
+      - id
+      - briefTitle
+      - officialTitle
+      - publicTitle
+      - scientificTitle
+      - protocolVersion
+      - protocolStatus
+      title: StudyProtocolDocumentVersion
+    StudyVersion-Input:
+      properties:
+        id:
+          type: string
+          minLength: 1
+          title: Id
+        studyTitle:
+          type: string
+          title: Studytitle
+        studyVersion:
+          type: string
+          title: Studyversion
+        studyRationale:
+          type: string
+          title: Studyrationale
+        studyAcronym:
+          type: string
+          title: Studyacronym
+        type:
+          anyOf:
+          - $ref: '#/components/schemas/Code'
+          - type: 'null'
+        studyPhase:
+          anyOf:
+          - $ref: '#/components/schemas/AliasCode'
+          - type: 'null'
+        documentVersion:
+          anyOf:
+          - $ref: '#/components/schemas/StudyProtocolDocumentVersion-Input'
+          - type: 'null'
+        dateValues:
+          items:
+            $ref: '#/components/schemas/GovernanceDate-Input'
+          type: array
+          title: Datevalues
+          default: []
+        amendments:
+          items:
+            $ref: '#/components/schemas/StudyAmendment-Input'
+          type: array
+          title: Amendments
+          default: []
+        businessTherapeuticAreas:
+          items:
+            $ref: '#/components/schemas/Code'
+          type: array
+          title: Businesstherapeuticareas
+          default: []
+        studyIdentifiers:
+          items:
+            $ref: '#/components/schemas/StudyIdentifier-Input'
+          type: array
+          title: Studyidentifiers
+          default: []
+        studyDesigns:
+          items:
+            $ref: '#/components/schemas/StudyDesign-Input'
+          type: array
+          title: Studydesigns
+          default: []
+      type: object
+      required:
+      - id
+      - studyTitle
+      - studyVersion
+      - studyRationale
+      - studyAcronym
+      title: StudyVersion
+    StudyVersion-Output:
+      properties:
+        id:
+          type: string
+          minLength: 1
+          title: Id
+        studyTitle:
+          type: string
+          title: Studytitle
+        studyVersion:
+          type: string
+          title: Studyversion
+        studyRationale:
+          type: string
+          title: Studyrationale
+        studyAcronym:
+          type: string
+          title: Studyacronym
+        type:
+          anyOf:
+          - $ref: '#/components/schemas/Code'
+          - type: 'null'
+        studyPhase:
+          anyOf:
+          - $ref: '#/components/schemas/AliasCode'
+          - type: 'null'
+        documentVersion:
+          anyOf:
+          - $ref: '#/components/schemas/StudyProtocolDocumentVersion-Output'
+          - type: 'null'
+        dateValues:
+          items:
+            $ref: '#/components/schemas/GovernanceDate-Output'
+          type: array
+          title: Datevalues
+          default: []
+        amendments:
+          items:
+            $ref: '#/components/schemas/StudyAmendment-Output'
+          type: array
+          title: Amendments
+          default: []
+        businessTherapeuticAreas:
+          items:
+            $ref: '#/components/schemas/Code'
+          type: array
+          title: Businesstherapeuticareas
+          default: []
+        studyIdentifiers:
+          items:
+            $ref: '#/components/schemas/StudyIdentifier-Output'
+          type: array
+          title: Studyidentifiers
+          default: []
+        studyDesigns:
+          items:
+            $ref: '#/components/schemas/StudyDesign-Output'
+          type: array
+          title: Studydesigns
+          default: []
+      type: object
+      required:
+      - id
+      - studyTitle
+      - studyVersion
+      - studyRationale
+      - studyAcronym
+      title: StudyVersion
+    SubjectEnrollment:
+      properties:
+        id:
+          type: string
+          minLength: 1
+          title: Id
+        type:
+          $ref: '#/components/schemas/Code'
+        code:
+          $ref: '#/components/schemas/Code'
+        quantity:
+          type: string
+          title: Quantity
+      type: object
+      required:
+      - id
+      - type
+      - code
+      - quantity
+      title: SubjectEnrollment
     SyntaxTemplateDictionary:
       properties:
         id:
@@ -2133,9 +2588,11 @@ components:
         label:
           type: string
           title: Label
+          default: ''
         description:
           type: string
           title: Description
+          default: ''
         text:
           type: string
           title: Text
@@ -2161,9 +2618,11 @@ components:
         label:
           type: string
           title: Label
+          default: ''
         description:
           type: string
           title: Description
+          default: ''
         type:
           $ref: '#/components/schemas/Code'
         timingValue:
@@ -2217,9 +2676,11 @@ components:
         label:
           type: string
           title: Label
+          default: ''
         description:
           type: string
           title: Description
+          default: ''
         text:
           type: string
           title: Text
