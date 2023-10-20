@@ -31,15 +31,9 @@ jobs:
         uses: stCarolas/setup-maven@v4.5
         with:
           maven-version: 3.9.5
-      - name: Get the info.version property from the previous version's API file (1.1.1 Provisional ...)
-        id: prevVersion
-        uses: notiz-dev/github-action-json-property@release
-        with:
-          path: prevRelease/Deliverables/API/USDM_API.json
-          prop_path: info.version
       - name: Get the previous and current version numbers
         run: |
-          echo "PREVIOUS_VERSION=$(echo ${{steps.prevVersion.outputs.propStr}} | cut -d ' ' -f1 | tr . -)" >> $GITHUB_ENV
+          echo "PREVIOUS_VERSION=$(jq -r '.info.version' prevRelease/Deliverables/API/USDM_API.json | cut -d ' ' -f1 | tr . -)" >> $GITHUB_ENV
           echo "CURRENT_VERSION=${GITHUB_REF_NAME//release-/}" >> $GITHUB_ENV
       - name: Copy the files needed by the usdm dictionary generator
         run: |
