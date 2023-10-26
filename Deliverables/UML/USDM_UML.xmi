@@ -3,31 +3,6 @@
 	<xmi:Documentation exporter="Enterprise Architect" exporterVersion="6.5" exporterID="1628"/>
 	<uml:Model xmi:type="uml:Model" name="EA_Model">
 		<packagedElement xmi:type="uml:Package" xmi:id="EAPK_6257F2EA_5B64_4812_AC9D_AE4DE28A919E" name="USDM">
-			<ownedComment xmi:type="uml:Comment" xmi:id="EAID_AF3A99B4_2EE9_44fc_AED9_5F8B8D12F866" body="ew relationship in table Procedure">
-				<annotatedElement xmi:idref="EAID_FC7D180C_9B87_4c65_8D1C_1F39F1DF7713"/>
-			</ownedComment>
-			<ownedComment xmi:type="uml:Comment" xmi:id="EAID_CF913AA8_6A6C_42ad_BED0_B270D55E2E71" body="I would not call this routOfAdministration as this is more than the route. It also includes frequency, dose and duration. So I changed it to administrations. (As there can be more than 1 defined) ">
-				<annotatedElement xmi:idref="EAID_032E933C_602A_4ba9_82F0_B12562EC32B0"/>
-			</ownedComment>
-			<ownedComment xmi:type="uml:Comment" xmi:id="EAID_B56AE448_CF71_4cbc_A0E8_5DB0EDD34D31" body="I set minimumResponseDuration to optional - and used Quantity class for it. Is that OK?&#xA;I made pharmacologicalClass optional. Could it be more than 1? &#xA;The rest of new attributes is set to required.">
-				<annotatedElement xmi:idref="EAID_C7072906_8529_42b6_AB59_AD2E895DA545"/>
-			</ownedComment>
-			<ownedComment xmi:type="uml:Comment" xmi:id="EAID_EE30CB18_72F1_4baf_BF11_756F2C966BC6" body="Changed relationship name from studyDesign class to StudyInterventions. This is according to class name change! Not yet in blob diagram.">
-				<annotatedElement xmi:idref="EAID_D744BACA_D230_4494_B803_C7AE68FC1C72"/>
-			</ownedComment>
-			<ownedComment xmi:type="uml:Comment" xmi:id="EAID_444C0E61_753C_4bc8_A4EA_6FDCE7F5526F">
-				<annotatedElement xmi:idref="EAPK_6257F2EA_5B64_4812_AC9D_AE4DE28A919E"/>
-			</ownedComment>
-			<ownedComment xmi:type="uml:Comment" xmi:id="EAID_F7866A71_6468_4e07_B881_4F9EA60E7D6B">
-				<annotatedElement xmi:idref="EAID_0E22CFDF_FBF5_4b0f_8E50_0AC8D3B81D2A"/>
-			</ownedComment>
-			<ownedComment xmi:type="uml:Comment" xmi:id="EAID_271D9E0F_5B60_4b33_B603_C6DD93442C0A"/>
-			<ownedComment xmi:type="uml:Comment" xmi:id="EAID_8705E001_4F1E_479e_995E_AA54D3C9C25C"/>
-			<ownedComment xmi:type="uml:Comment" xmi:id="EAID_733F9CFB_11A7_4a4e_A816_764908B704E3">
-				<annotatedElement xmi:idref="EAPK_6257F2EA_5B64_4812_AC9D_AE4DE28A919E"/>
-			</ownedComment>
-			<packagedElement xmi:type="uml:Class" xmi:id="EAID_5070586A_BD1F_42de_86F5_BD1D51CDE295"/>
-			<packagedElement xmi:type="uml:Class" xmi:id="EAID_48806F35_23E6_4047_9F9B_834723A66E07"/>
 			<packagedElement xmi:type="uml:Class" xmi:id="EAID_383FF137_1DCC_4d91_8205_30AF4E2F73F4" name="Activity">
 				<ownedAttribute xmi:type="uml:Property" xmi:id="EAID_0BBE5873_7D68_4506_BAD6_CF84EDB176EF" name="id">
 					<lowerValue xmi:type="uml:LiteralInteger" xmi:id="EAID_LI000001_7D68_4506_BAD6_CF84EDB176EF" value="1"/>
@@ -4993,120 +4968,6 @@
 				<times created="2023-09-14 14:17:33" modified="2023-09-14 15:13:22" lastloaddate="2019-01-23 13:38:10" lastsavedate="2019-01-23 13:38:10"/>
 				<flags iscontrolled="0" isprotected="0" batchsave="0" batchload="0" usedtd="0" logxml="0"/>
 			</element>
-			<element xmi:idref="EAID_733F9CFB_11A7_4a4e_A816_764908B704E3" xmi:type="uml:Note" scope="public">
-				<model package="EAPK_6257F2EA_5B64_4812_AC9D_AE4DE28A919E" tpos="0" ea_localid="61" ea_eleType="element"/>
-				<properties isSpecification="false" sType="Note" nType="0" scope="public"/>
-				<project author="bsnoe" version="1.0" phase="1.0" created="2023-10-17 11:17:01" modified="2023-10-17 11:17:01" complexity="1" status="Proposed"/>
-				<code gentype="&lt;none&gt;"/>
-				<style appearance="BackColor=-1;BorderColor=-1;BorderWidth=-1;FontColor=-1;VSwimLanes=1;HSwimLanes=1;BorderStyle=0;"/>
-				<tags/>
-				<xrefs/>
-				<extendedProperties tagged="0" package_name="USDM"/>
-			</element>
-			<element xmi:idref="EAID_8705E001_4F1E_479e_995E_AA54D3C9C25C" xmi:type="uml:Note" scope="public">
-				<model package="EAPK_6257F2EA_5B64_4812_AC9D_AE4DE28A919E" tpos="0" ea_localid="63" ea_eleType="element"/>
-				<properties isSpecification="false" sType="Note" nType="1" scope="public"/>
-				<project author="bsnoe" version="1.0" phase="1.0" created="2023-10-17 11:24:58" modified="2023-10-17 11:25:12" complexity="1" status="Proposed"/>
-				<code gentype="&lt;none&gt;"/>
-				<style appearance="BackColor=-1;BorderColor=-1;BorderWidth=-1;FontColor=-1;VSwimLanes=1;HSwimLanes=1;BorderStyle=0;"/>
-				<tags/>
-				<xrefs/>
-				<extendedProperties tagged="0" package_name="USDM" relatedlinks="idref1=;"/>
-			</element>
-			<element xmi:idref="EAID_271D9E0F_5B60_4b33_B603_C6DD93442C0A" xmi:type="uml:Note" scope="public">
-				<model package="EAPK_6257F2EA_5B64_4812_AC9D_AE4DE28A919E" tpos="0" ea_localid="64" ea_eleType="element"/>
-				<properties isSpecification="false" sType="Note" nType="1" scope="public"/>
-				<project author="bsnoe" version="1.0" phase="1.0" created="2023-10-17 11:25:22" modified="2023-10-17 11:25:29" complexity="1" status="Proposed"/>
-				<code gentype="&lt;none&gt;"/>
-				<style appearance="BackColor=-1;BorderColor=-1;BorderWidth=-1;FontColor=-1;VSwimLanes=1;HSwimLanes=1;BorderStyle=0;"/>
-				<tags/>
-				<xrefs/>
-				<extendedProperties tagged="0" package_name="USDM" relatedlinks="idref1=;"/>
-			</element>
-			<element xmi:idref="EAID_F7866A71_6468_4e07_B881_4F9EA60E7D6B" xmi:type="uml:Note" scope="public">
-				<model package="EAPK_6257F2EA_5B64_4812_AC9D_AE4DE28A919E" tpos="0" ea_localid="65" ea_eleType="element"/>
-				<properties isSpecification="false" sType="Note" nType="1" scope="public"/>
-				<project author="bsnoe" version="1.0" phase="1.0" created="2023-10-17 11:31:52" modified="2023-10-18 16:43:04" complexity="1" status="Proposed"/>
-				<code gentype="&lt;none&gt;"/>
-				<style appearance="BackColor=-1;BorderColor=-1;BorderWidth=-1;FontColor=-1;VSwimLanes=1;HSwimLanes=1;BorderStyle=0;"/>
-				<tags/>
-				<xrefs/>
-				<extendedProperties tagged="0" package_name="USDM" relatedlinks="idref1=EAID_0E22CFDF_FBF5_4b0f_8E50_0AC8D3B81D2A;"/>
-			</element>
-			<element xmi:idref="EAID_444C0E61_753C_4bc8_A4EA_6FDCE7F5526F" xmi:type="uml:Note" scope="public">
-				<model package="EAPK_6257F2EA_5B64_4812_AC9D_AE4DE28A919E" tpos="0" ea_localid="132" ea_eleType="element"/>
-				<properties isSpecification="false" sType="Note" nType="0" scope="public"/>
-				<project author="bsnoe" version="1.0" phase="1.0" created="2023-10-25 13:39:59" modified="2023-10-25 13:39:59" complexity="1" status="Proposed"/>
-				<code gentype="&lt;none&gt;"/>
-				<style appearance="BackColor=-1;BorderColor=-1;BorderWidth=-1;FontColor=-1;VSwimLanes=1;HSwimLanes=1;BorderStyle=0;"/>
-				<tags/>
-				<xrefs/>
-				<extendedProperties tagged="0" package_name="USDM"/>
-			</element>
-			<element xmi:idref="EAID_EE30CB18_72F1_4baf_BF11_756F2C966BC6" xmi:type="uml:Note" scope="public">
-				<model package="EAPK_6257F2EA_5B64_4812_AC9D_AE4DE28A919E" tpos="0" ea_localid="60" ea_eleType="element"/>
-				<properties documentation="Changed relationship name from studyDesign class to StudyInterventions. This is according to class name change! Not yet in blob diagram." isSpecification="false" sType="Note" nType="1" scope="public"/>
-				<project author="bsnoe" version="1.0" phase="1.0" created="2023-10-17 09:56:42" modified="2023-10-17 12:16:55" complexity="1" status="Proposed"/>
-				<code gentype="&lt;none&gt;"/>
-				<style appearance="BackColor=-1;BorderColor=-1;BorderWidth=-1;FontColor=-1;VSwimLanes=1;HSwimLanes=1;BorderStyle=0;"/>
-				<tags/>
-				<xrefs/>
-				<extendedProperties tagged="0" package_name="USDM" relatedlinks="idref1=EAID_D744BACA_D230_4494_B803_C7AE68FC1C72;"/>
-			</element>
-			<element xmi:idref="EAID_B56AE448_CF71_4cbc_A0E8_5DB0EDD34D31" xmi:type="uml:Note" scope="public">
-				<model package="EAPK_6257F2EA_5B64_4812_AC9D_AE4DE28A919E" tpos="0" ea_localid="68" ea_eleType="element"/>
-				<properties documentation="I set minimumResponseDuration to optional - and used Quantity class for it. Is that OK?&#xA;I made pharmacologicalClass optional. Could it be more than 1? &#xA;The rest of new attributes is set to required." isSpecification="false" sType="Note" nType="0" scope="public"/>
-				<project author="bsnoe" version="1.0" phase="1.0" created="2023-10-17 12:12:54" modified="2023-10-18 16:46:34" complexity="1" status="Proposed"/>
-				<code gentype="&lt;none&gt;"/>
-				<style appearance="BackColor=-1;BorderColor=-1;BorderWidth=-1;FontColor=-1;VSwimLanes=1;HSwimLanes=1;BorderStyle=0;"/>
-				<tags/>
-				<xrefs/>
-				<extendedProperties tagged="0" package_name="USDM"/>
-				<links>
-					<NoteLink xmi:id="EAID_720636B3_5A4E_4e9c_B59A_4013DEF5F7E1" start="EAID_B56AE448_CF71_4cbc_A0E8_5DB0EDD34D31" end="EAID_C7072906_8529_42b6_AB59_AD2E895DA545"/>
-				</links>
-			</element>
-			<element xmi:idref="EAID_CF913AA8_6A6C_42ad_BED0_B270D55E2E71" xmi:type="uml:Note" scope="public">
-				<model package="EAPK_6257F2EA_5B64_4812_AC9D_AE4DE28A919E" tpos="0" ea_localid="73" ea_eleType="element"/>
-				<properties documentation="I would not call this routOfAdministration as this is more than the route. It also includes frequency, dose and duration. So I changed it to administrations. (As there can be more than 1 defined) " isSpecification="false" sType="Note" nType="1" scope="public"/>
-				<project author="bsnoe" version="1.0" phase="1.0" created="2023-10-18 16:24:58" modified="2023-10-18 16:26:10" complexity="1" status="Proposed"/>
-				<code gentype="&lt;none&gt;"/>
-				<style appearance="BackColor=-1;BorderColor=-1;BorderWidth=-1;FontColor=-1;VSwimLanes=1;HSwimLanes=1;BorderStyle=0;"/>
-				<tags/>
-				<xrefs/>
-				<extendedProperties tagged="0" package_name="USDM" relatedlinks="idref1=EAID_032E933C_602A_4ba9_82F0_B12562EC32B0;"/>
-			</element>
-			<element xmi:idref="EAID_AF3A99B4_2EE9_44fc_AED9_5F8B8D12F866" xmi:type="uml:Note" scope="public">
-				<model package="EAPK_6257F2EA_5B64_4812_AC9D_AE4DE28A919E" tpos="0" ea_localid="69" ea_eleType="element"/>
-				<properties documentation="ew relationship in table Procedure" isSpecification="false" sType="Note" nType="1" scope="public"/>
-				<project author="bsnoe" version="1.0" phase="1.0" created="2023-10-18 15:27:21" modified="2023-10-26 10:28:56" complexity="1" status="Proposed"/>
-				<code gentype="&lt;none&gt;"/>
-				<style appearance="BackColor=-1;BorderColor=-1;BorderWidth=-1;FontColor=-1;VSwimLanes=1;HSwimLanes=1;BorderStyle=0;"/>
-				<tags/>
-				<xrefs/>
-				<extendedProperties tagged="0" package_name="USDM" relatedlinks="idref1=EAID_FC7D180C_9B87_4c65_8D1C_1F39F1DF7713;"/>
-			</element>
-			<element xmi:idref="EAID_5070586A_BD1F_42de_86F5_BD1D51CDE295" xmi:type="uml:Text" scope="public">
-				<model package="EAPK_6257F2EA_5B64_4812_AC9D_AE4DE28A919E" tpos="0" ea_localid="131" ea_eleType="element"/>
-				<properties documentation="&lt;b&gt;Main timeline linking to encounters&lt;/b&gt;" isSpecification="false" sType="Text" nType="0" scope="public"/>
-				<project author="bsnoe" version="1.0" phase="1.0" created="2023-10-25 13:36:57" modified="2023-10-25 13:39:38" complexity="1" status="Proposed"/>
-				<code gentype="&lt;none&gt;"/>
-				<style appearance="BackColor=-1;BorderColor=-1;BorderWidth=1;FontColor=-1;VSwimLanes=1;HSwimLanes=1;BorderStyle=0;" object_style="MDoc=1;"/>
-				<modelDocument/>
-				<tags/>
-				<xrefs/>
-				<extendedProperties tagged="0" package_name="USDM"/>
-			</element>
-			<element xmi:idref="EAID_48806F35_23E6_4047_9F9B_834723A66E07" xmi:type="uml:Text" scope="public">
-				<model package="EAPK_6257F2EA_5B64_4812_AC9D_AE4DE28A919E" tpos="0" ea_localid="133" ea_eleType="element"/>
-				<properties documentation="&lt;b&gt;Sub-timeline with an instance per timepoint relative to dosing&lt;/b&gt;" isSpecification="false" sType="Text" nType="0" scope="public"/>
-				<project author="bsnoe" version="1.0" phase="1.0" created="2023-10-25 13:40:10" modified="2023-10-25 13:40:34" complexity="1" status="Proposed"/>
-				<code gentype="&lt;none&gt;"/>
-				<style appearance="BackColor=-1;BorderColor=-1;BorderWidth=-1;FontColor=-1;VSwimLanes=1;HSwimLanes=1;BorderStyle=0;"/>
-				<tags/>
-				<xrefs/>
-				<extendedProperties tagged="0" package_name="USDM"/>
-			</element>
 			<element xmi:idref="EAID_383FF137_1DCC_4d91_8205_30AF4E2F73F4" xmi:type="uml:Class" name="Activity" scope="public">
 				<model package="EAPK_6257F2EA_5B64_4812_AC9D_AE4DE28A919E" tpos="0" ea_localid="26" ea_eleType="element"/>
 				<properties isSpecification="false" sType="Class" nType="0" scope="public" isRoot="false" isLeaf="false" isAbstract="false" isActive="false"/>
@@ -8136,7 +7997,6 @@
 					<Association xmi:id="EAID_9A98DD9D_3145_4ac8_B9D0_D4A6FE94425C" start="EAID_C7072906_8529_42b6_AB59_AD2E895DA545" end="EAID_06DA84B5_6A66_42f6_BFF2_CFC7508C49BD"/>
 					<Association xmi:id="EAID_6E2E8E80_0F60_4e0f_AADB_A7F2EE643ADC" start="EAID_3D300F88_31E2_4503_BE2B_6991B6C218DB" end="EAID_C7072906_8529_42b6_AB59_AD2E895DA545"/>
 					<Association xmi:id="EAID_6FBC9E4B_6C58_4caf_9EEC_66A7AA800C62" start="EAID_401AB599_DC24_40eb_B7A7_41C2C436D8DF" end="EAID_C7072906_8529_42b6_AB59_AD2E895DA545"/>
-					<NoteLink xmi:id="EAID_720636B3_5A4E_4e9c_B59A_4013DEF5F7E1" start="EAID_B56AE448_CF71_4cbc_A0E8_5DB0EDD34D31" end="EAID_C7072906_8529_42b6_AB59_AD2E895DA545"/>
 					<Association xmi:id="EAID_D744BACA_D230_4494_B803_C7AE68FC1C72" start="EAID_168A3C4F_56A5_4628_9110_C532600EDDF3" end="EAID_C7072906_8529_42b6_AB59_AD2E895DA545"/>
 					<Association xmi:id="EAID_FC7D180C_9B87_4c65_8D1C_1F39F1DF7713" start="EAID_535CB4D2_68B9_4b94_9D51_78881D4C53E3" end="EAID_C7072906_8529_42b6_AB59_AD2E895DA545"/>
 				</links>
@@ -8876,40 +8736,6 @@
 			</element>
 		</elements>
 		<connectors>
-			<connector xmi:idref="EAID_720636B3_5A4E_4e9c_B59A_4013DEF5F7E1">
-				<source xmi:idref="EAID_B56AE448_CF71_4cbc_A0E8_5DB0EDD34D31">
-					<model ea_localid="68" type="Note"/>
-					<role visibility="Public" targetScope="instance"/>
-					<type aggregation="none" containment="Unspecified"/>
-					<constraints/>
-					<modifiers isOrdered="false" changeable="none" isNavigable="false"/>
-					<style value="Union=0;Derived=0;AllowDuplicates=0;"/>
-					<documentation/>
-					<xrefs/>
-					<tags/>
-				</source>
-				<target xmi:idref="EAID_C7072906_8529_42b6_AB59_AD2E895DA545">
-					<model ea_localid="36" type="Class" name="StudyIntervention"/>
-					<role visibility="Public" targetScope="instance"/>
-					<type aggregation="none" containment="Unspecified"/>
-					<constraints/>
-					<modifiers isOrdered="false" changeable="none" isNavigable="true"/>
-					<style value="Union=0;Derived=0;AllowDuplicates=0;"/>
-					<documentation/>
-					<xrefs/>
-					<tags/>
-				</target>
-				<model ea_localid="148"/>
-				<properties ea_type="NoteLink" direction="Source -&gt; Destination"/>
-				<modifiers isRoot="false" isLeaf="false"/>
-				<documentation/>
-				<appearance linemode="3" linecolor="-1" linewidth="0" seqno="0" headStyle="0" lineStyle="0"/>
-				<labels/>
-				<extendedProperties virtualInheritance="0"/>
-				<style/>
-				<xrefs/>
-				<tags/>
-			</connector>
 			<connector xmi:idref="EAID_0BCFA1CF_CE57_4fd8_963F_4CDDFA1C7FF6" name="definedProcedures">
 				<source xmi:idref="EAID_383FF137_1DCC_4d91_8205_30AF4E2F73F4">
 					<model ea_localid="26" type="Class" name="Activity"/>
