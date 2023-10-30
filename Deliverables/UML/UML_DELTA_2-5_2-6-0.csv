@@ -1,5 +1,11 @@
 status,class_name,property_name,data_type
-Class - NEW,Administration,,
+Class - NEW,AdministrationDuration,,
+,,quantity,Quantity
+,,description,String
+,,durationWillVary,boolean
+,,reasonDurationWillVary,String
+,,id,String
+Class - NEW,AgentAdministration,,
 ,,duration,AdministrationDuration
 ,,dose,Quantity
 ,,route,Code
@@ -8,14 +14,6 @@ Class - NEW,Administration,,
 ,,id,String
 ,,label,String
 ,,frequency,Code
-Class - NEW,AdministrationDuration,,
-,,quantity,Quantity
-,,name,String
-,,description,String
-,,durationWillVary,boolean
-,,reasonDurationWillVary,String
-,,id,String
-,,label,String
 Class - NEW,Quantity,,
 ,,unit,Code
 ,,id,String
@@ -23,14 +21,14 @@ Class - NEW,Quantity,,
 Class - NEW,StudyIntervention,,
 ,,minimumResponseDuration,Quantity
 ,,codes,Code
-,,administrations,Administration
+,,administrations,AgentAdministration
+,,productDesignation,Code
+,,pharmacologicClass,Code
 ,,role,Code
-,,pharmacologicalClass,Code
 ,,name,string
 ,,description,String
 ,,id,String
 ,,label,String
-,,designation,Code
 ,,type,Code
 Class - DELETED,InvestigationalIntervention,,
 ,,codes,Code
@@ -51,7 +49,7 @@ Property - NEW,Activity,next,Activity
 Property - NEW,Activity,previous,Activity
 Property - NEW,Activity,timeline,ScheduleTimeline
 Property - NEW,StudyDesign,arms,StudyArm
-Property - NEW,StudyDesign,blindingScheme,Code
+Property - NEW,StudyDesign,blindingSchema,Code
 Property - NEW,StudyDesign,elements,StudyElement
 Property - NEW,StudyDesign,eligibilityCriteria,EligibilityCriteria
 Property - NEW,StudyDesign,epochs,StudyEpoch
@@ -63,10 +61,12 @@ Property - NEW,StudyDesign,rationale,String
 Property - NEW,StudyDesign,scheduleTimelines,ScheduleTimeline
 Property - NEW,StudyDesign,studyInterventions,StudyIntervention
 Property - NEW,StudyVersion,rationale,String
-Property - NEW,StudyVersion,version,String
+Property - NEW,StudyVersion,versionIdentifier,String
 Property - NEW,NarrativeContent,children,NarrativeContent
 Property - NEW,Encounter,contactModes,Code
 Property - NEW,Encounter,environmentalSetting,Code
+Property - NEW,Encounter,next,Encounter
+Property - NEW,Encounter,previous,Encounter
 Property - NEW,Procedure,isConditional,Boolean
 Property - NEW,Procedure,isConditionalReason,String
 Property - NEW,Procedure,studyIntervention,StudyIntervention
@@ -129,6 +129,8 @@ Property - DELETED,StudyVersion,studyVersion,String
 Property - DELETED,NarrativeContent,contentChildren,NarrativeContent
 Property - DELETED,Encounter,encounterContactModes,Code
 Property - DELETED,Encounter,encounterEnvironmentalSetting,Code
+Property - DELETED,Encounter,nextEncounter,Encounter
+Property - DELETED,Encounter,previousEncounter,Encounter
 Property - DELETED,Procedure,procedureIsConditional,Boolean
 Property - DELETED,Procedure,procedureIsConditionalReason,String
 Property - DELETED,BiomedicalConceptSurrogate,bcSurrogateReference,String
