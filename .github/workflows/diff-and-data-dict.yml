@@ -2,6 +2,11 @@ name: Generate Diff and Data Dict
 on:
   workflow_dispatch:
   push:
+    branches-ignore:
+      - "main"
+    paths:
+      - Deliverables/UML/USDM_UML.xmi
+      - Deliverables/CT/USDM_CT.xlsx
 jobs:
   Diff_And_Data_Dict:
     name: Generate Diff and Data Dict
@@ -49,8 +54,7 @@ jobs:
           cd ../
       - name: Copy and rename the generated dataDictionary to the current branch
         run: cp usdm-dictionary-generator/dataDictionary.MD "currentRelease/Deliverables/UML/."
-      - name: If current branch is not main, copy and rename the generated diff to the current branch
-        if: github.ref_name != github.event.repository.default_branch
+      - name: Copy and rename the generated diff to the current branch
         run: cp usdm-dictionary-generator/UML_DELTA.csv "currentRelease/Deliverables/UML/UML_DELTA_${{ env.PREVIOUS_VERSION}}_${{ env.CURRENT_VERSION}}.csv"
       - name: Commit and push the new files to the current branch
         run: |
