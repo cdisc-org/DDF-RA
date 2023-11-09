@@ -67,11 +67,12 @@ Property - NEW,Encounter,contactModes,Code
 Property - NEW,Encounter,environmentalSetting,Code
 Property - NEW,Encounter,next,Encounter
 Property - NEW,Encounter,previous,Encounter
+Property - NEW,Encounter,scheduledAt,Timing
 Property - NEW,Procedure,isConditional,Boolean
 Property - NEW,Procedure,isConditionalReason,String
 Property - NEW,Procedure,studyIntervention,StudyIntervention
 Property - NEW,BiomedicalConceptSurrogate,reference,String
-Property - NEW,StudyElement,StudyInterventions,StudyIntervention
+Property - NEW,StudyElement,studyInterventions,StudyIntervention
 Property - NEW,ScheduledInstance,timeline,ScheduleTimeline
 Property - NEW,ScheduledInstance,timelineExit,ScheduleTimelineExit
 Property - NEW,ScheduledInstance,timings,Timing
@@ -93,6 +94,8 @@ Property - NEW,ScheduleTimeline,instances,ScheduledInstance
 Property - NEW,StudyCell,arm,StudyArm
 Property - NEW,StudyCell,elements,StudyElement
 Property - NEW,StudyCell,epoch,StudyEpoch
+Property - NEW,AliasCode,standardCode,Code
+Property - NEW,AliasCode,standardCodeAliases,Code
 Property - NEW,Timing,relativeToFrom,Code
 Property - NEW,Timing,value,String
 Property - NEW,Timing,window,String
@@ -129,6 +132,7 @@ Property - DELETED,StudyVersion,studyVersion,String
 Property - DELETED,NarrativeContent,contentChildren,NarrativeContent
 Property - DELETED,Encounter,encounterContactModes,Code
 Property - DELETED,Encounter,encounterEnvironmentalSetting,Code
+Property - DELETED,Encounter,encounterScheduledAtTiming,Timing
 Property - DELETED,Encounter,nextEncounter,Encounter
 Property - DELETED,Encounter,previousEncounter,Encounter
 Property - DELETED,Procedure,procedureIsConditional,Boolean
@@ -155,6 +159,8 @@ Property - DELETED,ScheduleTimeline,scheduleTimelineInstances,ScheduledInstance
 Property - DELETED,StudyCell,studyArm,StudyArm
 Property - DELETED,StudyCell,studyElements,StudyElement
 Property - DELETED,StudyCell,studyEpoch,StudyEpoch
+Property - DELETED,AliasCode,StandardCode,Code
+Property - DELETED,AliasCode,StandardCodeAliases,Code
 Property - DELETED,Timing,timimgRelativeToFrom,Code
 Property - DELETED,Timing,timingValue,String
 Property - DELETED,Timing,timingWindow,String
