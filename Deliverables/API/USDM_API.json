@@ -326,7 +326,7 @@
             "title": "Description",
             "default": ""
           },
-          "previousActivityId": {
+          "previousId": {
             "anyOf": [
               {
                 "type": "string"
@@ -335,9 +335,9 @@
                 "type": "null"
               }
             ],
-            "title": "Previousactivityid"
+            "title": "Previousid"
           },
-          "nextActivityId": {
+          "nextId": {
             "anyOf": [
               {
                 "type": "string"
@@ -346,21 +346,21 @@
                 "type": "null"
               }
             ],
-            "title": "Nextactivityid"
+            "title": "Nextid"
           },
           "definedProcedures": {
             "items": {
-              "$ref": "#/components/schemas/Procedure"
+              "$ref": "#/components/schemas/Procedure-Input"
             },
             "type": "array",
             "title": "Definedprocedures",
             "default": []
           },
-          "activityIsConditional": {
+          "isConditional": {
             "type": "boolean",
-            "title": "Activityisconditional"
+            "title": "Isconditional"
           },
-          "activityIsConditionalReason": {
+          "isConditionalReason": {
             "anyOf": [
               {
                 "type": "string"
@@ -369,7 +369,7 @@
                 "type": "null"
               }
             ],
-            "title": "Activityisconditionalreason"
+            "title": "Isconditionalreason"
           },
           "biomedicalConceptIds": {
             "items": {
@@ -395,7 +395,7 @@
             "title": "Bcsurrogateids",
             "default": []
           },
-          "activityTimelineId": {
+          "timelineId": {
             "anyOf": [
               {
                 "type": "string"
@@ -404,14 +404,14 @@
                 "type": "null"
               }
             ],
-            "title": "Activitytimelineid"
+            "title": "Timelineid"
           }
         },
         "type": "object",
         "required": [
           "id",
           "name",
-          "activityIsConditional"
+          "isConditional"
         ],
         "title": "Activity"
       },
@@ -437,7 +437,7 @@
             "title": "Description",
             "default": ""
           },
-          "previousActivityId": {
+          "previousId": {
             "anyOf": [
               {
                 "type": "string"
@@ -446,9 +446,9 @@
                 "type": "null"
               }
             ],
-            "title": "Previousactivityid"
+            "title": "Previousid"
           },
-          "nextActivityId": {
+          "nextId": {
             "anyOf": [
               {
                 "type": "string"
@@ -457,21 +457,21 @@
                 "type": "null"
               }
             ],
-            "title": "Nextactivityid"
+            "title": "Nextid"
           },
           "definedProcedures": {
             "items": {
-              "$ref": "#/components/schemas/Procedure"
+              "$ref": "#/components/schemas/Procedure-Output"
             },
             "type": "array",
             "title": "Definedprocedures",
             "default": []
           },
-          "activityIsConditional": {
+          "isConditional": {
             "type": "boolean",
-            "title": "Activityisconditional"
+            "title": "Isconditional"
           },
-          "activityIsConditionalReason": {
+          "isConditionalReason": {
             "anyOf": [
               {
                 "type": "string"
@@ -480,7 +480,7 @@
                 "type": "null"
               }
             ],
-            "title": "Activityisconditionalreason"
+            "title": "Isconditionalreason"
           },
           "biomedicalConceptIds": {
             "items": {
@@ -506,7 +506,7 @@
             "title": "Bcsurrogateids",
             "default": []
           },
-          "activityTimelineId": {
+          "timelineId": {
             "anyOf": [
               {
                 "type": "string"
@@ -515,14 +515,14 @@
                 "type": "null"
               }
             ],
-            "title": "Activitytimelineid"
+            "title": "Timelineid"
           }
         },
         "type": "object",
         "required": [
           "id",
           "name",
-          "activityIsConditional"
+          "isConditional"
         ],
         "title": "Activity"
       },
@@ -579,6 +579,164 @@
           "id"
         ],
         "title": "Address"
+      },
+      "AdministrationDuration-Input": {
+        "properties": {
+          "id": {
+            "type": "string",
+            "minLength": 1,
+            "title": "Id"
+          },
+          "quantity": {
+            "$ref": "#/components/schemas/Quantity"
+          },
+          "description": {
+            "type": "string",
+            "title": "Description"
+          },
+          "durationWillVary": {
+            "type": "boolean",
+            "title": "Durationwillvary"
+          },
+          "reasonDurationWillVary": {
+            "type": "string",
+            "title": "Reasondurationwillvary"
+          }
+        },
+        "type": "object",
+        "required": [
+          "id",
+          "quantity",
+          "description",
+          "durationWillVary",
+          "reasonDurationWillVary"
+        ],
+        "title": "AdministrationDuration"
+      },
+      "AdministrationDuration-Output": {
+        "properties": {
+          "id": {
+            "type": "string",
+            "minLength": 1,
+            "title": "Id"
+          },
+          "quantity": {
+            "$ref": "#/components/schemas/Quantity"
+          },
+          "description": {
+            "type": "string",
+            "title": "Description"
+          },
+          "durationWillVary": {
+            "type": "boolean",
+            "title": "Durationwillvary"
+          },
+          "reasonDurationWillVary": {
+            "type": "string",
+            "title": "Reasondurationwillvary"
+          }
+        },
+        "type": "object",
+        "required": [
+          "id",
+          "quantity",
+          "description",
+          "durationWillVary",
+          "reasonDurationWillVary"
+        ],
+        "title": "AdministrationDuration"
+      },
+      "AgentAdministration-Input": {
+        "properties": {
+          "id": {
+            "type": "string",
+            "minLength": 1,
+            "title": "Id"
+          },
+          "name": {
+            "type": "string",
+            "minLength": 1,
+            "title": "Name"
+          },
+          "label": {
+            "type": "string",
+            "title": "Label",
+            "default": ""
+          },
+          "description": {
+            "type": "string",
+            "title": "Description",
+            "default": ""
+          },
+          "duration": {
+            "$ref": "#/components/schemas/AdministrationDuration-Input"
+          },
+          "dose": {
+            "$ref": "#/components/schemas/Quantity"
+          },
+          "route": {
+            "$ref": "#/components/schemas/Code"
+          },
+          "frequency": {
+            "$ref": "#/components/schemas/Code"
+          }
+        },
+        "type": "object",
+        "required": [
+          "id",
+          "name",
+          "duration",
+          "dose",
+          "route",
+          "frequency"
+        ],
+        "title": "AgentAdministration"
+      },
+      "AgentAdministration-Output": {
+        "properties": {
+          "id": {
+            "type": "string",
+            "minLength": 1,
+            "title": "Id"
+          },
+          "name": {
+            "type": "string",
+            "minLength": 1,
+            "title": "Name"
+          },
+          "label": {
+            "type": "string",
+            "title": "Label",
+            "default": ""
+          },
+          "description": {
+            "type": "string",
+            "title": "Description",
+            "default": ""
+          },
+          "duration": {
+            "$ref": "#/components/schemas/AdministrationDuration-Output"
+          },
+          "dose": {
+            "$ref": "#/components/schemas/Quantity"
+          },
+          "route": {
+            "$ref": "#/components/schemas/Code"
+          },
+          "frequency": {
+            "$ref": "#/components/schemas/Code"
+          }
+        },
+        "type": "object",
+        "required": [
+          "id",
+          "name",
+          "duration",
+          "dose",
+          "route",
+          "frequency"
+        ],
+        "title": "AgentAdministration"
       },
       "AliasCode": {
         "properties": {
@@ -658,24 +816,24 @@
             "title": "Label",
             "default": ""
           },
-          "bcSynonyms": {
+          "synonyms": {
             "items": {
               "type": "string"
             },
             "type": "array",
-            "title": "Bcsynonyms",
+            "title": "Synonyms",
             "default": []
           },
-          "bcReference": {
+          "reference": {
             "type": "string",
-            "title": "Bcreference"
+            "title": "Reference"
           },
-          "bcProperties": {
+          "properties": {
             "items": {
               "$ref": "#/components/schemas/BiomedicalConceptProperty-Input"
             },
             "type": "array",
-            "title": "Bcproperties",
+            "title": "Properties",
             "default": []
           },
           "code": {
@@ -686,7 +844,7 @@
         "required": [
           "id",
           "name",
-          "bcReference",
+          "reference",
           "code"
         ],
         "title": "BiomedicalConcept"
@@ -708,24 +866,24 @@
             "title": "Label",
             "default": ""
           },
-          "bcSynonyms": {
+          "synonyms": {
             "items": {
               "type": "string"
             },
             "type": "array",
-            "title": "Bcsynonyms",
+            "title": "Synonyms",
             "default": []
           },
-          "bcReference": {
+          "reference": {
             "type": "string",
-            "title": "Bcreference"
+            "title": "Reference"
           },
-          "bcProperties": {
+          "properties": {
             "items": {
               "$ref": "#/components/schemas/BiomedicalConceptProperty-Output"
             },
             "type": "array",
-            "title": "Bcproperties",
+            "title": "Properties",
             "default": []
           },
           "code": {
@@ -736,7 +894,7 @@
         "required": [
           "id",
           "name",
-          "bcReference",
+          "reference",
           "code"
         ],
         "title": "BiomedicalConcept"
@@ -763,20 +921,20 @@
             "title": "Description",
             "default": ""
           },
-          "bcCategoryChildIds": {
+          "childrenIds": {
             "items": {
               "type": "string"
             },
             "type": "array",
-            "title": "Bccategorychildids",
+            "title": "Childrenids",
             "default": []
           },
-          "bcCategoryMemberIds": {
+          "memberIds": {
             "items": {
               "type": "string"
             },
             "type": "array",
-            "title": "Bccategorymemberids",
+            "title": "Memberids",
             "default": []
           },
           "code": {
@@ -819,20 +977,20 @@
             "title": "Description",
             "default": ""
           },
-          "bcCategoryChildIds": {
+          "childrenIds": {
             "items": {
               "type": "string"
             },
             "type": "array",
-            "title": "Bccategorychildids",
+            "title": "Childrenids",
             "default": []
           },
-          "bcCategoryMemberIds": {
+          "memberIds": {
             "items": {
               "type": "string"
             },
             "type": "array",
-            "title": "Bccategorymemberids",
+            "title": "Memberids",
             "default": []
           },
           "code": {
@@ -870,24 +1028,24 @@
             "title": "Label",
             "default": ""
           },
-          "bcPropertyRequired": {
+          "isRequired": {
             "type": "boolean",
-            "title": "Bcpropertyrequired"
+            "title": "Isrequired"
           },
-          "bcPropertyEnabled": {
+          "isEnabled": {
             "type": "boolean",
-            "title": "Bcpropertyenabled"
+            "title": "Isenabled"
           },
-          "bcPropertyDatatype": {
+          "datatype": {
             "type": "string",
-            "title": "Bcpropertydatatype"
+            "title": "Datatype"
           },
-          "bcPropertyResponseCodes": {
+          "responseCodes": {
             "items": {
               "$ref": "#/components/schemas/ResponseCode"
             },
             "type": "array",
-            "title": "Bcpropertyresponsecodes",
+            "title": "Responsecodes",
             "default": []
           },
           "code": {
@@ -898,9 +1056,9 @@
         "required": [
           "id",
           "name",
-          "bcPropertyRequired",
-          "bcPropertyEnabled",
-          "bcPropertyDatatype",
+          "isRequired",
+          "isEnabled",
+          "datatype",
           "code"
         ],
         "title": "BiomedicalConceptProperty"
@@ -922,24 +1080,24 @@
             "title": "Label",
             "default": ""
           },
-          "bcPropertyRequired": {
+          "isRequired": {
             "type": "boolean",
-            "title": "Bcpropertyrequired"
+            "title": "Isrequired"
           },
-          "bcPropertyEnabled": {
+          "isEnabled": {
             "type": "boolean",
-            "title": "Bcpropertyenabled"
+            "title": "Isenabled"
           },
-          "bcPropertyDatatype": {
+          "datatype": {
             "type": "string",
-            "title": "Bcpropertydatatype"
+            "title": "Datatype"
           },
-          "bcPropertyResponseCodes": {
+          "responseCodes": {
             "items": {
               "$ref": "#/components/schemas/ResponseCode"
             },
             "type": "array",
-            "title": "Bcpropertyresponsecodes",
+            "title": "Responsecodes",
             "default": []
           },
           "code": {
@@ -950,9 +1108,9 @@
         "required": [
           "id",
           "name",
-          "bcPropertyRequired",
-          "bcPropertyEnabled",
-          "bcPropertyDatatype",
+          "isRequired",
+          "isEnabled",
+          "datatype",
           "code"
         ],
         "title": "BiomedicalConceptProperty"
@@ -979,9 +1137,9 @@
             "title": "Description",
             "default": ""
           },
-          "bcSurrogateReference": {
+          "reference": {
             "type": "string",
-            "title": "Bcsurrogatereference",
+            "title": "Reference",
             "default": ""
           }
         },
@@ -1061,8 +1219,9 @@
             "type": "string",
             "title": "Text"
           },
-          "dictionary": {
-            "$ref": "#/components/schemas/SyntaxTemplateDictionary"
+          "dictionaryId": {
+            "type": "string",
+            "title": "Dictionaryid"
           },
           "category": {
             "$ref": "#/components/schemas/Code"
@@ -1071,7 +1230,7 @@
             "type": "string",
             "title": "Identifier"
           },
-          "nextCriterionId": {
+          "nextId": {
             "anyOf": [
               {
                 "type": "string"
@@ -1080,9 +1239,9 @@
                 "type": "null"
               }
             ],
-            "title": "Nextcriterionid"
+            "title": "Nextid"
           },
-          "previousCriterionId": {
+          "previousId": {
             "anyOf": [
               {
                 "type": "string"
@@ -1091,7 +1250,7 @@
                 "type": "null"
               }
             ],
-            "title": "Previouscriterionid"
+            "title": "Previousid"
           }
         },
         "type": "object",
@@ -1100,7 +1259,7 @@
           "name",
           "instanceType",
           "text",
-          "dictionary",
+          "dictionaryId",
           "category",
           "identifier"
         ],
@@ -1131,7 +1290,7 @@
           "type": {
             "$ref": "#/components/schemas/Code"
           },
-          "previousEncounterId": {
+          "previousId": {
             "anyOf": [
               {
                 "type": "string"
@@ -1140,9 +1299,9 @@
                 "type": "null"
               }
             ],
-            "title": "Previousencounterid"
+            "title": "Previousid"
           },
-          "nextEncounterId": {
+          "nextId": {
             "anyOf": [
               {
                 "type": "string"
@@ -1151,7 +1310,7 @@
                 "type": "null"
               }
             ],
-            "title": "Nextencounterid"
+            "title": "Nextid"
           },
           "encounterScheduledAtTimingId": {
             "anyOf": [
@@ -1164,7 +1323,7 @@
             ],
             "title": "Encounterscheduledattimingid"
           },
-          "encounterEnvironmentalSetting": {
+          "environmentalSetting": {
             "anyOf": [
               {
                 "$ref": "#/components/schemas/Code"
@@ -1174,12 +1333,12 @@
               }
             ]
           },
-          "encounterContactModes": {
+          "contactModes": {
             "items": {
               "$ref": "#/components/schemas/Code"
             },
             "type": "array",
-            "title": "Encountercontactmodes",
+            "title": "Contactmodes",
             "default": []
           },
           "transitionStartRule": {
@@ -1246,8 +1405,9 @@
             "type": "string",
             "title": "Text"
           },
-          "dictionary": {
-            "$ref": "#/components/schemas/SyntaxTemplateDictionary"
+          "dictionaryId": {
+            "type": "string",
+            "title": "Dictionaryid"
           },
           "purpose": {
             "type": "string",
@@ -1263,7 +1423,7 @@
           "name",
           "instanceType",
           "text",
-          "dictionary",
+          "dictionaryId",
           "purpose",
           "level"
         ],
@@ -1310,7 +1470,7 @@
         ],
         "title": "Estimand"
       },
-      "GeographicScope": {
+      "GeographicScope-Input": {
         "properties": {
           "id": {
             "type": "string",
@@ -1321,7 +1481,29 @@
             "$ref": "#/components/schemas/Code"
           },
           "code": {
+            "$ref": "#/components/schemas/AliasCode"
+          }
+        },
+        "type": "object",
+        "required": [
+          "id",
+          "type",
+          "code"
+        ],
+        "title": "GeographicScope"
+      },
+      "GeographicScope-Output": {
+        "properties": {
+          "id": {
+            "type": "string",
+            "minLength": 1,
+            "title": "Id"
+          },
+          "type": {
             "$ref": "#/components/schemas/Code"
+          },
+          "code": {
+            "$ref": "#/components/schemas/AliasCode"
           }
         },
         "type": "object",
@@ -1357,14 +1539,14 @@
           "type": {
             "$ref": "#/components/schemas/Code"
           },
-          "dataValue": {
+          "dateValue": {
             "type": "string",
             "format": "date",
-            "title": "Datavalue"
+            "title": "Datevalue"
           },
           "geographicScopes": {
             "items": {
-              "$ref": "#/components/schemas/GeographicScope"
+              "$ref": "#/components/schemas/GeographicScope-Input"
             },
             "type": "array",
             "title": "Geographicscopes"
@@ -1375,7 +1557,7 @@
           "id",
           "name",
           "type",
-          "dataValue",
+          "dateValue",
           "geographicScopes"
         ],
         "title": "GovernanceDate"
@@ -1405,14 +1587,14 @@
           "type": {
             "$ref": "#/components/schemas/Code"
           },
-          "dataValue": {
+          "dateValue": {
             "type": "string",
             "format": "date",
-            "title": "Datavalue"
+            "title": "Datevalue"
           },
           "geographicScopes": {
             "items": {
-              "$ref": "#/components/schemas/GeographicScope"
+              "$ref": "#/components/schemas/GeographicScope-Output"
             },
             "type": "array",
             "title": "Geographicscopes"
@@ -1423,7 +1605,7 @@
           "id",
           "name",
           "type",
-          "dataValue",
+          "dateValue",
           "geographicScopes"
         ],
         "title": "GovernanceDate"
@@ -1501,45 +1683,18 @@
             "title": "Description",
             "default": ""
           },
-          "intercurrentEventStrategy": {
+          "strategy": {
             "type": "string",
-            "title": "Intercurrenteventstrategy"
+            "title": "Strategy"
           }
         },
         "type": "object",
         "required": [
           "id",
           "name",
-          "intercurrentEventStrategy"
+          "strategy"
         ],
         "title": "IntercurrentEvent"
-      },
-      "InvestigationalIntervention": {
-        "properties": {
-          "id": {
-            "type": "string",
-            "minLength": 1,
-            "title": "Id"
-          },
-          "description": {
-            "type": "string",
-            "title": "Description",
-            "default": ""
-          },
-          "codes": {
-            "items": {
-              "$ref": "#/components/schemas/Code"
-            },
-            "type": "array",
-            "title": "Codes",
-            "default": []
-          }
-        },
-        "type": "object",
-        "required": [
-          "id"
-        ],
-        "title": "InvestigationalIntervention"
       },
       "NarrativeContent": {
         "properties": {
@@ -1572,12 +1727,12 @@
             ],
             "title": "Text"
           },
-          "contentChildIds": {
+          "childrenIds": {
             "items": {
               "type": "string"
             },
             "type": "array",
-            "title": "Contentchildids",
+            "title": "Childrenids",
             "default": []
           }
         },
@@ -1625,8 +1780,9 @@
             "type": "string",
             "title": "Text"
           },
-          "dictionary": {
-            "$ref": "#/components/schemas/SyntaxTemplateDictionary"
+          "dictionaryId": {
+            "type": "string",
+            "title": "Dictionaryid"
           },
           "level": {
             "anyOf": [
@@ -1638,12 +1794,12 @@
               }
             ]
           },
-          "objectiveEndpoints": {
+          "endpoints": {
             "items": {
               "$ref": "#/components/schemas/Endpoint"
             },
             "type": "array",
-            "title": "Objectiveendpoints",
+            "title": "Endpoints",
             "default": []
           }
         },
@@ -1653,7 +1809,7 @@
           "name",
           "instanceType",
           "text",
-          "dictionary"
+          "dictionaryId"
         ],
         "title": "Objective"
       },
@@ -1692,8 +1848,9 @@
             "type": "string",
             "title": "Text"
           },
-          "dictionary": {
-            "$ref": "#/components/schemas/SyntaxTemplateDictionary"
+          "dictionaryId": {
+            "type": "string",
+            "title": "Dictionaryid"
           },
           "level": {
             "anyOf": [
@@ -1705,12 +1862,12 @@
               }
             ]
           },
-          "objectiveEndpoints": {
+          "endpoints": {
             "items": {
               "$ref": "#/components/schemas/Endpoint"
             },
             "type": "array",
-            "title": "Objectiveendpoints",
+            "title": "Endpoints",
             "default": []
           }
         },
@@ -1720,7 +1877,7 @@
           "name",
           "instanceType",
           "text",
-          "dictionary"
+          "dictionaryId"
         ],
         "title": "Objective"
       },
@@ -1744,15 +1901,15 @@
           "type": {
             "$ref": "#/components/schemas/Code"
           },
-          "organizationIdentifierScheme": {
+          "identifierScheme": {
             "type": "string",
-            "title": "Organizationidentifierscheme"
+            "title": "Identifierscheme"
           },
-          "organizationIdentifier": {
+          "identifier": {
             "type": "string",
-            "title": "Organizationidentifier"
+            "title": "Identifier"
           },
-          "organizationLegalAddress": {
+          "legalAddress": {
             "anyOf": [
               {
                 "$ref": "#/components/schemas/Address"
@@ -1768,8 +1925,8 @@
           "id",
           "name",
           "type",
-          "organizationIdentifierScheme",
-          "organizationIdentifier"
+          "identifierScheme",
+          "identifier"
         ],
         "title": "Organization"
       },
@@ -1793,15 +1950,15 @@
           "type": {
             "$ref": "#/components/schemas/Code"
           },
-          "organizationIdentifierScheme": {
+          "identifierScheme": {
             "type": "string",
-            "title": "Organizationidentifierscheme"
+            "title": "Identifierscheme"
           },
-          "organizationIdentifier": {
+          "identifier": {
             "type": "string",
-            "title": "Organizationidentifier"
+            "title": "Identifier"
           },
-          "organizationLegalAddress": {
+          "legalAddress": {
             "anyOf": [
               {
                 "$ref": "#/components/schemas/Address"
@@ -1817,12 +1974,12 @@
           "id",
           "name",
           "type",
-          "organizationIdentifierScheme",
-          "organizationIdentifier"
+          "identifierScheme",
+          "identifier"
         ],
         "title": "Organization"
       },
-      "Procedure": {
+      "Procedure-Input": {
         "properties": {
           "id": {
             "type": "string",
@@ -1851,11 +2008,11 @@
           "code": {
             "$ref": "#/components/schemas/Code"
           },
-          "procedureIsConditional": {
+          "isConditional": {
             "type": "boolean",
-            "title": "Procedureisconditional"
+            "title": "Isconditional"
           },
-          "procedureIsConditionalReason": {
+          "isConditionalReason": {
             "anyOf": [
               {
                 "type": "string"
@@ -1864,7 +2021,17 @@
                 "type": "null"
               }
             ],
-            "title": "Procedureisconditionalreason"
+            "title": "Isconditionalreason"
+          },
+          "studyIntervention": {
+            "anyOf": [
+              {
+                "$ref": "#/components/schemas/StudyIntervention-Input"
+              },
+              {
+                "type": "null"
+              }
+            ]
           }
         },
         "type": "object",
@@ -1873,9 +2040,97 @@
           "name",
           "procedureType",
           "code",
-          "procedureIsConditional"
+          "isConditional"
         ],
         "title": "Procedure"
+      },
+      "Procedure-Output": {
+        "properties": {
+          "id": {
+            "type": "string",
+            "minLength": 1,
+            "title": "Id"
+          },
+          "name": {
+            "type": "string",
+            "minLength": 1,
+            "title": "Name"
+          },
+          "label": {
+            "type": "string",
+            "title": "Label",
+            "default": ""
+          },
+          "description": {
+            "type": "string",
+            "title": "Description",
+            "default": ""
+          },
+          "procedureType": {
+            "type": "string",
+            "title": "Proceduretype"
+          },
+          "code": {
+            "$ref": "#/components/schemas/Code"
+          },
+          "isConditional": {
+            "type": "boolean",
+            "title": "Isconditional"
+          },
+          "isConditionalReason": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Isconditionalreason"
+          },
+          "studyIntervention": {
+            "anyOf": [
+              {
+                "$ref": "#/components/schemas/StudyIntervention-Output"
+              },
+              {
+                "type": "null"
+              }
+            ]
+          }
+        },
+        "type": "object",
+        "required": [
+          "id",
+          "name",
+          "procedureType",
+          "code",
+          "isConditional"
+        ],
+        "title": "Procedure"
+      },
+      "Quantity": {
+        "properties": {
+          "id": {
+            "type": "string",
+            "minLength": 1,
+            "title": "Id"
+          },
+          "unit": {
+            "$ref": "#/components/schemas/Code"
+          },
+          "value": {
+            "type": "number",
+            "title": "Value"
+          }
+        },
+        "type": "object",
+        "required": [
+          "id",
+          "unit",
+          "value"
+        ],
+        "title": "Quantity"
       },
       "ResponseCode": {
         "properties": {
@@ -1884,9 +2139,9 @@
             "minLength": 1,
             "title": "Id"
           },
-          "responseCodeEnabled": {
+          "isEnabled": {
             "type": "boolean",
-            "title": "Responsecodeenabled"
+            "title": "Isenabled"
           },
           "code": {
             "$ref": "#/components/schemas/Code"
@@ -1895,7 +2150,7 @@
         "type": "object",
         "required": [
           "id",
-          "responseCodeEnabled",
+          "isEnabled",
           "code"
         ],
         "title": "ResponseCode"
@@ -1930,19 +2185,19 @@
             "type": "string",
             "title": "Entrycondition"
           },
-          "scheduleTimelineEntryId": {
+          "entryId": {
             "type": "string",
-            "title": "Scheduletimelineentryid"
+            "title": "Entryid"
           },
-          "scheduleTimelineExits": {
+          "exits": {
             "items": {
               "$ref": "#/components/schemas/ScheduleTimelineExit"
             },
             "type": "array",
-            "title": "Scheduletimelineexits",
+            "title": "Exits",
             "default": []
           },
-          "scheduleTimelineInstances": {
+          "instances": {
             "items": {
               "anyOf": [
                 {
@@ -1954,7 +2209,7 @@
               ]
             },
             "type": "array",
-            "title": "Scheduletimelineinstances",
+            "title": "Instances",
             "default": []
           }
         },
@@ -1964,7 +2219,7 @@
           "name",
           "mainTimeline",
           "entryCondition",
-          "scheduleTimelineEntryId"
+          "entryId"
         ],
         "title": "ScheduleTimeline"
       },
@@ -1998,19 +2253,19 @@
             "type": "string",
             "title": "Entrycondition"
           },
-          "scheduleTimelineEntryId": {
+          "entryId": {
             "type": "string",
-            "title": "Scheduletimelineentryid"
+            "title": "Entryid"
           },
-          "scheduleTimelineExits": {
+          "exits": {
             "items": {
               "$ref": "#/components/schemas/ScheduleTimelineExit"
             },
             "type": "array",
-            "title": "Scheduletimelineexits",
+            "title": "Exits",
             "default": []
           },
-          "scheduleTimelineInstances": {
+          "instances": {
             "items": {
               "anyOf": [
                 {
@@ -2022,7 +2277,7 @@
               ]
             },
             "type": "array",
-            "title": "Scheduletimelineinstances",
+            "title": "Instances",
             "default": []
           }
         },
@@ -2032,7 +2287,7 @@
           "name",
           "mainTimeline",
           "entryCondition",
-          "scheduleTimelineEntryId"
+          "entryId"
         ],
         "title": "ScheduleTimeline"
       },
@@ -2065,15 +2320,15 @@
             ],
             "title": "Instancetype"
           },
-          "scheduledInstanceTimings": {
+          "timings": {
             "items": {
               "$ref": "#/components/schemas/Timing"
             },
             "type": "array",
-            "title": "Scheduledinstancetimings",
+            "title": "Timings",
             "default": []
           },
-          "scheduledInstanceTimelineId": {
+          "timelineId": {
             "anyOf": [
               {
                 "type": "string"
@@ -2082,9 +2337,9 @@
                 "type": "null"
               }
             ],
-            "title": "Scheduledinstancetimelineid"
+            "title": "Timelineid"
           },
-          "scheduleTimelineExitId": {
+          "timelineExitId": {
             "anyOf": [
               {
                 "type": "string"
@@ -2093,7 +2348,7 @@
                 "type": "null"
               }
             ],
-            "title": "Scheduletimelineexitid"
+            "title": "Timelineexitid"
           },
           "defaultConditionId": {
             "anyOf": [
@@ -2125,7 +2380,7 @@
             "title": "Activityids",
             "default": []
           },
-          "scheduledActivityInstanceEncounterId": {
+          "encounterId": {
             "anyOf": [
               {
                 "type": "string"
@@ -2134,7 +2389,7 @@
                 "type": "null"
               }
             ],
-            "title": "Scheduledactivityinstanceencounterid"
+            "title": "Encounterid"
           }
         },
         "type": "object",
@@ -2159,15 +2414,15 @@
             ],
             "title": "Instancetype"
           },
-          "scheduledInstanceTimings": {
+          "timings": {
             "items": {
               "$ref": "#/components/schemas/Timing"
             },
             "type": "array",
-            "title": "Scheduledinstancetimings",
+            "title": "Timings",
             "default": []
           },
-          "scheduledInstanceTimelineId": {
+          "timelineId": {
             "anyOf": [
               {
                 "type": "string"
@@ -2176,9 +2431,9 @@
                 "type": "null"
               }
             ],
-            "title": "Scheduledinstancetimelineid"
+            "title": "Timelineid"
           },
-          "scheduleTimelineExitId": {
+          "timelineExitId": {
             "anyOf": [
               {
                 "type": "string"
@@ -2187,7 +2442,7 @@
                 "type": "null"
               }
             ],
-            "title": "Scheduletimelineexitid"
+            "title": "Timelineexitid"
           },
           "defaultConditionId": {
             "anyOf": [
@@ -2219,7 +2474,7 @@
             "title": "Activityids",
             "default": []
           },
-          "scheduledActivityInstanceEncounterId": {
+          "encounterId": {
             "anyOf": [
               {
                 "type": "string"
@@ -2228,7 +2483,7 @@
                 "type": "null"
               }
             ],
-            "title": "Scheduledactivityinstanceencounterid"
+            "title": "Encounterid"
           }
         },
         "type": "object",
@@ -2253,15 +2508,15 @@
             ],
             "title": "Instancetype"
           },
-          "scheduledInstanceTimings": {
+          "timings": {
             "items": {
               "$ref": "#/components/schemas/Timing"
             },
             "type": "array",
-            "title": "Scheduledinstancetimings",
+            "title": "Timings",
             "default": []
           },
-          "scheduledInstanceTimelineId": {
+          "timelineId": {
             "anyOf": [
               {
                 "type": "string"
@@ -2270,9 +2525,9 @@
                 "type": "null"
               }
             ],
-            "title": "Scheduledinstancetimelineid"
+            "title": "Timelineid"
           },
-          "scheduleTimelineExitId": {
+          "timelineExitId": {
             "anyOf": [
               {
                 "type": "string"
@@ -2281,7 +2536,7 @@
                 "type": "null"
               }
             ],
-            "title": "Scheduletimelineexitid"
+            "title": "Timelineexitid"
           },
           "defaultConditionId": {
             "anyOf": [
@@ -2336,15 +2591,15 @@
             ],
             "title": "Instancetype"
           },
-          "scheduledInstanceTimings": {
+          "timings": {
             "items": {
               "$ref": "#/components/schemas/Timing"
             },
             "type": "array",
-            "title": "Scheduledinstancetimings",
+            "title": "Timings",
             "default": []
           },
-          "scheduledInstanceTimelineId": {
+          "timelineId": {
             "anyOf": [
               {
                 "type": "string"
@@ -2353,9 +2608,9 @@
                 "type": "null"
               }
             ],
-            "title": "Scheduledinstancetimelineid"
+            "title": "Timelineid"
           },
-          "scheduleTimelineExitId": {
+          "timelineExitId": {
             "anyOf": [
               {
                 "type": "string"
@@ -2364,7 +2619,7 @@
                 "type": "null"
               }
             ],
-            "title": "Scheduletimelineexitid"
+            "title": "Timelineexitid"
           },
           "defaultConditionId": {
             "anyOf": [
@@ -2544,7 +2799,7 @@
           },
           "enrollments": {
             "items": {
-              "$ref": "#/components/schemas/SubjectEnrollment"
+              "$ref": "#/components/schemas/SubjectEnrollment-Input"
             },
             "type": "array",
             "title": "Enrollments"
@@ -2604,7 +2859,7 @@
           },
           "enrollments": {
             "items": {
-              "$ref": "#/components/schemas/SubjectEnrollment"
+              "$ref": "#/components/schemas/SubjectEnrollment-Output"
             },
             "type": "array",
             "title": "Enrollments"
@@ -2680,9 +2935,9 @@
           "type": {
             "$ref": "#/components/schemas/Code"
           },
-          "studyArmDataOriginDescription": {
+          "dataOriginDescription": {
             "type": "string",
-            "title": "Studyarmdataorigindescription"
+            "title": "Dataorigindescription"
           },
           "dataOriginType": {
             "$ref": "#/components/schemas/Code"
@@ -2693,7 +2948,7 @@
           "id",
           "name",
           "type",
-          "studyArmDataOriginDescription",
+          "dataOriginDescription",
           "dataOriginType"
         ],
         "title": "StudyArm"
@@ -2705,28 +2960,28 @@
             "minLength": 1,
             "title": "Id"
           },
-          "studyArmId": {
+          "armId": {
             "type": "string",
-            "title": "Studyarmid"
+            "title": "Armid"
           },
-          "studyEpochId": {
+          "epochId": {
             "type": "string",
-            "title": "Studyepochid"
+            "title": "Epochid"
           },
-          "studyElementIds": {
+          "elementIds": {
             "items": {
               "type": "string"
             },
             "type": "array",
-            "title": "Studyelementids",
+            "title": "Elementids",
             "default": []
           }
         },
         "type": "object",
         "required": [
           "id",
-          "studyArmId",
-          "studyEpochId"
+          "armId",
+          "epochId"
         ],
         "title": "StudyCell"
       },
@@ -2819,12 +3074,12 @@
             "title": "Bcsurrogates",
             "default": []
           },
-          "studyArms": {
+          "arms": {
             "items": {
               "$ref": "#/components/schemas/StudyArm"
             },
             "type": "array",
-            "title": "Studyarms"
+            "title": "Arms"
           },
           "studyCells": {
             "items": {
@@ -2833,7 +3088,7 @@
             "type": "array",
             "title": "Studycells"
           },
-          "studyDesignBlindingScheme": {
+          "blindingSchema": {
             "anyOf": [
               {
                 "$ref": "#/components/schemas/AliasCode"
@@ -2843,71 +3098,71 @@
               }
             ]
           },
-          "studyDesignRationale": {
+          "rationale": {
             "type": "string",
-            "title": "Studydesignrationale"
+            "title": "Rationale"
           },
-          "studyEpochs": {
+          "epochs": {
             "items": {
               "$ref": "#/components/schemas/StudyEpoch"
             },
             "type": "array",
-            "title": "Studyepochs"
+            "title": "Epochs"
           },
-          "studyElements": {
+          "elements": {
             "items": {
-              "$ref": "#/components/schemas/StudyElement"
+              "$ref": "#/components/schemas/StudyElement-Input"
             },
             "type": "array",
-            "title": "Studyelements",
+            "title": "Elements",
             "default": []
           },
-          "studyEstimands": {
+          "estimands": {
             "items": {
               "$ref": "#/components/schemas/Estimand"
             },
             "type": "array",
-            "title": "Studyestimands",
+            "title": "Estimands",
             "default": []
           },
-          "studyIndications": {
+          "indications": {
             "items": {
               "$ref": "#/components/schemas/Indication"
             },
             "type": "array",
-            "title": "Studyindications",
+            "title": "Indications",
             "default": []
           },
-          "studyInvestigationalInterventions": {
+          "studyInterventions": {
             "items": {
-              "$ref": "#/components/schemas/InvestigationalIntervention"
+              "$ref": "#/components/schemas/StudyIntervention-Input"
             },
             "type": "array",
-            "title": "Studyinvestigationalinterventions",
+            "title": "Studyinterventions",
             "default": []
           },
-          "studyObjectives": {
+          "objectives": {
             "items": {
               "$ref": "#/components/schemas/Objective-Input"
             },
             "type": "array",
-            "title": "Studyobjectives",
+            "title": "Objectives",
             "default": []
           },
-          "studyPopulations": {
+          "populations": {
             "items": {
               "$ref": "#/components/schemas/StudyDesignPopulation"
             },
             "type": "array",
-            "title": "Studypopulations",
+            "title": "Populations",
             "default": []
           },
-          "studyScheduleTimelines": {
+          "scheduleTimelines": {
             "items": {
               "$ref": "#/components/schemas/ScheduleTimeline-Input"
             },
             "type": "array",
-            "title": "Studyscheduletimelines",
+            "title": "Scheduletimelines",
             "default": []
           },
           "documentVersion": {
@@ -2920,12 +3175,20 @@
               }
             ]
           },
-          "studyEligibilityCritieria": {
+          "eligibilityCriteria": {
             "items": {
               "$ref": "#/components/schemas/EligibilityCriteria"
             },
             "type": "array",
-            "title": "Studyeligibilitycritieria",
+            "title": "Eligibilitycriteria",
+            "default": []
+          },
+          "dictionaries": {
+            "items": {
+              "$ref": "#/components/schemas/SyntaxTemplateDictionary"
+            },
+            "type": "array",
+            "title": "Dictionaries",
             "default": []
           }
         },
@@ -2934,10 +3197,10 @@
           "id",
           "name",
           "interventionModel",
-          "studyArms",
+          "arms",
           "studyCells",
-          "studyDesignRationale",
-          "studyEpochs"
+          "rationale",
+          "epochs"
         ],
         "title": "StudyDesign"
       },
@@ -3030,12 +3293,12 @@
             "title": "Bcsurrogates",
             "default": []
           },
-          "studyArms": {
+          "arms": {
             "items": {
               "$ref": "#/components/schemas/StudyArm"
             },
             "type": "array",
-            "title": "Studyarms"
+            "title": "Arms"
           },
           "studyCells": {
             "items": {
@@ -3044,7 +3307,7 @@
             "type": "array",
             "title": "Studycells"
           },
-          "studyDesignBlindingScheme": {
+          "blindingSchema": {
             "anyOf": [
               {
                 "$ref": "#/components/schemas/AliasCode"
@@ -3054,71 +3317,71 @@
               }
             ]
           },
-          "studyDesignRationale": {
+          "rationale": {
             "type": "string",
-            "title": "Studydesignrationale"
+            "title": "Rationale"
           },
-          "studyEpochs": {
+          "epochs": {
             "items": {
               "$ref": "#/components/schemas/StudyEpoch"
             },
             "type": "array",
-            "title": "Studyepochs"
+            "title": "Epochs"
           },
-          "studyElements": {
+          "elements": {
             "items": {
-              "$ref": "#/components/schemas/StudyElement"
+              "$ref": "#/components/schemas/StudyElement-Output"
             },
             "type": "array",
-            "title": "Studyelements",
+            "title": "Elements",
             "default": []
           },
-          "studyEstimands": {
+          "estimands": {
             "items": {
               "$ref": "#/components/schemas/Estimand"
             },
             "type": "array",
-            "title": "Studyestimands",
+            "title": "Estimands",
             "default": []
           },
-          "studyIndications": {
+          "indications": {
             "items": {
               "$ref": "#/components/schemas/Indication"
             },
             "type": "array",
-            "title": "Studyindications",
+            "title": "Indications",
             "default": []
           },
-          "studyInvestigationalInterventions": {
+          "studyInterventions": {
             "items": {
-              "$ref": "#/components/schemas/InvestigationalIntervention"
+              "$ref": "#/components/schemas/StudyIntervention-Output"
             },
             "type": "array",
-            "title": "Studyinvestigationalinterventions",
+            "title": "Studyinterventions",
             "default": []
           },
-          "studyObjectives": {
+          "objectives": {
             "items": {
               "$ref": "#/components/schemas/Objective-Output"
             },
             "type": "array",
-            "title": "Studyobjectives",
+            "title": "Objectives",
             "default": []
           },
-          "studyPopulations": {
+          "populations": {
             "items": {
               "$ref": "#/components/schemas/StudyDesignPopulation"
             },
             "type": "array",
-            "title": "Studypopulations",
+            "title": "Populations",
             "default": []
           },
-          "studyScheduleTimelines": {
+          "scheduleTimelines": {
             "items": {
               "$ref": "#/components/schemas/ScheduleTimeline-Output"
             },
             "type": "array",
-            "title": "Studyscheduletimelines",
+            "title": "Scheduletimelines",
             "default": []
           },
           "documentVersion": {
@@ -3131,12 +3394,20 @@
               }
             ]
           },
-          "studyEligibilityCritieria": {
+          "eligibilityCriteria": {
             "items": {
               "$ref": "#/components/schemas/EligibilityCriteria"
             },
             "type": "array",
-            "title": "Studyeligibilitycritieria",
+            "title": "Eligibilitycriteria",
+            "default": []
+          },
+          "dictionaries": {
+            "items": {
+              "$ref": "#/components/schemas/SyntaxTemplateDictionary"
+            },
+            "type": "array",
+            "title": "Dictionaries",
             "default": []
           }
         },
@@ -3145,10 +3416,10 @@
           "id",
           "name",
           "interventionModel",
-          "studyArms",
+          "arms",
           "studyCells",
-          "studyDesignRationale",
-          "studyEpochs"
+          "rationale",
+          "epochs"
         ],
         "title": "StudyDesign"
       },
@@ -3206,7 +3477,7 @@
         ],
         "title": "StudyDesignPopulation"
       },
-      "StudyElement": {
+      "StudyElement-Input": {
         "properties": {
           "id": {
             "type": "string",
@@ -3247,6 +3518,72 @@
                 "type": "null"
               }
             ]
+          },
+          "studyInterventions": {
+            "items": {
+              "$ref": "#/components/schemas/StudyIntervention-Input"
+            },
+            "type": "array",
+            "title": "Studyinterventions",
+            "default": []
+          }
+        },
+        "type": "object",
+        "required": [
+          "id",
+          "name"
+        ],
+        "title": "StudyElement"
+      },
+      "StudyElement-Output": {
+        "properties": {
+          "id": {
+            "type": "string",
+            "minLength": 1,
+            "title": "Id"
+          },
+          "name": {
+            "type": "string",
+            "minLength": 1,
+            "title": "Name"
+          },
+          "label": {
+            "type": "string",
+            "title": "Label",
+            "default": ""
+          },
+          "description": {
+            "type": "string",
+            "title": "Description",
+            "default": ""
+          },
+          "transitionStartRule": {
+            "anyOf": [
+              {
+                "$ref": "#/components/schemas/TransitionRule"
+              },
+              {
+                "type": "null"
+              }
+            ]
+          },
+          "transitionEndRule": {
+            "anyOf": [
+              {
+                "$ref": "#/components/schemas/TransitionRule"
+              },
+              {
+                "type": "null"
+              }
+            ]
+          },
+          "studyInterventions": {
+            "items": {
+              "$ref": "#/components/schemas/StudyIntervention-Output"
+            },
+            "type": "array",
+            "title": "Studyinterventions",
+            "default": []
           }
         },
         "type": "object",
@@ -3281,7 +3618,7 @@
           "type": {
             "$ref": "#/components/schemas/Code"
           },
-          "previousStudyEpochId": {
+          "previousId": {
             "anyOf": [
               {
                 "type": "string"
@@ -3290,9 +3627,9 @@
                 "type": "null"
               }
             ],
-            "title": "Previousstudyepochid"
+            "title": "Previousid"
           },
-          "nextStudyEpochId": {
+          "nextId": {
             "anyOf": [
               {
                 "type": "string"
@@ -3301,7 +3638,7 @@
                 "type": "null"
               }
             ],
-            "title": "Nextstudyepochid"
+            "title": "Nextid"
           }
         },
         "type": "object",
@@ -3357,6 +3694,122 @@
           "studyIdentifierScope"
         ],
         "title": "StudyIdentifier"
+      },
+      "StudyIntervention-Input": {
+        "properties": {
+          "id": {
+            "type": "string",
+            "minLength": 1,
+            "title": "Id"
+          },
+          "name": {
+            "type": "string",
+            "minLength": 1,
+            "title": "Name"
+          },
+          "label": {
+            "type": "string",
+            "title": "Label",
+            "default": ""
+          },
+          "description": {
+            "type": "string",
+            "title": "Description",
+            "default": ""
+          },
+          "role": {
+            "$ref": "#/components/schemas/Code"
+          },
+          "type": {
+            "$ref": "#/components/schemas/Code"
+          },
+          "minimumResponseDuration": {
+            "$ref": "#/components/schemas/Quantity"
+          },
+          "codes": {
+            "$ref": "#/components/schemas/Code"
+          },
+          "administrations": {
+            "$ref": "#/components/schemas/AgentAdministration-Input"
+          },
+          "productDesignation": {
+            "$ref": "#/components/schemas/Code"
+          },
+          "pharmacologicClass": {
+            "$ref": "#/components/schemas/Code"
+          }
+        },
+        "type": "object",
+        "required": [
+          "id",
+          "name",
+          "role",
+          "type",
+          "minimumResponseDuration",
+          "codes",
+          "administrations",
+          "productDesignation",
+          "pharmacologicClass"
+        ],
+        "title": "StudyIntervention"
+      },
+      "StudyIntervention-Output": {
+        "properties": {
+          "id": {
+            "type": "string",
+            "minLength": 1,
+            "title": "Id"
+          },
+          "name": {
+            "type": "string",
+            "minLength": 1,
+            "title": "Name"
+          },
+          "label": {
+            "type": "string",
+            "title": "Label",
+            "default": ""
+          },
+          "description": {
+            "type": "string",
+            "title": "Description",
+            "default": ""
+          },
+          "role": {
+            "$ref": "#/components/schemas/Code"
+          },
+          "type": {
+            "$ref": "#/components/schemas/Code"
+          },
+          "minimumResponseDuration": {
+            "$ref": "#/components/schemas/Quantity"
+          },
+          "codes": {
+            "$ref": "#/components/schemas/Code"
+          },
+          "administrations": {
+            "$ref": "#/components/schemas/AgentAdministration-Output"
+          },
+          "productDesignation": {
+            "$ref": "#/components/schemas/Code"
+          },
+          "pharmacologicClass": {
+            "$ref": "#/components/schemas/Code"
+          }
+        },
+        "type": "object",
+        "required": [
+          "id",
+          "name",
+          "role",
+          "type",
+          "minimumResponseDuration",
+          "codes",
+          "administrations",
+          "productDesignation",
+          "pharmacologicClass"
+        ],
+        "title": "StudyIntervention"
       },
       "StudyProtocolDocument-Input": {
         "properties": {
@@ -3579,13 +4032,13 @@
             "type": "string",
             "title": "Studytitle"
           },
-          "studyVersion": {
+          "versionIdentifier": {
             "type": "string",
-            "title": "Studyversion"
+            "title": "Versionidentifier"
           },
-          "studyRationale": {
+          "rationale": {
             "type": "string",
-            "title": "Studyrationale"
+            "title": "Rationale"
           },
           "studyAcronym": {
             "type": "string",
@@ -3611,15 +4064,16 @@
               }
             ]
           },
-          "documentVersion": {
+          "documentVersionId": {
             "anyOf": [
               {
-                "$ref": "#/components/schemas/StudyProtocolDocumentVersion-Input"
+                "type": "string"
               },
               {
                 "type": "null"
               }
-            ]
+            ],
+            "title": "Documentversionid"
           },
           "dateValues": {
             "items": {
@@ -3666,8 +4120,8 @@
         "required": [
           "id",
           "studyTitle",
-          "studyVersion",
-          "studyRationale",
+          "versionIdentifier",
+          "rationale",
           "studyAcronym"
         ],
         "title": "StudyVersion"
@@ -3683,13 +4137,13 @@
             "type": "string",
             "title": "Studytitle"
           },
-          "studyVersion": {
+          "versionIdentifier": {
             "type": "string",
-            "title": "Studyversion"
+            "title": "Versionidentifier"
           },
-          "studyRationale": {
+          "rationale": {
             "type": "string",
-            "title": "Studyrationale"
+            "title": "Rationale"
           },
           "studyAcronym": {
             "type": "string",
@@ -3715,15 +4169,16 @@
               }
             ]
           },
-          "documentVersion": {
+          "documentVersionId": {
             "anyOf": [
               {
-                "$ref": "#/components/schemas/StudyProtocolDocumentVersion-Output"
+                "type": "string"
               },
               {
                 "type": "null"
               }
-            ]
+            ],
+            "title": "Documentversionid"
           },
           "dateValues": {
             "items": {
@@ -3770,13 +4225,13 @@
         "required": [
           "id",
           "studyTitle",
-          "studyVersion",
-          "studyRationale",
+          "versionIdentifier",
+          "rationale",
           "studyAcronym"
         ],
         "title": "StudyVersion"
       },
-      "SubjectEnrollment": {
+      "SubjectEnrollment-Input": {
         "properties": {
           "id": {
             "type": "string",
@@ -3787,7 +4242,34 @@
             "$ref": "#/components/schemas/Code"
           },
           "code": {
+            "$ref": "#/components/schemas/AliasCode"
+          },
+          "quantity": {
+            "type": "string",
+            "title": "Quantity"
+          }
+        },
+        "type": "object",
+        "required": [
+          "id",
+          "type",
+          "code",
+          "quantity"
+        ],
+        "title": "SubjectEnrollment"
+      },
+      "SubjectEnrollment-Output": {
+        "properties": {
+          "id": {
+            "type": "string",
+            "minLength": 1,
+            "title": "Id"
+          },
+          "type": {
             "$ref": "#/components/schemas/Code"
+          },
+          "code": {
+            "$ref": "#/components/schemas/AliasCode"
           },
           "quantity": {
             "type": "string",
@@ -3824,10 +4306,6 @@
             "type": "string",
             "title": "Description",
             "default": ""
-          },
-          "text": {
-            "type": "string",
-            "title": "Text"
           },
           "parameterMap": {
             "type": "object",
@@ -3867,11 +4345,11 @@
           "type": {
             "$ref": "#/components/schemas/Code"
           },
-          "timingValue": {
+          "value": {
             "type": "string",
-            "title": "Timingvalue"
+            "title": "Value"
           },
-          "timingRelativeToFrom": {
+          "relativeToFrom": {
             "$ref": "#/components/schemas/Code"
           },
           "relativeFromScheduledInstanceId": {
@@ -3896,7 +4374,7 @@
             ],
             "title": "Relativetoscheduledinstanceid"
           },
-          "timingWindowLower": {
+          "windowLower": {
             "anyOf": [
               {
                 "type": "string"
@@ -3905,9 +4383,9 @@
                 "type": "null"
               }
             ],
-            "title": "Timingwindowlower"
+            "title": "Windowlower"
           },
-          "timingWindowUpper": {
+          "windowUpper": {
             "anyOf": [
               {
                 "type": "string"
@@ -3916,9 +4394,9 @@
                 "type": "null"
               }
             ],
-            "title": "Timingwindowupper"
+            "title": "Windowupper"
           },
-          "timingWindow": {
+          "window": {
             "anyOf": [
               {
                 "type": "string"
@@ -3927,7 +4405,7 @@
                 "type": "null"
               }
             ],
-            "title": "Timingwindow"
+            "title": "Window"
           }
         },
         "type": "object",
@@ -3935,8 +4413,8 @@
           "id",
           "name",
           "type",
-          "timingValue",
-          "timingRelativeToFrom"
+          "value",
+          "relativeToFrom"
         ],
         "title": "Timing"
       },
