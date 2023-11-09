@@ -240,7 +240,7 @@ components:
           title: Nextid
         definedProcedures:
           items:
-            $ref: '#/components/schemas/Procedure-Input'
+            $ref: '#/components/schemas/Procedure'
           type: array
           title: Definedprocedures
           default: []
@@ -311,7 +311,7 @@ components:
           title: Nextid
         definedProcedures:
           items:
-            $ref: '#/components/schemas/Procedure-Output'
+            $ref: '#/components/schemas/Procedure'
           type: array
           title: Definedprocedures
           default: []
@@ -929,11 +929,11 @@ components:
           - type: string
           - type: 'null'
           title: Nextid
-        encounterScheduledAtTimingId:
+        scheduledAtId:
           anyOf:
           - type: string
           - type: 'null'
-          title: Encounterscheduledattimingid
+          title: Scheduledatid
         environmentalSetting:
           anyOf:
           - $ref: '#/components/schemas/Code'
@@ -1406,7 +1406,7 @@ components:
       - identifierScheme
       - identifier
       title: Organization
-    Procedure-Input:
+    Procedure:
       properties:
         id:
           type: string
@@ -1437,53 +1437,11 @@ components:
           - type: string
           - type: 'null'
           title: Isconditionalreason
-        studyIntervention:
-          anyOf:
-          - $ref: '#/components/schemas/StudyIntervention-Input'
-          - type: 'null'
-      type: object
-      required:
-      - id
-      - name
-      - procedureType
-      - code
-      - isConditional
-      title: Procedure
-    Procedure-Output:
-      properties:
-        id:
-          type: string
-          minLength: 1
-          title: Id
-        name:
-          type: string
-          minLength: 1
-          title: Name
-        label:
-          type: string
-          title: Label
-          default: ''
-        description:
-          type: string
-          title: Description
-          default: ''
-        procedureType:
-          type: string
-          title: Proceduretype
-        code:
-          $ref: '#/components/schemas/Code'
-        isConditional:
-          type: boolean
-          title: Isconditional
-        isConditionalReason:
+        studyInterventionId:
           anyOf:
           - type: string
           - type: 'null'
-          title: Isconditionalreason
-        studyIntervention:
-          anyOf:
-          - $ref: '#/components/schemas/StudyIntervention-Output'
-          - type: 'null'
+          title: Studyinterventionid
       type: object
       required:
       - id
@@ -2158,7 +2116,7 @@ components:
           title: Epochs
         elements:
           items:
-            $ref: '#/components/schemas/StudyElement-Input'
+            $ref: '#/components/schemas/StudyElement'
           type: array
           title: Elements
           default: []
@@ -2316,7 +2274,7 @@ components:
           title: Epochs
         elements:
           items:
-            $ref: '#/components/schemas/StudyElement-Output'
+            $ref: '#/components/schemas/StudyElement'
           type: array
           title: Elements
           default: []
@@ -2424,7 +2382,7 @@ components:
       - plannedMaximumAgeOfParticipants
       - plannedMinimumAgeOfParticipants
       title: StudyDesignPopulation
-    StudyElement-Input:
+    StudyElement:
       properties:
         id:
           type: string
@@ -2450,48 +2408,11 @@ components:
           anyOf:
           - $ref: '#/components/schemas/TransitionRule'
           - type: 'null'
-        studyInterventions:
+        studyInterventionIds:
           items:
-            $ref: '#/components/schemas/StudyIntervention-Input'
+            type: string
           type: array
-          title: Studyinterventions
-          default: []
-      type: object
-      required:
-      - id
-      - name
-      title: StudyElement
-    StudyElement-Output:
-      properties:
-        id:
-          type: string
-          minLength: 1
-          title: Id
-        name:
-          type: string
-          minLength: 1
-          title: Name
-        label:
-          type: string
-          title: Label
-          default: ''
-        description:
-          type: string
-          title: Description
-          default: ''
-        transitionStartRule:
-          anyOf:
-          - $ref: '#/components/schemas/TransitionRule'
-          - type: 'null'
-        transitionEndRule:
-          anyOf:
-          - $ref: '#/components/schemas/TransitionRule'
-          - type: 'null'
-        studyInterventions:
-          items:
-            $ref: '#/components/schemas/StudyIntervention-Output'
-          type: array
-          title: Studyinterventions
+          title: Studyinterventionids
           default: []
       type: object
       required:
