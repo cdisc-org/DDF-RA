@@ -1,39 +1,39 @@
 status,class_name,property_name,data_type
 Class - NEW,AdministrationDuration,,
-,,quantity,Quantity
+,,id,String
 ,,description,String
 ,,durationWillVary,boolean
 ,,reasonDurationWillVary,String
-,,id,String
+,,quantity,Quantity
 Class - NEW,AgentAdministration,,
-,,duration,AdministrationDuration
-,,dose,Quantity
-,,route,Code
+,,id,String
 ,,name,String
 ,,description,String
-,,id,String
 ,,label,String
+,,duration,AdministrationDuration
+,,route,Code
+,,dose,Quantity
 ,,frequency,Code
 Class - NEW,Quantity,,
-,,unit,Code
 ,,id,String
 ,,value,Float
+,,unit,Code
 Class - NEW,StudyIntervention,,
-,,minimumResponseDuration,Quantity
-,,codes,Code
+,,id,String
+,,description,String
+,,name,string
+,,label,String
 ,,administrations,AgentAdministration
+,,type,Code
+,,role,Code
 ,,productDesignation,Code
 ,,pharmacologicClass,Code
-,,role,Code
-,,name,string
-,,description,String
-,,id,String
-,,label,String
-,,type,Code
-Class - DELETED,InvestigationalIntervention,,
 ,,codes,Code
-,,description,String
+,,minimumResponseDuration,Quantity
+Class - DELETED,InvestigationalIntervention,,
 ,,id,String
+,,description,String
+,,codes,Code
 ,,,
 Property - NEW,BiomedicalConceptCategory,children,BiomedicalConceptCategory
 Property - NEW,BiomedicalConceptCategory,members,BiomedicalConcept
