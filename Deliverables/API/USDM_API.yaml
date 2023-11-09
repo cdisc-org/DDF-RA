@@ -1041,6 +1041,12 @@ components:
           type: string
           minLength: 1
           title: Id
+        instanceType:
+          type: string
+          enum:
+          - GEOGRAPHIC_SCOPE
+          - SUBJECT_ENROLLMENT
+          title: Instancetype
         type:
           $ref: '#/components/schemas/Code'
         code:
@@ -1048,6 +1054,7 @@ components:
       type: object
       required:
       - id
+      - instanceType
       - type
       - code
       title: GeographicScope
@@ -1057,6 +1064,12 @@ components:
           type: string
           minLength: 1
           title: Id
+        instanceType:
+          type: string
+          enum:
+          - GEOGRAPHIC_SCOPE
+          - SUBJECT_ENROLLMENT
+          title: Instancetype
         type:
           $ref: '#/components/schemas/Code'
         code:
@@ -1064,6 +1077,7 @@ components:
       type: object
       required:
       - id
+      - instanceType
       - type
       - code
       title: GeographicScope
@@ -2881,6 +2895,12 @@ components:
           type: string
           minLength: 1
           title: Id
+        instanceType:
+          type: string
+          enum:
+          - GEOGRAPHIC_SCOPE
+          - SUBJECT_ENROLLMENT
+          title: Instancetype
         type:
           $ref: '#/components/schemas/Code'
         code:
@@ -2891,6 +2911,7 @@ components:
       type: object
       required:
       - id
+      - instanceType
       - type
       - code
       - quantity
@@ -2901,6 +2922,12 @@ components:
           type: string
           minLength: 1
           title: Id
+        instanceType:
+          type: string
+          enum:
+          - GEOGRAPHIC_SCOPE
+          - SUBJECT_ENROLLMENT
+          title: Instancetype
         type:
           $ref: '#/components/schemas/Code'
         code:
@@ -2911,6 +2938,7 @@ components:
       type: object
       required:
       - id
+      - instanceType
       - type
       - code
       - quantity

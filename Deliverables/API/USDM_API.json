@@ -1477,6 +1477,14 @@
             "minLength": 1,
             "title": "Id"
           },
+          "instanceType": {
+            "type": "string",
+            "enum": [
+              "GEOGRAPHIC_SCOPE",
+              "SUBJECT_ENROLLMENT"
+            ],
+            "title": "Instancetype"
+          },
           "type": {
             "$ref": "#/components/schemas/Code"
           },
@@ -1487,6 +1495,7 @@
         "type": "object",
         "required": [
           "id",
+          "instanceType",
           "type",
           "code"
         ],
@@ -1499,6 +1508,14 @@
             "minLength": 1,
             "title": "Id"
           },
+          "instanceType": {
+            "type": "string",
+            "enum": [
+              "GEOGRAPHIC_SCOPE",
+              "SUBJECT_ENROLLMENT"
+            ],
+            "title": "Instancetype"
+          },
           "type": {
             "$ref": "#/components/schemas/Code"
           },
@@ -1509,6 +1526,7 @@
         "type": "object",
         "required": [
           "id",
+          "instanceType",
           "type",
           "code"
         ],
@@ -4116,6 +4134,14 @@
             "minLength": 1,
             "title": "Id"
           },
+          "instanceType": {
+            "type": "string",
+            "enum": [
+              "GEOGRAPHIC_SCOPE",
+              "SUBJECT_ENROLLMENT"
+            ],
+            "title": "Instancetype"
+          },
           "type": {
             "$ref": "#/components/schemas/Code"
           },
@@ -4130,6 +4156,7 @@
         "type": "object",
         "required": [
           "id",
+          "instanceType",
           "type",
           "code",
           "quantity"
@@ -4143,6 +4170,14 @@
             "minLength": 1,
             "title": "Id"
           },
+          "instanceType": {
+            "type": "string",
+            "enum": [
+              "GEOGRAPHIC_SCOPE",
+              "SUBJECT_ENROLLMENT"
+            ],
+            "title": "Instancetype"
+          },
           "type": {
             "$ref": "#/components/schemas/Code"
           },
@@ -4157,6 +4192,7 @@
         "type": "object",
         "required": [
           "id",
+          "instanceType",
           "type",
           "code",
           "quantity"
