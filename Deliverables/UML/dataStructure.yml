@@ -563,6 +563,36 @@ EligibilityCriteria:
     in a clinical study, as outlined in the study protocol. The concept covers inclusion
     and exclusion criteria.
   Attributes:
+    id:
+      $ref: '#/string'
+      Relationship Type: Value
+      Model Name: id
+      Inherited From:
+        $ref: '#/SyntaxTemplate'
+    name:
+      $ref: '#/string'
+      Relationship Type: Value
+      Model Name: name
+      Inherited From:
+        $ref: '#/SyntaxTemplate'
+    description:
+      $ref: '#/string'
+      Relationship Type: Value
+      Model Name: description
+      Inherited From:
+        $ref: '#/SyntaxTemplate'
+    label:
+      $ref: '#/string'
+      Relationship Type: Value
+      Model Name: label
+      Inherited From:
+        $ref: '#/SyntaxTemplate'
+    text:
+      $ref: '#/string'
+      Relationship Type: Value
+      Model Name: text
+      Inherited From:
+        $ref: '#/SyntaxTemplate'
     identifier:
       $ref: '#/string'
       NCI C-Code: CNEW
@@ -590,12 +620,7 @@ EligibilityCriteria:
       Cardinality: 0..1
       Relationship Type: Ref
       Model Name: previous
-    id*: UNKNOWN
-    name*: UNKNOWN
-    label*: UNKNOWN
-    description*: UNKNOWN
     instanceType*: UNKNOWN
-    text*: UNKNOWN
     dictionaryId*: UNKNOWN
 Encounter:
   NCI C-Code: C142427
@@ -696,6 +721,36 @@ Endpoint:
     as applicable, such as how multiple assessments within an individual are to be
     combined. [After BEST Resource] (CDISC Glossary)'
   Attributes:
+    id:
+      $ref: '#/string'
+      Relationship Type: Value
+      Model Name: id
+      Inherited From:
+        $ref: '#/SyntaxTemplate'
+    name:
+      $ref: '#/string'
+      Relationship Type: Value
+      Model Name: name
+      Inherited From:
+        $ref: '#/SyntaxTemplate'
+    description:
+      $ref: '#/string'
+      Relationship Type: Value
+      Model Name: description
+      Inherited From:
+        $ref: '#/SyntaxTemplate'
+    label:
+      $ref: '#/string'
+      Relationship Type: Value
+      Model Name: label
+      Inherited From:
+        $ref: '#/SyntaxTemplate'
+    text:
+      $ref: '#/string'
+      Relationship Type: Value
+      Model Name: text
+      Inherited From:
+        $ref: '#/SyntaxTemplate'
     purpose:
       $ref: '#/string'
       NCI C-Code: C188825
@@ -713,12 +768,7 @@ Endpoint:
       Codelist Ref: C188726
       Relationship Type: Value
       Model Name: level
-    id*: UNKNOWN
-    name*: UNKNOWN
-    label*: UNKNOWN
-    description*: UNKNOWN
     instanceType*: UNKNOWN
-    text*: UNKNOWN
     dictionaryId*: UNKNOWN
 Estimand:
   NCI C-Code: C188813
@@ -977,6 +1027,36 @@ Objective:
   Definition: The reason for performing a study in terms of the scientific questions
     to be answered by the analysis of data collected during the study.
   Attributes:
+    id:
+      $ref: '#/string'
+      Relationship Type: Value
+      Model Name: id
+      Inherited From:
+        $ref: '#/SyntaxTemplate'
+    name:
+      $ref: '#/string'
+      Relationship Type: Value
+      Model Name: name
+      Inherited From:
+        $ref: '#/SyntaxTemplate'
+    description:
+      $ref: '#/string'
+      Relationship Type: Value
+      Model Name: description
+      Inherited From:
+        $ref: '#/SyntaxTemplate'
+    label:
+      $ref: '#/string'
+      Relationship Type: Value
+      Model Name: label
+      Inherited From:
+        $ref: '#/SyntaxTemplate'
+    text:
+      $ref: '#/string'
+      Relationship Type: Value
+      Model Name: text
+      Inherited From:
+        $ref: '#/SyntaxTemplate'
     level:
       $ref: '#/Code'
       NCI C-Code: C188823
@@ -992,12 +1072,7 @@ Objective:
       Cardinality: 0..*
       Relationship Type: Value
       Model Name: endpoints
-    id*: UNKNOWN
-    name*: UNKNOWN
-    label*: UNKNOWN
-    description*: UNKNOWN
     instanceType*: UNKNOWN
-    text*: UNKNOWN
     dictionaryId*: UNKNOWN
 Organization:
   NCI C-Code: C19711
@@ -1255,6 +1330,12 @@ ScheduledActivityInstance:
   Preferred Term: Scheduled Activity Instance
   Definition: A scheduled occurrence of an activity event.
   Attributes:
+    id:
+      $ref: '#/string'
+      Relationship Type: Value
+      Model Name: id
+      Inherited From:
+        $ref: '#/ScheduledInstance'
     activityIds:
       $ref: '#/Activity'
       Cardinality: 0..*
@@ -1265,7 +1346,6 @@ ScheduledActivityInstance:
       Cardinality: 0..1
       Relationship Type: Ref
       Model Name: encounter
-    id*: UNKNOWN
     instanceType*: UNKNOWN
     timings*: UNKNOWN
     timelineId*: UNKNOWN
@@ -1277,6 +1357,12 @@ ScheduledDecisionInstance:
   Preferred Term: Scheduled Decision Instance
   Definition: A scheduled occurrence of a decision event.
   Attributes:
+    id:
+      $ref: '#/string'
+      Relationship Type: Value
+      Model Name: id
+      Inherited From:
+        $ref: '#/ScheduledInstance'
     conditionAssignments:
       $ref: '#/Map'
       NCI C-Code: C201335
@@ -1285,7 +1371,6 @@ ScheduledDecisionInstance:
         met in order to make a logical decision.
       Relationship Type: Value
       Model Name: conditionAssignments
-    id*: UNKNOWN
     instanceType*: UNKNOWN
     timings*: UNKNOWN
     timelineId*: UNKNOWN
@@ -2209,6 +2294,12 @@ SubjectEnrollment:
     the inclusion/exclusion criteria to participate in the trial and will have signed
     an informed consent form. (CDISC Glossary)
   Attributes:
+    id:
+      $ref: '#/string'
+      Relationship Type: Value
+      Model Name: id
+      Inherited From:
+        $ref: '#/GeographicScope'
     quantity:
       $ref: '#/string'
       NCI C-Code: CNEW
@@ -2216,7 +2307,6 @@ SubjectEnrollment:
       Definition: The number of individuals enrolled in a study.
       Relationship Type: Value
       Model Name: quantity
-    id*: UNKNOWN
     instanceType*: UNKNOWN
     type*: UNKNOWN
     code*: UNKNOWN
