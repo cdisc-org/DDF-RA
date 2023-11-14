@@ -56,7 +56,7 @@ Activity:
     biomedicalConceptIds:
       $ref: '#/BiomedicalConcept'
       Cardinality: 0..*
-      Relationship Type: RefList
+      Relationship Type: Ref
       Model Name: biomedicalConcepts
     nextId:
       $ref: '#/Activity'
@@ -76,12 +76,12 @@ Activity:
     bcSurrogateIds:
       $ref: '#/BiomedicalConceptSurrogate'
       Cardinality: 0..*
-      Relationship Type: RefList
+      Relationship Type: Ref
       Model Name: bcSurrogates
     bcCategoryIds:
       $ref: '#/BiomedicalConceptCategory'
       Cardinality: 0..*
-      Relationship Type: RefList
+      Relationship Type: Ref
       Model Name: bcCategories
 Address:
   NCI C-Code: C25407
@@ -419,12 +419,12 @@ BiomedicalConceptCategory:
     memberIds:
       $ref: '#/BiomedicalConcept'
       Cardinality: 0..*
-      Relationship Type: RefList
+      Relationship Type: Ref
       Model Name: members
     childrenIds:
       $ref: '#/BiomedicalConceptCategory'
       Cardinality: 0..*
-      Relationship Type: RefList
+      Relationship Type: Ref
       Model Name: children
 BiomedicalConceptProperty:
   NCI C-Code: CNEW
@@ -641,7 +641,10 @@ EligibilityCriteria:
       Cardinality: 0..1
       Relationship Type: Ref
       Model Name: previous
-    instanceType*: UNKNOWN
+    instanceType:
+      $ref: '#/string'
+      Cardinality: 0..1
+      Relationship Type: Value
 Encounter:
   NCI C-Code: C142427
   Preferred Term: Clinical Encounter
@@ -799,7 +802,10 @@ Endpoint:
       Codelist Ref: C188726
       Relationship Type: Value
       Model Name: level
-    instanceType*: UNKNOWN
+    instanceType:
+      $ref: '#/string'
+      Cardinality: 0..1
+      Relationship Type: Value
 Estimand:
   NCI C-Code: C188813
   Preferred Term: Estimand
@@ -873,7 +879,10 @@ GeographicScope:
       Codelist Ref: CNEW - Geographic Scope Type Value Set Terminology
       Relationship Type: Value
       Model Name: type
-    instanceType*: UNKNOWN
+    instanceType:
+      $ref: '#/string'
+      Cardinality: 0..1
+      Relationship Type: Value
 GovernanceDate:
   NCI C-Code: CNEW
   Preferred Term: Study Governance Date
@@ -1057,7 +1066,7 @@ NarrativeContent:
     childrenIds:
       $ref: '#/NarrativeContent'
       Cardinality: 0..*
-      Relationship Type: RefList
+      Relationship Type: Ref
       Model Name: children
 Objective:
   NCI C-Code: C142450
@@ -1120,7 +1129,10 @@ Objective:
       Cardinality: 0..*
       Relationship Type: Value
       Model Name: endpoints
-    instanceType*: UNKNOWN
+    instanceType:
+      $ref: '#/string'
+      Cardinality: 0..1
+      Relationship Type: Value
 Organization:
   NCI C-Code: C19711
   Preferred Term: Organization
@@ -1430,14 +1442,17 @@ ScheduledActivityInstance:
     activityIds:
       $ref: '#/Activity'
       Cardinality: 0..*
-      Relationship Type: RefList
+      Relationship Type: Ref
       Model Name: activities
     encounterId:
       $ref: '#/Encounter'
       Cardinality: 0..1
       Relationship Type: Ref
       Model Name: encounter
-    instanceType*: UNKNOWN
+    instanceType:
+      $ref: '#/string'
+      Cardinality: 0..1
+      Relationship Type: Value
 ScheduledDecisionInstance:
   NCI C-Code: C201351
   Preferred Term: Scheduled Decision Instance
@@ -1495,7 +1510,10 @@ ScheduledDecisionInstance:
         met in order to make a logical decision.
       Relationship Type: Value
       Model Name: conditionAssignments
-    instanceType*: UNKNOWN
+    instanceType:
+      $ref: '#/string'
+      Cardinality: 0..1
+      Relationship Type: Value
 ScheduledInstance:
   NCI C-Code: C201299
   Preferred Term: Scheduled Instance
@@ -1738,7 +1756,7 @@ StudyCell:
     elementIds:
       $ref: '#/StudyElement'
       Cardinality: 0..*
-      Relationship Type: RefList
+      Relationship Type: Ref
       Model Name: elements
 StudyDesign:
   NCI C-Code: C15320
@@ -1906,10 +1924,22 @@ StudyDesign:
       Cardinality: 0..*
       Relationship Type: Value
       Model Name: populations
-    biomedicalConcepts*: UNKNOWN
-    bcCategories*: UNKNOWN
-    bcSurrogates*: UNKNOWN
-    dictionaries*: UNKNOWN
+    biomedicalConcepts:
+      $ref: '#/BiomedicalConcept'
+      Cardinality: 0..*
+      Relationship Type: Value
+    bcCategories:
+      $ref: '#/BiomedicalConceptCategory'
+      Cardinality: 0..*
+      Relationship Type: Value
+    bcSurrogates:
+      $ref: '#/BiomedicalConceptSurrogate'
+      Cardinality: 0..*
+      Relationship Type: Value
+    dictionaries:
+      $ref: '#/SyntaxTemplateDictionary'
+      Cardinality: 0..*
+      Relationship Type: Value
 StudyDesignPopulation:
   NCI C-Code: C142728
   Preferred Term: Target Study Population
@@ -2019,7 +2049,7 @@ StudyElement:
     studyInterventionIds:
       $ref: '#/StudyIntervention'
       Cardinality: 0..*
-      Relationship Type: RefList
+      Relationship Type: Ref
       Model Name: studyInterventions
     transitionStartRule:
       $ref: '#/TransitionRule'
@@ -2314,7 +2344,7 @@ StudyProtocolDocumentVersion:
     childrenIds:
       $ref: '#/StudyProtocolDocumentVersion'
       Cardinality: 0..*
-      Relationship Type: RefList
+      Relationship Type: Ref
       Model Name: children
 StudyVersion:
   NCI C-Code: C188816
@@ -2462,7 +2492,10 @@ SubjectEnrollment:
       Definition: The number of individuals enrolled in a study.
       Relationship Type: Value
       Model Name: quantity
-    instanceType*: UNKNOWN
+    instanceType:
+      $ref: '#/string'
+      Cardinality: 0..1
+      Relationship Type: Value
 SyntaxTemplate:
   NCI C-Code: CNEW
   Preferred Term: Syntax Template
