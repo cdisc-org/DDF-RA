@@ -526,6 +526,52 @@ BiomedicalConceptSurrogate:
       Definition: A citation to an authoritative source for a biomedical concept surrogate.
       Relationship Type: Value
       Model Name: reference
+Characteristic:
+  Super Classes:
+  - $ref: '#/SyntaxTemplate'
+  Modifier: Concrete
+  Attributes:
+    id:
+      $ref: '#/string'
+      Relationship Type: Value
+      Model Name: id
+      Inherited From:
+        $ref: '#/SyntaxTemplate'
+    name:
+      $ref: '#/string'
+      Relationship Type: Value
+      Model Name: name
+      Inherited From:
+        $ref: '#/SyntaxTemplate'
+    description:
+      $ref: '#/string'
+      Relationship Type: Value
+      Model Name: description
+      Inherited From:
+        $ref: '#/SyntaxTemplate'
+    label:
+      $ref: '#/string'
+      Relationship Type: Value
+      Model Name: label
+      Inherited From:
+        $ref: '#/SyntaxTemplate'
+    text:
+      $ref: '#/string'
+      Relationship Type: Value
+      Model Name: text
+      Inherited From:
+        $ref: '#/SyntaxTemplate'
+    dictionaryId:
+      $ref: '#/SyntaxTemplateDictionary'
+      Cardinality: '1'
+      Relationship Type: Ref
+      Model Name: dictionary
+      Inherited From:
+        $ref: '#/SyntaxTemplate'
+    instanceType:
+      $ref: '#/string'
+      Cardinality: 0..1
+      Relationship Type: Value
 Code:
   NCI C-Code: C25162
   Preferred Term: Code
@@ -631,6 +677,11 @@ EligibilityCriteria:
       Codelist Ref: SDTM Terminology Codelist C66797
       Relationship Type: Value
       Model Name: category
+    contextId:
+      $ref: '#/StudyVersion'
+      Cardinality: 0..1
+      Relationship Type: Ref
+      Model Name: context
     nextId:
       $ref: '#/EligibilityCriteria'
       Cardinality: 0..1
@@ -1191,6 +1242,48 @@ Organization:
       Codelist Ref: C188724
       Relationship Type: Value
       Model Name: type
+PopulationDefinition:
+  Sub Classes:
+  - $ref: '#/StudyCohort'
+  - $ref: '#/StudyDesignPopulation'
+  Modifier: Abstract
+  Attributes:
+    id:
+      $ref: '#/string'
+      Model Name: id
+    name:
+      $ref: '#/string'
+      Model Name: name
+    description:
+      $ref: '#/string'
+      Model Name: description
+    label:
+      $ref: '#/string'
+      Model Name: label
+    plannedSex:
+      $ref: '#/Code'
+      Cardinality: '1'
+      Model Name: plannedSex
+    criteria:
+      $ref: '#/EligibilityCriteria'
+      Cardinality: 1..*
+      Model Name: criteria
+    plannedMaximumAge:
+      $ref: '#/Quantity'
+      Cardinality: '1'
+      Model Name: plannedMaximumAge
+    plannedMinimumAge:
+      $ref: '#/Quantity'
+      Cardinality: '1'
+      Model Name: plannedMinimumAge
+    plannedEnrollmentNumber:
+      $ref: '#/Range'
+      Cardinality: '1'
+      Model Name: plannedEnrollmentNumber
+    plannedCompletionNumber:
+      $ref: '#/Range'
+      Cardinality: '1'
+      Model Name: plannedCompletionNumber
 Procedure:
   NCI C-Code: C98769
   Preferred Term: Procedure
@@ -1289,6 +1382,36 @@ Quantity:
       Codelist Ref: SDTM Terminology Codelist C71620
       Relationship Type: Value
       Model Name: unit
+Range:
+  Modifier: Concrete
+  Attributes:
+    id:
+      $ref: '#/string'
+      Relationship Type: Value
+      Model Name: id
+    minValue*:
+      $ref: '#/float'
+      Relationship Type: UNKNOWN
+      Model Name: minValue
+    maxValue*:
+      $ref: '#/float'
+      Relationship Type: UNKNOWN
+      Model Name: maxValue
+    anticipatedValue*:
+      $ref: '#/float'
+      Relationship Type: UNKNOWN
+      Model Name: anticipatedValue
+    unit:
+      $ref: '#/Code'
+      Cardinality: '1'
+      Relationship Type: Value
+      Model Name: unit
+    min:
+      $ref: UNKNOWN
+      Relationship Type: Value
+    max:
+      $ref: UNKNOWN
+      Relationship Type: Value
 ResponseCode:
   NCI C-Code: C201347
   Preferred Term: Response Code
@@ -1732,6 +1855,15 @@ StudyArm:
       Codelist Ref: Protocol Terminology Codelist C174222
       Relationship Type: Value
       Model Name: type
+    populations*:
+      $ref: '#/PopulationDefinition'
+      Cardinality: 0..*
+      Relationship Type: UNKNOWN
+      Model Name: populations
+    studySubpopulationIds:
+      $ref: UNKNOWN
+      Cardinality: 0..*
+      Relationship Type: Value
 StudyCell:
   NCI C-Code: C188810
   Preferred Term: Study Design Cell
@@ -1758,6 +1890,82 @@ StudyCell:
       Cardinality: 0..*
       Relationship Type: Ref
       Model Name: elements
+StudyCohort:
+  Super Classes:
+  - $ref: '#/PopulationDefinition'
+  Modifier: Concrete
+  Attributes:
+    id:
+      $ref: '#/string'
+      Relationship Type: Value
+      Model Name: id
+      Inherited From:
+        $ref: '#/PopulationDefinition'
+    name:
+      $ref: '#/string'
+      Relationship Type: Value
+      Model Name: name
+      Inherited From:
+        $ref: '#/PopulationDefinition'
+    description:
+      $ref: '#/string'
+      Relationship Type: Value
+      Model Name: description
+      Inherited From:
+        $ref: '#/PopulationDefinition'
+    label:
+      $ref: '#/string'
+      Relationship Type: Value
+      Model Name: label
+      Inherited From:
+        $ref: '#/PopulationDefinition'
+    plannedSex:
+      $ref: '#/Code'
+      Cardinality: '1'
+      Relationship Type: Value
+      Model Name: plannedSex
+      Inherited From:
+        $ref: '#/PopulationDefinition'
+    criteria:
+      $ref: '#/EligibilityCriteria'
+      Cardinality: 1..*
+      Relationship Type: Value
+      Model Name: criteria
+      Inherited From:
+        $ref: '#/PopulationDefinition'
+    plannedMaximumAge:
+      $ref: '#/Quantity'
+      Cardinality: '1'
+      Relationship Type: Value
+      Model Name: plannedMaximumAge
+      Inherited From:
+        $ref: '#/PopulationDefinition'
+    plannedMinimumAge:
+      $ref: '#/Quantity'
+      Cardinality: '1'
+      Relationship Type: Value
+      Model Name: plannedMinimumAge
+      Inherited From:
+        $ref: '#/PopulationDefinition'
+    plannedEnrollmentNumber:
+      $ref: '#/Range'
+      Cardinality: '1'
+      Relationship Type: Value
+      Model Name: plannedEnrollmentNumber
+      Inherited From:
+        $ref: '#/PopulationDefinition'
+    plannedCompletionNumber:
+      $ref: '#/Range'
+      Cardinality: '1'
+      Relationship Type: Value
+      Model Name: plannedCompletionNumber
+      Inherited From:
+        $ref: '#/PopulationDefinition'
+    characteristics:
+      $ref: '#/Characteristic'
+      Cardinality: 0..*
+      Relationship Type: Value
+      Model Name: characteristics
 StudyDesign:
   NCI C-Code: C15320
   Preferred Term: Study Design
@@ -1859,11 +2067,6 @@ StudyDesign:
       Codelist Ref: SDTM Terminology Codelist C99076
       Relationship Type: Value
       Model Name: interventionModel
-    eligibilityCriteria:
-      $ref: '#/EligibilityCriteria'
-      Cardinality: 0..*
-      Relationship Type: Value
-      Model Name: eligibilityCriteria
     encounters:
       $ref: '#/Encounter'
       Cardinality: 0..*
@@ -1919,11 +2122,11 @@ StudyDesign:
       Cardinality: 1..*
       Relationship Type: Value
       Model Name: epochs
-    populations:
+    population*:
       $ref: '#/StudyDesignPopulation'
-      Cardinality: 0..*
-      Relationship Type: Value
-      Model Name: populations
+      Cardinality: 0..1
+      Relationship Type: UNKNOWN
+      Model Name: population
     biomedicalConcepts:
       $ref: '#/BiomedicalConcept'
       Cardinality: 0..*
@@ -1936,6 +2139,10 @@ StudyDesign:
       $ref: '#/BiomedicalConceptSurrogate'
       Cardinality: 0..*
       Relationship Type: Value
+    populations:
+      $ref: '#/StudyDesignPopulation'
+      Cardinality: 0..*
+      Relationship Type: Value
     dictionaries:
       $ref: '#/SyntaxTemplateDictionary'
       Cardinality: 0..*
@@ -1945,12 +2152,16 @@ StudyDesignPopulation:
   Preferred Term: Target Study Population
   Definition: The population within the general population to which the study results
     can be generalized.
+  Super Classes:
+  - $ref: '#/PopulationDefinition'
   Modifier: Concrete
   Attributes:
     id:
       $ref: '#/string'
       Relationship Type: Value
       Model Name: id
+      Inherited From:
+        $ref: '#/PopulationDefinition'
     name:
       $ref: '#/string'
       NCI C-Code: CNEW
@@ -1959,6 +2170,8 @@ StudyDesignPopulation:
         study population.
       Relationship Type: Value
       Model Name: name
+      Inherited From:
+        $ref: '#/PopulationDefinition'
     description:
       $ref: '#/string'
       NCI C-Code: C70834
@@ -1966,6 +2179,8 @@ StudyDesignPopulation:
       Definition: A narrative representation of the study population.
       Relationship Type: Value
       Model Name: description
+      Inherited From:
+        $ref: '#/PopulationDefinition'
     label:
       $ref: '#/string'
       NCI C-Code: CNEW
@@ -1973,40 +2188,55 @@ StudyDesignPopulation:
       Definition: The short descriptive designation for the study design population.
       Relationship Type: Value
       Model Name: label
-    plannedNumberOfParticipants:
-      $ref: '#/int'
-      NCI C-Code: C49692
-      Preferred Term: Planned Number of Participants
-      Definition: The planned number of subjects to be entered in a clinical trial.
-        (NCI)
-      Relationship Type: Value
-      Model Name: plannedNumberOfParticipants
-    plannedMinimumAgeOfParticipants:
-      $ref: '#/string'
-      NCI C-Code: C49693
-      Preferred Term: Planned Minimum Age of Subjects
-      Definition: The anticipated minimum age of the subjects to be entered in a clinical
-        trial. (NCI)
-      Relationship Type: Value
-      Model Name: plannedMinimumAgeOfParticipants
-    plannedMaximumAgeOfParticipants:
-      $ref: '#/string'
-      NCI C-Code: C49694
-      Preferred Term: Planned Maximum Age of Subjects
-      Definition: The anticipated maximum age of the subjects to be entered in a clinical
-        trial. (NCI)
-      Relationship Type: Value
-      Model Name: plannedMaximumAgeOfParticipants
-    plannedSexOfParticipants:
+      Inherited From:
+        $ref: '#/PopulationDefinition'
+    plannedSex:
       $ref: '#/Code'
-      NCI C-Code: C49696
-      Cardinality: 0..*
-      Preferred Term: Sex of Participants
-      Definition: The specific sex, either male, female, or mixed of the subject group
-        being studied. (NCI)
-      Codelist Ref: SDTM Terminology Codelist C66732
+      Cardinality: '1'
       Relationship Type: Value
-      Model Name: plannedSexOfParticipants
+      Model Name: plannedSex
+      Inherited From:
+        $ref: '#/PopulationDefinition'
+    criteria:
+      $ref: '#/EligibilityCriteria'
+      Cardinality: 1..*
+      Relationship Type: Value
+      Model Name: criteria
+      Inherited From:
+        $ref: '#/PopulationDefinition'
+    plannedMaximumAge:
+      $ref: '#/Quantity'
+      Cardinality: '1'
+      Relationship Type: Value
+      Model Name: plannedMaximumAge
+      Inherited From:
+        $ref: '#/PopulationDefinition'
+    plannedMinimumAge:
+      $ref: '#/Quantity'
+      Cardinality: '1'
+      Relationship Type: Value
+      Model Name: plannedMinimumAge
+      Inherited From:
+        $ref: '#/PopulationDefinition'
+    plannedEnrollmentNumber:
+      $ref: '#/Range'
+      Cardinality: '1'
+      Relationship Type: Value
+      Model Name: plannedEnrollmentNumber
+      Inherited From:
+        $ref: '#/PopulationDefinition'
+    plannedCompletionNumber:
+      $ref: '#/Range'
+      Cardinality: '1'
+      Relationship Type: Value
+      Model Name: plannedCompletionNumber
+      Inherited From:
+        $ref: '#/PopulationDefinition'
+    cohorts:
+      $ref: '#/StudyCohort'
+      Cardinality: 0..*
+      Relationship Type: Value
+      Model Name: cohorts
 StudyElement:
   NCI C-Code: C142735
   Preferred Term: Study Design Element
@@ -2502,6 +2732,7 @@ SyntaxTemplate:
   Definition: A standardized pattern used for the arrangement of words and phrases
     to create well-formed, structured sentences.
   Sub Classes:
+  - $ref: '#/Characteristic'
   - $ref: '#/EligibilityCriteria'
   - $ref: '#/Endpoint'
   - $ref: '#/Objective'

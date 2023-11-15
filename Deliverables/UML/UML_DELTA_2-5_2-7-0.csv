@@ -1,2 +1,54 @@
 status,class_name,property_name,data_type
+Class - NEW,Characteristic,,
+,,id,String
+,,name,String
+,,description,String
+,,label,String
+,,text,String
+,,dictionary,SyntaxTemplateDictionary
+Class - NEW,PopulationDefinition,,
+,,id,String
+,,name,String
+,,description,String
+,,label,String
+,,plannedSex,Code
+,,criteria,EligibilityCriteria
+,,plannedMaximumAge,Quantity
+,,plannedMinimumAge,Quantity
+,,plannedEnrollmentNumber,Range
+,,plannedCompletionNumber,Range
+Class - NEW,Range,,
+,,id,string
+,,minValue,float
+,,maxValue,float
+,,anticipatedValue,float
+,,unit,Code
+Class - NEW,StudyCohort,,
+,,id,String
+,,name,String
+,,description,String
+,,label,String
+,,plannedSex,Code
+,,criteria,EligibilityCriteria
+,,plannedMaximumAge,Quantity
+,,plannedMinimumAge,Quantity
+,,plannedEnrollmentNumber,Range
+,,plannedCompletionNumber,Range
+,,characteristics,Characteristic
 ,,,
+Property - NEW,StudyDesign,population,StudyDesignPopulation
+Property - NEW,StudyArm,populations,PopulationDefinition
+Property - NEW,StudyDesignPopulation,cohorts,StudyCohort
+Property - NEW,StudyDesignPopulation,criteria,EligibilityCriteria
+Property - NEW,StudyDesignPopulation,plannedCompletionNumber,Range
+Property - NEW,StudyDesignPopulation,plannedEnrollmentNumber,Range
+Property - NEW,StudyDesignPopulation,plannedMaximumAge,Quantity
+Property - NEW,StudyDesignPopulation,plannedMinimumAge,Quantity
+Property - NEW,StudyDesignPopulation,plannedSex,Code
+Property - NEW,EligibilityCriteria,context,StudyVersion
+Property - DELETED,StudyDesign,eligibilityCriteria,EligibilityCriteria
+Property - DELETED,StudyDesign,populations,StudyDesignPopulation
+Property - DELETED,StudyDesignPopulation,plannedMaximumAgeOfParticipants,String
+Property - DELETED,StudyDesignPopulation,plannedMinimumAgeOfParticipants,String
+Property - DELETED,StudyDesignPopulation,plannedNumberOfParticipants,int
+Property - DELETED,StudyDesignPopulation,plannedSexOfParticipants,Code
