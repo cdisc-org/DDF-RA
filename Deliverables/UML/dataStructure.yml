@@ -527,6 +527,9 @@ BiomedicalConceptSurrogate:
       Relationship Type: Value
       Model Name: reference
 Characteristic:
+  NCI C-Code: C25447
+  Preferred Term: Characteristic
+  Definition: The distinguishing qualities or prominent aspects of an entity.
   Super Classes:
   - $ref: '#/SyntaxTemplate'
   Modifier: Concrete
@@ -1243,6 +1246,9 @@ Organization:
       Relationship Type: Value
       Model Name: type
 PopulationDefinition:
+  NCI C-Code: CNEW
+  Preferred Term: Population Definition
+  Definition: A concise explanation of the meaning of a population.
   Sub Classes:
   - $ref: '#/StudyCohort'
   - $ref: '#/StudyDesignPopulation'
@@ -1383,6 +1389,10 @@ Quantity:
       Relationship Type: Value
       Model Name: unit
 Range:
+  NCI C-Code: C38013
+  Preferred Term: Range
+  Definition: The difference between the lowest and highest numerical values; the
+    limits or scale of variation.
   Modifier: Concrete
   Attributes:
     id:
@@ -1391,10 +1401,16 @@ Range:
       Model Name: id
     minValue*:
       $ref: '#/float'
+      NCI C-Code: C25570
+      Preferred Term: Minimum Value
+      Definition: The smallest value in quantity or degree in a set of values.
       Relationship Type: UNKNOWN
       Model Name: minValue
     maxValue*:
       $ref: '#/float'
+      NCI C-Code: C25564
+      Preferred Term: Maximum Value
+      Definition: The largest value in quantity or degree in a set of values.
       Relationship Type: UNKNOWN
       Model Name: maxValue
     anticipatedValue*:
@@ -1891,6 +1907,10 @@ StudyCell:
       Relationship Type: Ref
       Model Name: elements
 StudyCohort:
+  NCI C-Code: C61512
+  Preferred Term: Study Cohort
+  Definition: A group of individuals who share a set of characteristics (e.g., exposures,
+    experiences, attributes), which logically defines a population under study.
   Super Classes:
   - $ref: '#/PopulationDefinition'
   Modifier: Concrete
@@ -2164,28 +2184,18 @@ StudyDesignPopulation:
         $ref: '#/PopulationDefinition'
     name:
       $ref: '#/string'
-      NCI C-Code: CNEW
-      Preferred Term: Target Study Population Name
-      Definition: The literal identifier (i.e., distinctive designation) of the target
-        study population.
       Relationship Type: Value
       Model Name: name
       Inherited From:
         $ref: '#/PopulationDefinition'
     description:
       $ref: '#/string'
-      NCI C-Code: C70834
-      Preferred Term: Target Study Population Description
-      Definition: A narrative representation of the study population.
       Relationship Type: Value
       Model Name: description
       Inherited From:
         $ref: '#/PopulationDefinition'
     label:
       $ref: '#/string'
-      NCI C-Code: CNEW
-      Preferred Term: Study Design Population Label
-      Definition: The short descriptive designation for the study design population.
       Relationship Type: Value
       Model Name: label
       Inherited From:
