@@ -2071,11 +2071,11 @@ components:
           title: Dataorigindescription
         dataOriginType:
           $ref: '#/components/schemas/Code'
-        studySubpopulations:
+        studySubpopulationIds:
           items:
             type: string
           type: array
-          title: Studysubpopulations
+          title: Studysubpopulationids
           default: []
       type: object
       required:
