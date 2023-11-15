@@ -3,7 +3,7 @@
   "info": {
     "title": "Simple API for DDF",
     "description": "A simple TransCelerate Digital Data Flow (DDF) Study Definitions Repository API.",
-    "version": "2.5"
+    "version": "2.7"
   },
   "paths": {
     "/v3/studyDefinitions": {
@@ -1150,6 +1150,56 @@
         ],
         "title": "BiomedicalConceptSurrogate"
       },
+      "Characteristic": {
+        "properties": {
+          "id": {
+            "type": "string",
+            "minLength": 1,
+            "title": "Id"
+          },
+          "name": {
+            "type": "string",
+            "minLength": 1,
+            "title": "Name"
+          },
+          "label": {
+            "type": "string",
+            "title": "Label",
+            "default": ""
+          },
+          "description": {
+            "type": "string",
+            "title": "Description",
+            "default": ""
+          },
+          "instanceType": {
+            "type": "string",
+            "enum": [
+              "ENDPOINT",
+              "OBJECTIVE",
+              "ELIGIBILITY_CRITERIA"
+            ],
+            "title": "Instancetype"
+          },
+          "text": {
+            "type": "string",
+            "title": "Text"
+          },
+          "dictionaryId": {
+            "type": "string",
+            "title": "Dictionaryid"
+          }
+        },
+        "type": "object",
+        "required": [
+          "id",
+          "name",
+          "instanceType",
+          "text",
+          "dictionaryId"
+        ],
+        "title": "Characteristic"
+      },
       "Code": {
         "properties": {
           "id": {
@@ -1251,6 +1301,17 @@
               }
             ],
             "title": "Previousid"
+          },
+          "contextId": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Contextid"
           }
         },
         "type": "object",
@@ -2086,6 +2147,34 @@
         ],
         "title": "Quantity"
       },
+      "Range": {
+        "properties": {
+          "id": {
+            "type": "string",
+            "minLength": 1,
+            "title": "Id"
+          },
+          "min": {
+            "type": "number",
+            "title": "Min"
+          },
+          "max": {
+            "type": "number",
+            "title": "Max"
+          },
+          "unit": {
+            "$ref": "#/components/schemas/Code"
+          }
+        },
+        "type": "object",
+        "required": [
+          "id",
+          "min",
+          "max",
+          "unit"
+        ],
+        "title": "Range"
+      },
       "ResponseCode": {
         "properties": {
           "id": {
@@ -2895,6 +2984,14 @@
           },
           "dataOriginType": {
             "$ref": "#/components/schemas/Code"
+          },
+          "studySubpopulations": {
+            "items": {
+              "type": "string"
+            },
+            "type": "array",
+            "title": "Studysubpopulations",
+            "default": []
           }
         },
         "type": "object",
@@ -2938,6 +3035,146 @@
           "epochId"
         ],
         "title": "StudyCell"
+      },
+      "StudyCohort-Input": {
+        "properties": {
+          "id": {
+            "type": "string",
+            "minLength": 1,
+            "title": "Id"
+          },
+          "name": {
+            "type": "string",
+            "minLength": 1,
+            "title": "Name"
+          },
+          "label": {
+            "type": "string",
+            "title": "Label",
+            "default": ""
+          },
+          "description": {
+            "type": "string",
+            "title": "Description",
+            "default": ""
+          },
+          "plannedEnrollmentNumber": {
+            "$ref": "#/components/schemas/Range"
+          },
+          "plannedCompletionNumber": {
+            "$ref": "#/components/schemas/Range"
+          },
+          "plannedMaximumAge": {
+            "$ref": "#/components/schemas/Quantity"
+          },
+          "plannedMinimumAge": {
+            "$ref": "#/components/schemas/Quantity"
+          },
+          "plannedSex": {
+            "items": {
+              "$ref": "#/components/schemas/Code"
+            },
+            "type": "array",
+            "title": "Plannedsex",
+            "default": []
+          },
+          "criteria": {
+            "items": {
+              "$ref": "#/components/schemas/EligibilityCriteria"
+            },
+            "type": "array",
+            "title": "Criteria"
+          },
+          "characteristics": {
+            "items": {
+              "$ref": "#/components/schemas/Characteristic"
+            },
+            "type": "array",
+            "title": "Characteristics",
+            "default": []
+          }
+        },
+        "type": "object",
+        "required": [
+          "id",
+          "name",
+          "plannedEnrollmentNumber",
+          "plannedCompletionNumber",
+          "plannedMaximumAge",
+          "plannedMinimumAge",
+          "criteria"
+        ],
+        "title": "StudyCohort"
+      },
+      "StudyCohort-Output": {
+        "properties": {
+          "id": {
+            "type": "string",
+            "minLength": 1,
+            "title": "Id"
+          },
+          "name": {
+            "type": "string",
+            "minLength": 1,
+            "title": "Name"
+          },
+          "label": {
+            "type": "string",
+            "title": "Label",
+            "default": ""
+          },
+          "description": {
+            "type": "string",
+            "title": "Description",
+            "default": ""
+          },
+          "plannedEnrollmentNumber": {
+            "$ref": "#/components/schemas/Range"
+          },
+          "plannedCompletionNumber": {
+            "$ref": "#/components/schemas/Range"
+          },
+          "plannedMaximumAge": {
+            "$ref": "#/components/schemas/Quantity"
+          },
+          "plannedMinimumAge": {
+            "$ref": "#/components/schemas/Quantity"
+          },
+          "plannedSex": {
+            "items": {
+              "$ref": "#/components/schemas/Code"
+            },
+            "type": "array",
+            "title": "Plannedsex",
+            "default": []
+          },
+          "criteria": {
+            "items": {
+              "$ref": "#/components/schemas/EligibilityCriteria"
+            },
+            "type": "array",
+            "title": "Criteria"
+          },
+          "characteristics": {
+            "items": {
+              "$ref": "#/components/schemas/Characteristic"
+            },
+            "type": "array",
+            "title": "Characteristics",
+            "default": []
+          }
+        },
+        "type": "object",
+        "required": [
+          "id",
+          "name",
+          "plannedEnrollmentNumber",
+          "plannedCompletionNumber",
+          "plannedMaximumAge",
+          "plannedMinimumAge",
+          "criteria"
+        ],
+        "title": "StudyCohort"
       },
       "StudyDesign-Input": {
         "properties": {
@@ -3105,7 +3342,7 @@
           },
           "populations": {
             "items": {
-              "$ref": "#/components/schemas/StudyDesignPopulation"
+              "$ref": "#/components/schemas/StudyDesignPopulation-Input"
             },
             "type": "array",
             "title": "Populations",
@@ -3128,14 +3365,6 @@
                 "type": "null"
               }
             ]
-          },
-          "eligibilityCriteria": {
-            "items": {
-              "$ref": "#/components/schemas/EligibilityCriteria"
-            },
-            "type": "array",
-            "title": "Eligibilitycriteria",
-            "default": []
           },
           "dictionaries": {
             "items": {
@@ -3324,7 +3553,7 @@
           },
           "populations": {
             "items": {
-              "$ref": "#/components/schemas/StudyDesignPopulation"
+              "$ref": "#/components/schemas/StudyDesignPopulation-Output"
             },
             "type": "array",
             "title": "Populations",
@@ -3348,14 +3577,6 @@
               }
             ]
           },
-          "eligibilityCriteria": {
-            "items": {
-              "$ref": "#/components/schemas/EligibilityCriteria"
-            },
-            "type": "array",
-            "title": "Eligibilitycriteria",
-            "default": []
-          },
           "dictionaries": {
             "items": {
               "$ref": "#/components/schemas/SyntaxTemplateDictionary"
@@ -3377,7 +3598,7 @@
         ],
         "title": "StudyDesign"
       },
-      "StudyDesignPopulation": {
+      "StudyDesignPopulation-Input": {
         "properties": {
           "id": {
             "type": "string",
@@ -3399,25 +3620,39 @@
             "title": "Description",
             "default": ""
           },
-          "plannedNumberOfParticipants": {
-            "type": "integer",
-            "minimum": 0.0,
-            "title": "Plannednumberofparticipants"
+          "plannedEnrollmentNumber": {
+            "$ref": "#/components/schemas/Range"
           },
-          "plannedMaximumAgeOfParticipants": {
-            "type": "string",
-            "title": "Plannedmaximumageofparticipants"
+          "plannedCompletionNumber": {
+            "$ref": "#/components/schemas/Range"
           },
-          "plannedMinimumAgeOfParticipants": {
-            "type": "string",
-            "title": "Plannedminimumageofparticipants"
+          "plannedMaximumAge": {
+            "$ref": "#/components/schemas/Quantity"
           },
-          "plannedSexOfParticipants": {
+          "plannedMinimumAge": {
+            "$ref": "#/components/schemas/Quantity"
+          },
+          "plannedSex": {
             "items": {
               "$ref": "#/components/schemas/Code"
             },
             "type": "array",
-            "title": "Plannedsexofparticipants",
+            "title": "Plannedsex",
+            "default": []
+          },
+          "criteria": {
+            "items": {
+              "$ref": "#/components/schemas/EligibilityCriteria"
+            },
+            "type": "array",
+            "title": "Criteria"
+          },
+          "cohorts": {
+            "items": {
+              "$ref": "#/components/schemas/StudyCohort-Input"
+            },
+            "type": "array",
+            "title": "Cohorts",
             "default": []
           }
         },
@@ -3425,9 +3660,81 @@
         "required": [
           "id",
           "name",
-          "plannedNumberOfParticipants",
-          "plannedMaximumAgeOfParticipants",
-          "plannedMinimumAgeOfParticipants"
+          "plannedEnrollmentNumber",
+          "plannedCompletionNumber",
+          "plannedMaximumAge",
+          "plannedMinimumAge",
+          "criteria"
+        ],
+        "title": "StudyDesignPopulation"
+      },
+      "StudyDesignPopulation-Output": {
+        "properties": {
+          "id": {
+            "type": "string",
+            "minLength": 1,
+            "title": "Id"
+          },
+          "name": {
+            "type": "string",
+            "minLength": 1,
+            "title": "Name"
+          },
+          "label": {
+            "type": "string",
+            "title": "Label",
+            "default": ""
+          },
+          "description": {
+            "type": "string",
+            "title": "Description",
+            "default": ""
+          },
+          "plannedEnrollmentNumber": {
+            "$ref": "#/components/schemas/Range"
+          },
+          "plannedCompletionNumber": {
+            "$ref": "#/components/schemas/Range"
+          },
+          "plannedMaximumAge": {
+            "$ref": "#/components/schemas/Quantity"
+          },
+          "plannedMinimumAge": {
+            "$ref": "#/components/schemas/Quantity"
+          },
+          "plannedSex": {
+            "items": {
+              "$ref": "#/components/schemas/Code"
+            },
+            "type": "array",
+            "title": "Plannedsex",
+            "default": []
+          },
+          "criteria": {
+            "items": {
+              "$ref": "#/components/schemas/EligibilityCriteria"
+            },
+            "type": "array",
+            "title": "Criteria"
+          },
+          "cohorts": {
+            "items": {
+              "$ref": "#/components/schemas/StudyCohort-Output"
+            },
+            "type": "array",
+            "title": "Cohorts",
+            "default": []
+          }
+        },
+        "type": "object",
+        "required": [
+          "id",
+          "name",
+          "plannedEnrollmentNumber",
+          "plannedCompletionNumber",
+          "plannedMaximumAge",
+          "plannedMinimumAge",
+          "criteria"
         ],
         "title": "StudyDesignPopulation"
       },

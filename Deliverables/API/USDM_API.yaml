@@ -3,7 +3,7 @@ info:
   title: Simple API for DDF
   description: A simple TransCelerate Digital Data Flow (DDF) Study Definitions Repository
     API.
-  version: '2.5'
+  version: '2.7'
 paths:
   /v3/studyDefinitions:
     post:
@@ -817,6 +817,45 @@ components:
       - id
       - name
       title: BiomedicalConceptSurrogate
+    Characteristic:
+      properties:
+        id:
+          type: string
+          minLength: 1
+          title: Id
+        name:
+          type: string
+          minLength: 1
+          title: Name
+        label:
+          type: string
+          title: Label
+          default: ''
+        description:
+          type: string
+          title: Description
+          default: ''
+        instanceType:
+          type: string
+          enum:
+          - ENDPOINT
+          - OBJECTIVE
+          - ELIGIBILITY_CRITERIA
+          title: Instancetype
+        text:
+          type: string
+          title: Text
+        dictionaryId:
+          type: string
+          title: Dictionaryid
+      type: object
+      required:
+      - id
+      - name
+      - instanceType
+      - text
+      - dictionaryId
+      title: Characteristic
     Code:
       properties:
         id:
@@ -889,6 +928,11 @@ components:
           - type: string
           - type: 'null'
           title: Previousid
+        contextId:
+          anyOf:
+          - type: string
+          - type: 'null'
+          title: Contextid
       type: object
       required:
       - id
@@ -1481,6 +1525,27 @@ components:
       - unit
       - value
       title: Quantity
+    Range:
+      properties:
+        id:
+          type: string
+          minLength: 1
+          title: Id
+        min:
+          type: number
+          title: Min
+        max:
+          type: number
+          title: Max
+        unit:
+          $ref: '#/components/schemas/Code'
+      type: object
+      required:
+      - id
+      - min
+      - max
+      - unit
+      title: Range
     ResponseCode:
       properties:
         id:
@@ -2006,6 +2071,12 @@ components:
           title: Dataorigindescription
         dataOriginType:
           $ref: '#/components/schemas/Code'
+        studySubpopulations:
+          items:
+            type: string
+          type: array
+          title: Studysubpopulations
+          default: []
       type: object
       required:
       - id
@@ -2038,6 +2109,112 @@ components:
       - armId
       - epochId
       title: StudyCell
+    StudyCohort-Input:
+      properties:
+        id:
+          type: string
+          minLength: 1
+          title: Id
+        name:
+          type: string
+          minLength: 1
+          title: Name
+        label:
+          type: string
+          title: Label
+          default: ''
+        description:
+          type: string
+          title: Description
+          default: ''
+        plannedEnrollmentNumber:
+          $ref: '#/components/schemas/Range'
+        plannedCompletionNumber:
+          $ref: '#/components/schemas/Range'
+        plannedMaximumAge:
+          $ref: '#/components/schemas/Quantity'
+        plannedMinimumAge:
+          $ref: '#/components/schemas/Quantity'
+        plannedSex:
+          items:
+            $ref: '#/components/schemas/Code'
+          type: array
+          title: Plannedsex
+          default: []
+        criteria:
+          items:
+            $ref: '#/components/schemas/EligibilityCriteria'
+          type: array
+          title: Criteria
+        characteristics:
+          items:
+            $ref: '#/components/schemas/Characteristic'
+          type: array
+          title: Characteristics
+          default: []
+      type: object
+      required:
+      - id
+      - name
+      - plannedEnrollmentNumber
+      - plannedCompletionNumber
+      - plannedMaximumAge
+      - plannedMinimumAge
+      - criteria
+      title: StudyCohort
+    StudyCohort-Output:
+      properties:
+        id:
+          type: string
+          minLength: 1
+          title: Id
+        name:
+          type: string
+          minLength: 1
+          title: Name
+        label:
+          type: string
+          title: Label
+          default: ''
+        description:
+          type: string
+          title: Description
+          default: ''
+        plannedEnrollmentNumber:
+          $ref: '#/components/schemas/Range'
+        plannedCompletionNumber:
+          $ref: '#/components/schemas/Range'
+        plannedMaximumAge:
+          $ref: '#/components/schemas/Quantity'
+        plannedMinimumAge:
+          $ref: '#/components/schemas/Quantity'
+        plannedSex:
+          items:
+            $ref: '#/components/schemas/Code'
+          type: array
+          title: Plannedsex
+          default: []
+        criteria:
+          items:
+            $ref: '#/components/schemas/EligibilityCriteria'
+          type: array
+          title: Criteria
+        characteristics:
+          items:
+            $ref: '#/components/schemas/Characteristic'
+          type: array
+          title: Characteristics
+          default: []
+      type: object
+      required:
+      - id
+      - name
+      - plannedEnrollmentNumber
+      - plannedCompletionNumber
+      - plannedMaximumAge
+      - plannedMinimumAge
+      - criteria
+      title: StudyCohort
     StudyDesign-Input:
       properties:
         id:
@@ -2160,7 +2337,7 @@ components:
           default: []
         populations:
           items:
-            $ref: '#/components/schemas/StudyDesignPopulation'
+            $ref: '#/components/schemas/StudyDesignPopulation-Input'
           type: array
           title: Populations
           default: []
@@ -2174,12 +2351,6 @@ components:
           anyOf:
           - $ref: '#/components/schemas/StudyProtocolDocumentVersion-Input'
           - type: 'null'
-        eligibilityCriteria:
-          items:
-            $ref: '#/components/schemas/EligibilityCriteria'
-          type: array
-          title: Eligibilitycriteria
-          default: []
         dictionaries:
           items:
             $ref: '#/components/schemas/SyntaxTemplateDictionary'
@@ -2318,7 +2489,7 @@ components:
           default: []
         populations:
           items:
-            $ref: '#/components/schemas/StudyDesignPopulation'
+            $ref: '#/components/schemas/StudyDesignPopulation-Output'
           type: array
           title: Populations
           default: []
@@ -2332,12 +2503,6 @@ components:
           anyOf:
           - $ref: '#/components/schemas/StudyProtocolDocumentVersion-Output'
           - type: 'null'
-        eligibilityCriteria:
-          items:
-            $ref: '#/components/schemas/EligibilityCriteria'
-          type: array
-          title: Eligibilitycriteria
-          default: []
         dictionaries:
           items:
             $ref: '#/components/schemas/SyntaxTemplateDictionary'
@@ -2354,7 +2519,7 @@ components:
       - rationale
       - epochs
       title: StudyDesign
-    StudyDesignPopulation:
+    StudyDesignPopulation-Input:
       properties:
         id:
           type: string
@@ -2372,29 +2537,93 @@ components:
           type: string
           title: Description
           default: ''
-        plannedNumberOfParticipants:
-          type: integer
-          minimum: 0.0
-          title: Plannednumberofparticipants
-        plannedMaximumAgeOfParticipants:
-          type: string
-          title: Plannedmaximumageofparticipants
-        plannedMinimumAgeOfParticipants:
-          type: string
-          title: Plannedminimumageofparticipants
-        plannedSexOfParticipants:
+        plannedEnrollmentNumber:
+          $ref: '#/components/schemas/Range'
+        plannedCompletionNumber:
+          $ref: '#/components/schemas/Range'
+        plannedMaximumAge:
+          $ref: '#/components/schemas/Quantity'
+        plannedMinimumAge:
+          $ref: '#/components/schemas/Quantity'
+        plannedSex:
           items:
             $ref: '#/components/schemas/Code'
           type: array
-          title: Plannedsexofparticipants
+          title: Plannedsex
+          default: []
+        criteria:
+          items:
+            $ref: '#/components/schemas/EligibilityCriteria'
+          type: array
+          title: Criteria
+        cohorts:
+          items:
+            $ref: '#/components/schemas/StudyCohort-Input'
+          type: array
+          title: Cohorts
           default: []
       type: object
       required:
       - id
       - name
-      - plannedNumberOfParticipants
-      - plannedMaximumAgeOfParticipants
-      - plannedMinimumAgeOfParticipants
+      - plannedEnrollmentNumber
+      - plannedCompletionNumber
+      - plannedMaximumAge
+      - plannedMinimumAge
+      - criteria
+      title: StudyDesignPopulation
+    StudyDesignPopulation-Output:
+      properties:
+        id:
+          type: string
+          minLength: 1
+          title: Id
+        name:
+          type: string
+          minLength: 1
+          title: Name
+        label:
+          type: string
+          title: Label
+          default: ''
+        description:
+          type: string
+          title: Description
+          default: ''
+        plannedEnrollmentNumber:
+          $ref: '#/components/schemas/Range'
+        plannedCompletionNumber:
+          $ref: '#/components/schemas/Range'
+        plannedMaximumAge:
+          $ref: '#/components/schemas/Quantity'
+        plannedMinimumAge:
+          $ref: '#/components/schemas/Quantity'
+        plannedSex:
+          items:
+            $ref: '#/components/schemas/Code'
+          type: array
+          title: Plannedsex
+          default: []
+        criteria:
+          items:
+            $ref: '#/components/schemas/EligibilityCriteria'
+          type: array
+          title: Criteria
+        cohorts:
+          items:
+            $ref: '#/components/schemas/StudyCohort-Output'
+          type: array
+          title: Cohorts
+          default: []
+      type: object
+      required:
+      - id
+      - name
+      - plannedEnrollmentNumber
+      - plannedCompletionNumber
+      - plannedMaximumAge
+      - plannedMinimumAge
+      - criteria
       title: StudyDesignPopulation
     StudyElement:
       properties:
