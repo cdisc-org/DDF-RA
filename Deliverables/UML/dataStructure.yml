@@ -1419,7 +1419,11 @@ Range:
       Model Name: anticipatedValue
     unit:
       $ref: '#/Code'
+      NCI C-Code: C25709
       Cardinality: '1'
+      Preferred Term: Unit of Measure
+      Definition: A named quantity in terms of which other quantities are measured
+        or specified, used as a standard measurement of like kinds.
       Relationship Type: Value
       Model Name: unit
 ResponseCode:
