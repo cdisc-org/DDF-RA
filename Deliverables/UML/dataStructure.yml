@@ -1399,19 +1399,19 @@ Range:
       $ref: '#/string'
       Relationship Type: Value
       Model Name: id
-    minValue*:
+    minValue:
       $ref: '#/float'
       NCI C-Code: C25570
       Preferred Term: Minimum Value
       Definition: The smallest value in quantity or degree in a set of values.
-      Relationship Type: UNKNOWN
+      Relationship Type: Value
       Model Name: minValue
-    maxValue*:
+    maxValue:
       $ref: '#/float'
       NCI C-Code: C25564
       Preferred Term: Maximum Value
       Definition: The largest value in quantity or degree in a set of values.
-      Relationship Type: UNKNOWN
+      Relationship Type: Value
       Model Name: maxValue
     anticipatedValue*:
       $ref: '#/float'
@@ -1422,12 +1422,6 @@ Range:
       Cardinality: '1'
       Relationship Type: Value
       Model Name: unit
-    min:
-      $ref: UNKNOWN
-      Relationship Type: Value
-    max:
-      $ref: UNKNOWN
-      Relationship Type: Value
 ResponseCode:
   NCI C-Code: C201347
   Preferred Term: Response Code
@@ -1871,15 +1865,11 @@ StudyArm:
       Codelist Ref: Protocol Terminology Codelist C174222
       Relationship Type: Value
       Model Name: type
-    populations*:
+    populationIds:
       $ref: '#/PopulationDefinition'
       Cardinality: 0..*
-      Relationship Type: UNKNOWN
+      Relationship Type: Ref
       Model Name: populations
-    studySubpopulationIds:
-      $ref: UNKNOWN
-      Cardinality: 0..*
-      Relationship Type: Value
 StudyCell:
   NCI C-Code: C188810
   Preferred Term: Study Design Cell
@@ -2142,10 +2132,10 @@ StudyDesign:
       Cardinality: 1..*
       Relationship Type: Value
       Model Name: epochs
-    population*:
+    population:
       $ref: '#/StudyDesignPopulation'
       Cardinality: 0..1
-      Relationship Type: UNKNOWN
+      Relationship Type: Value
       Model Name: population
     biomedicalConcepts:
       $ref: '#/BiomedicalConcept'
@@ -2157,10 +2147,6 @@ StudyDesign:
       Relationship Type: Value
     bcSurrogates:
       $ref: '#/BiomedicalConceptSurrogate'
-      Cardinality: 0..*
-      Relationship Type: Value
-    populations:
-      $ref: '#/StudyDesignPopulation'
       Cardinality: 0..*
       Relationship Type: Value
     dictionaries:
