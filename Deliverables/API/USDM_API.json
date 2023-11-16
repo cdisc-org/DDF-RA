@@ -2159,13 +2159,13 @@
             "minLength": 1,
             "title": "Id"
           },
-          "min": {
+          "minValue": {
             "type": "number",
-            "title": "Min"
+            "title": "Minvalue"
           },
-          "max": {
+          "maxValue": {
             "type": "number",
-            "title": "Max"
+            "title": "Maxvalue"
           },
           "unit": {
             "$ref": "#/components/schemas/Code"
@@ -2174,8 +2174,8 @@
         "type": "object",
         "required": [
           "id",
-          "min",
-          "max",
+          "minValue",
+          "maxValue",
           "unit"
         ],
         "title": "Range"
@@ -2990,12 +2990,12 @@
           "dataOriginType": {
             "$ref": "#/components/schemas/Code"
           },
-          "studySubpopulationIds": {
+          "populationIds": {
             "items": {
               "type": "string"
             },
             "type": "array",
-            "title": "Studysubpopulationids",
+            "title": "Populationids",
             "default": []
           }
         },
@@ -3345,13 +3345,15 @@
             "title": "Objectives",
             "default": []
           },
-          "populations": {
-            "items": {
-              "$ref": "#/components/schemas/StudyDesignPopulation-Input"
-            },
-            "type": "array",
-            "title": "Populations",
-            "default": []
+          "population": {
+            "anyOf": [
+              {
+                "$ref": "#/components/schemas/StudyDesignPopulation-Input"
+              },
+              {
+                "type": "null"
+              }
+            ]
           },
           "scheduleTimelines": {
             "items": {
@@ -3556,13 +3558,15 @@
             "title": "Objectives",
             "default": []
           },
-          "populations": {
-            "items": {
-              "$ref": "#/components/schemas/StudyDesignPopulation-Output"
-            },
-            "type": "array",
-            "title": "Populations",
-            "default": []
+          "population": {
+            "anyOf": [
+              {
+                "$ref": "#/components/schemas/StudyDesignPopulation-Output"
+              },
+              {
+                "type": "null"
+              }
+            ]
           },
           "scheduleTimelines": {
             "items": {

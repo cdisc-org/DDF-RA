@@ -1536,19 +1536,19 @@ components:
           type: string
           minLength: 1
           title: Id
-        min:
+        minValue:
           type: number
-          title: Min
-        max:
+          title: Minvalue
+        maxValue:
           type: number
-          title: Max
+          title: Maxvalue
         unit:
           $ref: '#/components/schemas/Code'
       type: object
       required:
       - id
-      - min
-      - max
+      - minValue
+      - maxValue
       - unit
       title: Range
     ResponseCode:
@@ -2076,11 +2076,11 @@ components:
           title: Dataorigindescription
         dataOriginType:
           $ref: '#/components/schemas/Code'
-        studySubpopulationIds:
+        populationIds:
           items:
             type: string
           type: array
-          title: Studysubpopulationids
+          title: Populationids
           default: []
       type: object
       required:
@@ -2340,12 +2340,10 @@ components:
           type: array
           title: Objectives
           default: []
-        populations:
-          items:
-            $ref: '#/components/schemas/StudyDesignPopulation-Input'
-          type: array
-          title: Populations
-          default: []
+        population:
+          anyOf:
+          - $ref: '#/components/schemas/StudyDesignPopulation-Input'
+          - type: 'null'
         scheduleTimelines:
           items:
             $ref: '#/components/schemas/ScheduleTimeline-Input'
@@ -2492,12 +2490,10 @@ components:
           type: array
           title: Objectives
           default: []
-        populations:
-          items:
-            $ref: '#/components/schemas/StudyDesignPopulation-Output'
-          type: array
-          title: Populations
-          default: []
+        population:
+          anyOf:
+          - $ref: '#/components/schemas/StudyDesignPopulation-Output'
+          - type: 'null'
         scheduleTimelines:
           items:
             $ref: '#/components/schemas/ScheduleTimeline-Output'
