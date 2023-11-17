@@ -1413,10 +1413,14 @@ Range:
       Definition: The largest value in quantity or degree in a set of values.
       Relationship Type: Value
       Model Name: maxValue
-    anticipatedValue*:
-      $ref: '#/float'
+    isApproximate*:
+      $ref: '#/boolean'
+      NCI C-Code: CNEW
+      Preferred Term: Value Range is Approximate Indicator
+      Definition: An indication as to whether the value range is almost, but not quite,
+        exact.
       Relationship Type: UNKNOWN
-      Model Name: anticipatedValue
+      Model Name: isApproximate
     unit:
       $ref: '#/Code'
       NCI C-Code: C25709
