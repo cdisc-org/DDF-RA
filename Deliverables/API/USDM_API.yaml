@@ -1542,6 +1542,9 @@ components:
         maxValue:
           type: number
           title: Maxvalue
+        isApproximate:
+          type: boolean
+          title: Isapproximate
         unit:
           $ref: '#/components/schemas/Code'
       type: object
@@ -1549,6 +1552,7 @@ components:
       - id
       - minValue
       - maxValue
+      - isApproximate
       - unit
       title: Range
     ResponseCode:

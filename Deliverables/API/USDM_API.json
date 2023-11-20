@@ -2167,6 +2167,10 @@
             "type": "number",
             "title": "Maxvalue"
           },
+          "isApproximate": {
+            "type": "boolean",
+            "title": "Isapproximate"
+          },
           "unit": {
             "$ref": "#/components/schemas/Code"
           }
@@ -2176,6 +2180,7 @@
           "id",
           "minValue",
           "maxValue",
+          "isApproximate",
           "unit"
         ],
         "title": "Range"
