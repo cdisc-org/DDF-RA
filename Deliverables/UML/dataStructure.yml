@@ -32,22 +32,6 @@ Activity:
       Definition: The short descriptive designation for the activity.
       Relationship Type: Value
       Model Name: label
-    isConditional:
-      $ref: '#/boolean'
-      NCI C-Code: C201307
-      Preferred Term: Study Activity is Conditional
-      Definition: An indication as to whether the study activity is subject to or
-        dependent upon something else.
-      Relationship Type: Value
-      Model Name: isConditional
-    isConditionalReason:
-      $ref: '#/string'
-      NCI C-Code: C201308
-      Preferred Term: Study Activity is Conditional Reason
-      Definition: The explanation for why the study activity is subject to or dependent
-        upon something else.
-      Relationship Type: Value
-      Model Name: isConditionalReason
     definedProcedures:
       $ref: '#/Procedure'
       Cardinality: 0..*
@@ -83,6 +67,12 @@ Activity:
       Cardinality: 0..*
       Relationship Type: Ref
       Model Name: bcCategories
+    isConditional:
+      $ref: UNKNOWN
+      Relationship Type: Value
+    isConditionalReason:
+      $ref: UNKNOWN
+      Relationship Type: Value
 Address:
   NCI C-Code: C25407
   Preferred Term: Address
@@ -566,7 +556,7 @@ Characteristic:
         $ref: '#/SyntaxTemplate'
     dictionaryId:
       $ref: '#/SyntaxTemplateDictionary'
-      Cardinality: '1'
+      Cardinality: 0..1
       Relationship Type: Ref
       Model Name: dictionary
       Inherited From:
@@ -616,6 +606,29 @@ Code:
         with a code.
       Relationship Type: Value
       Model Name: decode
+Condition:
+  Modifier: Abstract
+  Attributes:
+    id:
+      $ref: '#/string'
+      Model Name: id
+    name:
+      $ref: '#/string'
+      Model Name: name
+    description:
+      $ref: '#/string'
+      Model Name: description
+    label:
+      $ref: '#/string'
+      Model Name: label
+    context:
+      $ref: '#/ScheduledActivityInstance'
+      Cardinality: 0..*
+      Model Name: context
+    appliesTo:
+      $ref: '#/Procedure'
+      Cardinality: 0..*
+      Model Name: appliesTo
 EligibilityCriteria:
   NCI C-Code: C16112
   Preferred Term: Study Eligibility Criteria
@@ -658,7 +671,7 @@ EligibilityCriteria:
         $ref: '#/SyntaxTemplate'
     dictionaryId:
       $ref: '#/SyntaxTemplateDictionary'
-      Cardinality: '1'
+      Cardinality: 0..1
       Relationship Type: Ref
       Model Name: dictionary
       Inherited From:
@@ -834,7 +847,7 @@ Endpoint:
         $ref: '#/SyntaxTemplate'
     dictionaryId:
       $ref: '#/SyntaxTemplateDictionary'
-      Cardinality: '1'
+      Cardinality: 0..1
       Relationship Type: Ref
       Model Name: dictionary
       Inherited From:
@@ -916,7 +929,7 @@ GeographicScope:
     code:
       $ref: '#/AliasCode'
       NCI C-Code: CNEW
-      Cardinality: '1'
+      Cardinality: 0..1
       Preferred Term: Geographic Scope Code
       Definition: A symbol or combination of symbols which is assigned to the geographic
         scope.
@@ -1163,7 +1176,7 @@ Objective:
         $ref: '#/SyntaxTemplate'
     dictionaryId:
       $ref: '#/SyntaxTemplateDictionary'
-      Cardinality: '1'
+      Cardinality: 0..1
       Relationship Type: Ref
       Model Name: dictionary
       Inherited From:
@@ -1274,21 +1287,17 @@ PopulationDefinition:
       $ref: '#/EligibilityCriteria'
       Cardinality: 1..*
       Model Name: criteria
-    plannedMaximumAge:
-      $ref: '#/Quantity'
-      Cardinality: '1'
-      Model Name: plannedMaximumAge
-    plannedMinimumAge:
-      $ref: '#/Quantity'
-      Cardinality: '1'
-      Model Name: plannedMinimumAge
+    plannedAge:
+      $ref: '#/Range'
+      Cardinality: 0..1
+      Model Name: plannedAge
     plannedEnrollmentNumber:
       $ref: '#/Range'
-      Cardinality: '1'
+      Cardinality: 0..1
       Model Name: plannedEnrollmentNumber
     plannedCompletionNumber:
       $ref: '#/Range'
-      Cardinality: '1'
+      Cardinality: 0..1
       Model Name: plannedCompletionNumber
 Procedure:
   NCI C-Code: C98769
@@ -1382,7 +1391,7 @@ Quantity:
     unit:
       $ref: '#/Code'
       NCI C-Code: C44258
-      Cardinality: '1'
+      Cardinality: 0..1
       Preferred Term: Quantity Unit
       Definition: The type of unit of measure being used to express a quantity.
       Codelist Ref: SDTM Terminology Codelist C71620
@@ -1413,18 +1422,18 @@ Range:
       Definition: The largest value in quantity or degree in a set of values.
       Relationship Type: Value
       Model Name: maxValue
-    isApproximate*:
+    isApproximate:
       $ref: '#/boolean'
       NCI C-Code: CNEW
       Preferred Term: Value Range is Approximate Indicator
       Definition: An indication as to whether the value range is almost, but not quite,
         exact.
-      Relationship Type: UNKNOWN
+      Relationship Type: Value
       Model Name: isApproximate
     unit:
       $ref: '#/Code'
       NCI C-Code: C25709
-      Cardinality: '1'
+      Cardinality: 0..1
       Preferred Term: Unit of Measure
       Definition: A named quantity in terms of which other quantities are measured
         or specified, used as a standard measurement of like kinds.
@@ -1951,30 +1960,23 @@ StudyCohort:
       Model Name: criteria
       Inherited From:
         $ref: '#/PopulationDefinition'
-    plannedMaximumAge:
-      $ref: '#/Quantity'
-      Cardinality: '1'
-      Relationship Type: Value
-      Model Name: plannedMaximumAge
-      Inherited From:
-        $ref: '#/PopulationDefinition'
-    plannedMinimumAge:
-      $ref: '#/Quantity'
-      Cardinality: '1'
-      Relationship Type: Value
-      Model Name: plannedMinimumAge
+    plannedAge*:
+      $ref: '#/Range'
+      Cardinality: 0..1
+      Relationship Type: UNKNOWN
+      Model Name: plannedAge
       Inherited From:
         $ref: '#/PopulationDefinition'
     plannedEnrollmentNumber:
       $ref: '#/Range'
-      Cardinality: '1'
+      Cardinality: 0..1
       Relationship Type: Value
       Model Name: plannedEnrollmentNumber
       Inherited From:
         $ref: '#/PopulationDefinition'
     plannedCompletionNumber:
       $ref: '#/Range'
-      Cardinality: '1'
+      Cardinality: 0..1
       Relationship Type: Value
       Model Name: plannedCompletionNumber
       Inherited From:
@@ -1984,6 +1986,12 @@ StudyCohort:
       Cardinality: 0..*
       Relationship Type: Value
       Model Name: characteristics
+    plannedMaximumAge:
+      $ref: UNKNOWN
+      Relationship Type: Value
+    plannedMinimumAge:
+      $ref: UNKNOWN
+      Relationship Type: Value
 StudyDesign:
   NCI C-Code: C15320
   Preferred Term: Study Design
@@ -2208,30 +2216,23 @@ StudyDesignPopulation:
       Model Name: criteria
       Inherited From:
         $ref: '#/PopulationDefinition'
-    plannedMaximumAge:
-      $ref: '#/Quantity'
-      Cardinality: '1'
-      Relationship Type: Value
-      Model Name: plannedMaximumAge
-      Inherited From:
-        $ref: '#/PopulationDefinition'
-    plannedMinimumAge:
-      $ref: '#/Quantity'
-      Cardinality: '1'
-      Relationship Type: Value
-      Model Name: plannedMinimumAge
+    plannedAge*:
+      $ref: '#/Range'
+      Cardinality: 0..1
+      Relationship Type: UNKNOWN
+      Model Name: plannedAge
       Inherited From:
         $ref: '#/PopulationDefinition'
     plannedEnrollmentNumber:
       $ref: '#/Range'
-      Cardinality: '1'
+      Cardinality: 0..1
       Relationship Type: Value
       Model Name: plannedEnrollmentNumber
       Inherited From:
         $ref: '#/PopulationDefinition'
     plannedCompletionNumber:
       $ref: '#/Range'
-      Cardinality: '1'
+      Cardinality: 0..1
       Relationship Type: Value
       Model Name: plannedCompletionNumber
       Inherited From:
@@ -2241,6 +2242,12 @@ StudyDesignPopulation:
       Cardinality: 0..*
       Relationship Type: Value
       Model Name: cohorts
+    plannedMaximumAge:
+      $ref: UNKNOWN
+      Relationship Type: Value
+    plannedMinimumAge:
+      $ref: UNKNOWN
+      Relationship Type: Value
 StudyElement:
   NCI C-Code: C142735
   Preferred Term: Study Design Element
@@ -2515,36 +2522,6 @@ StudyProtocolDocumentVersion:
       $ref: '#/string'
       Relationship Type: Value
       Model Name: id
-    briefTitle:
-      $ref: '#/string'
-      NCI C-Code: C132345
-      Preferred Term: Brief Protocol Title
-      Definition: The short descriptive name for the protocol.
-      Relationship Type: Value
-      Model Name: briefTitle
-    officialTitle:
-      $ref: '#/string'
-      NCI C-Code: C132346
-      Preferred Term: Official Protocol Title
-      Definition: The formal descriptive name for the protocol.
-      Relationship Type: Value
-      Model Name: officialTitle
-    publicTitle:
-      $ref: '#/string'
-      NCI C-Code: C94105
-      Preferred Term: Public Protocol Title
-      Definition: The descriptive name of the protocol that is intended for the lay
-        public, written in easily understood language.
-      Relationship Type: Value
-      Model Name: publicTitle
-    scientificTitle:
-      $ref: '#/string'
-      NCI C-Code: C132350
-      Preferred Term: Scientific Protocol Title
-      Definition: A more extensive descriptive name of the protocol that is intended
-        for medical professionals, written using medical and scientific language.
-      Relationship Type: Value
-      Model Name: scientificTitle
     protocolVersion:
       $ref: '#/string'
       NCI C-Code: C93490
@@ -2580,6 +2557,35 @@ StudyProtocolDocumentVersion:
       Cardinality: 0..*
       Relationship Type: Ref
       Model Name: children
+    briefTitle:
+      $ref: '#/string'
+      Cardinality: 0..1
+      Relationship Type: Value
+    officialTitle:
+      $ref: '#/string'
+      Cardinality: 0..1
+      Relationship Type: Value
+    publicTitle:
+      $ref: '#/string'
+      Cardinality: 0..1
+      Relationship Type: Value
+    scientificTitle:
+      $ref: '#/string'
+      Cardinality: 0..1
+      Relationship Type: Value
+StudyTitle:
+  Modifier: Abstract
+  Attributes:
+    id:
+      $ref: '#/string'
+      Model Name: id
+    text:
+      $ref: '#/string'
+      Model Name: text
+    type:
+      $ref: '#/Code'
+      Cardinality: '1'
+      Model Name: type
 StudyVersion:
   NCI C-Code: C188816
   Preferred Term: Study Version
@@ -2590,13 +2596,6 @@ StudyVersion:
       $ref: '#/string'
       Relationship Type: Value
       Model Name: id
-    studyTitle:
-      $ref: '#/string'
-      NCI C-Code: C49802
-      Preferred Term: Study Title
-      Definition: The sponsor-defined name of the clinical study.
-      Relationship Type: Value
-      Model Name: studyTitle
     versionIdentifier:
       $ref: '#/string'
       NCI C-Code: CNEW
@@ -2605,14 +2604,6 @@ StudyVersion:
         the study version.
       Relationship Type: Value
       Model Name: versionIdentifier
-    studyAcronym:
-      $ref: '#/string'
-      NCI C-Code: C94108
-      Preferred Term: Study Acronym
-      Definition: A word or words formed from the beginning letters or a combination
-        of syllables and letters of a compound term, which identifies a clinical study.
-      Relationship Type: Value
-      Model Name: studyAcronym
     rationale:
       $ref: '#/string'
       NCI C-Code: C94122
@@ -2682,6 +2673,19 @@ StudyVersion:
       Cardinality: 0..1
       Relationship Type: Ref
       Model Name: documentVersion
+    studyTitles*:
+      $ref: '#/StudyTitle'
+      Cardinality: 1..*
+      Relationship Type: UNKNOWN
+      Model Name: studyTitles
+    studyTitle:
+      $ref: '#/string'
+      Cardinality: 0..1
+      Relationship Type: Value
+    studyAcronym:
+      $ref: '#/string'
+      Cardinality: 0..1
+      Relationship Type: Value
 SubjectEnrollment:
   NCI C-Code: C37948
   Preferred Term: Subject Enrollment
@@ -2701,7 +2705,7 @@ SubjectEnrollment:
     code:
       $ref: '#/AliasCode'
       NCI C-Code: CNEW
-      Cardinality: '1'
+      Cardinality: 0..1
       Preferred Term: Subject Enrollment Code
       Definition: A symbol or combination of symbols which is assigned to the subject
         enrollment.
@@ -2720,8 +2724,9 @@ SubjectEnrollment:
       Inherited From:
         $ref: '#/GeographicScope'
     quantity:
-      $ref: '#/string'
+      $ref: '#/Quantity'
       NCI C-Code: CNEW
+      Cardinality: '1'
       Preferred Term: Subject Enrollment Quantity
       Definition: The number of individuals enrolled in a study.
       Relationship Type: Value
@@ -2773,7 +2778,7 @@ SyntaxTemplate:
       Model Name: text
     dictionary:
       $ref: '#/SyntaxTemplateDictionary'
-      Cardinality: '1'
+      Cardinality: 0..1
       Model Name: dictionary
 SyntaxTemplateDictionary:
   NCI C-Code: CNEW
