@@ -566,7 +566,7 @@ Characteristic:
         $ref: '#/SyntaxTemplate'
     dictionaryId:
       $ref: '#/SyntaxTemplateDictionary'
-      Cardinality: '1'
+      Cardinality: 0..1
       Relationship Type: Ref
       Model Name: dictionary
       Inherited From:
@@ -658,7 +658,7 @@ EligibilityCriteria:
         $ref: '#/SyntaxTemplate'
     dictionaryId:
       $ref: '#/SyntaxTemplateDictionary'
-      Cardinality: '1'
+      Cardinality: 0..1
       Relationship Type: Ref
       Model Name: dictionary
       Inherited From:
@@ -834,7 +834,7 @@ Endpoint:
         $ref: '#/SyntaxTemplate'
     dictionaryId:
       $ref: '#/SyntaxTemplateDictionary'
-      Cardinality: '1'
+      Cardinality: 0..1
       Relationship Type: Ref
       Model Name: dictionary
       Inherited From:
@@ -916,7 +916,7 @@ GeographicScope:
     code:
       $ref: '#/AliasCode'
       NCI C-Code: CNEW
-      Cardinality: '1'
+      Cardinality: 0..1
       Preferred Term: Geographic Scope Code
       Definition: A symbol or combination of symbols which is assigned to the geographic
         scope.
@@ -1163,7 +1163,7 @@ Objective:
         $ref: '#/SyntaxTemplate'
     dictionaryId:
       $ref: '#/SyntaxTemplateDictionary'
-      Cardinality: '1'
+      Cardinality: 0..1
       Relationship Type: Ref
       Model Name: dictionary
       Inherited From:
@@ -1276,19 +1276,19 @@ PopulationDefinition:
       Model Name: criteria
     plannedMaximumAge:
       $ref: '#/Quantity'
-      Cardinality: '1'
+      Cardinality: 0..1
       Model Name: plannedMaximumAge
     plannedMinimumAge:
       $ref: '#/Quantity'
-      Cardinality: '1'
+      Cardinality: 0..1
       Model Name: plannedMinimumAge
     plannedEnrollmentNumber:
       $ref: '#/Range'
-      Cardinality: '1'
+      Cardinality: 0..1
       Model Name: plannedEnrollmentNumber
     plannedCompletionNumber:
       $ref: '#/Range'
-      Cardinality: '1'
+      Cardinality: 0..1
       Model Name: plannedCompletionNumber
 Procedure:
   NCI C-Code: C98769
@@ -1382,7 +1382,7 @@ Quantity:
     unit:
       $ref: '#/Code'
       NCI C-Code: C44258
-      Cardinality: '1'
+      Cardinality: 0..1
       Preferred Term: Quantity Unit
       Definition: The type of unit of measure being used to express a quantity.
       Codelist Ref: SDTM Terminology Codelist C71620
@@ -1413,18 +1413,18 @@ Range:
       Definition: The largest value in quantity or degree in a set of values.
       Relationship Type: Value
       Model Name: maxValue
-    isApproximate*:
+    isApproximate:
       $ref: '#/boolean'
       NCI C-Code: CNEW
       Preferred Term: Value Range is Approximate Indicator
       Definition: An indication as to whether the value range is almost, but not quite,
         exact.
-      Relationship Type: UNKNOWN
+      Relationship Type: Value
       Model Name: isApproximate
     unit:
       $ref: '#/Code'
       NCI C-Code: C25709
-      Cardinality: '1'
+      Cardinality: 0..1
       Preferred Term: Unit of Measure
       Definition: A named quantity in terms of which other quantities are measured
         or specified, used as a standard measurement of like kinds.
@@ -1953,28 +1953,28 @@ StudyCohort:
         $ref: '#/PopulationDefinition'
     plannedMaximumAge:
       $ref: '#/Quantity'
-      Cardinality: '1'
+      Cardinality: 0..1
       Relationship Type: Value
       Model Name: plannedMaximumAge
       Inherited From:
         $ref: '#/PopulationDefinition'
     plannedMinimumAge:
       $ref: '#/Quantity'
-      Cardinality: '1'
+      Cardinality: 0..1
       Relationship Type: Value
       Model Name: plannedMinimumAge
       Inherited From:
         $ref: '#/PopulationDefinition'
     plannedEnrollmentNumber:
       $ref: '#/Range'
-      Cardinality: '1'
+      Cardinality: 0..1
       Relationship Type: Value
       Model Name: plannedEnrollmentNumber
       Inherited From:
         $ref: '#/PopulationDefinition'
     plannedCompletionNumber:
       $ref: '#/Range'
-      Cardinality: '1'
+      Cardinality: 0..1
       Relationship Type: Value
       Model Name: plannedCompletionNumber
       Inherited From:
@@ -2210,28 +2210,28 @@ StudyDesignPopulation:
         $ref: '#/PopulationDefinition'
     plannedMaximumAge:
       $ref: '#/Quantity'
-      Cardinality: '1'
+      Cardinality: 0..1
       Relationship Type: Value
       Model Name: plannedMaximumAge
       Inherited From:
         $ref: '#/PopulationDefinition'
     plannedMinimumAge:
       $ref: '#/Quantity'
-      Cardinality: '1'
+      Cardinality: 0..1
       Relationship Type: Value
       Model Name: plannedMinimumAge
       Inherited From:
         $ref: '#/PopulationDefinition'
     plannedEnrollmentNumber:
       $ref: '#/Range'
-      Cardinality: '1'
+      Cardinality: 0..1
       Relationship Type: Value
       Model Name: plannedEnrollmentNumber
       Inherited From:
         $ref: '#/PopulationDefinition'
     plannedCompletionNumber:
       $ref: '#/Range'
-      Cardinality: '1'
+      Cardinality: 0..1
       Relationship Type: Value
       Model Name: plannedCompletionNumber
       Inherited From:
@@ -2701,7 +2701,7 @@ SubjectEnrollment:
     code:
       $ref: '#/AliasCode'
       NCI C-Code: CNEW
-      Cardinality: '1'
+      Cardinality: 0..1
       Preferred Term: Subject Enrollment Code
       Definition: A symbol or combination of symbols which is assigned to the subject
         enrollment.
@@ -2773,7 +2773,7 @@ SyntaxTemplate:
       Model Name: text
     dictionary:
       $ref: '#/SyntaxTemplateDictionary'
-      Cardinality: '1'
+      Cardinality: 0..1
       Model Name: dictionary
 SyntaxTemplateDictionary:
   NCI C-Code: CNEW
