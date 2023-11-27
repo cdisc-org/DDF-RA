@@ -3,7 +3,7 @@ info:
   title: Simple API for DDF
   description: A simple TransCelerate Digital Data Flow (DDF) Study Definitions Repository
     API.
-  version: '2.7'
+  version: 2.7.1
 paths:
   /v3/studyDefinitions:
     post:
@@ -221,13 +221,15 @@ components:
           minLength: 1
           title: Name
         label:
-          type: string
+          anyOf:
+          - type: string
+          - type: 'null'
           title: Label
-          default: ''
         description:
-          type: string
+          anyOf:
+          - type: string
+          - type: 'null'
           title: Description
-          default: ''
         previousId:
           anyOf:
           - type: string
@@ -292,13 +294,15 @@ components:
           minLength: 1
           title: Name
         label:
-          type: string
+          anyOf:
+          - type: string
+          - type: 'null'
           title: Label
-          default: ''
         description:
-          type: string
+          anyOf:
+          - type: string
+          - type: 'null'
           title: Description
-          default: ''
         previousId:
           anyOf:
           - type: string
@@ -359,29 +363,35 @@ components:
           minLength: 1
           title: Id
         text:
-          type: string
+          anyOf:
+          - type: string
+          - type: 'null'
           title: Text
-          default: ''
         line:
-          type: string
+          anyOf:
+          - type: string
+          - type: 'null'
           title: Line
-          default: ''
         city:
-          type: string
+          anyOf:
+          - type: string
+          - type: 'null'
           title: City
-          default: ''
         district:
-          type: string
+          anyOf:
+          - type: string
+          - type: 'null'
           title: District
-          default: ''
         state:
-          type: string
+          anyOf:
+          - type: string
+          - type: 'null'
           title: State
-          default: ''
         postalCode:
-          type: string
+          anyOf:
+          - type: string
+          - type: 'null'
           title: Postalcode
-          default: ''
         country:
           anyOf:
           - $ref: '#/components/schemas/Code'
@@ -451,13 +461,15 @@ components:
           minLength: 1
           title: Name
         label:
-          type: string
+          anyOf:
+          - type: string
+          - type: 'null'
           title: Label
-          default: ''
         description:
-          type: string
+          anyOf:
+          - type: string
+          - type: 'null'
           title: Description
-          default: ''
         duration:
           $ref: '#/components/schemas/AdministrationDuration-Input'
         dose:
@@ -486,13 +498,15 @@ components:
           minLength: 1
           title: Name
         label:
-          type: string
+          anyOf:
+          - type: string
+          - type: 'null'
           title: Label
-          default: ''
         description:
-          type: string
+          anyOf:
+          - type: string
+          - type: 'null'
           title: Description
-          default: ''
         duration:
           $ref: '#/components/schemas/AdministrationDuration-Output'
         dose:
@@ -540,13 +554,15 @@ components:
           minLength: 1
           title: Name
         label:
-          type: string
+          anyOf:
+          - type: string
+          - type: 'null'
           title: Label
-          default: ''
         description:
-          type: string
+          anyOf:
+          - type: string
+          - type: 'null'
           title: Description
-          default: ''
         text:
           type: string
           title: Text
@@ -567,9 +583,10 @@ components:
           minLength: 1
           title: Name
         label:
-          type: string
+          anyOf:
+          - type: string
+          - type: 'null'
           title: Label
-          default: ''
         synonyms:
           items:
             type: string
@@ -605,9 +622,10 @@ components:
           minLength: 1
           title: Name
         label:
-          type: string
+          anyOf:
+          - type: string
+          - type: 'null'
           title: Label
-          default: ''
         synonyms:
           items:
             type: string
@@ -643,13 +661,15 @@ components:
           minLength: 1
           title: Name
         label:
-          type: string
+          anyOf:
+          - type: string
+          - type: 'null'
           title: Label
-          default: ''
         description:
-          type: string
+          anyOf:
+          - type: string
+          - type: 'null'
           title: Description
-          default: ''
         childrenIds:
           items:
             type: string
@@ -682,13 +702,15 @@ components:
           minLength: 1
           title: Name
         label:
-          type: string
+          anyOf:
+          - type: string
+          - type: 'null'
           title: Label
-          default: ''
         description:
-          type: string
+          anyOf:
+          - type: string
+          - type: 'null'
           title: Description
-          default: ''
         childrenIds:
           items:
             type: string
@@ -721,9 +743,10 @@ components:
           minLength: 1
           title: Name
         label:
-          type: string
+          anyOf:
+          - type: string
+          - type: 'null'
           title: Label
-          default: ''
         isRequired:
           type: boolean
           title: Isrequired
@@ -761,9 +784,10 @@ components:
           minLength: 1
           title: Name
         label:
-          type: string
+          anyOf:
+          - type: string
+          - type: 'null'
           title: Label
-          default: ''
         isRequired:
           type: boolean
           title: Isrequired
@@ -801,17 +825,20 @@ components:
           minLength: 1
           title: Name
         label:
-          type: string
+          anyOf:
+          - type: string
+          - type: 'null'
           title: Label
-          default: ''
         description:
-          type: string
+          anyOf:
+          - type: string
+          - type: 'null'
           title: Description
-          default: ''
         reference:
-          type: string
+          anyOf:
+          - type: string
+          - type: 'null'
           title: Reference
-          default: ''
       type: object
       required:
       - id
@@ -828,13 +855,15 @@ components:
           minLength: 1
           title: Name
         label:
-          type: string
+          anyOf:
+          - type: string
+          - type: 'null'
           title: Label
-          default: ''
         description:
-          type: string
+          anyOf:
+          - type: string
+          - type: 'null'
           title: Description
-          default: ''
         instanceType:
           type: string
           enum:
@@ -847,7 +876,9 @@ components:
           type: string
           title: Text
         dictionaryId:
-          type: string
+          anyOf:
+          - type: string
+          - type: 'null'
           title: Dictionaryid
       type: object
       required:
@@ -855,7 +886,6 @@ components:
       - name
       - instanceType
       - text
-      - dictionaryId
       title: Characteristic
     Code:
       properties:
@@ -894,13 +924,15 @@ components:
           minLength: 1
           title: Name
         label:
-          type: string
+          anyOf:
+          - type: string
+          - type: 'null'
           title: Label
-          default: ''
         description:
-          type: string
+          anyOf:
+          - type: string
+          - type: 'null'
           title: Description
-          default: ''
         instanceType:
           type: string
           enum:
@@ -913,7 +945,9 @@ components:
           type: string
           title: Text
         dictionaryId:
-          type: string
+          anyOf:
+          - type: string
+          - type: 'null'
           title: Dictionaryid
         category:
           $ref: '#/components/schemas/Code'
@@ -941,7 +975,6 @@ components:
       - name
       - instanceType
       - text
-      - dictionaryId
       - category
       - identifier
       title: EligibilityCriteria
@@ -956,13 +989,15 @@ components:
           minLength: 1
           title: Name
         label:
-          type: string
+          anyOf:
+          - type: string
+          - type: 'null'
           title: Label
-          default: ''
         description:
-          type: string
+          anyOf:
+          - type: string
+          - type: 'null'
           title: Description
-          default: ''
         type:
           $ref: '#/components/schemas/Code'
         previousId:
@@ -1015,13 +1050,15 @@ components:
           minLength: 1
           title: Name
         label:
-          type: string
+          anyOf:
+          - type: string
+          - type: 'null'
           title: Label
-          default: ''
         description:
-          type: string
+          anyOf:
+          - type: string
+          - type: 'null'
           title: Description
-          default: ''
         instanceType:
           type: string
           enum:
@@ -1034,7 +1071,9 @@ components:
           type: string
           title: Text
         dictionaryId:
-          type: string
+          anyOf:
+          - type: string
+          - type: 'null'
           title: Dictionaryid
         purpose:
           type: string
@@ -1047,7 +1086,6 @@ components:
       - name
       - instanceType
       - text
-      - dictionaryId
       - purpose
       - level
       title: Endpoint
@@ -1097,13 +1135,14 @@ components:
         type:
           $ref: '#/components/schemas/Code'
         code:
-          $ref: '#/components/schemas/AliasCode'
+          anyOf:
+          - $ref: '#/components/schemas/AliasCode'
+          - type: 'null'
       type: object
       required:
       - id
       - instanceType
       - type
-      - code
       title: GeographicScope
     GeographicScope-Output:
       properties:
@@ -1120,13 +1159,14 @@ components:
         type:
           $ref: '#/components/schemas/Code'
         code:
-          $ref: '#/components/schemas/AliasCode'
+          anyOf:
+          - $ref: '#/components/schemas/AliasCode'
+          - type: 'null'
       type: object
       required:
       - id
       - instanceType
       - type
-      - code
       title: GeographicScope
     GovernanceDate-Input:
       properties:
@@ -1139,13 +1179,15 @@ components:
           minLength: 1
           title: Name
         label:
-          type: string
+          anyOf:
+          - type: string
+          - type: 'null'
           title: Label
-          default: ''
         description:
-          type: string
+          anyOf:
+          - type: string
+          - type: 'null'
           title: Description
-          default: ''
         type:
           $ref: '#/components/schemas/Code'
         dateValue:
@@ -1176,13 +1218,15 @@ components:
           minLength: 1
           title: Name
         label:
-          type: string
+          anyOf:
+          - type: string
+          - type: 'null'
           title: Label
-          default: ''
         description:
-          type: string
+          anyOf:
+          - type: string
+          - type: 'null'
           title: Description
-          default: ''
         type:
           $ref: '#/components/schemas/Code'
         dateValue:
@@ -1222,13 +1266,15 @@ components:
           minLength: 1
           title: Name
         label:
-          type: string
+          anyOf:
+          - type: string
+          - type: 'null'
           title: Label
-          default: ''
         description:
-          type: string
+          anyOf:
+          - type: string
+          - type: 'null'
           title: Description
-          default: ''
         codes:
           items:
             $ref: '#/components/schemas/Code'
@@ -1251,13 +1297,15 @@ components:
           minLength: 1
           title: Name
         label:
-          type: string
+          anyOf:
+          - type: string
+          - type: 'null'
           title: Label
-          default: ''
         description:
-          type: string
+          anyOf:
+          - type: string
+          - type: 'null'
           title: Description
-          default: ''
         strategy:
           type: string
           title: Strategy
@@ -1312,13 +1360,15 @@ components:
           minLength: 1
           title: Name
         label:
-          type: string
+          anyOf:
+          - type: string
+          - type: 'null'
           title: Label
-          default: ''
         description:
-          type: string
+          anyOf:
+          - type: string
+          - type: 'null'
           title: Description
-          default: ''
         instanceType:
           type: string
           enum:
@@ -1331,7 +1381,9 @@ components:
           type: string
           title: Text
         dictionaryId:
-          type: string
+          anyOf:
+          - type: string
+          - type: 'null'
           title: Dictionaryid
         level:
           anyOf:
@@ -1349,7 +1401,6 @@ components:
       - name
       - instanceType
       - text
-      - dictionaryId
       title: Objective
     Objective-Output:
       properties:
@@ -1362,13 +1413,15 @@ components:
           minLength: 1
           title: Name
         label:
-          type: string
+          anyOf:
+          - type: string
+          - type: 'null'
           title: Label
-          default: ''
         description:
-          type: string
+          anyOf:
+          - type: string
+          - type: 'null'
           title: Description
-          default: ''
         instanceType:
           type: string
           enum:
@@ -1381,7 +1434,9 @@ components:
           type: string
           title: Text
         dictionaryId:
-          type: string
+          anyOf:
+          - type: string
+          - type: 'null'
           title: Dictionaryid
         level:
           anyOf:
@@ -1399,7 +1454,6 @@ components:
       - name
       - instanceType
       - text
-      - dictionaryId
       title: Objective
     Organization-Input:
       properties:
@@ -1412,9 +1466,10 @@ components:
           minLength: 1
           title: Name
         label:
-          type: string
+          anyOf:
+          - type: string
+          - type: 'null'
           title: Label
-          default: ''
         type:
           $ref: '#/components/schemas/Code'
         identifierScheme:
@@ -1446,9 +1501,10 @@ components:
           minLength: 1
           title: Name
         label:
-          type: string
+          anyOf:
+          - type: string
+          - type: 'null'
           title: Label
-          default: ''
         type:
           $ref: '#/components/schemas/Code'
         identifierScheme:
@@ -1480,13 +1536,15 @@ components:
           minLength: 1
           title: Name
         label:
-          type: string
+          anyOf:
+          - type: string
+          - type: 'null'
           title: Label
-          default: ''
         description:
-          type: string
+          anyOf:
+          - type: string
+          - type: 'null'
           title: Description
-          default: ''
         procedureType:
           type: string
           title: Proceduretype
@@ -1519,15 +1577,16 @@ components:
           type: string
           minLength: 1
           title: Id
-        unit:
-          $ref: '#/components/schemas/Code'
         value:
           type: number
           title: Value
+        unit:
+          anyOf:
+          - $ref: '#/components/schemas/Code'
+          - type: 'null'
       type: object
       required:
       - id
-      - unit
       - value
       title: Quantity
     Range:
@@ -1542,18 +1601,19 @@ components:
         maxValue:
           type: number
           title: Maxvalue
+        unit:
+          anyOf:
+          - $ref: '#/components/schemas/Code'
+          - type: 'null'
         isApproximate:
           type: boolean
           title: Isapproximate
-        unit:
-          $ref: '#/components/schemas/Code'
       type: object
       required:
       - id
       - minValue
       - maxValue
       - isApproximate
-      - unit
       title: Range
     ResponseCode:
       properties:
@@ -1583,13 +1643,15 @@ components:
           minLength: 1
           title: Name
         label:
-          type: string
+          anyOf:
+          - type: string
+          - type: 'null'
           title: Label
-          default: ''
         description:
-          type: string
+          anyOf:
+          - type: string
+          - type: 'null'
           title: Description
-          default: ''
         mainTimeline:
           type: boolean
           title: Maintimeline
@@ -1632,13 +1694,15 @@ components:
           minLength: 1
           title: Name
         label:
-          type: string
+          anyOf:
+          - type: string
+          - type: 'null'
           title: Label
-          default: ''
         description:
-          type: string
+          anyOf:
+          - type: string
+          - type: 'null'
           title: Description
-          default: ''
         mainTimeline:
           type: boolean
           title: Maintimeline
@@ -1899,13 +1963,15 @@ components:
           minLength: 1
           title: Name
         description:
-          type: string
+          anyOf:
+          - type: string
+          - type: 'null'
           title: Description
-          default: ''
         label:
-          type: string
+          anyOf:
+          - type: string
+          - type: 'null'
           title: Label
-          default: ''
         versions:
           items:
             $ref: '#/components/schemas/StudyVersion-Input'
@@ -1933,13 +1999,15 @@ components:
           minLength: 1
           title: Name
         description:
-          type: string
+          anyOf:
+          - type: string
+          - type: 'null'
           title: Description
-          default: ''
         label:
-          type: string
+          anyOf:
+          - type: string
+          - type: 'null'
           title: Label
-          default: ''
         versions:
           items:
             $ref: '#/components/schemas/StudyVersion-Output'
@@ -2047,9 +2115,10 @@ components:
         code:
           $ref: '#/components/schemas/Code'
         otherReason:
-          type: string
+          anyOf:
+          - type: string
+          - type: 'null'
           title: Otherreason
-          default: ''
       type: object
       required:
       - id
@@ -2066,13 +2135,15 @@ components:
           minLength: 1
           title: Name
         label:
-          type: string
+          anyOf:
+          - type: string
+          - type: 'null'
           title: Label
-          default: ''
         description:
-          type: string
+          anyOf:
+          - type: string
+          - type: 'null'
           title: Description
-          default: ''
         type:
           $ref: '#/components/schemas/Code'
         dataOriginDescription:
@@ -2129,21 +2200,31 @@ components:
           minLength: 1
           title: Name
         label:
-          type: string
+          anyOf:
+          - type: string
+          - type: 'null'
           title: Label
-          default: ''
         description:
-          type: string
+          anyOf:
+          - type: string
+          - type: 'null'
           title: Description
-          default: ''
         plannedEnrollmentNumber:
-          $ref: '#/components/schemas/Range'
+          anyOf:
+          - $ref: '#/components/schemas/Range'
+          - type: 'null'
         plannedCompletionNumber:
-          $ref: '#/components/schemas/Range'
+          anyOf:
+          - $ref: '#/components/schemas/Range'
+          - type: 'null'
         plannedMaximumAge:
-          $ref: '#/components/schemas/Quantity'
+          anyOf:
+          - $ref: '#/components/schemas/Quantity'
+          - type: 'null'
         plannedMinimumAge:
-          $ref: '#/components/schemas/Quantity'
+          anyOf:
+          - $ref: '#/components/schemas/Quantity'
+          - type: 'null'
         plannedSex:
           items:
             $ref: '#/components/schemas/Code'
@@ -2155,6 +2236,7 @@ components:
             $ref: '#/components/schemas/EligibilityCriteria'
           type: array
           title: Criteria
+          default: []
         characteristics:
           items:
             $ref: '#/components/schemas/Characteristic'
@@ -2165,11 +2247,6 @@ components:
       required:
       - id
       - name
-      - plannedEnrollmentNumber
-      - plannedCompletionNumber
-      - plannedMaximumAge
-      - plannedMinimumAge
-      - criteria
       title: StudyCohort
     StudyCohort-Output:
       properties:
@@ -2182,21 +2259,31 @@ components:
           minLength: 1
           title: Name
         label:
-          type: string
+          anyOf:
+          - type: string
+          - type: 'null'
           title: Label
-          default: ''
         description:
-          type: string
+          anyOf:
+          - type: string
+          - type: 'null'
           title: Description
-          default: ''
         plannedEnrollmentNumber:
-          $ref: '#/components/schemas/Range'
+          anyOf:
+          - $ref: '#/components/schemas/Range'
+          - type: 'null'
         plannedCompletionNumber:
-          $ref: '#/components/schemas/Range'
+          anyOf:
+          - $ref: '#/components/schemas/Range'
+          - type: 'null'
         plannedMaximumAge:
-          $ref: '#/components/schemas/Quantity'
+          anyOf:
+          - $ref: '#/components/schemas/Quantity'
+          - type: 'null'
         plannedMinimumAge:
-          $ref: '#/components/schemas/Quantity'
+          anyOf:
+          - $ref: '#/components/schemas/Quantity'
+          - type: 'null'
         plannedSex:
           items:
             $ref: '#/components/schemas/Code'
@@ -2208,6 +2295,7 @@ components:
             $ref: '#/components/schemas/EligibilityCriteria'
           type: array
           title: Criteria
+          default: []
         characteristics:
           items:
             $ref: '#/components/schemas/Characteristic'
@@ -2218,11 +2306,6 @@ components:
       required:
       - id
       - name
-      - plannedEnrollmentNumber
-      - plannedCompletionNumber
-      - plannedMaximumAge
-      - plannedMinimumAge
-      - criteria
       title: StudyCohort
     StudyDesign-Input:
       properties:
@@ -2235,13 +2318,15 @@ components:
           minLength: 1
           title: Name
         label:
-          type: string
+          anyOf:
+          - type: string
+          - type: 'null'
           title: Label
-          default: ''
         description:
-          type: string
+          anyOf:
+          - type: string
+          - type: 'null'
           title: Description
-          default: ''
         trialIntentTypes:
           items:
             $ref: '#/components/schemas/Code'
@@ -2385,13 +2470,15 @@ components:
           minLength: 1
           title: Name
         label:
-          type: string
+          anyOf:
+          - type: string
+          - type: 'null'
           title: Label
-          default: ''
         description:
-          type: string
+          anyOf:
+          - type: string
+          - type: 'null'
           title: Description
-          default: ''
         trialIntentTypes:
           items:
             $ref: '#/components/schemas/Code'
@@ -2535,21 +2622,31 @@ components:
           minLength: 1
           title: Name
         label:
-          type: string
+          anyOf:
+          - type: string
+          - type: 'null'
           title: Label
-          default: ''
         description:
-          type: string
+          anyOf:
+          - type: string
+          - type: 'null'
           title: Description
-          default: ''
         plannedEnrollmentNumber:
-          $ref: '#/components/schemas/Range'
+          anyOf:
+          - $ref: '#/components/schemas/Range'
+          - type: 'null'
         plannedCompletionNumber:
-          $ref: '#/components/schemas/Range'
+          anyOf:
+          - $ref: '#/components/schemas/Range'
+          - type: 'null'
         plannedMaximumAge:
-          $ref: '#/components/schemas/Quantity'
+          anyOf:
+          - $ref: '#/components/schemas/Quantity'
+          - type: 'null'
         plannedMinimumAge:
-          $ref: '#/components/schemas/Quantity'
+          anyOf:
+          - $ref: '#/components/schemas/Quantity'
+          - type: 'null'
         plannedSex:
           items:
             $ref: '#/components/schemas/Code'
@@ -2561,6 +2658,7 @@ components:
             $ref: '#/components/schemas/EligibilityCriteria'
           type: array
           title: Criteria
+          default: []
         cohorts:
           items:
             $ref: '#/components/schemas/StudyCohort-Input'
@@ -2571,11 +2669,6 @@ components:
       required:
       - id
       - name
-      - plannedEnrollmentNumber
-      - plannedCompletionNumber
-      - plannedMaximumAge
-      - plannedMinimumAge
-      - criteria
       title: StudyDesignPopulation
     StudyDesignPopulation-Output:
       properties:
@@ -2588,21 +2681,31 @@ components:
           minLength: 1
           title: Name
         label:
-          type: string
+          anyOf:
+          - type: string
+          - type: 'null'
           title: Label
-          default: ''
         description:
-          type: string
+          anyOf:
+          - type: string
+          - type: 'null'
           title: Description
-          default: ''
         plannedEnrollmentNumber:
-          $ref: '#/components/schemas/Range'
+          anyOf:
+          - $ref: '#/components/schemas/Range'
+          - type: 'null'
         plannedCompletionNumber:
-          $ref: '#/components/schemas/Range'
+          anyOf:
+          - $ref: '#/components/schemas/Range'
+          - type: 'null'
         plannedMaximumAge:
-          $ref: '#/components/schemas/Quantity'
+          anyOf:
+          - $ref: '#/components/schemas/Quantity'
+          - type: 'null'
         plannedMinimumAge:
-          $ref: '#/components/schemas/Quantity'
+          anyOf:
+          - $ref: '#/components/schemas/Quantity'
+          - type: 'null'
         plannedSex:
           items:
             $ref: '#/components/schemas/Code'
@@ -2614,6 +2717,7 @@ components:
             $ref: '#/components/schemas/EligibilityCriteria'
           type: array
           title: Criteria
+          default: []
         cohorts:
           items:
             $ref: '#/components/schemas/StudyCohort-Output'
@@ -2624,11 +2728,6 @@ components:
       required:
       - id
       - name
-      - plannedEnrollmentNumber
-      - plannedCompletionNumber
-      - plannedMaximumAge
-      - plannedMinimumAge
-      - criteria
       title: StudyDesignPopulation
     StudyElement:
       properties:
@@ -2641,13 +2740,15 @@ components:
           minLength: 1
           title: Name
         label:
-          type: string
+          anyOf:
+          - type: string
+          - type: 'null'
           title: Label
-          default: ''
         description:
-          type: string
+          anyOf:
+          - type: string
+          - type: 'null'
           title: Description
-          default: ''
         transitionStartRule:
           anyOf:
           - $ref: '#/components/schemas/TransitionRule'
@@ -2678,13 +2779,15 @@ components:
           minLength: 1
           title: Name
         label:
-          type: string
+          anyOf:
+          - type: string
+          - type: 'null'
           title: Label
-          default: ''
         description:
-          type: string
+          anyOf:
+          - type: string
+          - type: 'null'
           title: Description
-          default: ''
         type:
           $ref: '#/components/schemas/Code'
         previousId:
@@ -2748,13 +2851,15 @@ components:
           minLength: 1
           title: Name
         label:
-          type: string
+          anyOf:
+          - type: string
+          - type: 'null'
           title: Label
-          default: ''
         description:
-          type: string
+          anyOf:
+          - type: string
+          - type: 'null'
           title: Description
-          default: ''
         role:
           $ref: '#/components/schemas/Code'
         type:
@@ -2762,7 +2867,11 @@ components:
         minimumResponseDuration:
           $ref: '#/components/schemas/Quantity'
         codes:
-          $ref: '#/components/schemas/Code'
+          items:
+            $ref: '#/components/schemas/Code'
+          type: array
+          title: Codes
+          default: []
         administrations:
           $ref: '#/components/schemas/AgentAdministration-Input'
         productDesignation:
@@ -2776,7 +2885,6 @@ components:
       - role
       - type
       - minimumResponseDuration
-      - codes
       - administrations
       - productDesignation
       - pharmacologicClass
@@ -2792,13 +2900,15 @@ components:
           minLength: 1
           title: Name
         label:
-          type: string
+          anyOf:
+          - type: string
+          - type: 'null'
           title: Label
-          default: ''
         description:
-          type: string
+          anyOf:
+          - type: string
+          - type: 'null'
           title: Description
-          default: ''
         role:
           $ref: '#/components/schemas/Code'
         type:
@@ -2806,7 +2916,11 @@ components:
         minimumResponseDuration:
           $ref: '#/components/schemas/Quantity'
         codes:
-          $ref: '#/components/schemas/Code'
+          items:
+            $ref: '#/components/schemas/Code'
+          type: array
+          title: Codes
+          default: []
         administrations:
           $ref: '#/components/schemas/AgentAdministration-Output'
         productDesignation:
@@ -2820,7 +2934,6 @@ components:
       - role
       - type
       - minimumResponseDuration
-      - codes
       - administrations
       - productDesignation
       - pharmacologicClass
@@ -2836,13 +2949,15 @@ components:
           minLength: 1
           title: Name
         label:
-          type: string
+          anyOf:
+          - type: string
+          - type: 'null'
           title: Label
-          default: ''
         description:
-          type: string
+          anyOf:
+          - type: string
+          - type: 'null'
           title: Description
-          default: ''
         versions:
           items:
             $ref: '#/components/schemas/StudyProtocolDocumentVersion-Input'
@@ -2865,13 +2980,15 @@ components:
           minLength: 1
           title: Name
         label:
-          type: string
+          anyOf:
+          - type: string
+          - type: 'null'
           title: Label
-          default: ''
         description:
-          type: string
+          anyOf:
+          - type: string
+          - type: 'null'
           title: Description
-          default: ''
         versions:
           items:
             $ref: '#/components/schemas/StudyProtocolDocumentVersion-Output'
@@ -3138,7 +3255,9 @@ components:
         type:
           $ref: '#/components/schemas/Code'
         code:
-          $ref: '#/components/schemas/AliasCode'
+          anyOf:
+          - $ref: '#/components/schemas/AliasCode'
+          - type: 'null'
         quantity:
           type: string
           title: Quantity
@@ -3147,7 +3266,6 @@ components:
       - id
       - instanceType
       - type
-      - code
       - quantity
       title: SubjectEnrollment
     SubjectEnrollment-Output:
@@ -3165,7 +3283,9 @@ components:
         type:
           $ref: '#/components/schemas/Code'
         code:
-          $ref: '#/components/schemas/AliasCode'
+          anyOf:
+          - $ref: '#/components/schemas/AliasCode'
+          - type: 'null'
         quantity:
           type: string
           title: Quantity
@@ -3174,7 +3294,6 @@ components:
       - id
       - instanceType
       - type
-      - code
       - quantity
       title: SubjectEnrollment
     SyntaxTemplateDictionary:
@@ -3188,13 +3307,15 @@ components:
           minLength: 1
           title: Name
         label:
-          type: string
+          anyOf:
+          - type: string
+          - type: 'null'
           title: Label
-          default: ''
         description:
-          type: string
+          anyOf:
+          - type: string
+          - type: 'null'
           title: Description
-          default: ''
         parameterMap:
           type: object
           title: Parametermap
@@ -3215,13 +3336,15 @@ components:
           minLength: 1
           title: Name
         label:
-          type: string
+          anyOf:
+          - type: string
+          - type: 'null'
           title: Label
-          default: ''
         description:
-          type: string
+          anyOf:
+          - type: string
+          - type: 'null'
           title: Description
-          default: ''
         type:
           $ref: '#/components/schemas/Code'
         value:
@@ -3273,13 +3396,15 @@ components:
           minLength: 1
           title: Name
         label:
-          type: string
+          anyOf:
+          - type: string
+          - type: 'null'
           title: Label
-          default: ''
         description:
-          type: string
+          anyOf:
+          - type: string
+          - type: 'null'
           title: Description
-          default: ''
         text:
           type: string
           title: Text

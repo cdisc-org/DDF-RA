@@ -3,7 +3,7 @@
   "info": {
     "title": "Simple API for DDF",
     "description": "A simple TransCelerate Digital Data Flow (DDF) Study Definitions Repository API.",
-    "version": "2.7"
+    "version": "2.7.1"
   },
   "paths": {
     "/v3/studyDefinitions": {
@@ -317,14 +317,26 @@
             "title": "Name"
           },
           "label": {
-            "type": "string",
-            "title": "Label",
-            "default": ""
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Label"
           },
           "description": {
-            "type": "string",
-            "title": "Description",
-            "default": ""
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Description"
           },
           "previousId": {
             "anyOf": [
@@ -428,14 +440,26 @@
             "title": "Name"
           },
           "label": {
-            "type": "string",
-            "title": "Label",
-            "default": ""
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Label"
           },
           "description": {
-            "type": "string",
-            "title": "Description",
-            "default": ""
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Description"
           },
           "previousId": {
             "anyOf": [
@@ -534,34 +558,70 @@
             "title": "Id"
           },
           "text": {
-            "type": "string",
-            "title": "Text",
-            "default": ""
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Text"
           },
           "line": {
-            "type": "string",
-            "title": "Line",
-            "default": ""
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Line"
           },
           "city": {
-            "type": "string",
-            "title": "City",
-            "default": ""
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "City"
           },
           "district": {
-            "type": "string",
-            "title": "District",
-            "default": ""
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "District"
           },
           "state": {
-            "type": "string",
-            "title": "State",
-            "default": ""
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "State"
           },
           "postalCode": {
-            "type": "string",
-            "title": "Postalcode",
-            "default": ""
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Postalcode"
           },
           "country": {
             "anyOf": [
@@ -659,14 +719,26 @@
             "title": "Name"
           },
           "label": {
-            "type": "string",
-            "title": "Label",
-            "default": ""
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Label"
           },
           "description": {
-            "type": "string",
-            "title": "Description",
-            "default": ""
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Description"
           },
           "duration": {
             "$ref": "#/components/schemas/AdministrationDuration-Input"
@@ -705,14 +777,26 @@
             "title": "Name"
           },
           "label": {
-            "type": "string",
-            "title": "Label",
-            "default": ""
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Label"
           },
           "description": {
-            "type": "string",
-            "title": "Description",
-            "default": ""
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Description"
           },
           "duration": {
             "$ref": "#/components/schemas/AdministrationDuration-Output"
@@ -777,14 +861,26 @@
             "title": "Name"
           },
           "label": {
-            "type": "string",
-            "title": "Label",
-            "default": ""
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Label"
           },
           "description": {
-            "type": "string",
-            "title": "Description",
-            "default": ""
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Description"
           },
           "text": {
             "type": "string",
@@ -812,9 +908,15 @@
             "title": "Name"
           },
           "label": {
-            "type": "string",
-            "title": "Label",
-            "default": ""
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Label"
           },
           "synonyms": {
             "items": {
@@ -862,9 +964,15 @@
             "title": "Name"
           },
           "label": {
-            "type": "string",
-            "title": "Label",
-            "default": ""
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Label"
           },
           "synonyms": {
             "items": {
@@ -912,14 +1020,26 @@
             "title": "Name"
           },
           "label": {
-            "type": "string",
-            "title": "Label",
-            "default": ""
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Label"
           },
           "description": {
-            "type": "string",
-            "title": "Description",
-            "default": ""
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Description"
           },
           "childrenIds": {
             "items": {
@@ -968,14 +1088,26 @@
             "title": "Name"
           },
           "label": {
-            "type": "string",
-            "title": "Label",
-            "default": ""
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Label"
           },
           "description": {
-            "type": "string",
-            "title": "Description",
-            "default": ""
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Description"
           },
           "childrenIds": {
             "items": {
@@ -1024,9 +1156,15 @@
             "title": "Name"
           },
           "label": {
-            "type": "string",
-            "title": "Label",
-            "default": ""
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Label"
           },
           "isRequired": {
             "type": "boolean",
@@ -1076,9 +1214,15 @@
             "title": "Name"
           },
           "label": {
-            "type": "string",
-            "title": "Label",
-            "default": ""
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Label"
           },
           "isRequired": {
             "type": "boolean",
@@ -1128,19 +1272,37 @@
             "title": "Name"
           },
           "label": {
-            "type": "string",
-            "title": "Label",
-            "default": ""
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Label"
           },
           "description": {
-            "type": "string",
-            "title": "Description",
-            "default": ""
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Description"
           },
           "reference": {
-            "type": "string",
-            "title": "Reference",
-            "default": ""
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Reference"
           }
         },
         "type": "object",
@@ -1163,14 +1325,26 @@
             "title": "Name"
           },
           "label": {
-            "type": "string",
-            "title": "Label",
-            "default": ""
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Label"
           },
           "description": {
-            "type": "string",
-            "title": "Description",
-            "default": ""
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Description"
           },
           "instanceType": {
             "type": "string",
@@ -1187,7 +1361,14 @@
             "title": "Text"
           },
           "dictionaryId": {
-            "type": "string",
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
             "title": "Dictionaryid"
           }
         },
@@ -1196,8 +1377,7 @@
           "id",
           "name",
           "instanceType",
-          "text",
-          "dictionaryId"
+          "text"
         ],
         "title": "Characteristic"
       },
@@ -1248,14 +1428,26 @@
             "title": "Name"
           },
           "label": {
-            "type": "string",
-            "title": "Label",
-            "default": ""
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Label"
           },
           "description": {
-            "type": "string",
-            "title": "Description",
-            "default": ""
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Description"
           },
           "instanceType": {
             "type": "string",
@@ -1272,7 +1464,14 @@
             "title": "Text"
           },
           "dictionaryId": {
-            "type": "string",
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
             "title": "Dictionaryid"
           },
           "category": {
@@ -1322,7 +1521,6 @@
           "name",
           "instanceType",
           "text",
-          "dictionaryId",
           "category",
           "identifier"
         ],
@@ -1341,14 +1539,26 @@
             "title": "Name"
           },
           "label": {
-            "type": "string",
-            "title": "Label",
-            "default": ""
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Label"
           },
           "description": {
-            "type": "string",
-            "title": "Description",
-            "default": ""
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Description"
           },
           "type": {
             "$ref": "#/components/schemas/Code"
@@ -1446,14 +1656,26 @@
             "title": "Name"
           },
           "label": {
-            "type": "string",
-            "title": "Label",
-            "default": ""
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Label"
           },
           "description": {
-            "type": "string",
-            "title": "Description",
-            "default": ""
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Description"
           },
           "instanceType": {
             "type": "string",
@@ -1470,7 +1692,14 @@
             "title": "Text"
           },
           "dictionaryId": {
-            "type": "string",
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
             "title": "Dictionaryid"
           },
           "purpose": {
@@ -1487,7 +1716,6 @@
           "name",
           "instanceType",
           "text",
-          "dictionaryId",
           "purpose",
           "level"
         ],
@@ -1553,15 +1781,21 @@
             "$ref": "#/components/schemas/Code"
           },
           "code": {
-            "$ref": "#/components/schemas/AliasCode"
+            "anyOf": [
+              {
+                "$ref": "#/components/schemas/AliasCode"
+              },
+              {
+                "type": "null"
+              }
+            ]
           }
         },
         "type": "object",
         "required": [
           "id",
           "instanceType",
-          "type",
-          "code"
+          "type"
         ],
         "title": "GeographicScope"
       },
@@ -1584,15 +1818,21 @@
             "$ref": "#/components/schemas/Code"
           },
           "code": {
-            "$ref": "#/components/schemas/AliasCode"
+            "anyOf": [
+              {
+                "$ref": "#/components/schemas/AliasCode"
+              },
+              {
+                "type": "null"
+              }
+            ]
           }
         },
         "type": "object",
         "required": [
           "id",
           "instanceType",
-          "type",
-          "code"
+          "type"
         ],
         "title": "GeographicScope"
       },
@@ -1609,14 +1849,26 @@
             "title": "Name"
           },
           "label": {
-            "type": "string",
-            "title": "Label",
-            "default": ""
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Label"
           },
           "description": {
-            "type": "string",
-            "title": "Description",
-            "default": ""
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Description"
           },
           "type": {
             "$ref": "#/components/schemas/Code"
@@ -1657,14 +1909,26 @@
             "title": "Name"
           },
           "label": {
-            "type": "string",
-            "title": "Label",
-            "default": ""
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Label"
           },
           "description": {
-            "type": "string",
-            "title": "Description",
-            "default": ""
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Description"
           },
           "type": {
             "$ref": "#/components/schemas/Code"
@@ -1718,14 +1982,26 @@
             "title": "Name"
           },
           "label": {
-            "type": "string",
-            "title": "Label",
-            "default": ""
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Label"
           },
           "description": {
-            "type": "string",
-            "title": "Description",
-            "default": ""
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Description"
           },
           "codes": {
             "items": {
@@ -1756,14 +2032,26 @@
             "title": "Name"
           },
           "label": {
-            "type": "string",
-            "title": "Label",
-            "default": ""
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Label"
           },
           "description": {
-            "type": "string",
-            "title": "Description",
-            "default": ""
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Description"
           },
           "strategy": {
             "type": "string",
@@ -1840,14 +2128,26 @@
             "title": "Name"
           },
           "label": {
-            "type": "string",
-            "title": "Label",
-            "default": ""
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Label"
           },
           "description": {
-            "type": "string",
-            "title": "Description",
-            "default": ""
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Description"
           },
           "instanceType": {
             "type": "string",
@@ -1864,7 +2164,14 @@
             "title": "Text"
           },
           "dictionaryId": {
-            "type": "string",
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
             "title": "Dictionaryid"
           },
           "level": {
@@ -1891,8 +2198,7 @@
           "id",
           "name",
           "instanceType",
-          "text",
-          "dictionaryId"
+          "text"
         ],
         "title": "Objective"
       },
@@ -1909,14 +2215,26 @@
             "title": "Name"
           },
           "label": {
-            "type": "string",
-            "title": "Label",
-            "default": ""
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Label"
           },
           "description": {
-            "type": "string",
-            "title": "Description",
-            "default": ""
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Description"
           },
           "instanceType": {
             "type": "string",
@@ -1933,7 +2251,14 @@
             "title": "Text"
           },
           "dictionaryId": {
-            "type": "string",
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
             "title": "Dictionaryid"
           },
           "level": {
@@ -1960,8 +2285,7 @@
           "id",
           "name",
           "instanceType",
-          "text",
-          "dictionaryId"
+          "text"
         ],
         "title": "Objective"
       },
@@ -1978,9 +2302,15 @@
             "title": "Name"
           },
           "label": {
-            "type": "string",
-            "title": "Label",
-            "default": ""
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Label"
           },
           "type": {
             "$ref": "#/components/schemas/Code"
@@ -2027,9 +2357,15 @@
             "title": "Name"
           },
           "label": {
-            "type": "string",
-            "title": "Label",
-            "default": ""
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Label"
           },
           "type": {
             "$ref": "#/components/schemas/Code"
@@ -2076,14 +2412,26 @@
             "title": "Name"
           },
           "label": {
-            "type": "string",
-            "title": "Label",
-            "default": ""
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Label"
           },
           "description": {
-            "type": "string",
-            "title": "Description",
-            "default": ""
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Description"
           },
           "procedureType": {
             "type": "string",
@@ -2136,18 +2484,24 @@
             "minLength": 1,
             "title": "Id"
           },
-          "unit": {
-            "$ref": "#/components/schemas/Code"
-          },
           "value": {
             "type": "number",
             "title": "Value"
+          },
+          "unit": {
+            "anyOf": [
+              {
+                "$ref": "#/components/schemas/Code"
+              },
+              {
+                "type": "null"
+              }
+            ]
           }
         },
         "type": "object",
         "required": [
           "id",
-          "unit",
           "value"
         ],
         "title": "Quantity"
@@ -2167,12 +2521,19 @@
             "type": "number",
             "title": "Maxvalue"
           },
+          "unit": {
+            "anyOf": [
+              {
+                "$ref": "#/components/schemas/Code"
+              },
+              {
+                "type": "null"
+              }
+            ]
+          },
           "isApproximate": {
             "type": "boolean",
             "title": "Isapproximate"
-          },
-          "unit": {
-            "$ref": "#/components/schemas/Code"
           }
         },
         "type": "object",
@@ -2180,8 +2541,7 @@
           "id",
           "minValue",
           "maxValue",
-          "isApproximate",
-          "unit"
+          "isApproximate"
         ],
         "title": "Range"
       },
@@ -2221,14 +2581,26 @@
             "title": "Name"
           },
           "label": {
-            "type": "string",
-            "title": "Label",
-            "default": ""
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Label"
           },
           "description": {
-            "type": "string",
-            "title": "Description",
-            "default": ""
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Description"
           },
           "mainTimeline": {
             "type": "boolean",
@@ -2289,14 +2661,26 @@
             "title": "Name"
           },
           "label": {
-            "type": "string",
-            "title": "Label",
-            "default": ""
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Label"
           },
           "description": {
-            "type": "string",
-            "title": "Description",
-            "default": ""
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Description"
           },
           "mainTimeline": {
             "type": "boolean",
@@ -2732,14 +3116,26 @@
             "title": "Name"
           },
           "description": {
-            "type": "string",
-            "title": "Description",
-            "default": ""
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Description"
           },
           "label": {
-            "type": "string",
-            "title": "Label",
-            "default": ""
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Label"
           },
           "versions": {
             "items": {
@@ -2786,14 +3182,26 @@
             "title": "Name"
           },
           "description": {
-            "type": "string",
-            "title": "Description",
-            "default": ""
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Description"
           },
           "label": {
-            "type": "string",
-            "title": "Label",
-            "default": ""
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Label"
           },
           "versions": {
             "items": {
@@ -2951,9 +3359,15 @@
             "$ref": "#/components/schemas/Code"
           },
           "otherReason": {
-            "type": "string",
-            "title": "Otherreason",
-            "default": ""
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Otherreason"
           }
         },
         "type": "object",
@@ -2976,14 +3390,26 @@
             "title": "Name"
           },
           "label": {
-            "type": "string",
-            "title": "Label",
-            "default": ""
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Label"
           },
           "description": {
-            "type": "string",
-            "title": "Description",
-            "default": ""
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Description"
           },
           "type": {
             "$ref": "#/components/schemas/Code"
@@ -3059,26 +3485,66 @@
             "title": "Name"
           },
           "label": {
-            "type": "string",
-            "title": "Label",
-            "default": ""
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Label"
           },
           "description": {
-            "type": "string",
-            "title": "Description",
-            "default": ""
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Description"
           },
           "plannedEnrollmentNumber": {
-            "$ref": "#/components/schemas/Range"
+            "anyOf": [
+              {
+                "$ref": "#/components/schemas/Range"
+              },
+              {
+                "type": "null"
+              }
+            ]
           },
           "plannedCompletionNumber": {
-            "$ref": "#/components/schemas/Range"
+            "anyOf": [
+              {
+                "$ref": "#/components/schemas/Range"
+              },
+              {
+                "type": "null"
+              }
+            ]
           },
           "plannedMaximumAge": {
-            "$ref": "#/components/schemas/Quantity"
+            "anyOf": [
+              {
+                "$ref": "#/components/schemas/Quantity"
+              },
+              {
+                "type": "null"
+              }
+            ]
           },
           "plannedMinimumAge": {
-            "$ref": "#/components/schemas/Quantity"
+            "anyOf": [
+              {
+                "$ref": "#/components/schemas/Quantity"
+              },
+              {
+                "type": "null"
+              }
+            ]
           },
           "plannedSex": {
             "items": {
@@ -3093,7 +3559,8 @@
               "$ref": "#/components/schemas/EligibilityCriteria"
             },
             "type": "array",
-            "title": "Criteria"
+            "title": "Criteria",
+            "default": []
           },
           "characteristics": {
             "items": {
@@ -3107,12 +3574,7 @@
         "type": "object",
         "required": [
           "id",
-          "name",
-          "plannedEnrollmentNumber",
-          "plannedCompletionNumber",
-          "plannedMaximumAge",
-          "plannedMinimumAge",
-          "criteria"
+          "name"
         ],
         "title": "StudyCohort"
       },
@@ -3129,26 +3591,66 @@
             "title": "Name"
           },
           "label": {
-            "type": "string",
-            "title": "Label",
-            "default": ""
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Label"
           },
           "description": {
-            "type": "string",
-            "title": "Description",
-            "default": ""
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Description"
           },
           "plannedEnrollmentNumber": {
-            "$ref": "#/components/schemas/Range"
+            "anyOf": [
+              {
+                "$ref": "#/components/schemas/Range"
+              },
+              {
+                "type": "null"
+              }
+            ]
           },
           "plannedCompletionNumber": {
-            "$ref": "#/components/schemas/Range"
+            "anyOf": [
+              {
+                "$ref": "#/components/schemas/Range"
+              },
+              {
+                "type": "null"
+              }
+            ]
           },
           "plannedMaximumAge": {
-            "$ref": "#/components/schemas/Quantity"
+            "anyOf": [
+              {
+                "$ref": "#/components/schemas/Quantity"
+              },
+              {
+                "type": "null"
+              }
+            ]
           },
           "plannedMinimumAge": {
-            "$ref": "#/components/schemas/Quantity"
+            "anyOf": [
+              {
+                "$ref": "#/components/schemas/Quantity"
+              },
+              {
+                "type": "null"
+              }
+            ]
           },
           "plannedSex": {
             "items": {
@@ -3163,7 +3665,8 @@
               "$ref": "#/components/schemas/EligibilityCriteria"
             },
             "type": "array",
-            "title": "Criteria"
+            "title": "Criteria",
+            "default": []
           },
           "characteristics": {
             "items": {
@@ -3177,12 +3680,7 @@
         "type": "object",
         "required": [
           "id",
-          "name",
-          "plannedEnrollmentNumber",
-          "plannedCompletionNumber",
-          "plannedMaximumAge",
-          "plannedMinimumAge",
-          "criteria"
+          "name"
         ],
         "title": "StudyCohort"
       },
@@ -3199,14 +3697,26 @@
             "title": "Name"
           },
           "label": {
-            "type": "string",
-            "title": "Label",
-            "default": ""
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Label"
           },
           "description": {
-            "type": "string",
-            "title": "Description",
-            "default": ""
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Description"
           },
           "trialIntentTypes": {
             "items": {
@@ -3412,14 +3922,26 @@
             "title": "Name"
           },
           "label": {
-            "type": "string",
-            "title": "Label",
-            "default": ""
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Label"
           },
           "description": {
-            "type": "string",
-            "title": "Description",
-            "default": ""
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Description"
           },
           "trialIntentTypes": {
             "items": {
@@ -3625,26 +4147,66 @@
             "title": "Name"
           },
           "label": {
-            "type": "string",
-            "title": "Label",
-            "default": ""
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Label"
           },
           "description": {
-            "type": "string",
-            "title": "Description",
-            "default": ""
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Description"
           },
           "plannedEnrollmentNumber": {
-            "$ref": "#/components/schemas/Range"
+            "anyOf": [
+              {
+                "$ref": "#/components/schemas/Range"
+              },
+              {
+                "type": "null"
+              }
+            ]
           },
           "plannedCompletionNumber": {
-            "$ref": "#/components/schemas/Range"
+            "anyOf": [
+              {
+                "$ref": "#/components/schemas/Range"
+              },
+              {
+                "type": "null"
+              }
+            ]
           },
           "plannedMaximumAge": {
-            "$ref": "#/components/schemas/Quantity"
+            "anyOf": [
+              {
+                "$ref": "#/components/schemas/Quantity"
+              },
+              {
+                "type": "null"
+              }
+            ]
           },
           "plannedMinimumAge": {
-            "$ref": "#/components/schemas/Quantity"
+            "anyOf": [
+              {
+                "$ref": "#/components/schemas/Quantity"
+              },
+              {
+                "type": "null"
+              }
+            ]
           },
           "plannedSex": {
             "items": {
@@ -3659,7 +4221,8 @@
               "$ref": "#/components/schemas/EligibilityCriteria"
             },
             "type": "array",
-            "title": "Criteria"
+            "title": "Criteria",
+            "default": []
           },
           "cohorts": {
             "items": {
@@ -3673,12 +4236,7 @@
         "type": "object",
         "required": [
           "id",
-          "name",
-          "plannedEnrollmentNumber",
-          "plannedCompletionNumber",
-          "plannedMaximumAge",
-          "plannedMinimumAge",
-          "criteria"
+          "name"
         ],
         "title": "StudyDesignPopulation"
       },
@@ -3695,26 +4253,66 @@
             "title": "Name"
           },
           "label": {
-            "type": "string",
-            "title": "Label",
-            "default": ""
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Label"
           },
           "description": {
-            "type": "string",
-            "title": "Description",
-            "default": ""
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Description"
           },
           "plannedEnrollmentNumber": {
-            "$ref": "#/components/schemas/Range"
+            "anyOf": [
+              {
+                "$ref": "#/components/schemas/Range"
+              },
+              {
+                "type": "null"
+              }
+            ]
           },
           "plannedCompletionNumber": {
-            "$ref": "#/components/schemas/Range"
+            "anyOf": [
+              {
+                "$ref": "#/components/schemas/Range"
+              },
+              {
+                "type": "null"
+              }
+            ]
           },
           "plannedMaximumAge": {
-            "$ref": "#/components/schemas/Quantity"
+            "anyOf": [
+              {
+                "$ref": "#/components/schemas/Quantity"
+              },
+              {
+                "type": "null"
+              }
+            ]
           },
           "plannedMinimumAge": {
-            "$ref": "#/components/schemas/Quantity"
+            "anyOf": [
+              {
+                "$ref": "#/components/schemas/Quantity"
+              },
+              {
+                "type": "null"
+              }
+            ]
           },
           "plannedSex": {
             "items": {
@@ -3729,7 +4327,8 @@
               "$ref": "#/components/schemas/EligibilityCriteria"
             },
             "type": "array",
-            "title": "Criteria"
+            "title": "Criteria",
+            "default": []
           },
           "cohorts": {
             "items": {
@@ -3743,12 +4342,7 @@
         "type": "object",
         "required": [
           "id",
-          "name",
-          "plannedEnrollmentNumber",
-          "plannedCompletionNumber",
-          "plannedMaximumAge",
-          "plannedMinimumAge",
-          "criteria"
+          "name"
         ],
         "title": "StudyDesignPopulation"
       },
@@ -3765,14 +4359,26 @@
             "title": "Name"
           },
           "label": {
-            "type": "string",
-            "title": "Label",
-            "default": ""
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Label"
           },
           "description": {
-            "type": "string",
-            "title": "Description",
-            "default": ""
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Description"
           },
           "transitionStartRule": {
             "anyOf": [
@@ -3823,14 +4429,26 @@
             "title": "Name"
           },
           "label": {
-            "type": "string",
-            "title": "Label",
-            "default": ""
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Label"
           },
           "description": {
-            "type": "string",
-            "title": "Description",
-            "default": ""
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Description"
           },
           "type": {
             "$ref": "#/components/schemas/Code"
@@ -3925,14 +4543,26 @@
             "title": "Name"
           },
           "label": {
-            "type": "string",
-            "title": "Label",
-            "default": ""
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Label"
           },
           "description": {
-            "type": "string",
-            "title": "Description",
-            "default": ""
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Description"
           },
           "role": {
             "$ref": "#/components/schemas/Code"
@@ -3944,7 +4574,12 @@
             "$ref": "#/components/schemas/Quantity"
           },
           "codes": {
-            "$ref": "#/components/schemas/Code"
+            "items": {
+              "$ref": "#/components/schemas/Code"
+            },
+            "type": "array",
+            "title": "Codes",
+            "default": []
           },
           "administrations": {
             "$ref": "#/components/schemas/AgentAdministration-Input"
@@ -3963,7 +4598,6 @@
           "role",
           "type",
           "minimumResponseDuration",
-          "codes",
           "administrations",
           "productDesignation",
           "pharmacologicClass"
@@ -3983,14 +4617,26 @@
             "title": "Name"
           },
           "label": {
-            "type": "string",
-            "title": "Label",
-            "default": ""
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Label"
           },
           "description": {
-            "type": "string",
-            "title": "Description",
-            "default": ""
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Description"
           },
           "role": {
             "$ref": "#/components/schemas/Code"
@@ -4002,7 +4648,12 @@
             "$ref": "#/components/schemas/Quantity"
           },
           "codes": {
-            "$ref": "#/components/schemas/Code"
+            "items": {
+              "$ref": "#/components/schemas/Code"
+            },
+            "type": "array",
+            "title": "Codes",
+            "default": []
           },
           "administrations": {
             "$ref": "#/components/schemas/AgentAdministration-Output"
@@ -4021,7 +4672,6 @@
           "role",
           "type",
           "minimumResponseDuration",
-          "codes",
           "administrations",
           "productDesignation",
           "pharmacologicClass"
@@ -4041,14 +4691,26 @@
             "title": "Name"
           },
           "label": {
-            "type": "string",
-            "title": "Label",
-            "default": ""
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Label"
           },
           "description": {
-            "type": "string",
-            "title": "Description",
-            "default": ""
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Description"
           },
           "versions": {
             "items": {
@@ -4079,14 +4741,26 @@
             "title": "Name"
           },
           "label": {
-            "type": "string",
-            "title": "Label",
-            "default": ""
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Label"
           },
           "description": {
-            "type": "string",
-            "title": "Description",
-            "default": ""
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Description"
           },
           "versions": {
             "items": {
@@ -4467,7 +5141,14 @@
             "$ref": "#/components/schemas/Code"
           },
           "code": {
-            "$ref": "#/components/schemas/AliasCode"
+            "anyOf": [
+              {
+                "$ref": "#/components/schemas/AliasCode"
+              },
+              {
+                "type": "null"
+              }
+            ]
           },
           "quantity": {
             "type": "string",
@@ -4479,7 +5160,6 @@
           "id",
           "instanceType",
           "type",
-          "code",
           "quantity"
         ],
         "title": "SubjectEnrollment"
@@ -4503,7 +5183,14 @@
             "$ref": "#/components/schemas/Code"
           },
           "code": {
-            "$ref": "#/components/schemas/AliasCode"
+            "anyOf": [
+              {
+                "$ref": "#/components/schemas/AliasCode"
+              },
+              {
+                "type": "null"
+              }
+            ]
           },
           "quantity": {
             "type": "string",
@@ -4515,7 +5202,6 @@
           "id",
           "instanceType",
           "type",
-          "code",
           "quantity"
         ],
         "title": "SubjectEnrollment"
@@ -4533,14 +5219,26 @@
             "title": "Name"
           },
           "label": {
-            "type": "string",
-            "title": "Label",
-            "default": ""
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Label"
           },
           "description": {
-            "type": "string",
-            "title": "Description",
-            "default": ""
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Description"
           },
           "parameterMap": {
             "type": "object",
@@ -4568,14 +5266,26 @@
             "title": "Name"
           },
           "label": {
-            "type": "string",
-            "title": "Label",
-            "default": ""
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Label"
           },
           "description": {
-            "type": "string",
-            "title": "Description",
-            "default": ""
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Description"
           },
           "type": {
             "$ref": "#/components/schemas/Code"
@@ -4666,14 +5376,26 @@
             "title": "Name"
           },
           "label": {
-            "type": "string",
-            "title": "Label",
-            "default": ""
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Label"
           },
           "description": {
-            "type": "string",
-            "title": "Description",
-            "default": ""
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Description"
           },
           "text": {
             "type": "string",
