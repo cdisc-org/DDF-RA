@@ -54,6 +54,7 @@ jobs:
           mvn exec:java -Dexec.mainClass="org.cdisc.tools.GeneratorApp" -Dexec.args="--compare-releases"
           mvn exec:java -Dexec.mainClass="org.cdisc.tools.GeneratorApp" -Dexec.args="--gen-table"
           mvn exec:java -Dexec.mainClass="org.cdisc.tools.GeneratorApp" -Dexec.args="--gen-structure"
+          mvn exec:java -Dexec.mainClass="org.cdisc.tools.GeneratorApp" -Dexec.args="--gen-alignment"
           cd ../
       - name: Copy and rename the generated dataDictionary to the current branch
         run: cp usdm-dictionary-generator/dataDictionary.MD "currentRelease/Deliverables/UML/."
@@ -61,6 +62,8 @@ jobs:
         run: cp usdm-dictionary-generator/UML_DELTA.csv "currentRelease/Deliverables/UML/UML_DELTA_${{ env.PREVIOUS_VERSION}}_${{ env.CURRENT_VERSION}}.csv"
       - name: Copy and rename the generated dataStructure to the current branch
         run: cp usdm-dictionary-generator/dataStructure.yml "currentRelease/Deliverables/UML/."
+      - name: Copy and rename the generated alignments to the current branch
+        run: cp usdm-dictionary-generator/alignment.csv "currentRelease/Deliverables/UML/."
       - name: Commit and push the new files to the current branch
         run: |
           cd currentRelease
