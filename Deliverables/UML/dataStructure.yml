@@ -532,24 +532,36 @@ Characteristic:
         $ref: '#/SyntaxTemplate'
     name:
       $ref: '#/string'
+      NCI C-Code: CNEW
+      Preferred Term: Characteristic Name
+      Definition: The literal identifier (i.e., distinctive designation) of the characteristic.
       Relationship Type: Value
       Model Name: name
       Inherited From:
         $ref: '#/SyntaxTemplate'
     description:
       $ref: '#/string'
+      NCI C-Code: CNEW
+      Preferred Term: Characteristic Description
+      Definition: A narrative representation of the characteristic.
       Relationship Type: Value
       Model Name: description
       Inherited From:
         $ref: '#/SyntaxTemplate'
     label:
       $ref: '#/string'
+      NCI C-Code: CNEW
+      Preferred Term: Characteristic Label
+      Definition: The short descriptive designation for the characteristic.
       Relationship Type: Value
       Model Name: label
       Inherited From:
         $ref: '#/SyntaxTemplate'
     text:
       $ref: '#/string'
+      NCI C-Code: CNEW
+      Preferred Term: Characteristic Text
+      Definition: An instance of structured text that represents the characteristic.
       Relationship Type: Value
       Model Name: text
       Inherited From:
@@ -647,24 +659,38 @@ EligibilityCriteria:
         $ref: '#/SyntaxTemplate'
     name:
       $ref: '#/string'
+      NCI C-Code: CNEW
+      Preferred Term: Study Eligibility Criteria Description
+      Definition: A narrative representation of the study eligibility criteria.
       Relationship Type: Value
       Model Name: name
       Inherited From:
         $ref: '#/SyntaxTemplate'
     description:
       $ref: '#/string'
+      NCI C-Code: CNEW
+      Preferred Term: Study Eligibility Criteria Name
+      Definition: The literal identifier (i.e., distinctive designation) of the study
+        eligibility criteria.
       Relationship Type: Value
       Model Name: description
       Inherited From:
         $ref: '#/SyntaxTemplate'
     label:
       $ref: '#/string'
+      NCI C-Code: CNEW
+      Preferred Term: Study Eligibility Criteria Label
+      Definition: The short descriptive designation for the study eligibility criteria.
       Relationship Type: Value
       Model Name: label
       Inherited From:
         $ref: '#/SyntaxTemplate'
     text:
       $ref: '#/string'
+      NCI C-Code: CNEW
+      Preferred Term: Eligibility Criteria Text
+      Definition: An instance of structured text that represents the study eligibility
+        criteria.
       Relationship Type: Value
       Model Name: text
       Inherited From:
@@ -823,24 +849,37 @@ Endpoint:
         $ref: '#/SyntaxTemplate'
     name:
       $ref: '#/string'
+      NCI C-Code: CNEW
+      Preferred Term: Endpoint Name
+      Definition: The literal identifier (i.e., distinctive designation) of the study
+        endpoint.
       Relationship Type: Value
       Model Name: name
       Inherited From:
         $ref: '#/SyntaxTemplate'
     description:
       $ref: '#/string'
+      NCI C-Code: C188824
+      Preferred Term: Study Endpoint Description
+      Definition: A narrative representation of the study endpoint.
       Relationship Type: Value
       Model Name: description
       Inherited From:
         $ref: '#/SyntaxTemplate'
     label:
       $ref: '#/string'
+      NCI C-Code: CNEW
+      Preferred Term: Endpoint Label
+      Definition: The short descriptive designation for the study endpoint.
       Relationship Type: Value
       Model Name: label
       Inherited From:
         $ref: '#/SyntaxTemplate'
     text:
       $ref: '#/string'
+      NCI C-Code: CNEW
+      Preferred Term: Study Endpoint Text
+      Definition: An instance of structured text that represents the study endpoint.
       Relationship Type: Value
       Model Name: text
       Inherited From:
@@ -1152,24 +1191,37 @@ Objective:
         $ref: '#/SyntaxTemplate'
     name:
       $ref: '#/string'
+      NCI C-Code: CNEW
+      Preferred Term: Study Objective Name
+      Definition: The literal identifier (i.e., distinctive designation) of the study
+        objective.
       Relationship Type: Value
       Model Name: name
       Inherited From:
         $ref: '#/SyntaxTemplate'
     description:
       $ref: '#/string'
+      NCI C-Code: C94090
+      Preferred Term: Study Objective Description
+      Definition: A narrative representation of the study objective. (BRIDG)
       Relationship Type: Value
       Model Name: description
       Inherited From:
         $ref: '#/SyntaxTemplate'
     label:
       $ref: '#/string'
+      NCI C-Code: CNEW
+      Preferred Term: Study Objective Label
+      Definition: The short descriptive designation for the study objective.
       Relationship Type: Value
       Model Name: label
       Inherited From:
         $ref: '#/SyntaxTemplate'
     text:
       $ref: '#/string'
+      NCI C-Code: CNEW
+      Preferred Term: Study Objective Text
+      Definition: An instance of structured text that represents the study objective.
       Relationship Type: Value
       Model Name: text
       Inherited From:
@@ -1272,12 +1324,22 @@ PopulationDefinition:
       Model Name: id
     name:
       $ref: '#/string'
+      NCI C-Code: CNEW
+      Preferred Term: Population Definition Name
+      Definition: The literal identifier (i.e., distinctive designation) of the population
+        definition.
       Model Name: name
     description:
       $ref: '#/string'
+      NCI C-Code: CNEW
+      Preferred Term: Population Definition Description
+      Definition: A narrative representation of the population definition.
       Model Name: description
     label:
       $ref: '#/string'
+      NCI C-Code: CNEW
+      Preferred Term: Population Definition Label
+      Definition: The short descriptive designation for the population definition.
       Model Name: label
     plannedSex:
       $ref: '#/Code'
@@ -1930,18 +1992,28 @@ StudyCohort:
         $ref: '#/PopulationDefinition'
     name:
       $ref: '#/string'
+      NCI C-Code: CNEW
+      Preferred Term: Study Cohort Name
+      Definition: The literal identifier (i.e., distinctive designation) of the study
+        cohort.
       Relationship Type: Value
       Model Name: name
       Inherited From:
         $ref: '#/PopulationDefinition'
     description:
       $ref: '#/string'
+      NCI C-Code: CNEW
+      Preferred Term: Study Cohort Description
+      Definition: A narrative representation of the study cohort.
       Relationship Type: Value
       Model Name: description
       Inherited From:
         $ref: '#/PopulationDefinition'
     label:
       $ref: '#/string'
+      NCI C-Code: CNEW
+      Preferred Term: Study Cohort Label
+      Definition: The short descriptive designation for the study cohort.
       Relationship Type: Value
       Model Name: label
       Inherited From:
@@ -2186,18 +2258,28 @@ StudyDesignPopulation:
         $ref: '#/PopulationDefinition'
     name:
       $ref: '#/string'
+      NCI C-Code: CNEW
+      Preferred Term: Target Study Population Name
+      Definition: The literal identifier (i.e., distinctive designation) of the target
+        study population.
       Relationship Type: Value
       Model Name: name
       Inherited From:
         $ref: '#/PopulationDefinition'
     description:
       $ref: '#/string'
+      NCI C-Code: C70834
+      Preferred Term: Target Study Population Description
+      Definition: A narrative representation of the study population.
       Relationship Type: Value
       Model Name: description
       Inherited From:
         $ref: '#/PopulationDefinition'
     label:
       $ref: '#/string'
+      NCI C-Code: CNEW
+      Preferred Term: Study Design Population Label
+      Definition: The short descriptive designation for the study design population.
       Relationship Type: Value
       Model Name: label
       Inherited From:
