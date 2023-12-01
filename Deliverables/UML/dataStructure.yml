@@ -135,7 +135,12 @@ Address:
       Model Name: state
     country:
       $ref: '#/Code'
+      NCI C-Code: C25464
       Cardinality: 0..1
+      Preferred Term: Country
+      Definition: A sovereign nation occupying a distinct territory and ruled by an
+        autonomous government.
+      Codelist Ref: (Point out to ISO 3166-1 Alpha-3 Country code)
       Relationship Type: Value
       Model Name: country
 AdministrationDuration:
@@ -173,7 +178,11 @@ AdministrationDuration:
       Model Name: reasonDurationWillVary
     quantity:
       $ref: '#/Quantity'
+      NCI C-Code: CNEW
       Cardinality: '1'
+      Preferred Term: Administration Duration Quantity Value
+      Definition: The value representing the amount of time elapsed during the administration
+        of an agent.
       Relationship Type: Value
       Model Name: quantity
 AgentAdministration:
@@ -216,17 +225,30 @@ AgentAdministration:
       Model Name: duration
     route:
       $ref: '#/Code'
+      NCI C-Code: C38114
       Cardinality: '1'
+      Preferred Term: Route of Administration
+      Definition: The pathway by which a substance is administered in order to reach
+        the site of action in the body.
+      Codelist Ref: SDTM Terminology Codelist C66729
       Relationship Type: Value
       Model Name: route
     dose:
       $ref: '#/Quantity'
+      NCI C-Code: CNEW
       Cardinality: '1'
+      Preferred Term: Agent Administration Dose
+      Definition: The value representing the amount of an agent given to an individual
+        at one time.
       Relationship Type: Value
       Model Name: dose
     frequency:
       $ref: '#/Code'
+      NCI C-Code: C89081
       Cardinality: '1'
+      Preferred Term: Dosing Frequency
+      Definition: The number of doses administered per a specific interval.
+      Codelist Ref: SDTM Terminology Codelist C71113
       Relationship Type: Value
       Model Name: frequency
 AliasCode:
@@ -698,7 +720,11 @@ EligibilityCriteria:
       Model Name: identifier
     category:
       $ref: '#/Code'
+      NCI C-Code: C83016
       Cardinality: '1'
+      Preferred Term: Study Eligibility Criteria Category
+      Definition: A classification of the inclusion exclusion criterion.
+      Codelist Ref: SDTM Terminology Codelist C66797
       Relationship Type: Value
       Model Name: category
     contextId:
@@ -756,17 +782,33 @@ Encounter:
       Model Name: label
     environmentalSetting:
       $ref: '#/Code'
+      NCI C-Code: C188840
       Cardinality: 0..1
+      Preferred Term: Environmental Setting
+      Definition: The environment/setting where the event, intervention, or finding
+        occurred.
+      Codelist Ref: SDTM Terminology Codelist C127262
       Relationship Type: Value
       Model Name: environmentalSetting
     contactModes:
       $ref: '#/Code'
+      NCI C-Code: C188841
       Cardinality: 0..*
+      Preferred Term: Contact Mode
+      Definition: The means by which an interaction occurs between the subject/participant
+        and person or entity (e.g., a device).
+      Codelist Ref: SDTM Terminology Codelist C171445
       Relationship Type: Value
       Model Name: contactModes
     type:
       $ref: '#/Code'
+      NCI C-Code: C188839
       Cardinality: '1'
+      Preferred Term: Clinical Encounter Type
+      Definition: A characterization or classification of contact between subject/patient
+        and healthcare practitioner/researcher, during which an assessment or activity
+        is performed.
+      Codelist Ref: C188728
       Relationship Type: Value
       Model Name: type
     transitionEndRule:
@@ -866,7 +908,12 @@ Endpoint:
       Model Name: purpose
     level:
       $ref: '#/Code'
+      NCI C-Code: C188826
       Cardinality: '1'
+      Preferred Term: Study Endpoint Level
+      Definition: A characterization or classification of the study endpoint that
+        determines its category of importance relative to other study endpoints.
+      Codelist Ref: C188726
       Relationship Type: Value
       Model Name: level
     instanceType:
@@ -928,12 +975,22 @@ GeographicScope:
       Model Name: id
     code:
       $ref: '#/AliasCode'
+      NCI C-Code: CNEW
       Cardinality: 0..1
+      Preferred Term: Geographic Scope Code
+      Definition: A symbol or combination of symbols which is assigned to the geographic
+        scope.
+      Codelist Ref: '(Point out to external dictionaries: Standard code is ISO-3166;
+        Alias codes drawn from GENC, UN Region Codes, etc.)'
       Relationship Type: Value
       Model Name: code
     type:
       $ref: '#/Code'
+      NCI C-Code: CNEW
       Cardinality: '1'
+      Preferred Term: Geographic Scope Type
+      Definition: A characterization or classification of the geographic scope.
+      Codelist Ref: CNEW - Geographic Scope Type Value Set Terminology
       Relationship Type: Value
       Model Name: type
     instanceType:
@@ -982,7 +1039,11 @@ GovernanceDate:
       Model Name: dateValue
     type:
       $ref: '#/Code'
+      NCI C-Code: CNEW
       Cardinality: '1'
+      Preferred Term: Protocol Approval Date Type
+      Definition: A characterization or classification of the protocol approval date.
+      Codelist Ref: CNEW - Governance Date Type Value Set Terminology
       Relationship Type: Value
       Model Name: type
     geographicScopes:
@@ -1026,7 +1087,12 @@ Indication:
       Model Name: label
     codes:
       $ref: '#/Code'
+      NCI C-Code: C188822
       Cardinality: 0..*
+      Preferred Term: Disease Indication Code
+      Definition: A short sequence of characters that represents the disease indication.
+      Codelist Ref: (Point out to multiple Biomedical coding dictionaries such as
+        SNOMEDCT (for FDA), MedDRA, NCIt, ICD's, etc.)
       Relationship Type: Value
       Model Name: codes
 IntercurrentEvent:
@@ -1177,7 +1243,12 @@ Objective:
         $ref: '#/SyntaxTemplate'
     level:
       $ref: '#/Code'
+      NCI C-Code: C188823
       Cardinality: 0..1
+      Preferred Term: Study Objective Level
+      Definition: A characterization or classification of the study objective that
+        determines its category of importance relative to other study objectives.
+      Codelist Ref: C188725
       Relationship Type: Value
       Model Name: level
     endpoints:
@@ -1237,7 +1308,14 @@ Organization:
       Model Name: legalAddress
     type:
       $ref: '#/Code'
+      NCI C-Code: C188820
       Cardinality: '1'
+      Preferred Term: Organization Type
+      Definition: A characterization or classification of the formalized group of
+        persons or other organizations collected together for a common purpose (such
+        as administrative, legal, political) and the infrastructure to carry out that
+        purpose.
+      Codelist Ref: C188724
       Relationship Type: Value
       Model Name: type
 PopulationDefinition:
@@ -1281,15 +1359,27 @@ PopulationDefinition:
       Model Name: criteria
     plannedAge:
       $ref: '#/Range'
+      NCI C-Code: CNEW
       Cardinality: 0..1
+      Preferred Term: Population Definition Planned Age
+      Definition: The anticipated age of subjects within the population definition.
       Model Name: plannedAge
     plannedEnrollmentNumber:
       $ref: '#/Range'
+      NCI C-Code: CNEW
       Cardinality: 0..1
+      Preferred Term: Population Definition Planned Enrollment Number
+      Definition: The value representing the planned number of subjects to be entered
+        in a clinical trial, within the population definition.
       Model Name: plannedEnrollmentNumber
     plannedCompletionNumber:
       $ref: '#/Range'
+      NCI C-Code: CNEW
       Cardinality: 0..1
+      Preferred Term: Population Definition Planned Completion Number
+      Definition: The value representing the planned number of subjects that must
+        complete the study in order to meet the objectives and endpoints of the study,
+        within the population definition.
       Model Name: plannedCompletionNumber
 Procedure:
   NCI C-Code: C98769
@@ -1348,7 +1438,13 @@ Procedure:
       Model Name: isConditionalReason
     code:
       $ref: '#/Code'
+      NCI C-Code: C154626
       Cardinality: '1'
+      Preferred Term: Procedure Code
+      Definition: A symbol or combination of symbols which is assigned to medical
+        procedure.
+      Codelist Ref: (Point out to external dictionary like CPT, MedDRA, SNOMEDCT,
+        etc.)
       Relationship Type: Value
       Model Name: code
     studyInterventionId:
@@ -1376,7 +1472,11 @@ Quantity:
       Model Name: value
     unit:
       $ref: '#/Code'
+      NCI C-Code: C44258
       Cardinality: 0..1
+      Preferred Term: Quantity Unit
+      Definition: The type of unit of measure being used to express a quantity.
+      Codelist Ref: SDTM Terminology Codelist C71620
       Relationship Type: Value
       Model Name: unit
 Range:
@@ -1796,7 +1896,12 @@ StudyAmendmentReason:
       Model Name: otherReason
     code:
       $ref: '#/Code'
+      NCI C-Code: CNEW
       Cardinality: '1'
+      Preferred Term: Study Amendment Reason Code
+      Definition: A symbol or combination of symbols which is assigned to the study
+        amendment reason.
+      Codelist Ref: (Point to ICH M11 Reason for Amendment Response codelist)
       Relationship Type: Value
       Model Name: code
 StudyArm:
@@ -1842,12 +1947,21 @@ StudyArm:
       Model Name: dataOriginDescription
     dataOriginType:
       $ref: '#/Code'
+      NCI C-Code: C188829
       Cardinality: '1'
+      Preferred Term: Study Arm Data Origin Type
+      Definition: A characterization or classification of the study arm with respect
+        to where the study arm data originates. 
+      Codelist Ref: C188727
       Relationship Type: Value
       Model Name: dataOriginType
     type:
       $ref: '#/Code'
+      NCI C-Code: C188827
       Cardinality: '1'
+      Preferred Term: Study Arm Type
+      Definition: A characterization or classification of the study arm.
+      Codelist Ref: Protocol Terminology Codelist C174222
       Relationship Type: Value
       Model Name: type
     populationIds:
@@ -2020,27 +2134,55 @@ StudyDesign:
       Model Name: activities
     trialIntentTypes:
       $ref: '#/Code'
+      NCI C-Code: C49652
       Cardinality: 0..*
+      Preferred Term: Trial Intent Type
+      Definition: The planned purpose of the therapy, device, or agent under study
+        in the clinical trial.
+      Codelist Ref: SDTM Terminology Codelist C66736
       Relationship Type: Value
       Model Name: trialIntentTypes
     blindingSchema:
       $ref: '#/Code'
+      NCI C-Code: C49658
       Cardinality: 0..1
+      Preferred Term: Trial Blinding Schema
+      Definition: The type of experimental design used to describe the level of awareness
+        of the study subjects and/ or study personnel as it relates to the respective
+        intervention(s) or assessments being observed, received or administered.
+      Codelist Ref: SDTM Terminology Codelist C66735
       Relationship Type: Value
       Model Name: blindingSchema
     therapeuticAreas:
       $ref: '#/Code'
+      NCI C-Code: C101302
       Cardinality: 0..*
+      Preferred Term: Therapeutic Areas
+      Definition: A categorization of a disease, disorder, or other condition based
+        on common characteristics and often associated with a medical specialty focusing
+        on research and development of specific therapeutic interventions for the
+        purpose of treatment and prevention.
+      Codelist Ref: (Point out to external dictionaries)
       Relationship Type: Value
       Model Name: therapeuticAreas
     trialTypes:
       $ref: '#/Code'
+      NCI C-Code: C49660
       Cardinality: 0..*
+      Preferred Term: Trial Type
+      Definition: The nature of the interventional study for which information is
+        being collected.
+      Codelist Ref: SDTM Terminology Codelist C66739
       Relationship Type: Value
       Model Name: trialTypes
     interventionModel:
       $ref: '#/Code'
+      NCI C-Code: C98746
       Cardinality: '1'
+      Preferred Term: Intervention Model Type
+      Definition: The general design of the strategy for assigning interventions to
+        participants in a clinical study. (clinicaltrials.gov)
+      Codelist Ref: SDTM Terminology Codelist C99076
       Relationship Type: Value
       Model Name: interventionModel
     encounters:
@@ -2164,7 +2306,12 @@ StudyDesignPopulation:
         $ref: '#/PopulationDefinition'
     plannedSex:
       $ref: '#/Code'
+      NCI C-Code: C49696
       Cardinality: '1'
+      Preferred Term: Sex of Participants
+      Definition: The specific sex, either male, female, or mixed of the subject group
+        being studied. (NCI)
+      Codelist Ref: SDTM Terminology Codelist C66732
       Relationship Type: Value
       Model Name: plannedSex
       Inherited From:
@@ -2299,7 +2446,13 @@ StudyEpoch:
       Model Name: label
     type:
       $ref: '#/Code'
+      NCI C-Code: C188830
       Cardinality: '1'
+      Preferred Term: Study Epoch Type
+      Definition: A characterization or classification of the study epoch, i.e., the
+        named time period defined in the protocol, wherein a study activity is specified
+        and unchanging throughout the interval, to support a study-specific purpose.
+      Codelist Ref: SDTM Terminology Codelist C99079
       Relationship Type: Value
       Model Name: type
     previousId:
@@ -2376,27 +2529,52 @@ StudyIntervention:
       Model Name: administrations
     type:
       $ref: '#/Code'
+      NCI C-Code: C98747
       Cardinality: '1'
+      Preferred Term: Study Intervention Type
+      Definition: The kind of product or procedure studied in a trial.
+      Codelist Ref: SDTM Terminology Codelist C99078
       Relationship Type: Value
       Model Name: type
     role:
       $ref: '#/Code'
+      NCI C-Code: CNEW
       Cardinality: '1'
+      Preferred Term: Study Intervention Role
+      Definition: The intended use of the trial intervention within the context of
+        the study design.
+      Codelist Ref: (Point to ICH M11 Intervention Use Response)
       Relationship Type: Value
       Model Name: role
     productDesignation:
       $ref: '#/Code'
+      NCI C-Code: CNEW
       Cardinality: '1'
+      Preferred Term: Study Intervention Product Designation
+      Definition: An indication as to whether the investigational intervention is
+        an investigational medicinal product or an auxiliary medicinal product.
+      Codelist Ref: (Point to ICH M11 Investigational Medicinal Product Indicator
+        Response)
       Relationship Type: Value
       Model Name: productDesignation
     pharmacologicClass:
       $ref: '#/Code'
+      NCI C-Code: C98768
       Cardinality: 0..1
+      Preferred Term: Pharmacologic Class
+      Definition: The pharmacological class of the investigational product.
+      Codelist Ref: (Points to external codelists; FDA requirement to use…)
       Relationship Type: Value
       Model Name: pharmacologicClass
     codes:
       $ref: '#/Code'
+      NCI C-Code: CNEW
       Cardinality: 0..*
+      Preferred Term: Study Intervention Code
+      Definition: A symbol or combination of symbols which is assigned to the study
+        intervention.
+      Codelist Ref: (Point out to multiple Biomedical coding dictionaries such as
+        WHODrug, ATC, UNII, etc.)
       Relationship Type: Value
       Model Name: codes
     minimumResponseDuration:
@@ -2467,7 +2645,12 @@ StudyProtocolDocumentVersion:
       Model Name: protocolVersion
     protocolStatus:
       $ref: '#/Code'
+      NCI C-Code: C188818
       Cardinality: '1'
+      Preferred Term: Protocol Status
+      Definition: A condition of the protocol at a point in time with respect to its
+        state of readiness for implementation.
+      Codelist Ref: C188723
       Relationship Type: Value
       Model Name: protocolStatus
     dateValues:
@@ -2518,7 +2701,11 @@ StudyTitle:
       Model Name: text
     type:
       $ref: '#/Code'
+      NCI C-Code: CNEW
       Cardinality: '1'
+      Preferred Term: Study Title Type
+      Definition: A characterization or classification of the study title.
+      Codelist Ref: CNEW-DDF Study Title Attribute Terminology
       Model Name: type
 StudyVersion:
   NCI C-Code: C188816
@@ -2549,17 +2736,37 @@ StudyVersion:
       Model Name: rationale
     studyPhase:
       $ref: '#/AliasCode'
+      NCI C-Code: C48281
       Cardinality: 0..1
+      Preferred Term: Trial Phase
+      Definition: 'A step in the clinical research and development of a therapy from
+        initial clinical trials to post-approval studies. NOTE: Clinical trials are
+        generally categorized into four (sometimes five) phases. A therapeutic intervention
+        may be evaluated in two or more phases simultaneously in different trials,
+        and some trials may overlap two different phases. [21 CFR section 312.21;
+        After ICH Topic E8 NOTE FOR GUIDANCE ON GENERAL CONSIDERATIONS FOR CLINICAL
+        TRIALS,  CPMP/ICH/291/95 March 1998]'
+      Codelist Ref: SDTM Terminology Codelist C66737
       Relationship Type: Value
       Model Name: studyPhase
     businessTherapeuticAreas:
       $ref: '#/Code'
+      NCI C-Code: CNEW
       Cardinality: 0..*
+      Preferred Term: Business Therapeutic Areas
+      Definition: A therapeutic area classification based on the structure and operations
+        of the business unit.
+      Codelist Ref: (Point out to external dictionaries)
       Relationship Type: Value
       Model Name: businessTherapeuticAreas
     type:
       $ref: '#/Code'
+      NCI C-Code: C142175
       Cardinality: 0..1
+      Preferred Term: Study Type Classification
+      Definition: The nature of the investigation for which study information is being
+        collected. (After clinicaltrials.gov)
+      Codelist Ref: SDTM Terminology Codelist C99077
       Relationship Type: Value
       Model Name: type
     dateValues:
@@ -2639,7 +2846,10 @@ SubjectEnrollment:
         $ref: '#/GeographicScope'
     quantity:
       $ref: '#/Quantity'
+      NCI C-Code: CNEW
       Cardinality: '1'
+      Preferred Term: Subject Enrollment Quantity Value
+      Definition: The value representing the number of individuals enrolled in a study.
       Relationship Type: Value
       Model Name: quantity
     instanceType:
@@ -2798,12 +3008,22 @@ Timing:
       Model Name: windowUpper
     relativeToFrom:
       $ref: '#/Code'
+      NCI C-Code: C201297
       Cardinality: '1'
+      Preferred Term: Timing Relative To From
+      Definition: The name of the reference event used to define the temporal relationship
+        with another event.
+      Codelist Ref: C201265
       Relationship Type: Value
       Model Name: relativeToFrom
     type:
       $ref: '#/Code'
+      NCI C-Code: C201298
       Cardinality: '1'
+      Preferred Term: Timing Type
+      Definition: A characterization or classification of the chronological relationship
+        between temporal events.
+      Codelist Ref: C201264
       Relationship Type: Value
       Model Name: type
     relativeToScheduledInstanceId:
