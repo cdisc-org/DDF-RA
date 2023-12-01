@@ -1,6 +1,9 @@
 Activity:
-  NCI C-Code: Activity
-  Preferred Term: C71473
+  NCI C-Code: C71473
+  Preferred Term: Study Activity
+  Definition: An action, undertaking, or event, which is anticipated to be performed
+    or observed, or was performed or observed, according to the study protocol during
+    the execution of the study.
   Modifier: Concrete
   Attributes:
     id:
@@ -9,14 +12,24 @@ Activity:
       Model Name: id
     name:
       $ref: '#/string'
+      NCI C-Code: C188842
+      Preferred Term: Clinical Study Activity Name
+      Definition: The literal identifier (i.e., distinctive designation) of the clinical
+        study activity.
       Relationship Type: Value
       Model Name: name
     description:
       $ref: '#/string'
+      NCI C-Code: C70960
+      Preferred Term: Clinical Study Activity Description
+      Definition: A narrative representation of the study activity.
       Relationship Type: Value
       Model Name: description
     label:
       $ref: '#/string'
+      NCI C-Code: CNEW
+      Preferred Term: Activity Label
+      Definition: The short descriptive designation for the activity.
       Relationship Type: Value
       Model Name: label
     definedProcedures:
@@ -61,8 +74,10 @@ Activity:
       $ref: UNKNOWN
       Relationship Type: Value
 Address:
-  NCI C-Code: Address
-  Preferred Term: C25407
+  NCI C-Code: C25407
+  Preferred Term: Address
+  Definition: A standardized representation of the location of a person, business,
+    building, or organization. (NCI)
   Modifier: Concrete
   Attributes:
     id:
@@ -71,26 +86,51 @@ Address:
       Model Name: id
     text:
       $ref: '#/string'
+      NCI C-Code: C201311
+      Preferred Term: Address Full Text
+      Definition: A standardized representation of the complete set of components
+        denoting the physical address of the person, business, building, or organization.
       Relationship Type: Value
       Model Name: text
     line:
       $ref: '#/string'
+      NCI C-Code: C25690
+      Preferred Term: Address Line
+      Definition: The street name and number, building number, apartment or unit number,
+        or post office box number where an entity is physically located.
       Relationship Type: Value
       Model Name: line
     district:
       $ref: '#/string'
+      NCI C-Code: C176229
+      Preferred Term: District
+      Definition: An administrative or territorial division of a city, town, county,
+        parish, state, country, or other locality based on a shared characteristic.
       Relationship Type: Value
       Model Name: district
     city:
       $ref: '#/string'
+      NCI C-Code: C25160
+      Preferred Term: City
+      Definition: A relatively large and/or densely populated area of human habitation
+        with administrative or legal status that may be specified as a component of
+        a postal address.
       Relationship Type: Value
       Model Name: city
     postalCode:
       $ref: '#/string'
+      NCI C-Code: C25621
+      Preferred Term: Postal Code
+      Definition: An alphanumeric code assigned to a mail delivery area.
       Relationship Type: Value
       Model Name: postalCode
     state:
       $ref: '#/string'
+      NCI C-Code: C87194
+      Preferred Term: State
+      Definition: A sub-division of a country that forms part of a federal union.
+        States are usually, but not always, more autonomous than provinces and may
+        have different laws from the central government.
       Relationship Type: Value
       Model Name: state
     country:
@@ -99,8 +139,9 @@ Address:
       Relationship Type: Value
       Model Name: country
 AdministrationDuration:
-  NCI C-Code: AdministrationDuration
-  Preferred Term: C69282
+  NCI C-Code: C69282
+  Preferred Term: Administration Duration
+  Definition: The amount of time elapsed during the administration of an agent.
   Modifier: Concrete
   Attributes:
     id:
@@ -109,14 +150,25 @@ AdministrationDuration:
       Model Name: id
     description:
       $ref: '#/string'
+      NCI C-Code: CNEW
+      Preferred Term: Administration Duration Description
+      Definition: A narrative representation of the agent administration duration.
       Relationship Type: Value
       Model Name: description
     durationWillVary:
       $ref: '#/boolean'
+      NCI C-Code: CNEW
+      Preferred Term: Administration Duration Will Vary Indicator
+      Definition: An indication as to whether the agent administration duration is
+        planned to vary within and/or across subjects.
       Relationship Type: Value
       Model Name: durationWillVary
     reasonDurationWillVary:
       $ref: '#/string'
+      NCI C-Code: CNEW
+      Preferred Term: Administration Duration Reason Duration Will Vary
+      Definition: The explanation for why the agent administration duration will vary
+        within and/or across subjects.
       Relationship Type: Value
       Model Name: reasonDurationWillVary
     quantity:
@@ -125,8 +177,10 @@ AdministrationDuration:
       Relationship Type: Value
       Model Name: quantity
 AgentAdministration:
-  NCI C-Code: AgentAdministration
-  Preferred Term: C70962
+  NCI C-Code: C70962
+  Preferred Term: Agent Administration
+  Definition: The act of the dispensing, applying, or tendering a medical product
+    or other agent.
   Modifier: Concrete
   Attributes:
     id:
@@ -135,14 +189,24 @@ AgentAdministration:
       Model Name: id
     name:
       $ref: '#/string'
+      NCI C-Code: CNEW
+      Preferred Term: Agent Administration Name
+      Definition: The literal identifier (i.e., distinctive designation) of the agent
+        administration.
       Relationship Type: Value
       Model Name: name
     description:
       $ref: '#/string'
+      NCI C-Code: CNEW
+      Preferred Term: Agent Administration Description
+      Definition: A narrative representation of the agent administration.
       Relationship Type: Value
       Model Name: description
     label:
       $ref: '#/string'
+      NCI C-Code: CNEW
+      Preferred Term: Agent Administration Label
+      Definition: The short descriptive designation for the agent administration.
       Relationship Type: Value
       Model Name: label
     duration:
@@ -166,8 +230,10 @@ AgentAdministration:
       Relationship Type: Value
       Model Name: frequency
 AliasCode:
-  NCI C-Code: AliasCode
-  Preferred Term: C201344
+  NCI C-Code: C201344
+  Preferred Term: Alias Code
+  Definition: An alternative symbol or combination of symbols which is assigned to
+    the members of a collection.
   Modifier: Concrete
   Attributes:
     id:
@@ -185,8 +251,13 @@ AliasCode:
       Relationship Type: Value
       Model Name: standardCodeAliases
 AnalysisPopulation:
-  NCI C-Code: AnalysisPopulation
-  Preferred Term: C188854
+  NCI C-Code: C188854
+  Preferred Term: Target Study Population for Analysis
+  Definition: A target study population on which an analysis is performed. These may
+    be represented by the entire study population, a subgroup defined by a particular
+    characteristic measured at baseline, or a principal stratum defined by the occurrence
+    (or non-occurrence, depending on context) of a specific intercurrent event. (ICH
+    E9 R1 Addendum)
   Modifier: Concrete
   Attributes:
     id:
@@ -195,23 +266,40 @@ AnalysisPopulation:
       Model Name: id
     text:
       $ref: '#/string'
+      NCI C-Code: CNEW
+      Preferred Term: Analysis Population Text
+      Definition: An instance of unstructured text that represents the analysis population.
       Relationship Type: Value
       Model Name: text
     name:
       $ref: '#/string'
+      NCI C-Code: CNEW
+      Preferred Term: Analysis Population Name
+      Definition: The literal identifier (i.e., distinctive designation) of the analysis
+        population.
       Relationship Type: Value
       Model Name: name
     description:
       $ref: '#/string'
+      NCI C-Code: C188854
+      Preferred Term: Target Study Population for Analysis Description
+      Definition: A narrative representation of the study population for analysis.
       Relationship Type: Value
       Model Name: description
     label:
       $ref: '#/string'
+      NCI C-Code: CNEW
+      Preferred Term: Analysis Population Label
+      Definition: The short descriptive designation for the analysis population.
       Relationship Type: Value
       Model Name: label
 BiomedicalConcept:
-  NCI C-Code: BiomedicalConcept
-  Preferred Term: C201345
+  NCI C-Code: C201345
+  Preferred Term: Biomedical Concept
+  Definition: A unit of biomedical knowledge created from a unique combination of
+    characteristics that include implementation details like variables and terminologies,
+    used as building blocks for standardized, hierarchically structured clinical research
+    information.
   Modifier: Concrete
   Attributes:
     id:
@@ -220,23 +308,41 @@ BiomedicalConcept:
       Model Name: id
     name:
       $ref: '#/string'
+      NCI C-Code: C201312
+      Preferred Term: Biomedical Concept Name
+      Definition: The literal identifier (i.e., distinctive designation) of the biomedical
+        concept.
       Relationship Type: Value
       Model Name: name
     label:
       $ref: '#/string'
+      NCI C-Code: CNEW
+      Preferred Term: Biomedical Concept Label
+      Definition: The short descriptive designation for the biomedical concept.
       Relationship Type: Value
       Model Name: label
     synonyms:
       $ref: '#/string'
+      NCI C-Code: C201314
+      Preferred Term: Biomedical Concept Synonym
+      Definition: A word or an expression that serves as a figurative, symbolic, or
+        exact substitute for a biomedical concept, and which has the same meaning.
       Relationship Type: Value
       Model Name: synonyms
     reference:
       $ref: '#/string'
+      NCI C-Code: C201313
+      Preferred Term: Biomedical Concept Reference
+      Definition: A citation to an authoritative source for a biomedical concept.
       Relationship Type: Value
       Model Name: reference
     code:
       $ref: '#/AliasCode'
+      NCI C-Code: CNEW
       Cardinality: '1'
+      Preferred Term: Biomedical Concept Concept Code
+      Definition: A concept unique identifier assigned to a biomedical concept that
+        points to the meaning of that biomedical concept.
       Relationship Type: Value
       Model Name: code
     properties:
@@ -245,8 +351,10 @@ BiomedicalConcept:
       Relationship Type: Value
       Model Name: properties
 BiomedicalConceptCategory:
-  NCI C-Code: BiomedicalConceptCategory
-  Preferred Term: C201346
+  NCI C-Code: C201346
+  Preferred Term: Biomedical Concept Category
+  Definition: A grouping of biomedical concepts based on some commonality or by user
+    defined characteristics.
   Modifier: Concrete
   Attributes:
     id:
@@ -255,19 +363,33 @@ BiomedicalConceptCategory:
       Model Name: id
     name:
       $ref: '#/string'
+      NCI C-Code: C201317
+      Preferred Term: Biomedical Concept Category Name
+      Definition: The literal identifier (i.e., distinctive designation) of the biomedical
+        concept category.
       Relationship Type: Value
       Model Name: name
     description:
       $ref: '#/string'
+      NCI C-Code: C201316
+      Preferred Term: Biomedical Concept Category Description
+      Definition: A narrative representation of the biomedical concept category.
       Relationship Type: Value
       Model Name: description
     label:
       $ref: '#/string'
+      NCI C-Code: CNEW
+      Preferred Term: Biomedical Concept Category Label
+      Definition: The short descriptive designation for the biomedical concept category.
       Relationship Type: Value
       Model Name: label
     code:
       $ref: '#/AliasCode'
+      NCI C-Code: C201315
       Cardinality: 0..1
+      Preferred Term: Biomedical Concept Category Code
+      Definition: A symbol or combination of symbols which is assigned to the biomedical
+        concept category.
       Relationship Type: Value
       Model Name: code
     memberIds:
@@ -281,8 +403,10 @@ BiomedicalConceptCategory:
       Relationship Type: Ref
       Model Name: children
 BiomedicalConceptProperty:
-  NCI C-Code: BiomedicalConceptProperty
-  Preferred Term: CNEW
+  NCI C-Code: CNEW
+  Preferred Term: Biomedical Concept Property
+  Definition: A characteristic from a set of characteristics used to define a biomedical
+    concept.
   Modifier: Concrete
   Attributes:
     id:
@@ -291,27 +415,50 @@ BiomedicalConceptProperty:
       Model Name: id
     name:
       $ref: '#/string'
+      NCI C-Code: CNEW
+      Preferred Term: Biomedical Concept Property Name
+      Definition: The literal identifier (i.e., distinctive designation) of the biomedical
+        concept property.
       Relationship Type: Value
       Model Name: name
     label:
       $ref: '#/string'
+      NCI C-Code: CNEW
+      Preferred Term: Biomedical Concept Property Label
+      Definition: The short descriptive designation for the biomedical concept property.
       Relationship Type: Value
       Model Name: label
     isRequired:
       $ref: '#/Boolean'
+      NCI C-Code: CNEW
+      Preferred Term: Biomedical Concept Property Required Indicator
+      Definition: An indication as to whether the biomedical concept property is required.
       Relationship Type: Value
       Model Name: isRequired
     isEnabled:
       $ref: '#/Boolean'
+      NCI C-Code: CNEW
+      Preferred Term: Biomedical Concept Property Enabled Indicator
+      Definition: An indication as to whether the biomedical concept property is activated
+        for use within a given usage context for a biomedical concept.
       Relationship Type: Value
       Model Name: isEnabled
     datatype:
       $ref: '#/string'
+      NCI C-Code: C201319
+      Preferred Term: Biomedical Concept Property Response Data Type
+      Definition: The structural format of the biomedical concept property response
+        value. The datatype is carried in the attribute and influences the set of
+        allowable values the attribute may assume. (After HL7)
       Relationship Type: Value
       Model Name: datatype
     code:
       $ref: '#/AliasCode'
+      NCI C-Code: C201318
       Cardinality: '1'
+      Preferred Term: Biomedical Concept Property Concept Code
+      Definition: A concept unique identifier assigned to a biomedical concept property
+        that points to the meaning of that biomedical concept property.
       Relationship Type: Value
       Model Name: code
     responseCodes:
@@ -320,7 +467,6 @@ BiomedicalConceptProperty:
       Relationship Type: Value
       Model Name: responseCodes
 BiomedicalConceptSurrogate:
-  NCI C-Code: BiomedicalConceptSurrogate
   Modifier: Concrete
   Attributes:
     id:
@@ -329,23 +475,37 @@ BiomedicalConceptSurrogate:
       Model Name: id
     name:
       $ref: '#/string'
+      NCI C-Code: CNEW
+      Preferred Term: Biomedical Concept Surrogate Name
+      Definition: The literal identifier (i.e., distinctive designation) of the biomedical
+        concept surrogate.
       Relationship Type: Value
       Model Name: name
     description:
       $ref: '#/string'
+      NCI C-Code: C201320
+      Preferred Term: Biomedical Concept Surrogate Description
+      Definition: A narrative representation of the biomedical concept surrogate.
       Relationship Type: Value
       Model Name: description
     label:
       $ref: '#/string'
+      NCI C-Code: CNEW
+      Preferred Term: Biomedical Concept Surrogate Label
+      Definition: The short descriptive designation for the biomedical concept surrogate.
       Relationship Type: Value
       Model Name: label
     reference:
       $ref: '#/string'
+      NCI C-Code: C201321
+      Preferred Term: Biomedical Concept Surrogate Reference
+      Definition: A citation to an authoritative source for a biomedical concept surrogate.
       Relationship Type: Value
       Model Name: reference
 Characteristic:
-  NCI C-Code: Characteristic
-  Preferred Term: C25447
+  NCI C-Code: C25447
+  Preferred Term: Characteristic
+  Definition: The distinguishing qualities or prominent aspects of an entity.
   Super Classes:
   - $ref: '#/SyntaxTemplate'
   Modifier: Concrete
@@ -358,24 +518,36 @@ Characteristic:
         $ref: '#/SyntaxTemplate'
     name:
       $ref: '#/string'
+      NCI C-Code: CNEW
+      Preferred Term: Characteristic Name
+      Definition: The literal identifier (i.e., distinctive designation) of the characteristic.
       Relationship Type: Value
       Model Name: name
       Inherited From:
         $ref: '#/SyntaxTemplate'
     description:
       $ref: '#/string'
+      NCI C-Code: CNEW
+      Preferred Term: Characteristic Description
+      Definition: A narrative representation of the characteristic.
       Relationship Type: Value
       Model Name: description
       Inherited From:
         $ref: '#/SyntaxTemplate'
     label:
       $ref: '#/string'
+      NCI C-Code: CNEW
+      Preferred Term: Characteristic Label
+      Definition: The short descriptive designation for the characteristic.
       Relationship Type: Value
       Model Name: label
       Inherited From:
         $ref: '#/SyntaxTemplate'
     text:
       $ref: '#/string'
+      NCI C-Code: CNEW
+      Preferred Term: Characteristic Text
+      Definition: An instance of structured text that represents the characteristic.
       Relationship Type: Value
       Model Name: text
       Inherited From:
@@ -392,8 +564,10 @@ Characteristic:
       Cardinality: 0..1
       Relationship Type: Value
 Code:
-  NCI C-Code: Code
-  Preferred Term: C25162
+  NCI C-Code: C25162
+  Preferred Term: Code
+  Definition: A symbol or combination of symbols which is assigned to the members
+    of a collection.
   Modifier: Concrete
   Attributes:
     id:
@@ -402,18 +576,32 @@ Code:
       Model Name: id
     code:
       $ref: '#/string'
+      NCI C-Code: C188858
+      Preferred Term: Code Value
+      Definition: The literal value of a code.
       Relationship Type: Value
       Model Name: code
     codeSystem:
       $ref: '#/string'
+      NCI C-Code: C188859
+      Preferred Term: Code System Name
+      Definition: The literal identifier (i.e., distinctive designation) of the system
+        used to assign and/or manage codes.
       Relationship Type: Value
       Model Name: codeSystem
     codeSystemVersion:
       $ref: '#/string'
+      NCI C-Code: C188868
+      Preferred Term: Code System Version
+      Definition: The version of the code system.
       Relationship Type: Value
       Model Name: codeSystemVersion
     decode:
       $ref: '#/string'
+      NCI C-Code: C188861
+      Preferred Term: Decode
+      Definition: Standardized or dictionary-derived human readable text associated
+        with a code.
       Relationship Type: Value
       Model Name: decode
 Condition:
@@ -440,9 +628,11 @@ Condition:
       Cardinality: 0..*
       Model Name: appliesTo
 EligibilityCriteria:
-  NCI C-Code: EligibilityCriteria
-  Preferred Term: C16112
-  Definition: Trial Eligibility Criteria
+  NCI C-Code: C16112
+  Preferred Term: Study Eligibility Criteria
+  Definition: Characteristics which are necessary to allow a subject to participate
+    in a clinical study, as outlined in the study protocol. The concept covers inclusion
+    and exclusion criteria.
   Super Classes:
   - $ref: '#/SyntaxTemplate'
   Modifier: Concrete
@@ -455,24 +645,38 @@ EligibilityCriteria:
         $ref: '#/SyntaxTemplate'
     name:
       $ref: '#/string'
+      NCI C-Code: CNEW
+      Preferred Term: Study Eligibility Criteria Description
+      Definition: A narrative representation of the study eligibility criteria.
       Relationship Type: Value
       Model Name: name
       Inherited From:
         $ref: '#/SyntaxTemplate'
     description:
       $ref: '#/string'
+      NCI C-Code: CNEW
+      Preferred Term: Study Eligibility Criteria Name
+      Definition: The literal identifier (i.e., distinctive designation) of the study
+        eligibility criteria.
       Relationship Type: Value
       Model Name: description
       Inherited From:
         $ref: '#/SyntaxTemplate'
     label:
       $ref: '#/string'
+      NCI C-Code: CNEW
+      Preferred Term: Study Eligibility Criteria Label
+      Definition: The short descriptive designation for the study eligibility criteria.
       Relationship Type: Value
       Model Name: label
       Inherited From:
         $ref: '#/SyntaxTemplate'
     text:
       $ref: '#/string'
+      NCI C-Code: CNEW
+      Preferred Term: Eligibility Criteria Text
+      Definition: An instance of structured text that represents the study eligibility
+        criteria.
       Relationship Type: Value
       Model Name: text
       Inherited From:
@@ -486,6 +690,10 @@ EligibilityCriteria:
         $ref: '#/SyntaxTemplate'
     identifier:
       $ref: '#/string'
+      NCI C-Code: CNEW
+      Preferred Term: Study Eligibility Criterion Identifier
+      Definition: A sequence of characters used to identify, name, or characterize
+        the inclusion or exclusion criterion.
       Relationship Type: Value
       Model Name: identifier
     category:
@@ -513,8 +721,11 @@ EligibilityCriteria:
       Cardinality: 0..1
       Relationship Type: Value
 Encounter:
-  NCI C-Code: Encounter
-  Preferred Term: C142427
+  NCI C-Code: C142427
+  Preferred Term: Clinical Encounter
+  Definition: Contact between subject/patient and healthcare practitioner/researcher,
+    during which an assessment or activity is performed. Contact may be physical or
+    virtual.
   Modifier: Concrete
   Attributes:
     id:
@@ -523,14 +734,24 @@ Encounter:
       Model Name: id
     name:
       $ref: '#/string'
+      NCI C-Code: C171010
+      Preferred Term: Clinical Encounter Name
+      Definition: The literal identifier (i.e., distinctive designation) for a protocol-defined
+        clinical encounter.
       Relationship Type: Value
       Model Name: name
     description:
       $ref: '#/string'
+      NCI C-Code: C188836
+      Preferred Term: Clinical Encounter Description
+      Definition: A narrative representation of the protocol-defined clinical encounter.
       Relationship Type: Value
       Model Name: description
     label:
       $ref: '#/string'
+      NCI C-Code: CNEW
+      Preferred Term: Encounter Label
+      Definition: The short descriptive designation for the encounter.
       Relationship Type: Value
       Model Name: label
     environmentalSetting:
@@ -574,8 +795,14 @@ Encounter:
       Relationship Type: Ref
       Model Name: previous
 Endpoint:
-  NCI C-Code: Endpoint
-  Preferred Term: C25212
+  NCI C-Code: C25212
+  Preferred Term: Study Endpoint
+  Definition: 'A defined variable intended to reflect an outcome of interest that
+    is statistically analyzed to address a particular research question. NOTE: A precise
+    definition of an endpoint typically specifies the type of assessments made, the
+    timing of those assessments, the assessment tools used, and possibly other details,
+    as applicable, such as how multiple assessments within an individual are to be
+    combined. [After BEST Resource] (CDISC Glossary)'
   Super Classes:
   - $ref: '#/SyntaxTemplate'
   Modifier: Concrete
@@ -588,24 +815,37 @@ Endpoint:
         $ref: '#/SyntaxTemplate'
     name:
       $ref: '#/string'
+      NCI C-Code: CNEW
+      Preferred Term: Endpoint Name
+      Definition: The literal identifier (i.e., distinctive designation) of the study
+        endpoint.
       Relationship Type: Value
       Model Name: name
       Inherited From:
         $ref: '#/SyntaxTemplate'
     description:
       $ref: '#/string'
+      NCI C-Code: C188824
+      Preferred Term: Study Endpoint Description
+      Definition: A narrative representation of the study endpoint.
       Relationship Type: Value
       Model Name: description
       Inherited From:
         $ref: '#/SyntaxTemplate'
     label:
       $ref: '#/string'
+      NCI C-Code: CNEW
+      Preferred Term: Endpoint Label
+      Definition: The short descriptive designation for the study endpoint.
       Relationship Type: Value
       Model Name: label
       Inherited From:
         $ref: '#/SyntaxTemplate'
     text:
       $ref: '#/string'
+      NCI C-Code: CNEW
+      Preferred Term: Study Endpoint Text
+      Definition: An instance of structured text that represents the study endpoint.
       Relationship Type: Value
       Model Name: text
       Inherited From:
@@ -619,6 +859,9 @@ Endpoint:
         $ref: '#/SyntaxTemplate'
     purpose:
       $ref: '#/string'
+      NCI C-Code: C188825
+      Preferred Term: Study Endpoint Purpose Description
+      Definition: The textual representation of the study endpoint purpose.
       Relationship Type: Value
       Model Name: purpose
     level:
@@ -631,8 +874,12 @@ Endpoint:
       Cardinality: 0..1
       Relationship Type: Value
 Estimand:
-  NCI C-Code: Estimand
-  Preferred Term: C188813
+  NCI C-Code: C188813
+  Preferred Term: Estimand
+  Definition: A precise description of the treatment effect reflecting the clinical
+    question posed by a given clinical trial objective. It summarises at a population
+    level what the outcomes would be in the same patients under different treatment
+    conditions being compared. (ICH E9 R1 Addendum)
   Modifier: Concrete
   Attributes:
     id:
@@ -641,6 +888,10 @@ Estimand:
       Model Name: id
     summaryMeasure:
       $ref: '#/string'
+      NCI C-Code: C188853
+      Preferred Term: Population-Level Summary
+      Definition: A synopsis of the clinical endpoint of interest within the analysis
+        target study population.
       Relationship Type: Value
       Model Name: summaryMeasure
     analysisPopulation:
@@ -664,8 +915,9 @@ Estimand:
       Relationship Type: Ref
       Model Name: treatment
 GeographicScope:
-  NCI C-Code: GeographicScope
-  Preferred Term: CNEW
+  NCI C-Code: CNEW
+  Preferred Term: Geographic Scope
+  Definition: The extent or range related to the physical location of an entity.
   Sub Classes:
   - $ref: '#/SubjectEnrollment'
   Modifier: Concrete
@@ -689,8 +941,10 @@ GeographicScope:
       Cardinality: 0..1
       Relationship Type: Value
 GovernanceDate:
-  NCI C-Code: GovernanceDate
-  Preferred Term: CNEW
+  NCI C-Code: CNEW
+  Preferred Term: Study Governance Date
+  Definition: Any of the dates associated with event milestones within a clinical
+    study's oversight and management framework.
   Modifier: Concrete
   Attributes:
     id:
@@ -699,18 +953,31 @@ GovernanceDate:
       Model Name: id
     name:
       $ref: '#/string'
+      NCI C-Code: CNEW
+      Preferred Term: Study Governance Date Name
+      Definition: The literal identifier (i.e., distinctive designation) of the study
+        governance date
       Relationship Type: Value
       Model Name: name
     description:
       $ref: '#/string'
+      NCI C-Code: CNEW
+      Preferred Term: Study Governance Date Description
+      Definition: A narrative representation of the study governance date.
       Relationship Type: Value
       Model Name: description
     label:
       $ref: '#/string'
+      NCI C-Code: CNEW
+      Preferred Term: Study Governance Date Label
+      Definition: The short descriptive designation for the study governance date.
       Relationship Type: Value
       Model Name: label
     dateValue:
       $ref: '#/Date'
+      NCI C-Code: CNEW
+      Preferred Term: Study Governance Date Value
+      Definition: The information contained in the date field.
       Relationship Type: Value
       Model Name: dateValue
     type:
@@ -724,8 +991,10 @@ GovernanceDate:
       Relationship Type: Value
       Model Name: geographicScopes
 Indication:
-  NCI C-Code: Indication
-  Preferred Term: C41184
+  NCI C-Code: C41184
+  Preferred Term: Disease/Condition Indication
+  Definition: A health problem or disease that is identified as likely to be benefited
+    by a therapy being studied in clinical trials.
   Modifier: Concrete
   Attributes:
     id:
@@ -734,14 +1003,25 @@ Indication:
       Model Name: id
     name:
       $ref: '#/string'
+      NCI C-Code: CNEW
+      Preferred Term: Disease Indication Name
+      Definition: The literal identifier (i.e., distinctive designation) of the disease
+        indication.
       Relationship Type: Value
       Model Name: name
     description:
       $ref: '#/Sring'
+      NCI C-Code: C112038
+      Preferred Term: Trial Disease/Condition Indication Description
+      Definition: A narrative representation of the condition, disease or disorder
+        that the clinical trial is intended to investigate or address.
       Relationship Type: Value
       Model Name: description
     label:
       $ref: '#/string'
+      NCI C-Code: CNEW
+      Preferred Term: Indication Label
+      Definition: The short descriptive designation for the indication.
       Relationship Type: Value
       Model Name: label
     codes:
@@ -750,8 +1030,11 @@ Indication:
       Relationship Type: Value
       Model Name: codes
 IntercurrentEvent:
-  NCI C-Code: IntercurrentEvent
-  Preferred Term: C188815
+  NCI C-Code: C188815
+  Preferred Term: Intercurrent Event
+  Definition: An event(s) occurring after treatment initiation that affects either
+    the interpretation or the existence of the measurements associated with the clinical
+    question of interest. (ICH E9 Addendum on Estimands)
   Modifier: Concrete
   Attributes:
     id:
@@ -760,23 +1043,39 @@ IntercurrentEvent:
       Model Name: id
     name:
       $ref: '#/string'
+      NCI C-Code: C188855
+      Preferred Term: Intercurrent Event Name
+      Definition: The literal identifier (i.e., distinctive designation) of the intercurrent
+        event.
       Relationship Type: Value
       Model Name: name
     description:
       $ref: '#/string'
+      NCI C-Code: C188856
+      Preferred Term: Intercurrent Event Description
+      Definition: A narrative representation of the intercurrent event.
       Relationship Type: Value
       Model Name: description
     label:
       $ref: '#/string'
+      NCI C-Code: CNEW
+      Preferred Term: Intercurrent Event Label
+      Definition: The short descriptive designation for the intercurrent event.
       Relationship Type: Value
       Model Name: label
     strategy:
       $ref: '#/string'
+      NCI C-Code: C188857
+      Preferred Term: Intercurrent Event Strategy
+      Definition: A textual description of the planned strategy to manage and/or mitigate
+        intercurrent events.
       Relationship Type: Value
       Model Name: strategy
 NarrativeContent:
-  NCI C-Code: NarrativeContent
-  Preferred Term: CNEW
+  NCI C-Code: CNEW
+  Preferred Term: Narrative Content
+  Definition: The container that holds an instance of unstructured text and which
+    may include objects such as tables, figures, and images.
   Modifier: Concrete
   Attributes:
     id:
@@ -785,18 +1084,31 @@ NarrativeContent:
       Model Name: id
     name:
       $ref: '#/string'
+      NCI C-Code: CNEW
+      Preferred Term: Narrative Content Name
+      Definition: The literal identifier (i.e., distinctive designation) of the narrative
+        content.
       Relationship Type: Value
       Model Name: name
     text:
       $ref: '#/string'
+      NCI C-Code: CNEW
+      Preferred Term: Narrative Content Text
+      Definition: A textual representation of the narrative content.
       Relationship Type: Value
       Model Name: text
     sectionNumber:
       $ref: '#/string'
+      NCI C-Code: CNEW
+      Preferred Term: Section Number
+      Definition: The numeric identifier assigned to a particular document section.
       Relationship Type: Value
       Model Name: sectionNumber
     sectionTitle:
       $ref: '#/string'
+      NCI C-Code: CNEW
+      Preferred Term: Section Title
+      Definition: An identifying designation for the document section.
       Relationship Type: Value
       Model Name: sectionTitle
     childrenIds:
@@ -805,8 +1117,10 @@ NarrativeContent:
       Relationship Type: Ref
       Model Name: children
 Objective:
-  NCI C-Code: Objective
-  Preferred Term: C142450
+  NCI C-Code: C142450
+  Preferred Term: Study Objective
+  Definition: The reason for performing a study in terms of the scientific questions
+    to be answered by the analysis of data collected during the study.
   Super Classes:
   - $ref: '#/SyntaxTemplate'
   Modifier: Concrete
@@ -819,24 +1133,37 @@ Objective:
         $ref: '#/SyntaxTemplate'
     name:
       $ref: '#/string'
+      NCI C-Code: CNEW
+      Preferred Term: Study Objective Name
+      Definition: The literal identifier (i.e., distinctive designation) of the study
+        objective.
       Relationship Type: Value
       Model Name: name
       Inherited From:
         $ref: '#/SyntaxTemplate'
     description:
       $ref: '#/string'
+      NCI C-Code: C94090
+      Preferred Term: Study Objective Description
+      Definition: A narrative representation of the study objective. (BRIDG)
       Relationship Type: Value
       Model Name: description
       Inherited From:
         $ref: '#/SyntaxTemplate'
     label:
       $ref: '#/string'
+      NCI C-Code: CNEW
+      Preferred Term: Study Objective Label
+      Definition: The short descriptive designation for the study objective.
       Relationship Type: Value
       Model Name: label
       Inherited From:
         $ref: '#/SyntaxTemplate'
     text:
       $ref: '#/string'
+      NCI C-Code: CNEW
+      Preferred Term: Study Objective Text
+      Definition: An instance of structured text that represents the study objective.
       Relationship Type: Value
       Model Name: text
       Inherited From:
@@ -863,8 +1190,11 @@ Objective:
       Cardinality: 0..1
       Relationship Type: Value
 Organization:
-  NCI C-Code: Organization
-  Preferred Term: C19711
+  NCI C-Code: C19711
+  Preferred Term: Organization
+  Definition: A formalized group of persons or other organizations collected together
+    for a common purpose (such as administrative, legal, political) and the infrastructure
+    to carry out that purpose. (BRIDG)
   Modifier: Concrete
   Attributes:
     id:
@@ -873,18 +1203,31 @@ Organization:
       Model Name: id
     name:
       $ref: '#/string'
+      NCI C-Code: C93874
+      Preferred Term: Organization Name
+      Definition: A non-unique textual identifier for the organization. (BRIDG)
       Relationship Type: Value
       Model Name: name
     label:
       $ref: '#/string'
+      NCI C-Code: CNEW
+      Preferred Term: Organization Label
+      Definition: The short descriptive designation for the organization.
       Relationship Type: Value
       Model Name: label
     identifier:
       $ref: '#/string'
+      NCI C-Code: C93401
+      Preferred Term: Organization Identifier
+      Definition: A unique symbol that establishes identity of the organization. (BRIDG)
       Relationship Type: Value
       Model Name: identifier
     identifierScheme:
       $ref: '#/string'
+      NCI C-Code: C188819
+      Preferred Term: Identifier Provider Organization Name
+      Definition: The name of the organization that provides the identifier for the
+        entity.
       Relationship Type: Value
       Model Name: identifierScheme
     legalAddress:
@@ -898,8 +1241,9 @@ Organization:
       Relationship Type: Value
       Model Name: type
 PopulationDefinition:
-  NCI C-Code: PopulationDefinition
-  Preferred Term: CNEW
+  NCI C-Code: CNEW
+  Preferred Term: Population Definition
+  Definition: A concise explanation of the meaning of a population.
   Sub Classes:
   - $ref: '#/StudyCohort'
   - $ref: '#/StudyDesignPopulation'
@@ -910,12 +1254,22 @@ PopulationDefinition:
       Model Name: id
     name:
       $ref: '#/string'
+      NCI C-Code: CNEW
+      Preferred Term: Population Definition Name
+      Definition: The literal identifier (i.e., distinctive designation) of the population
+        definition.
       Model Name: name
     description:
       $ref: '#/string'
+      NCI C-Code: CNEW
+      Preferred Term: Population Definition Description
+      Definition: A narrative representation of the population definition.
       Model Name: description
     label:
       $ref: '#/string'
+      NCI C-Code: CNEW
+      Preferred Term: Population Definition Label
+      Definition: The short descriptive designation for the population definition.
       Model Name: label
     plannedSex:
       $ref: '#/Code'
@@ -938,8 +1292,10 @@ PopulationDefinition:
       Cardinality: 0..1
       Model Name: plannedCompletionNumber
 Procedure:
-  NCI C-Code: Procedure
-  Preferred Term: C98769
+  NCI C-Code: C98769
+  Preferred Term: Procedure
+  Definition: Any activity performed by manual and/or instrumental means for the purpose
+    of diagnosis, assessment, therapy, prevention, or palliative care.
   Modifier: Concrete
   Attributes:
     id:
@@ -948,26 +1304,46 @@ Procedure:
       Model Name: id
     name:
       $ref: '#/string'
+      NCI C-Code: C201325
+      Preferred Term: Procedure Name
+      Definition: The literal identifier (i.e., distinctive designation) of the procedure.
       Relationship Type: Value
       Model Name: name
     description:
       $ref: '#/string'
+      NCI C-Code: C201324
+      Preferred Term: Procedure Description
+      Definition: A narrative representation of the procedure.
       Relationship Type: Value
       Model Name: description
     label:
       $ref: '#/string'
+      NCI C-Code: CNEW
+      Preferred Term: Procedure Label
+      Definition: The short descriptive designation for the procedure.
       Relationship Type: Value
       Model Name: label
     procedureType:
       $ref: '#/string'
+      NCI C-Code: C188848
+      Preferred Term: Procedure Type
+      Definition: A characterization or classification of the study procedure.
       Relationship Type: Value
       Model Name: procedureType
     isConditional:
       $ref: '#/Boolean'
+      NCI C-Code: C201326
+      Preferred Term: Study Procedure is Conditional
+      Definition: An indication as to whether the study procedure is subject to or
+        dependent upon something else.
       Relationship Type: Value
       Model Name: isConditional
     isConditionalReason:
       $ref: '#/string'
+      NCI C-Code: C201327
+      Preferred Term: Study Procedure is Conditional Reason
+      Definition: The explanation for why the study procedure is subject to or dependent
+        upon something else.
       Relationship Type: Value
       Model Name: isConditionalReason
     code:
@@ -981,8 +1357,10 @@ Procedure:
       Relationship Type: Ref
       Model Name: studyIntervention
 Quantity:
-  NCI C-Code: Quantity
-  Preferred Term: C25256
+  NCI C-Code: C25256
+  Preferred Term: Quantity
+  Definition: How much there is of something that can be measured; the total amount
+    or number.
   Modifier: Concrete
   Attributes:
     id:
@@ -991,6 +1369,9 @@ Quantity:
       Model Name: id
     value:
       $ref: '#/Float'
+      NCI C-Code: C25712
+      Preferred Term: Quantity Value
+      Definition: A numerical quantity measured or assigned or computed.
       Relationship Type: Value
       Model Name: value
     unit:
@@ -999,8 +1380,10 @@ Quantity:
       Relationship Type: Value
       Model Name: unit
 Range:
-  NCI C-Code: Range
-  Preferred Term: C38013
+  NCI C-Code: C38013
+  Preferred Term: Range
+  Definition: The difference between the lowest and highest numerical values; the
+    limits or scale of variation.
   Modifier: Concrete
   Attributes:
     id:
@@ -1009,24 +1392,40 @@ Range:
       Model Name: id
     minValue:
       $ref: '#/float'
+      NCI C-Code: C25570
+      Preferred Term: Minimum Value
+      Definition: The smallest value in quantity or degree in a set of values.
       Relationship Type: Value
       Model Name: minValue
     maxValue:
       $ref: '#/float'
+      NCI C-Code: C25564
+      Preferred Term: Maximum Value
+      Definition: The largest value in quantity or degree in a set of values.
       Relationship Type: Value
       Model Name: maxValue
     isApproximate:
       $ref: '#/boolean'
+      NCI C-Code: CNEW
+      Preferred Term: Value Range is Approximate Indicator
+      Definition: An indication as to whether the value range is almost, but not quite,
+        exact.
       Relationship Type: Value
       Model Name: isApproximate
     unit:
       $ref: '#/Code'
+      NCI C-Code: C25709
       Cardinality: 0..1
+      Preferred Term: Unit of Measure
+      Definition: A named quantity in terms of which other quantities are measured
+        or specified, used as a standard measurement of like kinds.
       Relationship Type: Value
       Model Name: unit
 ResponseCode:
-  NCI C-Code: ResponseCode
-  Preferred Term: C201347
+  NCI C-Code: C201347
+  Preferred Term: Response Code
+  Definition: A symbol or combination of symbols representing the response to the
+    question.
   Modifier: Concrete
   Attributes:
     id:
@@ -1035,16 +1434,25 @@ ResponseCode:
       Model Name: id
     isEnabled:
       $ref: '#/Boolean'
+      NCI C-Code: C201330
+      Preferred Term: Response Code Enabled Indicator
+      Definition: An indication as to whether the response code is activated for use
+        within a given usage context.
       Relationship Type: Value
       Model Name: isEnabled
     code:
       $ref: '#/Code'
+      NCI C-Code: C25162
       Cardinality: '1'
+      Preferred Term: Code
+      Definition: A symbol or combination of symbols which is assigned to the members
+        of a collection.
       Relationship Type: Value
       Model Name: code
 ScheduleTimeline:
-  NCI C-Code: ScheduleTimeline
-  Preferred Term: C201348
+  NCI C-Code: C201348
+  Preferred Term: Schedule Timeline
+  Definition: A chronological schedule of planned temporal events.
   Modifier: Concrete
   Attributes:
     id:
@@ -1053,22 +1461,40 @@ ScheduleTimeline:
       Model Name: id
     name:
       $ref: '#/string'
+      NCI C-Code: C201334
+      Preferred Term: Schedule Timeline Name
+      Definition: The literal identifier (i.e., distinctive designation) of the schedule
+        timeline.
       Relationship Type: Value
       Model Name: name
     description:
       $ref: '#/string'
+      NCI C-Code: C201332
+      Preferred Term: Schedule Timeline Description
+      Definition: A narrative representation of the schedule timeline.
       Relationship Type: Value
       Model Name: description
     label:
       $ref: '#/string'
+      NCI C-Code: CNEW
+      Preferred Term: Schedule Timeline Label
+      Definition: The short descriptive designation for the schedule timeline.
       Relationship Type: Value
       Model Name: label
     entryCondition:
       $ref: '#/string'
+      NCI C-Code: C201333
+      Preferred Term: Schedule Timeline Entry Condition
+      Definition: A logical evaluation on which rests the validity of entry into a
+        schedule timeline.
       Relationship Type: Value
       Model Name: entryCondition
     mainTimeline:
       $ref: '#/Boolean'
+      NCI C-Code: C201331
+      Preferred Term: Main Timeline Indicator
+      Definition: An indication as to whether the timeline or timeline component is
+        part of the central or principal timeline.
       Relationship Type: Value
       Model Name: mainTimeline
     instances:
@@ -1087,8 +1513,9 @@ ScheduleTimeline:
       Relationship Type: Value
       Model Name: exits
 ScheduleTimelineExit:
-  NCI C-Code: ScheduleTimelineExit
-  Preferred Term: C201349
+  NCI C-Code: C201349
+  Preferred Term: Schedule Timeline Exit
+  Definition: To go out of or leave the schedule timeline.
   Modifier: Concrete
   Attributes:
     id:
@@ -1096,8 +1523,9 @@ ScheduleTimelineExit:
       Relationship Type: Value
       Model Name: id
 ScheduledActivityInstance:
-  NCI C-Code: ScheduledActivityInstance
-  Preferred Term: C201350
+  NCI C-Code: C201350
+  Preferred Term: Scheduled Activity Instance
+  Definition: A scheduled occurrence of an activity event.
   Super Classes:
   - $ref: '#/ScheduledInstance'
   Modifier: Concrete
@@ -1158,8 +1586,9 @@ ScheduledActivityInstance:
       Cardinality: 0..1
       Relationship Type: Value
 ScheduledDecisionInstance:
-  NCI C-Code: ScheduledDecisionInstance
-  Preferred Term: C201351
+  NCI C-Code: C201351
+  Preferred Term: Scheduled Decision Instance
+  Definition: A scheduled occurrence of a decision event.
   Super Classes:
   - $ref: '#/ScheduledInstance'
   Modifier: Concrete
@@ -1207,6 +1636,10 @@ ScheduledDecisionInstance:
         $ref: '#/ScheduledInstance'
     conditionAssignments:
       $ref: '#/Map'
+      NCI C-Code: C201335
+      Preferred Term: Condition Assignments
+      Definition: An allotting or appointment to a set of conditions that are to be
+        met in order to make a logical decision.
       Relationship Type: Value
       Model Name: conditionAssignments
     instanceType:
@@ -1214,8 +1647,9 @@ ScheduledDecisionInstance:
       Cardinality: 0..1
       Relationship Type: Value
 ScheduledInstance:
-  NCI C-Code: ScheduledInstance
-  Preferred Term: C201299
+  NCI C-Code: C201299
+  Preferred Term: Scheduled Instance
+  Definition: A scheduled occurrence of a temporal event.
   Sub Classes:
   - $ref: '#/ScheduledActivityInstance'
   - $ref: '#/ScheduledDecisionInstance'
@@ -1245,8 +1679,12 @@ ScheduledInstance:
       Cardinality: 0..1
       Model Name: timelineExit
 Study:
-  NCI C-Code: Study
-  Preferred Term: C15206
+  NCI C-Code: C15206
+  Preferred Term: Clinical Study
+  Definition: 'A clinical study involves research using human volunteers (also called
+    participants) that is intended to add to medical knowledge. There are two main
+    types of clinical studies: clinical trials (also called interventional studies)
+    and observational studies. [[http://ClinicalTrials.gov]](CDISC Glossary)'
   Modifier: Concrete
   Attributes:
     id:
@@ -1255,14 +1693,23 @@ Study:
       Model Name: id
     name:
       $ref: '#/string'
+      NCI C-Code: C68631
+      Preferred Term: Study Name
+      Definition: The literal identifier (i.e., distinctive designation) of the study.
       Relationship Type: Value
       Model Name: name
     description:
       $ref: '#/string'
+      NCI C-Code: C142704
+      Preferred Term: Study Description
+      Definition: A narrative representation of the study.
       Relationship Type: Value
       Model Name: description
     label:
       $ref: '#/string'
+      NCI C-Code: CNEW
+      Preferred Term: Study Label
+      Definition: The short descriptive designation for the study.
       Relationship Type: Value
       Model Name: label
     versions:
@@ -1276,8 +1723,10 @@ Study:
       Relationship Type: Value
       Model Name: documentedBy
 StudyAmendment:
-  NCI C-Code: StudyAmendment
-  Preferred Term: CNEW
+  NCI C-Code: CNEW
+  Preferred Term: Study Amendment
+  Definition: A written description of a change(s) to, or formal clarification of,
+    a study.
   Modifier: Concrete
   Attributes:
     id:
@@ -1286,14 +1735,25 @@ StudyAmendment:
       Model Name: id
     number:
       $ref: '#/string'
+      NCI C-Code: CNEW
+      Preferred Term: Study Amendment Number
+      Definition: A string of numerals that uniquely identifies a protocol amendment.
       Relationship Type: Value
       Model Name: number
     summary:
       $ref: '#/string'
+      NCI C-Code: CNEW
+      Preferred Term: Study Amendment Summary
+      Definition: A short narrative representation describing the changes introduced
+        in the current version of the protocol.
       Relationship Type: Value
       Model Name: summary
     substantialImpact:
       $ref: '#/Boolean'
+      NCI C-Code: CNEW
+      Preferred Term: Study Amendment Substantial Impact Indicator
+      Definition: An indication as to whether the amendment likely to have a substantial
+        impact on the safety or rights of the participants.
       Relationship Type: Value
       Model Name: substantialImpact
     enrollments:
@@ -1317,9 +1777,9 @@ StudyAmendment:
       Relationship Type: Value
       Model Name: primaryReason
 StudyAmendmentReason:
-  NCI C-Code: StudyAmendmentReason
-  Preferred Term: CNEW
-  Definition: Reason(s) for Amendment
+  NCI C-Code: CNEW
+  Preferred Term: Study Amendment Reason
+  Definition: The rationale for the change(s) to, or formal clarification of, a protocol.
   Modifier: Concrete
   Attributes:
     id:
@@ -1328,6 +1788,10 @@ StudyAmendmentReason:
       Model Name: id
     otherReason:
       $ref: '#/string'
+      NCI C-Code: CNEW
+      Preferred Term: Other Reason for Study Amendment
+      Definition: The rationale for the change(s) to, or formal clarification of,
+        a protocol that is not otherwise specified.
       Relationship Type: Value
       Model Name: otherReason
     code:
@@ -1336,8 +1800,11 @@ StudyAmendmentReason:
       Relationship Type: Value
       Model Name: code
 StudyArm:
-  NCI C-Code: StudyArm
-  Preferred Term: C174447
+  NCI C-Code: C174447
+  Preferred Term: Study Arm
+  Definition: A planned pathway assigned to the subject as they progress through the
+    study, usually referred to by a name that reflects one or more treatments, exposures,
+    and/or controls included in the path.
   Modifier: Concrete
   Attributes:
     id:
@@ -1346,18 +1813,31 @@ StudyArm:
       Model Name: id
     name:
       $ref: '#/string'
+      NCI C-Code: C170984
+      Preferred Term: Study Arm Name
+      Definition: The literal identifier (i.e., distinctive designation) of the study
+        arm.
       Relationship Type: Value
       Model Name: name
     description:
       $ref: '#/string'
+      NCI C-Code: C93728
+      Preferred Term: Study Arm Description
+      Definition: A narrative representation of the study arm.
       Relationship Type: Value
       Model Name: description
     label:
       $ref: '#/string'
+      NCI C-Code: CNEW
+      Preferred Term: Study Arm Label
+      Definition: The short descriptive designation for the study arm.
       Relationship Type: Value
       Model Name: label
     dataOriginDescription:
       $ref: '#/string'
+      NCI C-Code: C188828
+      Preferred Term: Study Arm Data Origin Description
+      Definition: The textual representation of the study arm data origin.
       Relationship Type: Value
       Model Name: dataOriginDescription
     dataOriginType:
@@ -1376,8 +1856,10 @@ StudyArm:
       Relationship Type: Ref
       Model Name: populations
 StudyCell:
-  NCI C-Code: StudyCell
-  Preferred Term: C188810
+  NCI C-Code: C188810
+  Preferred Term: Study Design Cell
+  Definition: A partitioning of a study arm into individual pieces, which are associated
+    with an epoch and any number of sequential elements within that epoch.
   Modifier: Concrete
   Attributes:
     id:
@@ -1400,8 +1882,10 @@ StudyCell:
       Relationship Type: Ref
       Model Name: elements
 StudyCohort:
-  NCI C-Code: StudyCohort
-  Preferred Term: C61512
+  NCI C-Code: C61512
+  Preferred Term: Study Cohort
+  Definition: A group of individuals who share a set of characteristics (e.g., exposures,
+    experiences, attributes), which logically defines a population under study.
   Super Classes:
   - $ref: '#/PopulationDefinition'
   Modifier: Concrete
@@ -1414,18 +1898,28 @@ StudyCohort:
         $ref: '#/PopulationDefinition'
     name:
       $ref: '#/string'
+      NCI C-Code: CNEW
+      Preferred Term: Study Cohort Name
+      Definition: The literal identifier (i.e., distinctive designation) of the study
+        cohort.
       Relationship Type: Value
       Model Name: name
       Inherited From:
         $ref: '#/PopulationDefinition'
     description:
       $ref: '#/string'
+      NCI C-Code: CNEW
+      Preferred Term: Study Cohort Description
+      Definition: A narrative representation of the study cohort.
       Relationship Type: Value
       Model Name: description
       Inherited From:
         $ref: '#/PopulationDefinition'
     label:
       $ref: '#/string'
+      NCI C-Code: CNEW
+      Preferred Term: Study Cohort Label
+      Definition: The short descriptive designation for the study cohort.
       Relationship Type: Value
       Model Name: label
       Inherited From:
@@ -1477,8 +1971,11 @@ StudyCohort:
       $ref: UNKNOWN
       Relationship Type: Value
 StudyDesign:
-  NCI C-Code: StudyDesign
-  Preferred Term: C15320
+  NCI C-Code: C15320
+  Preferred Term: Study Design
+  Definition: A plan detailing how a study will be performed in order to represent
+    the phenomenon under examination, to answer the research questions that have been
+    asked, and informing the statistical approach.
   Modifier: Concrete
   Attributes:
     id:
@@ -1487,18 +1984,33 @@ StudyDesign:
       Model Name: id
     name:
       $ref: '#/string'
+      NCI C-Code: C201338
+      Preferred Term: Study Design Name
+      Definition: The literal identifier (i.e., distinctive designation) of the study
+        design.
       Relationship Type: Value
       Model Name: name
     description:
       $ref: '#/string'
+      NCI C-Code: C147139
+      Preferred Term: Study Design Description
+      Definition: A narrative representation of the study design.
       Relationship Type: Value
       Model Name: description
     label:
       $ref: '#/string'
+      NCI C-Code: CNEW
+      Preferred Term: Study Design Label
+      Definition: The short descriptive designation for the study design.
       Relationship Type: Value
       Model Name: label
     rationale:
       $ref: '#/string'
+      NCI C-Code: C142705
+      Preferred Term: Study Design Rationale
+      Definition: Reason(s) for choosing the study design. This may include reasons
+        for the choice of control or comparator, as well as the scientific rationale
+        for the study design.
       Relationship Type: Value
       Model Name: rationale
     activities:
@@ -1608,8 +2120,10 @@ StudyDesign:
       Cardinality: 0..*
       Relationship Type: Value
 StudyDesignPopulation:
-  NCI C-Code: StudyDesignPopulation
-  Preferred Term: C142728
+  NCI C-Code: C142728
+  Preferred Term: Target Study Population
+  Definition: The population within the general population to which the study results
+    can be generalized.
   Super Classes:
   - $ref: '#/PopulationDefinition'
   Modifier: Concrete
@@ -1622,18 +2136,28 @@ StudyDesignPopulation:
         $ref: '#/PopulationDefinition'
     name:
       $ref: '#/string'
+      NCI C-Code: CNEW
+      Preferred Term: Target Study Population Name
+      Definition: The literal identifier (i.e., distinctive designation) of the target
+        study population.
       Relationship Type: Value
       Model Name: name
       Inherited From:
         $ref: '#/PopulationDefinition'
     description:
       $ref: '#/string'
+      NCI C-Code: C70834
+      Preferred Term: Target Study Population Description
+      Definition: A narrative representation of the study population.
       Relationship Type: Value
       Model Name: description
       Inherited From:
         $ref: '#/PopulationDefinition'
     label:
       $ref: '#/string'
+      NCI C-Code: CNEW
+      Preferred Term: Study Design Population Label
+      Definition: The short descriptive designation for the study design population.
       Relationship Type: Value
       Model Name: label
       Inherited From:
@@ -1661,7 +2185,11 @@ StudyDesignPopulation:
         $ref: '#/PopulationDefinition'
     plannedEnrollmentNumber:
       $ref: '#/Range'
+      NCI C-Code: C49692
       Cardinality: 0..1
+      Preferred Term: Planned Number of Participants
+      Definition: The planned number of subjects to be entered in a clinical trial.
+        (NCI)
       Relationship Type: Value
       Model Name: plannedEnrollmentNumber
       Inherited From:
@@ -1685,8 +2213,11 @@ StudyDesignPopulation:
       $ref: UNKNOWN
       Relationship Type: Value
 StudyElement:
-  NCI C-Code: StudyElement
-  Preferred Term: C142735
+  NCI C-Code: C142735
+  Preferred Term: Study Design Element
+  Definition: 'A basic building block for time within a clinical study comprising
+    the following characteristics: a description of what happens to the subject during
+    the element; a definition of the start of the element; a rule for ending the element.'
   Modifier: Concrete
   Attributes:
     id:
@@ -1695,14 +2226,24 @@ StudyElement:
       Model Name: id
     name:
       $ref: '#/string'
+      NCI C-Code: C188833
+      Preferred Term: Study Design Element Name
+      Definition: The literal identifier (i.e., distinctive designation) of the study
+        design element.
       Relationship Type: Value
       Model Name: name
     description:
       $ref: '#/string'
+      NCI C-Code: C188834
+      Preferred Term: Study Design Element Description
+      Definition: A narrative representation of the study design element.
       Relationship Type: Value
       Model Name: description
     label:
       $ref: '#/string'
+      NCI C-Code: CNEW
+      Preferred Term: Study Element Label
+      Definition: The short descriptive designation for the study element.
       Relationship Type: Value
       Model Name: label
     transitionEndRule:
@@ -1721,8 +2262,11 @@ StudyElement:
       Relationship Type: Value
       Model Name: transitionStartRule
 StudyEpoch:
-  NCI C-Code: StudyEpoch
-  Preferred Term: C71738
+  NCI C-Code: C71738
+  Preferred Term: Study Epoch
+  Definition: A named time period defined in the protocol, wherein a study activity
+    is specified and unchanging throughout the interval, to support a study-specific
+    purpose.
   Modifier: Concrete
   Attributes:
     id:
@@ -1731,14 +2275,26 @@ StudyEpoch:
       Model Name: id
     name:
       $ref: '#/string'
+      NCI C-Code: C93825
+      Preferred Term: Study Epoch Name
+      Definition: The literal identifier (i.e., distinctive designation) of the study
+        epoch, i.e., the named time period defined in the protocol, wherein a study
+        activity is specified and unchanging throughout the interval, to support a
+        study-specific purpose.
       Relationship Type: Value
       Model Name: name
     description:
       $ref: '#/string'
+      NCI C-Code: C93824
+      Preferred Term: Study Epoch Description
+      Definition: A narrative representation of the study epoch.
       Relationship Type: Value
       Model Name: description
     label:
       $ref: '#/string'
+      NCI C-Code: CNEW
+      Preferred Term: Study Epoch Label
+      Definition: The short descriptive designation for the study epoch.
       Relationship Type: Value
       Model Name: label
     type:
@@ -1757,8 +2313,10 @@ StudyEpoch:
       Relationship Type: Ref
       Model Name: next
 StudyIdentifier:
-  NCI C-Code: StudyIdentifier
-  Preferred Term: C83082
+  NCI C-Code: C83082
+  Preferred Term: Study Identifier
+  Definition: A sequence of characters used to identify, name, or characterize the
+    study.
   Modifier: Concrete
   Attributes:
     id:
@@ -1767,6 +2325,10 @@ StudyIdentifier:
       Model Name: id
     studyIdentifier:
       $ref: '#/string'
+      NCI C-Code: C83082
+      Preferred Term: Study Identifier
+      Definition: A sequence of characters used to identify, name, or characterize
+        the study.
       Relationship Type: Value
       Model Name: studyIdentifier
     studyIdentifierScope:
@@ -1775,9 +2337,10 @@ StudyIdentifier:
       Relationship Type: Value
       Model Name: studyIdentifierScope
 StudyIntervention:
-  NCI C-Code: StudyIntervention
-  Preferred Term: CNEW
-  Definition: Investigational Trial Interventional
+  NCI C-Code: CNEW
+  Preferred Term: Study Intervention
+  Definition: Any agent, device, or procedure being tested or used as a reference
+    or comparator in the conduct of a clinical trial.
   Modifier: Concrete
   Attributes:
     id:
@@ -1786,14 +2349,24 @@ StudyIntervention:
       Model Name: id
     description:
       $ref: '#/string'
+      NCI C-Code: CNEW
+      Preferred Term: Study Intervention Description
+      Definition: A narrative representation of the study intervention.
       Relationship Type: Value
       Model Name: description
     name:
       $ref: '#/string'
+      NCI C-Code: CNEW
+      Preferred Term: Study Intervention Name
+      Definition: The literal identifier (i.e., distinctive designation) of the study
+        intervention.
       Relationship Type: Value
       Model Name: name
     label:
       $ref: '#/string'
+      NCI C-Code: CNEW
+      Preferred Term: Study Intervention Label
+      Definition: The short descriptive designation for the study intervention.
       Relationship Type: Value
       Model Name: label
     administrations:
@@ -1832,8 +2405,10 @@ StudyIntervention:
       Relationship Type: Value
       Model Name: minimumResponseDuration
 StudyProtocolDocument:
-  NCI C-Code: StudyProtocolDocument
-  Preferred Term: C93381
+  NCI C-Code: C93381
+  Preferred Term: Study Protocol Document
+  Definition: A representation of the study protocol (that persists over time) in
+    document form.
   Modifier: Concrete
   Attributes:
     id:
@@ -1842,14 +2417,24 @@ StudyProtocolDocument:
       Model Name: id
     name:
       $ref: '#/string'
+      NCI C-Code: CNEW
+      Preferred Term: Study Protocol Document Name
+      Definition: The literal identifier (i.e., distinctive designation) of the study
+        protocol document.
       Relationship Type: Value
       Model Name: name
     description:
       $ref: '#/string'
+      NCI C-Code: CNEW
+      Preferred Term: Study Protocol Document Description
+      Definition: A narrative representation of the study protocol document.
       Relationship Type: Value
       Model Name: description
     label:
       $ref: '#/string'
+      NCI C-Code: CNEW
+      Preferred Term: Study Protocol Document Label
+      Definition: The short descriptive designation for the study protocol document.
       Relationship Type: Value
       Model Name: label
     versions:
@@ -1858,8 +2443,12 @@ StudyProtocolDocument:
       Relationship Type: Value
       Model Name: versions
 StudyProtocolDocumentVersion:
-  NCI C-Code: StudyProtocolDocumentVersion
-  Preferred Term: C93490
+  NCI C-Code: C93490
+  Preferred Term: Study Protocol Version
+  Definition: A plan at a particular point in time for a formal investigation to assess
+    the utility, impact, pharmacological, physiological, and/or psychological effects
+    of a particular treatment, procedure, drug, device, biologic, food product, cosmetic,
+    care plan, or subject characteristic. (BRIDG)
   Modifier: Concrete
   Attributes:
     id:
@@ -1868,6 +2457,12 @@ StudyProtocolDocumentVersion:
       Model Name: id
     protocolVersion:
       $ref: '#/string'
+      NCI C-Code: C93490
+      Preferred Term: Study Protocol Version
+      Definition: A plan at a particular point in time for a formal investigation
+        to assess the utility, impact, pharmacological, physiological, and/or psychological
+        effects of a particular treatment, procedure, drug, device, biologic, food
+        product, cosmetic, care plan, or subject characteristic. (BRIDG)
       Relationship Type: Value
       Model Name: protocolVersion
     protocolStatus:
@@ -1907,9 +2502,9 @@ StudyProtocolDocumentVersion:
       Cardinality: 0..1
       Relationship Type: Value
 StudyTitle:
-  NCI C-Code: StudyTitle
-  Preferred Term: C49802
-  Definition: Trial Title; Official Study Title; Study Title
+  NCI C-Code: C49802
+  Preferred Term: Study Title
+  Definition: The sponsor-defined name of the clinical study.
   Modifier: Abstract
   Attributes:
     id:
@@ -1917,14 +2512,18 @@ StudyTitle:
       Model Name: id
     text:
       $ref: '#/string'
+      NCI C-Code: CNEW
+      Preferred Term: Study Title Text
+      Definition: An instance of unstructured text that represents the study title.
       Model Name: text
     type:
       $ref: '#/Code'
       Cardinality: '1'
       Model Name: type
 StudyVersion:
-  NCI C-Code: StudyVersion
-  Preferred Term: C188816
+  NCI C-Code: C188816
+  Preferred Term: Study Version
+  Definition: A plan at a particular point in time for a study.
   Modifier: Concrete
   Attributes:
     id:
@@ -1933,10 +2532,19 @@ StudyVersion:
       Model Name: id
     versionIdentifier:
       $ref: '#/string'
+      NCI C-Code: CNEW
+      Preferred Term: Study Version Identifier
+      Definition: A sequence of characters used to identify, name, or characterize
+        the study version.
       Relationship Type: Value
       Model Name: versionIdentifier
     rationale:
       $ref: '#/string'
+      NCI C-Code: C94122
+      Preferred Term: Study Rationale
+      Definition: A statement describing the overall rationale of the study. This
+        field describes the contribution of this study to product development, i.e.,
+        what knowledge is being contributed from the conduct of this study.
       Relationship Type: Value
       Model Name: rationale
     studyPhase:
@@ -1993,8 +2601,11 @@ StudyVersion:
       Cardinality: 0..1
       Relationship Type: Value
 SubjectEnrollment:
-  NCI C-Code: SubjectEnrollment
-  Preferred Term: C37948
+  NCI C-Code: C37948
+  Preferred Term: Subject Enrollment
+  Definition: The act of enrolling subjects into a study. The subject will have met
+    the inclusion/exclusion criteria to participate in the trial and will have signed
+    an informed consent form. (CDISC Glossary)
   Super Classes:
   - $ref: '#/GeographicScope'
   Modifier: Concrete
@@ -2007,14 +2618,21 @@ SubjectEnrollment:
         $ref: '#/GeographicScope'
     code:
       $ref: '#/AliasCode'
+      NCI C-Code: CNEW
       Cardinality: 0..1
+      Preferred Term: Subject Enrollment Code
+      Definition: A symbol or combination of symbols which is assigned to the subject
+        enrollment.
       Relationship Type: Value
       Model Name: code
       Inherited From:
         $ref: '#/GeographicScope'
     type:
       $ref: '#/Code'
+      NCI C-Code: CNEW
       Cardinality: '1'
+      Preferred Term: Subject Enrollment Type
+      Definition: A characterization or classification of the subject enrollment.
       Relationship Type: Value
       Model Name: type
       Inherited From:
@@ -2029,8 +2647,10 @@ SubjectEnrollment:
       Cardinality: 0..1
       Relationship Type: Value
 SyntaxTemplate:
-  NCI C-Code: SyntaxTemplate
-  Preferred Term: CNEW
+  NCI C-Code: CNEW
+  Preferred Term: Syntax Template
+  Definition: A standardized pattern used for the arrangement of words and phrases
+    to create well-formed, structured sentences.
   Sub Classes:
   - $ref: '#/Characteristic'
   - $ref: '#/EligibilityCriteria'
@@ -2043,23 +2663,39 @@ SyntaxTemplate:
       Model Name: id
     name:
       $ref: '#/string'
+      NCI C-Code: CNEW
+      Preferred Term: Syntax Template Name
+      Definition: The literal identifier (i.e., distinctive designation) of the syntax
+        template.
       Model Name: name
     description:
       $ref: '#/string'
+      NCI C-Code: CNEW
+      Preferred Term: Syntax Template Description
+      Definition: A narrative representation of the syntax template.
       Model Name: description
     label:
       $ref: '#/string'
+      NCI C-Code: CNEW
+      Preferred Term: Syntax Template Label
+      Definition: The short descriptive designation for the syntax template.
       Model Name: label
     text:
       $ref: '#/string'
+      NCI C-Code: CNEW
+      Preferred Term: Syntax Template Text
+      Definition: A structured text string containing prescribed text interspersed
+        with user-defined parameter values.
       Model Name: text
     dictionary:
       $ref: '#/SyntaxTemplateDictionary'
       Cardinality: 0..1
       Model Name: dictionary
 SyntaxTemplateDictionary:
-  NCI C-Code: SyntaxTemplateDictionary
-  Preferred Term: CNEW
+  NCI C-Code: CNEW
+  Preferred Term: Syntax Template Dictionary
+  Definition: A reference source that provides a listing of valid parameter names
+    and values used in syntax template text strings.
   Modifier: Concrete
   Attributes:
     id:
@@ -2068,23 +2704,38 @@ SyntaxTemplateDictionary:
       Model Name: id
     name:
       $ref: '#/string'
+      NCI C-Code: CNEW
+      Preferred Term: Syntax Template Dictionary Name
+      Definition: The literal identifier (i.e., distinctive designation) of the syntax
+        template dictionary.
       Relationship Type: Value
       Model Name: name
     description:
       $ref: '#/string'
+      NCI C-Code: CNEW
+      Preferred Term: Syntax Template Dictionary Description
+      Definition: A narrative representation of the syntax template dictionary.
       Relationship Type: Value
       Model Name: description
     label:
       $ref: '#/string'
+      NCI C-Code: CNEW
+      Preferred Term: Syntax Template Dictionary Label
+      Definition: The short descriptive designation for the syntax template dictionary.
       Relationship Type: Value
       Model Name: label
     parameterMap:
       $ref: '#/Map'
+      NCI C-Code: CNEW
+      Preferred Term: Syntax Template Dictionary Parameter Map
+      Definition: The paired name and value contained within the syntax template dictionary
+        for a given parameter.
       Relationship Type: Value
       Model Name: parameterMap
 Timing:
-  NCI C-Code: Timing
-  Preferred Term: C80484
+  NCI C-Code: C80484
+  Preferred Term: Timing
+  Definition: The chronological relationship between temporal events.
   Modifier: Concrete
   Attributes:
     id:
@@ -2093,30 +2744,56 @@ Timing:
       Model Name: id
     name:
       $ref: '#/string'
+      NCI C-Code: CNEW
+      Preferred Term: Timing Name
+      Definition: The literal identifier (i.e., distinctive designation) of the timing.
       Relationship Type: Value
       Model Name: name
     description:
       $ref: '#/string'
+      NCI C-Code: C164648
+      Preferred Term: Timing Description
+      Definition: The textual representation of the chronological relationship between
+        temporal events.
       Relationship Type: Value
       Model Name: description
     label:
       $ref: '#/string'
+      NCI C-Code: CNEW
+      Preferred Term: Timing Label
+      Definition: The short descriptive designation for the timing.
       Relationship Type: Value
       Model Name: label
     value:
       $ref: '#/string'
+      NCI C-Code: C201341
+      Preferred Term: Timing Value
+      Definition: The temporal value of the chronological relationship between temporal
+        events.
       Relationship Type: Value
       Model Name: value
     window:
       $ref: '#/string'
+      NCI C-Code: C48921
+      Preferred Term: Timing Window
+      Definition: A time period, or other type of interval, during which a temporal
+        event may be achieved, obtained, or observed.
       Relationship Type: Value
       Model Name: window
     windowLower:
       $ref: '#/string'
+      NCI C-Code: C201342
+      Preferred Term: Timing Window, Lower
+      Definition: The earliest chronological value of an allowable period of time
+        during which a temporal event takes place.
       Relationship Type: Value
       Model Name: windowLower
     windowUpper:
       $ref: '#/string'
+      NCI C-Code: C201343
+      Preferred Term: Timing Window, Upper
+      Definition: The latest chronological value of an allowable period of time during
+        which a temporal event takes place.
       Relationship Type: Value
       Model Name: windowUpper
     relativeToFrom:
@@ -2140,8 +2817,11 @@ Timing:
       Relationship Type: Ref
       Model Name: relativeFromScheduledInstance
 TransitionRule:
-  NCI C-Code: TransitionRule
-  Preferred Term: C82567
+  NCI C-Code: C82567
+  Preferred Term: Transition Rule
+  Definition: A guide that governs the allocation of subjects to operational options
+    at a discrete decision point or branch (e.g., assignment to a particular arm,
+    discontinuation) within a clinical trial plan.
   Modifier: Concrete
   Attributes:
     id:
@@ -2150,17 +2830,31 @@ TransitionRule:
       Model Name: id
     name:
       $ref: '#/string'
+      NCI C-Code: CNEW
+      Preferred Term: Transition Rule Name
+      Definition: The literal identifier (i.e., distinctive designation) of the transition
+        rule.
       Relationship Type: Value
       Model Name: name
     description:
       $ref: '#/string'
+      NCI C-Code: C188835
+      Preferred Term: Transition Rule Description
+      Definition: A narrative representation of the transition rule.
       Relationship Type: Value
       Model Name: description
     label:
       $ref: '#/string'
+      NCI C-Code: CNEW
+      Preferred Term: Transition Rule Label
+      Definition: The short descriptive designation for the transition rule.
       Relationship Type: Value
       Model Name: label
     text:
       $ref: '#/string'
+      NCI C-Code: CNEW
+      Preferred Term: Transition Rule Text
+      Definition: An instance of unstructured text that represents the transition
+        rule.
       Relationship Type: Value
       Model Name: text
