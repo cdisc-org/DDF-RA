@@ -1351,7 +1351,11 @@ PopulationDefinition:
       Model Name: label
     plannedSex:
       $ref: '#/Code'
+      NCI C-Code: CNEW
       Cardinality: '1'
+      Preferred Term: Population Definition Planned Sex
+      Definition: The protocol-defined sex within the population definition.
+      Codelist Ref: SDTM Terminology Codelist C66732
       Model Name: plannedSex
     criteria:
       $ref: '#/EligibilityCriteria'
@@ -1519,6 +1523,7 @@ Range:
       Preferred Term: Unit of Measure
       Definition: A named quantity in terms of which other quantities are measured
         or specified, used as a standard measurement of like kinds.
+      Codelist Ref: SDTM Terminology Codelist C71620
       Relationship Type: Value
       Model Name: unit
 ResponseCode:
@@ -2040,7 +2045,11 @@ StudyCohort:
         $ref: '#/PopulationDefinition'
     plannedSex:
       $ref: '#/Code'
+      NCI C-Code: CNEW
       Cardinality: '1'
+      Preferred Term: Planned Sex of Study Cohort Participants
+      Definition: The protocol-defined sex of the study cohort.
+      Codelist Ref: SDTM Terminology Codelist C66732
       Relationship Type: Value
       Model Name: plannedSex
       Inherited From:
@@ -2054,21 +2063,32 @@ StudyCohort:
         $ref: '#/PopulationDefinition'
     plannedAge*:
       $ref: '#/Range'
+      NCI C-Code: CNEW
       Cardinality: 0..1
+      Preferred Term: Study Cohort Planned Age
+      Definition: The protocol-defined age of subjects within the study cohort.
       Relationship Type: UNKNOWN
       Model Name: plannedAge
       Inherited From:
         $ref: '#/PopulationDefinition'
     plannedEnrollmentNumber:
       $ref: '#/Range'
+      NCI C-Code: C49692
       Cardinality: 0..1
+      Preferred Term: Planned Number of Participants in Study Cohort
+      Definition: The protocol-defined number of subjects within a study cohort.
       Relationship Type: Value
       Model Name: plannedEnrollmentNumber
       Inherited From:
         $ref: '#/PopulationDefinition'
     plannedCompletionNumber:
       $ref: '#/Range'
+      NCI C-Code: CNEW
       Cardinality: 0..1
+      Preferred Term: Study Cohort Planned Completion Number
+      Definition: The value representing the planned number of subjects that must
+        complete the study in order to meet the objectives and endpoints of the study,
+        within the study cohort.
       Relationship Type: Value
       Model Name: plannedCompletionNumber
       Inherited From:
@@ -2325,25 +2345,33 @@ StudyDesignPopulation:
         $ref: '#/PopulationDefinition'
     plannedAge*:
       $ref: '#/Range'
+      NCI C-Code: CNEW
       Cardinality: 0..1
+      Preferred Term: Study Design Population Planned Age
+      Definition: The protocol-defined age of subjects within the study design population.
       Relationship Type: UNKNOWN
       Model Name: plannedAge
       Inherited From:
         $ref: '#/PopulationDefinition'
     plannedEnrollmentNumber:
       $ref: '#/Range'
-      NCI C-Code: C49692
+      NCI C-Code: CNEW
       Cardinality: 0..1
-      Preferred Term: Planned Number of Participants
-      Definition: The planned number of subjects to be entered in a clinical trial.
-        (NCI)
+      Preferred Term: Study Design Population Planned Enrollment Number
+      Definition: The value representing the planned number of subjects to be entered
+        in a clinical trial, within the study design population.
       Relationship Type: Value
       Model Name: plannedEnrollmentNumber
       Inherited From:
         $ref: '#/PopulationDefinition'
     plannedCompletionNumber:
       $ref: '#/Range'
+      NCI C-Code: CNEW
       Cardinality: 0..1
+      Preferred Term: Study Design Population Planned Completion Number
+      Definition: The value representing the planned number of subjects that must
+        complete the study in order to meet the objectives and endpoints of the study,
+        within the study design population.
       Relationship Type: Value
       Model Name: plannedCompletionNumber
       Inherited From:
@@ -2579,7 +2607,11 @@ StudyIntervention:
       Model Name: codes
     minimumResponseDuration:
       $ref: '#/Quantity'
+      NCI C-Code: CNEW
       Cardinality: 0..1
+      Preferred Term: Study Intervention Minimum Response Duration
+      Definition: The value representing the minimum amount of time required to meet
+        the criteria for response to study intervention.
       Relationship Type: Value
       Model Name: minimumResponseDuration
 StudyProtocolDocument:
