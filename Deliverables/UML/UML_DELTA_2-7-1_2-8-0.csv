@@ -1,22 +1,51 @@
 status,class_name,property_name,data_type
 Class - NEW,Condition,,
-,,id,string
-,,name,string
-,,description,string
-,,label,string
+,,id,String
+,,name,String
+,,description,String
+,,label,String
+,,text,String
+,,dictionary,SyntaxTemplateDictionary
 ,,context,ScheduledActivityInstance
 ,,appliesTo,Procedure
+Class - NEW,OversightCommittee,,
+,,id,String
+,,name,String
+,,label,String
+,,identifier,String
+,,identifierScheme,String
+,,legalAddress,Address
+,,type,Code
+Class - NEW,ResearchOrganization,,
+,,id,String
+,,name,String
+,,label,String
+,,identifier,String
+,,identifierScheme,String
+,,legalAddress,Address
+,,type,Code
+Class - NEW,StudySite,,
+,,id,String
+,,name,String
+,,description,String
+,,label,String
+,,oversees,OversightCommittee
+,,manages,ResearchOrganization
+,,currentEnrollment,SubjectEnrollment
 Class - NEW,StudyTitle,,
-,,id,string
-,,text,string
+,,id,String
+,,text,String
 ,,type,Code
 ,,,
 Property - NEW,StudyDesignPopulation,plannedAge,Range
+Property - NEW,StudyVersion,appliesTo,StudySite
 Property - NEW,StudyVersion,studyTitles,StudyTitle
 Property - NEW,PopulationDefinition,plannedAge,Range
 Property - NEW,StudyCohort,plannedAge,Range
 Property - DELETED,Activity,isConditional,boolean
 Property - DELETED,Activity,isConditionalReason,String
+Property - DELETED,Procedure,isConditional,Boolean
+Property - DELETED,Procedure,isConditionalReason,String
 Property - DELETED,StudyDesignPopulation,plannedMaximumAge,Quantity
 Property - DELETED,StudyDesignPopulation,plannedMinimumAge,Quantity
 Property - DELETED,StudyVersion,studyAcronym,String
@@ -25,6 +54,7 @@ Property - DELETED,PopulationDefinition,plannedMaximumAge,Quantity
 Property - DELETED,PopulationDefinition,plannedMinimumAge,Quantity
 Property - DELETED,StudyCohort,plannedMaximumAge,Quantity
 Property - DELETED,StudyCohort,plannedMinimumAge,Quantity
+Property - DELETED,StudyIdentifier,id,String
 Property - DELETED,StudyProtocolDocumentVersion,briefTitle,String
 Property - DELETED,StudyProtocolDocumentVersion,officialTitle,String
 Property - DELETED,StudyProtocolDocumentVersion,publicTitle,String

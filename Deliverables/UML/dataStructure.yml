@@ -161,7 +161,7 @@ AdministrationDuration:
       Relationship Type: Value
       Model Name: description
     durationWillVary:
-      $ref: '#/boolean'
+      $ref: '#/Boolean'
       NCI C-Code: CNEW
       Preferred Term: Administration Duration Will Vary Indicator
       Definition: An indication as to whether the agent administration duration is
@@ -627,20 +627,41 @@ Code:
       Relationship Type: Value
       Model Name: decode
 Condition:
+  Super Classes:
+  - $ref: '#/SyntaxTemplate'
   Modifier: Abstract
   Attributes:
     id:
       $ref: '#/string'
       Model Name: id
+      Inherited From:
+        $ref: '#/SyntaxTemplate'
     name:
       $ref: '#/string'
       Model Name: name
+      Inherited From:
+        $ref: '#/SyntaxTemplate'
     description:
       $ref: '#/string'
       Model Name: description
+      Inherited From:
+        $ref: '#/SyntaxTemplate'
     label:
       $ref: '#/string'
       Model Name: label
+      Inherited From:
+        $ref: '#/SyntaxTemplate'
+    text:
+      $ref: '#/string'
+      Model Name: text
+      Inherited From:
+        $ref: '#/SyntaxTemplate'
+    dictionary:
+      $ref: '#/SyntaxTemplateDictionary'
+      Cardinality: 0..1
+      Model Name: dictionary
+      Inherited From:
+        $ref: '#/SyntaxTemplate'
     context:
       $ref: '#/ScheduledActivityInstance'
       Cardinality: 0..*
@@ -1071,7 +1092,7 @@ Indication:
       Relationship Type: Value
       Model Name: name
     description:
-      $ref: '#/Sring'
+      $ref: '#/string'
       NCI C-Code: C112038
       Preferred Term: Trial Disease/Condition Indication Description
       Definition: A narrative representation of the condition, disease or disorder
@@ -1266,6 +1287,9 @@ Organization:
   Definition: A formalized group of persons or other organizations collected together
     for a common purpose (such as administrative, legal, political) and the infrastructure
     to carry out that purpose. (BRIDG)
+  Sub Classes:
+  - $ref: '#/OversightCommittee'
+  - $ref: '#/ResearchOrganization'
   Modifier: Concrete
   Attributes:
     id:
@@ -1318,6 +1342,48 @@ Organization:
       Codelist Ref: C188724
       Relationship Type: Value
       Model Name: type
+OversightCommittee:
+  Super Classes:
+  - $ref: '#/Organization'
+  Modifier: Abstract
+  Attributes:
+    id:
+      $ref: '#/string'
+      Model Name: id
+      Inherited From:
+        $ref: '#/Organization'
+    name:
+      $ref: '#/string'
+      Model Name: name
+      Inherited From:
+        $ref: '#/Organization'
+    label:
+      $ref: '#/string'
+      Model Name: label
+      Inherited From:
+        $ref: '#/Organization'
+    identifier:
+      $ref: '#/string'
+      Model Name: identifier
+      Inherited From:
+        $ref: '#/Organization'
+    identifierScheme:
+      $ref: '#/string'
+      Model Name: identifierScheme
+      Inherited From:
+        $ref: '#/Organization'
+    legalAddress:
+      $ref: '#/Address'
+      Cardinality: 0..1
+      Model Name: legalAddress
+      Inherited From:
+        $ref: '#/Organization'
+    type:
+      $ref: '#/Code'
+      Cardinality: '1'
+      Model Name: type
+      Inherited From:
+        $ref: '#/Organization'
 PopulationDefinition:
   NCI C-Code: CNEW
   Preferred Term: Population Definition
@@ -1424,22 +1490,6 @@ Procedure:
       Definition: A characterization or classification of the study procedure.
       Relationship Type: Value
       Model Name: procedureType
-    isConditional:
-      $ref: '#/Boolean'
-      NCI C-Code: C201326
-      Preferred Term: Study Procedure is Conditional
-      Definition: An indication as to whether the study procedure is subject to or
-        dependent upon something else.
-      Relationship Type: Value
-      Model Name: isConditional
-    isConditionalReason:
-      $ref: '#/string'
-      NCI C-Code: C201327
-      Preferred Term: Study Procedure is Conditional Reason
-      Definition: The explanation for why the study procedure is subject to or dependent
-        upon something else.
-      Relationship Type: Value
-      Model Name: isConditionalReason
     code:
       $ref: '#/Code'
       NCI C-Code: C154626
@@ -1456,6 +1506,12 @@ Procedure:
       Cardinality: 0..1
       Relationship Type: Ref
       Model Name: studyIntervention
+    isConditional:
+      $ref: UNKNOWN
+      Relationship Type: Value
+    isConditionalReason:
+      $ref: UNKNOWN
+      Relationship Type: Value
 Quantity:
   NCI C-Code: C25256
   Preferred Term: Quantity
@@ -1495,21 +1551,21 @@ Range:
       Relationship Type: Value
       Model Name: id
     minValue:
-      $ref: '#/float'
+      $ref: '#/Float'
       NCI C-Code: C25570
       Preferred Term: Minimum Value
       Definition: The smallest value in quantity or degree in a set of values.
       Relationship Type: Value
       Model Name: minValue
     maxValue:
-      $ref: '#/float'
+      $ref: '#/Float'
       NCI C-Code: C25564
       Preferred Term: Maximum Value
       Definition: The largest value in quantity or degree in a set of values.
       Relationship Type: Value
       Model Name: maxValue
     isApproximate:
-      $ref: '#/boolean'
+      $ref: '#/Boolean'
       NCI C-Code: CNEW
       Preferred Term: Value Range is Approximate Indicator
       Definition: An indication as to whether the value range is almost, but not quite,
@@ -1526,6 +1582,48 @@ Range:
       Codelist Ref: SDTM Terminology Codelist C71620
       Relationship Type: Value
       Model Name: unit
+ResearchOrganization:
+  Super Classes:
+  - $ref: '#/Organization'
+  Modifier: Abstract
+  Attributes:
+    id:
+      $ref: '#/string'
+      Model Name: id
+      Inherited From:
+        $ref: '#/Organization'
+    name:
+      $ref: '#/string'
+      Model Name: name
+      Inherited From:
+        $ref: '#/Organization'
+    label:
+      $ref: '#/string'
+      Model Name: label
+      Inherited From:
+        $ref: '#/Organization'
+    identifier:
+      $ref: '#/string'
+      Model Name: identifier
+      Inherited From:
+        $ref: '#/Organization'
+    identifierScheme:
+      $ref: '#/string'
+      Model Name: identifierScheme
+      Inherited From:
+        $ref: '#/Organization'
+    legalAddress:
+      $ref: '#/Address'
+      Cardinality: 0..1
+      Model Name: legalAddress
+      Inherited From:
+        $ref: '#/Organization'
+    type:
+      $ref: '#/Code'
+      Cardinality: '1'
+      Model Name: type
+      Inherited From:
+        $ref: '#/Organization'
 ResponseCode:
   NCI C-Code: C201347
   Preferred Term: Response Code
@@ -2500,10 +2598,6 @@ StudyIdentifier:
     study.
   Modifier: Concrete
   Attributes:
-    id:
-      $ref: '#/string'
-      Relationship Type: Value
-      Model Name: id
     studyIdentifier:
       $ref: '#/string'
       NCI C-Code: C83082
@@ -2517,6 +2611,10 @@ StudyIdentifier:
       Cardinality: '1'
       Relationship Type: Value
       Model Name: studyIdentifierScope
+    id:
+      $ref: '#/string'
+      Cardinality: 0..1
+      Relationship Type: Value
 StudyIntervention:
   NCI C-Code: CNEW
   Preferred Term: Study Intervention
@@ -2716,6 +2814,33 @@ StudyProtocolDocumentVersion:
       $ref: '#/string'
       Cardinality: 0..1
       Relationship Type: Value
+StudySite:
+  Modifier: Abstract
+  Attributes:
+    id:
+      $ref: '#/string'
+      Model Name: id
+    name:
+      $ref: '#/string'
+      Model Name: name
+    description:
+      $ref: '#/string'
+      Model Name: description
+    label:
+      $ref: '#/string'
+      Model Name: label
+    oversees:
+      $ref: '#/OversightCommittee'
+      Cardinality: '1'
+      Model Name: oversees
+    manages:
+      $ref: '#/ResearchOrganization'
+      Cardinality: '1'
+      Model Name: manages
+    currentEnrollment:
+      $ref: '#/SubjectEnrollment'
+      Cardinality: 0..1
+      Model Name: currentEnrollment
 StudyTitle:
   NCI C-Code: C49802
   Preferred Term: Study Title
@@ -2826,6 +2951,11 @@ StudyVersion:
       Cardinality: 0..1
       Relationship Type: Ref
       Model Name: documentVersion
+    appliesTo*:
+      $ref: '#/StudySite'
+      Cardinality: 1..*
+      Relationship Type: UNKNOWN
+      Model Name: appliesTo
     studyTitles*:
       $ref: '#/StudyTitle'
       Cardinality: 1..*
@@ -2895,6 +3025,7 @@ SyntaxTemplate:
     to create well-formed, structured sentences.
   Sub Classes:
   - $ref: '#/Characteristic'
+  - $ref: '#/Condition'
   - $ref: '#/EligibilityCriteria'
   - $ref: '#/Endpoint'
   - $ref: '#/Objective'
