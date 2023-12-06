@@ -246,14 +246,6 @@ components:
           type: array
           title: Definedprocedures
           default: []
-        isConditional:
-          type: boolean
-          title: Isconditional
-        isConditionalReason:
-          anyOf:
-          - type: string
-          - type: 'null'
-          title: Isconditionalreason
         biomedicalConceptIds:
           items:
             type: string
@@ -281,7 +273,6 @@ components:
       required:
       - id
       - name
-      - isConditional
       title: Activity
     Activity-Output:
       properties:
@@ -319,14 +310,6 @@ components:
           type: array
           title: Definedprocedures
           default: []
-        isConditional:
-          type: boolean
-          title: Isconditional
-        isConditionalReason:
-          anyOf:
-          - type: string
-          - type: 'null'
-          title: Isconditionalreason
         biomedicalConceptIds:
           items:
             type: string
@@ -354,7 +337,6 @@ components:
       required:
       - id
       - name
-      - isConditional
       title: Activity
     Address:
       properties:
@@ -1281,10 +1263,14 @@ components:
           type: array
           title: Codes
           default: []
+        isRareDisease:
+          type: boolean
+          title: Israredisease
       type: object
       required:
       - id
       - name
+      - isRareDisease
       title: Indication
     IntercurrentEvent:
       properties:
@@ -1315,6 +1301,25 @@ components:
       - name
       - strategy
       title: IntercurrentEvent
+    Masking:
+      properties:
+        id:
+          type: string
+          minLength: 1
+          title: Id
+        description:
+          anyOf:
+          - type: string
+          - type: 'null'
+          title: Description
+        roleId:
+          type: string
+          title: Roleid
+      type: object
+      required:
+      - id
+      - roleId
+      title: Masking
     NarrativeContent:
       properties:
         id:
@@ -1550,14 +1555,6 @@ components:
           title: Proceduretype
         code:
           $ref: '#/components/schemas/Code'
-        isConditional:
-          type: boolean
-          title: Isconditional
-        isConditionalReason:
-          anyOf:
-          - type: string
-          - type: 'null'
-          title: Isconditionalreason
         studyInterventionId:
           anyOf:
           - type: string
@@ -1569,7 +1566,6 @@ components:
       - name
       - procedureType
       - code
-      - isConditional
       title: Procedure
     Quantity:
       properties:
@@ -2209,6 +2205,9 @@ components:
           - type: string
           - type: 'null'
           title: Description
+        includesHealthySubjects:
+          type: boolean
+          title: Includeshealthysubjects
         plannedEnrollmentNumber:
           anyOf:
           - $ref: '#/components/schemas/Range'
@@ -2216,14 +2215,6 @@ components:
         plannedCompletionNumber:
           anyOf:
           - $ref: '#/components/schemas/Range'
-          - type: 'null'
-        plannedMaximumAge:
-          anyOf:
-          - $ref: '#/components/schemas/Quantity'
-          - type: 'null'
-        plannedMinimumAge:
-          anyOf:
-          - $ref: '#/components/schemas/Quantity'
           - type: 'null'
         plannedSex:
           items:
@@ -2237,6 +2228,10 @@ components:
           type: array
           title: Criteria
           default: []
+        plannedAge:
+          anyOf:
+          - $ref: '#/components/schemas/Range'
+          - type: 'null'
         characteristics:
           items:
             $ref: '#/components/schemas/Characteristic'
@@ -2247,6 +2242,7 @@ components:
       required:
       - id
       - name
+      - includesHealthySubjects
       title: StudyCohort
     StudyCohort-Output:
       properties:
@@ -2268,6 +2264,9 @@ components:
           - type: string
           - type: 'null'
           title: Description
+        includesHealthySubjects:
+          type: boolean
+          title: Includeshealthysubjects
         plannedEnrollmentNumber:
           anyOf:
           - $ref: '#/components/schemas/Range'
@@ -2275,14 +2274,6 @@ components:
         plannedCompletionNumber:
           anyOf:
           - $ref: '#/components/schemas/Range'
-          - type: 'null'
-        plannedMaximumAge:
-          anyOf:
-          - $ref: '#/components/schemas/Quantity'
-          - type: 'null'
-        plannedMinimumAge:
-          anyOf:
-          - $ref: '#/components/schemas/Quantity'
           - type: 'null'
         plannedSex:
           items:
@@ -2296,6 +2287,10 @@ components:
           type: array
           title: Criteria
           default: []
+        plannedAge:
+          anyOf:
+          - $ref: '#/components/schemas/Range'
+          - type: 'null'
         characteristics:
           items:
             $ref: '#/components/schemas/Characteristic'
@@ -2306,6 +2301,7 @@ components:
       required:
       - id
       - name
+      - includesHealthySubjects
       title: StudyCohort
     StudyDesign-Input:
       properties:
@@ -2417,6 +2413,12 @@ components:
           type: array
           title: Indications
           default: []
+        maskingRoles:
+          items:
+            $ref: '#/components/schemas/Masking'
+          type: array
+          title: Maskingroles
+          default: []
         studyInterventions:
           items:
             $ref: '#/components/schemas/StudyIntervention-Input'
@@ -2443,6 +2445,12 @@ components:
           anyOf:
           - $ref: '#/components/schemas/StudyProtocolDocumentVersion-Input'
           - type: 'null'
+        appliesTo:
+          items:
+            $ref: '#/components/schemas/StudySite'
+          type: array
+          title: Appliesto
+          default: []
         dictionaries:
           items:
             $ref: '#/components/schemas/SyntaxTemplateDictionary'
@@ -2569,6 +2577,12 @@ components:
           type: array
           title: Indications
           default: []
+        maskingRoles:
+          items:
+            $ref: '#/components/schemas/Masking'
+          type: array
+          title: Maskingroles
+          default: []
         studyInterventions:
           items:
             $ref: '#/components/schemas/StudyIntervention-Output'
@@ -2595,6 +2609,12 @@ components:
           anyOf:
           - $ref: '#/components/schemas/StudyProtocolDocumentVersion-Output'
           - type: 'null'
+        appliesTo:
+          items:
+            $ref: '#/components/schemas/StudySite'
+          type: array
+          title: Appliesto
+          default: []
         dictionaries:
           items:
             $ref: '#/components/schemas/SyntaxTemplateDictionary'
@@ -2631,6 +2651,9 @@ components:
           - type: string
           - type: 'null'
           title: Description
+        includesHealthySubjects:
+          type: boolean
+          title: Includeshealthysubjects
         plannedEnrollmentNumber:
           anyOf:
           - $ref: '#/components/schemas/Range'
@@ -2638,14 +2661,6 @@ components:
         plannedCompletionNumber:
           anyOf:
           - $ref: '#/components/schemas/Range'
-          - type: 'null'
-        plannedMaximumAge:
-          anyOf:
-          - $ref: '#/components/schemas/Quantity'
-          - type: 'null'
-        plannedMinimumAge:
-          anyOf:
-          - $ref: '#/components/schemas/Quantity'
           - type: 'null'
         plannedSex:
           items:
@@ -2659,6 +2674,10 @@ components:
           type: array
           title: Criteria
           default: []
+        plannedAge:
+          anyOf:
+          - $ref: '#/components/schemas/Range'
+          - type: 'null'
         cohorts:
           items:
             $ref: '#/components/schemas/StudyCohort-Input'
@@ -2669,6 +2688,7 @@ components:
       required:
       - id
       - name
+      - includesHealthySubjects
       title: StudyDesignPopulation
     StudyDesignPopulation-Output:
       properties:
@@ -2690,6 +2710,9 @@ components:
           - type: string
           - type: 'null'
           title: Description
+        includesHealthySubjects:
+          type: boolean
+          title: Includeshealthysubjects
         plannedEnrollmentNumber:
           anyOf:
           - $ref: '#/components/schemas/Range'
@@ -2697,14 +2720,6 @@ components:
         plannedCompletionNumber:
           anyOf:
           - $ref: '#/components/schemas/Range'
-          - type: 'null'
-        plannedMaximumAge:
-          anyOf:
-          - $ref: '#/components/schemas/Quantity'
-          - type: 'null'
-        plannedMinimumAge:
-          anyOf:
-          - $ref: '#/components/schemas/Quantity'
           - type: 'null'
         plannedSex:
           items:
@@ -2718,6 +2733,10 @@ components:
           type: array
           title: Criteria
           default: []
+        plannedAge:
+          anyOf:
+          - $ref: '#/components/schemas/Range'
+          - type: 'null'
         cohorts:
           items:
             $ref: '#/components/schemas/StudyCohort-Output'
@@ -2728,6 +2747,7 @@ components:
       required:
       - id
       - name
+      - includesHealthySubjects
       title: StudyDesignPopulation
     StudyElement:
       properties:
@@ -2808,10 +2828,6 @@ components:
       title: StudyEpoch
     StudyIdentifier-Input:
       properties:
-        id:
-          type: string
-          minLength: 1
-          title: Id
         studyIdentifier:
           type: string
           title: Studyidentifier
@@ -2819,16 +2835,11 @@ components:
           $ref: '#/components/schemas/Organization-Input'
       type: object
       required:
-      - id
       - studyIdentifier
       - studyIdentifierScope
       title: StudyIdentifier
     StudyIdentifier-Output:
       properties:
-        id:
-          type: string
-          minLength: 1
-          title: Id
         studyIdentifier:
           type: string
           title: Studyidentifier
@@ -2836,7 +2847,6 @@ components:
           $ref: '#/components/schemas/Organization-Output'
       type: object
       required:
-      - id
       - studyIdentifier
       - studyIdentifierScope
       title: StudyIdentifier
@@ -3006,18 +3016,6 @@ components:
           type: string
           minLength: 1
           title: Id
-        briefTitle:
-          type: string
-          title: Brieftitle
-        officialTitle:
-          type: string
-          title: Officialtitle
-        publicTitle:
-          type: string
-          title: Publictitle
-        scientificTitle:
-          type: string
-          title: Scientifictitle
         protocolVersion:
           type: string
           title: Protocolversion
@@ -3044,10 +3042,6 @@ components:
       type: object
       required:
       - id
-      - briefTitle
-      - officialTitle
-      - publicTitle
-      - scientificTitle
       - protocolVersion
       - protocolStatus
       title: StudyProtocolDocumentVersion
@@ -3057,18 +3051,6 @@ components:
           type: string
           minLength: 1
           title: Id
-        briefTitle:
-          type: string
-          title: Brieftitle
-        officialTitle:
-          type: string
-          title: Officialtitle
-        publicTitle:
-          type: string
-          title: Publictitle
-        scientificTitle:
-          type: string
-          title: Scientifictitle
         protocolVersion:
           type: string
           title: Protocolversion
@@ -3095,31 +3077,69 @@ components:
       type: object
       required:
       - id
-      - briefTitle
-      - officialTitle
-      - publicTitle
-      - scientificTitle
       - protocolVersion
       - protocolStatus
       title: StudyProtocolDocumentVersion
+    StudySite:
+      properties:
+        id:
+          type: string
+          minLength: 1
+          title: Id
+        name:
+          type: string
+          minLength: 1
+          title: Name
+        label:
+          anyOf:
+          - type: string
+          - type: 'null'
+          title: Label
+        description:
+          anyOf:
+          - type: string
+          - type: 'null'
+          title: Description
+        currentEnrollmentId:
+          anyOf:
+          - type: string
+          - type: 'null'
+          title: Currentenrollmentid
+      type: object
+      required:
+      - id
+      - name
+      title: StudySite
+    StudyTitle:
+      properties:
+        id:
+          type: string
+          minLength: 1
+          title: Id
+        text:
+          type: string
+          title: Text
+        typeId:
+          type: string
+          title: Typeid
+      type: object
+      required:
+      - id
+      - text
+      - typeId
+      title: StudyTitle
     StudyVersion-Input:
       properties:
         id:
           type: string
           minLength: 1
           title: Id
-        studyTitle:
-          type: string
-          title: Studytitle
         versionIdentifier:
           type: string
           title: Versionidentifier
         rationale:
           type: string
           title: Rationale
-        studyAcronym:
-          type: string
-          title: Studyacronym
         type:
           anyOf:
           - $ref: '#/components/schemas/Code'
@@ -3163,13 +3183,17 @@ components:
           type: array
           title: Studydesigns
           default: []
+        studyTitleIds:
+          items:
+            $ref: '#/components/schemas/StudyTitle'
+          type: array
+          title: Studytitleids
       type: object
       required:
       - id
-      - studyTitle
       - versionIdentifier
       - rationale
-      - studyAcronym
+      - studyTitleIds
       title: StudyVersion
     StudyVersion-Output:
       properties:
@@ -3177,18 +3201,12 @@ components:
           type: string
           minLength: 1
           title: Id
-        studyTitle:
-          type: string
-          title: Studytitle
         versionIdentifier:
           type: string
           title: Versionidentifier
         rationale:
           type: string
           title: Rationale
-        studyAcronym:
-          type: string
-          title: Studyacronym
         type:
           anyOf:
           - $ref: '#/components/schemas/Code'
@@ -3232,13 +3250,17 @@ components:
           type: array
           title: Studydesigns
           default: []
+        studyTitleIds:
+          items:
+            $ref: '#/components/schemas/StudyTitle'
+          type: array
+          title: Studytitleids
       type: object
       required:
       - id
-      - studyTitle
       - versionIdentifier
       - rationale
-      - studyAcronym
+      - studyTitleIds
       title: StudyVersion
     SubjectEnrollment-Input:
       properties:

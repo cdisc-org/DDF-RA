@@ -368,21 +368,6 @@
             "title": "Definedprocedures",
             "default": []
           },
-          "isConditional": {
-            "type": "boolean",
-            "title": "Isconditional"
-          },
-          "isConditionalReason": {
-            "anyOf": [
-              {
-                "type": "string"
-              },
-              {
-                "type": "null"
-              }
-            ],
-            "title": "Isconditionalreason"
-          },
           "biomedicalConceptIds": {
             "items": {
               "type": "string"
@@ -422,8 +407,7 @@
         "type": "object",
         "required": [
           "id",
-          "name",
-          "isConditional"
+          "name"
         ],
         "title": "Activity"
       },
@@ -491,21 +475,6 @@
             "title": "Definedprocedures",
             "default": []
           },
-          "isConditional": {
-            "type": "boolean",
-            "title": "Isconditional"
-          },
-          "isConditionalReason": {
-            "anyOf": [
-              {
-                "type": "string"
-              },
-              {
-                "type": "null"
-              }
-            ],
-            "title": "Isconditionalreason"
-          },
           "biomedicalConceptIds": {
             "items": {
               "type": "string"
@@ -545,8 +514,7 @@
         "type": "object",
         "required": [
           "id",
-          "name",
-          "isConditional"
+          "name"
         ],
         "title": "Activity"
       },
@@ -2010,12 +1978,17 @@
             "type": "array",
             "title": "Codes",
             "default": []
+          },
+          "isRareDisease": {
+            "type": "boolean",
+            "title": "Israredisease"
           }
         },
         "type": "object",
         "required": [
           "id",
-          "name"
+          "name",
+          "isRareDisease"
         ],
         "title": "Indication"
       },
@@ -2065,6 +2038,36 @@
           "strategy"
         ],
         "title": "IntercurrentEvent"
+      },
+      "Masking": {
+        "properties": {
+          "id": {
+            "type": "string",
+            "minLength": 1,
+            "title": "Id"
+          },
+          "description": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Description"
+          },
+          "roleId": {
+            "type": "string",
+            "title": "Roleid"
+          }
+        },
+        "type": "object",
+        "required": [
+          "id",
+          "roleId"
+        ],
+        "title": "Masking"
       },
       "NarrativeContent": {
         "properties": {
@@ -2440,21 +2443,6 @@
           "code": {
             "$ref": "#/components/schemas/Code"
           },
-          "isConditional": {
-            "type": "boolean",
-            "title": "Isconditional"
-          },
-          "isConditionalReason": {
-            "anyOf": [
-              {
-                "type": "string"
-              },
-              {
-                "type": "null"
-              }
-            ],
-            "title": "Isconditionalreason"
-          },
           "studyInterventionId": {
             "anyOf": [
               {
@@ -2472,8 +2460,7 @@
           "id",
           "name",
           "procedureType",
-          "code",
-          "isConditional"
+          "code"
         ],
         "title": "Procedure"
       },
@@ -3506,6 +3493,10 @@
             ],
             "title": "Description"
           },
+          "includesHealthySubjects": {
+            "type": "boolean",
+            "title": "Includeshealthysubjects"
+          },
           "plannedEnrollmentNumber": {
             "anyOf": [
               {
@@ -3520,26 +3511,6 @@
             "anyOf": [
               {
                 "$ref": "#/components/schemas/Range"
-              },
-              {
-                "type": "null"
-              }
-            ]
-          },
-          "plannedMaximumAge": {
-            "anyOf": [
-              {
-                "$ref": "#/components/schemas/Quantity"
-              },
-              {
-                "type": "null"
-              }
-            ]
-          },
-          "plannedMinimumAge": {
-            "anyOf": [
-              {
-                "$ref": "#/components/schemas/Quantity"
               },
               {
                 "type": "null"
@@ -3562,6 +3533,16 @@
             "title": "Criteria",
             "default": []
           },
+          "plannedAge": {
+            "anyOf": [
+              {
+                "$ref": "#/components/schemas/Range"
+              },
+              {
+                "type": "null"
+              }
+            ]
+          },
           "characteristics": {
             "items": {
               "$ref": "#/components/schemas/Characteristic"
@@ -3574,7 +3555,8 @@
         "type": "object",
         "required": [
           "id",
-          "name"
+          "name",
+          "includesHealthySubjects"
         ],
         "title": "StudyCohort"
       },
@@ -3612,6 +3594,10 @@
             ],
             "title": "Description"
           },
+          "includesHealthySubjects": {
+            "type": "boolean",
+            "title": "Includeshealthysubjects"
+          },
           "plannedEnrollmentNumber": {
             "anyOf": [
               {
@@ -3626,26 +3612,6 @@
             "anyOf": [
               {
                 "$ref": "#/components/schemas/Range"
-              },
-              {
-                "type": "null"
-              }
-            ]
-          },
-          "plannedMaximumAge": {
-            "anyOf": [
-              {
-                "$ref": "#/components/schemas/Quantity"
-              },
-              {
-                "type": "null"
-              }
-            ]
-          },
-          "plannedMinimumAge": {
-            "anyOf": [
-              {
-                "$ref": "#/components/schemas/Quantity"
               },
               {
                 "type": "null"
@@ -3668,6 +3634,16 @@
             "title": "Criteria",
             "default": []
           },
+          "plannedAge": {
+            "anyOf": [
+              {
+                "$ref": "#/components/schemas/Range"
+              },
+              {
+                "type": "null"
+              }
+            ]
+          },
           "characteristics": {
             "items": {
               "$ref": "#/components/schemas/Characteristic"
@@ -3680,7 +3656,8 @@
         "type": "object",
         "required": [
           "id",
-          "name"
+          "name",
+          "includesHealthySubjects"
         ],
         "title": "StudyCohort"
       },
@@ -3844,6 +3821,14 @@
             "title": "Indications",
             "default": []
           },
+          "maskingRoles": {
+            "items": {
+              "$ref": "#/components/schemas/Masking"
+            },
+            "type": "array",
+            "title": "Maskingroles",
+            "default": []
+          },
           "studyInterventions": {
             "items": {
               "$ref": "#/components/schemas/StudyIntervention-Input"
@@ -3887,6 +3872,14 @@
                 "type": "null"
               }
             ]
+          },
+          "appliesTo": {
+            "items": {
+              "$ref": "#/components/schemas/StudySite"
+            },
+            "type": "array",
+            "title": "Appliesto",
+            "default": []
           },
           "dictionaries": {
             "items": {
@@ -4069,6 +4062,14 @@
             "title": "Indications",
             "default": []
           },
+          "maskingRoles": {
+            "items": {
+              "$ref": "#/components/schemas/Masking"
+            },
+            "type": "array",
+            "title": "Maskingroles",
+            "default": []
+          },
           "studyInterventions": {
             "items": {
               "$ref": "#/components/schemas/StudyIntervention-Output"
@@ -4112,6 +4113,14 @@
                 "type": "null"
               }
             ]
+          },
+          "appliesTo": {
+            "items": {
+              "$ref": "#/components/schemas/StudySite"
+            },
+            "type": "array",
+            "title": "Appliesto",
+            "default": []
           },
           "dictionaries": {
             "items": {
@@ -4168,6 +4177,10 @@
             ],
             "title": "Description"
           },
+          "includesHealthySubjects": {
+            "type": "boolean",
+            "title": "Includeshealthysubjects"
+          },
           "plannedEnrollmentNumber": {
             "anyOf": [
               {
@@ -4182,26 +4195,6 @@
             "anyOf": [
               {
                 "$ref": "#/components/schemas/Range"
-              },
-              {
-                "type": "null"
-              }
-            ]
-          },
-          "plannedMaximumAge": {
-            "anyOf": [
-              {
-                "$ref": "#/components/schemas/Quantity"
-              },
-              {
-                "type": "null"
-              }
-            ]
-          },
-          "plannedMinimumAge": {
-            "anyOf": [
-              {
-                "$ref": "#/components/schemas/Quantity"
               },
               {
                 "type": "null"
@@ -4224,6 +4217,16 @@
             "title": "Criteria",
             "default": []
           },
+          "plannedAge": {
+            "anyOf": [
+              {
+                "$ref": "#/components/schemas/Range"
+              },
+              {
+                "type": "null"
+              }
+            ]
+          },
           "cohorts": {
             "items": {
               "$ref": "#/components/schemas/StudyCohort-Input"
@@ -4236,7 +4239,8 @@
         "type": "object",
         "required": [
           "id",
-          "name"
+          "name",
+          "includesHealthySubjects"
         ],
         "title": "StudyDesignPopulation"
       },
@@ -4274,6 +4278,10 @@
             ],
             "title": "Description"
           },
+          "includesHealthySubjects": {
+            "type": "boolean",
+            "title": "Includeshealthysubjects"
+          },
           "plannedEnrollmentNumber": {
             "anyOf": [
               {
@@ -4288,26 +4296,6 @@
             "anyOf": [
               {
                 "$ref": "#/components/schemas/Range"
-              },
-              {
-                "type": "null"
-              }
-            ]
-          },
-          "plannedMaximumAge": {
-            "anyOf": [
-              {
-                "$ref": "#/components/schemas/Quantity"
-              },
-              {
-                "type": "null"
-              }
-            ]
-          },
-          "plannedMinimumAge": {
-            "anyOf": [
-              {
-                "$ref": "#/components/schemas/Quantity"
               },
               {
                 "type": "null"
@@ -4330,6 +4318,16 @@
             "title": "Criteria",
             "default": []
           },
+          "plannedAge": {
+            "anyOf": [
+              {
+                "$ref": "#/components/schemas/Range"
+              },
+              {
+                "type": "null"
+              }
+            ]
+          },
           "cohorts": {
             "items": {
               "$ref": "#/components/schemas/StudyCohort-Output"
@@ -4342,7 +4340,8 @@
         "type": "object",
         "required": [
           "id",
-          "name"
+          "name",
+          "includesHealthySubjects"
         ],
         "title": "StudyDesignPopulation"
       },
@@ -4486,11 +4485,6 @@
       },
       "StudyIdentifier-Input": {
         "properties": {
-          "id": {
-            "type": "string",
-            "minLength": 1,
-            "title": "Id"
-          },
           "studyIdentifier": {
             "type": "string",
             "title": "Studyidentifier"
@@ -4501,7 +4495,6 @@
         },
         "type": "object",
         "required": [
-          "id",
           "studyIdentifier",
           "studyIdentifierScope"
         ],
@@ -4509,11 +4502,6 @@
       },
       "StudyIdentifier-Output": {
         "properties": {
-          "id": {
-            "type": "string",
-            "minLength": 1,
-            "title": "Id"
-          },
           "studyIdentifier": {
             "type": "string",
             "title": "Studyidentifier"
@@ -4524,7 +4512,6 @@
         },
         "type": "object",
         "required": [
-          "id",
           "studyIdentifier",
           "studyIdentifierScope"
         ],
@@ -4785,22 +4772,6 @@
             "minLength": 1,
             "title": "Id"
           },
-          "briefTitle": {
-            "type": "string",
-            "title": "Brieftitle"
-          },
-          "officialTitle": {
-            "type": "string",
-            "title": "Officialtitle"
-          },
-          "publicTitle": {
-            "type": "string",
-            "title": "Publictitle"
-          },
-          "scientificTitle": {
-            "type": "string",
-            "title": "Scientifictitle"
-          },
           "protocolVersion": {
             "type": "string",
             "title": "Protocolversion"
@@ -4836,10 +4807,6 @@
         "type": "object",
         "required": [
           "id",
-          "briefTitle",
-          "officialTitle",
-          "publicTitle",
-          "scientificTitle",
           "protocolVersion",
           "protocolStatus"
         ],
@@ -4851,22 +4818,6 @@
             "type": "string",
             "minLength": 1,
             "title": "Id"
-          },
-          "briefTitle": {
-            "type": "string",
-            "title": "Brieftitle"
-          },
-          "officialTitle": {
-            "type": "string",
-            "title": "Officialtitle"
-          },
-          "publicTitle": {
-            "type": "string",
-            "title": "Publictitle"
-          },
-          "scientificTitle": {
-            "type": "string",
-            "title": "Scientifictitle"
           },
           "protocolVersion": {
             "type": "string",
@@ -4903,14 +4854,87 @@
         "type": "object",
         "required": [
           "id",
-          "briefTitle",
-          "officialTitle",
-          "publicTitle",
-          "scientificTitle",
           "protocolVersion",
           "protocolStatus"
         ],
         "title": "StudyProtocolDocumentVersion"
+      },
+      "StudySite": {
+        "properties": {
+          "id": {
+            "type": "string",
+            "minLength": 1,
+            "title": "Id"
+          },
+          "name": {
+            "type": "string",
+            "minLength": 1,
+            "title": "Name"
+          },
+          "label": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Label"
+          },
+          "description": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Description"
+          },
+          "currentEnrollmentId": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Currentenrollmentid"
+          }
+        },
+        "type": "object",
+        "required": [
+          "id",
+          "name"
+        ],
+        "title": "StudySite"
+      },
+      "StudyTitle": {
+        "properties": {
+          "id": {
+            "type": "string",
+            "minLength": 1,
+            "title": "Id"
+          },
+          "text": {
+            "type": "string",
+            "title": "Text"
+          },
+          "typeId": {
+            "type": "string",
+            "title": "Typeid"
+          }
+        },
+        "type": "object",
+        "required": [
+          "id",
+          "text",
+          "typeId"
+        ],
+        "title": "StudyTitle"
       },
       "StudyVersion-Input": {
         "properties": {
@@ -4919,10 +4943,6 @@
             "minLength": 1,
             "title": "Id"
           },
-          "studyTitle": {
-            "type": "string",
-            "title": "Studytitle"
-          },
           "versionIdentifier": {
             "type": "string",
             "title": "Versionidentifier"
@@ -4930,10 +4950,6 @@
           "rationale": {
             "type": "string",
             "title": "Rationale"
-          },
-          "studyAcronym": {
-            "type": "string",
-            "title": "Studyacronym"
           },
           "type": {
             "anyOf": [
@@ -5005,15 +5021,21 @@
             "type": "array",
             "title": "Studydesigns",
             "default": []
+          },
+          "studyTitleIds": {
+            "items": {
+              "$ref": "#/components/schemas/StudyTitle"
+            },
+            "type": "array",
+            "title": "Studytitleids"
           }
         },
         "type": "object",
         "required": [
           "id",
-          "studyTitle",
           "versionIdentifier",
           "rationale",
-          "studyAcronym"
+          "studyTitleIds"
         ],
         "title": "StudyVersion"
       },
@@ -5024,10 +5046,6 @@
             "minLength": 1,
             "title": "Id"
           },
-          "studyTitle": {
-            "type": "string",
-            "title": "Studytitle"
-          },
           "versionIdentifier": {
             "type": "string",
             "title": "Versionidentifier"
@@ -5035,10 +5053,6 @@
           "rationale": {
             "type": "string",
             "title": "Rationale"
-          },
-          "studyAcronym": {
-            "type": "string",
-            "title": "Studyacronym"
           },
           "type": {
             "anyOf": [
@@ -5110,15 +5124,21 @@
             "type": "array",
             "title": "Studydesigns",
             "default": []
+          },
+          "studyTitleIds": {
+            "items": {
+              "$ref": "#/components/schemas/StudyTitle"
+            },
+            "type": "array",
+            "title": "Studytitleids"
           }
         },
         "type": "object",
         "required": [
           "id",
-          "studyTitle",
           "versionIdentifier",
           "rationale",
-          "studyAcronym"
+          "studyTitleIds"
         ],
         "title": "StudyVersion"
       },
