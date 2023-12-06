@@ -67,12 +67,6 @@ Activity:
       Cardinality: 0..*
       Relationship Type: Ref
       Model Name: bcCategories
-    isConditional:
-      $ref: UNKNOWN
-      Relationship Type: Value
-    isConditionalReason:
-      $ref: UNKNOWN
-      Relationship Type: Value
 Address:
   NCI C-Code: C25407
   Preferred Term: Address
@@ -1106,9 +1100,9 @@ Indication:
       Definition: The short descriptive designation for the indication.
       Relationship Type: Value
       Model Name: label
-    isRareDisease*:
+    isRareDisease:
       $ref: '#/Boolean'
-      Relationship Type: UNKNOWN
+      Relationship Type: Value
       Model Name: isRareDisease
     codes:
       $ref: '#/Code'
@@ -1163,17 +1157,20 @@ IntercurrentEvent:
       Relationship Type: Value
       Model Name: strategy
 Masking:
-  Modifier: Abstract
+  Modifier: Concrete
   Attributes:
     id:
       $ref: '#/string'
+      Relationship Type: Value
       Model Name: id
     description:
       $ref: '#/string'
+      Relationship Type: Value
       Model Name: description
-    role:
+    roleId:
       $ref: '#/Code'
       Cardinality: '1'
+      Relationship Type: Ref
       Model Name: role
 NarrativeContent:
   NCI C-Code: CNEW
@@ -1530,12 +1527,6 @@ Procedure:
       Cardinality: 0..1
       Relationship Type: Ref
       Model Name: studyIntervention
-    isConditional:
-      $ref: UNKNOWN
-      Relationship Type: Value
-    isConditionalReason:
-      $ref: UNKNOWN
-      Relationship Type: Value
 Quantity:
   NCI C-Code: C25256
   Preferred Term: Quantity
@@ -2169,9 +2160,9 @@ StudyCohort:
       Model Name: label
       Inherited From:
         $ref: '#/PopulationDefinition'
-    includesHealthySubjects*:
+    includesHealthySubjects:
       $ref: '#/Boolean'
-      Relationship Type: UNKNOWN
+      Relationship Type: Value
       Model Name: includesHealthySubjects
       Inherited From:
         $ref: '#/PopulationDefinition'
@@ -2193,13 +2184,13 @@ StudyCohort:
       Model Name: criteria
       Inherited From:
         $ref: '#/PopulationDefinition'
-    plannedAge*:
+    plannedAge:
       $ref: '#/Range'
       NCI C-Code: CNEW
       Cardinality: 0..1
       Preferred Term: Study Cohort Planned Age
       Definition: The protocol-defined age of subjects within the study cohort.
-      Relationship Type: UNKNOWN
+      Relationship Type: Value
       Model Name: plannedAge
       Inherited From:
         $ref: '#/PopulationDefinition'
@@ -2230,12 +2221,6 @@ StudyCohort:
       Cardinality: 0..*
       Relationship Type: Value
       Model Name: characteristics
-    plannedMaximumAge:
-      $ref: UNKNOWN
-      Relationship Type: Value
-    plannedMinimumAge:
-      $ref: UNKNOWN
-      Relationship Type: Value
 StudyDesign:
   NCI C-Code: C15320
   Preferred Term: Study Design
@@ -2352,10 +2337,10 @@ StudyDesign:
       Cardinality: 0..*
       Relationship Type: Value
       Model Name: indications
-    maskingRoles*:
+    maskingRoles:
       $ref: '#/Masking'
       Cardinality: 0..*
-      Relationship Type: UNKNOWN
+      Relationship Type: Value
       Model Name: maskingRoles
     objectives:
       $ref: '#/Objective'
@@ -2387,10 +2372,10 @@ StudyDesign:
       Cardinality: 0..1
       Relationship Type: Value
       Model Name: documentVersion
-    appliesTo*:
+    appliesTo:
       $ref: '#/StudySite'
       Cardinality: 0..*
-      Relationship Type: UNKNOWN
+      Relationship Type: Value
       Model Name: appliesTo
     studyInterventions:
       $ref: '#/StudyIntervention'
@@ -2466,9 +2451,9 @@ StudyDesignPopulation:
       Model Name: label
       Inherited From:
         $ref: '#/PopulationDefinition'
-    includesHealthySubjects*:
+    includesHealthySubjects:
       $ref: '#/Boolean'
-      Relationship Type: UNKNOWN
+      Relationship Type: Value
       Model Name: includesHealthySubjects
       Inherited From:
         $ref: '#/PopulationDefinition'
@@ -2491,13 +2476,13 @@ StudyDesignPopulation:
       Model Name: criteria
       Inherited From:
         $ref: '#/PopulationDefinition'
-    plannedAge*:
+    plannedAge:
       $ref: '#/Range'
       NCI C-Code: CNEW
       Cardinality: 0..1
       Preferred Term: Study Design Population Planned Age
       Definition: The protocol-defined age of subjects within the study design population.
-      Relationship Type: UNKNOWN
+      Relationship Type: Value
       Model Name: plannedAge
       Inherited From:
         $ref: '#/PopulationDefinition'
@@ -2529,12 +2514,6 @@ StudyDesignPopulation:
       Cardinality: 0..*
       Relationship Type: Value
       Model Name: cohorts
-    plannedMaximumAge:
-      $ref: UNKNOWN
-      Relationship Type: Value
-    plannedMinimumAge:
-      $ref: UNKNOWN
-      Relationship Type: Value
 StudyElement:
   NCI C-Code: C142735
   Preferred Term: Study Design Element
@@ -2661,10 +2640,6 @@ StudyIdentifier:
       Cardinality: '1'
       Relationship Type: Value
       Model Name: studyIdentifierScope
-    id:
-      $ref: '#/string'
-      Cardinality: 0..1
-      Relationship Type: Value
 StudyIntervention:
   NCI C-Code: CNEW
   Preferred Term: Study Intervention
@@ -2848,63 +2823,55 @@ StudyProtocolDocumentVersion:
       Cardinality: 0..*
       Relationship Type: Ref
       Model Name: children
-    briefTitle:
-      $ref: '#/string'
-      Cardinality: 0..1
-      Relationship Type: Value
-    officialTitle:
-      $ref: '#/string'
-      Cardinality: 0..1
-      Relationship Type: Value
-    publicTitle:
-      $ref: '#/string'
-      Cardinality: 0..1
-      Relationship Type: Value
-    scientificTitle:
-      $ref: '#/string'
-      Cardinality: 0..1
-      Relationship Type: Value
 StudySite:
-  Modifier: Abstract
+  Modifier: Concrete
   Attributes:
     id:
       $ref: '#/string'
+      Relationship Type: Value
       Model Name: id
     name:
       $ref: '#/string'
+      Relationship Type: Value
       Model Name: name
     description:
       $ref: '#/string'
+      Relationship Type: Value
       Model Name: description
     label:
       $ref: '#/string'
+      Relationship Type: Value
       Model Name: label
-    currentEnrollment:
+    currentEnrollmentId:
       $ref: '#/SubjectEnrollment'
       Cardinality: 0..1
+      Relationship Type: Ref
       Model Name: currentEnrollment
 StudyTitle:
   NCI C-Code: C49802
   Preferred Term: Study Title
   Definition: The sponsor-defined name of the clinical study.
-  Modifier: Abstract
+  Modifier: Concrete
   Attributes:
     id:
       $ref: '#/string'
+      Relationship Type: Value
       Model Name: id
     text:
       $ref: '#/string'
       NCI C-Code: CNEW
       Preferred Term: Study Title Text
       Definition: An instance of unstructured text that represents the study title.
+      Relationship Type: Value
       Model Name: text
-    type:
+    typeId:
       $ref: '#/Code'
       NCI C-Code: CNEW
       Cardinality: '1'
       Preferred Term: Study Title Type
       Definition: A characterization or classification of the study title.
       Codelist Ref: CNEW-DDF Study Title Attribute Terminology
+      Relationship Type: Ref
       Model Name: type
 StudyVersion:
   NCI C-Code: C188816
@@ -2993,19 +2960,11 @@ StudyVersion:
       Cardinality: 0..1
       Relationship Type: Ref
       Model Name: documentVersion
-    studyTitles*:
+    studyTitleIds:
       $ref: '#/StudyTitle'
       Cardinality: 1..*
-      Relationship Type: UNKNOWN
+      Relationship Type: Ref
       Model Name: studyTitles
-    studyTitle:
-      $ref: '#/string'
-      Cardinality: 0..1
-      Relationship Type: Value
-    studyAcronym:
-      $ref: '#/string'
-      Cardinality: 0..1
-      Relationship Type: Value
 SubjectEnrollment:
   NCI C-Code: C37948
   Preferred Term: Subject Enrollment
