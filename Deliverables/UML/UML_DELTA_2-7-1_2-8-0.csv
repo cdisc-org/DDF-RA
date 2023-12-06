@@ -8,6 +8,10 @@ Class - NEW,Condition,,
 ,,dictionary,SyntaxTemplateDictionary
 ,,context,ScheduledActivityInstance
 ,,appliesTo,Procedure
+Class - NEW,Masking,,
+,,id,String
+,,description,String
+,,role,Code
 Class - NEW,OversightCommittee,,
 ,,id,String
 ,,name,String
@@ -16,6 +20,7 @@ Class - NEW,OversightCommittee,,
 ,,identifierScheme,String
 ,,legalAddress,Address
 ,,type,Code
+,,oversees,StudySite
 Class - NEW,ResearchOrganization,,
 ,,id,String
 ,,name,String
@@ -24,23 +29,27 @@ Class - NEW,ResearchOrganization,,
 ,,identifierScheme,String
 ,,legalAddress,Address
 ,,type,Code
+,,manages,StudySite
 Class - NEW,StudySite,,
 ,,id,String
 ,,name,String
 ,,description,String
 ,,label,String
-,,oversees,OversightCommittee
-,,manages,ResearchOrganization
 ,,currentEnrollment,SubjectEnrollment
 Class - NEW,StudyTitle,,
 ,,id,String
 ,,text,String
 ,,type,Code
 ,,,
+Property - NEW,StudyDesign,appliesTo,StudySite
+Property - NEW,StudyDesign,maskingRoles,Masking
+Property - NEW,Indication,isRareDisease,Boolean
+Property - NEW,StudyDesignPopulation,includesHealthySubjects,Boolean
 Property - NEW,StudyDesignPopulation,plannedAge,Range
-Property - NEW,StudyVersion,appliesTo,StudySite
 Property - NEW,StudyVersion,studyTitles,StudyTitle
+Property - NEW,PopulationDefinition,includesHealthySubjects,Boolean
 Property - NEW,PopulationDefinition,plannedAge,Range
+Property - NEW,StudyCohort,includesHealthySubjects,Boolean
 Property - NEW,StudyCohort,plannedAge,Range
 Property - DELETED,Activity,isConditional,boolean
 Property - DELETED,Activity,isConditionalReason,String

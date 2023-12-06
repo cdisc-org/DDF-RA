@@ -1106,6 +1106,10 @@ Indication:
       Definition: The short descriptive designation for the indication.
       Relationship Type: Value
       Model Name: label
+    isRareDisease*:
+      $ref: '#/Boolean'
+      Relationship Type: UNKNOWN
+      Model Name: isRareDisease
     codes:
       $ref: '#/Code'
       NCI C-Code: C188822
@@ -1158,6 +1162,19 @@ IntercurrentEvent:
         intercurrent events.
       Relationship Type: Value
       Model Name: strategy
+Masking:
+  Modifier: Abstract
+  Attributes:
+    id:
+      $ref: '#/string'
+      Model Name: id
+    description:
+      $ref: '#/string'
+      Model Name: description
+    role:
+      $ref: '#/Code'
+      Cardinality: '1'
+      Model Name: role
 NarrativeContent:
   NCI C-Code: CNEW
   Preferred Term: Narrative Content
@@ -1384,6 +1401,10 @@ OversightCommittee:
       Model Name: type
       Inherited From:
         $ref: '#/Organization'
+    oversees:
+      $ref: '#/StudySite'
+      Cardinality: 1..*
+      Model Name: oversees
 PopulationDefinition:
   NCI C-Code: CNEW
   Preferred Term: Population Definition
@@ -1415,6 +1436,9 @@ PopulationDefinition:
       Preferred Term: Population Definition Label
       Definition: The short descriptive designation for the population definition.
       Model Name: label
+    includesHealthySubjects:
+      $ref: '#/Boolean'
+      Model Name: includesHealthySubjects
     plannedSex:
       $ref: '#/Code'
       NCI C-Code: CNEW
@@ -1624,6 +1648,10 @@ ResearchOrganization:
       Model Name: type
       Inherited From:
         $ref: '#/Organization'
+    manages:
+      $ref: '#/StudySite'
+      Cardinality: 1..*
+      Model Name: manages
 ResponseCode:
   NCI C-Code: C201347
   Preferred Term: Response Code
@@ -2141,6 +2169,12 @@ StudyCohort:
       Model Name: label
       Inherited From:
         $ref: '#/PopulationDefinition'
+    includesHealthySubjects*:
+      $ref: '#/Boolean'
+      Relationship Type: UNKNOWN
+      Model Name: includesHealthySubjects
+      Inherited From:
+        $ref: '#/PopulationDefinition'
     plannedSex:
       $ref: '#/Code'
       NCI C-Code: CNEW
@@ -2318,6 +2352,11 @@ StudyDesign:
       Cardinality: 0..*
       Relationship Type: Value
       Model Name: indications
+    maskingRoles*:
+      $ref: '#/Masking'
+      Cardinality: 0..*
+      Relationship Type: UNKNOWN
+      Model Name: maskingRoles
     objectives:
       $ref: '#/Objective'
       Cardinality: 0..*
@@ -2348,6 +2387,11 @@ StudyDesign:
       Cardinality: 0..1
       Relationship Type: Value
       Model Name: documentVersion
+    appliesTo*:
+      $ref: '#/StudySite'
+      Cardinality: 0..*
+      Relationship Type: UNKNOWN
+      Model Name: appliesTo
     studyInterventions:
       $ref: '#/StudyIntervention'
       Cardinality: 0..*
@@ -2420,6 +2464,12 @@ StudyDesignPopulation:
       Definition: The short descriptive designation for the study design population.
       Relationship Type: Value
       Model Name: label
+      Inherited From:
+        $ref: '#/PopulationDefinition'
+    includesHealthySubjects*:
+      $ref: '#/Boolean'
+      Relationship Type: UNKNOWN
+      Model Name: includesHealthySubjects
       Inherited From:
         $ref: '#/PopulationDefinition'
     plannedSex:
@@ -2829,14 +2879,6 @@ StudySite:
     label:
       $ref: '#/string'
       Model Name: label
-    oversees:
-      $ref: '#/OversightCommittee'
-      Cardinality: '1'
-      Model Name: oversees
-    manages:
-      $ref: '#/ResearchOrganization'
-      Cardinality: '1'
-      Model Name: manages
     currentEnrollment:
       $ref: '#/SubjectEnrollment'
       Cardinality: 0..1
@@ -2951,11 +2993,6 @@ StudyVersion:
       Cardinality: 0..1
       Relationship Type: Ref
       Model Name: documentVersion
-    appliesTo*:
-      $ref: '#/StudySite'
-      Cardinality: 1..*
-      Relationship Type: UNKNOWN
-      Model Name: appliesTo
     studyTitles*:
       $ref: '#/StudyTitle'
       Cardinality: 1..*
