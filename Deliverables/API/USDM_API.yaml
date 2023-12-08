@@ -1312,13 +1312,12 @@ components:
           - type: string
           - type: 'null'
           title: Description
-        roleId:
-          type: string
-          title: Roleid
+        role:
+          $ref: '#/components/schemas/Code'
       type: object
       required:
       - id
-      - roleId
+      - role
       title: Masking
     NarrativeContent:
       properties:
