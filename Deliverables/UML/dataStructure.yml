@@ -1167,10 +1167,10 @@ Masking:
       $ref: '#/string'
       Relationship Type: Value
       Model Name: description
-    roleId:
+    role:
       $ref: '#/Code'
       Cardinality: '1'
-      Relationship Type: Ref
+      Relationship Type: Value
       Model Name: role
 NarrativeContent:
   NCI C-Code: CNEW
