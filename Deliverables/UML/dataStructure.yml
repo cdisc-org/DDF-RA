@@ -2960,10 +2960,10 @@ StudyVersion:
       Cardinality: 0..1
       Relationship Type: Ref
       Model Name: documentVersion
-    studyTitleIds:
+    studyTitles:
       $ref: '#/StudyTitle'
       Cardinality: 1..*
-      Relationship Type: Ref
+      Relationship Type: Value
       Model Name: studyTitles
 SubjectEnrollment:
   NCI C-Code: C37948
