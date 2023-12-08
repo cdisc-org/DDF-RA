@@ -5022,12 +5022,12 @@
             "title": "Studydesigns",
             "default": []
           },
-          "studyTitleIds": {
+          "studyTitles": {
             "items": {
               "$ref": "#/components/schemas/StudyTitle"
             },
             "type": "array",
-            "title": "Studytitleids"
+            "title": "Studytitles"
           }
         },
         "type": "object",
@@ -5035,7 +5035,7 @@
           "id",
           "versionIdentifier",
           "rationale",
-          "studyTitleIds"
+          "studyTitles"
         ],
         "title": "StudyVersion"
       },
@@ -5125,12 +5125,12 @@
             "title": "Studydesigns",
             "default": []
           },
-          "studyTitleIds": {
+          "studyTitles": {
             "items": {
               "$ref": "#/components/schemas/StudyTitle"
             },
             "type": "array",
-            "title": "Studytitleids"
+            "title": "Studytitles"
           }
         },
         "type": "object",
@@ -5138,7 +5138,7 @@
           "id",
           "versionIdentifier",
           "rationale",
-          "studyTitleIds"
+          "studyTitles"
         ],
         "title": "StudyVersion"
       },

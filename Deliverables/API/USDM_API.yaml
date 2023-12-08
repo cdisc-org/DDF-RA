@@ -3183,17 +3183,17 @@ components:
           type: array
           title: Studydesigns
           default: []
-        studyTitleIds:
+        studyTitles:
           items:
             $ref: '#/components/schemas/StudyTitle'
           type: array
-          title: Studytitleids
+          title: Studytitles
       type: object
       required:
       - id
       - versionIdentifier
       - rationale
-      - studyTitleIds
+      - studyTitles
       title: StudyVersion
     StudyVersion-Output:
       properties:
@@ -3250,17 +3250,17 @@ components:
           type: array
           title: Studydesigns
           default: []
-        studyTitleIds:
+        studyTitles:
           items:
             $ref: '#/components/schemas/StudyTitle'
           type: array
-          title: Studytitleids
+          title: Studytitles
       type: object
       required:
       - id
       - versionIdentifier
       - rationale
-      - studyTitleIds
+      - studyTitles
       title: StudyVersion
     SubjectEnrollment-Input:
       properties:
