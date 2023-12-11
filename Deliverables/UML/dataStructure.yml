@@ -2263,10 +2263,10 @@ StudyDesign:
       Codelist Ref: (Point out to external dictionaries)
       Relationship Type: Value
       Model Name: therapeuticAreas
-    characteristics*:
+    characteristics:
       $ref: '#/Code'
       Cardinality: 0..*
-      Relationship Type: UNKNOWN
+      Relationship Type: Value
       Model Name: characteristics
     trialTypes:
       $ref: '#/Code'
@@ -2934,15 +2934,11 @@ StudyVersion:
       Cardinality: 0..1
       Relationship Type: Ref
       Model Name: documentVersion
-    titles*:
+    titles:
       $ref: '#/StudyTitle'
       Cardinality: 1..*
-      Relationship Type: UNKNOWN
-      Model Name: titles
-    studyTitles:
-      $ref: '#/StudyTitle'
-      Cardinality: 0..*
       Relationship Type: Value
+      Model Name: titles
 SubjectEnrollment:
   NCI C-Code: C37948
   Preferred Term: Subject Enrollment
