@@ -1302,7 +1302,6 @@ Organization:
     for a common purpose (such as administrative, legal, political) and the infrastructure
     to carry out that purpose. (BRIDG)
   Sub Classes:
-  - $ref: '#/OversightCommittee'
   - $ref: '#/ResearchOrganization'
   Modifier: Concrete
   Attributes:
@@ -1356,52 +1355,6 @@ Organization:
       Codelist Ref: C188724
       Relationship Type: Value
       Model Name: type
-OversightCommittee:
-  Super Classes:
-  - $ref: '#/Organization'
-  Modifier: Abstract
-  Attributes:
-    id:
-      $ref: '#/string'
-      Model Name: id
-      Inherited From:
-        $ref: '#/Organization'
-    name:
-      $ref: '#/string'
-      Model Name: name
-      Inherited From:
-        $ref: '#/Organization'
-    label:
-      $ref: '#/string'
-      Model Name: label
-      Inherited From:
-        $ref: '#/Organization'
-    identifier:
-      $ref: '#/string'
-      Model Name: identifier
-      Inherited From:
-        $ref: '#/Organization'
-    identifierScheme:
-      $ref: '#/string'
-      Model Name: identifierScheme
-      Inherited From:
-        $ref: '#/Organization'
-    legalAddress:
-      $ref: '#/Address'
-      Cardinality: 0..1
-      Model Name: legalAddress
-      Inherited From:
-        $ref: '#/Organization'
-    type:
-      $ref: '#/Code'
-      Cardinality: '1'
-      Model Name: type
-      Inherited From:
-        $ref: '#/Organization'
-    oversees:
-      $ref: '#/StudySite'
-      Cardinality: 1..*
-      Model Name: oversees
 PopulationDefinition:
   NCI C-Code: CNEW
   Preferred Term: Population Definition
@@ -2302,6 +2255,11 @@ StudyDesign:
       Codelist Ref: (Point out to external dictionaries)
       Relationship Type: Value
       Model Name: therapeuticAreas
+    characteristics*:
+      $ref: '#/Code'
+      Cardinality: 0..*
+      Relationship Type: UNKNOWN
+      Model Name: characteristics
     trialTypes:
       $ref: '#/Code'
       NCI C-Code: C49660
@@ -2960,11 +2918,15 @@ StudyVersion:
       Cardinality: 0..1
       Relationship Type: Ref
       Model Name: documentVersion
-    studyTitles:
+    titles*:
       $ref: '#/StudyTitle'
       Cardinality: 1..*
+      Relationship Type: UNKNOWN
+      Model Name: titles
+    studyTitles:
+      $ref: '#/StudyTitle'
+      Cardinality: 0..*
       Relationship Type: Value
-      Model Name: studyTitles
 SubjectEnrollment:
   NCI C-Code: C37948
   Preferred Term: Subject Enrollment

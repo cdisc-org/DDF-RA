@@ -12,15 +12,6 @@ Class - NEW,Masking,,
 ,,id,String
 ,,description,String
 ,,role,Code
-Class - NEW,OversightCommittee,,
-,,id,String
-,,name,String
-,,label,String
-,,identifier,String
-,,identifierScheme,String
-,,legalAddress,Address
-,,type,Code
-,,oversees,StudySite
 Class - NEW,ResearchOrganization,,
 ,,id,String
 ,,name,String
@@ -42,11 +33,12 @@ Class - NEW,StudyTitle,,
 ,,type,Code
 ,,,
 Property - NEW,StudyDesign,appliesTo,StudySite
+Property - NEW,StudyDesign,characteristics,Code
 Property - NEW,StudyDesign,maskingRoles,Masking
 Property - NEW,Indication,isRareDisease,Boolean
 Property - NEW,StudyDesignPopulation,includesHealthySubjects,Boolean
 Property - NEW,StudyDesignPopulation,plannedAge,Range
-Property - NEW,StudyVersion,studyTitles,StudyTitle
+Property - NEW,StudyVersion,titles,StudyTitle
 Property - NEW,PopulationDefinition,includesHealthySubjects,Boolean
 Property - NEW,PopulationDefinition,plannedAge,Range
 Property - NEW,StudyCohort,includesHealthySubjects,Boolean
