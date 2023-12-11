@@ -895,6 +895,52 @@ components:
       - codeSystemVersion
       - decode
       title: Code
+    Condition:
+      properties:
+        id:
+          type: string
+          minLength: 1
+          title: Id
+        name:
+          type: string
+          minLength: 1
+          title: Name
+        label:
+          anyOf:
+          - type: string
+          - type: 'null'
+          title: Label
+        description:
+          anyOf:
+          - type: string
+          - type: 'null'
+          title: Description
+        text:
+          type: string
+          title: Text
+        dictionaryId:
+          anyOf:
+          - type: string
+          - type: 'null'
+          title: Dictionaryid
+        contextIds:
+          items:
+            type: string
+          type: array
+          title: Contextids
+          default: []
+        appliesToIds:
+          items:
+            type: string
+          type: array
+          title: Appliestoids
+          default: []
+      type: object
+      required:
+      - id
+      - name
+      - text
+      title: Condition
     EligibilityCriteria:
       properties:
         id:
@@ -2456,6 +2502,18 @@ components:
           type: array
           title: Dictionaries
           default: []
+        conditions:
+          items:
+            $ref: '#/components/schemas/Condition'
+          type: array
+          title: Conditions
+          default: []
+        organizations:
+          items:
+            $ref: '#/components/schemas/Organization-Input'
+          type: array
+          title: Organizations
+          default: []
       type: object
       required:
       - id
@@ -2619,6 +2677,18 @@ components:
             $ref: '#/components/schemas/SyntaxTemplateDictionary'
           type: array
           title: Dictionaries
+          default: []
+        conditions:
+          items:
+            $ref: '#/components/schemas/Condition'
+          type: array
+          title: Conditions
+          default: []
+        organizations:
+          items:
+            $ref: '#/components/schemas/Organization-Output'
+          type: array
+          title: Organizations
           default: []
       type: object
       required:
