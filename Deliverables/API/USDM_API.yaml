@@ -2386,6 +2386,12 @@ components:
           type: array
           title: Therapeuticareas
           default: []
+        characteristics:
+          items:
+            $ref: '#/components/schemas/Code'
+          type: array
+          title: Characteristics
+          default: []
         interventionModel:
           $ref: '#/components/schemas/Code'
         encounters:
@@ -2561,6 +2567,12 @@ components:
             $ref: '#/components/schemas/Code'
           type: array
           title: Therapeuticareas
+          default: []
+        characteristics:
+          items:
+            $ref: '#/components/schemas/Code'
+          type: array
+          title: Characteristics
           default: []
         interventionModel:
           $ref: '#/components/schemas/Code'
@@ -3252,17 +3264,17 @@ components:
           type: array
           title: Studydesigns
           default: []
-        studyTitles:
+        titles:
           items:
             $ref: '#/components/schemas/StudyTitle'
           type: array
-          title: Studytitles
+          title: Titles
       type: object
       required:
       - id
       - versionIdentifier
       - rationale
-      - studyTitles
+      - titles
       title: StudyVersion
     StudyVersion-Output:
       properties:
@@ -3319,17 +3331,17 @@ components:
           type: array
           title: Studydesigns
           default: []
-        studyTitles:
+        titles:
           items:
             $ref: '#/components/schemas/StudyTitle'
           type: array
-          title: Studytitles
+          title: Titles
       type: object
       required:
       - id
       - versionIdentifier
       - rationale
-      - studyTitles
+      - titles
       title: StudyVersion
     SubjectEnrollment-Input:
       properties:

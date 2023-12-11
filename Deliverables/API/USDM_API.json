@@ -3792,6 +3792,14 @@
             "title": "Therapeuticareas",
             "default": []
           },
+          "characteristics": {
+            "items": {
+              "$ref": "#/components/schemas/Code"
+            },
+            "type": "array",
+            "title": "Characteristics",
+            "default": []
+          },
           "interventionModel": {
             "$ref": "#/components/schemas/Code"
           },
@@ -4047,6 +4055,14 @@
             },
             "type": "array",
             "title": "Therapeuticareas",
+            "default": []
+          },
+          "characteristics": {
+            "items": {
+              "$ref": "#/components/schemas/Code"
+            },
+            "type": "array",
+            "title": "Characteristics",
             "default": []
           },
           "interventionModel": {
@@ -5127,12 +5143,12 @@
             "title": "Studydesigns",
             "default": []
           },
-          "studyTitles": {
+          "titles": {
             "items": {
               "$ref": "#/components/schemas/StudyTitle"
             },
             "type": "array",
-            "title": "Studytitles"
+            "title": "Titles"
           }
         },
         "type": "object",
@@ -5140,7 +5156,7 @@
           "id",
           "versionIdentifier",
           "rationale",
-          "studyTitles"
+          "titles"
         ],
         "title": "StudyVersion"
       },
@@ -5230,12 +5246,12 @@
             "title": "Studydesigns",
             "default": []
           },
-          "studyTitles": {
+          "titles": {
             "items": {
               "$ref": "#/components/schemas/StudyTitle"
             },
             "type": "array",
-            "title": "Studytitles"
+            "title": "Titles"
           }
         },
         "type": "object",
@@ -5243,7 +5259,7 @@
           "id",
           "versionIdentifier",
           "rationale",
-          "studyTitles"
+          "titles"
         ],
         "title": "StudyVersion"
       },
