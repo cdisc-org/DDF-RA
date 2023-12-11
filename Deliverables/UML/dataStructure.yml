@@ -623,46 +623,54 @@ Code:
 Condition:
   Super Classes:
   - $ref: '#/SyntaxTemplate'
-  Modifier: Abstract
+  Modifier: Concrete
   Attributes:
     id:
       $ref: '#/string'
+      Relationship Type: Value
       Model Name: id
       Inherited From:
         $ref: '#/SyntaxTemplate'
     name:
       $ref: '#/string'
+      Relationship Type: Value
       Model Name: name
       Inherited From:
         $ref: '#/SyntaxTemplate'
     description:
       $ref: '#/string'
+      Relationship Type: Value
       Model Name: description
       Inherited From:
         $ref: '#/SyntaxTemplate'
     label:
       $ref: '#/string'
+      Relationship Type: Value
       Model Name: label
       Inherited From:
         $ref: '#/SyntaxTemplate'
     text:
       $ref: '#/string'
+      Relationship Type: Value
       Model Name: text
       Inherited From:
         $ref: '#/SyntaxTemplate'
-    dictionary:
+    dictionaryId:
       $ref: '#/SyntaxTemplateDictionary'
       Cardinality: 0..1
+      Relationship Type: Ref
       Model Name: dictionary
       Inherited From:
         $ref: '#/SyntaxTemplate'
-    context:
+    contextIds:
       $ref: '#/ScheduledActivityInstance'
       Cardinality: 0..*
+      Relationship Type: Ref
       Model Name: context
-    appliesTo:
+    appliesToIds:
       $ref: '#/Procedure'
       Cardinality: 0..*
+      Relationship Type: Ref
       Model Name: appliesTo
 EligibilityCriteria:
   NCI C-Code: C16112
@@ -2364,6 +2372,14 @@ StudyDesign:
       Relationship Type: Value
     dictionaries:
       $ref: '#/SyntaxTemplateDictionary'
+      Cardinality: 0..*
+      Relationship Type: Value
+    conditions:
+      $ref: '#/Condition'
+      Cardinality: 0..*
+      Relationship Type: Value
+    organizations:
+      $ref: '#/Organization'
       Cardinality: 0..*
       Relationship Type: Value
 StudyDesignPopulation:
