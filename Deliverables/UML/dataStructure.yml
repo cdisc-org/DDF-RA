@@ -621,6 +621,9 @@ Code:
       Relationship Type: Value
       Model Name: decode
 Condition:
+  NCI C-Code: C25457
+  Preferred Term: Condition
+  Definition: A state of being.
   Super Classes:
   - $ref: '#/SyntaxTemplate'
   Modifier: Concrete
@@ -633,24 +636,36 @@ Condition:
         $ref: '#/SyntaxTemplate'
     name:
       $ref: '#/string'
+      NCI C-Code: CNEW
+      Preferred Term: Condition Name
+      Definition: The literal identifier (i.e., distinctive designation) of the condition.
       Relationship Type: Value
       Model Name: name
       Inherited From:
         $ref: '#/SyntaxTemplate'
     description:
       $ref: '#/string'
+      NCI C-Code: CNEW
+      Preferred Term: Condition Description
+      Definition: A narrative representation of the condition.
       Relationship Type: Value
       Model Name: description
       Inherited From:
         $ref: '#/SyntaxTemplate'
     label:
       $ref: '#/string'
+      NCI C-Code: CNEW
+      Preferred Term: Condition Label
+      Definition: The short descriptive designation for the condition.
       Relationship Type: Value
       Model Name: label
       Inherited From:
         $ref: '#/SyntaxTemplate'
     text:
       $ref: '#/string'
+      NCI C-Code: CNEW
+      Preferred Term: Condition Text
+      Definition: An instance of structured text that represents the condition.
       Relationship Type: Value
       Model Name: text
       Inherited From:
@@ -1110,6 +1125,10 @@ Indication:
       Model Name: label
     isRareDisease:
       $ref: '#/Boolean'
+      NCI C-Code: CNEW
+      Preferred Term: Disease Indication Is Rare Disease Indicator
+      Definition: An indication as to whether the disease indication under study is
+        considered a rare disease.
       Relationship Type: Value
       Model Name: isRareDisease
     codes:
@@ -1165,6 +1184,12 @@ IntercurrentEvent:
       Relationship Type: Value
       Model Name: strategy
 Masking:
+  NCI C-Code: C191278
+  Preferred Term: Masking
+  Definition: 'The mechanism used to obscure the distinctive characteristics of the
+    study intervention or procedure to make it indistinguishable from the comparator.
+    NOTE: Blinding refers to study participants while masking refers to the study
+    intervention. (CDISC Glossary)'
   Modifier: Concrete
   Attributes:
     id:
@@ -1173,11 +1198,20 @@ Masking:
       Model Name: id
     description:
       $ref: '#/string'
+      NCI C-Code: CNEW
+      Preferred Term: Masking Description
+      Definition: A narrative representation of the study masking strategy, based
+        on a person's role within the study.
       Relationship Type: Value
       Model Name: description
     role:
       $ref: '#/Code'
+      NCI C-Code: CNEW
       Cardinality: '1'
+      Preferred Term: Masking Role
+      Definition: An identifying designation assigned to a masked individual within
+        a study that corresponds with their function.
+      Codelist Ref: (Point to ICH M11 Trial Blinding Role Terminology)
       Relationship Type: Value
       Model Name: role
 NarrativeContent:
@@ -1396,6 +1430,10 @@ PopulationDefinition:
       Model Name: label
     includesHealthySubjects:
       $ref: '#/Boolean'
+      NCI C-Code: CNEW
+      Preferred Term: Population Definition Includes Healthy Subjects Indicator
+      Definition: An indication as to whether the population definition includes healthy
+        subjects, that is, subjects without the disease or condition under study.
       Model Name: includesHealthySubjects
     plannedSex:
       $ref: '#/Code'
@@ -1559,6 +1597,11 @@ Range:
       Relationship Type: Value
       Model Name: unit
 ResearchOrganization:
+  NCI C-Code: C93448
+  Preferred Term: Research Organization
+  Definition: An organization that undertakes systematic investigation within a field
+    of study in order to discover facts, establish or revise a theory, test a hypothesis,
+    or develop a plan of action based on the facts discovered.
   Super Classes:
   - $ref: '#/Organization'
   Modifier: Abstract
@@ -1570,21 +1613,36 @@ ResearchOrganization:
         $ref: '#/Organization'
     name:
       $ref: '#/string'
+      NCI C-Code: CNEW
+      Preferred Term: Research Organization Name
+      Definition: The literal identifier (i.e., distinctive designation) of the research
+        organization.
       Model Name: name
       Inherited From:
         $ref: '#/Organization'
     label:
       $ref: '#/string'
+      NCI C-Code: CNEW
+      Preferred Term: Research Organization Label
+      Definition: The short descriptive designation for the research organization.
       Model Name: label
       Inherited From:
         $ref: '#/Organization'
     identifier:
       $ref: '#/string'
+      NCI C-Code: CNEW
+      Preferred Term: Research Organization Identifier
+      Definition: A sequence of characters used to identify, name, or characterize
+        the research organization.
       Model Name: identifier
       Inherited From:
         $ref: '#/Organization'
     identifierScheme:
       $ref: '#/string'
+      NCI C-Code: CNEW
+      Preferred Term: Identifier Provider Research Organization Name
+      Definition: The name of the research organization that provides the identifier
+        for the entity.
       Model Name: identifierScheme
       Inherited From:
         $ref: '#/Organization'
@@ -1596,7 +1654,11 @@ ResearchOrganization:
         $ref: '#/Organization'
     type:
       $ref: '#/Code'
+      NCI C-Code: CNEW
       Cardinality: '1'
+      Preferred Term: Research Organization Type
+      Definition: A characterization or classification of the research organization.
+      Codelist Ref: C188724
       Model Name: type
       Inherited From:
         $ref: '#/Organization'
@@ -2123,6 +2185,10 @@ StudyCohort:
         $ref: '#/PopulationDefinition'
     includesHealthySubjects:
       $ref: '#/Boolean'
+      NCI C-Code: CNEW
+      Preferred Term: Study Cohort Includes Healthy Subjects Indicator
+      Definition: An indication as to whether the study cohort includes healthy subjects,
+        that is, subjects without the disease or condition under study.
       Relationship Type: Value
       Model Name: includesHealthySubjects
       Inherited From:
@@ -2265,7 +2331,11 @@ StudyDesign:
       Model Name: therapeuticAreas
     characteristics:
       $ref: '#/Code'
+      NCI C-Code: CNEW
       Cardinality: 0..*
+      Preferred Term: Study Design Characteristic
+      Definition: The distinguishing qualities or prominent aspect of a study design.
+      Codelist Ref: CNEW
       Relationship Type: Value
       Model Name: characteristics
     trialTypes:
@@ -2427,6 +2497,10 @@ StudyDesignPopulation:
         $ref: '#/PopulationDefinition'
     includesHealthySubjects:
       $ref: '#/Boolean'
+      NCI C-Code: CNEW
+      Preferred Term: Study Population Includes Healthy Subjects Indicator
+      Definition: An indication as to whether the population definition includes healthy
+        subjects, that is, subjects without the disease or condition under study.
       Relationship Type: Value
       Model Name: includesHealthySubjects
       Inherited From:
@@ -2798,6 +2872,9 @@ StudyProtocolDocumentVersion:
       Relationship Type: Ref
       Model Name: children
 StudySite:
+  NCI C-Code: C80403
+  Preferred Term: Study Site
+  Definition: The location at which a study investigator conducts study activities.
   Modifier: Concrete
   Attributes:
     id:
@@ -2806,14 +2883,24 @@ StudySite:
       Model Name: id
     name:
       $ref: '#/string'
+      NCI C-Code: CNEW
+      Preferred Term: Study Site Name
+      Definition: The literal identifier (i.e., distinctive designation) of the study
+        site.
       Relationship Type: Value
       Model Name: name
     description:
       $ref: '#/string'
+      NCI C-Code: CNEW
+      Preferred Term: Study Site Description
+      Definition: A narrative representation of the study site.
       Relationship Type: Value
       Model Name: description
     label:
       $ref: '#/string'
+      NCI C-Code: CNEW
+      Preferred Term: Study Site Label
+      Definition: The short descriptive designation for the study site.
       Relationship Type: Value
       Model Name: label
     currentEnrollmentId:
