@@ -1211,7 +1211,7 @@ Masking:
       Preferred Term: Masking Role
       Definition: An identifying designation assigned to a masked individual within
         a study that corresponds with their function.
-      Codelist Ref: (Point to ICH M11 Trial Blinding Role Terminology)
+      Codelist Ref: CNEW - Masking Role Response
       Relationship Type: Value
       Model Name: role
 NarrativeContent:
@@ -2046,7 +2046,7 @@ StudyAmendmentReason:
       Preferred Term: Study Amendment Reason Code
       Definition: A symbol or combination of symbols which is assigned to the study
         amendment reason.
-      Codelist Ref: (Point to ICH M11 Reason for Amendment Response codelist)
+      Codelist Ref: CNEW - Study Amendment Reason Response
       Relationship Type: Value
       Model Name: code
 StudyArm:
@@ -2742,7 +2742,7 @@ StudyIntervention:
       Preferred Term: Study Intervention Role
       Definition: The intended use of the trial intervention within the context of
         the study design.
-      Codelist Ref: (Point to ICH M11 Intervention Use Response)
+      Codelist Ref: CNEW - Study Intervention Role Response
       Relationship Type: Value
       Model Name: role
     productDesignation:
@@ -2752,8 +2752,7 @@ StudyIntervention:
       Preferred Term: Study Intervention Product Designation
       Definition: An indication as to whether the investigational intervention is
         an investigational medicinal product or an auxiliary medicinal product.
-      Codelist Ref: (Point to ICH M11 Investigational Medicinal Product Indicator
-        Response)
+      Codelist Ref: CNEW - Study Intervention Product Designation Response
       Relationship Type: Value
       Model Name: productDesignation
     pharmacologicClass:
