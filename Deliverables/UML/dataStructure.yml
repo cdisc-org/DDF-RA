@@ -67,6 +67,9 @@ Activity:
       Cardinality: 0..*
       Relationship Type: Ref
       Model Name: bcCategories
+    instanceType:
+      $ref: UNKNOWN
+      Relationship Type: Value
 Address:
   NCI C-Code: C25407
   Preferred Term: Address
@@ -137,6 +140,9 @@ Address:
       Codelist Ref: (Point out to ISO 3166-1 Alpha-3 Country code)
       Relationship Type: Value
       Model Name: country
+    instanceType:
+      $ref: UNKNOWN
+      Relationship Type: Value
 AdministrationDuration:
   NCI C-Code: C69282
   Preferred Term: Administration Duration
@@ -179,6 +185,9 @@ AdministrationDuration:
         of an agent.
       Relationship Type: Value
       Model Name: quantity
+    instanceType:
+      $ref: UNKNOWN
+      Relationship Type: Value
 AgentAdministration:
   NCI C-Code: C70962
   Preferred Term: Agent Administration
@@ -245,6 +254,9 @@ AgentAdministration:
       Codelist Ref: SDTM Terminology Codelist C71113
       Relationship Type: Value
       Model Name: frequency
+    instanceType:
+      $ref: UNKNOWN
+      Relationship Type: Value
 AliasCode:
   NCI C-Code: C201344
   Preferred Term: Alias Code
@@ -266,6 +278,9 @@ AliasCode:
       Cardinality: 0..*
       Relationship Type: Value
       Model Name: standardCodeAliases
+    instanceType:
+      $ref: UNKNOWN
+      Relationship Type: Value
 AnalysisPopulation:
   NCI C-Code: C188854
   Preferred Term: Target Study Population for Analysis
@@ -309,6 +324,9 @@ AnalysisPopulation:
       Definition: The short descriptive designation for the analysis population.
       Relationship Type: Value
       Model Name: label
+    instanceType:
+      $ref: UNKNOWN
+      Relationship Type: Value
 BiomedicalConcept:
   NCI C-Code: C201345
   Preferred Term: Biomedical Concept
@@ -366,6 +384,9 @@ BiomedicalConcept:
       Cardinality: 0..*
       Relationship Type: Value
       Model Name: properties
+    instanceType:
+      $ref: UNKNOWN
+      Relationship Type: Value
 BiomedicalConceptCategory:
   NCI C-Code: C201346
   Preferred Term: Biomedical Concept Category
@@ -418,6 +439,9 @@ BiomedicalConceptCategory:
       Cardinality: 0..*
       Relationship Type: Ref
       Model Name: children
+    instanceType:
+      $ref: UNKNOWN
+      Relationship Type: Value
 BiomedicalConceptProperty:
   NCI C-Code: CNEW
   Preferred Term: Biomedical Concept Property
@@ -482,6 +506,9 @@ BiomedicalConceptProperty:
       Cardinality: 0..*
       Relationship Type: Value
       Model Name: responseCodes
+    instanceType:
+      $ref: UNKNOWN
+      Relationship Type: Value
 BiomedicalConceptSurrogate:
   Modifier: Concrete
   Attributes:
@@ -518,6 +545,9 @@ BiomedicalConceptSurrogate:
       Definition: A citation to an authoritative source for a biomedical concept surrogate.
       Relationship Type: Value
       Model Name: reference
+    instanceType:
+      $ref: UNKNOWN
+      Relationship Type: Value
 Characteristic:
   NCI C-Code: C25447
   Preferred Term: Characteristic
@@ -576,8 +606,7 @@ Characteristic:
       Inherited From:
         $ref: '#/SyntaxTemplate'
     instanceType:
-      $ref: '#/string'
-      Cardinality: 0..1
+      $ref: UNKNOWN
       Relationship Type: Value
 Code:
   NCI C-Code: C25162
@@ -620,6 +649,9 @@ Code:
         with a code.
       Relationship Type: Value
       Model Name: decode
+    instanceType:
+      $ref: UNKNOWN
+      Relationship Type: Value
 Condition:
   NCI C-Code: C25457
   Preferred Term: Condition
@@ -687,6 +719,9 @@ Condition:
       Cardinality: 0..*
       Relationship Type: Ref
       Model Name: appliesTo
+    instanceType:
+      $ref: UNKNOWN
+      Relationship Type: Value
 EligibilityCriteria:
   NCI C-Code: C16112
   Preferred Term: Study Eligibility Criteria
@@ -781,8 +816,7 @@ EligibilityCriteria:
       Relationship Type: Ref
       Model Name: previous
     instanceType:
-      $ref: '#/string'
-      Cardinality: 0..1
+      $ref: UNKNOWN
       Relationship Type: Value
 Encounter:
   NCI C-Code: C142427
@@ -874,6 +908,9 @@ Encounter:
       Cardinality: 0..1
       Relationship Type: Ref
       Model Name: previous
+    instanceType:
+      $ref: UNKNOWN
+      Relationship Type: Value
 Endpoint:
   NCI C-Code: C25212
   Preferred Term: Study Endpoint
@@ -955,8 +992,7 @@ Endpoint:
       Relationship Type: Value
       Model Name: level
     instanceType:
-      $ref: '#/string'
-      Cardinality: 0..1
+      $ref: UNKNOWN
       Relationship Type: Value
 Estimand:
   NCI C-Code: C188813
@@ -999,6 +1035,9 @@ Estimand:
       Cardinality: '1'
       Relationship Type: Ref
       Model Name: treatment
+    instanceType:
+      $ref: UNKNOWN
+      Relationship Type: Value
 GeographicScope:
   NCI C-Code: CNEW
   Preferred Term: Geographic Scope
@@ -1032,8 +1071,7 @@ GeographicScope:
       Relationship Type: Value
       Model Name: type
     instanceType:
-      $ref: '#/string'
-      Cardinality: 0..1
+      $ref: UNKNOWN
       Relationship Type: Value
 GovernanceDate:
   NCI C-Code: CNEW
@@ -1089,6 +1127,9 @@ GovernanceDate:
       Cardinality: 1..*
       Relationship Type: Value
       Model Name: geographicScopes
+    instanceType:
+      $ref: UNKNOWN
+      Relationship Type: Value
 Indication:
   NCI C-Code: C41184
   Preferred Term: Disease/Condition Indication
@@ -1141,6 +1182,9 @@ Indication:
         SNOMEDCT (for FDA), MedDRA, NCIt, ICD's, etc.)
       Relationship Type: Value
       Model Name: codes
+    instanceType:
+      $ref: UNKNOWN
+      Relationship Type: Value
 IntercurrentEvent:
   NCI C-Code: C188815
   Preferred Term: Intercurrent Event
@@ -1183,6 +1227,9 @@ IntercurrentEvent:
         intercurrent events.
       Relationship Type: Value
       Model Name: strategy
+    instanceType:
+      $ref: UNKNOWN
+      Relationship Type: Value
 Masking:
   NCI C-Code: C191278
   Preferred Term: Masking
@@ -1214,6 +1261,9 @@ Masking:
       Codelist Ref: CNEW - Masking Role Response
       Relationship Type: Value
       Model Name: role
+    instanceType:
+      $ref: UNKNOWN
+      Relationship Type: Value
 NarrativeContent:
   NCI C-Code: CNEW
   Preferred Term: Narrative Content
@@ -1259,6 +1309,9 @@ NarrativeContent:
       Cardinality: 0..*
       Relationship Type: Ref
       Model Name: children
+    instanceType:
+      $ref: UNKNOWN
+      Relationship Type: Value
 Objective:
   NCI C-Code: C142450
   Preferred Term: Study Objective
@@ -1334,8 +1387,7 @@ Objective:
       Relationship Type: Value
       Model Name: endpoints
     instanceType:
-      $ref: '#/string'
-      Cardinality: 0..1
+      $ref: UNKNOWN
       Relationship Type: Value
 Organization:
   NCI C-Code: C19711
@@ -1526,6 +1578,9 @@ Procedure:
       Cardinality: 0..1
       Relationship Type: Ref
       Model Name: studyIntervention
+    instanceType:
+      $ref: UNKNOWN
+      Relationship Type: Value
 Quantity:
   NCI C-Code: C25256
   Preferred Term: Quantity
@@ -1553,6 +1608,9 @@ Quantity:
       Codelist Ref: SDTM Terminology Codelist C71620
       Relationship Type: Value
       Model Name: unit
+    instanceType:
+      $ref: UNKNOWN
+      Relationship Type: Value
 Range:
   NCI C-Code: C38013
   Preferred Term: Range
@@ -1596,6 +1654,9 @@ Range:
       Codelist Ref: SDTM Terminology Codelist C71620
       Relationship Type: Value
       Model Name: unit
+    instanceType:
+      $ref: UNKNOWN
+      Relationship Type: Value
 ResearchOrganization:
   NCI C-Code: C93448
   Preferred Term: Research Organization
@@ -1694,6 +1755,9 @@ ResponseCode:
         of a collection.
       Relationship Type: Value
       Model Name: code
+    instanceType:
+      $ref: UNKNOWN
+      Relationship Type: Value
 ScheduleTimeline:
   NCI C-Code: C201348
   Preferred Term: Schedule Timeline
@@ -1757,6 +1821,9 @@ ScheduleTimeline:
       Cardinality: 0..*
       Relationship Type: Value
       Model Name: exits
+    instanceType:
+      $ref: UNKNOWN
+      Relationship Type: Value
 ScheduleTimelineExit:
   NCI C-Code: C201349
   Preferred Term: Schedule Timeline Exit
@@ -1767,6 +1834,9 @@ ScheduleTimelineExit:
       $ref: '#/string'
       Relationship Type: Value
       Model Name: id
+    instanceType:
+      $ref: UNKNOWN
+      Relationship Type: Value
 ScheduledActivityInstance:
   NCI C-Code: C201350
   Preferred Term: Scheduled Activity Instance
@@ -1827,8 +1897,7 @@ ScheduledActivityInstance:
       Relationship Type: Ref
       Model Name: encounter
     instanceType:
-      $ref: '#/string'
-      Cardinality: 0..1
+      $ref: UNKNOWN
       Relationship Type: Value
 ScheduledDecisionInstance:
   NCI C-Code: C201351
@@ -1888,8 +1957,7 @@ ScheduledDecisionInstance:
       Relationship Type: Value
       Model Name: conditionAssignments
     instanceType:
-      $ref: '#/string'
-      Cardinality: 0..1
+      $ref: UNKNOWN
       Relationship Type: Value
 ScheduledInstance:
   NCI C-Code: C201299
@@ -1967,6 +2035,9 @@ Study:
       Cardinality: 0..1
       Relationship Type: Value
       Model Name: documentedBy
+    instanceType:
+      $ref: UNKNOWN
+      Relationship Type: Value
 StudyAmendment:
   NCI C-Code: CNEW
   Preferred Term: Study Amendment
@@ -2021,6 +2092,9 @@ StudyAmendment:
       Cardinality: '1'
       Relationship Type: Value
       Model Name: primaryReason
+    instanceType:
+      $ref: UNKNOWN
+      Relationship Type: Value
 StudyAmendmentReason:
   NCI C-Code: CNEW
   Preferred Term: Study Amendment Reason
@@ -2049,6 +2123,9 @@ StudyAmendmentReason:
       Codelist Ref: CNEW - Study Amendment Reason Response
       Relationship Type: Value
       Model Name: code
+    instanceType:
+      $ref: UNKNOWN
+      Relationship Type: Value
 StudyArm:
   NCI C-Code: C174447
   Preferred Term: Study Arm
@@ -2114,6 +2191,9 @@ StudyArm:
       Cardinality: 0..*
       Relationship Type: Ref
       Model Name: populations
+    instanceType:
+      $ref: UNKNOWN
+      Relationship Type: Value
 StudyCell:
   NCI C-Code: C188810
   Preferred Term: Study Design Cell
@@ -2140,6 +2220,9 @@ StudyCell:
       Cardinality: 0..*
       Relationship Type: Ref
       Model Name: elements
+    instanceType:
+      $ref: UNKNOWN
+      Relationship Type: Value
 StudyCohort:
   NCI C-Code: C61512
   Preferred Term: Study Cohort
@@ -2248,6 +2331,9 @@ StudyCohort:
       Cardinality: 0..*
       Relationship Type: Value
       Model Name: characteristics
+    instanceType:
+      $ref: UNKNOWN
+      Relationship Type: Value
 StudyDesign:
   NCI C-Code: C15320
   Preferred Term: Study Design
@@ -2452,6 +2538,9 @@ StudyDesign:
       $ref: '#/Organization'
       Cardinality: 0..*
       Relationship Type: Value
+    instanceType:
+      $ref: UNKNOWN
+      Relationship Type: Value
 StudyDesignPopulation:
   NCI C-Code: C142728
   Preferred Term: Target Study Population
@@ -2562,6 +2651,9 @@ StudyDesignPopulation:
       Cardinality: 0..*
       Relationship Type: Value
       Model Name: cohorts
+    instanceType:
+      $ref: UNKNOWN
+      Relationship Type: Value
 StudyElement:
   NCI C-Code: C142735
   Preferred Term: Study Design Element
@@ -2611,6 +2703,9 @@ StudyElement:
       Cardinality: 0..1
       Relationship Type: Value
       Model Name: transitionStartRule
+    instanceType:
+      $ref: UNKNOWN
+      Relationship Type: Value
 StudyEpoch:
   NCI C-Code: C71738
   Preferred Term: Study Epoch
@@ -2668,6 +2763,9 @@ StudyEpoch:
       Cardinality: 0..1
       Relationship Type: Ref
       Model Name: next
+    instanceType:
+      $ref: UNKNOWN
+      Relationship Type: Value
 StudyIdentifier:
   NCI C-Code: C83082
   Preferred Term: Study Identifier
@@ -2688,6 +2786,9 @@ StudyIdentifier:
       Cardinality: '1'
       Relationship Type: Value
       Model Name: studyIdentifierScope
+    instanceType:
+      $ref: UNKNOWN
+      Relationship Type: Value
 StudyIntervention:
   NCI C-Code: CNEW
   Preferred Term: Study Intervention
@@ -2784,6 +2885,9 @@ StudyIntervention:
         the criteria for response to study intervention.
       Relationship Type: Value
       Model Name: minimumResponseDuration
+    instanceType:
+      $ref: UNKNOWN
+      Relationship Type: Value
 StudyProtocolDocument:
   NCI C-Code: C93381
   Preferred Term: Study Protocol Document
@@ -2822,6 +2926,9 @@ StudyProtocolDocument:
       Cardinality: 0..*
       Relationship Type: Value
       Model Name: versions
+    instanceType:
+      $ref: UNKNOWN
+      Relationship Type: Value
 StudyProtocolDocumentVersion:
   NCI C-Code: C93490
   Preferred Term: Study Protocol Version
@@ -2870,6 +2977,9 @@ StudyProtocolDocumentVersion:
       Cardinality: 0..*
       Relationship Type: Ref
       Model Name: children
+    instanceType:
+      $ref: UNKNOWN
+      Relationship Type: Value
 StudySite:
   NCI C-Code: C80403
   Preferred Term: Study Site
@@ -2907,6 +3017,9 @@ StudySite:
       Cardinality: 0..1
       Relationship Type: Ref
       Model Name: currentEnrollment
+    instanceType:
+      $ref: UNKNOWN
+      Relationship Type: Value
 StudyTitle:
   NCI C-Code: C49802
   Preferred Term: Study Title
@@ -2933,6 +3046,9 @@ StudyTitle:
       Codelist Ref: CNEW-DDF Study Title Attribute Terminology
       Relationship Type: Ref
       Model Name: type
+    instanceType:
+      $ref: UNKNOWN
+      Relationship Type: Value
 StudyVersion:
   NCI C-Code: C188816
   Preferred Term: Study Version
@@ -3025,6 +3141,9 @@ StudyVersion:
       Cardinality: 1..*
       Relationship Type: Value
       Model Name: titles
+    instanceType:
+      $ref: UNKNOWN
+      Relationship Type: Value
 SubjectEnrollment:
   NCI C-Code: C37948
   Preferred Term: Subject Enrollment
@@ -3071,8 +3190,7 @@ SubjectEnrollment:
       Relationship Type: Value
       Model Name: quantity
     instanceType:
-      $ref: '#/string'
-      Cardinality: 0..1
+      $ref: UNKNOWN
       Relationship Type: Value
 SyntaxTemplate:
   NCI C-Code: CNEW
@@ -3161,6 +3279,9 @@ SyntaxTemplateDictionary:
         for a given parameter.
       Relationship Type: Value
       Model Name: parameterMap
+    instanceType:
+      $ref: UNKNOWN
+      Relationship Type: Value
 Timing:
   NCI C-Code: C80484
   Preferred Term: Timing
@@ -3255,6 +3376,9 @@ Timing:
       Cardinality: 0..1
       Relationship Type: Ref
       Model Name: relativeFromScheduledInstance
+    instanceType:
+      $ref: UNKNOWN
+      Relationship Type: Value
 TransitionRule:
   NCI C-Code: C82567
   Preferred Term: Transition Rule
@@ -3297,3 +3421,6 @@ TransitionRule:
         rule.
       Relationship Type: Value
       Model Name: text
+    instanceType:
+      $ref: UNKNOWN
+      Relationship Type: Value
