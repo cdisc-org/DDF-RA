@@ -402,12 +402,17 @@
               }
             ],
             "title": "Timelineid"
+          },
+          "instanceType": {
+            "const": "Activity",
+            "title": "Instancetype"
           }
         },
         "type": "object",
         "required": [
           "id",
-          "name"
+          "name",
+          "instanceType"
         ],
         "title": "Activity"
       },
@@ -509,12 +514,17 @@
               }
             ],
             "title": "Timelineid"
+          },
+          "instanceType": {
+            "const": "Activity",
+            "title": "Instancetype"
           }
         },
         "type": "object",
         "required": [
           "id",
-          "name"
+          "name",
+          "instanceType"
         ],
         "title": "Activity"
       },
@@ -600,11 +610,16 @@
                 "type": "null"
               }
             ]
+          },
+          "instanceType": {
+            "const": "Address",
+            "title": "Instancetype"
           }
         },
         "type": "object",
         "required": [
-          "id"
+          "id",
+          "instanceType"
         ],
         "title": "Address"
       },
@@ -629,6 +644,10 @@
           "reasonDurationWillVary": {
             "type": "string",
             "title": "Reasondurationwillvary"
+          },
+          "instanceType": {
+            "const": "AdministrationDuration",
+            "title": "Instancetype"
           }
         },
         "type": "object",
@@ -637,7 +656,8 @@
           "quantity",
           "description",
           "durationWillVary",
-          "reasonDurationWillVary"
+          "reasonDurationWillVary",
+          "instanceType"
         ],
         "title": "AdministrationDuration"
       },
@@ -662,6 +682,10 @@
           "reasonDurationWillVary": {
             "type": "string",
             "title": "Reasondurationwillvary"
+          },
+          "instanceType": {
+            "const": "AdministrationDuration",
+            "title": "Instancetype"
           }
         },
         "type": "object",
@@ -670,7 +694,8 @@
           "quantity",
           "description",
           "durationWillVary",
-          "reasonDurationWillVary"
+          "reasonDurationWillVary",
+          "instanceType"
         ],
         "title": "AdministrationDuration"
       },
@@ -719,6 +744,10 @@
           },
           "frequency": {
             "$ref": "#/components/schemas/Code"
+          },
+          "instanceType": {
+            "const": "AgentAdministration",
+            "title": "Instancetype"
           }
         },
         "type": "object",
@@ -728,7 +757,8 @@
           "duration",
           "dose",
           "route",
-          "frequency"
+          "frequency",
+          "instanceType"
         ],
         "title": "AgentAdministration"
       },
@@ -777,6 +807,10 @@
           },
           "frequency": {
             "$ref": "#/components/schemas/Code"
+          },
+          "instanceType": {
+            "const": "AgentAdministration",
+            "title": "Instancetype"
           }
         },
         "type": "object",
@@ -786,7 +820,8 @@
           "duration",
           "dose",
           "route",
-          "frequency"
+          "frequency",
+          "instanceType"
         ],
         "title": "AgentAdministration"
       },
@@ -807,12 +842,17 @@
             "type": "array",
             "title": "Standardcodealiases",
             "default": []
+          },
+          "instanceType": {
+            "const": "AliasCode",
+            "title": "Instancetype"
           }
         },
         "type": "object",
         "required": [
           "id",
-          "standardCode"
+          "standardCode",
+          "instanceType"
         ],
         "title": "AliasCode"
       },
@@ -853,13 +893,18 @@
           "text": {
             "type": "string",
             "title": "Text"
+          },
+          "instanceType": {
+            "const": "AnalysisPopulation",
+            "title": "Instancetype"
           }
         },
         "type": "object",
         "required": [
           "id",
           "name",
-          "text"
+          "text",
+          "instanceType"
         ],
         "title": "AnalysisPopulation"
       },
@@ -908,6 +953,10 @@
           },
           "code": {
             "$ref": "#/components/schemas/AliasCode"
+          },
+          "instanceType": {
+            "const": "BiomedicalConcept",
+            "title": "Instancetype"
           }
         },
         "type": "object",
@@ -915,7 +964,8 @@
           "id",
           "name",
           "reference",
-          "code"
+          "code",
+          "instanceType"
         ],
         "title": "BiomedicalConcept"
       },
@@ -964,6 +1014,10 @@
           },
           "code": {
             "$ref": "#/components/schemas/AliasCode"
+          },
+          "instanceType": {
+            "const": "BiomedicalConcept",
+            "title": "Instancetype"
           }
         },
         "type": "object",
@@ -971,7 +1025,8 @@
           "id",
           "name",
           "reference",
-          "code"
+          "code",
+          "instanceType"
         ],
         "title": "BiomedicalConcept"
       },
@@ -1034,12 +1089,17 @@
                 "type": "null"
               }
             ]
+          },
+          "instanceType": {
+            "const": "BiomedicalConceptCategory",
+            "title": "Instancetype"
           }
         },
         "type": "object",
         "required": [
           "id",
-          "name"
+          "name",
+          "instanceType"
         ],
         "title": "BiomedicalConceptCategory"
       },
@@ -1102,12 +1162,17 @@
                 "type": "null"
               }
             ]
+          },
+          "instanceType": {
+            "const": "BiomedicalConceptCategory",
+            "title": "Instancetype"
           }
         },
         "type": "object",
         "required": [
           "id",
-          "name"
+          "name",
+          "instanceType"
         ],
         "title": "BiomedicalConceptCategory"
       },
@@ -1156,6 +1221,10 @@
           },
           "code": {
             "$ref": "#/components/schemas/AliasCode"
+          },
+          "instanceType": {
+            "const": "BiomedicalConceptProperty",
+            "title": "Instancetype"
           }
         },
         "type": "object",
@@ -1165,7 +1234,8 @@
           "isRequired",
           "isEnabled",
           "datatype",
-          "code"
+          "code",
+          "instanceType"
         ],
         "title": "BiomedicalConceptProperty"
       },
@@ -1214,6 +1284,10 @@
           },
           "code": {
             "$ref": "#/components/schemas/AliasCode"
+          },
+          "instanceType": {
+            "const": "BiomedicalConceptProperty",
+            "title": "Instancetype"
           }
         },
         "type": "object",
@@ -1223,7 +1297,8 @@
           "isRequired",
           "isEnabled",
           "datatype",
-          "code"
+          "code",
+          "instanceType"
         ],
         "title": "BiomedicalConceptProperty"
       },
@@ -1271,12 +1346,17 @@
               }
             ],
             "title": "Reference"
+          },
+          "instanceType": {
+            "const": "BiomedicalConceptSurrogate",
+            "title": "Instancetype"
           }
         },
         "type": "object",
         "required": [
           "id",
-          "name"
+          "name",
+          "instanceType"
         ],
         "title": "BiomedicalConceptSurrogate"
       },
@@ -1314,16 +1394,6 @@
             ],
             "title": "Description"
           },
-          "instanceType": {
-            "type": "string",
-            "enum": [
-              "ENDPOINT",
-              "OBJECTIVE",
-              "ELIGIBILITY_CRITERIA",
-              "CHARACTERISTIC"
-            ],
-            "title": "Instancetype"
-          },
           "text": {
             "type": "string",
             "title": "Text"
@@ -1338,14 +1408,18 @@
               }
             ],
             "title": "Dictionaryid"
+          },
+          "instanceType": {
+            "const": "Characteristic",
+            "title": "Instancetype"
           }
         },
         "type": "object",
         "required": [
           "id",
           "name",
-          "instanceType",
-          "text"
+          "text",
+          "instanceType"
         ],
         "title": "Characteristic"
       },
@@ -1371,6 +1445,10 @@
           "decode": {
             "type": "string",
             "title": "Decode"
+          },
+          "instanceType": {
+            "const": "Code",
+            "title": "Instancetype"
           }
         },
         "type": "object",
@@ -1379,7 +1457,8 @@
           "code",
           "codeSystem",
           "codeSystemVersion",
-          "decode"
+          "decode",
+          "instanceType"
         ],
         "title": "Code"
       },
@@ -1447,13 +1526,18 @@
             "type": "array",
             "title": "Appliestoids",
             "default": []
+          },
+          "instanceType": {
+            "const": "Condition",
+            "title": "Instancetype"
           }
         },
         "type": "object",
         "required": [
           "id",
           "name",
-          "text"
+          "text",
+          "instanceType"
         ],
         "title": "Condition"
       },
@@ -1490,16 +1574,6 @@
               }
             ],
             "title": "Description"
-          },
-          "instanceType": {
-            "type": "string",
-            "enum": [
-              "ENDPOINT",
-              "OBJECTIVE",
-              "ELIGIBILITY_CRITERIA",
-              "CHARACTERISTIC"
-            ],
-            "title": "Instancetype"
           },
           "text": {
             "type": "string",
@@ -1555,16 +1629,20 @@
               }
             ],
             "title": "Contextid"
+          },
+          "instanceType": {
+            "const": "EligibilityCriteria",
+            "title": "Instancetype"
           }
         },
         "type": "object",
         "required": [
           "id",
           "name",
-          "instanceType",
           "text",
           "category",
-          "identifier"
+          "identifier",
+          "instanceType"
         ],
         "title": "EligibilityCriteria"
       },
@@ -1675,13 +1753,18 @@
                 "type": "null"
               }
             ]
+          },
+          "instanceType": {
+            "const": "Encounter",
+            "title": "Instancetype"
           }
         },
         "type": "object",
         "required": [
           "id",
           "name",
-          "type"
+          "type",
+          "instanceType"
         ],
         "title": "Encounter"
       },
@@ -1719,16 +1802,6 @@
             ],
             "title": "Description"
           },
-          "instanceType": {
-            "type": "string",
-            "enum": [
-              "ENDPOINT",
-              "OBJECTIVE",
-              "ELIGIBILITY_CRITERIA",
-              "CHARACTERISTIC"
-            ],
-            "title": "Instancetype"
-          },
           "text": {
             "type": "string",
             "title": "Text"
@@ -1750,16 +1823,20 @@
           },
           "level": {
             "$ref": "#/components/schemas/Code"
+          },
+          "instanceType": {
+            "const": "Endpoint",
+            "title": "Instancetype"
           }
         },
         "type": "object",
         "required": [
           "id",
           "name",
-          "instanceType",
           "text",
           "purpose",
-          "level"
+          "level",
+          "instanceType"
         ],
         "title": "Endpoint"
       },
@@ -1791,6 +1868,10 @@
             },
             "type": "array",
             "title": "Intercurrentevents"
+          },
+          "instanceType": {
+            "const": "Estimand",
+            "title": "Instancetype"
           }
         },
         "type": "object",
@@ -1800,7 +1881,8 @@
           "analysisPopulation",
           "treatmentId",
           "variableOfInterestId",
-          "intercurrentEvents"
+          "intercurrentEvents",
+          "instanceType"
         ],
         "title": "Estimand"
       },
@@ -1811,14 +1893,6 @@
             "minLength": 1,
             "title": "Id"
           },
-          "instanceType": {
-            "type": "string",
-            "enum": [
-              "GEOGRAPHIC_SCOPE",
-              "SUBJECT_ENROLLMENT"
-            ],
-            "title": "Instancetype"
-          },
           "type": {
             "$ref": "#/components/schemas/Code"
           },
@@ -1831,13 +1905,17 @@
                 "type": "null"
               }
             ]
+          },
+          "instanceType": {
+            "const": "GeographicScope",
+            "title": "Instancetype"
           }
         },
         "type": "object",
         "required": [
           "id",
-          "instanceType",
-          "type"
+          "type",
+          "instanceType"
         ],
         "title": "GeographicScope"
       },
@@ -1848,14 +1926,6 @@
             "minLength": 1,
             "title": "Id"
           },
-          "instanceType": {
-            "type": "string",
-            "enum": [
-              "GEOGRAPHIC_SCOPE",
-              "SUBJECT_ENROLLMENT"
-            ],
-            "title": "Instancetype"
-          },
           "type": {
             "$ref": "#/components/schemas/Code"
           },
@@ -1868,13 +1938,17 @@
                 "type": "null"
               }
             ]
+          },
+          "instanceType": {
+            "const": "GeographicScope",
+            "title": "Instancetype"
           }
         },
         "type": "object",
         "required": [
           "id",
-          "instanceType",
-          "type"
+          "type",
+          "instanceType"
         ],
         "title": "GeographicScope"
       },
@@ -1926,6 +2000,10 @@
             },
             "type": "array",
             "title": "Geographicscopes"
+          },
+          "instanceType": {
+            "const": "GovernanceDate",
+            "title": "Instancetype"
           }
         },
         "type": "object",
@@ -1934,7 +2012,8 @@
           "name",
           "type",
           "dateValue",
-          "geographicScopes"
+          "geographicScopes",
+          "instanceType"
         ],
         "title": "GovernanceDate"
       },
@@ -1986,6 +2065,10 @@
             },
             "type": "array",
             "title": "Geographicscopes"
+          },
+          "instanceType": {
+            "const": "GovernanceDate",
+            "title": "Instancetype"
           }
         },
         "type": "object",
@@ -1994,7 +2077,8 @@
           "name",
           "type",
           "dateValue",
-          "geographicScopes"
+          "geographicScopes",
+          "instanceType"
         ],
         "title": "GovernanceDate"
       },
@@ -2056,13 +2140,18 @@
           "isRareDisease": {
             "type": "boolean",
             "title": "Israredisease"
+          },
+          "instanceType": {
+            "const": "Indication",
+            "title": "Instancetype"
           }
         },
         "type": "object",
         "required": [
           "id",
           "name",
-          "isRareDisease"
+          "isRareDisease",
+          "instanceType"
         ],
         "title": "Indication"
       },
@@ -2103,13 +2192,18 @@
           "strategy": {
             "type": "string",
             "title": "Strategy"
+          },
+          "instanceType": {
+            "const": "IntercurrentEvent",
+            "title": "Instancetype"
           }
         },
         "type": "object",
         "required": [
           "id",
           "name",
-          "strategy"
+          "strategy",
+          "instanceType"
         ],
         "title": "IntercurrentEvent"
       },
@@ -2133,12 +2227,17 @@
           },
           "role": {
             "$ref": "#/components/schemas/Code"
+          },
+          "instanceType": {
+            "const": "Masking",
+            "title": "Instancetype"
           }
         },
         "type": "object",
         "required": [
           "id",
-          "role"
+          "role",
+          "instanceType"
         ],
         "title": "Masking"
       },
@@ -2180,6 +2279,10 @@
             "type": "array",
             "title": "Childrenids",
             "default": []
+          },
+          "instanceType": {
+            "const": "NarrativeContent",
+            "title": "Instancetype"
           }
         },
         "type": "object",
@@ -2187,7 +2290,8 @@
           "id",
           "name",
           "sectionNumber",
-          "sectionTitle"
+          "sectionTitle",
+          "instanceType"
         ],
         "title": "NarrativeContent"
       },
@@ -2225,16 +2329,6 @@
             ],
             "title": "Description"
           },
-          "instanceType": {
-            "type": "string",
-            "enum": [
-              "ENDPOINT",
-              "OBJECTIVE",
-              "ELIGIBILITY_CRITERIA",
-              "CHARACTERISTIC"
-            ],
-            "title": "Instancetype"
-          },
           "text": {
             "type": "string",
             "title": "Text"
@@ -2267,14 +2361,18 @@
             "type": "array",
             "title": "Endpoints",
             "default": []
+          },
+          "instanceType": {
+            "const": "Objective",
+            "title": "Instancetype"
           }
         },
         "type": "object",
         "required": [
           "id",
           "name",
-          "instanceType",
-          "text"
+          "text",
+          "instanceType"
         ],
         "title": "Objective"
       },
@@ -2312,16 +2410,6 @@
             ],
             "title": "Description"
           },
-          "instanceType": {
-            "type": "string",
-            "enum": [
-              "ENDPOINT",
-              "OBJECTIVE",
-              "ELIGIBILITY_CRITERIA",
-              "CHARACTERISTIC"
-            ],
-            "title": "Instancetype"
-          },
           "text": {
             "type": "string",
             "title": "Text"
@@ -2354,14 +2442,18 @@
             "type": "array",
             "title": "Endpoints",
             "default": []
+          },
+          "instanceType": {
+            "const": "Objective",
+            "title": "Instancetype"
           }
         },
         "type": "object",
         "required": [
           "id",
           "name",
-          "instanceType",
-          "text"
+          "text",
+          "instanceType"
         ],
         "title": "Objective"
       },
@@ -2526,6 +2618,10 @@
               }
             ],
             "title": "Studyinterventionid"
+          },
+          "instanceType": {
+            "const": "Procedure",
+            "title": "Instancetype"
           }
         },
         "type": "object",
@@ -2533,7 +2629,8 @@
           "id",
           "name",
           "procedureType",
-          "code"
+          "code",
+          "instanceType"
         ],
         "title": "Procedure"
       },
@@ -2557,12 +2654,17 @@
                 "type": "null"
               }
             ]
+          },
+          "instanceType": {
+            "const": "Quantity",
+            "title": "Instancetype"
           }
         },
         "type": "object",
         "required": [
           "id",
-          "value"
+          "value",
+          "instanceType"
         ],
         "title": "Quantity"
       },
@@ -2594,6 +2696,10 @@
           "isApproximate": {
             "type": "boolean",
             "title": "Isapproximate"
+          },
+          "instanceType": {
+            "const": "Range",
+            "title": "Instancetype"
           }
         },
         "type": "object",
@@ -2601,7 +2707,8 @@
           "id",
           "minValue",
           "maxValue",
-          "isApproximate"
+          "isApproximate",
+          "instanceType"
         ],
         "title": "Range"
       },
@@ -2618,13 +2725,18 @@
           },
           "code": {
             "$ref": "#/components/schemas/Code"
+          },
+          "instanceType": {
+            "const": "ResponseCode",
+            "title": "Instancetype"
           }
         },
         "type": "object",
         "required": [
           "id",
           "isEnabled",
-          "code"
+          "code",
+          "instanceType"
         ],
         "title": "ResponseCode"
       },
@@ -2696,6 +2808,10 @@
             "type": "array",
             "title": "Instances",
             "default": []
+          },
+          "instanceType": {
+            "const": "ScheduleTimeline",
+            "title": "Instancetype"
           }
         },
         "type": "object",
@@ -2704,7 +2820,8 @@
           "name",
           "mainTimeline",
           "entryCondition",
-          "entryId"
+          "entryId",
+          "instanceType"
         ],
         "title": "ScheduleTimeline"
       },
@@ -2776,6 +2893,10 @@
             "type": "array",
             "title": "Instances",
             "default": []
+          },
+          "instanceType": {
+            "const": "ScheduleTimeline",
+            "title": "Instancetype"
           }
         },
         "type": "object",
@@ -2784,7 +2905,8 @@
           "name",
           "mainTimeline",
           "entryCondition",
-          "entryId"
+          "entryId",
+          "instanceType"
         ],
         "title": "ScheduleTimeline"
       },
@@ -2794,11 +2916,16 @@
             "type": "string",
             "minLength": 1,
             "title": "Id"
+          },
+          "instanceType": {
+            "const": "ScheduleTimelineExit",
+            "title": "Instancetype"
           }
         },
         "type": "object",
         "required": [
-          "id"
+          "id",
+          "instanceType"
         ],
         "title": "ScheduleTimelineExit"
       },
@@ -2808,14 +2935,6 @@
             "type": "string",
             "minLength": 1,
             "title": "Id"
-          },
-          "instanceType": {
-            "type": "string",
-            "enum": [
-              "ACTIVITY",
-              "DECISION"
-            ],
-            "title": "Instancetype"
           },
           "timings": {
             "items": {
@@ -2887,6 +3006,10 @@
               }
             ],
             "title": "Encounterid"
+          },
+          "instanceType": {
+            "const": "ScheduledActivityInstance",
+            "title": "Instancetype"
           }
         },
         "type": "object",
@@ -2903,14 +3026,6 @@
             "minLength": 1,
             "title": "Id"
           },
-          "instanceType": {
-            "type": "string",
-            "enum": [
-              "ACTIVITY",
-              "DECISION"
-            ],
-            "title": "Instancetype"
-          },
           "timings": {
             "items": {
               "$ref": "#/components/schemas/Timing"
@@ -2981,6 +3096,10 @@
               }
             ],
             "title": "Encounterid"
+          },
+          "instanceType": {
+            "const": "ScheduledActivityInstance",
+            "title": "Instancetype"
           }
         },
         "type": "object",
@@ -2997,14 +3116,6 @@
             "minLength": 1,
             "title": "Id"
           },
-          "instanceType": {
-            "type": "string",
-            "enum": [
-              "ACTIVITY",
-              "DECISION"
-            ],
-            "title": "Instancetype"
-          },
           "timings": {
             "items": {
               "$ref": "#/components/schemas/Timing"
@@ -3063,13 +3174,17 @@
             },
             "type": "object",
             "title": "Conditionassignments"
+          },
+          "instanceType": {
+            "const": "ScheduledDecisionInstance",
+            "title": "Instancetype"
           }
         },
         "type": "object",
         "required": [
           "id",
-          "instanceType",
-          "conditionAssignments"
+          "conditionAssignments",
+          "instanceType"
         ],
         "title": "ScheduledDecisionInstance"
       },
@@ -3080,14 +3195,6 @@
             "minLength": 1,
             "title": "Id"
           },
-          "instanceType": {
-            "type": "string",
-            "enum": [
-              "ACTIVITY",
-              "DECISION"
-            ],
-            "title": "Instancetype"
-          },
           "timings": {
             "items": {
               "$ref": "#/components/schemas/Timing"
@@ -3146,13 +3253,17 @@
             },
             "type": "object",
             "title": "Conditionassignments"
+          },
+          "instanceType": {
+            "const": "ScheduledDecisionInstance",
+            "title": "Instancetype"
           }
         },
         "type": "object",
         "required": [
           "id",
-          "instanceType",
-          "conditionAssignments"
+          "conditionAssignments",
+          "instanceType"
         ],
         "title": "ScheduledDecisionInstance"
       },
@@ -3214,11 +3325,16 @@
                 "type": "null"
               }
             ]
+          },
+          "instanceType": {
+            "const": "Study",
+            "title": "Instancetype"
           }
         },
         "type": "object",
         "required": [
-          "name"
+          "name",
+          "instanceType"
         ],
         "title": "Study"
       },
@@ -3280,11 +3396,16 @@
                 "type": "null"
               }
             ]
+          },
+          "instanceType": {
+            "const": "Study",
+            "title": "Instancetype"
           }
         },
         "type": "object",
         "required": [
-          "name"
+          "name",
+          "instanceType"
         ],
         "title": "Study"
       },
@@ -3335,6 +3456,10 @@
               }
             ],
             "title": "Previousid"
+          },
+          "instanceType": {
+            "const": "StudyAmendment",
+            "title": "Instancetype"
           }
         },
         "type": "object",
@@ -3344,7 +3469,8 @@
           "summary",
           "substantialImpact",
           "primaryReason",
-          "enrollments"
+          "enrollments",
+          "instanceType"
         ],
         "title": "StudyAmendment"
       },
@@ -3395,6 +3521,10 @@
               }
             ],
             "title": "Previousid"
+          },
+          "instanceType": {
+            "const": "StudyAmendment",
+            "title": "Instancetype"
           }
         },
         "type": "object",
@@ -3404,7 +3534,8 @@
           "summary",
           "substantialImpact",
           "primaryReason",
-          "enrollments"
+          "enrollments",
+          "instanceType"
         ],
         "title": "StudyAmendment"
       },
@@ -3428,12 +3559,17 @@
               }
             ],
             "title": "Otherreason"
+          },
+          "instanceType": {
+            "const": "StudyAmendmentReason",
+            "title": "Instancetype"
           }
         },
         "type": "object",
         "required": [
           "id",
-          "code"
+          "code",
+          "instanceType"
         ],
         "title": "StudyAmendmentReason"
       },
@@ -3488,6 +3624,10 @@
             "type": "array",
             "title": "Populationids",
             "default": []
+          },
+          "instanceType": {
+            "const": "StudyArm",
+            "title": "Instancetype"
           }
         },
         "type": "object",
@@ -3496,7 +3636,8 @@
           "name",
           "type",
           "dataOriginDescription",
-          "dataOriginType"
+          "dataOriginType",
+          "instanceType"
         ],
         "title": "StudyArm"
       },
@@ -3522,13 +3663,18 @@
             "type": "array",
             "title": "Elementids",
             "default": []
+          },
+          "instanceType": {
+            "const": "StudyCell",
+            "title": "Instancetype"
           }
         },
         "type": "object",
         "required": [
           "id",
           "armId",
-          "epochId"
+          "epochId",
+          "instanceType"
         ],
         "title": "StudyCell"
       },
@@ -3623,13 +3769,18 @@
             "type": "array",
             "title": "Characteristics",
             "default": []
+          },
+          "instanceType": {
+            "const": "StudyCohort",
+            "title": "Instancetype"
           }
         },
         "type": "object",
         "required": [
           "id",
           "name",
-          "includesHealthySubjects"
+          "includesHealthySubjects",
+          "instanceType"
         ],
         "title": "StudyCohort"
       },
@@ -3724,13 +3875,18 @@
             "type": "array",
             "title": "Characteristics",
             "default": []
+          },
+          "instanceType": {
+            "const": "StudyCohort",
+            "title": "Instancetype"
           }
         },
         "type": "object",
         "required": [
           "id",
           "name",
-          "includesHealthySubjects"
+          "includesHealthySubjects",
+          "instanceType"
         ],
         "title": "StudyCohort"
       },
@@ -3985,6 +4141,10 @@
             "type": "array",
             "title": "Organizations",
             "default": []
+          },
+          "instanceType": {
+            "const": "StudyDesign",
+            "title": "Instancetype"
           }
         },
         "type": "object",
@@ -3995,7 +4155,8 @@
           "arms",
           "studyCells",
           "rationale",
-          "epochs"
+          "epochs",
+          "instanceType"
         ],
         "title": "StudyDesign"
       },
@@ -4250,6 +4411,10 @@
             "type": "array",
             "title": "Organizations",
             "default": []
+          },
+          "instanceType": {
+            "const": "StudyDesign",
+            "title": "Instancetype"
           }
         },
         "type": "object",
@@ -4260,7 +4425,8 @@
           "arms",
           "studyCells",
           "rationale",
-          "epochs"
+          "epochs",
+          "instanceType"
         ],
         "title": "StudyDesign"
       },
@@ -4355,13 +4521,18 @@
             "type": "array",
             "title": "Cohorts",
             "default": []
+          },
+          "instanceType": {
+            "const": "StudyDesignPopulation",
+            "title": "Instancetype"
           }
         },
         "type": "object",
         "required": [
           "id",
           "name",
-          "includesHealthySubjects"
+          "includesHealthySubjects",
+          "instanceType"
         ],
         "title": "StudyDesignPopulation"
       },
@@ -4456,13 +4627,18 @@
             "type": "array",
             "title": "Cohorts",
             "default": []
+          },
+          "instanceType": {
+            "const": "StudyDesignPopulation",
+            "title": "Instancetype"
           }
         },
         "type": "object",
         "required": [
           "id",
           "name",
-          "includesHealthySubjects"
+          "includesHealthySubjects",
+          "instanceType"
         ],
         "title": "StudyDesignPopulation"
       },
@@ -4527,12 +4703,17 @@
             "type": "array",
             "title": "Studyinterventionids",
             "default": []
+          },
+          "instanceType": {
+            "const": "StudyElement",
+            "title": "Instancetype"
           }
         },
         "type": "object",
         "required": [
           "id",
-          "name"
+          "name",
+          "instanceType"
         ],
         "title": "StudyElement"
       },
@@ -4594,13 +4775,18 @@
               }
             ],
             "title": "Nextid"
+          },
+          "instanceType": {
+            "const": "StudyEpoch",
+            "title": "Instancetype"
           }
         },
         "type": "object",
         "required": [
           "id",
           "name",
-          "type"
+          "type",
+          "instanceType"
         ],
         "title": "StudyEpoch"
       },
@@ -4612,12 +4798,17 @@
           },
           "studyIdentifierScope": {
             "$ref": "#/components/schemas/Organization-Input"
+          },
+          "instanceType": {
+            "const": "StudyIdentifier",
+            "title": "Instancetype"
           }
         },
         "type": "object",
         "required": [
           "studyIdentifier",
-          "studyIdentifierScope"
+          "studyIdentifierScope",
+          "instanceType"
         ],
         "title": "StudyIdentifier"
       },
@@ -4629,12 +4820,17 @@
           },
           "studyIdentifierScope": {
             "$ref": "#/components/schemas/Organization-Output"
+          },
+          "instanceType": {
+            "const": "StudyIdentifier",
+            "title": "Instancetype"
           }
         },
         "type": "object",
         "required": [
           "studyIdentifier",
-          "studyIdentifierScope"
+          "studyIdentifierScope",
+          "instanceType"
         ],
         "title": "StudyIdentifier"
       },
@@ -4697,6 +4893,10 @@
           },
           "pharmacologicClass": {
             "$ref": "#/components/schemas/Code"
+          },
+          "instanceType": {
+            "const": "StudyIntervention",
+            "title": "Instancetype"
           }
         },
         "type": "object",
@@ -4708,7 +4908,8 @@
           "minimumResponseDuration",
           "administrations",
           "productDesignation",
-          "pharmacologicClass"
+          "pharmacologicClass",
+          "instanceType"
         ],
         "title": "StudyIntervention"
       },
@@ -4771,6 +4972,10 @@
           },
           "pharmacologicClass": {
             "$ref": "#/components/schemas/Code"
+          },
+          "instanceType": {
+            "const": "StudyIntervention",
+            "title": "Instancetype"
           }
         },
         "type": "object",
@@ -4782,7 +4987,8 @@
           "minimumResponseDuration",
           "administrations",
           "productDesignation",
-          "pharmacologicClass"
+          "pharmacologicClass",
+          "instanceType"
         ],
         "title": "StudyIntervention"
       },
@@ -4827,12 +5033,17 @@
             "type": "array",
             "title": "Versions",
             "default": []
+          },
+          "instanceType": {
+            "const": "StudyProtocolDocument",
+            "title": "Instancetype"
           }
         },
         "type": "object",
         "required": [
           "id",
-          "name"
+          "name",
+          "instanceType"
         ],
         "title": "StudyProtocolDocument"
       },
@@ -4877,12 +5088,17 @@
             "type": "array",
             "title": "Versions",
             "default": []
+          },
+          "instanceType": {
+            "const": "StudyProtocolDocument",
+            "title": "Instancetype"
           }
         },
         "type": "object",
         "required": [
           "id",
-          "name"
+          "name",
+          "instanceType"
         ],
         "title": "StudyProtocolDocument"
       },
@@ -4923,13 +5139,18 @@
             "type": "array",
             "title": "Childrenids",
             "default": []
+          },
+          "instanceType": {
+            "const": "StudyProtocolDocumentVersion",
+            "title": "Instancetype"
           }
         },
         "type": "object",
         "required": [
           "id",
           "protocolVersion",
-          "protocolStatus"
+          "protocolStatus",
+          "instanceType"
         ],
         "title": "StudyProtocolDocumentVersion"
       },
@@ -4970,13 +5191,18 @@
             "type": "array",
             "title": "Childrenids",
             "default": []
+          },
+          "instanceType": {
+            "const": "StudyProtocolDocumentVersion",
+            "title": "Instancetype"
           }
         },
         "type": "object",
         "required": [
           "id",
           "protocolVersion",
-          "protocolStatus"
+          "protocolStatus",
+          "instanceType"
         ],
         "title": "StudyProtocolDocumentVersion"
       },
@@ -5024,12 +5250,17 @@
               }
             ],
             "title": "Currentenrollmentid"
+          },
+          "instanceType": {
+            "const": "StudySite",
+            "title": "Instancetype"
           }
         },
         "type": "object",
         "required": [
           "id",
-          "name"
+          "name",
+          "instanceType"
         ],
         "title": "StudySite"
       },
@@ -5047,13 +5278,18 @@
           "typeId": {
             "type": "string",
             "title": "Typeid"
+          },
+          "instanceType": {
+            "const": "StudyTitle",
+            "title": "Instancetype"
           }
         },
         "type": "object",
         "required": [
           "id",
           "text",
-          "typeId"
+          "typeId",
+          "instanceType"
         ],
         "title": "StudyTitle"
       },
@@ -5149,6 +5385,10 @@
             },
             "type": "array",
             "title": "Titles"
+          },
+          "instanceType": {
+            "const": "StudyVersion",
+            "title": "Instancetype"
           }
         },
         "type": "object",
@@ -5156,7 +5396,8 @@
           "id",
           "versionIdentifier",
           "rationale",
-          "titles"
+          "titles",
+          "instanceType"
         ],
         "title": "StudyVersion"
       },
@@ -5252,6 +5493,10 @@
             },
             "type": "array",
             "title": "Titles"
+          },
+          "instanceType": {
+            "const": "StudyVersion",
+            "title": "Instancetype"
           }
         },
         "type": "object",
@@ -5259,7 +5504,8 @@
           "id",
           "versionIdentifier",
           "rationale",
-          "titles"
+          "titles",
+          "instanceType"
         ],
         "title": "StudyVersion"
       },
@@ -5269,14 +5515,6 @@
             "type": "string",
             "minLength": 1,
             "title": "Id"
-          },
-          "instanceType": {
-            "type": "string",
-            "enum": [
-              "GEOGRAPHIC_SCOPE",
-              "SUBJECT_ENROLLMENT"
-            ],
-            "title": "Instancetype"
           },
           "type": {
             "$ref": "#/components/schemas/Code"
@@ -5291,6 +5529,10 @@
               }
             ]
           },
+          "instanceType": {
+            "const": "SubjectEnrollment",
+            "title": "Instancetype"
+          },
           "quantity": {
             "type": "string",
             "title": "Quantity"
@@ -5299,8 +5541,8 @@
         "type": "object",
         "required": [
           "id",
-          "instanceType",
           "type",
+          "instanceType",
           "quantity"
         ],
         "title": "SubjectEnrollment"
@@ -5312,14 +5554,6 @@
             "minLength": 1,
             "title": "Id"
           },
-          "instanceType": {
-            "type": "string",
-            "enum": [
-              "GEOGRAPHIC_SCOPE",
-              "SUBJECT_ENROLLMENT"
-            ],
-            "title": "Instancetype"
-          },
           "type": {
             "$ref": "#/components/schemas/Code"
           },
@@ -5333,6 +5567,10 @@
               }
             ]
           },
+          "instanceType": {
+            "const": "SubjectEnrollment",
+            "title": "Instancetype"
+          },
           "quantity": {
             "type": "string",
             "title": "Quantity"
@@ -5341,8 +5579,8 @@
         "type": "object",
         "required": [
           "id",
-          "instanceType",
           "type",
+          "instanceType",
           "quantity"
         ],
         "title": "SubjectEnrollment"
@@ -5384,13 +5622,18 @@
           "parameterMap": {
             "type": "object",
             "title": "Parametermap"
+          },
+          "instanceType": {
+            "const": "SyntaxTemplateDictionary",
+            "title": "Instancetype"
           }
         },
         "type": "object",
         "required": [
           "id",
           "name",
-          "parameterMap"
+          "parameterMap",
+          "instanceType"
         ],
         "title": "SyntaxTemplateDictionary"
       },
@@ -5492,6 +5735,10 @@
               }
             ],
             "title": "Window"
+          },
+          "instanceType": {
+            "const": "Timing",
+            "title": "Instancetype"
           }
         },
         "type": "object",
@@ -5500,7 +5747,8 @@
           "name",
           "type",
           "value",
-          "relativeToFrom"
+          "relativeToFrom",
+          "instanceType"
         ],
         "title": "Timing"
       },
@@ -5541,13 +5789,18 @@
           "text": {
             "type": "string",
             "title": "Text"
+          },
+          "instanceType": {
+            "const": "TransitionRule",
+            "title": "Instancetype"
           }
         },
         "type": "object",
         "required": [
           "id",
           "name",
-          "text"
+          "text",
+          "instanceType"
         ],
         "title": "TransitionRule"
       },

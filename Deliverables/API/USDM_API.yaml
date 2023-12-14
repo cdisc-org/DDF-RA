@@ -269,10 +269,14 @@ components:
           - type: string
           - type: 'null'
           title: Timelineid
+        instanceType:
+          const: Activity
+          title: Instancetype
       type: object
       required:
       - id
       - name
+      - instanceType
       title: Activity
     Activity-Output:
       properties:
@@ -333,10 +337,14 @@ components:
           - type: string
           - type: 'null'
           title: Timelineid
+        instanceType:
+          const: Activity
+          title: Instancetype
       type: object
       required:
       - id
       - name
+      - instanceType
       title: Activity
     Address:
       properties:
@@ -378,9 +386,13 @@ components:
           anyOf:
           - $ref: '#/components/schemas/Code'
           - type: 'null'
+        instanceType:
+          const: Address
+          title: Instancetype
       type: object
       required:
       - id
+      - instanceType
       title: Address
     AdministrationDuration-Input:
       properties:
@@ -399,6 +411,9 @@ components:
         reasonDurationWillVary:
           type: string
           title: Reasondurationwillvary
+        instanceType:
+          const: AdministrationDuration
+          title: Instancetype
       type: object
       required:
       - id
@@ -406,6 +421,7 @@ components:
       - description
       - durationWillVary
       - reasonDurationWillVary
+      - instanceType
       title: AdministrationDuration
     AdministrationDuration-Output:
       properties:
@@ -424,6 +440,9 @@ components:
         reasonDurationWillVary:
           type: string
           title: Reasondurationwillvary
+        instanceType:
+          const: AdministrationDuration
+          title: Instancetype
       type: object
       required:
       - id
@@ -431,6 +450,7 @@ components:
       - description
       - durationWillVary
       - reasonDurationWillVary
+      - instanceType
       title: AdministrationDuration
     AgentAdministration-Input:
       properties:
@@ -460,6 +480,9 @@ components:
           $ref: '#/components/schemas/Code'
         frequency:
           $ref: '#/components/schemas/Code'
+        instanceType:
+          const: AgentAdministration
+          title: Instancetype
       type: object
       required:
       - id
@@ -468,6 +491,7 @@ components:
       - dose
       - route
       - frequency
+      - instanceType
       title: AgentAdministration
     AgentAdministration-Output:
       properties:
@@ -497,6 +521,9 @@ components:
           $ref: '#/components/schemas/Code'
         frequency:
           $ref: '#/components/schemas/Code'
+        instanceType:
+          const: AgentAdministration
+          title: Instancetype
       type: object
       required:
       - id
@@ -505,6 +532,7 @@ components:
       - dose
       - route
       - frequency
+      - instanceType
       title: AgentAdministration
     AliasCode:
       properties:
@@ -520,10 +548,14 @@ components:
           type: array
           title: Standardcodealiases
           default: []
+        instanceType:
+          const: AliasCode
+          title: Instancetype
       type: object
       required:
       - id
       - standardCode
+      - instanceType
       title: AliasCode
     AnalysisPopulation:
       properties:
@@ -548,11 +580,15 @@ components:
         text:
           type: string
           title: Text
+        instanceType:
+          const: AnalysisPopulation
+          title: Instancetype
       type: object
       required:
       - id
       - name
       - text
+      - instanceType
       title: AnalysisPopulation
     BiomedicalConcept-Input:
       properties:
@@ -586,12 +622,16 @@ components:
           default: []
         code:
           $ref: '#/components/schemas/AliasCode'
+        instanceType:
+          const: BiomedicalConcept
+          title: Instancetype
       type: object
       required:
       - id
       - name
       - reference
       - code
+      - instanceType
       title: BiomedicalConcept
     BiomedicalConcept-Output:
       properties:
@@ -625,12 +665,16 @@ components:
           default: []
         code:
           $ref: '#/components/schemas/AliasCode'
+        instanceType:
+          const: BiomedicalConcept
+          title: Instancetype
       type: object
       required:
       - id
       - name
       - reference
       - code
+      - instanceType
       title: BiomedicalConcept
     BiomedicalConceptCategory-Input:
       properties:
@@ -668,10 +712,14 @@ components:
           anyOf:
           - $ref: '#/components/schemas/AliasCode'
           - type: 'null'
+        instanceType:
+          const: BiomedicalConceptCategory
+          title: Instancetype
       type: object
       required:
       - id
       - name
+      - instanceType
       title: BiomedicalConceptCategory
     BiomedicalConceptCategory-Output:
       properties:
@@ -709,10 +757,14 @@ components:
           anyOf:
           - $ref: '#/components/schemas/AliasCode'
           - type: 'null'
+        instanceType:
+          const: BiomedicalConceptCategory
+          title: Instancetype
       type: object
       required:
       - id
       - name
+      - instanceType
       title: BiomedicalConceptCategory
     BiomedicalConceptProperty-Input:
       properties:
@@ -746,6 +798,9 @@ components:
           default: []
         code:
           $ref: '#/components/schemas/AliasCode'
+        instanceType:
+          const: BiomedicalConceptProperty
+          title: Instancetype
       type: object
       required:
       - id
@@ -754,6 +809,7 @@ components:
       - isEnabled
       - datatype
       - code
+      - instanceType
       title: BiomedicalConceptProperty
     BiomedicalConceptProperty-Output:
       properties:
@@ -787,6 +843,9 @@ components:
           default: []
         code:
           $ref: '#/components/schemas/AliasCode'
+        instanceType:
+          const: BiomedicalConceptProperty
+          title: Instancetype
       type: object
       required:
       - id
@@ -795,6 +854,7 @@ components:
       - isEnabled
       - datatype
       - code
+      - instanceType
       title: BiomedicalConceptProperty
     BiomedicalConceptSurrogate:
       properties:
@@ -821,10 +881,14 @@ components:
           - type: string
           - type: 'null'
           title: Reference
+        instanceType:
+          const: BiomedicalConceptSurrogate
+          title: Instancetype
       type: object
       required:
       - id
       - name
+      - instanceType
       title: BiomedicalConceptSurrogate
     Characteristic:
       properties:
@@ -846,14 +910,6 @@ components:
           - type: string
           - type: 'null'
           title: Description
-        instanceType:
-          type: string
-          enum:
-          - ENDPOINT
-          - OBJECTIVE
-          - ELIGIBILITY_CRITERIA
-          - CHARACTERISTIC
-          title: Instancetype
         text:
           type: string
           title: Text
@@ -862,12 +918,15 @@ components:
           - type: string
           - type: 'null'
           title: Dictionaryid
+        instanceType:
+          const: Characteristic
+          title: Instancetype
       type: object
       required:
       - id
       - name
-      - instanceType
       - text
+      - instanceType
       title: Characteristic
     Code:
       properties:
@@ -887,6 +946,9 @@ components:
         decode:
           type: string
           title: Decode
+        instanceType:
+          const: Code
+          title: Instancetype
       type: object
       required:
       - id
@@ -894,6 +956,7 @@ components:
       - codeSystem
       - codeSystemVersion
       - decode
+      - instanceType
       title: Code
     Condition:
       properties:
@@ -935,11 +998,15 @@ components:
           type: array
           title: Appliestoids
           default: []
+        instanceType:
+          const: Condition
+          title: Instancetype
       type: object
       required:
       - id
       - name
       - text
+      - instanceType
       title: Condition
     EligibilityCriteria:
       properties:
@@ -961,14 +1028,6 @@ components:
           - type: string
           - type: 'null'
           title: Description
-        instanceType:
-          type: string
-          enum:
-          - ENDPOINT
-          - OBJECTIVE
-          - ELIGIBILITY_CRITERIA
-          - CHARACTERISTIC
-          title: Instancetype
         text:
           type: string
           title: Text
@@ -997,14 +1056,17 @@ components:
           - type: string
           - type: 'null'
           title: Contextid
+        instanceType:
+          const: EligibilityCriteria
+          title: Instancetype
       type: object
       required:
       - id
       - name
-      - instanceType
       - text
       - category
       - identifier
+      - instanceType
       title: EligibilityCriteria
     Encounter:
       properties:
@@ -1061,11 +1123,15 @@ components:
           anyOf:
           - $ref: '#/components/schemas/TransitionRule'
           - type: 'null'
+        instanceType:
+          const: Encounter
+          title: Instancetype
       type: object
       required:
       - id
       - name
       - type
+      - instanceType
       title: Encounter
     Endpoint:
       properties:
@@ -1087,14 +1153,6 @@ components:
           - type: string
           - type: 'null'
           title: Description
-        instanceType:
-          type: string
-          enum:
-          - ENDPOINT
-          - OBJECTIVE
-          - ELIGIBILITY_CRITERIA
-          - CHARACTERISTIC
-          title: Instancetype
         text:
           type: string
           title: Text
@@ -1108,14 +1166,17 @@ components:
           title: Purpose
         level:
           $ref: '#/components/schemas/Code'
+        instanceType:
+          const: Endpoint
+          title: Instancetype
       type: object
       required:
       - id
       - name
-      - instanceType
       - text
       - purpose
       - level
+      - instanceType
       title: Endpoint
     Estimand:
       properties:
@@ -1139,6 +1200,9 @@ components:
             $ref: '#/components/schemas/IntercurrentEvent'
           type: array
           title: Intercurrentevents
+        instanceType:
+          const: Estimand
+          title: Instancetype
       type: object
       required:
       - id
@@ -1147,6 +1211,7 @@ components:
       - treatmentId
       - variableOfInterestId
       - intercurrentEvents
+      - instanceType
       title: Estimand
     GeographicScope-Input:
       properties:
@@ -1154,23 +1219,20 @@ components:
           type: string
           minLength: 1
           title: Id
-        instanceType:
-          type: string
-          enum:
-          - GEOGRAPHIC_SCOPE
-          - SUBJECT_ENROLLMENT
-          title: Instancetype
         type:
           $ref: '#/components/schemas/Code'
         code:
           anyOf:
           - $ref: '#/components/schemas/AliasCode'
           - type: 'null'
+        instanceType:
+          const: GeographicScope
+          title: Instancetype
       type: object
       required:
       - id
-      - instanceType
       - type
+      - instanceType
       title: GeographicScope
     GeographicScope-Output:
       properties:
@@ -1178,23 +1240,20 @@ components:
           type: string
           minLength: 1
           title: Id
-        instanceType:
-          type: string
-          enum:
-          - GEOGRAPHIC_SCOPE
-          - SUBJECT_ENROLLMENT
-          title: Instancetype
         type:
           $ref: '#/components/schemas/Code'
         code:
           anyOf:
           - $ref: '#/components/schemas/AliasCode'
           - type: 'null'
+        instanceType:
+          const: GeographicScope
+          title: Instancetype
       type: object
       required:
       - id
-      - instanceType
       - type
+      - instanceType
       title: GeographicScope
     GovernanceDate-Input:
       properties:
@@ -1227,6 +1286,9 @@ components:
             $ref: '#/components/schemas/GeographicScope-Input'
           type: array
           title: Geographicscopes
+        instanceType:
+          const: GovernanceDate
+          title: Instancetype
       type: object
       required:
       - id
@@ -1234,6 +1296,7 @@ components:
       - type
       - dateValue
       - geographicScopes
+      - instanceType
       title: GovernanceDate
     GovernanceDate-Output:
       properties:
@@ -1266,6 +1329,9 @@ components:
             $ref: '#/components/schemas/GeographicScope-Output'
           type: array
           title: Geographicscopes
+        instanceType:
+          const: GovernanceDate
+          title: Instancetype
       type: object
       required:
       - id
@@ -1273,6 +1339,7 @@ components:
       - type
       - dateValue
       - geographicScopes
+      - instanceType
       title: GovernanceDate
     HTTPValidationError:
       properties:
@@ -1312,11 +1379,15 @@ components:
         isRareDisease:
           type: boolean
           title: Israredisease
+        instanceType:
+          const: Indication
+          title: Instancetype
       type: object
       required:
       - id
       - name
       - isRareDisease
+      - instanceType
       title: Indication
     IntercurrentEvent:
       properties:
@@ -1341,11 +1412,15 @@ components:
         strategy:
           type: string
           title: Strategy
+        instanceType:
+          const: IntercurrentEvent
+          title: Instancetype
       type: object
       required:
       - id
       - name
       - strategy
+      - instanceType
       title: IntercurrentEvent
     Masking:
       properties:
@@ -1360,10 +1435,14 @@ components:
           title: Description
         role:
           $ref: '#/components/schemas/Code'
+        instanceType:
+          const: Masking
+          title: Instancetype
       type: object
       required:
       - id
       - role
+      - instanceType
       title: Masking
     NarrativeContent:
       properties:
@@ -1392,12 +1471,16 @@ components:
           type: array
           title: Childrenids
           default: []
+        instanceType:
+          const: NarrativeContent
+          title: Instancetype
       type: object
       required:
       - id
       - name
       - sectionNumber
       - sectionTitle
+      - instanceType
       title: NarrativeContent
     Objective-Input:
       properties:
@@ -1419,14 +1502,6 @@ components:
           - type: string
           - type: 'null'
           title: Description
-        instanceType:
-          type: string
-          enum:
-          - ENDPOINT
-          - OBJECTIVE
-          - ELIGIBILITY_CRITERIA
-          - CHARACTERISTIC
-          title: Instancetype
         text:
           type: string
           title: Text
@@ -1445,12 +1520,15 @@ components:
           type: array
           title: Endpoints
           default: []
+        instanceType:
+          const: Objective
+          title: Instancetype
       type: object
       required:
       - id
       - name
-      - instanceType
       - text
+      - instanceType
       title: Objective
     Objective-Output:
       properties:
@@ -1472,14 +1550,6 @@ components:
           - type: string
           - type: 'null'
           title: Description
-        instanceType:
-          type: string
-          enum:
-          - ENDPOINT
-          - OBJECTIVE
-          - ELIGIBILITY_CRITERIA
-          - CHARACTERISTIC
-          title: Instancetype
         text:
           type: string
           title: Text
@@ -1498,12 +1568,15 @@ components:
           type: array
           title: Endpoints
           default: []
+        instanceType:
+          const: Objective
+          title: Instancetype
       type: object
       required:
       - id
       - name
-      - instanceType
       - text
+      - instanceType
       title: Objective
     Organization-Input:
       properties:
@@ -1605,12 +1678,16 @@ components:
           - type: string
           - type: 'null'
           title: Studyinterventionid
+        instanceType:
+          const: Procedure
+          title: Instancetype
       type: object
       required:
       - id
       - name
       - procedureType
       - code
+      - instanceType
       title: Procedure
     Quantity:
       properties:
@@ -1625,10 +1702,14 @@ components:
           anyOf:
           - $ref: '#/components/schemas/Code'
           - type: 'null'
+        instanceType:
+          const: Quantity
+          title: Instancetype
       type: object
       required:
       - id
       - value
+      - instanceType
       title: Quantity
     Range:
       properties:
@@ -1649,12 +1730,16 @@ components:
         isApproximate:
           type: boolean
           title: Isapproximate
+        instanceType:
+          const: Range
+          title: Instancetype
       type: object
       required:
       - id
       - minValue
       - maxValue
       - isApproximate
+      - instanceType
       title: Range
     ResponseCode:
       properties:
@@ -1667,11 +1752,15 @@ components:
           title: Isenabled
         code:
           $ref: '#/components/schemas/Code'
+        instanceType:
+          const: ResponseCode
+          title: Instancetype
       type: object
       required:
       - id
       - isEnabled
       - code
+      - instanceType
       title: ResponseCode
     ScheduleTimeline-Input:
       properties:
@@ -1716,6 +1805,9 @@ components:
           type: array
           title: Instances
           default: []
+        instanceType:
+          const: ScheduleTimeline
+          title: Instancetype
       type: object
       required:
       - id
@@ -1723,6 +1815,7 @@ components:
       - mainTimeline
       - entryCondition
       - entryId
+      - instanceType
       title: ScheduleTimeline
     ScheduleTimeline-Output:
       properties:
@@ -1767,6 +1860,9 @@ components:
           type: array
           title: Instances
           default: []
+        instanceType:
+          const: ScheduleTimeline
+          title: Instancetype
       type: object
       required:
       - id
@@ -1774,6 +1870,7 @@ components:
       - mainTimeline
       - entryCondition
       - entryId
+      - instanceType
       title: ScheduleTimeline
     ScheduleTimelineExit:
       properties:
@@ -1781,9 +1878,13 @@ components:
           type: string
           minLength: 1
           title: Id
+        instanceType:
+          const: ScheduleTimelineExit
+          title: Instancetype
       type: object
       required:
       - id
+      - instanceType
       title: ScheduleTimelineExit
     ScheduledActivityInstance-Input:
       properties:
@@ -1791,12 +1892,6 @@ components:
           type: string
           minLength: 1
           title: Id
-        instanceType:
-          type: string
-          enum:
-          - ACTIVITY
-          - DECISION
-          title: Instancetype
         timings:
           items:
             $ref: '#/components/schemas/Timing'
@@ -1834,6 +1929,9 @@ components:
           - type: string
           - type: 'null'
           title: Encounterid
+        instanceType:
+          const: ScheduledActivityInstance
+          title: Instancetype
       type: object
       required:
       - id
@@ -1845,12 +1943,6 @@ components:
           type: string
           minLength: 1
           title: Id
-        instanceType:
-          type: string
-          enum:
-          - ACTIVITY
-          - DECISION
-          title: Instancetype
         timings:
           items:
             $ref: '#/components/schemas/Timing'
@@ -1888,6 +1980,9 @@ components:
           - type: string
           - type: 'null'
           title: Encounterid
+        instanceType:
+          const: ScheduledActivityInstance
+          title: Instancetype
       type: object
       required:
       - id
@@ -1899,12 +1994,6 @@ components:
           type: string
           minLength: 1
           title: Id
-        instanceType:
-          type: string
-          enum:
-          - ACTIVITY
-          - DECISION
-          title: Instancetype
         timings:
           items:
             $ref: '#/components/schemas/Timing'
@@ -1936,11 +2025,14 @@ components:
             type: string
           type: object
           title: Conditionassignments
+        instanceType:
+          const: ScheduledDecisionInstance
+          title: Instancetype
       type: object
       required:
       - id
-      - instanceType
       - conditionAssignments
+      - instanceType
       title: ScheduledDecisionInstance
     ScheduledDecisionInstance-Output:
       properties:
@@ -1948,12 +2040,6 @@ components:
           type: string
           minLength: 1
           title: Id
-        instanceType:
-          type: string
-          enum:
-          - ACTIVITY
-          - DECISION
-          title: Instancetype
         timings:
           items:
             $ref: '#/components/schemas/Timing'
@@ -1985,11 +2071,14 @@ components:
             type: string
           type: object
           title: Conditionassignments
+        instanceType:
+          const: ScheduledDecisionInstance
+          title: Instancetype
       type: object
       required:
       - id
-      - instanceType
       - conditionAssignments
+      - instanceType
       title: ScheduledDecisionInstance
     Study-Input:
       properties:
@@ -2023,9 +2112,13 @@ components:
           anyOf:
           - $ref: '#/components/schemas/StudyProtocolDocument-Input'
           - type: 'null'
+        instanceType:
+          const: Study
+          title: Instancetype
       type: object
       required:
       - name
+      - instanceType
       title: Study
     Study-Output:
       properties:
@@ -2059,9 +2152,13 @@ components:
           anyOf:
           - $ref: '#/components/schemas/StudyProtocolDocument-Output'
           - type: 'null'
+        instanceType:
+          const: Study
+          title: Instancetype
       type: object
       required:
       - name
+      - instanceType
       title: Study
     StudyAmendment-Input:
       properties:
@@ -2096,6 +2193,9 @@ components:
           - type: string
           - type: 'null'
           title: Previousid
+        instanceType:
+          const: StudyAmendment
+          title: Instancetype
       type: object
       required:
       - id
@@ -2104,6 +2204,7 @@ components:
       - substantialImpact
       - primaryReason
       - enrollments
+      - instanceType
       title: StudyAmendment
     StudyAmendment-Output:
       properties:
@@ -2138,6 +2239,9 @@ components:
           - type: string
           - type: 'null'
           title: Previousid
+        instanceType:
+          const: StudyAmendment
+          title: Instancetype
       type: object
       required:
       - id
@@ -2146,6 +2250,7 @@ components:
       - substantialImpact
       - primaryReason
       - enrollments
+      - instanceType
       title: StudyAmendment
     StudyAmendmentReason:
       properties:
@@ -2160,10 +2265,14 @@ components:
           - type: string
           - type: 'null'
           title: Otherreason
+        instanceType:
+          const: StudyAmendmentReason
+          title: Instancetype
       type: object
       required:
       - id
       - code
+      - instanceType
       title: StudyAmendmentReason
     StudyArm:
       properties:
@@ -2198,6 +2307,9 @@ components:
           type: array
           title: Populationids
           default: []
+        instanceType:
+          const: StudyArm
+          title: Instancetype
       type: object
       required:
       - id
@@ -2205,6 +2317,7 @@ components:
       - type
       - dataOriginDescription
       - dataOriginType
+      - instanceType
       title: StudyArm
     StudyCell:
       properties:
@@ -2224,11 +2337,15 @@ components:
           type: array
           title: Elementids
           default: []
+        instanceType:
+          const: StudyCell
+          title: Instancetype
       type: object
       required:
       - id
       - armId
       - epochId
+      - instanceType
       title: StudyCell
     StudyCohort-Input:
       properties:
@@ -2283,11 +2400,15 @@ components:
           type: array
           title: Characteristics
           default: []
+        instanceType:
+          const: StudyCohort
+          title: Instancetype
       type: object
       required:
       - id
       - name
       - includesHealthySubjects
+      - instanceType
       title: StudyCohort
     StudyCohort-Output:
       properties:
@@ -2342,11 +2463,15 @@ components:
           type: array
           title: Characteristics
           default: []
+        instanceType:
+          const: StudyCohort
+          title: Instancetype
       type: object
       required:
       - id
       - name
       - includesHealthySubjects
+      - instanceType
       title: StudyCohort
     StudyDesign-Input:
       properties:
@@ -2520,6 +2645,9 @@ components:
           type: array
           title: Organizations
           default: []
+        instanceType:
+          const: StudyDesign
+          title: Instancetype
       type: object
       required:
       - id
@@ -2529,6 +2657,7 @@ components:
       - studyCells
       - rationale
       - epochs
+      - instanceType
       title: StudyDesign
     StudyDesign-Output:
       properties:
@@ -2702,6 +2831,9 @@ components:
           type: array
           title: Organizations
           default: []
+        instanceType:
+          const: StudyDesign
+          title: Instancetype
       type: object
       required:
       - id
@@ -2711,6 +2843,7 @@ components:
       - studyCells
       - rationale
       - epochs
+      - instanceType
       title: StudyDesign
     StudyDesignPopulation-Input:
       properties:
@@ -2765,11 +2898,15 @@ components:
           type: array
           title: Cohorts
           default: []
+        instanceType:
+          const: StudyDesignPopulation
+          title: Instancetype
       type: object
       required:
       - id
       - name
       - includesHealthySubjects
+      - instanceType
       title: StudyDesignPopulation
     StudyDesignPopulation-Output:
       properties:
@@ -2824,11 +2961,15 @@ components:
           type: array
           title: Cohorts
           default: []
+        instanceType:
+          const: StudyDesignPopulation
+          title: Instancetype
       type: object
       required:
       - id
       - name
       - includesHealthySubjects
+      - instanceType
       title: StudyDesignPopulation
     StudyElement:
       properties:
@@ -2864,10 +3005,14 @@ components:
           type: array
           title: Studyinterventionids
           default: []
+        instanceType:
+          const: StudyElement
+          title: Instancetype
       type: object
       required:
       - id
       - name
+      - instanceType
       title: StudyElement
     StudyEpoch:
       properties:
@@ -2901,11 +3046,15 @@ components:
           - type: string
           - type: 'null'
           title: Nextid
+        instanceType:
+          const: StudyEpoch
+          title: Instancetype
       type: object
       required:
       - id
       - name
       - type
+      - instanceType
       title: StudyEpoch
     StudyIdentifier-Input:
       properties:
@@ -2914,10 +3063,14 @@ components:
           title: Studyidentifier
         studyIdentifierScope:
           $ref: '#/components/schemas/Organization-Input'
+        instanceType:
+          const: StudyIdentifier
+          title: Instancetype
       type: object
       required:
       - studyIdentifier
       - studyIdentifierScope
+      - instanceType
       title: StudyIdentifier
     StudyIdentifier-Output:
       properties:
@@ -2926,10 +3079,14 @@ components:
           title: Studyidentifier
         studyIdentifierScope:
           $ref: '#/components/schemas/Organization-Output'
+        instanceType:
+          const: StudyIdentifier
+          title: Instancetype
       type: object
       required:
       - studyIdentifier
       - studyIdentifierScope
+      - instanceType
       title: StudyIdentifier
     StudyIntervention-Input:
       properties:
@@ -2969,6 +3126,9 @@ components:
           $ref: '#/components/schemas/Code'
         pharmacologicClass:
           $ref: '#/components/schemas/Code'
+        instanceType:
+          const: StudyIntervention
+          title: Instancetype
       type: object
       required:
       - id
@@ -2979,6 +3139,7 @@ components:
       - administrations
       - productDesignation
       - pharmacologicClass
+      - instanceType
       title: StudyIntervention
     StudyIntervention-Output:
       properties:
@@ -3018,6 +3179,9 @@ components:
           $ref: '#/components/schemas/Code'
         pharmacologicClass:
           $ref: '#/components/schemas/Code'
+        instanceType:
+          const: StudyIntervention
+          title: Instancetype
       type: object
       required:
       - id
@@ -3028,6 +3192,7 @@ components:
       - administrations
       - productDesignation
       - pharmacologicClass
+      - instanceType
       title: StudyIntervention
     StudyProtocolDocument-Input:
       properties:
@@ -3055,10 +3220,14 @@ components:
           type: array
           title: Versions
           default: []
+        instanceType:
+          const: StudyProtocolDocument
+          title: Instancetype
       type: object
       required:
       - id
       - name
+      - instanceType
       title: StudyProtocolDocument
     StudyProtocolDocument-Output:
       properties:
@@ -3086,10 +3255,14 @@ components:
           type: array
           title: Versions
           default: []
+        instanceType:
+          const: StudyProtocolDocument
+          title: Instancetype
       type: object
       required:
       - id
       - name
+      - instanceType
       title: StudyProtocolDocument
     StudyProtocolDocumentVersion-Input:
       properties:
@@ -3120,11 +3293,15 @@ components:
           type: array
           title: Childrenids
           default: []
+        instanceType:
+          const: StudyProtocolDocumentVersion
+          title: Instancetype
       type: object
       required:
       - id
       - protocolVersion
       - protocolStatus
+      - instanceType
       title: StudyProtocolDocumentVersion
     StudyProtocolDocumentVersion-Output:
       properties:
@@ -3155,11 +3332,15 @@ components:
           type: array
           title: Childrenids
           default: []
+        instanceType:
+          const: StudyProtocolDocumentVersion
+          title: Instancetype
       type: object
       required:
       - id
       - protocolVersion
       - protocolStatus
+      - instanceType
       title: StudyProtocolDocumentVersion
     StudySite:
       properties:
@@ -3186,10 +3367,14 @@ components:
           - type: string
           - type: 'null'
           title: Currentenrollmentid
+        instanceType:
+          const: StudySite
+          title: Instancetype
       type: object
       required:
       - id
       - name
+      - instanceType
       title: StudySite
     StudyTitle:
       properties:
@@ -3203,11 +3388,15 @@ components:
         typeId:
           type: string
           title: Typeid
+        instanceType:
+          const: StudyTitle
+          title: Instancetype
       type: object
       required:
       - id
       - text
       - typeId
+      - instanceType
       title: StudyTitle
     StudyVersion-Input:
       properties:
@@ -3269,12 +3458,16 @@ components:
             $ref: '#/components/schemas/StudyTitle'
           type: array
           title: Titles
+        instanceType:
+          const: StudyVersion
+          title: Instancetype
       type: object
       required:
       - id
       - versionIdentifier
       - rationale
       - titles
+      - instanceType
       title: StudyVersion
     StudyVersion-Output:
       properties:
@@ -3336,12 +3529,16 @@ components:
             $ref: '#/components/schemas/StudyTitle'
           type: array
           title: Titles
+        instanceType:
+          const: StudyVersion
+          title: Instancetype
       type: object
       required:
       - id
       - versionIdentifier
       - rationale
       - titles
+      - instanceType
       title: StudyVersion
     SubjectEnrollment-Input:
       properties:
@@ -3349,26 +3546,23 @@ components:
           type: string
           minLength: 1
           title: Id
-        instanceType:
-          type: string
-          enum:
-          - GEOGRAPHIC_SCOPE
-          - SUBJECT_ENROLLMENT
-          title: Instancetype
         type:
           $ref: '#/components/schemas/Code'
         code:
           anyOf:
           - $ref: '#/components/schemas/AliasCode'
           - type: 'null'
+        instanceType:
+          const: SubjectEnrollment
+          title: Instancetype
         quantity:
           type: string
           title: Quantity
       type: object
       required:
       - id
-      - instanceType
       - type
+      - instanceType
       - quantity
       title: SubjectEnrollment
     SubjectEnrollment-Output:
@@ -3377,26 +3571,23 @@ components:
           type: string
           minLength: 1
           title: Id
-        instanceType:
-          type: string
-          enum:
-          - GEOGRAPHIC_SCOPE
-          - SUBJECT_ENROLLMENT
-          title: Instancetype
         type:
           $ref: '#/components/schemas/Code'
         code:
           anyOf:
           - $ref: '#/components/schemas/AliasCode'
           - type: 'null'
+        instanceType:
+          const: SubjectEnrollment
+          title: Instancetype
         quantity:
           type: string
           title: Quantity
       type: object
       required:
       - id
-      - instanceType
       - type
+      - instanceType
       - quantity
       title: SubjectEnrollment
     SyntaxTemplateDictionary:
@@ -3422,11 +3613,15 @@ components:
         parameterMap:
           type: object
           title: Parametermap
+        instanceType:
+          const: SyntaxTemplateDictionary
+          title: Instancetype
       type: object
       required:
       - id
       - name
       - parameterMap
+      - instanceType
       title: SyntaxTemplateDictionary
     Timing:
       properties:
@@ -3480,6 +3675,9 @@ components:
           - type: string
           - type: 'null'
           title: Window
+        instanceType:
+          const: Timing
+          title: Instancetype
       type: object
       required:
       - id
@@ -3487,6 +3685,7 @@ components:
       - type
       - value
       - relativeToFrom
+      - instanceType
       title: Timing
     TransitionRule:
       properties:
@@ -3511,11 +3710,15 @@ components:
         text:
           type: string
           title: Text
+        instanceType:
+          const: TransitionRule
+          title: Instancetype
       type: object
       required:
       - id
       - name
       - text
+      - instanceType
       title: TransitionRule
     ValidationError:
       properties:
