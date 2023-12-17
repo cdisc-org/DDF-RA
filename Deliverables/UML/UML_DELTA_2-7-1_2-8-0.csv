@@ -1,35 +1,35 @@
 status,class_name,property_name,data_type
 Class - NEW,Condition,,
-,,id,String
-,,name,String
-,,description,String
-,,label,String
-,,text,String
+,,id,string
+,,name,string
+,,description,string
+,,label,string
+,,text,string
 ,,dictionary,SyntaxTemplateDictionary
-,,context,ScheduledActivityInstance
-,,appliesTo,Procedure
+,,context,"Activity, ScheduledActivityInstance"
+,,appliesTo,"Activity, BiomedicalConcept, BiomedicalConceptCategory, BiomedicalConceptSurrogate, Procedure"
 Class - NEW,Masking,,
-,,id,String
-,,description,String
+,,id,string
+,,description,string
 ,,role,Code
 Class - NEW,ResearchOrganization,,
-,,id,String
-,,name,String
-,,label,String
-,,identifier,String
-,,identifierScheme,String
+,,id,string
+,,name,string
+,,label,string
+,,identifier,string
+,,identifierScheme,string
 ,,legalAddress,Address
 ,,type,Code
 ,,manages,StudySite
 Class - NEW,StudySite,,
-,,id,String
-,,name,String
-,,description,String
-,,label,String
+,,id,string
+,,name,string
+,,description,string
+,,label,string
 ,,currentEnrollment,SubjectEnrollment
 Class - NEW,StudyTitle,,
-,,id,String
-,,text,String
+,,id,string
+,,text,string
 ,,type,Code
 ,,,
 Property - NEW,StudyDesign,appliesTo,StudySite
@@ -44,19 +44,19 @@ Property - NEW,PopulationDefinition,plannedAge,Range
 Property - NEW,StudyCohort,includesHealthySubjects,Boolean
 Property - NEW,StudyCohort,plannedAge,Range
 Property - DELETED,Activity,isConditional,boolean
-Property - DELETED,Activity,isConditionalReason,String
+Property - DELETED,Activity,isConditionalReason,string
 Property - DELETED,Procedure,isConditional,Boolean
-Property - DELETED,Procedure,isConditionalReason,String
+Property - DELETED,Procedure,isConditionalReason,string
 Property - DELETED,StudyDesignPopulation,plannedMaximumAge,Quantity
 Property - DELETED,StudyDesignPopulation,plannedMinimumAge,Quantity
-Property - DELETED,StudyVersion,studyAcronym,String
-Property - DELETED,StudyVersion,studyTitle,String
+Property - DELETED,StudyVersion,studyAcronym,string
+Property - DELETED,StudyVersion,studyTitle,string
 Property - DELETED,PopulationDefinition,plannedMaximumAge,Quantity
 Property - DELETED,PopulationDefinition,plannedMinimumAge,Quantity
 Property - DELETED,StudyCohort,plannedMaximumAge,Quantity
 Property - DELETED,StudyCohort,plannedMinimumAge,Quantity
-Property - DELETED,StudyIdentifier,id,String
-Property - DELETED,StudyProtocolDocumentVersion,briefTitle,String
-Property - DELETED,StudyProtocolDocumentVersion,officialTitle,String
-Property - DELETED,StudyProtocolDocumentVersion,publicTitle,String
-Property - DELETED,StudyProtocolDocumentVersion,scientificTitle,String
+Property - DELETED,StudyIdentifier,id,string
+Property - DELETED,StudyProtocolDocumentVersion,briefTitle,string
+Property - DELETED,StudyProtocolDocumentVersion,officialTitle,string
+Property - DELETED,StudyProtocolDocumentVersion,publicTitle,string
+Property - DELETED,StudyProtocolDocumentVersion,scientificTitle,string

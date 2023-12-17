@@ -7,11 +7,13 @@ Activity:
   Modifier: Concrete
   Attributes:
     id:
-      $ref: '#/string'
+      Type:
+      - $ref: '#/string'
       Relationship Type: Value
       Model Name: id
     name:
-      $ref: '#/string'
+      Type:
+      - $ref: '#/string'
       NCI C-Code: C188842
       Preferred Term: Clinical Study Activity Name
       Definition: The literal identifier (i.e., distinctive designation) of the clinical
@@ -19,56 +21,67 @@ Activity:
       Relationship Type: Value
       Model Name: name
     description:
-      $ref: '#/string'
+      Type:
+      - $ref: '#/string'
       NCI C-Code: C70960
       Preferred Term: Clinical Study Activity Description
       Definition: A narrative representation of the study activity.
       Relationship Type: Value
       Model Name: description
     label:
-      $ref: '#/string'
+      Type:
+      - $ref: '#/string'
       NCI C-Code: CNEW
       Preferred Term: Activity Label
       Definition: The short descriptive designation for the activity.
       Relationship Type: Value
       Model Name: label
     definedProcedures:
-      $ref: '#/Procedure'
+      Type:
+      - $ref: '#/Procedure'
       Cardinality: 0..*
       Relationship Type: Value
       Model Name: definedProcedures
     biomedicalConceptIds:
-      $ref: '#/BiomedicalConcept'
+      Type:
+      - $ref: '#/BiomedicalConcept'
       Cardinality: 0..*
       Relationship Type: Ref
       Model Name: biomedicalConcepts
     nextId:
-      $ref: '#/Activity'
+      Type:
+      - $ref: '#/Activity'
       Cardinality: 0..1
       Relationship Type: Ref
       Model Name: next
     timelineId:
-      $ref: '#/ScheduleTimeline'
+      Type:
+      - $ref: '#/ScheduleTimeline'
       Cardinality: 0..1
       Relationship Type: Ref
       Model Name: timeline
     previousId:
-      $ref: '#/Activity'
+      Type:
+      - $ref: '#/Activity'
       Cardinality: 0..1
       Relationship Type: Ref
       Model Name: previous
     bcSurrogateIds:
-      $ref: '#/BiomedicalConceptSurrogate'
+      Type:
+      - $ref: '#/BiomedicalConceptSurrogate'
       Cardinality: 0..*
       Relationship Type: Ref
       Model Name: bcSurrogates
     bcCategoryIds:
-      $ref: '#/BiomedicalConceptCategory'
+      Type:
+      - $ref: '#/BiomedicalConceptCategory'
       Cardinality: 0..*
       Relationship Type: Ref
       Model Name: bcCategories
     instanceType:
-      $ref: UNKNOWN
+      Type:
+      - $ref: '#/string'
+      Cardinality: 0..1
       Relationship Type: Value
 Address:
   NCI C-Code: C25407
@@ -78,11 +91,13 @@ Address:
   Modifier: Concrete
   Attributes:
     id:
-      $ref: '#/string'
+      Type:
+      - $ref: '#/string'
       Relationship Type: Value
       Model Name: id
     text:
-      $ref: '#/string'
+      Type:
+      - $ref: '#/string'
       NCI C-Code: C201311
       Preferred Term: Address Full Text
       Definition: A standardized representation of the complete set of components
@@ -90,7 +105,8 @@ Address:
       Relationship Type: Value
       Model Name: text
     line:
-      $ref: '#/string'
+      Type:
+      - $ref: '#/string'
       NCI C-Code: C25690
       Preferred Term: Address Line
       Definition: The street name and number, building number, apartment or unit number,
@@ -98,7 +114,8 @@ Address:
       Relationship Type: Value
       Model Name: line
     district:
-      $ref: '#/string'
+      Type:
+      - $ref: '#/string'
       NCI C-Code: C176229
       Preferred Term: District
       Definition: An administrative or territorial division of a city, town, county,
@@ -106,7 +123,8 @@ Address:
       Relationship Type: Value
       Model Name: district
     city:
-      $ref: '#/string'
+      Type:
+      - $ref: '#/string'
       NCI C-Code: C25160
       Preferred Term: City
       Definition: A relatively large and/or densely populated area of human habitation
@@ -115,14 +133,16 @@ Address:
       Relationship Type: Value
       Model Name: city
     postalCode:
-      $ref: '#/string'
+      Type:
+      - $ref: '#/string'
       NCI C-Code: C25621
       Preferred Term: Postal Code
       Definition: An alphanumeric code assigned to a mail delivery area.
       Relationship Type: Value
       Model Name: postalCode
     state:
-      $ref: '#/string'
+      Type:
+      - $ref: '#/string'
       NCI C-Code: C87194
       Preferred Term: State
       Definition: A sub-division of a country that forms part of a federal union.
@@ -131,7 +151,8 @@ Address:
       Relationship Type: Value
       Model Name: state
     country:
-      $ref: '#/Code'
+      Type:
+      - $ref: '#/Code'
       NCI C-Code: C25464
       Cardinality: 0..1
       Preferred Term: Country
@@ -141,7 +162,9 @@ Address:
       Relationship Type: Value
       Model Name: country
     instanceType:
-      $ref: UNKNOWN
+      Type:
+      - $ref: '#/string'
+      Cardinality: 0..1
       Relationship Type: Value
 AdministrationDuration:
   NCI C-Code: C69282
@@ -150,18 +173,21 @@ AdministrationDuration:
   Modifier: Concrete
   Attributes:
     id:
-      $ref: '#/string'
+      Type:
+      - $ref: '#/string'
       Relationship Type: Value
       Model Name: id
     description:
-      $ref: '#/string'
+      Type:
+      - $ref: '#/string'
       NCI C-Code: CNEW
       Preferred Term: Administration Duration Description
       Definition: A narrative representation of the agent administration duration.
       Relationship Type: Value
       Model Name: description
     durationWillVary:
-      $ref: '#/Boolean'
+      Type:
+      - $ref: '#/Boolean'
       NCI C-Code: CNEW
       Preferred Term: Administration Duration Will Vary Indicator
       Definition: An indication as to whether the agent administration duration is
@@ -169,7 +195,8 @@ AdministrationDuration:
       Relationship Type: Value
       Model Name: durationWillVary
     reasonDurationWillVary:
-      $ref: '#/string'
+      Type:
+      - $ref: '#/string'
       NCI C-Code: CNEW
       Preferred Term: Administration Duration Reason Duration Will Vary
       Definition: The explanation for why the agent administration duration will vary
@@ -177,7 +204,8 @@ AdministrationDuration:
       Relationship Type: Value
       Model Name: reasonDurationWillVary
     quantity:
-      $ref: '#/Quantity'
+      Type:
+      - $ref: '#/Quantity'
       NCI C-Code: CNEW
       Cardinality: '1'
       Preferred Term: Administration Duration Quantity Value
@@ -186,7 +214,9 @@ AdministrationDuration:
       Relationship Type: Value
       Model Name: quantity
     instanceType:
-      $ref: UNKNOWN
+      Type:
+      - $ref: '#/string'
+      Cardinality: 0..1
       Relationship Type: Value
 AgentAdministration:
   NCI C-Code: C70962
@@ -196,11 +226,13 @@ AgentAdministration:
   Modifier: Concrete
   Attributes:
     id:
-      $ref: '#/string'
+      Type:
+      - $ref: '#/string'
       Relationship Type: Value
       Model Name: id
     name:
-      $ref: '#/string'
+      Type:
+      - $ref: '#/string'
       NCI C-Code: CNEW
       Preferred Term: Agent Administration Name
       Definition: The literal identifier (i.e., distinctive designation) of the agent
@@ -208,26 +240,30 @@ AgentAdministration:
       Relationship Type: Value
       Model Name: name
     description:
-      $ref: '#/string'
+      Type:
+      - $ref: '#/string'
       NCI C-Code: CNEW
       Preferred Term: Agent Administration Description
       Definition: A narrative representation of the agent administration.
       Relationship Type: Value
       Model Name: description
     label:
-      $ref: '#/string'
+      Type:
+      - $ref: '#/string'
       NCI C-Code: CNEW
       Preferred Term: Agent Administration Label
       Definition: The short descriptive designation for the agent administration.
       Relationship Type: Value
       Model Name: label
     duration:
-      $ref: '#/AdministrationDuration'
+      Type:
+      - $ref: '#/AdministrationDuration'
       Cardinality: '1'
       Relationship Type: Value
       Model Name: duration
     route:
-      $ref: '#/Code'
+      Type:
+      - $ref: '#/Code'
       NCI C-Code: C38114
       Cardinality: '1'
       Preferred Term: Route of Administration
@@ -237,7 +273,8 @@ AgentAdministration:
       Relationship Type: Value
       Model Name: route
     dose:
-      $ref: '#/Quantity'
+      Type:
+      - $ref: '#/Quantity'
       NCI C-Code: CNEW
       Cardinality: '1'
       Preferred Term: Agent Administration Dose
@@ -246,7 +283,8 @@ AgentAdministration:
       Relationship Type: Value
       Model Name: dose
     frequency:
-      $ref: '#/Code'
+      Type:
+      - $ref: '#/Code'
       NCI C-Code: C89081
       Cardinality: '1'
       Preferred Term: Dosing Frequency
@@ -255,7 +293,9 @@ AgentAdministration:
       Relationship Type: Value
       Model Name: frequency
     instanceType:
-      $ref: UNKNOWN
+      Type:
+      - $ref: '#/string'
+      Cardinality: 0..1
       Relationship Type: Value
 AliasCode:
   NCI C-Code: C201344
@@ -265,21 +305,26 @@ AliasCode:
   Modifier: Concrete
   Attributes:
     id:
-      $ref: '#/string'
+      Type:
+      - $ref: '#/string'
       Relationship Type: Value
       Model Name: id
     standardCode:
-      $ref: '#/Code'
+      Type:
+      - $ref: '#/Code'
       Cardinality: '1'
       Relationship Type: Value
       Model Name: standardCode
     standardCodeAliases:
-      $ref: '#/Code'
+      Type:
+      - $ref: '#/Code'
       Cardinality: 0..*
       Relationship Type: Value
       Model Name: standardCodeAliases
     instanceType:
-      $ref: UNKNOWN
+      Type:
+      - $ref: '#/string'
+      Cardinality: 0..1
       Relationship Type: Value
 AnalysisPopulation:
   NCI C-Code: C188854
@@ -292,18 +337,21 @@ AnalysisPopulation:
   Modifier: Concrete
   Attributes:
     id:
-      $ref: '#/string'
+      Type:
+      - $ref: '#/string'
       Relationship Type: Value
       Model Name: id
     text:
-      $ref: '#/string'
+      Type:
+      - $ref: '#/string'
       NCI C-Code: CNEW
       Preferred Term: Analysis Population Text
       Definition: An instance of unstructured text that represents the analysis population.
       Relationship Type: Value
       Model Name: text
     name:
-      $ref: '#/string'
+      Type:
+      - $ref: '#/string'
       NCI C-Code: CNEW
       Preferred Term: Analysis Population Name
       Definition: The literal identifier (i.e., distinctive designation) of the analysis
@@ -311,21 +359,25 @@ AnalysisPopulation:
       Relationship Type: Value
       Model Name: name
     description:
-      $ref: '#/string'
+      Type:
+      - $ref: '#/string'
       NCI C-Code: C188854
       Preferred Term: Target Study Population for Analysis Description
       Definition: A narrative representation of the study population for analysis.
       Relationship Type: Value
       Model Name: description
     label:
-      $ref: '#/string'
+      Type:
+      - $ref: '#/string'
       NCI C-Code: CNEW
       Preferred Term: Analysis Population Label
       Definition: The short descriptive designation for the analysis population.
       Relationship Type: Value
       Model Name: label
     instanceType:
-      $ref: UNKNOWN
+      Type:
+      - $ref: '#/string'
+      Cardinality: 0..1
       Relationship Type: Value
 BiomedicalConcept:
   NCI C-Code: C201345
@@ -337,11 +389,13 @@ BiomedicalConcept:
   Modifier: Concrete
   Attributes:
     id:
-      $ref: '#/string'
+      Type:
+      - $ref: '#/string'
       Relationship Type: Value
       Model Name: id
     name:
-      $ref: '#/string'
+      Type:
+      - $ref: '#/string'
       NCI C-Code: C201312
       Preferred Term: Biomedical Concept Name
       Definition: The literal identifier (i.e., distinctive designation) of the biomedical
@@ -349,14 +403,16 @@ BiomedicalConcept:
       Relationship Type: Value
       Model Name: name
     label:
-      $ref: '#/string'
+      Type:
+      - $ref: '#/string'
       NCI C-Code: CNEW
       Preferred Term: Biomedical Concept Label
       Definition: The short descriptive designation for the biomedical concept.
       Relationship Type: Value
       Model Name: label
     synonyms:
-      $ref: '#/string'
+      Type:
+      - $ref: '#/string'
       NCI C-Code: C201314
       Preferred Term: Biomedical Concept Synonym
       Definition: A word or an expression that serves as a figurative, symbolic, or
@@ -364,14 +420,16 @@ BiomedicalConcept:
       Relationship Type: Value
       Model Name: synonyms
     reference:
-      $ref: '#/string'
+      Type:
+      - $ref: '#/string'
       NCI C-Code: C201313
       Preferred Term: Biomedical Concept Reference
       Definition: A citation to an authoritative source for a biomedical concept.
       Relationship Type: Value
       Model Name: reference
     code:
-      $ref: '#/AliasCode'
+      Type:
+      - $ref: '#/AliasCode'
       NCI C-Code: CNEW
       Cardinality: '1'
       Preferred Term: Biomedical Concept Concept Code
@@ -380,12 +438,15 @@ BiomedicalConcept:
       Relationship Type: Value
       Model Name: code
     properties:
-      $ref: '#/BiomedicalConceptProperty'
+      Type:
+      - $ref: '#/BiomedicalConceptProperty'
       Cardinality: 0..*
       Relationship Type: Value
       Model Name: properties
     instanceType:
-      $ref: UNKNOWN
+      Type:
+      - $ref: '#/string'
+      Cardinality: 0..1
       Relationship Type: Value
 BiomedicalConceptCategory:
   NCI C-Code: C201346
@@ -395,11 +456,13 @@ BiomedicalConceptCategory:
   Modifier: Concrete
   Attributes:
     id:
-      $ref: '#/string'
+      Type:
+      - $ref: '#/string'
       Relationship Type: Value
       Model Name: id
     name:
-      $ref: '#/string'
+      Type:
+      - $ref: '#/string'
       NCI C-Code: C201317
       Preferred Term: Biomedical Concept Category Name
       Definition: The literal identifier (i.e., distinctive designation) of the biomedical
@@ -407,21 +470,24 @@ BiomedicalConceptCategory:
       Relationship Type: Value
       Model Name: name
     description:
-      $ref: '#/string'
+      Type:
+      - $ref: '#/string'
       NCI C-Code: C201316
       Preferred Term: Biomedical Concept Category Description
       Definition: A narrative representation of the biomedical concept category.
       Relationship Type: Value
       Model Name: description
     label:
-      $ref: '#/string'
+      Type:
+      - $ref: '#/string'
       NCI C-Code: CNEW
       Preferred Term: Biomedical Concept Category Label
       Definition: The short descriptive designation for the biomedical concept category.
       Relationship Type: Value
       Model Name: label
     code:
-      $ref: '#/AliasCode'
+      Type:
+      - $ref: '#/AliasCode'
       NCI C-Code: C201315
       Cardinality: 0..1
       Preferred Term: Biomedical Concept Category Code
@@ -430,17 +496,21 @@ BiomedicalConceptCategory:
       Relationship Type: Value
       Model Name: code
     memberIds:
-      $ref: '#/BiomedicalConcept'
+      Type:
+      - $ref: '#/BiomedicalConcept'
       Cardinality: 0..*
       Relationship Type: Ref
       Model Name: members
     childrenIds:
-      $ref: '#/BiomedicalConceptCategory'
+      Type:
+      - $ref: '#/BiomedicalConceptCategory'
       Cardinality: 0..*
       Relationship Type: Ref
       Model Name: children
     instanceType:
-      $ref: UNKNOWN
+      Type:
+      - $ref: '#/string'
+      Cardinality: 0..1
       Relationship Type: Value
 BiomedicalConceptProperty:
   NCI C-Code: CNEW
@@ -450,11 +520,13 @@ BiomedicalConceptProperty:
   Modifier: Concrete
   Attributes:
     id:
-      $ref: '#/string'
+      Type:
+      - $ref: '#/string'
       Relationship Type: Value
       Model Name: id
     name:
-      $ref: '#/string'
+      Type:
+      - $ref: '#/string'
       NCI C-Code: CNEW
       Preferred Term: Biomedical Concept Property Name
       Definition: The literal identifier (i.e., distinctive designation) of the biomedical
@@ -462,21 +534,24 @@ BiomedicalConceptProperty:
       Relationship Type: Value
       Model Name: name
     label:
-      $ref: '#/string'
+      Type:
+      - $ref: '#/string'
       NCI C-Code: CNEW
       Preferred Term: Biomedical Concept Property Label
       Definition: The short descriptive designation for the biomedical concept property.
       Relationship Type: Value
       Model Name: label
     isRequired:
-      $ref: '#/Boolean'
+      Type:
+      - $ref: '#/Boolean'
       NCI C-Code: CNEW
       Preferred Term: Biomedical Concept Property Required Indicator
       Definition: An indication as to whether the biomedical concept property is required.
       Relationship Type: Value
       Model Name: isRequired
     isEnabled:
-      $ref: '#/Boolean'
+      Type:
+      - $ref: '#/Boolean'
       NCI C-Code: CNEW
       Preferred Term: Biomedical Concept Property Enabled Indicator
       Definition: An indication as to whether the biomedical concept property is activated
@@ -484,7 +559,8 @@ BiomedicalConceptProperty:
       Relationship Type: Value
       Model Name: isEnabled
     datatype:
-      $ref: '#/string'
+      Type:
+      - $ref: '#/string'
       NCI C-Code: C201319
       Preferred Term: Biomedical Concept Property Response Data Type
       Definition: The structural format of the biomedical concept property response
@@ -493,7 +569,8 @@ BiomedicalConceptProperty:
       Relationship Type: Value
       Model Name: datatype
     code:
-      $ref: '#/AliasCode'
+      Type:
+      - $ref: '#/AliasCode'
       NCI C-Code: C201318
       Cardinality: '1'
       Preferred Term: Biomedical Concept Property Concept Code
@@ -502,22 +579,27 @@ BiomedicalConceptProperty:
       Relationship Type: Value
       Model Name: code
     responseCodes:
-      $ref: '#/ResponseCode'
+      Type:
+      - $ref: '#/ResponseCode'
       Cardinality: 0..*
       Relationship Type: Value
       Model Name: responseCodes
     instanceType:
-      $ref: UNKNOWN
+      Type:
+      - $ref: '#/string'
+      Cardinality: 0..1
       Relationship Type: Value
 BiomedicalConceptSurrogate:
   Modifier: Concrete
   Attributes:
     id:
-      $ref: '#/string'
+      Type:
+      - $ref: '#/string'
       Relationship Type: Value
       Model Name: id
     name:
-      $ref: '#/string'
+      Type:
+      - $ref: '#/string'
       NCI C-Code: CNEW
       Preferred Term: Biomedical Concept Surrogate Name
       Definition: The literal identifier (i.e., distinctive designation) of the biomedical
@@ -525,28 +607,33 @@ BiomedicalConceptSurrogate:
       Relationship Type: Value
       Model Name: name
     description:
-      $ref: '#/string'
+      Type:
+      - $ref: '#/string'
       NCI C-Code: C201320
       Preferred Term: Biomedical Concept Surrogate Description
       Definition: A narrative representation of the biomedical concept surrogate.
       Relationship Type: Value
       Model Name: description
     label:
-      $ref: '#/string'
+      Type:
+      - $ref: '#/string'
       NCI C-Code: CNEW
       Preferred Term: Biomedical Concept Surrogate Label
       Definition: The short descriptive designation for the biomedical concept surrogate.
       Relationship Type: Value
       Model Name: label
     reference:
-      $ref: '#/string'
+      Type:
+      - $ref: '#/string'
       NCI C-Code: C201321
       Preferred Term: Biomedical Concept Surrogate Reference
       Definition: A citation to an authoritative source for a biomedical concept surrogate.
       Relationship Type: Value
       Model Name: reference
     instanceType:
-      $ref: UNKNOWN
+      Type:
+      - $ref: '#/string'
+      Cardinality: 0..1
       Relationship Type: Value
 Characteristic:
   NCI C-Code: C25447
@@ -557,13 +644,15 @@ Characteristic:
   Modifier: Concrete
   Attributes:
     id:
-      $ref: '#/string'
+      Type:
+      - $ref: '#/string'
       Relationship Type: Value
       Model Name: id
       Inherited From:
         $ref: '#/SyntaxTemplate'
     name:
-      $ref: '#/string'
+      Type:
+      - $ref: '#/string'
       NCI C-Code: CNEW
       Preferred Term: Characteristic Name
       Definition: The literal identifier (i.e., distinctive designation) of the characteristic.
@@ -572,7 +661,8 @@ Characteristic:
       Inherited From:
         $ref: '#/SyntaxTemplate'
     description:
-      $ref: '#/string'
+      Type:
+      - $ref: '#/string'
       NCI C-Code: CNEW
       Preferred Term: Characteristic Description
       Definition: A narrative representation of the characteristic.
@@ -581,7 +671,8 @@ Characteristic:
       Inherited From:
         $ref: '#/SyntaxTemplate'
     label:
-      $ref: '#/string'
+      Type:
+      - $ref: '#/string'
       NCI C-Code: CNEW
       Preferred Term: Characteristic Label
       Definition: The short descriptive designation for the characteristic.
@@ -590,7 +681,8 @@ Characteristic:
       Inherited From:
         $ref: '#/SyntaxTemplate'
     text:
-      $ref: '#/string'
+      Type:
+      - $ref: '#/string'
       NCI C-Code: CNEW
       Preferred Term: Characteristic Text
       Definition: An instance of structured text that represents the characteristic.
@@ -599,14 +691,17 @@ Characteristic:
       Inherited From:
         $ref: '#/SyntaxTemplate'
     dictionaryId:
-      $ref: '#/SyntaxTemplateDictionary'
+      Type:
+      - $ref: '#/SyntaxTemplateDictionary'
       Cardinality: 0..1
       Relationship Type: Ref
       Model Name: dictionary
       Inherited From:
         $ref: '#/SyntaxTemplate'
     instanceType:
-      $ref: UNKNOWN
+      Type:
+      - $ref: '#/string'
+      Cardinality: 0..1
       Relationship Type: Value
 Code:
   NCI C-Code: C25162
@@ -616,18 +711,21 @@ Code:
   Modifier: Concrete
   Attributes:
     id:
-      $ref: '#/string'
+      Type:
+      - $ref: '#/string'
       Relationship Type: Value
       Model Name: id
     code:
-      $ref: '#/string'
+      Type:
+      - $ref: '#/string'
       NCI C-Code: C188858
       Preferred Term: Code Value
       Definition: The literal value of a code.
       Relationship Type: Value
       Model Name: code
     codeSystem:
-      $ref: '#/string'
+      Type:
+      - $ref: '#/string'
       NCI C-Code: C188859
       Preferred Term: Code System Name
       Definition: The literal identifier (i.e., distinctive designation) of the system
@@ -635,14 +733,16 @@ Code:
       Relationship Type: Value
       Model Name: codeSystem
     codeSystemVersion:
-      $ref: '#/string'
+      Type:
+      - $ref: '#/string'
       NCI C-Code: C188868
       Preferred Term: Code System Version
       Definition: The version of the code system.
       Relationship Type: Value
       Model Name: codeSystemVersion
     decode:
-      $ref: '#/string'
+      Type:
+      - $ref: '#/string'
       NCI C-Code: C188861
       Preferred Term: Decode
       Definition: Standardized or dictionary-derived human readable text associated
@@ -650,7 +750,9 @@ Code:
       Relationship Type: Value
       Model Name: decode
     instanceType:
-      $ref: UNKNOWN
+      Type:
+      - $ref: '#/string'
+      Cardinality: 0..1
       Relationship Type: Value
 Condition:
   NCI C-Code: C25457
@@ -661,13 +763,15 @@ Condition:
   Modifier: Concrete
   Attributes:
     id:
-      $ref: '#/string'
+      Type:
+      - $ref: '#/string'
       Relationship Type: Value
       Model Name: id
       Inherited From:
         $ref: '#/SyntaxTemplate'
     name:
-      $ref: '#/string'
+      Type:
+      - $ref: '#/string'
       NCI C-Code: CNEW
       Preferred Term: Condition Name
       Definition: The literal identifier (i.e., distinctive designation) of the condition.
@@ -676,7 +780,8 @@ Condition:
       Inherited From:
         $ref: '#/SyntaxTemplate'
     description:
-      $ref: '#/string'
+      Type:
+      - $ref: '#/string'
       NCI C-Code: CNEW
       Preferred Term: Condition Description
       Definition: A narrative representation of the condition.
@@ -685,7 +790,8 @@ Condition:
       Inherited From:
         $ref: '#/SyntaxTemplate'
     label:
-      $ref: '#/string'
+      Type:
+      - $ref: '#/string'
       NCI C-Code: CNEW
       Preferred Term: Condition Label
       Definition: The short descriptive designation for the condition.
@@ -694,7 +800,8 @@ Condition:
       Inherited From:
         $ref: '#/SyntaxTemplate'
     text:
-      $ref: '#/string'
+      Type:
+      - $ref: '#/string'
       NCI C-Code: CNEW
       Preferred Term: Condition Text
       Definition: An instance of structured text that represents the condition.
@@ -703,24 +810,34 @@ Condition:
       Inherited From:
         $ref: '#/SyntaxTemplate'
     dictionaryId:
-      $ref: '#/SyntaxTemplateDictionary'
+      Type:
+      - $ref: '#/SyntaxTemplateDictionary'
       Cardinality: 0..1
       Relationship Type: Ref
       Model Name: dictionary
       Inherited From:
         $ref: '#/SyntaxTemplate'
     contextIds:
-      $ref: '#/ScheduledActivityInstance'
+      Type:
+      - $ref: '#/Activity'
+      - $ref: '#/ScheduledActivityInstance'
       Cardinality: 0..*
       Relationship Type: Ref
       Model Name: context
     appliesToIds:
-      $ref: '#/Procedure'
+      Type:
+      - $ref: '#/Activity'
+      - $ref: '#/BiomedicalConcept'
+      - $ref: '#/BiomedicalConceptCategory'
+      - $ref: '#/BiomedicalConceptSurrogate'
+      - $ref: '#/Procedure'
       Cardinality: 0..*
       Relationship Type: Ref
       Model Name: appliesTo
     instanceType:
-      $ref: UNKNOWN
+      Type:
+      - $ref: '#/string'
+      Cardinality: 0..1
       Relationship Type: Value
 EligibilityCriteria:
   NCI C-Code: C16112
@@ -733,13 +850,15 @@ EligibilityCriteria:
   Modifier: Concrete
   Attributes:
     id:
-      $ref: '#/string'
+      Type:
+      - $ref: '#/string'
       Relationship Type: Value
       Model Name: id
       Inherited From:
         $ref: '#/SyntaxTemplate'
     name:
-      $ref: '#/string'
+      Type:
+      - $ref: '#/string'
       NCI C-Code: CNEW
       Preferred Term: Study Eligibility Criteria Description
       Definition: A narrative representation of the study eligibility criteria.
@@ -748,7 +867,8 @@ EligibilityCriteria:
       Inherited From:
         $ref: '#/SyntaxTemplate'
     description:
-      $ref: '#/string'
+      Type:
+      - $ref: '#/string'
       NCI C-Code: CNEW
       Preferred Term: Study Eligibility Criteria Name
       Definition: The literal identifier (i.e., distinctive designation) of the study
@@ -758,7 +878,8 @@ EligibilityCriteria:
       Inherited From:
         $ref: '#/SyntaxTemplate'
     label:
-      $ref: '#/string'
+      Type:
+      - $ref: '#/string'
       NCI C-Code: CNEW
       Preferred Term: Study Eligibility Criteria Label
       Definition: The short descriptive designation for the study eligibility criteria.
@@ -767,7 +888,8 @@ EligibilityCriteria:
       Inherited From:
         $ref: '#/SyntaxTemplate'
     text:
-      $ref: '#/string'
+      Type:
+      - $ref: '#/string'
       NCI C-Code: CNEW
       Preferred Term: Eligibility Criteria Text
       Definition: An instance of structured text that represents the study eligibility
@@ -777,14 +899,16 @@ EligibilityCriteria:
       Inherited From:
         $ref: '#/SyntaxTemplate'
     dictionaryId:
-      $ref: '#/SyntaxTemplateDictionary'
+      Type:
+      - $ref: '#/SyntaxTemplateDictionary'
       Cardinality: 0..1
       Relationship Type: Ref
       Model Name: dictionary
       Inherited From:
         $ref: '#/SyntaxTemplate'
     identifier:
-      $ref: '#/string'
+      Type:
+      - $ref: '#/string'
       NCI C-Code: CNEW
       Preferred Term: Study Eligibility Criterion Identifier
       Definition: A sequence of characters used to identify, name, or characterize
@@ -792,7 +916,8 @@ EligibilityCriteria:
       Relationship Type: Value
       Model Name: identifier
     category:
-      $ref: '#/Code'
+      Type:
+      - $ref: '#/Code'
       NCI C-Code: C83016
       Cardinality: '1'
       Preferred Term: Study Eligibility Criteria Category
@@ -801,22 +926,28 @@ EligibilityCriteria:
       Relationship Type: Value
       Model Name: category
     contextId:
-      $ref: '#/StudyVersion'
+      Type:
+      - $ref: '#/StudyDesign'
+      - $ref: '#/StudyVersion'
       Cardinality: 0..1
       Relationship Type: Ref
       Model Name: context
     nextId:
-      $ref: '#/EligibilityCriteria'
+      Type:
+      - $ref: '#/EligibilityCriteria'
       Cardinality: 0..1
       Relationship Type: Ref
       Model Name: next
     previousId:
-      $ref: '#/EligibilityCriteria'
+      Type:
+      - $ref: '#/EligibilityCriteria'
       Cardinality: 0..1
       Relationship Type: Ref
       Model Name: previous
     instanceType:
-      $ref: UNKNOWN
+      Type:
+      - $ref: '#/string'
+      Cardinality: 0..1
       Relationship Type: Value
 Encounter:
   NCI C-Code: C142427
@@ -827,11 +958,13 @@ Encounter:
   Modifier: Concrete
   Attributes:
     id:
-      $ref: '#/string'
+      Type:
+      - $ref: '#/string'
       Relationship Type: Value
       Model Name: id
     name:
-      $ref: '#/string'
+      Type:
+      - $ref: '#/string'
       NCI C-Code: C171010
       Preferred Term: Clinical Encounter Name
       Definition: The literal identifier (i.e., distinctive designation) for a protocol-defined
@@ -839,21 +972,24 @@ Encounter:
       Relationship Type: Value
       Model Name: name
     description:
-      $ref: '#/string'
+      Type:
+      - $ref: '#/string'
       NCI C-Code: C188836
       Preferred Term: Clinical Encounter Description
       Definition: A narrative representation of the protocol-defined clinical encounter.
       Relationship Type: Value
       Model Name: description
     label:
-      $ref: '#/string'
+      Type:
+      - $ref: '#/string'
       NCI C-Code: CNEW
       Preferred Term: Encounter Label
       Definition: The short descriptive designation for the encounter.
       Relationship Type: Value
       Model Name: label
     environmentalSetting:
-      $ref: '#/Code'
+      Type:
+      - $ref: '#/Code'
       NCI C-Code: C188840
       Cardinality: 0..1
       Preferred Term: Environmental Setting
@@ -863,7 +999,8 @@ Encounter:
       Relationship Type: Value
       Model Name: environmentalSetting
     contactModes:
-      $ref: '#/Code'
+      Type:
+      - $ref: '#/Code'
       NCI C-Code: C188841
       Cardinality: 0..*
       Preferred Term: Contact Mode
@@ -873,7 +1010,8 @@ Encounter:
       Relationship Type: Value
       Model Name: contactModes
     type:
-      $ref: '#/Code'
+      Type:
+      - $ref: '#/Code'
       NCI C-Code: C188839
       Cardinality: '1'
       Preferred Term: Clinical Encounter Type
@@ -884,32 +1022,39 @@ Encounter:
       Relationship Type: Value
       Model Name: type
     transitionEndRule:
-      $ref: '#/TransitionRule'
+      Type:
+      - $ref: '#/TransitionRule'
       Cardinality: 0..1
       Relationship Type: Value
       Model Name: transitionEndRule
     nextId:
-      $ref: '#/Encounter'
+      Type:
+      - $ref: '#/Encounter'
       Cardinality: 0..1
       Relationship Type: Ref
       Model Name: next
     transitionStartRule:
-      $ref: '#/TransitionRule'
+      Type:
+      - $ref: '#/TransitionRule'
       Cardinality: 0..1
       Relationship Type: Value
       Model Name: transitionStartRule
     scheduledAtId:
-      $ref: '#/Timing'
+      Type:
+      - $ref: '#/Timing'
       Cardinality: 0..1
       Relationship Type: Ref
       Model Name: scheduledAt
     previousId:
-      $ref: '#/Encounter'
+      Type:
+      - $ref: '#/Encounter'
       Cardinality: 0..1
       Relationship Type: Ref
       Model Name: previous
     instanceType:
-      $ref: UNKNOWN
+      Type:
+      - $ref: '#/string'
+      Cardinality: 0..1
       Relationship Type: Value
 Endpoint:
   NCI C-Code: C25212
@@ -925,13 +1070,15 @@ Endpoint:
   Modifier: Concrete
   Attributes:
     id:
-      $ref: '#/string'
+      Type:
+      - $ref: '#/string'
       Relationship Type: Value
       Model Name: id
       Inherited From:
         $ref: '#/SyntaxTemplate'
     name:
-      $ref: '#/string'
+      Type:
+      - $ref: '#/string'
       NCI C-Code: CNEW
       Preferred Term: Endpoint Name
       Definition: The literal identifier (i.e., distinctive designation) of the study
@@ -941,7 +1088,8 @@ Endpoint:
       Inherited From:
         $ref: '#/SyntaxTemplate'
     description:
-      $ref: '#/string'
+      Type:
+      - $ref: '#/string'
       NCI C-Code: C188824
       Preferred Term: Study Endpoint Description
       Definition: A narrative representation of the study endpoint.
@@ -950,7 +1098,8 @@ Endpoint:
       Inherited From:
         $ref: '#/SyntaxTemplate'
     label:
-      $ref: '#/string'
+      Type:
+      - $ref: '#/string'
       NCI C-Code: CNEW
       Preferred Term: Endpoint Label
       Definition: The short descriptive designation for the study endpoint.
@@ -959,7 +1108,8 @@ Endpoint:
       Inherited From:
         $ref: '#/SyntaxTemplate'
     text:
-      $ref: '#/string'
+      Type:
+      - $ref: '#/string'
       NCI C-Code: CNEW
       Preferred Term: Study Endpoint Text
       Definition: An instance of structured text that represents the study endpoint.
@@ -968,21 +1118,24 @@ Endpoint:
       Inherited From:
         $ref: '#/SyntaxTemplate'
     dictionaryId:
-      $ref: '#/SyntaxTemplateDictionary'
+      Type:
+      - $ref: '#/SyntaxTemplateDictionary'
       Cardinality: 0..1
       Relationship Type: Ref
       Model Name: dictionary
       Inherited From:
         $ref: '#/SyntaxTemplate'
     purpose:
-      $ref: '#/string'
+      Type:
+      - $ref: '#/string'
       NCI C-Code: C188825
       Preferred Term: Study Endpoint Purpose Description
       Definition: The textual representation of the study endpoint purpose.
       Relationship Type: Value
       Model Name: purpose
     level:
-      $ref: '#/Code'
+      Type:
+      - $ref: '#/Code'
       NCI C-Code: C188826
       Cardinality: '1'
       Preferred Term: Study Endpoint Level
@@ -992,7 +1145,9 @@ Endpoint:
       Relationship Type: Value
       Model Name: level
     instanceType:
-      $ref: UNKNOWN
+      Type:
+      - $ref: '#/string'
+      Cardinality: 0..1
       Relationship Type: Value
 Estimand:
   NCI C-Code: C188813
@@ -1004,11 +1159,13 @@ Estimand:
   Modifier: Concrete
   Attributes:
     id:
-      $ref: '#/string'
+      Type:
+      - $ref: '#/string'
       Relationship Type: Value
       Model Name: id
     summaryMeasure:
-      $ref: '#/string'
+      Type:
+      - $ref: '#/string'
       NCI C-Code: C188853
       Preferred Term: Population-Level Summary
       Definition: A synopsis of the clinical endpoint of interest within the analysis
@@ -1016,27 +1173,33 @@ Estimand:
       Relationship Type: Value
       Model Name: summaryMeasure
     analysisPopulation:
-      $ref: '#/AnalysisPopulation'
+      Type:
+      - $ref: '#/AnalysisPopulation'
       Cardinality: '1'
       Relationship Type: Value
       Model Name: analysisPopulation
     variableOfInterestId:
-      $ref: '#/Endpoint'
+      Type:
+      - $ref: '#/Endpoint'
       Cardinality: '1'
       Relationship Type: Ref
       Model Name: variableOfInterest
     intercurrentEvents:
-      $ref: '#/IntercurrentEvent'
+      Type:
+      - $ref: '#/IntercurrentEvent'
       Cardinality: 1..*
       Relationship Type: Value
       Model Name: intercurrentEvents
     treatmentId:
-      $ref: '#/StudyIntervention'
+      Type:
+      - $ref: '#/StudyIntervention'
       Cardinality: '1'
       Relationship Type: Ref
       Model Name: treatment
     instanceType:
-      $ref: UNKNOWN
+      Type:
+      - $ref: '#/string'
+      Cardinality: 0..1
       Relationship Type: Value
 GeographicScope:
   NCI C-Code: CNEW
@@ -1047,11 +1210,13 @@ GeographicScope:
   Modifier: Concrete
   Attributes:
     id:
-      $ref: '#/string'
+      Type:
+      - $ref: '#/string'
       Relationship Type: Value
       Model Name: id
     code:
-      $ref: '#/AliasCode'
+      Type:
+      - $ref: '#/AliasCode'
       NCI C-Code: CNEW
       Cardinality: 0..1
       Preferred Term: Geographic Scope Code
@@ -1062,7 +1227,8 @@ GeographicScope:
       Relationship Type: Value
       Model Name: code
     type:
-      $ref: '#/Code'
+      Type:
+      - $ref: '#/Code'
       NCI C-Code: CNEW
       Cardinality: '1'
       Preferred Term: Geographic Scope Type
@@ -1071,7 +1237,9 @@ GeographicScope:
       Relationship Type: Value
       Model Name: type
     instanceType:
-      $ref: UNKNOWN
+      Type:
+      - $ref: '#/string'
+      Cardinality: 0..1
       Relationship Type: Value
 GovernanceDate:
   NCI C-Code: CNEW
@@ -1081,11 +1249,13 @@ GovernanceDate:
   Modifier: Concrete
   Attributes:
     id:
-      $ref: '#/string'
+      Type:
+      - $ref: '#/string'
       Relationship Type: Value
       Model Name: id
     name:
-      $ref: '#/string'
+      Type:
+      - $ref: '#/string'
       NCI C-Code: CNEW
       Preferred Term: Study Governance Date Name
       Definition: The literal identifier (i.e., distinctive designation) of the study
@@ -1093,28 +1263,32 @@ GovernanceDate:
       Relationship Type: Value
       Model Name: name
     description:
-      $ref: '#/string'
+      Type:
+      - $ref: '#/string'
       NCI C-Code: CNEW
       Preferred Term: Study Governance Date Description
       Definition: A narrative representation of the study governance date.
       Relationship Type: Value
       Model Name: description
     label:
-      $ref: '#/string'
+      Type:
+      - $ref: '#/string'
       NCI C-Code: CNEW
       Preferred Term: Study Governance Date Label
       Definition: The short descriptive designation for the study governance date.
       Relationship Type: Value
       Model Name: label
     dateValue:
-      $ref: '#/Date'
+      Type:
+      - $ref: '#/Date'
       NCI C-Code: CNEW
       Preferred Term: Study Governance Date Value
       Definition: The information contained in the date field.
       Relationship Type: Value
       Model Name: dateValue
     type:
-      $ref: '#/Code'
+      Type:
+      - $ref: '#/Code'
       NCI C-Code: CNEW
       Cardinality: '1'
       Preferred Term: Protocol Approval Date Type
@@ -1123,12 +1297,15 @@ GovernanceDate:
       Relationship Type: Value
       Model Name: type
     geographicScopes:
-      $ref: '#/GeographicScope'
+      Type:
+      - $ref: '#/GeographicScope'
       Cardinality: 1..*
       Relationship Type: Value
       Model Name: geographicScopes
     instanceType:
-      $ref: UNKNOWN
+      Type:
+      - $ref: '#/string'
+      Cardinality: 0..1
       Relationship Type: Value
 Indication:
   NCI C-Code: C41184
@@ -1138,11 +1315,13 @@ Indication:
   Modifier: Concrete
   Attributes:
     id:
-      $ref: '#/string'
+      Type:
+      - $ref: '#/string'
       Relationship Type: Value
       Model Name: id
     name:
-      $ref: '#/string'
+      Type:
+      - $ref: '#/string'
       NCI C-Code: CNEW
       Preferred Term: Disease Indication Name
       Definition: The literal identifier (i.e., distinctive designation) of the disease
@@ -1150,7 +1329,8 @@ Indication:
       Relationship Type: Value
       Model Name: name
     description:
-      $ref: '#/string'
+      Type:
+      - $ref: '#/string'
       NCI C-Code: C112038
       Preferred Term: Trial Disease/Condition Indication Description
       Definition: A narrative representation of the condition, disease or disorder
@@ -1158,14 +1338,16 @@ Indication:
       Relationship Type: Value
       Model Name: description
     label:
-      $ref: '#/string'
+      Type:
+      - $ref: '#/string'
       NCI C-Code: CNEW
       Preferred Term: Indication Label
       Definition: The short descriptive designation for the indication.
       Relationship Type: Value
       Model Name: label
     isRareDisease:
-      $ref: '#/Boolean'
+      Type:
+      - $ref: '#/Boolean'
       NCI C-Code: CNEW
       Preferred Term: Disease Indication Is Rare Disease Indicator
       Definition: An indication as to whether the disease indication under study is
@@ -1173,7 +1355,8 @@ Indication:
       Relationship Type: Value
       Model Name: isRareDisease
     codes:
-      $ref: '#/Code'
+      Type:
+      - $ref: '#/Code'
       NCI C-Code: C188822
       Cardinality: 0..*
       Preferred Term: Disease Indication Code
@@ -1183,7 +1366,9 @@ Indication:
       Relationship Type: Value
       Model Name: codes
     instanceType:
-      $ref: UNKNOWN
+      Type:
+      - $ref: '#/string'
+      Cardinality: 0..1
       Relationship Type: Value
 IntercurrentEvent:
   NCI C-Code: C188815
@@ -1194,11 +1379,13 @@ IntercurrentEvent:
   Modifier: Concrete
   Attributes:
     id:
-      $ref: '#/string'
+      Type:
+      - $ref: '#/string'
       Relationship Type: Value
       Model Name: id
     name:
-      $ref: '#/string'
+      Type:
+      - $ref: '#/string'
       NCI C-Code: C188855
       Preferred Term: Intercurrent Event Name
       Definition: The literal identifier (i.e., distinctive designation) of the intercurrent
@@ -1206,21 +1393,24 @@ IntercurrentEvent:
       Relationship Type: Value
       Model Name: name
     description:
-      $ref: '#/string'
+      Type:
+      - $ref: '#/string'
       NCI C-Code: C188856
       Preferred Term: Intercurrent Event Description
       Definition: A narrative representation of the intercurrent event.
       Relationship Type: Value
       Model Name: description
     label:
-      $ref: '#/string'
+      Type:
+      - $ref: '#/string'
       NCI C-Code: CNEW
       Preferred Term: Intercurrent Event Label
       Definition: The short descriptive designation for the intercurrent event.
       Relationship Type: Value
       Model Name: label
     strategy:
-      $ref: '#/string'
+      Type:
+      - $ref: '#/string'
       NCI C-Code: C188857
       Preferred Term: Intercurrent Event Strategy
       Definition: A textual description of the planned strategy to manage and/or mitigate
@@ -1228,7 +1418,9 @@ IntercurrentEvent:
       Relationship Type: Value
       Model Name: strategy
     instanceType:
-      $ref: UNKNOWN
+      Type:
+      - $ref: '#/string'
+      Cardinality: 0..1
       Relationship Type: Value
 Masking:
   NCI C-Code: C191278
@@ -1240,11 +1432,13 @@ Masking:
   Modifier: Concrete
   Attributes:
     id:
-      $ref: '#/string'
+      Type:
+      - $ref: '#/string'
       Relationship Type: Value
       Model Name: id
     description:
-      $ref: '#/string'
+      Type:
+      - $ref: '#/string'
       NCI C-Code: CNEW
       Preferred Term: Masking Description
       Definition: A narrative representation of the study masking strategy, based
@@ -1252,7 +1446,8 @@ Masking:
       Relationship Type: Value
       Model Name: description
     role:
-      $ref: '#/Code'
+      Type:
+      - $ref: '#/Code'
       NCI C-Code: CNEW
       Cardinality: '1'
       Preferred Term: Masking Role
@@ -1262,7 +1457,9 @@ Masking:
       Relationship Type: Value
       Model Name: role
     instanceType:
-      $ref: UNKNOWN
+      Type:
+      - $ref: '#/string'
+      Cardinality: 0..1
       Relationship Type: Value
 NarrativeContent:
   NCI C-Code: CNEW
@@ -1272,11 +1469,13 @@ NarrativeContent:
   Modifier: Concrete
   Attributes:
     id:
-      $ref: '#/string'
+      Type:
+      - $ref: '#/string'
       Relationship Type: Value
       Model Name: id
     name:
-      $ref: '#/string'
+      Type:
+      - $ref: '#/string'
       NCI C-Code: CNEW
       Preferred Term: Narrative Content Name
       Definition: The literal identifier (i.e., distinctive designation) of the narrative
@@ -1284,33 +1483,39 @@ NarrativeContent:
       Relationship Type: Value
       Model Name: name
     text:
-      $ref: '#/string'
+      Type:
+      - $ref: '#/string'
       NCI C-Code: CNEW
       Preferred Term: Narrative Content Text
       Definition: A textual representation of the narrative content.
       Relationship Type: Value
       Model Name: text
     sectionNumber:
-      $ref: '#/string'
+      Type:
+      - $ref: '#/string'
       NCI C-Code: CNEW
       Preferred Term: Section Number
       Definition: The numeric identifier assigned to a particular document section.
       Relationship Type: Value
       Model Name: sectionNumber
     sectionTitle:
-      $ref: '#/string'
+      Type:
+      - $ref: '#/string'
       NCI C-Code: CNEW
       Preferred Term: Section Title
       Definition: An identifying designation for the document section.
       Relationship Type: Value
       Model Name: sectionTitle
     childrenIds:
-      $ref: '#/NarrativeContent'
+      Type:
+      - $ref: '#/NarrativeContent'
       Cardinality: 0..*
       Relationship Type: Ref
       Model Name: children
     instanceType:
-      $ref: UNKNOWN
+      Type:
+      - $ref: '#/string'
+      Cardinality: 0..1
       Relationship Type: Value
 Objective:
   NCI C-Code: C142450
@@ -1322,13 +1527,15 @@ Objective:
   Modifier: Concrete
   Attributes:
     id:
-      $ref: '#/string'
+      Type:
+      - $ref: '#/string'
       Relationship Type: Value
       Model Name: id
       Inherited From:
         $ref: '#/SyntaxTemplate'
     name:
-      $ref: '#/string'
+      Type:
+      - $ref: '#/string'
       NCI C-Code: CNEW
       Preferred Term: Study Objective Name
       Definition: The literal identifier (i.e., distinctive designation) of the study
@@ -1338,7 +1545,8 @@ Objective:
       Inherited From:
         $ref: '#/SyntaxTemplate'
     description:
-      $ref: '#/string'
+      Type:
+      - $ref: '#/string'
       NCI C-Code: C94090
       Preferred Term: Study Objective Description
       Definition: A narrative representation of the study objective. (BRIDG)
@@ -1347,7 +1555,8 @@ Objective:
       Inherited From:
         $ref: '#/SyntaxTemplate'
     label:
-      $ref: '#/string'
+      Type:
+      - $ref: '#/string'
       NCI C-Code: CNEW
       Preferred Term: Study Objective Label
       Definition: The short descriptive designation for the study objective.
@@ -1356,7 +1565,8 @@ Objective:
       Inherited From:
         $ref: '#/SyntaxTemplate'
     text:
-      $ref: '#/string'
+      Type:
+      - $ref: '#/string'
       NCI C-Code: CNEW
       Preferred Term: Study Objective Text
       Definition: An instance of structured text that represents the study objective.
@@ -1365,14 +1575,16 @@ Objective:
       Inherited From:
         $ref: '#/SyntaxTemplate'
     dictionaryId:
-      $ref: '#/SyntaxTemplateDictionary'
+      Type:
+      - $ref: '#/SyntaxTemplateDictionary'
       Cardinality: 0..1
       Relationship Type: Ref
       Model Name: dictionary
       Inherited From:
         $ref: '#/SyntaxTemplate'
     level:
-      $ref: '#/Code'
+      Type:
+      - $ref: '#/Code'
       NCI C-Code: C188823
       Cardinality: 0..1
       Preferred Term: Study Objective Level
@@ -1382,12 +1594,15 @@ Objective:
       Relationship Type: Value
       Model Name: level
     endpoints:
-      $ref: '#/Endpoint'
+      Type:
+      - $ref: '#/Endpoint'
       Cardinality: 0..*
       Relationship Type: Value
       Model Name: endpoints
     instanceType:
-      $ref: UNKNOWN
+      Type:
+      - $ref: '#/string'
+      Cardinality: 0..1
       Relationship Type: Value
 Organization:
   NCI C-Code: C19711
@@ -1400,32 +1615,37 @@ Organization:
   Modifier: Concrete
   Attributes:
     id:
-      $ref: '#/string'
+      Type:
+      - $ref: '#/string'
       Relationship Type: Value
       Model Name: id
     name:
-      $ref: '#/string'
+      Type:
+      - $ref: '#/string'
       NCI C-Code: C93874
       Preferred Term: Organization Name
       Definition: A non-unique textual identifier for the organization. (BRIDG)
       Relationship Type: Value
       Model Name: name
     label:
-      $ref: '#/string'
+      Type:
+      - $ref: '#/string'
       NCI C-Code: CNEW
       Preferred Term: Organization Label
       Definition: The short descriptive designation for the organization.
       Relationship Type: Value
       Model Name: label
     identifier:
-      $ref: '#/string'
+      Type:
+      - $ref: '#/string'
       NCI C-Code: C93401
       Preferred Term: Organization Identifier
       Definition: A unique symbol that establishes identity of the organization. (BRIDG)
       Relationship Type: Value
       Model Name: identifier
     identifierScheme:
-      $ref: '#/string'
+      Type:
+      - $ref: '#/string'
       NCI C-Code: C188819
       Preferred Term: Identifier Provider Organization Name
       Definition: The name of the organization that provides the identifier for the
@@ -1433,12 +1653,14 @@ Organization:
       Relationship Type: Value
       Model Name: identifierScheme
     legalAddress:
-      $ref: '#/Address'
+      Type:
+      - $ref: '#/Address'
       Cardinality: 0..1
       Relationship Type: Value
       Model Name: legalAddress
     type:
-      $ref: '#/Code'
+      Type:
+      - $ref: '#/Code'
       NCI C-Code: C188820
       Cardinality: '1'
       Preferred Term: Organization Type
@@ -1459,36 +1681,42 @@ PopulationDefinition:
   Modifier: Abstract
   Attributes:
     id:
-      $ref: '#/string'
+      Type:
+      - $ref: '#/string'
       Model Name: id
     name:
-      $ref: '#/string'
+      Type:
+      - $ref: '#/string'
       NCI C-Code: CNEW
       Preferred Term: Population Definition Name
       Definition: The literal identifier (i.e., distinctive designation) of the population
         definition.
       Model Name: name
     description:
-      $ref: '#/string'
+      Type:
+      - $ref: '#/string'
       NCI C-Code: CNEW
       Preferred Term: Population Definition Description
       Definition: A narrative representation of the population definition.
       Model Name: description
     label:
-      $ref: '#/string'
+      Type:
+      - $ref: '#/string'
       NCI C-Code: CNEW
       Preferred Term: Population Definition Label
       Definition: The short descriptive designation for the population definition.
       Model Name: label
     includesHealthySubjects:
-      $ref: '#/Boolean'
+      Type:
+      - $ref: '#/Boolean'
       NCI C-Code: CNEW
       Preferred Term: Population Definition Includes Healthy Subjects Indicator
       Definition: An indication as to whether the population definition includes healthy
         subjects, that is, subjects without the disease or condition under study.
       Model Name: includesHealthySubjects
     plannedSex:
-      $ref: '#/Code'
+      Type:
+      - $ref: '#/Code'
       NCI C-Code: CNEW
       Cardinality: '1'
       Preferred Term: Population Definition Planned Sex
@@ -1496,18 +1724,21 @@ PopulationDefinition:
       Codelist Ref: SDTM Terminology Codelist C66732
       Model Name: plannedSex
     criteria:
-      $ref: '#/EligibilityCriteria'
+      Type:
+      - $ref: '#/EligibilityCriteria'
       Cardinality: 1..*
       Model Name: criteria
     plannedAge:
-      $ref: '#/Range'
+      Type:
+      - $ref: '#/Range'
       NCI C-Code: CNEW
       Cardinality: 0..1
       Preferred Term: Population Definition Planned Age
       Definition: The anticipated age of subjects within the population definition.
       Model Name: plannedAge
     plannedEnrollmentNumber:
-      $ref: '#/Range'
+      Type:
+      - $ref: '#/Range'
       NCI C-Code: CNEW
       Cardinality: 0..1
       Preferred Term: Population Definition Planned Enrollment Number
@@ -1515,7 +1746,8 @@ PopulationDefinition:
         in a clinical trial, within the population definition.
       Model Name: plannedEnrollmentNumber
     plannedCompletionNumber:
-      $ref: '#/Range'
+      Type:
+      - $ref: '#/Range'
       NCI C-Code: CNEW
       Cardinality: 0..1
       Preferred Term: Population Definition Planned Completion Number
@@ -1531,39 +1763,45 @@ Procedure:
   Modifier: Concrete
   Attributes:
     id:
-      $ref: '#/string'
+      Type:
+      - $ref: '#/string'
       Relationship Type: Value
       Model Name: id
     name:
-      $ref: '#/string'
+      Type:
+      - $ref: '#/string'
       NCI C-Code: C201325
       Preferred Term: Procedure Name
       Definition: The literal identifier (i.e., distinctive designation) of the procedure.
       Relationship Type: Value
       Model Name: name
     description:
-      $ref: '#/string'
+      Type:
+      - $ref: '#/string'
       NCI C-Code: C201324
       Preferred Term: Procedure Description
       Definition: A narrative representation of the procedure.
       Relationship Type: Value
       Model Name: description
     label:
-      $ref: '#/string'
+      Type:
+      - $ref: '#/string'
       NCI C-Code: CNEW
       Preferred Term: Procedure Label
       Definition: The short descriptive designation for the procedure.
       Relationship Type: Value
       Model Name: label
     procedureType:
-      $ref: '#/string'
+      Type:
+      - $ref: '#/string'
       NCI C-Code: C188848
       Preferred Term: Procedure Type
       Definition: A characterization or classification of the study procedure.
       Relationship Type: Value
       Model Name: procedureType
     code:
-      $ref: '#/Code'
+      Type:
+      - $ref: '#/Code'
       NCI C-Code: C154626
       Cardinality: '1'
       Preferred Term: Procedure Code
@@ -1574,12 +1812,15 @@ Procedure:
       Relationship Type: Value
       Model Name: code
     studyInterventionId:
-      $ref: '#/StudyIntervention'
+      Type:
+      - $ref: '#/StudyIntervention'
       Cardinality: 0..1
       Relationship Type: Ref
       Model Name: studyIntervention
     instanceType:
-      $ref: UNKNOWN
+      Type:
+      - $ref: '#/string'
+      Cardinality: 0..1
       Relationship Type: Value
 Quantity:
   NCI C-Code: C25256
@@ -1589,18 +1830,21 @@ Quantity:
   Modifier: Concrete
   Attributes:
     id:
-      $ref: '#/string'
+      Type:
+      - $ref: '#/string'
       Relationship Type: Value
       Model Name: id
     value:
-      $ref: '#/Float'
+      Type:
+      - $ref: '#/Float'
       NCI C-Code: C25712
       Preferred Term: Quantity Value
       Definition: A numerical quantity measured or assigned or computed.
       Relationship Type: Value
       Model Name: value
     unit:
-      $ref: '#/Code'
+      Type:
+      - $ref: '#/Code'
       NCI C-Code: C44258
       Cardinality: 0..1
       Preferred Term: Quantity Unit
@@ -1609,7 +1853,9 @@ Quantity:
       Relationship Type: Value
       Model Name: unit
     instanceType:
-      $ref: UNKNOWN
+      Type:
+      - $ref: '#/string'
+      Cardinality: 0..1
       Relationship Type: Value
 Range:
   NCI C-Code: C38013
@@ -1619,25 +1865,29 @@ Range:
   Modifier: Concrete
   Attributes:
     id:
-      $ref: '#/string'
+      Type:
+      - $ref: '#/string'
       Relationship Type: Value
       Model Name: id
     minValue:
-      $ref: '#/Float'
+      Type:
+      - $ref: '#/Float'
       NCI C-Code: C25570
       Preferred Term: Minimum Value
       Definition: The smallest value in quantity or degree in a set of values.
       Relationship Type: Value
       Model Name: minValue
     maxValue:
-      $ref: '#/Float'
+      Type:
+      - $ref: '#/Float'
       NCI C-Code: C25564
       Preferred Term: Maximum Value
       Definition: The largest value in quantity or degree in a set of values.
       Relationship Type: Value
       Model Name: maxValue
     isApproximate:
-      $ref: '#/Boolean'
+      Type:
+      - $ref: '#/Boolean'
       NCI C-Code: CNEW
       Preferred Term: Value Range is Approximate Indicator
       Definition: An indication as to whether the value range is almost, but not quite,
@@ -1645,7 +1895,8 @@ Range:
       Relationship Type: Value
       Model Name: isApproximate
     unit:
-      $ref: '#/Code'
+      Type:
+      - $ref: '#/Code'
       NCI C-Code: C25709
       Cardinality: 0..1
       Preferred Term: Unit of Measure
@@ -1655,7 +1906,9 @@ Range:
       Relationship Type: Value
       Model Name: unit
     instanceType:
-      $ref: UNKNOWN
+      Type:
+      - $ref: '#/string'
+      Cardinality: 0..1
       Relationship Type: Value
 ResearchOrganization:
   NCI C-Code: C93448
@@ -1668,12 +1921,14 @@ ResearchOrganization:
   Modifier: Abstract
   Attributes:
     id:
-      $ref: '#/string'
+      Type:
+      - $ref: '#/string'
       Model Name: id
       Inherited From:
         $ref: '#/Organization'
     name:
-      $ref: '#/string'
+      Type:
+      - $ref: '#/string'
       NCI C-Code: CNEW
       Preferred Term: Research Organization Name
       Definition: The literal identifier (i.e., distinctive designation) of the research
@@ -1682,7 +1937,8 @@ ResearchOrganization:
       Inherited From:
         $ref: '#/Organization'
     label:
-      $ref: '#/string'
+      Type:
+      - $ref: '#/string'
       NCI C-Code: CNEW
       Preferred Term: Research Organization Label
       Definition: The short descriptive designation for the research organization.
@@ -1690,7 +1946,8 @@ ResearchOrganization:
       Inherited From:
         $ref: '#/Organization'
     identifier:
-      $ref: '#/string'
+      Type:
+      - $ref: '#/string'
       NCI C-Code: CNEW
       Preferred Term: Research Organization Identifier
       Definition: A sequence of characters used to identify, name, or characterize
@@ -1699,7 +1956,8 @@ ResearchOrganization:
       Inherited From:
         $ref: '#/Organization'
     identifierScheme:
-      $ref: '#/string'
+      Type:
+      - $ref: '#/string'
       NCI C-Code: CNEW
       Preferred Term: Identifier Provider Research Organization Name
       Definition: The name of the research organization that provides the identifier
@@ -1708,13 +1966,15 @@ ResearchOrganization:
       Inherited From:
         $ref: '#/Organization'
     legalAddress:
-      $ref: '#/Address'
+      Type:
+      - $ref: '#/Address'
       Cardinality: 0..1
       Model Name: legalAddress
       Inherited From:
         $ref: '#/Organization'
     type:
-      $ref: '#/Code'
+      Type:
+      - $ref: '#/Code'
       NCI C-Code: CNEW
       Cardinality: '1'
       Preferred Term: Research Organization Type
@@ -1724,7 +1984,8 @@ ResearchOrganization:
       Inherited From:
         $ref: '#/Organization'
     manages:
-      $ref: '#/StudySite'
+      Type:
+      - $ref: '#/StudySite'
       Cardinality: 1..*
       Model Name: manages
 ResponseCode:
@@ -1735,11 +1996,13 @@ ResponseCode:
   Modifier: Concrete
   Attributes:
     id:
-      $ref: '#/string'
+      Type:
+      - $ref: '#/string'
       Relationship Type: Value
       Model Name: id
     isEnabled:
-      $ref: '#/Boolean'
+      Type:
+      - $ref: '#/Boolean'
       NCI C-Code: C201330
       Preferred Term: Response Code Enabled Indicator
       Definition: An indication as to whether the response code is activated for use
@@ -1747,7 +2010,8 @@ ResponseCode:
       Relationship Type: Value
       Model Name: isEnabled
     code:
-      $ref: '#/Code'
+      Type:
+      - $ref: '#/Code'
       NCI C-Code: C25162
       Cardinality: '1'
       Preferred Term: Code
@@ -1756,7 +2020,9 @@ ResponseCode:
       Relationship Type: Value
       Model Name: code
     instanceType:
-      $ref: UNKNOWN
+      Type:
+      - $ref: '#/string'
+      Cardinality: 0..1
       Relationship Type: Value
 ScheduleTimeline:
   NCI C-Code: C201348
@@ -1765,11 +2031,13 @@ ScheduleTimeline:
   Modifier: Concrete
   Attributes:
     id:
-      $ref: '#/string'
+      Type:
+      - $ref: '#/string'
       Relationship Type: Value
       Model Name: id
     name:
-      $ref: '#/string'
+      Type:
+      - $ref: '#/string'
       NCI C-Code: C201334
       Preferred Term: Schedule Timeline Name
       Definition: The literal identifier (i.e., distinctive designation) of the schedule
@@ -1777,21 +2045,24 @@ ScheduleTimeline:
       Relationship Type: Value
       Model Name: name
     description:
-      $ref: '#/string'
+      Type:
+      - $ref: '#/string'
       NCI C-Code: C201332
       Preferred Term: Schedule Timeline Description
       Definition: A narrative representation of the schedule timeline.
       Relationship Type: Value
       Model Name: description
     label:
-      $ref: '#/string'
+      Type:
+      - $ref: '#/string'
       NCI C-Code: CNEW
       Preferred Term: Schedule Timeline Label
       Definition: The short descriptive designation for the schedule timeline.
       Relationship Type: Value
       Model Name: label
     entryCondition:
-      $ref: '#/string'
+      Type:
+      - $ref: '#/string'
       NCI C-Code: C201333
       Preferred Term: Schedule Timeline Entry Condition
       Definition: A logical evaluation on which rests the validity of entry into a
@@ -1799,7 +2070,8 @@ ScheduleTimeline:
       Relationship Type: Value
       Model Name: entryCondition
     mainTimeline:
-      $ref: '#/Boolean'
+      Type:
+      - $ref: '#/Boolean'
       NCI C-Code: C201331
       Preferred Term: Main Timeline Indicator
       Definition: An indication as to whether the timeline or timeline component is
@@ -1807,22 +2079,27 @@ ScheduleTimeline:
       Relationship Type: Value
       Model Name: mainTimeline
     instances:
-      $ref: '#/ScheduledInstance'
+      Type:
+      - $ref: '#/ScheduledInstance'
       Cardinality: 0..*
       Relationship Type: Value
       Model Name: instances
     entryId:
-      $ref: '#/ScheduledInstance'
+      Type:
+      - $ref: '#/ScheduledInstance'
       Cardinality: '1'
       Relationship Type: Ref
       Model Name: entry
     exits:
-      $ref: '#/ScheduleTimelineExit'
+      Type:
+      - $ref: '#/ScheduleTimelineExit'
       Cardinality: 0..*
       Relationship Type: Value
       Model Name: exits
     instanceType:
-      $ref: UNKNOWN
+      Type:
+      - $ref: '#/string'
+      Cardinality: 0..1
       Relationship Type: Value
 ScheduleTimelineExit:
   NCI C-Code: C201349
@@ -1831,11 +2108,14 @@ ScheduleTimelineExit:
   Modifier: Concrete
   Attributes:
     id:
-      $ref: '#/string'
+      Type:
+      - $ref: '#/string'
       Relationship Type: Value
       Model Name: id
     instanceType:
-      $ref: UNKNOWN
+      Type:
+      - $ref: '#/string'
+      Cardinality: 0..1
       Relationship Type: Value
 ScheduledActivityInstance:
   NCI C-Code: C201350
@@ -1846,58 +2126,68 @@ ScheduledActivityInstance:
   Modifier: Concrete
   Attributes:
     id:
-      $ref: '#/string'
+      Type:
+      - $ref: '#/string'
       Relationship Type: Value
       Model Name: id
       Inherited From:
         $ref: '#/ScheduledInstance'
     defaultConditionId:
-      $ref: '#/ScheduledInstance'
+      Type:
+      - $ref: '#/ScheduledInstance'
       Cardinality: 0..1
       Relationship Type: Ref
       Model Name: defaultCondition
       Inherited From:
         $ref: '#/ScheduledInstance'
     timings:
-      $ref: '#/Timing'
+      Type:
+      - $ref: '#/Timing'
       Cardinality: 0..*
       Relationship Type: Value
       Model Name: timings
       Inherited From:
         $ref: '#/ScheduledInstance'
     epochId:
-      $ref: '#/StudyEpoch'
+      Type:
+      - $ref: '#/StudyEpoch'
       Cardinality: 0..1
       Relationship Type: Ref
       Model Name: epoch
       Inherited From:
         $ref: '#/ScheduledInstance'
     timelineId:
-      $ref: '#/ScheduleTimeline'
+      Type:
+      - $ref: '#/ScheduleTimeline'
       Cardinality: 0..1
       Relationship Type: Ref
       Model Name: timeline
       Inherited From:
         $ref: '#/ScheduledInstance'
     timelineExitId:
-      $ref: '#/ScheduleTimelineExit'
+      Type:
+      - $ref: '#/ScheduleTimelineExit'
       Cardinality: 0..1
       Relationship Type: Ref
       Model Name: timelineExit
       Inherited From:
         $ref: '#/ScheduledInstance'
     activityIds:
-      $ref: '#/Activity'
+      Type:
+      - $ref: '#/Activity'
       Cardinality: 0..*
       Relationship Type: Ref
       Model Name: activities
     encounterId:
-      $ref: '#/Encounter'
+      Type:
+      - $ref: '#/Encounter'
       Cardinality: 0..1
       Relationship Type: Ref
       Model Name: encounter
     instanceType:
-      $ref: UNKNOWN
+      Type:
+      - $ref: '#/string'
+      Cardinality: 0..1
       Relationship Type: Value
 ScheduledDecisionInstance:
   NCI C-Code: C201351
@@ -1908,48 +2198,55 @@ ScheduledDecisionInstance:
   Modifier: Concrete
   Attributes:
     id:
-      $ref: '#/string'
+      Type:
+      - $ref: '#/string'
       Relationship Type: Value
       Model Name: id
       Inherited From:
         $ref: '#/ScheduledInstance'
     defaultConditionId:
-      $ref: '#/ScheduledInstance'
+      Type:
+      - $ref: '#/ScheduledInstance'
       Cardinality: 0..1
       Relationship Type: Ref
       Model Name: defaultCondition
       Inherited From:
         $ref: '#/ScheduledInstance'
     timings:
-      $ref: '#/Timing'
+      Type:
+      - $ref: '#/Timing'
       Cardinality: 0..*
       Relationship Type: Value
       Model Name: timings
       Inherited From:
         $ref: '#/ScheduledInstance'
     epochId:
-      $ref: '#/StudyEpoch'
+      Type:
+      - $ref: '#/StudyEpoch'
       Cardinality: 0..1
       Relationship Type: Ref
       Model Name: epoch
       Inherited From:
         $ref: '#/ScheduledInstance'
     timelineId:
-      $ref: '#/ScheduleTimeline'
+      Type:
+      - $ref: '#/ScheduleTimeline'
       Cardinality: 0..1
       Relationship Type: Ref
       Model Name: timeline
       Inherited From:
         $ref: '#/ScheduledInstance'
     timelineExitId:
-      $ref: '#/ScheduleTimelineExit'
+      Type:
+      - $ref: '#/ScheduleTimelineExit'
       Cardinality: 0..1
       Relationship Type: Ref
       Model Name: timelineExit
       Inherited From:
         $ref: '#/ScheduledInstance'
     conditionAssignments:
-      $ref: '#/Map'
+      Type:
+      - $ref: '#/Map'
       NCI C-Code: C201335
       Preferred Term: Condition Assignments
       Definition: An allotting or appointment to a set of conditions that are to be
@@ -1957,7 +2254,9 @@ ScheduledDecisionInstance:
       Relationship Type: Value
       Model Name: conditionAssignments
     instanceType:
-      $ref: UNKNOWN
+      Type:
+      - $ref: '#/string'
+      Cardinality: 0..1
       Relationship Type: Value
 ScheduledInstance:
   NCI C-Code: C201299
@@ -1969,26 +2268,32 @@ ScheduledInstance:
   Modifier: Abstract
   Attributes:
     id:
-      $ref: '#/string'
+      Type:
+      - $ref: '#/string'
       Model Name: id
     defaultCondition:
-      $ref: '#/ScheduledInstance'
+      Type:
+      - $ref: '#/ScheduledInstance'
       Cardinality: 0..1
       Model Name: defaultCondition
     timings:
-      $ref: '#/Timing'
+      Type:
+      - $ref: '#/Timing'
       Cardinality: 0..*
       Model Name: timings
     epoch:
-      $ref: '#/StudyEpoch'
+      Type:
+      - $ref: '#/StudyEpoch'
       Cardinality: 0..1
       Model Name: epoch
     timeline:
-      $ref: '#/ScheduleTimeline'
+      Type:
+      - $ref: '#/ScheduleTimeline'
       Cardinality: 0..1
       Model Name: timeline
     timelineExit:
-      $ref: '#/ScheduleTimelineExit'
+      Type:
+      - $ref: '#/ScheduleTimelineExit'
       Cardinality: 0..1
       Model Name: timelineExit
 Study:
@@ -2001,42 +2306,50 @@ Study:
   Modifier: Concrete
   Attributes:
     id:
-      $ref: '#/string'
+      Type:
+      - $ref: '#/string'
       Relationship Type: Value
       Model Name: id
     name:
-      $ref: '#/string'
+      Type:
+      - $ref: '#/string'
       NCI C-Code: C68631
       Preferred Term: Study Name
       Definition: The literal identifier (i.e., distinctive designation) of the study.
       Relationship Type: Value
       Model Name: name
     description:
-      $ref: '#/string'
+      Type:
+      - $ref: '#/string'
       NCI C-Code: C142704
       Preferred Term: Study Description
       Definition: A narrative representation of the study.
       Relationship Type: Value
       Model Name: description
     label:
-      $ref: '#/string'
+      Type:
+      - $ref: '#/string'
       NCI C-Code: CNEW
       Preferred Term: Study Label
       Definition: The short descriptive designation for the study.
       Relationship Type: Value
       Model Name: label
     versions:
-      $ref: '#/StudyVersion'
+      Type:
+      - $ref: '#/StudyVersion'
       Cardinality: 0..*
       Relationship Type: Value
       Model Name: versions
     documentedBy:
-      $ref: '#/StudyProtocolDocument'
+      Type:
+      - $ref: '#/StudyProtocolDocument'
       Cardinality: 0..1
       Relationship Type: Value
       Model Name: documentedBy
     instanceType:
-      $ref: UNKNOWN
+      Type:
+      - $ref: '#/string'
+      Cardinality: 0..1
       Relationship Type: Value
 StudyAmendment:
   NCI C-Code: CNEW
@@ -2046,18 +2359,21 @@ StudyAmendment:
   Modifier: Concrete
   Attributes:
     id:
-      $ref: '#/string'
+      Type:
+      - $ref: '#/string'
       Relationship Type: Value
       Model Name: id
     number:
-      $ref: '#/string'
+      Type:
+      - $ref: '#/string'
       NCI C-Code: CNEW
       Preferred Term: Study Amendment Number
       Definition: A string of numerals that uniquely identifies a protocol amendment.
       Relationship Type: Value
       Model Name: number
     summary:
-      $ref: '#/string'
+      Type:
+      - $ref: '#/string'
       NCI C-Code: CNEW
       Preferred Term: Study Amendment Summary
       Definition: A short narrative representation describing the changes introduced
@@ -2065,7 +2381,8 @@ StudyAmendment:
       Relationship Type: Value
       Model Name: summary
     substantialImpact:
-      $ref: '#/Boolean'
+      Type:
+      - $ref: '#/Boolean'
       NCI C-Code: CNEW
       Preferred Term: Study Amendment Substantial Impact Indicator
       Definition: An indication as to whether the amendment likely to have a substantial
@@ -2073,27 +2390,33 @@ StudyAmendment:
       Relationship Type: Value
       Model Name: substantialImpact
     enrollments:
-      $ref: '#/SubjectEnrollment'
+      Type:
+      - $ref: '#/SubjectEnrollment'
       Cardinality: 1..*
       Relationship Type: Value
       Model Name: enrollments
     secondaryReasons:
-      $ref: '#/StudyAmendmentReason'
+      Type:
+      - $ref: '#/StudyAmendmentReason'
       Cardinality: 0..*
       Relationship Type: Value
       Model Name: secondaryReasons
     previousId:
-      $ref: '#/StudyAmendment'
+      Type:
+      - $ref: '#/StudyAmendment'
       Cardinality: 0..1
       Relationship Type: Ref
       Model Name: previous
     primaryReason:
-      $ref: '#/StudyAmendmentReason'
+      Type:
+      - $ref: '#/StudyAmendmentReason'
       Cardinality: '1'
       Relationship Type: Value
       Model Name: primaryReason
     instanceType:
-      $ref: UNKNOWN
+      Type:
+      - $ref: '#/string'
+      Cardinality: 0..1
       Relationship Type: Value
 StudyAmendmentReason:
   NCI C-Code: CNEW
@@ -2102,11 +2425,13 @@ StudyAmendmentReason:
   Modifier: Concrete
   Attributes:
     id:
-      $ref: '#/string'
+      Type:
+      - $ref: '#/string'
       Relationship Type: Value
       Model Name: id
     otherReason:
-      $ref: '#/string'
+      Type:
+      - $ref: '#/string'
       NCI C-Code: CNEW
       Preferred Term: Other Reason for Study Amendment
       Definition: The rationale for the change(s) to, or formal clarification of,
@@ -2114,7 +2439,8 @@ StudyAmendmentReason:
       Relationship Type: Value
       Model Name: otherReason
     code:
-      $ref: '#/Code'
+      Type:
+      - $ref: '#/Code'
       NCI C-Code: CNEW
       Cardinality: '1'
       Preferred Term: Study Amendment Reason Code
@@ -2124,7 +2450,9 @@ StudyAmendmentReason:
       Relationship Type: Value
       Model Name: code
     instanceType:
-      $ref: UNKNOWN
+      Type:
+      - $ref: '#/string'
+      Cardinality: 0..1
       Relationship Type: Value
 StudyArm:
   NCI C-Code: C174447
@@ -2135,11 +2463,13 @@ StudyArm:
   Modifier: Concrete
   Attributes:
     id:
-      $ref: '#/string'
+      Type:
+      - $ref: '#/string'
       Relationship Type: Value
       Model Name: id
     name:
-      $ref: '#/string'
+      Type:
+      - $ref: '#/string'
       NCI C-Code: C170984
       Preferred Term: Study Arm Name
       Definition: The literal identifier (i.e., distinctive designation) of the study
@@ -2147,28 +2477,32 @@ StudyArm:
       Relationship Type: Value
       Model Name: name
     description:
-      $ref: '#/string'
+      Type:
+      - $ref: '#/string'
       NCI C-Code: C93728
       Preferred Term: Study Arm Description
       Definition: A narrative representation of the study arm.
       Relationship Type: Value
       Model Name: description
     label:
-      $ref: '#/string'
+      Type:
+      - $ref: '#/string'
       NCI C-Code: CNEW
       Preferred Term: Study Arm Label
       Definition: The short descriptive designation for the study arm.
       Relationship Type: Value
       Model Name: label
     dataOriginDescription:
-      $ref: '#/string'
+      Type:
+      - $ref: '#/string'
       NCI C-Code: C188828
       Preferred Term: Study Arm Data Origin Description
       Definition: The textual representation of the study arm data origin.
       Relationship Type: Value
       Model Name: dataOriginDescription
     dataOriginType:
-      $ref: '#/Code'
+      Type:
+      - $ref: '#/Code'
       NCI C-Code: C188829
       Cardinality: '1'
       Preferred Term: Study Arm Data Origin Type
@@ -2178,7 +2512,8 @@ StudyArm:
       Relationship Type: Value
       Model Name: dataOriginType
     type:
-      $ref: '#/Code'
+      Type:
+      - $ref: '#/Code'
       NCI C-Code: C188827
       Cardinality: '1'
       Preferred Term: Study Arm Type
@@ -2187,12 +2522,15 @@ StudyArm:
       Relationship Type: Value
       Model Name: type
     populationIds:
-      $ref: '#/PopulationDefinition'
+      Type:
+      - $ref: '#/PopulationDefinition'
       Cardinality: 0..*
       Relationship Type: Ref
       Model Name: populations
     instanceType:
-      $ref: UNKNOWN
+      Type:
+      - $ref: '#/string'
+      Cardinality: 0..1
       Relationship Type: Value
 StudyCell:
   NCI C-Code: C188810
@@ -2202,26 +2540,32 @@ StudyCell:
   Modifier: Concrete
   Attributes:
     id:
-      $ref: '#/string'
+      Type:
+      - $ref: '#/string'
       Relationship Type: Value
       Model Name: id
     armId:
-      $ref: '#/StudyArm'
+      Type:
+      - $ref: '#/StudyArm'
       Cardinality: '1'
       Relationship Type: Ref
       Model Name: arm
     epochId:
-      $ref: '#/StudyEpoch'
+      Type:
+      - $ref: '#/StudyEpoch'
       Cardinality: '1'
       Relationship Type: Ref
       Model Name: epoch
     elementIds:
-      $ref: '#/StudyElement'
+      Type:
+      - $ref: '#/StudyElement'
       Cardinality: 0..*
       Relationship Type: Ref
       Model Name: elements
     instanceType:
-      $ref: UNKNOWN
+      Type:
+      - $ref: '#/string'
+      Cardinality: 0..1
       Relationship Type: Value
 StudyCohort:
   NCI C-Code: C61512
@@ -2233,13 +2577,15 @@ StudyCohort:
   Modifier: Concrete
   Attributes:
     id:
-      $ref: '#/string'
+      Type:
+      - $ref: '#/string'
       Relationship Type: Value
       Model Name: id
       Inherited From:
         $ref: '#/PopulationDefinition'
     name:
-      $ref: '#/string'
+      Type:
+      - $ref: '#/string'
       NCI C-Code: CNEW
       Preferred Term: Study Cohort Name
       Definition: The literal identifier (i.e., distinctive designation) of the study
@@ -2249,7 +2595,8 @@ StudyCohort:
       Inherited From:
         $ref: '#/PopulationDefinition'
     description:
-      $ref: '#/string'
+      Type:
+      - $ref: '#/string'
       NCI C-Code: CNEW
       Preferred Term: Study Cohort Description
       Definition: A narrative representation of the study cohort.
@@ -2258,7 +2605,8 @@ StudyCohort:
       Inherited From:
         $ref: '#/PopulationDefinition'
     label:
-      $ref: '#/string'
+      Type:
+      - $ref: '#/string'
       NCI C-Code: CNEW
       Preferred Term: Study Cohort Label
       Definition: The short descriptive designation for the study cohort.
@@ -2267,7 +2615,8 @@ StudyCohort:
       Inherited From:
         $ref: '#/PopulationDefinition'
     includesHealthySubjects:
-      $ref: '#/Boolean'
+      Type:
+      - $ref: '#/Boolean'
       NCI C-Code: CNEW
       Preferred Term: Study Cohort Includes Healthy Subjects Indicator
       Definition: An indication as to whether the study cohort includes healthy subjects,
@@ -2277,7 +2626,8 @@ StudyCohort:
       Inherited From:
         $ref: '#/PopulationDefinition'
     plannedSex:
-      $ref: '#/Code'
+      Type:
+      - $ref: '#/Code'
       NCI C-Code: CNEW
       Cardinality: '1'
       Preferred Term: Planned Sex of Study Cohort Participants
@@ -2288,14 +2638,16 @@ StudyCohort:
       Inherited From:
         $ref: '#/PopulationDefinition'
     criteria:
-      $ref: '#/EligibilityCriteria'
+      Type:
+      - $ref: '#/EligibilityCriteria'
       Cardinality: 1..*
       Relationship Type: Value
       Model Name: criteria
       Inherited From:
         $ref: '#/PopulationDefinition'
     plannedAge:
-      $ref: '#/Range'
+      Type:
+      - $ref: '#/Range'
       NCI C-Code: CNEW
       Cardinality: 0..1
       Preferred Term: Study Cohort Planned Age
@@ -2305,7 +2657,8 @@ StudyCohort:
       Inherited From:
         $ref: '#/PopulationDefinition'
     plannedEnrollmentNumber:
-      $ref: '#/Range'
+      Type:
+      - $ref: '#/Range'
       NCI C-Code: C49692
       Cardinality: 0..1
       Preferred Term: Planned Number of Participants in Study Cohort
@@ -2315,7 +2668,8 @@ StudyCohort:
       Inherited From:
         $ref: '#/PopulationDefinition'
     plannedCompletionNumber:
-      $ref: '#/Range'
+      Type:
+      - $ref: '#/Range'
       NCI C-Code: CNEW
       Cardinality: 0..1
       Preferred Term: Study Cohort Planned Completion Number
@@ -2327,12 +2681,15 @@ StudyCohort:
       Inherited From:
         $ref: '#/PopulationDefinition'
     characteristics:
-      $ref: '#/Characteristic'
+      Type:
+      - $ref: '#/Characteristic'
       Cardinality: 0..*
       Relationship Type: Value
       Model Name: characteristics
     instanceType:
-      $ref: UNKNOWN
+      Type:
+      - $ref: '#/string'
+      Cardinality: 0..1
       Relationship Type: Value
 StudyDesign:
   NCI C-Code: C15320
@@ -2343,11 +2700,13 @@ StudyDesign:
   Modifier: Concrete
   Attributes:
     id:
-      $ref: '#/string'
+      Type:
+      - $ref: '#/string'
       Relationship Type: Value
       Model Name: id
     name:
-      $ref: '#/string'
+      Type:
+      - $ref: '#/string'
       NCI C-Code: C201338
       Preferred Term: Study Design Name
       Definition: The literal identifier (i.e., distinctive designation) of the study
@@ -2355,21 +2714,24 @@ StudyDesign:
       Relationship Type: Value
       Model Name: name
     description:
-      $ref: '#/string'
+      Type:
+      - $ref: '#/string'
       NCI C-Code: C147139
       Preferred Term: Study Design Description
       Definition: A narrative representation of the study design.
       Relationship Type: Value
       Model Name: description
     label:
-      $ref: '#/string'
+      Type:
+      - $ref: '#/string'
       NCI C-Code: CNEW
       Preferred Term: Study Design Label
       Definition: The short descriptive designation for the study design.
       Relationship Type: Value
       Model Name: label
     rationale:
-      $ref: '#/string'
+      Type:
+      - $ref: '#/string'
       NCI C-Code: C142705
       Preferred Term: Study Design Rationale
       Definition: Reason(s) for choosing the study design. This may include reasons
@@ -2378,12 +2740,14 @@ StudyDesign:
       Relationship Type: Value
       Model Name: rationale
     activities:
-      $ref: '#/Activity'
+      Type:
+      - $ref: '#/Activity'
       Cardinality: 0..*
       Relationship Type: Value
       Model Name: activities
     trialIntentTypes:
-      $ref: '#/Code'
+      Type:
+      - $ref: '#/Code'
       NCI C-Code: C49652
       Cardinality: 0..*
       Preferred Term: Trial Intent Type
@@ -2393,7 +2757,8 @@ StudyDesign:
       Relationship Type: Value
       Model Name: trialIntentTypes
     blindingSchema:
-      $ref: '#/Code'
+      Type:
+      - $ref: '#/Code'
       NCI C-Code: C49658
       Cardinality: 0..1
       Preferred Term: Trial Blinding Schema
@@ -2404,7 +2769,8 @@ StudyDesign:
       Relationship Type: Value
       Model Name: blindingSchema
     therapeuticAreas:
-      $ref: '#/Code'
+      Type:
+      - $ref: '#/Code'
       NCI C-Code: C101302
       Cardinality: 0..*
       Preferred Term: Therapeutic Areas
@@ -2416,7 +2782,8 @@ StudyDesign:
       Relationship Type: Value
       Model Name: therapeuticAreas
     characteristics:
-      $ref: '#/Code'
+      Type:
+      - $ref: '#/Code'
       NCI C-Code: CNEW
       Cardinality: 0..*
       Preferred Term: Study Design Characteristic
@@ -2425,7 +2792,8 @@ StudyDesign:
       Relationship Type: Value
       Model Name: characteristics
     trialTypes:
-      $ref: '#/Code'
+      Type:
+      - $ref: '#/Code'
       NCI C-Code: C49660
       Cardinality: 0..*
       Preferred Term: Trial Type
@@ -2435,7 +2803,8 @@ StudyDesign:
       Relationship Type: Value
       Model Name: trialTypes
     interventionModel:
-      $ref: '#/Code'
+      Type:
+      - $ref: '#/Code'
       NCI C-Code: C98746
       Cardinality: '1'
       Preferred Term: Intervention Model Type
@@ -2445,101 +2814,123 @@ StudyDesign:
       Relationship Type: Value
       Model Name: interventionModel
     encounters:
-      $ref: '#/Encounter'
+      Type:
+      - $ref: '#/Encounter'
       Cardinality: 0..*
       Relationship Type: Value
       Model Name: encounters
     estimands:
-      $ref: '#/Estimand'
+      Type:
+      - $ref: '#/Estimand'
       Cardinality: 0..*
       Relationship Type: Value
       Model Name: estimands
     indications:
-      $ref: '#/Indication'
+      Type:
+      - $ref: '#/Indication'
       Cardinality: 0..*
       Relationship Type: Value
       Model Name: indications
     maskingRoles:
-      $ref: '#/Masking'
+      Type:
+      - $ref: '#/Masking'
       Cardinality: 0..*
       Relationship Type: Value
       Model Name: maskingRoles
     objectives:
-      $ref: '#/Objective'
+      Type:
+      - $ref: '#/Objective'
       Cardinality: 0..*
       Relationship Type: Value
       Model Name: objectives
     scheduleTimelines:
-      $ref: '#/ScheduleTimeline'
+      Type:
+      - $ref: '#/ScheduleTimeline'
       Cardinality: 0..*
       Relationship Type: Value
       Model Name: scheduleTimelines
     arms:
-      $ref: '#/StudyArm'
+      Type:
+      - $ref: '#/StudyArm'
       Cardinality: 1..*
       Relationship Type: Value
       Model Name: arms
     studyCells:
-      $ref: '#/StudyCell'
+      Type:
+      - $ref: '#/StudyCell'
       Cardinality: 1..*
       Relationship Type: Value
       Model Name: studyCells
     elements:
-      $ref: '#/StudyElement'
+      Type:
+      - $ref: '#/StudyElement'
       Cardinality: 0..*
       Relationship Type: Value
       Model Name: elements
     documentVersion:
-      $ref: '#/StudyProtocolDocumentVersion'
+      Type:
+      - $ref: '#/StudyProtocolDocumentVersion'
       Cardinality: 0..1
       Relationship Type: Value
       Model Name: documentVersion
     appliesTo:
-      $ref: '#/StudySite'
+      Type:
+      - $ref: '#/StudySite'
       Cardinality: 0..*
       Relationship Type: Value
       Model Name: appliesTo
     studyInterventions:
-      $ref: '#/StudyIntervention'
+      Type:
+      - $ref: '#/StudyIntervention'
       Cardinality: 0..*
       Relationship Type: Value
       Model Name: studyInterventions
     epochs:
-      $ref: '#/StudyEpoch'
+      Type:
+      - $ref: '#/StudyEpoch'
       Cardinality: 1..*
       Relationship Type: Value
       Model Name: epochs
     population:
-      $ref: '#/StudyDesignPopulation'
+      Type:
+      - $ref: '#/StudyDesignPopulation'
       Cardinality: 0..1
       Relationship Type: Value
       Model Name: population
     biomedicalConcepts:
-      $ref: '#/BiomedicalConcept'
+      Type:
+      - $ref: '#/BiomedicalConcept'
       Cardinality: 0..*
       Relationship Type: Value
     bcCategories:
-      $ref: '#/BiomedicalConceptCategory'
+      Type:
+      - $ref: '#/BiomedicalConceptCategory'
       Cardinality: 0..*
       Relationship Type: Value
     bcSurrogates:
-      $ref: '#/BiomedicalConceptSurrogate'
+      Type:
+      - $ref: '#/BiomedicalConceptSurrogate'
       Cardinality: 0..*
       Relationship Type: Value
     dictionaries:
-      $ref: '#/SyntaxTemplateDictionary'
+      Type:
+      - $ref: '#/SyntaxTemplateDictionary'
       Cardinality: 0..*
       Relationship Type: Value
     conditions:
-      $ref: '#/Condition'
+      Type:
+      - $ref: '#/Condition'
       Cardinality: 0..*
       Relationship Type: Value
     organizations:
-      $ref: '#/Organization'
+      Type:
+      - $ref: '#/Organization'
       Cardinality: 0..*
       Relationship Type: Value
     instanceType:
-      $ref: UNKNOWN
+      Type:
+      - $ref: '#/string'
+      Cardinality: 0..1
       Relationship Type: Value
 StudyDesignPopulation:
   NCI C-Code: C142728
@@ -2551,13 +2942,15 @@ StudyDesignPopulation:
   Modifier: Concrete
   Attributes:
     id:
-      $ref: '#/string'
+      Type:
+      - $ref: '#/string'
       Relationship Type: Value
       Model Name: id
       Inherited From:
         $ref: '#/PopulationDefinition'
     name:
-      $ref: '#/string'
+      Type:
+      - $ref: '#/string'
       NCI C-Code: CNEW
       Preferred Term: Target Study Population Name
       Definition: The literal identifier (i.e., distinctive designation) of the target
@@ -2567,7 +2960,8 @@ StudyDesignPopulation:
       Inherited From:
         $ref: '#/PopulationDefinition'
     description:
-      $ref: '#/string'
+      Type:
+      - $ref: '#/string'
       NCI C-Code: C70834
       Preferred Term: Target Study Population Description
       Definition: A narrative representation of the study population.
@@ -2576,7 +2970,8 @@ StudyDesignPopulation:
       Inherited From:
         $ref: '#/PopulationDefinition'
     label:
-      $ref: '#/string'
+      Type:
+      - $ref: '#/string'
       NCI C-Code: CNEW
       Preferred Term: Study Design Population Label
       Definition: The short descriptive designation for the study design population.
@@ -2585,7 +2980,8 @@ StudyDesignPopulation:
       Inherited From:
         $ref: '#/PopulationDefinition'
     includesHealthySubjects:
-      $ref: '#/Boolean'
+      Type:
+      - $ref: '#/Boolean'
       NCI C-Code: CNEW
       Preferred Term: Study Population Includes Healthy Subjects Indicator
       Definition: An indication as to whether the population definition includes healthy
@@ -2595,7 +2991,8 @@ StudyDesignPopulation:
       Inherited From:
         $ref: '#/PopulationDefinition'
     plannedSex:
-      $ref: '#/Code'
+      Type:
+      - $ref: '#/Code'
       NCI C-Code: C49696
       Cardinality: '1'
       Preferred Term: Sex of Participants
@@ -2607,14 +3004,16 @@ StudyDesignPopulation:
       Inherited From:
         $ref: '#/PopulationDefinition'
     criteria:
-      $ref: '#/EligibilityCriteria'
+      Type:
+      - $ref: '#/EligibilityCriteria'
       Cardinality: 1..*
       Relationship Type: Value
       Model Name: criteria
       Inherited From:
         $ref: '#/PopulationDefinition'
     plannedAge:
-      $ref: '#/Range'
+      Type:
+      - $ref: '#/Range'
       NCI C-Code: CNEW
       Cardinality: 0..1
       Preferred Term: Study Design Population Planned Age
@@ -2624,7 +3023,8 @@ StudyDesignPopulation:
       Inherited From:
         $ref: '#/PopulationDefinition'
     plannedEnrollmentNumber:
-      $ref: '#/Range'
+      Type:
+      - $ref: '#/Range'
       NCI C-Code: CNEW
       Cardinality: 0..1
       Preferred Term: Study Design Population Planned Enrollment Number
@@ -2635,7 +3035,8 @@ StudyDesignPopulation:
       Inherited From:
         $ref: '#/PopulationDefinition'
     plannedCompletionNumber:
-      $ref: '#/Range'
+      Type:
+      - $ref: '#/Range'
       NCI C-Code: CNEW
       Cardinality: 0..1
       Preferred Term: Study Design Population Planned Completion Number
@@ -2647,12 +3048,15 @@ StudyDesignPopulation:
       Inherited From:
         $ref: '#/PopulationDefinition'
     cohorts:
-      $ref: '#/StudyCohort'
+      Type:
+      - $ref: '#/StudyCohort'
       Cardinality: 0..*
       Relationship Type: Value
       Model Name: cohorts
     instanceType:
-      $ref: UNKNOWN
+      Type:
+      - $ref: '#/string'
+      Cardinality: 0..1
       Relationship Type: Value
 StudyElement:
   NCI C-Code: C142735
@@ -2663,11 +3067,13 @@ StudyElement:
   Modifier: Concrete
   Attributes:
     id:
-      $ref: '#/string'
+      Type:
+      - $ref: '#/string'
       Relationship Type: Value
       Model Name: id
     name:
-      $ref: '#/string'
+      Type:
+      - $ref: '#/string'
       NCI C-Code: C188833
       Preferred Term: Study Design Element Name
       Definition: The literal identifier (i.e., distinctive designation) of the study
@@ -2675,36 +3081,43 @@ StudyElement:
       Relationship Type: Value
       Model Name: name
     description:
-      $ref: '#/string'
+      Type:
+      - $ref: '#/string'
       NCI C-Code: C188834
       Preferred Term: Study Design Element Description
       Definition: A narrative representation of the study design element.
       Relationship Type: Value
       Model Name: description
     label:
-      $ref: '#/string'
+      Type:
+      - $ref: '#/string'
       NCI C-Code: CNEW
       Preferred Term: Study Element Label
       Definition: The short descriptive designation for the study element.
       Relationship Type: Value
       Model Name: label
     transitionEndRule:
-      $ref: '#/TransitionRule'
+      Type:
+      - $ref: '#/TransitionRule'
       Cardinality: 0..1
       Relationship Type: Value
       Model Name: transitionEndRule
     studyInterventionIds:
-      $ref: '#/StudyIntervention'
+      Type:
+      - $ref: '#/StudyIntervention'
       Cardinality: 0..*
       Relationship Type: Ref
       Model Name: studyInterventions
     transitionStartRule:
-      $ref: '#/TransitionRule'
+      Type:
+      - $ref: '#/TransitionRule'
       Cardinality: 0..1
       Relationship Type: Value
       Model Name: transitionStartRule
     instanceType:
-      $ref: UNKNOWN
+      Type:
+      - $ref: '#/string'
+      Cardinality: 0..1
       Relationship Type: Value
 StudyEpoch:
   NCI C-Code: C71738
@@ -2715,11 +3128,13 @@ StudyEpoch:
   Modifier: Concrete
   Attributes:
     id:
-      $ref: '#/string'
+      Type:
+      - $ref: '#/string'
       Relationship Type: Value
       Model Name: id
     name:
-      $ref: '#/string'
+      Type:
+      - $ref: '#/string'
       NCI C-Code: C93825
       Preferred Term: Study Epoch Name
       Definition: The literal identifier (i.e., distinctive designation) of the study
@@ -2729,21 +3144,24 @@ StudyEpoch:
       Relationship Type: Value
       Model Name: name
     description:
-      $ref: '#/string'
+      Type:
+      - $ref: '#/string'
       NCI C-Code: C93824
       Preferred Term: Study Epoch Description
       Definition: A narrative representation of the study epoch.
       Relationship Type: Value
       Model Name: description
     label:
-      $ref: '#/string'
+      Type:
+      - $ref: '#/string'
       NCI C-Code: CNEW
       Preferred Term: Study Epoch Label
       Definition: The short descriptive designation for the study epoch.
       Relationship Type: Value
       Model Name: label
     type:
-      $ref: '#/Code'
+      Type:
+      - $ref: '#/Code'
       NCI C-Code: C188830
       Cardinality: '1'
       Preferred Term: Study Epoch Type
@@ -2754,17 +3172,21 @@ StudyEpoch:
       Relationship Type: Value
       Model Name: type
     previousId:
-      $ref: '#/StudyEpoch'
+      Type:
+      - $ref: '#/StudyEpoch'
       Cardinality: 0..1
       Relationship Type: Ref
       Model Name: previous
     nextId:
-      $ref: '#/StudyEpoch'
+      Type:
+      - $ref: '#/StudyEpoch'
       Cardinality: 0..1
       Relationship Type: Ref
       Model Name: next
     instanceType:
-      $ref: UNKNOWN
+      Type:
+      - $ref: '#/string'
+      Cardinality: 0..1
       Relationship Type: Value
 StudyIdentifier:
   NCI C-Code: C83082
@@ -2774,7 +3196,8 @@ StudyIdentifier:
   Modifier: Concrete
   Attributes:
     studyIdentifier:
-      $ref: '#/string'
+      Type:
+      - $ref: '#/string'
       NCI C-Code: C83082
       Preferred Term: Study Identifier
       Definition: A sequence of characters used to identify, name, or characterize
@@ -2782,12 +3205,15 @@ StudyIdentifier:
       Relationship Type: Value
       Model Name: studyIdentifier
     studyIdentifierScope:
-      $ref: '#/Organization'
+      Type:
+      - $ref: '#/Organization'
       Cardinality: '1'
       Relationship Type: Value
       Model Name: studyIdentifierScope
     instanceType:
-      $ref: UNKNOWN
+      Type:
+      - $ref: '#/string'
+      Cardinality: 0..1
       Relationship Type: Value
 StudyIntervention:
   NCI C-Code: CNEW
@@ -2797,18 +3223,21 @@ StudyIntervention:
   Modifier: Concrete
   Attributes:
     id:
-      $ref: '#/string'
+      Type:
+      - $ref: '#/string'
       Relationship Type: Value
       Model Name: id
     description:
-      $ref: '#/string'
+      Type:
+      - $ref: '#/string'
       NCI C-Code: CNEW
       Preferred Term: Study Intervention Description
       Definition: A narrative representation of the study intervention.
       Relationship Type: Value
       Model Name: description
     name:
-      $ref: '#/string'
+      Type:
+      - $ref: '#/string'
       NCI C-Code: CNEW
       Preferred Term: Study Intervention Name
       Definition: The literal identifier (i.e., distinctive designation) of the study
@@ -2816,19 +3245,22 @@ StudyIntervention:
       Relationship Type: Value
       Model Name: name
     label:
-      $ref: '#/string'
+      Type:
+      - $ref: '#/string'
       NCI C-Code: CNEW
       Preferred Term: Study Intervention Label
       Definition: The short descriptive designation for the study intervention.
       Relationship Type: Value
       Model Name: label
     administrations:
-      $ref: '#/AgentAdministration'
+      Type:
+      - $ref: '#/AgentAdministration'
       Cardinality: 1..*
       Relationship Type: Value
       Model Name: administrations
     type:
-      $ref: '#/Code'
+      Type:
+      - $ref: '#/Code'
       NCI C-Code: C98747
       Cardinality: '1'
       Preferred Term: Study Intervention Type
@@ -2837,7 +3269,8 @@ StudyIntervention:
       Relationship Type: Value
       Model Name: type
     role:
-      $ref: '#/Code'
+      Type:
+      - $ref: '#/Code'
       NCI C-Code: CNEW
       Cardinality: '1'
       Preferred Term: Study Intervention Role
@@ -2847,7 +3280,8 @@ StudyIntervention:
       Relationship Type: Value
       Model Name: role
     productDesignation:
-      $ref: '#/Code'
+      Type:
+      - $ref: '#/Code'
       NCI C-Code: CNEW
       Cardinality: '1'
       Preferred Term: Study Intervention Product Designation
@@ -2857,7 +3291,8 @@ StudyIntervention:
       Relationship Type: Value
       Model Name: productDesignation
     pharmacologicClass:
-      $ref: '#/Code'
+      Type:
+      - $ref: '#/Code'
       NCI C-Code: C98768
       Cardinality: 0..1
       Preferred Term: Pharmacologic Class
@@ -2866,7 +3301,8 @@ StudyIntervention:
       Relationship Type: Value
       Model Name: pharmacologicClass
     codes:
-      $ref: '#/Code'
+      Type:
+      - $ref: '#/Code'
       NCI C-Code: CNEW
       Cardinality: 0..*
       Preferred Term: Study Intervention Code
@@ -2877,7 +3313,8 @@ StudyIntervention:
       Relationship Type: Value
       Model Name: codes
     minimumResponseDuration:
-      $ref: '#/Quantity'
+      Type:
+      - $ref: '#/Quantity'
       NCI C-Code: CNEW
       Cardinality: 0..1
       Preferred Term: Study Intervention Minimum Response Duration
@@ -2886,7 +3323,9 @@ StudyIntervention:
       Relationship Type: Value
       Model Name: minimumResponseDuration
     instanceType:
-      $ref: UNKNOWN
+      Type:
+      - $ref: '#/string'
+      Cardinality: 0..1
       Relationship Type: Value
 StudyProtocolDocument:
   NCI C-Code: C93381
@@ -2896,11 +3335,13 @@ StudyProtocolDocument:
   Modifier: Concrete
   Attributes:
     id:
-      $ref: '#/string'
+      Type:
+      - $ref: '#/string'
       Relationship Type: Value
       Model Name: id
     name:
-      $ref: '#/string'
+      Type:
+      - $ref: '#/string'
       NCI C-Code: CNEW
       Preferred Term: Study Protocol Document Name
       Definition: The literal identifier (i.e., distinctive designation) of the study
@@ -2908,26 +3349,31 @@ StudyProtocolDocument:
       Relationship Type: Value
       Model Name: name
     description:
-      $ref: '#/string'
+      Type:
+      - $ref: '#/string'
       NCI C-Code: CNEW
       Preferred Term: Study Protocol Document Description
       Definition: A narrative representation of the study protocol document.
       Relationship Type: Value
       Model Name: description
     label:
-      $ref: '#/string'
+      Type:
+      - $ref: '#/string'
       NCI C-Code: CNEW
       Preferred Term: Study Protocol Document Label
       Definition: The short descriptive designation for the study protocol document.
       Relationship Type: Value
       Model Name: label
     versions:
-      $ref: '#/StudyProtocolDocumentVersion'
+      Type:
+      - $ref: '#/StudyProtocolDocumentVersion'
       Cardinality: 0..*
       Relationship Type: Value
       Model Name: versions
     instanceType:
-      $ref: UNKNOWN
+      Type:
+      - $ref: '#/string'
+      Cardinality: 0..1
       Relationship Type: Value
 StudyProtocolDocumentVersion:
   NCI C-Code: C93490
@@ -2939,11 +3385,13 @@ StudyProtocolDocumentVersion:
   Modifier: Concrete
   Attributes:
     id:
-      $ref: '#/string'
+      Type:
+      - $ref: '#/string'
       Relationship Type: Value
       Model Name: id
     protocolVersion:
-      $ref: '#/string'
+      Type:
+      - $ref: '#/string'
       NCI C-Code: C93490
       Preferred Term: Study Protocol Version
       Definition: A plan at a particular point in time for a formal investigation
@@ -2953,7 +3401,8 @@ StudyProtocolDocumentVersion:
       Relationship Type: Value
       Model Name: protocolVersion
     protocolStatus:
-      $ref: '#/Code'
+      Type:
+      - $ref: '#/Code'
       NCI C-Code: C188818
       Cardinality: '1'
       Preferred Term: Protocol Status
@@ -2963,22 +3412,27 @@ StudyProtocolDocumentVersion:
       Relationship Type: Value
       Model Name: protocolStatus
     dateValues:
-      $ref: '#/GovernanceDate'
+      Type:
+      - $ref: '#/GovernanceDate'
       Cardinality: 0..*
       Relationship Type: Value
       Model Name: dateValues
     contents:
-      $ref: '#/NarrativeContent'
+      Type:
+      - $ref: '#/NarrativeContent'
       Cardinality: 0..*
       Relationship Type: Value
       Model Name: contents
     childrenIds:
-      $ref: '#/StudyProtocolDocumentVersion'
+      Type:
+      - $ref: '#/StudyProtocolDocumentVersion'
       Cardinality: 0..*
       Relationship Type: Ref
       Model Name: children
     instanceType:
-      $ref: UNKNOWN
+      Type:
+      - $ref: '#/string'
+      Cardinality: 0..1
       Relationship Type: Value
 StudySite:
   NCI C-Code: C80403
@@ -2987,11 +3441,13 @@ StudySite:
   Modifier: Concrete
   Attributes:
     id:
-      $ref: '#/string'
+      Type:
+      - $ref: '#/string'
       Relationship Type: Value
       Model Name: id
     name:
-      $ref: '#/string'
+      Type:
+      - $ref: '#/string'
       NCI C-Code: CNEW
       Preferred Term: Study Site Name
       Definition: The literal identifier (i.e., distinctive designation) of the study
@@ -2999,26 +3455,31 @@ StudySite:
       Relationship Type: Value
       Model Name: name
     description:
-      $ref: '#/string'
+      Type:
+      - $ref: '#/string'
       NCI C-Code: CNEW
       Preferred Term: Study Site Description
       Definition: A narrative representation of the study site.
       Relationship Type: Value
       Model Name: description
     label:
-      $ref: '#/string'
+      Type:
+      - $ref: '#/string'
       NCI C-Code: CNEW
       Preferred Term: Study Site Label
       Definition: The short descriptive designation for the study site.
       Relationship Type: Value
       Model Name: label
     currentEnrollmentId:
-      $ref: '#/SubjectEnrollment'
+      Type:
+      - $ref: '#/SubjectEnrollment'
       Cardinality: 0..1
       Relationship Type: Ref
       Model Name: currentEnrollment
     instanceType:
-      $ref: UNKNOWN
+      Type:
+      - $ref: '#/string'
+      Cardinality: 0..1
       Relationship Type: Value
 StudyTitle:
   NCI C-Code: C49802
@@ -3027,18 +3488,21 @@ StudyTitle:
   Modifier: Concrete
   Attributes:
     id:
-      $ref: '#/string'
+      Type:
+      - $ref: '#/string'
       Relationship Type: Value
       Model Name: id
     text:
-      $ref: '#/string'
+      Type:
+      - $ref: '#/string'
       NCI C-Code: CNEW
       Preferred Term: Study Title Text
       Definition: An instance of unstructured text that represents the study title.
       Relationship Type: Value
       Model Name: text
     typeId:
-      $ref: '#/Code'
+      Type:
+      - $ref: '#/Code'
       NCI C-Code: CNEW
       Cardinality: '1'
       Preferred Term: Study Title Type
@@ -3047,7 +3511,9 @@ StudyTitle:
       Relationship Type: Ref
       Model Name: type
     instanceType:
-      $ref: UNKNOWN
+      Type:
+      - $ref: '#/string'
+      Cardinality: 0..1
       Relationship Type: Value
 StudyVersion:
   NCI C-Code: C188816
@@ -3056,11 +3522,13 @@ StudyVersion:
   Modifier: Concrete
   Attributes:
     id:
-      $ref: '#/string'
+      Type:
+      - $ref: '#/string'
       Relationship Type: Value
       Model Name: id
     versionIdentifier:
-      $ref: '#/string'
+      Type:
+      - $ref: '#/string'
       NCI C-Code: CNEW
       Preferred Term: Study Version Identifier
       Definition: A sequence of characters used to identify, name, or characterize
@@ -3068,7 +3536,8 @@ StudyVersion:
       Relationship Type: Value
       Model Name: versionIdentifier
     rationale:
-      $ref: '#/string'
+      Type:
+      - $ref: '#/string'
       NCI C-Code: C94122
       Preferred Term: Study Rationale
       Definition: A statement describing the overall rationale of the study. This
@@ -3077,7 +3546,8 @@ StudyVersion:
       Relationship Type: Value
       Model Name: rationale
     studyPhase:
-      $ref: '#/AliasCode'
+      Type:
+      - $ref: '#/AliasCode'
       NCI C-Code: C48281
       Cardinality: 0..1
       Preferred Term: Trial Phase
@@ -3092,7 +3562,8 @@ StudyVersion:
       Relationship Type: Value
       Model Name: studyPhase
     businessTherapeuticAreas:
-      $ref: '#/Code'
+      Type:
+      - $ref: '#/Code'
       NCI C-Code: CNEW
       Cardinality: 0..*
       Preferred Term: Business Therapeutic Areas
@@ -3102,7 +3573,8 @@ StudyVersion:
       Relationship Type: Value
       Model Name: businessTherapeuticAreas
     type:
-      $ref: '#/Code'
+      Type:
+      - $ref: '#/Code'
       NCI C-Code: C142175
       Cardinality: 0..1
       Preferred Term: Study Type Classification
@@ -3112,37 +3584,45 @@ StudyVersion:
       Relationship Type: Value
       Model Name: type
     dateValues:
-      $ref: '#/GovernanceDate'
+      Type:
+      - $ref: '#/GovernanceDate'
       Cardinality: 0..*
       Relationship Type: Value
       Model Name: dateValues
     amendments:
-      $ref: '#/StudyAmendment'
+      Type:
+      - $ref: '#/StudyAmendment'
       Cardinality: 0..*
       Relationship Type: Value
       Model Name: amendments
     studyDesigns:
-      $ref: '#/StudyDesign'
+      Type:
+      - $ref: '#/StudyDesign'
       Cardinality: 0..*
       Relationship Type: Value
       Model Name: studyDesigns
     studyIdentifiers:
-      $ref: '#/StudyIdentifier'
+      Type:
+      - $ref: '#/StudyIdentifier'
       Cardinality: 0..*
       Relationship Type: Value
       Model Name: studyIdentifiers
     documentVersionId:
-      $ref: '#/StudyProtocolDocumentVersion'
+      Type:
+      - $ref: '#/StudyProtocolDocumentVersion'
       Cardinality: 0..1
       Relationship Type: Ref
       Model Name: documentVersion
     titles:
-      $ref: '#/StudyTitle'
+      Type:
+      - $ref: '#/StudyTitle'
       Cardinality: 1..*
       Relationship Type: Value
       Model Name: titles
     instanceType:
-      $ref: UNKNOWN
+      Type:
+      - $ref: '#/string'
+      Cardinality: 0..1
       Relationship Type: Value
 SubjectEnrollment:
   NCI C-Code: C37948
@@ -3155,13 +3635,15 @@ SubjectEnrollment:
   Modifier: Concrete
   Attributes:
     id:
-      $ref: '#/string'
+      Type:
+      - $ref: '#/string'
       Relationship Type: Value
       Model Name: id
       Inherited From:
         $ref: '#/GeographicScope'
     code:
-      $ref: '#/AliasCode'
+      Type:
+      - $ref: '#/AliasCode'
       NCI C-Code: CNEW
       Cardinality: 0..1
       Preferred Term: Subject Enrollment Code
@@ -3172,7 +3654,8 @@ SubjectEnrollment:
       Inherited From:
         $ref: '#/GeographicScope'
     type:
-      $ref: '#/Code'
+      Type:
+      - $ref: '#/Code'
       NCI C-Code: CNEW
       Cardinality: '1'
       Preferred Term: Subject Enrollment Type
@@ -3182,7 +3665,8 @@ SubjectEnrollment:
       Inherited From:
         $ref: '#/GeographicScope'
     quantity:
-      $ref: '#/Quantity'
+      Type:
+      - $ref: '#/Quantity'
       NCI C-Code: CNEW
       Cardinality: '1'
       Preferred Term: Subject Enrollment Quantity Value
@@ -3190,7 +3674,9 @@ SubjectEnrollment:
       Relationship Type: Value
       Model Name: quantity
     instanceType:
-      $ref: UNKNOWN
+      Type:
+      - $ref: '#/string'
+      Cardinality: 0..1
       Relationship Type: Value
 SyntaxTemplate:
   NCI C-Code: CNEW
@@ -3206,36 +3692,42 @@ SyntaxTemplate:
   Modifier: Abstract
   Attributes:
     id:
-      $ref: '#/string'
+      Type:
+      - $ref: '#/string'
       Model Name: id
     name:
-      $ref: '#/string'
+      Type:
+      - $ref: '#/string'
       NCI C-Code: CNEW
       Preferred Term: Syntax Template Name
       Definition: The literal identifier (i.e., distinctive designation) of the syntax
         template.
       Model Name: name
     description:
-      $ref: '#/string'
+      Type:
+      - $ref: '#/string'
       NCI C-Code: CNEW
       Preferred Term: Syntax Template Description
       Definition: A narrative representation of the syntax template.
       Model Name: description
     label:
-      $ref: '#/string'
+      Type:
+      - $ref: '#/string'
       NCI C-Code: CNEW
       Preferred Term: Syntax Template Label
       Definition: The short descriptive designation for the syntax template.
       Model Name: label
     text:
-      $ref: '#/string'
+      Type:
+      - $ref: '#/string'
       NCI C-Code: CNEW
       Preferred Term: Syntax Template Text
       Definition: A structured text string containing prescribed text interspersed
         with user-defined parameter values.
       Model Name: text
     dictionary:
-      $ref: '#/SyntaxTemplateDictionary'
+      Type:
+      - $ref: '#/SyntaxTemplateDictionary'
       Cardinality: 0..1
       Model Name: dictionary
 SyntaxTemplateDictionary:
@@ -3246,11 +3738,13 @@ SyntaxTemplateDictionary:
   Modifier: Concrete
   Attributes:
     id:
-      $ref: '#/string'
+      Type:
+      - $ref: '#/string'
       Relationship Type: Value
       Model Name: id
     name:
-      $ref: '#/string'
+      Type:
+      - $ref: '#/string'
       NCI C-Code: CNEW
       Preferred Term: Syntax Template Dictionary Name
       Definition: The literal identifier (i.e., distinctive designation) of the syntax
@@ -3258,21 +3752,24 @@ SyntaxTemplateDictionary:
       Relationship Type: Value
       Model Name: name
     description:
-      $ref: '#/string'
+      Type:
+      - $ref: '#/string'
       NCI C-Code: CNEW
       Preferred Term: Syntax Template Dictionary Description
       Definition: A narrative representation of the syntax template dictionary.
       Relationship Type: Value
       Model Name: description
     label:
-      $ref: '#/string'
+      Type:
+      - $ref: '#/string'
       NCI C-Code: CNEW
       Preferred Term: Syntax Template Dictionary Label
       Definition: The short descriptive designation for the syntax template dictionary.
       Relationship Type: Value
       Model Name: label
     parameterMap:
-      $ref: '#/Map'
+      Type:
+      - $ref: '#/Map'
       NCI C-Code: CNEW
       Preferred Term: Syntax Template Dictionary Parameter Map
       Definition: The paired name and value contained within the syntax template dictionary
@@ -3280,7 +3777,9 @@ SyntaxTemplateDictionary:
       Relationship Type: Value
       Model Name: parameterMap
     instanceType:
-      $ref: UNKNOWN
+      Type:
+      - $ref: '#/string'
+      Cardinality: 0..1
       Relationship Type: Value
 Timing:
   NCI C-Code: C80484
@@ -3289,18 +3788,21 @@ Timing:
   Modifier: Concrete
   Attributes:
     id:
-      $ref: '#/string'
+      Type:
+      - $ref: '#/string'
       Relationship Type: Value
       Model Name: id
     name:
-      $ref: '#/string'
+      Type:
+      - $ref: '#/string'
       NCI C-Code: CNEW
       Preferred Term: Timing Name
       Definition: The literal identifier (i.e., distinctive designation) of the timing.
       Relationship Type: Value
       Model Name: name
     description:
-      $ref: '#/string'
+      Type:
+      - $ref: '#/string'
       NCI C-Code: C164648
       Preferred Term: Timing Description
       Definition: The textual representation of the chronological relationship between
@@ -3308,14 +3810,16 @@ Timing:
       Relationship Type: Value
       Model Name: description
     label:
-      $ref: '#/string'
+      Type:
+      - $ref: '#/string'
       NCI C-Code: CNEW
       Preferred Term: Timing Label
       Definition: The short descriptive designation for the timing.
       Relationship Type: Value
       Model Name: label
     value:
-      $ref: '#/string'
+      Type:
+      - $ref: '#/string'
       NCI C-Code: C201341
       Preferred Term: Timing Value
       Definition: The temporal value of the chronological relationship between temporal
@@ -3323,7 +3827,8 @@ Timing:
       Relationship Type: Value
       Model Name: value
     window:
-      $ref: '#/string'
+      Type:
+      - $ref: '#/string'
       NCI C-Code: C48921
       Preferred Term: Timing Window
       Definition: A time period, or other type of interval, during which a temporal
@@ -3331,7 +3836,8 @@ Timing:
       Relationship Type: Value
       Model Name: window
     windowLower:
-      $ref: '#/string'
+      Type:
+      - $ref: '#/string'
       NCI C-Code: C201342
       Preferred Term: Timing Window, Lower
       Definition: The earliest chronological value of an allowable period of time
@@ -3339,7 +3845,8 @@ Timing:
       Relationship Type: Value
       Model Name: windowLower
     windowUpper:
-      $ref: '#/string'
+      Type:
+      - $ref: '#/string'
       NCI C-Code: C201343
       Preferred Term: Timing Window, Upper
       Definition: The latest chronological value of an allowable period of time during
@@ -3347,7 +3854,8 @@ Timing:
       Relationship Type: Value
       Model Name: windowUpper
     relativeToFrom:
-      $ref: '#/Code'
+      Type:
+      - $ref: '#/Code'
       NCI C-Code: C201297
       Cardinality: '1'
       Preferred Term: Timing Relative To From
@@ -3357,7 +3865,8 @@ Timing:
       Relationship Type: Value
       Model Name: relativeToFrom
     type:
-      $ref: '#/Code'
+      Type:
+      - $ref: '#/Code'
       NCI C-Code: C201298
       Cardinality: '1'
       Preferred Term: Timing Type
@@ -3367,17 +3876,21 @@ Timing:
       Relationship Type: Value
       Model Name: type
     relativeToScheduledInstanceId:
-      $ref: '#/ScheduledInstance'
+      Type:
+      - $ref: '#/ScheduledInstance'
       Cardinality: 0..1
       Relationship Type: Ref
       Model Name: relativeToScheduledInstance
     relativeFromScheduledInstanceId:
-      $ref: '#/ScheduledInstance'
+      Type:
+      - $ref: '#/ScheduledInstance'
       Cardinality: 0..1
       Relationship Type: Ref
       Model Name: relativeFromScheduledInstance
     instanceType:
-      $ref: UNKNOWN
+      Type:
+      - $ref: '#/string'
+      Cardinality: 0..1
       Relationship Type: Value
 TransitionRule:
   NCI C-Code: C82567
@@ -3388,11 +3901,13 @@ TransitionRule:
   Modifier: Concrete
   Attributes:
     id:
-      $ref: '#/string'
+      Type:
+      - $ref: '#/string'
       Relationship Type: Value
       Model Name: id
     name:
-      $ref: '#/string'
+      Type:
+      - $ref: '#/string'
       NCI C-Code: CNEW
       Preferred Term: Transition Rule Name
       Definition: The literal identifier (i.e., distinctive designation) of the transition
@@ -3400,21 +3915,24 @@ TransitionRule:
       Relationship Type: Value
       Model Name: name
     description:
-      $ref: '#/string'
+      Type:
+      - $ref: '#/string'
       NCI C-Code: C188835
       Preferred Term: Transition Rule Description
       Definition: A narrative representation of the transition rule.
       Relationship Type: Value
       Model Name: description
     label:
-      $ref: '#/string'
+      Type:
+      - $ref: '#/string'
       NCI C-Code: CNEW
       Preferred Term: Transition Rule Label
       Definition: The short descriptive designation for the transition rule.
       Relationship Type: Value
       Model Name: label
     text:
-      $ref: '#/string'
+      Type:
+      - $ref: '#/string'
       NCI C-Code: CNEW
       Preferred Term: Transition Rule Text
       Definition: An instance of unstructured text that represents the transition
@@ -3422,5 +3940,7 @@ TransitionRule:
       Relationship Type: Value
       Model Name: text
     instanceType:
-      $ref: UNKNOWN
+      Type:
+      - $ref: '#/string'
+      Cardinality: 0..1
       Relationship Type: Value
