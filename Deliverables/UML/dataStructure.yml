@@ -3213,6 +3213,11 @@ StudyIdentifier:
     study.
   Modifier: Concrete
   Attributes:
+    id:
+      Type:
+      - $ref: '#/string'
+      Relationship Type: Value
+      Model Name: id
     studyIdentifier:
       Type:
       - $ref: '#/string'
@@ -3228,11 +3233,6 @@ StudyIdentifier:
       Cardinality: '1'
       Relationship Type: Value
       Model Name: studyIdentifierScope
-    id:
-      Type:
-      - $ref: '#/string'
-      Cardinality: 0..1
-      Relationship Type: Value
     instanceType:
       Type:
       - $ref: '#/string'
