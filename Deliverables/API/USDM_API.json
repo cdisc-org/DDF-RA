@@ -368,21 +368,6 @@
             "title": "Definedprocedures",
             "default": []
           },
-          "isConditional": {
-            "type": "boolean",
-            "title": "Isconditional"
-          },
-          "isConditionalReason": {
-            "anyOf": [
-              {
-                "type": "string"
-              },
-              {
-                "type": "null"
-              }
-            ],
-            "title": "Isconditionalreason"
-          },
           "biomedicalConceptIds": {
             "items": {
               "type": "string"
@@ -417,13 +402,17 @@
               }
             ],
             "title": "Timelineid"
+          },
+          "instanceType": {
+            "const": "Activity",
+            "title": "Instancetype",
+            "default": "Activity"
           }
         },
         "type": "object",
         "required": [
           "id",
-          "name",
-          "isConditional"
+          "name"
         ],
         "title": "Activity"
       },
@@ -491,21 +480,6 @@
             "title": "Definedprocedures",
             "default": []
           },
-          "isConditional": {
-            "type": "boolean",
-            "title": "Isconditional"
-          },
-          "isConditionalReason": {
-            "anyOf": [
-              {
-                "type": "string"
-              },
-              {
-                "type": "null"
-              }
-            ],
-            "title": "Isconditionalreason"
-          },
           "biomedicalConceptIds": {
             "items": {
               "type": "string"
@@ -540,13 +514,17 @@
               }
             ],
             "title": "Timelineid"
+          },
+          "instanceType": {
+            "const": "Activity",
+            "title": "Instancetype",
+            "default": "Activity"
           }
         },
         "type": "object",
         "required": [
           "id",
-          "name",
-          "isConditional"
+          "name"
         ],
         "title": "Activity"
       },
@@ -632,6 +610,11 @@
                 "type": "null"
               }
             ]
+          },
+          "instanceType": {
+            "const": "Address",
+            "title": "Instancetype",
+            "default": "Address"
           }
         },
         "type": "object",
@@ -661,6 +644,11 @@
           "reasonDurationWillVary": {
             "type": "string",
             "title": "Reasondurationwillvary"
+          },
+          "instanceType": {
+            "const": "AdministrationDuration",
+            "title": "Instancetype",
+            "default": "AdministrationDuration"
           }
         },
         "type": "object",
@@ -694,6 +682,11 @@
           "reasonDurationWillVary": {
             "type": "string",
             "title": "Reasondurationwillvary"
+          },
+          "instanceType": {
+            "const": "AdministrationDuration",
+            "title": "Instancetype",
+            "default": "AdministrationDuration"
           }
         },
         "type": "object",
@@ -751,6 +744,11 @@
           },
           "frequency": {
             "$ref": "#/components/schemas/Code"
+          },
+          "instanceType": {
+            "const": "AgentAdministration",
+            "title": "Instancetype",
+            "default": "AgentAdministration"
           }
         },
         "type": "object",
@@ -809,6 +807,11 @@
           },
           "frequency": {
             "$ref": "#/components/schemas/Code"
+          },
+          "instanceType": {
+            "const": "AgentAdministration",
+            "title": "Instancetype",
+            "default": "AgentAdministration"
           }
         },
         "type": "object",
@@ -839,6 +842,11 @@
             "type": "array",
             "title": "Standardcodealiases",
             "default": []
+          },
+          "instanceType": {
+            "const": "AliasCode",
+            "title": "Instancetype",
+            "default": "AliasCode"
           }
         },
         "type": "object",
@@ -885,6 +893,11 @@
           "text": {
             "type": "string",
             "title": "Text"
+          },
+          "instanceType": {
+            "const": "AnalysisPopulation",
+            "title": "Instancetype",
+            "default": "AnalysisPopulation"
           }
         },
         "type": "object",
@@ -940,6 +953,11 @@
           },
           "code": {
             "$ref": "#/components/schemas/AliasCode"
+          },
+          "instanceType": {
+            "const": "BiomedicalConcept",
+            "title": "Instancetype",
+            "default": "BiomedicalConcept"
           }
         },
         "type": "object",
@@ -996,6 +1014,11 @@
           },
           "code": {
             "$ref": "#/components/schemas/AliasCode"
+          },
+          "instanceType": {
+            "const": "BiomedicalConcept",
+            "title": "Instancetype",
+            "default": "BiomedicalConcept"
           }
         },
         "type": "object",
@@ -1066,6 +1089,11 @@
                 "type": "null"
               }
             ]
+          },
+          "instanceType": {
+            "const": "BiomedicalConceptCategory",
+            "title": "Instancetype",
+            "default": "BiomedicalConceptCategory"
           }
         },
         "type": "object",
@@ -1134,6 +1162,11 @@
                 "type": "null"
               }
             ]
+          },
+          "instanceType": {
+            "const": "BiomedicalConceptCategory",
+            "title": "Instancetype",
+            "default": "BiomedicalConceptCategory"
           }
         },
         "type": "object",
@@ -1188,6 +1221,11 @@
           },
           "code": {
             "$ref": "#/components/schemas/AliasCode"
+          },
+          "instanceType": {
+            "const": "BiomedicalConceptProperty",
+            "title": "Instancetype",
+            "default": "BiomedicalConceptProperty"
           }
         },
         "type": "object",
@@ -1246,6 +1284,11 @@
           },
           "code": {
             "$ref": "#/components/schemas/AliasCode"
+          },
+          "instanceType": {
+            "const": "BiomedicalConceptProperty",
+            "title": "Instancetype",
+            "default": "BiomedicalConceptProperty"
           }
         },
         "type": "object",
@@ -1303,6 +1346,11 @@
               }
             ],
             "title": "Reference"
+          },
+          "instanceType": {
+            "const": "BiomedicalConceptSurrogate",
+            "title": "Instancetype",
+            "default": "BiomedicalConceptSurrogate"
           }
         },
         "type": "object",
@@ -1346,16 +1394,6 @@
             ],
             "title": "Description"
           },
-          "instanceType": {
-            "type": "string",
-            "enum": [
-              "ENDPOINT",
-              "OBJECTIVE",
-              "ELIGIBILITY_CRITERIA",
-              "CHARACTERISTIC"
-            ],
-            "title": "Instancetype"
-          },
           "text": {
             "type": "string",
             "title": "Text"
@@ -1370,13 +1408,17 @@
               }
             ],
             "title": "Dictionaryid"
+          },
+          "instanceType": {
+            "const": "Characteristic",
+            "title": "Instancetype",
+            "default": "Characteristic"
           }
         },
         "type": "object",
         "required": [
           "id",
           "name",
-          "instanceType",
           "text"
         ],
         "title": "Characteristic"
@@ -1403,6 +1445,11 @@
           "decode": {
             "type": "string",
             "title": "Decode"
+          },
+          "instanceType": {
+            "const": "Code",
+            "title": "Instancetype",
+            "default": "Code"
           }
         },
         "type": "object",
@@ -1414,6 +1461,85 @@
           "decode"
         ],
         "title": "Code"
+      },
+      "Condition": {
+        "properties": {
+          "id": {
+            "type": "string",
+            "minLength": 1,
+            "title": "Id"
+          },
+          "name": {
+            "type": "string",
+            "minLength": 1,
+            "title": "Name"
+          },
+          "label": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Label"
+          },
+          "description": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Description"
+          },
+          "text": {
+            "type": "string",
+            "title": "Text"
+          },
+          "dictionaryId": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Dictionaryid"
+          },
+          "contextIds": {
+            "items": {
+              "type": "string"
+            },
+            "type": "array",
+            "title": "Contextids",
+            "default": []
+          },
+          "appliesToIds": {
+            "items": {
+              "type": "string"
+            },
+            "type": "array",
+            "title": "Appliestoids",
+            "default": []
+          },
+          "instanceType": {
+            "const": "Condition",
+            "title": "Instancetype",
+            "default": "Condition"
+          }
+        },
+        "type": "object",
+        "required": [
+          "id",
+          "name",
+          "text"
+        ],
+        "title": "Condition"
       },
       "EligibilityCriteria": {
         "properties": {
@@ -1449,16 +1575,6 @@
             ],
             "title": "Description"
           },
-          "instanceType": {
-            "type": "string",
-            "enum": [
-              "ENDPOINT",
-              "OBJECTIVE",
-              "ELIGIBILITY_CRITERIA",
-              "CHARACTERISTIC"
-            ],
-            "title": "Instancetype"
-          },
           "text": {
             "type": "string",
             "title": "Text"
@@ -1473,6 +1589,11 @@
               }
             ],
             "title": "Dictionaryid"
+          },
+          "instanceType": {
+            "const": "EligibilityCriteria",
+            "title": "Instancetype",
+            "default": "EligibilityCriteria"
           },
           "category": {
             "$ref": "#/components/schemas/Code"
@@ -1519,7 +1640,6 @@
         "required": [
           "id",
           "name",
-          "instanceType",
           "text",
           "category",
           "identifier"
@@ -1633,6 +1753,11 @@
                 "type": "null"
               }
             ]
+          },
+          "instanceType": {
+            "const": "Encounter",
+            "title": "Instancetype",
+            "default": "Encounter"
           }
         },
         "type": "object",
@@ -1677,16 +1802,6 @@
             ],
             "title": "Description"
           },
-          "instanceType": {
-            "type": "string",
-            "enum": [
-              "ENDPOINT",
-              "OBJECTIVE",
-              "ELIGIBILITY_CRITERIA",
-              "CHARACTERISTIC"
-            ],
-            "title": "Instancetype"
-          },
           "text": {
             "type": "string",
             "title": "Text"
@@ -1702,6 +1817,11 @@
             ],
             "title": "Dictionaryid"
           },
+          "instanceType": {
+            "const": "Endpoint",
+            "title": "Instancetype",
+            "default": "Endpoint"
+          },
           "purpose": {
             "type": "string",
             "title": "Purpose"
@@ -1714,7 +1834,6 @@
         "required": [
           "id",
           "name",
-          "instanceType",
           "text",
           "purpose",
           "level"
@@ -1749,6 +1868,11 @@
             },
             "type": "array",
             "title": "Intercurrentevents"
+          },
+          "instanceType": {
+            "const": "Estimand",
+            "title": "Instancetype",
+            "default": "Estimand"
           }
         },
         "type": "object",
@@ -1769,14 +1893,6 @@
             "minLength": 1,
             "title": "Id"
           },
-          "instanceType": {
-            "type": "string",
-            "enum": [
-              "GEOGRAPHIC_SCOPE",
-              "SUBJECT_ENROLLMENT"
-            ],
-            "title": "Instancetype"
-          },
           "type": {
             "$ref": "#/components/schemas/Code"
           },
@@ -1789,13 +1905,17 @@
                 "type": "null"
               }
             ]
+          },
+          "instanceType": {
+            "const": "GeographicScope",
+            "title": "Instancetype"
           }
         },
         "type": "object",
         "required": [
           "id",
-          "instanceType",
-          "type"
+          "type",
+          "instanceType"
         ],
         "title": "GeographicScope"
       },
@@ -1806,14 +1926,6 @@
             "minLength": 1,
             "title": "Id"
           },
-          "instanceType": {
-            "type": "string",
-            "enum": [
-              "GEOGRAPHIC_SCOPE",
-              "SUBJECT_ENROLLMENT"
-            ],
-            "title": "Instancetype"
-          },
           "type": {
             "$ref": "#/components/schemas/Code"
           },
@@ -1826,13 +1938,17 @@
                 "type": "null"
               }
             ]
+          },
+          "instanceType": {
+            "const": "GeographicScope",
+            "title": "Instancetype"
           }
         },
         "type": "object",
         "required": [
           "id",
-          "instanceType",
-          "type"
+          "type",
+          "instanceType"
         ],
         "title": "GeographicScope"
       },
@@ -1884,6 +2000,11 @@
             },
             "type": "array",
             "title": "Geographicscopes"
+          },
+          "instanceType": {
+            "const": "GovernanceDate",
+            "title": "Instancetype",
+            "default": "GovernanceDate"
           }
         },
         "type": "object",
@@ -1944,6 +2065,11 @@
             },
             "type": "array",
             "title": "Geographicscopes"
+          },
+          "instanceType": {
+            "const": "GovernanceDate",
+            "title": "Instancetype",
+            "default": "GovernanceDate"
           }
         },
         "type": "object",
@@ -2010,12 +2136,22 @@
             "type": "array",
             "title": "Codes",
             "default": []
+          },
+          "isRareDisease": {
+            "type": "boolean",
+            "title": "Israredisease"
+          },
+          "instanceType": {
+            "const": "Indication",
+            "title": "Instancetype",
+            "default": "Indication"
           }
         },
         "type": "object",
         "required": [
           "id",
-          "name"
+          "name",
+          "isRareDisease"
         ],
         "title": "Indication"
       },
@@ -2056,6 +2192,11 @@
           "strategy": {
             "type": "string",
             "title": "Strategy"
+          },
+          "instanceType": {
+            "const": "IntercurrentEvent",
+            "title": "Instancetype",
+            "default": "IntercurrentEvent"
           }
         },
         "type": "object",
@@ -2065,6 +2206,40 @@
           "strategy"
         ],
         "title": "IntercurrentEvent"
+      },
+      "Masking": {
+        "properties": {
+          "id": {
+            "type": "string",
+            "minLength": 1,
+            "title": "Id"
+          },
+          "description": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Description"
+          },
+          "role": {
+            "$ref": "#/components/schemas/Code"
+          },
+          "instanceType": {
+            "const": "Masking",
+            "title": "Instancetype",
+            "default": "Masking"
+          }
+        },
+        "type": "object",
+        "required": [
+          "id",
+          "role"
+        ],
+        "title": "Masking"
       },
       "NarrativeContent": {
         "properties": {
@@ -2104,6 +2279,11 @@
             "type": "array",
             "title": "Childrenids",
             "default": []
+          },
+          "instanceType": {
+            "const": "NarrativeContent",
+            "title": "Instancetype",
+            "default": "NarrativeContent"
           }
         },
         "type": "object",
@@ -2149,16 +2329,6 @@
             ],
             "title": "Description"
           },
-          "instanceType": {
-            "type": "string",
-            "enum": [
-              "ENDPOINT",
-              "OBJECTIVE",
-              "ELIGIBILITY_CRITERIA",
-              "CHARACTERISTIC"
-            ],
-            "title": "Instancetype"
-          },
           "text": {
             "type": "string",
             "title": "Text"
@@ -2173,6 +2343,11 @@
               }
             ],
             "title": "Dictionaryid"
+          },
+          "instanceType": {
+            "const": "Objective",
+            "title": "Instancetype",
+            "default": "Objective"
           },
           "level": {
             "anyOf": [
@@ -2197,7 +2372,6 @@
         "required": [
           "id",
           "name",
-          "instanceType",
           "text"
         ],
         "title": "Objective"
@@ -2236,16 +2410,6 @@
             ],
             "title": "Description"
           },
-          "instanceType": {
-            "type": "string",
-            "enum": [
-              "ENDPOINT",
-              "OBJECTIVE",
-              "ELIGIBILITY_CRITERIA",
-              "CHARACTERISTIC"
-            ],
-            "title": "Instancetype"
-          },
           "text": {
             "type": "string",
             "title": "Text"
@@ -2260,6 +2424,11 @@
               }
             ],
             "title": "Dictionaryid"
+          },
+          "instanceType": {
+            "const": "Objective",
+            "title": "Instancetype",
+            "default": "Objective"
           },
           "level": {
             "anyOf": [
@@ -2284,7 +2453,6 @@
         "required": [
           "id",
           "name",
-          "instanceType",
           "text"
         ],
         "title": "Objective"
@@ -2332,6 +2500,11 @@
                 "type": "null"
               }
             ]
+          },
+          "instanceType": {
+            "const": "Organization",
+            "title": "Instancetype",
+            "default": "Organization"
           }
         },
         "type": "object",
@@ -2387,6 +2560,11 @@
                 "type": "null"
               }
             ]
+          },
+          "instanceType": {
+            "const": "Organization",
+            "title": "Instancetype",
+            "default": "Organization"
           }
         },
         "type": "object",
@@ -2440,21 +2618,6 @@
           "code": {
             "$ref": "#/components/schemas/Code"
           },
-          "isConditional": {
-            "type": "boolean",
-            "title": "Isconditional"
-          },
-          "isConditionalReason": {
-            "anyOf": [
-              {
-                "type": "string"
-              },
-              {
-                "type": "null"
-              }
-            ],
-            "title": "Isconditionalreason"
-          },
           "studyInterventionId": {
             "anyOf": [
               {
@@ -2465,6 +2628,11 @@
               }
             ],
             "title": "Studyinterventionid"
+          },
+          "instanceType": {
+            "const": "Procedure",
+            "title": "Instancetype",
+            "default": "Procedure"
           }
         },
         "type": "object",
@@ -2472,8 +2640,7 @@
           "id",
           "name",
           "procedureType",
-          "code",
-          "isConditional"
+          "code"
         ],
         "title": "Procedure"
       },
@@ -2497,6 +2664,11 @@
                 "type": "null"
               }
             ]
+          },
+          "instanceType": {
+            "const": "Quantity",
+            "title": "Instancetype",
+            "default": "Quantity"
           }
         },
         "type": "object",
@@ -2534,6 +2706,11 @@
           "isApproximate": {
             "type": "boolean",
             "title": "Isapproximate"
+          },
+          "instanceType": {
+            "const": "Range",
+            "title": "Instancetype",
+            "default": "Range"
           }
         },
         "type": "object",
@@ -2544,6 +2721,142 @@
           "isApproximate"
         ],
         "title": "Range"
+      },
+      "ResearchOrganization-Input": {
+        "properties": {
+          "id": {
+            "type": "string",
+            "minLength": 1,
+            "title": "Id"
+          },
+          "name": {
+            "type": "string",
+            "minLength": 1,
+            "title": "Name"
+          },
+          "label": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Label"
+          },
+          "type": {
+            "$ref": "#/components/schemas/Code"
+          },
+          "identifierScheme": {
+            "type": "string",
+            "title": "Identifierscheme"
+          },
+          "identifier": {
+            "type": "string",
+            "title": "Identifier"
+          },
+          "legalAddress": {
+            "anyOf": [
+              {
+                "$ref": "#/components/schemas/Address"
+              },
+              {
+                "type": "null"
+              }
+            ]
+          },
+          "instanceType": {
+            "const": "ResearchOrganization",
+            "title": "Instancetype",
+            "default": "ResearchOrganization"
+          },
+          "manageIds": {
+            "items": {
+              "type": "string"
+            },
+            "type": "array",
+            "title": "Manageids"
+          }
+        },
+        "type": "object",
+        "required": [
+          "id",
+          "name",
+          "type",
+          "identifierScheme",
+          "identifier",
+          "manageIds"
+        ],
+        "title": "ResearchOrganization"
+      },
+      "ResearchOrganization-Output": {
+        "properties": {
+          "id": {
+            "type": "string",
+            "minLength": 1,
+            "title": "Id"
+          },
+          "name": {
+            "type": "string",
+            "minLength": 1,
+            "title": "Name"
+          },
+          "label": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Label"
+          },
+          "type": {
+            "$ref": "#/components/schemas/Code"
+          },
+          "identifierScheme": {
+            "type": "string",
+            "title": "Identifierscheme"
+          },
+          "identifier": {
+            "type": "string",
+            "title": "Identifier"
+          },
+          "legalAddress": {
+            "anyOf": [
+              {
+                "$ref": "#/components/schemas/Address"
+              },
+              {
+                "type": "null"
+              }
+            ]
+          },
+          "instanceType": {
+            "const": "ResearchOrganization",
+            "title": "Instancetype",
+            "default": "ResearchOrganization"
+          },
+          "manageIds": {
+            "items": {
+              "type": "string"
+            },
+            "type": "array",
+            "title": "Manageids"
+          }
+        },
+        "type": "object",
+        "required": [
+          "id",
+          "name",
+          "type",
+          "identifierScheme",
+          "identifier",
+          "manageIds"
+        ],
+        "title": "ResearchOrganization"
       },
       "ResponseCode": {
         "properties": {
@@ -2558,6 +2871,11 @@
           },
           "code": {
             "$ref": "#/components/schemas/Code"
+          },
+          "instanceType": {
+            "const": "ResponseCode",
+            "title": "Instancetype",
+            "default": "ResponseCode"
           }
         },
         "type": "object",
@@ -2636,6 +2954,11 @@
             "type": "array",
             "title": "Instances",
             "default": []
+          },
+          "instanceType": {
+            "const": "ScheduleTimeline",
+            "title": "Instancetype",
+            "default": "ScheduleTimeline"
           }
         },
         "type": "object",
@@ -2716,6 +3039,11 @@
             "type": "array",
             "title": "Instances",
             "default": []
+          },
+          "instanceType": {
+            "const": "ScheduleTimeline",
+            "title": "Instancetype",
+            "default": "ScheduleTimeline"
           }
         },
         "type": "object",
@@ -2734,6 +3062,11 @@
             "type": "string",
             "minLength": 1,
             "title": "Id"
+          },
+          "instanceType": {
+            "const": "ScheduleTimelineExit",
+            "title": "Instancetype",
+            "default": "ScheduleTimelineExit"
           }
         },
         "type": "object",
@@ -2749,14 +3082,6 @@
             "minLength": 1,
             "title": "Id"
           },
-          "instanceType": {
-            "type": "string",
-            "enum": [
-              "ACTIVITY",
-              "DECISION"
-            ],
-            "title": "Instancetype"
-          },
           "timings": {
             "items": {
               "$ref": "#/components/schemas/Timing"
@@ -2809,6 +3134,11 @@
             ],
             "title": "Epochid"
           },
+          "instanceType": {
+            "const": "ScheduledActivityInstance",
+            "title": "Instancetype",
+            "default": "ScheduledActivityInstance"
+          },
           "activityIds": {
             "items": {
               "type": "string"
@@ -2831,8 +3161,7 @@
         },
         "type": "object",
         "required": [
-          "id",
-          "instanceType"
+          "id"
         ],
         "title": "ScheduledActivityInstance"
       },
@@ -2843,14 +3172,6 @@
             "minLength": 1,
             "title": "Id"
           },
-          "instanceType": {
-            "type": "string",
-            "enum": [
-              "ACTIVITY",
-              "DECISION"
-            ],
-            "title": "Instancetype"
-          },
           "timings": {
             "items": {
               "$ref": "#/components/schemas/Timing"
@@ -2902,6 +3223,11 @@
               }
             ],
             "title": "Epochid"
+          },
+          "instanceType": {
+            "const": "ScheduledActivityInstance",
+            "title": "Instancetype",
+            "default": "ScheduledActivityInstance"
           },
           "activityIds": {
             "items": {
@@ -2925,8 +3251,7 @@
         },
         "type": "object",
         "required": [
-          "id",
-          "instanceType"
+          "id"
         ],
         "title": "ScheduledActivityInstance"
       },
@@ -2936,14 +3261,6 @@
             "type": "string",
             "minLength": 1,
             "title": "Id"
-          },
-          "instanceType": {
-            "type": "string",
-            "enum": [
-              "ACTIVITY",
-              "DECISION"
-            ],
-            "title": "Instancetype"
           },
           "timings": {
             "items": {
@@ -2996,6 +3313,11 @@
               }
             ],
             "title": "Epochid"
+          },
+          "instanceType": {
+            "const": "ScheduledDecisionInstance",
+            "title": "Instancetype",
+            "default": "ScheduledDecisionInstance"
           },
           "conditionAssignments": {
             "additionalProperties": {
@@ -3008,7 +3330,6 @@
         "type": "object",
         "required": [
           "id",
-          "instanceType",
           "conditionAssignments"
         ],
         "title": "ScheduledDecisionInstance"
@@ -3020,14 +3341,6 @@
             "minLength": 1,
             "title": "Id"
           },
-          "instanceType": {
-            "type": "string",
-            "enum": [
-              "ACTIVITY",
-              "DECISION"
-            ],
-            "title": "Instancetype"
-          },
           "timings": {
             "items": {
               "$ref": "#/components/schemas/Timing"
@@ -3080,6 +3393,11 @@
             ],
             "title": "Epochid"
           },
+          "instanceType": {
+            "const": "ScheduledDecisionInstance",
+            "title": "Instancetype",
+            "default": "ScheduledDecisionInstance"
+          },
           "conditionAssignments": {
             "additionalProperties": {
               "type": "string"
@@ -3091,7 +3409,6 @@
         "type": "object",
         "required": [
           "id",
-          "instanceType",
           "conditionAssignments"
         ],
         "title": "ScheduledDecisionInstance"
@@ -3154,6 +3471,11 @@
                 "type": "null"
               }
             ]
+          },
+          "instanceType": {
+            "const": "Study",
+            "title": "Instancetype",
+            "default": "Study"
           }
         },
         "type": "object",
@@ -3220,6 +3542,11 @@
                 "type": "null"
               }
             ]
+          },
+          "instanceType": {
+            "const": "Study",
+            "title": "Instancetype",
+            "default": "Study"
           }
         },
         "type": "object",
@@ -3275,6 +3602,11 @@
               }
             ],
             "title": "Previousid"
+          },
+          "instanceType": {
+            "const": "StudyAmendment",
+            "title": "Instancetype",
+            "default": "StudyAmendment"
           }
         },
         "type": "object",
@@ -3335,6 +3667,11 @@
               }
             ],
             "title": "Previousid"
+          },
+          "instanceType": {
+            "const": "StudyAmendment",
+            "title": "Instancetype",
+            "default": "StudyAmendment"
           }
         },
         "type": "object",
@@ -3368,6 +3705,11 @@
               }
             ],
             "title": "Otherreason"
+          },
+          "instanceType": {
+            "const": "StudyAmendmentReason",
+            "title": "Instancetype",
+            "default": "StudyAmendmentReason"
           }
         },
         "type": "object",
@@ -3428,6 +3770,11 @@
             "type": "array",
             "title": "Populationids",
             "default": []
+          },
+          "instanceType": {
+            "const": "StudyArm",
+            "title": "Instancetype",
+            "default": "StudyArm"
           }
         },
         "type": "object",
@@ -3462,6 +3809,11 @@
             "type": "array",
             "title": "Elementids",
             "default": []
+          },
+          "instanceType": {
+            "const": "StudyCell",
+            "title": "Instancetype",
+            "default": "StudyCell"
           }
         },
         "type": "object",
@@ -3506,6 +3858,10 @@
             ],
             "title": "Description"
           },
+          "includesHealthySubjects": {
+            "type": "boolean",
+            "title": "Includeshealthysubjects"
+          },
           "plannedEnrollmentNumber": {
             "anyOf": [
               {
@@ -3520,26 +3876,6 @@
             "anyOf": [
               {
                 "$ref": "#/components/schemas/Range"
-              },
-              {
-                "type": "null"
-              }
-            ]
-          },
-          "plannedMaximumAge": {
-            "anyOf": [
-              {
-                "$ref": "#/components/schemas/Quantity"
-              },
-              {
-                "type": "null"
-              }
-            ]
-          },
-          "plannedMinimumAge": {
-            "anyOf": [
-              {
-                "$ref": "#/components/schemas/Quantity"
               },
               {
                 "type": "null"
@@ -3562,6 +3898,21 @@
             "title": "Criteria",
             "default": []
           },
+          "plannedAge": {
+            "anyOf": [
+              {
+                "$ref": "#/components/schemas/Range"
+              },
+              {
+                "type": "null"
+              }
+            ]
+          },
+          "instanceType": {
+            "const": "StudyCohort",
+            "title": "Instancetype",
+            "default": "StudyCohort"
+          },
           "characteristics": {
             "items": {
               "$ref": "#/components/schemas/Characteristic"
@@ -3574,7 +3925,8 @@
         "type": "object",
         "required": [
           "id",
-          "name"
+          "name",
+          "includesHealthySubjects"
         ],
         "title": "StudyCohort"
       },
@@ -3612,6 +3964,10 @@
             ],
             "title": "Description"
           },
+          "includesHealthySubjects": {
+            "type": "boolean",
+            "title": "Includeshealthysubjects"
+          },
           "plannedEnrollmentNumber": {
             "anyOf": [
               {
@@ -3626,26 +3982,6 @@
             "anyOf": [
               {
                 "$ref": "#/components/schemas/Range"
-              },
-              {
-                "type": "null"
-              }
-            ]
-          },
-          "plannedMaximumAge": {
-            "anyOf": [
-              {
-                "$ref": "#/components/schemas/Quantity"
-              },
-              {
-                "type": "null"
-              }
-            ]
-          },
-          "plannedMinimumAge": {
-            "anyOf": [
-              {
-                "$ref": "#/components/schemas/Quantity"
               },
               {
                 "type": "null"
@@ -3668,6 +4004,21 @@
             "title": "Criteria",
             "default": []
           },
+          "plannedAge": {
+            "anyOf": [
+              {
+                "$ref": "#/components/schemas/Range"
+              },
+              {
+                "type": "null"
+              }
+            ]
+          },
+          "instanceType": {
+            "const": "StudyCohort",
+            "title": "Instancetype",
+            "default": "StudyCohort"
+          },
           "characteristics": {
             "items": {
               "$ref": "#/components/schemas/Characteristic"
@@ -3680,7 +4031,8 @@
         "type": "object",
         "required": [
           "id",
-          "name"
+          "name",
+          "includesHealthySubjects"
         ],
         "title": "StudyCohort"
       },
@@ -3740,6 +4092,14 @@
             },
             "type": "array",
             "title": "Therapeuticareas",
+            "default": []
+          },
+          "characteristics": {
+            "items": {
+              "$ref": "#/components/schemas/Code"
+            },
+            "type": "array",
+            "title": "Characteristics",
             "default": []
           },
           "interventionModel": {
@@ -3844,6 +4204,14 @@
             "title": "Indications",
             "default": []
           },
+          "maskingRoles": {
+            "items": {
+              "$ref": "#/components/schemas/Masking"
+            },
+            "type": "array",
+            "title": "Maskingroles",
+            "default": []
+          },
           "studyInterventions": {
             "items": {
               "$ref": "#/components/schemas/StudyIntervention-Input"
@@ -3888,6 +4256,14 @@
               }
             ]
           },
+          "appliesTo": {
+            "items": {
+              "$ref": "#/components/schemas/StudySite-Input"
+            },
+            "type": "array",
+            "title": "Appliesto",
+            "default": []
+          },
           "dictionaries": {
             "items": {
               "$ref": "#/components/schemas/SyntaxTemplateDictionary"
@@ -3895,6 +4271,27 @@
             "type": "array",
             "title": "Dictionaries",
             "default": []
+          },
+          "conditions": {
+            "items": {
+              "$ref": "#/components/schemas/Condition"
+            },
+            "type": "array",
+            "title": "Conditions",
+            "default": []
+          },
+          "organizations": {
+            "items": {
+              "$ref": "#/components/schemas/ResearchOrganization-Input"
+            },
+            "type": "array",
+            "title": "Organizations",
+            "default": []
+          },
+          "instanceType": {
+            "const": "StudyDesign",
+            "title": "Instancetype",
+            "default": "StudyDesign"
           }
         },
         "type": "object",
@@ -3965,6 +4362,14 @@
             },
             "type": "array",
             "title": "Therapeuticareas",
+            "default": []
+          },
+          "characteristics": {
+            "items": {
+              "$ref": "#/components/schemas/Code"
+            },
+            "type": "array",
+            "title": "Characteristics",
             "default": []
           },
           "interventionModel": {
@@ -4069,6 +4474,14 @@
             "title": "Indications",
             "default": []
           },
+          "maskingRoles": {
+            "items": {
+              "$ref": "#/components/schemas/Masking"
+            },
+            "type": "array",
+            "title": "Maskingroles",
+            "default": []
+          },
           "studyInterventions": {
             "items": {
               "$ref": "#/components/schemas/StudyIntervention-Output"
@@ -4113,6 +4526,14 @@
               }
             ]
           },
+          "appliesTo": {
+            "items": {
+              "$ref": "#/components/schemas/StudySite-Output"
+            },
+            "type": "array",
+            "title": "Appliesto",
+            "default": []
+          },
           "dictionaries": {
             "items": {
               "$ref": "#/components/schemas/SyntaxTemplateDictionary"
@@ -4120,6 +4541,27 @@
             "type": "array",
             "title": "Dictionaries",
             "default": []
+          },
+          "conditions": {
+            "items": {
+              "$ref": "#/components/schemas/Condition"
+            },
+            "type": "array",
+            "title": "Conditions",
+            "default": []
+          },
+          "organizations": {
+            "items": {
+              "$ref": "#/components/schemas/ResearchOrganization-Output"
+            },
+            "type": "array",
+            "title": "Organizations",
+            "default": []
+          },
+          "instanceType": {
+            "const": "StudyDesign",
+            "title": "Instancetype",
+            "default": "StudyDesign"
           }
         },
         "type": "object",
@@ -4168,6 +4610,10 @@
             ],
             "title": "Description"
           },
+          "includesHealthySubjects": {
+            "type": "boolean",
+            "title": "Includeshealthysubjects"
+          },
           "plannedEnrollmentNumber": {
             "anyOf": [
               {
@@ -4182,26 +4628,6 @@
             "anyOf": [
               {
                 "$ref": "#/components/schemas/Range"
-              },
-              {
-                "type": "null"
-              }
-            ]
-          },
-          "plannedMaximumAge": {
-            "anyOf": [
-              {
-                "$ref": "#/components/schemas/Quantity"
-              },
-              {
-                "type": "null"
-              }
-            ]
-          },
-          "plannedMinimumAge": {
-            "anyOf": [
-              {
-                "$ref": "#/components/schemas/Quantity"
               },
               {
                 "type": "null"
@@ -4224,6 +4650,21 @@
             "title": "Criteria",
             "default": []
           },
+          "plannedAge": {
+            "anyOf": [
+              {
+                "$ref": "#/components/schemas/Range"
+              },
+              {
+                "type": "null"
+              }
+            ]
+          },
+          "instanceType": {
+            "const": "StudyDesignPopulation",
+            "title": "Instancetype",
+            "default": "StudyDesignPopulation"
+          },
           "cohorts": {
             "items": {
               "$ref": "#/components/schemas/StudyCohort-Input"
@@ -4236,7 +4677,8 @@
         "type": "object",
         "required": [
           "id",
-          "name"
+          "name",
+          "includesHealthySubjects"
         ],
         "title": "StudyDesignPopulation"
       },
@@ -4274,6 +4716,10 @@
             ],
             "title": "Description"
           },
+          "includesHealthySubjects": {
+            "type": "boolean",
+            "title": "Includeshealthysubjects"
+          },
           "plannedEnrollmentNumber": {
             "anyOf": [
               {
@@ -4288,26 +4734,6 @@
             "anyOf": [
               {
                 "$ref": "#/components/schemas/Range"
-              },
-              {
-                "type": "null"
-              }
-            ]
-          },
-          "plannedMaximumAge": {
-            "anyOf": [
-              {
-                "$ref": "#/components/schemas/Quantity"
-              },
-              {
-                "type": "null"
-              }
-            ]
-          },
-          "plannedMinimumAge": {
-            "anyOf": [
-              {
-                "$ref": "#/components/schemas/Quantity"
               },
               {
                 "type": "null"
@@ -4330,6 +4756,21 @@
             "title": "Criteria",
             "default": []
           },
+          "plannedAge": {
+            "anyOf": [
+              {
+                "$ref": "#/components/schemas/Range"
+              },
+              {
+                "type": "null"
+              }
+            ]
+          },
+          "instanceType": {
+            "const": "StudyDesignPopulation",
+            "title": "Instancetype",
+            "default": "StudyDesignPopulation"
+          },
           "cohorts": {
             "items": {
               "$ref": "#/components/schemas/StudyCohort-Output"
@@ -4342,7 +4783,8 @@
         "type": "object",
         "required": [
           "id",
-          "name"
+          "name",
+          "includesHealthySubjects"
         ],
         "title": "StudyDesignPopulation"
       },
@@ -4407,6 +4849,11 @@
             "type": "array",
             "title": "Studyinterventionids",
             "default": []
+          },
+          "instanceType": {
+            "const": "StudyElement",
+            "title": "Instancetype",
+            "default": "StudyElement"
           }
         },
         "type": "object",
@@ -4474,6 +4921,11 @@
               }
             ],
             "title": "Nextid"
+          },
+          "instanceType": {
+            "const": "StudyEpoch",
+            "title": "Instancetype",
+            "default": "StudyEpoch"
           }
         },
         "type": "object",
@@ -4497,6 +4949,11 @@
           },
           "studyIdentifierScope": {
             "$ref": "#/components/schemas/Organization-Input"
+          },
+          "instanceType": {
+            "const": "StudyIdentifier",
+            "title": "Instancetype",
+            "default": "StudyIdentifier"
           }
         },
         "type": "object",
@@ -4520,6 +4977,11 @@
           },
           "studyIdentifierScope": {
             "$ref": "#/components/schemas/Organization-Output"
+          },
+          "instanceType": {
+            "const": "StudyIdentifier",
+            "title": "Instancetype",
+            "default": "StudyIdentifier"
           }
         },
         "type": "object",
@@ -4589,6 +5051,11 @@
           },
           "pharmacologicClass": {
             "$ref": "#/components/schemas/Code"
+          },
+          "instanceType": {
+            "const": "StudyIntervention",
+            "title": "Instancetype",
+            "default": "StudyIntervention"
           }
         },
         "type": "object",
@@ -4663,6 +5130,11 @@
           },
           "pharmacologicClass": {
             "$ref": "#/components/schemas/Code"
+          },
+          "instanceType": {
+            "const": "StudyIntervention",
+            "title": "Instancetype",
+            "default": "StudyIntervention"
           }
         },
         "type": "object",
@@ -4719,6 +5191,11 @@
             "type": "array",
             "title": "Versions",
             "default": []
+          },
+          "instanceType": {
+            "const": "StudyProtocolDocument",
+            "title": "Instancetype",
+            "default": "StudyProtocolDocument"
           }
         },
         "type": "object",
@@ -4769,6 +5246,11 @@
             "type": "array",
             "title": "Versions",
             "default": []
+          },
+          "instanceType": {
+            "const": "StudyProtocolDocument",
+            "title": "Instancetype",
+            "default": "StudyProtocolDocument"
           }
         },
         "type": "object",
@@ -4784,22 +5266,6 @@
             "type": "string",
             "minLength": 1,
             "title": "Id"
-          },
-          "briefTitle": {
-            "type": "string",
-            "title": "Brieftitle"
-          },
-          "officialTitle": {
-            "type": "string",
-            "title": "Officialtitle"
-          },
-          "publicTitle": {
-            "type": "string",
-            "title": "Publictitle"
-          },
-          "scientificTitle": {
-            "type": "string",
-            "title": "Scientifictitle"
           },
           "protocolVersion": {
             "type": "string",
@@ -4831,15 +5297,16 @@
             "type": "array",
             "title": "Childrenids",
             "default": []
+          },
+          "instanceType": {
+            "const": "StudyProtocolDocumentVersion",
+            "title": "Instancetype",
+            "default": "StudyProtocolDocumentVersion"
           }
         },
         "type": "object",
         "required": [
           "id",
-          "briefTitle",
-          "officialTitle",
-          "publicTitle",
-          "scientificTitle",
           "protocolVersion",
           "protocolStatus"
         ],
@@ -4851,22 +5318,6 @@
             "type": "string",
             "minLength": 1,
             "title": "Id"
-          },
-          "briefTitle": {
-            "type": "string",
-            "title": "Brieftitle"
-          },
-          "officialTitle": {
-            "type": "string",
-            "title": "Officialtitle"
-          },
-          "publicTitle": {
-            "type": "string",
-            "title": "Publictitle"
-          },
-          "scientificTitle": {
-            "type": "string",
-            "title": "Scientifictitle"
           },
           "protocolVersion": {
             "type": "string",
@@ -4898,19 +5349,162 @@
             "type": "array",
             "title": "Childrenids",
             "default": []
+          },
+          "instanceType": {
+            "const": "StudyProtocolDocumentVersion",
+            "title": "Instancetype",
+            "default": "StudyProtocolDocumentVersion"
           }
         },
         "type": "object",
         "required": [
           "id",
-          "briefTitle",
-          "officialTitle",
-          "publicTitle",
-          "scientificTitle",
           "protocolVersion",
           "protocolStatus"
         ],
         "title": "StudyProtocolDocumentVersion"
+      },
+      "StudySite-Input": {
+        "properties": {
+          "id": {
+            "type": "string",
+            "minLength": 1,
+            "title": "Id"
+          },
+          "name": {
+            "type": "string",
+            "minLength": 1,
+            "title": "Name"
+          },
+          "label": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Label"
+          },
+          "description": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Description"
+          },
+          "currentEnrollment": {
+            "anyOf": [
+              {
+                "$ref": "#/components/schemas/SubjectEnrollment-Input"
+              },
+              {
+                "type": "null"
+              }
+            ]
+          },
+          "instanceType": {
+            "const": "StudySite",
+            "title": "Instancetype",
+            "default": "StudySite"
+          }
+        },
+        "type": "object",
+        "required": [
+          "id",
+          "name"
+        ],
+        "title": "StudySite"
+      },
+      "StudySite-Output": {
+        "properties": {
+          "id": {
+            "type": "string",
+            "minLength": 1,
+            "title": "Id"
+          },
+          "name": {
+            "type": "string",
+            "minLength": 1,
+            "title": "Name"
+          },
+          "label": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Label"
+          },
+          "description": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Description"
+          },
+          "currentEnrollment": {
+            "anyOf": [
+              {
+                "$ref": "#/components/schemas/SubjectEnrollment-Output"
+              },
+              {
+                "type": "null"
+              }
+            ]
+          },
+          "instanceType": {
+            "const": "StudySite",
+            "title": "Instancetype",
+            "default": "StudySite"
+          }
+        },
+        "type": "object",
+        "required": [
+          "id",
+          "name"
+        ],
+        "title": "StudySite"
+      },
+      "StudyTitle": {
+        "properties": {
+          "id": {
+            "type": "string",
+            "minLength": 1,
+            "title": "Id"
+          },
+          "text": {
+            "type": "string",
+            "title": "Text"
+          },
+          "type": {
+            "$ref": "#/components/schemas/Code"
+          },
+          "instanceType": {
+            "const": "StudyTitle",
+            "title": "Instancetype",
+            "default": "StudyTitle"
+          }
+        },
+        "type": "object",
+        "required": [
+          "id",
+          "text",
+          "type"
+        ],
+        "title": "StudyTitle"
       },
       "StudyVersion-Input": {
         "properties": {
@@ -4919,10 +5513,6 @@
             "minLength": 1,
             "title": "Id"
           },
-          "studyTitle": {
-            "type": "string",
-            "title": "Studytitle"
-          },
           "versionIdentifier": {
             "type": "string",
             "title": "Versionidentifier"
@@ -4930,10 +5520,6 @@
           "rationale": {
             "type": "string",
             "title": "Rationale"
-          },
-          "studyAcronym": {
-            "type": "string",
-            "title": "Studyacronym"
           },
           "type": {
             "anyOf": [
@@ -5005,15 +5591,26 @@
             "type": "array",
             "title": "Studydesigns",
             "default": []
+          },
+          "titles": {
+            "items": {
+              "$ref": "#/components/schemas/StudyTitle"
+            },
+            "type": "array",
+            "title": "Titles"
+          },
+          "instanceType": {
+            "const": "StudyVersion",
+            "title": "Instancetype",
+            "default": "StudyVersion"
           }
         },
         "type": "object",
         "required": [
           "id",
-          "studyTitle",
           "versionIdentifier",
           "rationale",
-          "studyAcronym"
+          "titles"
         ],
         "title": "StudyVersion"
       },
@@ -5024,10 +5621,6 @@
             "minLength": 1,
             "title": "Id"
           },
-          "studyTitle": {
-            "type": "string",
-            "title": "Studytitle"
-          },
           "versionIdentifier": {
             "type": "string",
             "title": "Versionidentifier"
@@ -5035,10 +5628,6 @@
           "rationale": {
             "type": "string",
             "title": "Rationale"
-          },
-          "studyAcronym": {
-            "type": "string",
-            "title": "Studyacronym"
           },
           "type": {
             "anyOf": [
@@ -5110,15 +5699,26 @@
             "type": "array",
             "title": "Studydesigns",
             "default": []
+          },
+          "titles": {
+            "items": {
+              "$ref": "#/components/schemas/StudyTitle"
+            },
+            "type": "array",
+            "title": "Titles"
+          },
+          "instanceType": {
+            "const": "StudyVersion",
+            "title": "Instancetype",
+            "default": "StudyVersion"
           }
         },
         "type": "object",
         "required": [
           "id",
-          "studyTitle",
           "versionIdentifier",
           "rationale",
-          "studyAcronym"
+          "titles"
         ],
         "title": "StudyVersion"
       },
@@ -5128,14 +5728,6 @@
             "type": "string",
             "minLength": 1,
             "title": "Id"
-          },
-          "instanceType": {
-            "type": "string",
-            "enum": [
-              "GEOGRAPHIC_SCOPE",
-              "SUBJECT_ENROLLMENT"
-            ],
-            "title": "Instancetype"
           },
           "type": {
             "$ref": "#/components/schemas/Code"
@@ -5150,6 +5742,11 @@
               }
             ]
           },
+          "instanceType": {
+            "const": "SubjectEnrollment",
+            "title": "Instancetype",
+            "default": "SubjectEnrollment"
+          },
           "quantity": {
             "type": "string",
             "title": "Quantity"
@@ -5158,7 +5755,6 @@
         "type": "object",
         "required": [
           "id",
-          "instanceType",
           "type",
           "quantity"
         ],
@@ -5171,14 +5767,6 @@
             "minLength": 1,
             "title": "Id"
           },
-          "instanceType": {
-            "type": "string",
-            "enum": [
-              "GEOGRAPHIC_SCOPE",
-              "SUBJECT_ENROLLMENT"
-            ],
-            "title": "Instancetype"
-          },
           "type": {
             "$ref": "#/components/schemas/Code"
           },
@@ -5192,6 +5780,11 @@
               }
             ]
           },
+          "instanceType": {
+            "const": "SubjectEnrollment",
+            "title": "Instancetype",
+            "default": "SubjectEnrollment"
+          },
           "quantity": {
             "type": "string",
             "title": "Quantity"
@@ -5200,7 +5793,6 @@
         "type": "object",
         "required": [
           "id",
-          "instanceType",
           "type",
           "quantity"
         ],
@@ -5243,6 +5835,11 @@
           "parameterMap": {
             "type": "object",
             "title": "Parametermap"
+          },
+          "instanceType": {
+            "const": "SyntaxTemplateDictionary",
+            "title": "Instancetype",
+            "default": "SyntaxTemplateDictionary"
           }
         },
         "type": "object",
@@ -5351,6 +5948,11 @@
               }
             ],
             "title": "Window"
+          },
+          "instanceType": {
+            "const": "Timing",
+            "title": "Instancetype",
+            "default": "Timing"
           }
         },
         "type": "object",
@@ -5400,6 +6002,11 @@
           "text": {
             "type": "string",
             "title": "Text"
+          },
+          "instanceType": {
+            "const": "TransitionRule",
+            "title": "Instancetype",
+            "default": "TransitionRule"
           }
         },
         "type": "object",
