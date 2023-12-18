@@ -1671,6 +1671,11 @@ Organization:
       Codelist Ref: C188724
       Relationship Type: Value
       Model Name: type
+    instanceType:
+      Type:
+      - $ref: '#/string'
+      Cardinality: 0..1
+      Relationship Type: Value
 PopulationDefinition:
   NCI C-Code: CNEW
   Preferred Term: Population Definition
@@ -1918,11 +1923,12 @@ ResearchOrganization:
     or develop a plan of action based on the facts discovered.
   Super Classes:
   - $ref: '#/Organization'
-  Modifier: Abstract
+  Modifier: Concrete
   Attributes:
     id:
       Type:
       - $ref: '#/string'
+      Relationship Type: Value
       Model Name: id
       Inherited From:
         $ref: '#/Organization'
@@ -1933,6 +1939,7 @@ ResearchOrganization:
       Preferred Term: Research Organization Name
       Definition: The literal identifier (i.e., distinctive designation) of the research
         organization.
+      Relationship Type: Value
       Model Name: name
       Inherited From:
         $ref: '#/Organization'
@@ -1942,6 +1949,7 @@ ResearchOrganization:
       NCI C-Code: CNEW
       Preferred Term: Research Organization Label
       Definition: The short descriptive designation for the research organization.
+      Relationship Type: Value
       Model Name: label
       Inherited From:
         $ref: '#/Organization'
@@ -1952,6 +1960,7 @@ ResearchOrganization:
       Preferred Term: Research Organization Identifier
       Definition: A sequence of characters used to identify, name, or characterize
         the research organization.
+      Relationship Type: Value
       Model Name: identifier
       Inherited From:
         $ref: '#/Organization'
@@ -1962,6 +1971,7 @@ ResearchOrganization:
       Preferred Term: Identifier Provider Research Organization Name
       Definition: The name of the research organization that provides the identifier
         for the entity.
+      Relationship Type: Value
       Model Name: identifierScheme
       Inherited From:
         $ref: '#/Organization'
@@ -1969,6 +1979,7 @@ ResearchOrganization:
       Type:
       - $ref: '#/Address'
       Cardinality: 0..1
+      Relationship Type: Value
       Model Name: legalAddress
       Inherited From:
         $ref: '#/Organization'
@@ -1980,14 +1991,21 @@ ResearchOrganization:
       Preferred Term: Research Organization Type
       Definition: A characterization or classification of the research organization.
       Codelist Ref: C188724
+      Relationship Type: Value
       Model Name: type
       Inherited From:
         $ref: '#/Organization'
-    manages:
+    manageIds:
       Type:
       - $ref: '#/StudySite'
       Cardinality: 1..*
+      Relationship Type: Ref
       Model Name: manages
+    instanceType:
+      Type:
+      - $ref: '#/string'
+      Cardinality: 0..1
+      Relationship Type: Value
 ResponseCode:
   NCI C-Code: C201347
   Preferred Term: Response Code
@@ -2924,7 +2942,7 @@ StudyDesign:
       Relationship Type: Value
     organizations:
       Type:
-      - $ref: '#/Organization'
+      - $ref: '#/ResearchOrganization'
       Cardinality: 0..*
       Relationship Type: Value
     instanceType:
@@ -3210,6 +3228,11 @@ StudyIdentifier:
       Cardinality: '1'
       Relationship Type: Value
       Model Name: studyIdentifierScope
+    id:
+      Type:
+      - $ref: '#/string'
+      Cardinality: 0..1
+      Relationship Type: Value
     instanceType:
       Type:
       - $ref: '#/string'
@@ -3470,11 +3493,11 @@ StudySite:
       Definition: The short descriptive designation for the study site.
       Relationship Type: Value
       Model Name: label
-    currentEnrollmentId:
+    currentEnrollment:
       Type:
       - $ref: '#/SubjectEnrollment'
       Cardinality: 0..1
-      Relationship Type: Ref
+      Relationship Type: Value
       Model Name: currentEnrollment
     instanceType:
       Type:
@@ -3500,7 +3523,7 @@ StudyTitle:
       Definition: An instance of unstructured text that represents the study title.
       Relationship Type: Value
       Model Name: text
-    typeId:
+    type:
       Type:
       - $ref: '#/Code'
       NCI C-Code: CNEW
@@ -3508,7 +3531,7 @@ StudyTitle:
       Preferred Term: Study Title Type
       Definition: A characterization or classification of the study title.
       Codelist Ref: CNEW-DDF Study Title Attribute Terminology
-      Relationship Type: Ref
+      Relationship Type: Value
       Model Name: type
     instanceType:
       Type:
