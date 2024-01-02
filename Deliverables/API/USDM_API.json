@@ -1908,14 +1908,14 @@
           },
           "instanceType": {
             "const": "GeographicScope",
-            "title": "Instancetype"
+            "title": "Instancetype",
+            "default": "GeographicScope"
           }
         },
         "type": "object",
         "required": [
           "id",
-          "type",
-          "instanceType"
+          "type"
         ],
         "title": "GeographicScope"
       },
@@ -1941,14 +1941,14 @@
           },
           "instanceType": {
             "const": "GeographicScope",
-            "title": "Instancetype"
+            "title": "Instancetype",
+            "default": "GeographicScope"
           }
         },
         "type": "object",
         "required": [
           "id",
-          "type",
-          "instanceType"
+          "type"
         ],
         "title": "GeographicScope"
       },
@@ -5044,7 +5044,11 @@
             "default": []
           },
           "administrations": {
-            "$ref": "#/components/schemas/AgentAdministration-Input"
+            "items": {
+              "$ref": "#/components/schemas/AgentAdministration-Input"
+            },
+            "type": "array",
+            "title": "Administrations"
           },
           "productDesignation": {
             "$ref": "#/components/schemas/Code"
@@ -5123,7 +5127,11 @@
             "default": []
           },
           "administrations": {
-            "$ref": "#/components/schemas/AgentAdministration-Output"
+            "items": {
+              "$ref": "#/components/schemas/AgentAdministration-Output"
+            },
+            "type": "array",
+            "title": "Administrations"
           },
           "productDesignation": {
             "$ref": "#/components/schemas/Code"
@@ -5748,8 +5756,7 @@
             "default": "SubjectEnrollment"
           },
           "quantity": {
-            "type": "string",
-            "title": "Quantity"
+            "$ref": "#/components/schemas/Quantity"
           }
         },
         "type": "object",
@@ -5786,8 +5793,7 @@
             "default": "SubjectEnrollment"
           },
           "quantity": {
-            "type": "string",
-            "title": "Quantity"
+            "$ref": "#/components/schemas/Quantity"
           }
         },
         "type": "object",
