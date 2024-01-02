@@ -1228,11 +1228,11 @@ components:
         instanceType:
           const: GeographicScope
           title: Instancetype
+          default: GeographicScope
       type: object
       required:
       - id
       - type
-      - instanceType
       title: GeographicScope
     GeographicScope-Output:
       properties:
@@ -1249,11 +1249,11 @@ components:
         instanceType:
           const: GeographicScope
           title: Instancetype
+          default: GeographicScope
       type: object
       required:
       - id
       - type
-      - instanceType
       title: GeographicScope
     GovernanceDate-Input:
       properties:
@@ -3229,7 +3229,10 @@ components:
           title: Codes
           default: []
         administrations:
-          $ref: '#/components/schemas/AgentAdministration-Input'
+          items:
+            $ref: '#/components/schemas/AgentAdministration-Input'
+          type: array
+          title: Administrations
         productDesignation:
           $ref: '#/components/schemas/Code'
         pharmacologicClass:
@@ -3282,7 +3285,10 @@ components:
           title: Codes
           default: []
         administrations:
-          $ref: '#/components/schemas/AgentAdministration-Output'
+          items:
+            $ref: '#/components/schemas/AgentAdministration-Output'
+          type: array
+          title: Administrations
         productDesignation:
           $ref: '#/components/schemas/Code'
         pharmacologicClass:
@@ -3696,8 +3702,7 @@ components:
           title: Instancetype
           default: SubjectEnrollment
         quantity:
-          type: string
-          title: Quantity
+          $ref: '#/components/schemas/Quantity'
       type: object
       required:
       - id
@@ -3721,8 +3726,7 @@ components:
           title: Instancetype
           default: SubjectEnrollment
         quantity:
-          type: string
-          title: Quantity
+          $ref: '#/components/schemas/Quantity'
       type: object
       required:
       - id
