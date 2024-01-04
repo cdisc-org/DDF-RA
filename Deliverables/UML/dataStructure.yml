@@ -839,116 +839,73 @@ Condition:
       - $ref: '#/string'
       Cardinality: 0..1
       Relationship Type: Value
-EligibilityCriteria:
-  NCI C-Code: C16112
-  Preferred Term: Study Eligibility Criteria
-  Definition: Characteristics which are necessary to allow a subject to participate
-    in a clinical study, as outlined in the study protocol. The concept covers inclusion
-    and exclusion criteria.
+EligibilityCriterion:
   Super Classes:
   - $ref: '#/SyntaxTemplate'
-  Modifier: Concrete
+  Modifier: Abstract
   Attributes:
     id:
       Type:
       - $ref: '#/string'
-      Relationship Type: Value
       Model Name: id
       Inherited From:
         $ref: '#/SyntaxTemplate'
     name:
       Type:
       - $ref: '#/string'
-      NCI C-Code: CNEW
-      Preferred Term: Study Eligibility Criteria Description
-      Definition: A narrative representation of the study eligibility criteria.
-      Relationship Type: Value
       Model Name: name
       Inherited From:
         $ref: '#/SyntaxTemplate'
     description:
       Type:
       - $ref: '#/string'
-      NCI C-Code: CNEW
-      Preferred Term: Study Eligibility Criteria Name
-      Definition: The literal identifier (i.e., distinctive designation) of the study
-        eligibility criteria.
-      Relationship Type: Value
       Model Name: description
       Inherited From:
         $ref: '#/SyntaxTemplate'
     label:
       Type:
       - $ref: '#/string'
-      NCI C-Code: CNEW
-      Preferred Term: Study Eligibility Criteria Label
-      Definition: The short descriptive designation for the study eligibility criteria.
-      Relationship Type: Value
       Model Name: label
       Inherited From:
         $ref: '#/SyntaxTemplate'
     text:
       Type:
       - $ref: '#/string'
-      NCI C-Code: CNEW
-      Preferred Term: Eligibility Criteria Text
-      Definition: An instance of structured text that represents the study eligibility
-        criteria.
-      Relationship Type: Value
       Model Name: text
       Inherited From:
         $ref: '#/SyntaxTemplate'
-    dictionaryId:
+    dictionary:
       Type:
       - $ref: '#/SyntaxTemplateDictionary'
       Cardinality: 0..1
-      Relationship Type: Ref
       Model Name: dictionary
       Inherited From:
         $ref: '#/SyntaxTemplate'
     identifier:
       Type:
       - $ref: '#/string'
-      NCI C-Code: CNEW
-      Preferred Term: Study Eligibility Criterion Identifier
-      Definition: A sequence of characters used to identify, name, or characterize
-        the inclusion or exclusion criterion.
-      Relationship Type: Value
       Model Name: identifier
     category:
       Type:
       - $ref: '#/Code'
-      NCI C-Code: C83016
       Cardinality: '1'
-      Preferred Term: Study Eligibility Criteria Category
-      Definition: A classification of the inclusion exclusion criterion.
-      Codelist Ref: SDTM Terminology Codelist C66797
-      Relationship Type: Value
       Model Name: category
-    contextId:
+    context:
       Type:
       - $ref: '#/StudyDesign'
       - $ref: '#/StudyVersion'
       Cardinality: 0..1
-      Relationship Type: Ref
       Model Name: context
-    nextId:
+    next:
       Type:
-      - $ref: '#/EligibilityCriteria'
+      - $ref: '#/EligibilityCriterion'
       Cardinality: 0..1
-      Relationship Type: Ref
       Model Name: next
-    previousId:
+    previous:
       Type:
-      - $ref: '#/EligibilityCriteria'
+      - $ref: '#/EligibilityCriterion'
       Cardinality: 0..1
-      Relationship Type: Ref
       Model Name: previous
-    instanceType:
-      Type:
-      - $ref: '#/string'
-      Cardinality: 0..1
-      Relationship Type: Value
 Encounter:
   NCI C-Code: C142427
   Preferred Term: Clinical Encounter
@@ -1190,12 +1147,17 @@ Estimand:
       Cardinality: 1..*
       Relationship Type: Value
       Model Name: intercurrentEvents
-    treatmentId:
+    intervention*:
       Type:
       - $ref: '#/StudyIntervention'
       Cardinality: '1'
-      Relationship Type: Ref
-      Model Name: treatment
+      Relationship Type: UNKNOWN
+      Model Name: intervention
+    treatmentId:
+      Type:
+      - $ref: '#/string'
+      Cardinality: 0..1
+      Relationship Type: Value
     instanceType:
       Type:
       - $ref: '#/string'
@@ -1730,7 +1692,7 @@ PopulationDefinition:
       Model Name: plannedSex
     criteria:
       Type:
-      - $ref: '#/EligibilityCriteria'
+      - $ref: '#/EligibilityCriterion'
       Cardinality: 1..*
       Model Name: criteria
     plannedAge:
@@ -2114,6 +2076,12 @@ ScheduleTimeline:
       Cardinality: 0..*
       Relationship Type: Value
       Model Name: exits
+    timings*:
+      Type:
+      - $ref: '#/Timing'
+      Cardinality: 1..*
+      Relationship Type: UNKNOWN
+      Model Name: timings
     instanceType:
       Type:
       - $ref: '#/string'
@@ -2158,14 +2126,6 @@ ScheduledActivityInstance:
       Model Name: defaultCondition
       Inherited From:
         $ref: '#/ScheduledInstance'
-    timings:
-      Type:
-      - $ref: '#/Timing'
-      Cardinality: 0..*
-      Relationship Type: Value
-      Model Name: timings
-      Inherited From:
-        $ref: '#/ScheduledInstance'
     epochId:
       Type:
       - $ref: '#/StudyEpoch'
@@ -2202,6 +2162,11 @@ ScheduledActivityInstance:
       Cardinality: 0..1
       Relationship Type: Ref
       Model Name: encounter
+    timings:
+      Type:
+      - $ref: '#/Timing'
+      Cardinality: 0..*
+      Relationship Type: Value
     instanceType:
       Type:
       - $ref: '#/string'
@@ -2228,14 +2193,6 @@ ScheduledDecisionInstance:
       Cardinality: 0..1
       Relationship Type: Ref
       Model Name: defaultCondition
-      Inherited From:
-        $ref: '#/ScheduledInstance'
-    timings:
-      Type:
-      - $ref: '#/Timing'
-      Cardinality: 0..*
-      Relationship Type: Value
-      Model Name: timings
       Inherited From:
         $ref: '#/ScheduledInstance'
     epochId:
@@ -2271,6 +2228,11 @@ ScheduledDecisionInstance:
         met in order to make a logical decision.
       Relationship Type: Value
       Model Name: conditionAssignments
+    timings:
+      Type:
+      - $ref: '#/Timing'
+      Cardinality: 0..*
+      Relationship Type: Value
     instanceType:
       Type:
       - $ref: '#/string'
@@ -2294,11 +2256,6 @@ ScheduledInstance:
       - $ref: '#/ScheduledInstance'
       Cardinality: 0..1
       Model Name: defaultCondition
-    timings:
-      Type:
-      - $ref: '#/Timing'
-      Cardinality: 0..*
-      Model Name: timings
     epoch:
       Type:
       - $ref: '#/StudyEpoch'
@@ -2657,7 +2614,7 @@ StudyCohort:
         $ref: '#/PopulationDefinition'
     criteria:
       Type:
-      - $ref: '#/EligibilityCriteria'
+      - $ref: '#/EligibilityCriterion'
       Cardinality: 1..*
       Relationship Type: Value
       Model Name: criteria
@@ -2861,6 +2818,12 @@ StudyDesign:
       Cardinality: 0..*
       Relationship Type: Value
       Model Name: objectives
+    organizations:
+      Type:
+      - $ref: '#/ResearchOrganization'
+      Cardinality: 1..*
+      Relationship Type: Value
+      Model Name: organizations
     scheduleTimelines:
       Type:
       - $ref: '#/ScheduleTimeline'
@@ -2891,12 +2854,6 @@ StudyDesign:
       Cardinality: 0..1
       Relationship Type: Value
       Model Name: documentVersion
-    appliesTo:
-      Type:
-      - $ref: '#/StudySite'
-      Cardinality: 0..*
-      Relationship Type: Value
-      Model Name: appliesTo
     studyInterventions:
       Type:
       - $ref: '#/StudyIntervention'
@@ -2930,6 +2887,11 @@ StudyDesign:
       - $ref: '#/BiomedicalConceptSurrogate'
       Cardinality: 0..*
       Relationship Type: Value
+    appliesTo:
+      Type:
+      - $ref: '#/StudySite'
+      Cardinality: 0..*
+      Relationship Type: Value
     dictionaries:
       Type:
       - $ref: '#/SyntaxTemplateDictionary'
@@ -2938,11 +2900,6 @@ StudyDesign:
     conditions:
       Type:
       - $ref: '#/Condition'
-      Cardinality: 0..*
-      Relationship Type: Value
-    organizations:
-      Type:
-      - $ref: '#/ResearchOrganization'
       Cardinality: 0..*
       Relationship Type: Value
     instanceType:
@@ -3023,7 +2980,7 @@ StudyDesignPopulation:
         $ref: '#/PopulationDefinition'
     criteria:
       Type:
-      - $ref: '#/EligibilityCriteria'
+      - $ref: '#/EligibilityCriterion'
       Cardinality: 1..*
       Relationship Type: Value
       Model Name: criteria
@@ -3709,7 +3666,7 @@ SyntaxTemplate:
   Sub Classes:
   - $ref: '#/Characteristic'
   - $ref: '#/Condition'
-  - $ref: '#/EligibilityCriteria'
+  - $ref: '#/EligibilityCriterion'
   - $ref: '#/Endpoint'
   - $ref: '#/Objective'
   Modifier: Abstract
