@@ -3552,17 +3552,12 @@ StudyVersion:
       Codelist Ref: (Point out to external dictionaries)
       Relationship Type: Value
       Model Name: businessTherapeuticAreas
-    type:
+    studyType*:
       Type:
       - $ref: '#/Code'
-      NCI C-Code: C142175
       Cardinality: 0..1
-      Preferred Term: Study Type Classification
-      Definition: The nature of the investigation for which study information is being
-        collected. (After clinicaltrials.gov)
-      Codelist Ref: SDTM Terminology Codelist C99077
-      Relationship Type: Value
-      Model Name: type
+      Relationship Type: UNKNOWN
+      Model Name: studyType
     dateValues:
       Type:
       - $ref: '#/GovernanceDate'
@@ -3599,6 +3594,10 @@ StudyVersion:
       Cardinality: 1..*
       Relationship Type: Value
       Model Name: titles
+    type:
+      Type:
+      - $ref: UNKNOWN
+      Relationship Type: Value
     instanceType:
       Type:
       - $ref: '#/string'
