@@ -840,6 +840,11 @@ Condition:
       Cardinality: 0..1
       Relationship Type: Value
 EligibilityCriterion:
+  NCI C-Code: C16112
+  Preferred Term: Study Eligibility Criteria
+  Definition: Characteristics which are necessary to allow a subject to participate
+    in a clinical study, as outlined in the study protocol. The concept covers inclusion
+    and exclusion criteria.
   Super Classes:
   - $ref: '#/SyntaxTemplate'
   Modifier: Abstract
@@ -853,24 +858,38 @@ EligibilityCriterion:
     name:
       Type:
       - $ref: '#/string'
+      NCI C-Code: CNEW
+      Preferred Term: Study Eligibility Criteria Description
+      Definition: A narrative representation of the study eligibility criteria.
       Model Name: name
       Inherited From:
         $ref: '#/SyntaxTemplate'
     description:
       Type:
       - $ref: '#/string'
+      NCI C-Code: CNEW
+      Preferred Term: Study Eligibility Criteria Name
+      Definition: The literal identifier (i.e., distinctive designation) of the study
+        eligibility criteria.
       Model Name: description
       Inherited From:
         $ref: '#/SyntaxTemplate'
     label:
       Type:
       - $ref: '#/string'
+      NCI C-Code: CNEW
+      Preferred Term: Study Eligibility Criteria Label
+      Definition: The short descriptive designation for the study eligibility criteria.
       Model Name: label
       Inherited From:
         $ref: '#/SyntaxTemplate'
     text:
       Type:
       - $ref: '#/string'
+      NCI C-Code: CNEW
+      Preferred Term: Eligibility Criteria Text
+      Definition: An instance of structured text that represents the study eligibility
+        criteria.
       Model Name: text
       Inherited From:
         $ref: '#/SyntaxTemplate'
@@ -884,11 +903,19 @@ EligibilityCriterion:
     identifier:
       Type:
       - $ref: '#/string'
+      NCI C-Code: CNEW
+      Preferred Term: Study Eligibility Criterion Identifier
+      Definition: A sequence of characters used to identify, name, or characterize
+        the inclusion or exclusion criterion.
       Model Name: identifier
     category:
       Type:
       - $ref: '#/Code'
+      NCI C-Code: C83016
       Cardinality: '1'
+      Preferred Term: Study Eligibility Criteria Category
+      Definition: A classification of the inclusion exclusion criterion.
+      Codelist Ref: SDTM Terminology Codelist C66797
       Model Name: category
     context:
       Type:
@@ -1945,7 +1972,11 @@ ResearchOrganization:
     organizationType*:
       Type:
       - $ref: '#/Code'
+      NCI C-Code: CNEW
       Cardinality: '1'
+      Preferred Term: Research Organization Type
+      Definition: A characterization or classification of the research organization.
+      Codelist Ref: C188724
       Relationship Type: UNKNOWN
       Model Name: organizationType
       Inherited From:
@@ -2760,7 +2791,7 @@ StudyDesign:
       Cardinality: 0..*
       Preferred Term: Study Design Characteristic
       Definition: The distinguishing qualities or prominent aspect of a study design.
-      Codelist Ref: CNEW
+      Codelist Ref: CNEW - Study Design Characteristics Value Set Terminology
       Relationship Type: Value
       Model Name: characteristics
     trialTypes:
@@ -3552,7 +3583,12 @@ StudyVersion:
     studyType*:
       Type:
       - $ref: '#/Code'
+      NCI C-Code: C142175
       Cardinality: 0..1
+      Preferred Term: Study Type Classification
+      Definition: The nature of the investigation for which study information is being
+        collected. (After clinicaltrials.gov)
+      Codelist Ref: SDTM Terminology Codelist C99077
       Relationship Type: UNKNOWN
       Model Name: studyType
     dateValues:
