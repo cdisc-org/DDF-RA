@@ -1222,7 +1222,7 @@ GeographicScope:
       Cardinality: '1'
       Preferred Term: Geographic Scope Type
       Definition: A characterization or classification of the geographic scope.
-      Codelist Ref: CNEW - Geographic Scope Type Value Set Terminology
+      Codelist Ref: CNEW - Geographic Scope Type Response
       Relationship Type: Value
       Model Name: type
     instanceType:
@@ -1282,7 +1282,7 @@ GovernanceDate:
       Cardinality: '1'
       Preferred Term: Protocol Approval Date Type
       Definition: A characterization or classification of the protocol approval date.
-      Codelist Ref: CNEW - Governance Date Type Value Set Terminology
+      Codelist Ref: CNEW - Governance Date Type Response
       Relationship Type: Value
       Model Name: type
     geographicScopes:
@@ -2791,7 +2791,7 @@ StudyDesign:
       Cardinality: 0..*
       Preferred Term: Study Design Characteristic
       Definition: The distinguishing qualities or prominent aspect of a study design.
-      Codelist Ref: CNEW - Study Design Characteristics Value Set Terminology
+      Codelist Ref: CNEW - Study Design Characteristics Response
       Relationship Type: Value
       Model Name: characteristics
     trialTypes:
@@ -3515,7 +3515,7 @@ StudyTitle:
       Cardinality: '1'
       Preferred Term: Study Title Type
       Definition: A characterization or classification of the study title.
-      Codelist Ref: CNEW-DDF Study Title Attribute Terminology
+      Codelist Ref: CNEW-Study Title Type Response
       Relationship Type: Value
       Model Name: type
     instanceType:
