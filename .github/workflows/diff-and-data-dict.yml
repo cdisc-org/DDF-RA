@@ -1,6 +1,11 @@
 name: Generate Diff and Data Dict
 on:
   workflow_dispatch:
+    inputs:
+      prev-branch:
+        description: "Previous Branch/Tag"
+        required: false
+        default: "main"
   push:
     branches-ignore:
       - "main"
@@ -17,11 +22,11 @@ jobs:
         uses: actions/checkout@v4
         with:
           path: currentRelease
-      - name: Checkout main branch to prevRelease dir
+      - name: Checkout specified or main branch to prevRelease dir
         uses: actions/checkout@v4
         with:
           path: prevRelease
-          ref: main
+          ref: ${{ inputs.prev-branch }}"
       - name: Checkout the usdm dictionary generator to usdm-dictionary-generator dir
         uses: actions/checkout@v4
         with:
