@@ -1,0 +1,578 @@
+status,class_name,property_name,data_type
+Class - NEW,AdministrationDuration,,
+,,id,string
+,,description,string
+,,durationWillVary,Boolean
+,,reasonDurationWillVary,string
+,,quantity,Quantity
+Class - NEW,AgentAdministration,,
+,,id,string
+,,name,string
+,,description,string
+,,label,string
+,,duration,AdministrationDuration
+,,route,Code
+,,dose,Quantity
+,,frequency,Code
+Class - NEW,Characteristic,,
+,,id,string
+,,name,string
+,,description,string
+,,label,string
+,,text,string
+,,dictionary,SyntaxTemplateDictionary
+Class - NEW,Condition,,
+,,id,string
+,,name,string
+,,description,string
+,,label,string
+,,text,string
+,,dictionary,SyntaxTemplateDictionary
+,,context,"Activity, ScheduledActivityInstance"
+,,appliesTo,"Activity, BiomedicalConcept, BiomedicalConceptCategory, BiomedicalConceptSurrogate, Procedure"
+Class - NEW,EligibilityCriterion,,
+,,id,string
+,,name,string
+,,description,string
+,,label,string
+,,text,string
+,,dictionary,SyntaxTemplateDictionary
+,,identifier,string
+,,category,Code
+,,context,"StudyDesign, StudyVersion"
+,,next,EligibilityCriterion
+,,previous,EligibilityCriterion
+Class - NEW,GeographicScope,,
+,,id,string
+,,code,AliasCode
+,,type,Code
+Class - NEW,GovernanceDate,,
+,,id,string
+,,name,string
+,,description,string
+,,label,string
+,,dateValue,Date
+,,type,Code
+,,geographicScopes,GeographicScope
+Class - NEW,Masking,,
+,,id,string
+,,description,string
+,,role,Code
+Class - NEW,NarrativeContent,,
+,,id,string
+,,name,string
+,,text,string
+,,sectionNumber,string
+,,sectionTitle,string
+,,children,NarrativeContent
+Class - NEW,PopulationDefinition,,
+,,id,string
+,,name,string
+,,description,string
+,,label,string
+,,includesHealthySubjects,Boolean
+,,plannedSex,Code
+,,criteria,EligibilityCriterion
+,,plannedAge,Range
+,,plannedEnrollmentNumber,Range
+,,plannedCompletionNumber,Range
+Class - NEW,Quantity,,
+,,id,string
+,,value,Float
+,,unit,Code
+Class - NEW,Range,,
+,,id,string
+,,minValue,Float
+,,maxValue,Float
+,,isApproximate,Boolean
+,,unit,Code
+Class - NEW,ResearchOrganization,,
+,,id,string
+,,name,string
+,,label,string
+,,identifier,string
+,,identifierScheme,string
+,,legalAddress,Address
+,,organizationType,Code
+,,manages,StudySite
+Class - NEW,StudyAmendment,,
+,,id,string
+,,number,string
+,,summary,string
+,,substantialImpact,Boolean
+,,enrollments,SubjectEnrollment
+,,secondaryReasons,StudyAmendmentReason
+,,previous,StudyAmendment
+,,primaryReason,StudyAmendmentReason
+Class - NEW,StudyAmendmentReason,,
+,,id,string
+,,otherReason,string
+,,code,Code
+Class - NEW,StudyCohort,,
+,,id,string
+,,name,string
+,,description,string
+,,label,string
+,,includesHealthySubjects,Boolean
+,,plannedSex,Code
+,,criteria,EligibilityCriterion
+,,plannedAge,Range
+,,plannedEnrollmentNumber,Range
+,,plannedCompletionNumber,Range
+,,characteristics,Characteristic
+Class - NEW,StudyIntervention,,
+,,id,string
+,,description,string
+,,name,string
+,,label,string
+,,administrations,AgentAdministration
+,,type,Code
+,,role,Code
+,,productDesignation,Code
+,,pharmacologicClass,Code
+,,codes,Code
+,,minimumResponseDuration,Quantity
+Class - NEW,StudyProtocolDocument,,
+,,id,string
+,,name,string
+,,description,string
+,,label,string
+,,versions,StudyProtocolDocumentVersion
+Class - NEW,StudyProtocolDocumentVersion,,
+,,id,string
+,,protocolVersion,string
+,,protocolStatus,Code
+,,dateValues,GovernanceDate
+,,contents,NarrativeContent
+,,children,StudyProtocolDocumentVersion
+Class - NEW,StudySite,,
+,,id,string
+,,name,string
+,,description,string
+,,label,string
+,,currentEnrollment,SubjectEnrollment
+Class - NEW,StudyTitle,,
+,,id,string
+,,text,string
+,,type,Code
+Class - NEW,StudyVersion,,
+,,id,string
+,,versionIdentifier,string
+,,rationale,string
+,,studyPhase,AliasCode
+,,businessTherapeuticAreas,Code
+,,studyType,Code
+,,dateValues,GovernanceDate
+,,amendments,StudyAmendment
+,,studyDesigns,StudyDesign
+,,studyIdentifiers,StudyIdentifier
+,,documentVersion,StudyProtocolDocumentVersion
+,,titles,StudyTitle
+Class - NEW,SubjectEnrollment,,
+,,id,string
+,,code,AliasCode
+,,type,Code
+,,quantity,Quantity
+Class - NEW,SyntaxTemplate,,
+,,id,string
+,,name,string
+,,description,string
+,,label,string
+,,text,string
+,,dictionary,SyntaxTemplateDictionary
+Class - NEW,SyntaxTemplateDictionary,,
+,,id,string
+,,name,string
+,,description,string
+,,label,string
+,,parameterMap,Map
+Class - DELETED,InvestigationalIntervention,,
+,,codes,List\<Code>
+,,interventionDescription,string
+,,investigationalInterventionId,string
+Class - DELETED,StudyProtocolVersion,,
+,,briefTitle,string
+,,officialTitle,string
+,,protocolAmendment,string
+,,protocolEffectiveDate,Date
+,,protocolStatus,Code
+,,protocolVersion,string
+,,publicTitle,string
+,,scientificTitle,string
+,,studyProtocolVersionId,string
+,,,
+Property - NEW,BiomedicalConceptCategory,children,BiomedicalConceptCategory
+Property - NEW,BiomedicalConceptCategory,code,AliasCode
+Property - NEW,BiomedicalConceptCategory,description,string
+Property - NEW,BiomedicalConceptCategory,id,string
+Property - NEW,BiomedicalConceptCategory,label,string
+Property - NEW,BiomedicalConceptCategory,members,BiomedicalConcept
+Property - NEW,BiomedicalConceptCategory,name,string
+Property - NEW,Organization,id,string
+Property - NEW,Organization,identifier,string
+Property - NEW,Organization,identifierScheme,string
+Property - NEW,Organization,label,string
+Property - NEW,Organization,legalAddress,Address
+Property - NEW,Organization,name,string
+Property - NEW,Address,id,string
+Property - NEW,Indication,description,string
+Property - NEW,Indication,id,string
+Property - NEW,Indication,isRareDisease,Boolean
+Property - NEW,Indication,label,string
+Property - NEW,Indication,name,string
+Property - NEW,StudyEpoch,description,string
+Property - NEW,StudyEpoch,id,string
+Property - NEW,StudyEpoch,label,string
+Property - NEW,StudyEpoch,name,string
+Property - NEW,StudyEpoch,next,StudyEpoch
+Property - NEW,StudyEpoch,previous,StudyEpoch
+Property - NEW,StudyEpoch,type,Code
+Property - NEW,Estimand,id,string
+Property - NEW,Estimand,intervention,StudyIntervention
+Property - NEW,StudyArm,dataOriginDescription,string
+Property - NEW,StudyArm,dataOriginType,Code
+Property - NEW,StudyArm,description,string
+Property - NEW,StudyArm,id,string
+Property - NEW,StudyArm,label,string
+Property - NEW,StudyArm,name,string
+Property - NEW,StudyArm,populations,PopulationDefinition
+Property - NEW,StudyArm,type,Code
+Property - NEW,StudyDesignPopulation,cohorts,StudyCohort
+Property - NEW,StudyDesignPopulation,criteria,EligibilityCriterion
+Property - NEW,StudyDesignPopulation,description,string
+Property - NEW,StudyDesignPopulation,id,string
+Property - NEW,StudyDesignPopulation,includesHealthySubjects,Boolean
+Property - NEW,StudyDesignPopulation,label,string
+Property - NEW,StudyDesignPopulation,name,string
+Property - NEW,StudyDesignPopulation,plannedAge,Range
+Property - NEW,StudyDesignPopulation,plannedCompletionNumber,Range
+Property - NEW,StudyDesignPopulation,plannedEnrollmentNumber,Range
+Property - NEW,StudyDesignPopulation,plannedSex,Code
+Property - NEW,Activity,bcCategories,BiomedicalConceptCategory
+Property - NEW,Activity,bcSurrogates,BiomedicalConceptSurrogate
+Property - NEW,Activity,biomedicalConcepts,BiomedicalConcept
+Property - NEW,Activity,description,string
+Property - NEW,Activity,id,string
+Property - NEW,Activity,label,string
+Property - NEW,Activity,name,string
+Property - NEW,Activity,next,Activity
+Property - NEW,Activity,previous,Activity
+Property - NEW,Activity,timeline,ScheduleTimeline
+Property - NEW,TransitionRule,description,string
+Property - NEW,TransitionRule,id,string
+Property - NEW,TransitionRule,label,string
+Property - NEW,TransitionRule,name,string
+Property - NEW,TransitionRule,text,string
+Property - NEW,StudyDesign,arms,StudyArm
+Property - NEW,StudyDesign,blindingSchema,Code
+Property - NEW,StudyDesign,characteristics,Code
+Property - NEW,StudyDesign,description,string
+Property - NEW,StudyDesign,documentVersion,StudyProtocolDocumentVersion
+Property - NEW,StudyDesign,elements,StudyElement
+Property - NEW,StudyDesign,epochs,StudyEpoch
+Property - NEW,StudyDesign,estimands,Estimand
+Property - NEW,StudyDesign,id,string
+Property - NEW,StudyDesign,indications,Indication
+Property - NEW,StudyDesign,label,string
+Property - NEW,StudyDesign,maskingRoles,Masking
+Property - NEW,StudyDesign,name,string
+Property - NEW,StudyDesign,objectives,Objective
+Property - NEW,StudyDesign,organizations,ResearchOrganization
+Property - NEW,StudyDesign,population,StudyDesignPopulation
+Property - NEW,StudyDesign,rationale,string
+Property - NEW,StudyDesign,scheduleTimelines,ScheduleTimeline
+Property - NEW,StudyDesign,studyInterventions,StudyIntervention
+Property - NEW,StudyDesign,trialTypes,Code
+Property - NEW,ScheduleTimelineExit,id,string
+Property - NEW,Endpoint,description,string
+Property - NEW,Endpoint,dictionary,SyntaxTemplateDictionary
+Property - NEW,Endpoint,id,string
+Property - NEW,Endpoint,label,string
+Property - NEW,Endpoint,level,Code
+Property - NEW,Endpoint,name,string
+Property - NEW,Endpoint,purpose,string
+Property - NEW,Endpoint,text,string
+Property - NEW,Encounter,contactModes,Code
+Property - NEW,Encounter,description,string
+Property - NEW,Encounter,environmentalSetting,Code
+Property - NEW,Encounter,id,string
+Property - NEW,Encounter,label,string
+Property - NEW,Encounter,name,string
+Property - NEW,Encounter,next,Encounter
+Property - NEW,Encounter,previous,Encounter
+Property - NEW,Encounter,scheduledAt,Timing
+Property - NEW,Encounter,type,Code
+Property - NEW,Procedure,code,Code
+Property - NEW,Procedure,description,string
+Property - NEW,Procedure,id,string
+Property - NEW,Procedure,label,string
+Property - NEW,Procedure,name,string
+Property - NEW,Procedure,studyIntervention,StudyIntervention
+Property - NEW,BiomedicalConceptSurrogate,description,string
+Property - NEW,BiomedicalConceptSurrogate,id,string
+Property - NEW,BiomedicalConceptSurrogate,label,string
+Property - NEW,BiomedicalConceptSurrogate,name,string
+Property - NEW,BiomedicalConceptSurrogate,reference,string
+Property - NEW,StudyElement,description,string
+Property - NEW,StudyElement,id,string
+Property - NEW,StudyElement,label,string
+Property - NEW,StudyElement,name,string
+Property - NEW,StudyElement,studyInterventions,StudyIntervention
+Property - NEW,ScheduledInstance,defaultCondition,ScheduledInstance
+Property - NEW,ScheduledInstance,epoch,StudyEpoch
+Property - NEW,ScheduledInstance,id,string
+Property - NEW,ScheduledInstance,timeline,ScheduleTimeline
+Property - NEW,ScheduledInstance,timelineExit,ScheduleTimelineExit
+Property - NEW,BiomedicalConceptProperty,code,AliasCode
+Property - NEW,BiomedicalConceptProperty,datatype,string
+Property - NEW,BiomedicalConceptProperty,id,string
+Property - NEW,BiomedicalConceptProperty,isEnabled,Boolean
+Property - NEW,BiomedicalConceptProperty,isRequired,Boolean
+Property - NEW,BiomedicalConceptProperty,label,string
+Property - NEW,BiomedicalConceptProperty,name,string
+Property - NEW,BiomedicalConceptProperty,responseCodes,ResponseCode
+Property - NEW,IntercurrentEvent,description,string
+Property - NEW,IntercurrentEvent,id,string
+Property - NEW,IntercurrentEvent,label,string
+Property - NEW,IntercurrentEvent,name,string
+Property - NEW,IntercurrentEvent,strategy,string
+Property - NEW,Study,description,string
+Property - NEW,Study,documentedBy,StudyProtocolDocument
+Property - NEW,Study,id,string
+Property - NEW,Study,label,string
+Property - NEW,Study,name,string
+Property - NEW,Study,versions,StudyVersion
+Property - NEW,ResponseCode,id,string
+Property - NEW,ResponseCode,isEnabled,Boolean
+Property - NEW,Code,id,string
+Property - NEW,StudyIdentifier,id,string
+Property - NEW,BiomedicalConcept,code,AliasCode
+Property - NEW,BiomedicalConcept,id,string
+Property - NEW,BiomedicalConcept,label,string
+Property - NEW,BiomedicalConcept,name,string
+Property - NEW,BiomedicalConcept,properties,BiomedicalConceptProperty
+Property - NEW,BiomedicalConcept,reference,string
+Property - NEW,BiomedicalConcept,synonyms,string
+Property - NEW,Objective,description,string
+Property - NEW,Objective,dictionary,SyntaxTemplateDictionary
+Property - NEW,Objective,endpoints,Endpoint
+Property - NEW,Objective,id,string
+Property - NEW,Objective,label,string
+Property - NEW,Objective,level,Code
+Property - NEW,Objective,name,string
+Property - NEW,Objective,text,string
+Property - NEW,ScheduleTimeline,description,string
+Property - NEW,ScheduleTimeline,entry,ScheduledInstance
+Property - NEW,ScheduleTimeline,exits,ScheduleTimelineExit
+Property - NEW,ScheduleTimeline,id,string
+Property - NEW,ScheduleTimeline,instances,ScheduledInstance
+Property - NEW,ScheduleTimeline,label,string
+Property - NEW,ScheduleTimeline,name,string
+Property - NEW,ScheduleTimeline,timings,Timing
+Property - NEW,AnalysisPopulation,description,string
+Property - NEW,AnalysisPopulation,id,string
+Property - NEW,AnalysisPopulation,label,string
+Property - NEW,AnalysisPopulation,name,string
+Property - NEW,AnalysisPopulation,text,string
+Property - NEW,ScheduledDecisionInstance,defaultCondition,ScheduledInstance
+Property - NEW,ScheduledDecisionInstance,epoch,StudyEpoch
+Property - NEW,ScheduledDecisionInstance,id,string
+Property - NEW,ScheduledDecisionInstance,timeline,ScheduleTimeline
+Property - NEW,ScheduledDecisionInstance,timelineExit,ScheduleTimelineExit
+Property - NEW,StudyCell,arm,StudyArm
+Property - NEW,StudyCell,elements,StudyElement
+Property - NEW,StudyCell,epoch,StudyEpoch
+Property - NEW,StudyCell,id,string
+Property - NEW,AliasCode,id,string
+Property - NEW,Timing,description,string
+Property - NEW,Timing,id,string
+Property - NEW,Timing,label,string
+Property - NEW,Timing,name,string
+Property - NEW,Timing,relativeFromScheduledInstance,ScheduledInstance
+Property - NEW,Timing,relativeToFrom,Code
+Property - NEW,Timing,relativeToScheduledInstance,ScheduledInstance
+Property - NEW,Timing,type,Code
+Property - NEW,Timing,value,string
+Property - NEW,Timing,window,string
+Property - NEW,Timing,windowLower,string
+Property - NEW,Timing,windowUpper,string
+Property - NEW,ScheduledActivityInstance,activities,Activity
+Property - NEW,ScheduledActivityInstance,defaultCondition,ScheduledInstance
+Property - NEW,ScheduledActivityInstance,encounter,Encounter
+Property - NEW,ScheduledActivityInstance,epoch,StudyEpoch
+Property - NEW,ScheduledActivityInstance,id,string
+Property - NEW,ScheduledActivityInstance,timeline,ScheduleTimeline
+Property - NEW,ScheduledActivityInstance,timelineExit,ScheduleTimelineExit
+Property - DELETED,BiomedicalConceptCategory,bcCategoryChildIds,List\<string>
+Property - DELETED,BiomedicalConceptCategory,bcCategoryCode,AliasCode
+Property - DELETED,BiomedicalConceptCategory,bcCategoryDescription,string
+Property - DELETED,BiomedicalConceptCategory,bcCategoryMemberIds,List\<string>
+Property - DELETED,BiomedicalConceptCategory,bcCategoryName,string
+Property - DELETED,BiomedicalConceptCategory,biomedicalConceptCategoryId,string
+Property - DELETED,Organization,organizationId,string
+Property - DELETED,Organization,organizationIdentifier,string
+Property - DELETED,Organization,organizationIdentifierScheme,string
+Property - DELETED,Organization,organizationLegalAddress,Address
+Property - DELETED,Organization,organizationName,string
+Property - DELETED,Indication,indicationDescription,string
+Property - DELETED,Indication,indicationId,string
+Property - DELETED,StudyEpoch,nextStudyEpochId,string
+Property - DELETED,StudyEpoch,previousStudyEpochId,string
+Property - DELETED,StudyEpoch,studyEpochDescription,string
+Property - DELETED,StudyEpoch,studyEpochId,string
+Property - DELETED,StudyEpoch,studyEpochName,string
+Property - DELETED,StudyEpoch,studyEpochType,Code
+Property - DELETED,Estimand,estimandId,string
+Property - DELETED,Estimand,treatment,InvestigationalIntervention
+Property - DELETED,StudyArm,studyArmDataOriginDescription,string
+Property - DELETED,StudyArm,studyArmDataOriginType,Code
+Property - DELETED,StudyArm,studyArmDescription,string
+Property - DELETED,StudyArm,studyArmId,string
+Property - DELETED,StudyArm,studyArmName,string
+Property - DELETED,StudyArm,studyArmType,Code
+Property - DELETED,StudyDesignPopulation,plannedMaximumAgeOfParticipants,string
+Property - DELETED,StudyDesignPopulation,plannedMinimumAgeOfParticipants,string
+Property - DELETED,StudyDesignPopulation,plannedNumberOfParticipants,int
+Property - DELETED,StudyDesignPopulation,plannedSexOfParticipants,List\<Code>
+Property - DELETED,StudyDesignPopulation,populationDescription,string
+Property - DELETED,StudyDesignPopulation,studyDesignPopulationId,string
+Property - DELETED,Activity,activityDescription,string
+Property - DELETED,Activity,activityId,string
+Property - DELETED,Activity,activityIsConditional,boolean
+Property - DELETED,Activity,activityIsConditionalReason,string
+Property - DELETED,Activity,activityName,string
+Property - DELETED,Activity,activityTimelineId,string
+Property - DELETED,Activity,bcCategoryIds,List\<string>
+Property - DELETED,Activity,bcSurrogateIds,List\<string>
+Property - DELETED,Activity,biomedicalConceptIds,List\<string>
+Property - DELETED,Activity,nextActivityId,string
+Property - DELETED,Activity,previousActivityId,string
+Property - DELETED,TransitionRule,transitionRuleDescription,string
+Property - DELETED,TransitionRule,transitionRuleId,string
+Property - DELETED,StudyDesign,bcCategories,List\<BiomedicalConceptCategory>
+Property - DELETED,StudyDesign,bcSurrogates,List\<BiomedicalConceptSurrogate>
+Property - DELETED,StudyDesign,biomedicalConcepts,List\<BiomedicalConcept>
+Property - DELETED,StudyDesign,studyArms,List\<StudyArm>
+Property - DELETED,StudyDesign,studyDesignBlindingScheme,AliasCode
+Property - DELETED,StudyDesign,studyDesignDescription,string
+Property - DELETED,StudyDesign,studyDesignId,string
+Property - DELETED,StudyDesign,studyDesignName,string
+Property - DELETED,StudyDesign,studyDesignRationale,string
+Property - DELETED,StudyDesign,studyElements,List\<StudyElement>
+Property - DELETED,StudyDesign,studyEpochs,List\<StudyEpoch>
+Property - DELETED,StudyDesign,studyEstimands,List\<Estimand>
+Property - DELETED,StudyDesign,studyIndications,List\<Indication>
+Property - DELETED,StudyDesign,studyInvestigationalInterventions,List\<InvestigationalIntervention>
+Property - DELETED,StudyDesign,studyObjectives,List\<Objective>
+Property - DELETED,StudyDesign,studyPopulations,List\<StudyDesignPopulation>
+Property - DELETED,StudyDesign,studyScheduleTimelines,List\<ScheduleTimeline>
+Property - DELETED,StudyDesign,trialType,List\<Code>
+Property - DELETED,ScheduleTimelineExit,scheduleTimelineExitId,string
+Property - DELETED,Endpoint,endpointDescription,string
+Property - DELETED,Endpoint,endpointId,string
+Property - DELETED,Endpoint,endpointLevel,Code
+Property - DELETED,Endpoint,endpointPurposeDescription,string
+Property - DELETED,Encounter,encounterContactModes,List\<Code>
+Property - DELETED,Encounter,encounterDescription,string
+Property - DELETED,Encounter,encounterEnvironmentalSetting,Code
+Property - DELETED,Encounter,encounterId,string
+Property - DELETED,Encounter,encounterName,string
+Property - DELETED,Encounter,encounterScheduledAtTimingId,string
+Property - DELETED,Encounter,encounterType,Code
+Property - DELETED,Encounter,nextEncounterId,string
+Property - DELETED,Encounter,previousEncounterId,string
+Property - DELETED,Procedure,procedureCode,Code
+Property - DELETED,Procedure,procedureDescription,string
+Property - DELETED,Procedure,procedureId,string
+Property - DELETED,Procedure,procedureIsConditional,boolean
+Property - DELETED,Procedure,procedureIsConditionalReason,string
+Property - DELETED,Procedure,procedureName,string
+Property - DELETED,BiomedicalConceptSurrogate,bcSurrogateDescription,string
+Property - DELETED,BiomedicalConceptSurrogate,bcSurrogateId,string
+Property - DELETED,BiomedicalConceptSurrogate,bcSurrogateName,string
+Property - DELETED,BiomedicalConceptSurrogate,bcSurrogateReference,string
+Property - DELETED,StudyElement,studyElementDescription,string
+Property - DELETED,StudyElement,studyElementId,string
+Property - DELETED,StudyElement,studyElementName,string
+Property - DELETED,ScheduledInstance,defaultConditionId,string
+Property - DELETED,ScheduledInstance,epochId,string
+Property - DELETED,ScheduledInstance,scheduleTimelineExitId,string
+Property - DELETED,ScheduledInstance,scheduledInstanceId,string
+Property - DELETED,ScheduledInstance,scheduledInstanceTimelineId,string
+Property - DELETED,ScheduledInstance,scheduledInstanceTimings,List\<Timing>
+Property - DELETED,ScheduledInstance,scheduledInstanceType,ScheduledInstanceType
+Property - DELETED,BiomedicalConceptProperty,bcPropertyConceptCode,AliasCode
+Property - DELETED,BiomedicalConceptProperty,bcPropertyDatatype,string
+Property - DELETED,BiomedicalConceptProperty,bcPropertyEnabled,boolean
+Property - DELETED,BiomedicalConceptProperty,bcPropertyId,string
+Property - DELETED,BiomedicalConceptProperty,bcPropertyName,string
+Property - DELETED,BiomedicalConceptProperty,bcPropertyRequired,boolean
+Property - DELETED,BiomedicalConceptProperty,bcPropertyResponseCodes,List\<ResponseCode>
+Property - DELETED,IntercurrentEvent,intercurrentEventDescription,string
+Property - DELETED,IntercurrentEvent,intercurrentEventId,string
+Property - DELETED,IntercurrentEvent,intercurrentEventName,string
+Property - DELETED,IntercurrentEvent,intercurrentEventStrategy,string
+Property - DELETED,Study,businessTherapeuticAreas,List\<Code>
+Property - DELETED,Study,studyAcronym,string
+Property - DELETED,Study,studyDesigns,List\<StudyDesign>
+Property - DELETED,Study,studyId,UUID
+Property - DELETED,Study,studyIdentifiers,List\<StudyIdentifier>
+Property - DELETED,Study,studyPhase,AliasCode
+Property - DELETED,Study,studyProtocolVersions,List\<StudyProtocolVersion>
+Property - DELETED,Study,studyRationale,string
+Property - DELETED,Study,studyTitle,string
+Property - DELETED,Study,studyType,Code
+Property - DELETED,Study,studyVersion,string
+Property - DELETED,ResponseCode,responseCodeEnabled,boolean
+Property - DELETED,ResponseCode,responseCodeId,string
+Property - DELETED,Code,codeId,string
+Property - DELETED,StudyIdentifier,studyIdentifierId,string
+Property - DELETED,BiomedicalConcept,bcConceptCode,AliasCode
+Property - DELETED,BiomedicalConcept,bcName,string
+Property - DELETED,BiomedicalConcept,bcProperties,List\<BiomedicalConceptProperty>
+Property - DELETED,BiomedicalConcept,bcReference,string
+Property - DELETED,BiomedicalConcept,bcSynonyms,List\<string>
+Property - DELETED,BiomedicalConcept,biomedicalConceptId,string
+Property - DELETED,Objective,objectiveDescription,string
+Property - DELETED,Objective,objectiveEndpoints,List\<Endpoint>
+Property - DELETED,Objective,objectiveId,string
+Property - DELETED,Objective,objectiveLevel,Code
+Property - DELETED,ScheduleTimeline,scheduleTimelineDescription,string
+Property - DELETED,ScheduleTimeline,scheduleTimelineEntryId,string
+Property - DELETED,ScheduleTimeline,scheduleTimelineExits,List\<ScheduleTimelineExit>
+Property - DELETED,ScheduleTimeline,scheduleTimelineId,string
+Property - DELETED,ScheduleTimeline,scheduleTimelineInstances,List\<ScheduledInstance>
+Property - DELETED,ScheduleTimeline,scheduleTimelineName,string
+Property - DELETED,AnalysisPopulation,analysisPopulationId,string
+Property - DELETED,AnalysisPopulation,populationDescription,string
+Property - DELETED,ScheduledDecisionInstance,defaultConditionId,string
+Property - DELETED,ScheduledDecisionInstance,epochId,string
+Property - DELETED,ScheduledDecisionInstance,scheduleTimelineExitId,string
+Property - DELETED,ScheduledDecisionInstance,scheduledInstanceId,string
+Property - DELETED,ScheduledDecisionInstance,scheduledInstanceTimelineId,string
+Property - DELETED,ScheduledDecisionInstance,scheduledInstanceTimings,List\<Timing>
+Property - DELETED,ScheduledDecisionInstance,scheduledInstanceType,ScheduledInstanceType
+Property - DELETED,StudyCell,studyArmId,string
+Property - DELETED,StudyCell,studyCellId,string
+Property - DELETED,StudyCell,studyElementIds,List\<string>
+Property - DELETED,StudyCell,studyEpochId,string
+Property - DELETED,AliasCode,aliasCodeId,string
+Property - DELETED,Timing,relativeFromScheduledInstanceId,string
+Property - DELETED,Timing,relativeToScheduledInstanceId,string
+Property - DELETED,Timing,timingDescription,string
+Property - DELETED,Timing,timingId,string
+Property - DELETED,Timing,timingRelativeToFrom,Code
+Property - DELETED,Timing,timingType,Code
+Property - DELETED,Timing,timingValue,string
+Property - DELETED,Timing,timingWindow,string
+Property - DELETED,Timing,timingWindowLower,string
+Property - DELETED,Timing,timingWindowUpper,string
+Property - DELETED,ScheduledActivityInstance,activityIds,List\<string>
+Property - DELETED,ScheduledActivityInstance,defaultConditionId,string
+Property - DELETED,ScheduledActivityInstance,epochId,string
+Property - DELETED,ScheduledActivityInstance,scheduleTimelineExitId,string
+Property - DELETED,ScheduledActivityInstance,scheduledActivityInstanceEncounterId,string
+Property - DELETED,ScheduledActivityInstance,scheduledInstanceId,string
+Property - DELETED,ScheduledActivityInstance,scheduledInstanceTimelineId,string
+Property - DELETED,ScheduledActivityInstance,scheduledInstanceTimings,List\<Timing>
+Property - DELETED,ScheduledActivityInstance,scheduledInstanceType,ScheduledInstanceType
