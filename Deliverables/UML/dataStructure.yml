@@ -1650,7 +1650,14 @@ Organization:
     organizationType*:
       Type:
       - $ref: '#/Code'
+      NCI C-Code: C188820
       Cardinality: '1'
+      Preferred Term: Organization Type
+      Definition: A characterization or classification of the formalized group of
+        persons or other organizations collected together for a common purpose (such
+        as administrative, legal, political) and the infrastructure to carry out that
+        purpose.
+      Codelist Ref: C188724
       Relationship Type: UNKNOWN
       Model Name: organizationType
     type:
@@ -1972,10 +1979,13 @@ ResearchOrganization:
     organizationType*:
       Type:
       - $ref: '#/Code'
-      NCI C-Code: CNEW
+      NCI C-Code: C188820
       Cardinality: '1'
-      Preferred Term: Research Organization Type
-      Definition: A characterization or classification of the research organization.
+      Preferred Term: Organization Type
+      Definition: A characterization or classification of the formalized group of
+        persons or other organizations collected together for a common purpose (such
+        as administrative, legal, political) and the infrastructure to carry out that
+        purpose.
       Codelist Ref: C188724
       Relationship Type: UNKNOWN
       Model Name: organizationType
