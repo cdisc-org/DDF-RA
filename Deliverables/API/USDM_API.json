@@ -4857,7 +4857,11 @@
             "default": []
           },
           "administrations": {
-            "$ref": "#/components/schemas/AgentAdministration-Input"
+            "items": {
+              "$ref": "#/components/schemas/AgentAdministration-Input"
+            },
+            "type": "array",
+            "title": "Administrations"
           },
           "productDesignation": {
             "$ref": "#/components/schemas/Code"
@@ -4936,7 +4940,11 @@
             "default": []
           },
           "administrations": {
-            "$ref": "#/components/schemas/AgentAdministration-Output"
+            "items": {
+              "$ref": "#/components/schemas/AgentAdministration-Output"
+            },
+            "type": "array",
+            "title": "Administrations"
           },
           "productDesignation": {
             "$ref": "#/components/schemas/Code"
@@ -5446,8 +5454,7 @@
             "title": "Instancetype"
           },
           "quantity": {
-            "type": "string",
-            "title": "Quantity"
+            "$ref": "#/components/schemas/Quantity"
           }
         },
         "type": "object",
@@ -5484,8 +5491,7 @@
             "title": "Instancetype"
           },
           "quantity": {
-            "type": "string",
-            "title": "Quantity"
+            "$ref": "#/components/schemas/Quantity"
           }
         },
         "type": "object",

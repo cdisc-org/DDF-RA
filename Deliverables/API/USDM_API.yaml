@@ -3122,7 +3122,10 @@ components:
           title: Codes
           default: []
         administrations:
-          $ref: '#/components/schemas/AgentAdministration-Input'
+          items:
+            $ref: '#/components/schemas/AgentAdministration-Input'
+          type: array
+          title: Administrations
         productDesignation:
           $ref: '#/components/schemas/Code'
         pharmacologicClass:
@@ -3175,7 +3178,10 @@ components:
           title: Codes
           default: []
         administrations:
-          $ref: '#/components/schemas/AgentAdministration-Output'
+          items:
+            $ref: '#/components/schemas/AgentAdministration-Output'
+          type: array
+          title: Administrations
         productDesignation:
           $ref: '#/components/schemas/Code'
         pharmacologicClass:
@@ -3522,8 +3528,7 @@ components:
           const: SubjectEnrollment
           title: Instancetype
         quantity:
-          type: string
-          title: Quantity
+          $ref: '#/components/schemas/Quantity'
       type: object
       required:
       - id
@@ -3547,8 +3552,7 @@ components:
           const: SubjectEnrollment
           title: Instancetype
         quantity:
-          type: string
-          title: Quantity
+          $ref: '#/components/schemas/Quantity'
       type: object
       required:
       - id
