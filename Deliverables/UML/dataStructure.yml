@@ -501,12 +501,17 @@ BiomedicalConceptCategory:
       Cardinality: 0..*
       Relationship Type: Ref
       Model Name: members
-    childrenIds:
+    children*:
       Type:
       - $ref: '#/BiomedicalConceptCategory'
       Cardinality: 0..*
-      Relationship Type: Ref
+      Relationship Type: UNKNOWN
       Model Name: children
+    childIds:
+      Type:
+      - $ref: UNKNOWN
+      Cardinality: 0..*
+      Relationship Type: Value
     instanceType:
       Type:
       - $ref: '#/string'
@@ -847,11 +852,12 @@ EligibilityCriterion:
     and exclusion criteria.
   Super Classes:
   - $ref: '#/SyntaxTemplate'
-  Modifier: Abstract
+  Modifier: Concrete
   Attributes:
     id:
       Type:
       - $ref: '#/string'
+      Relationship Type: Value
       Model Name: id
       Inherited From:
         $ref: '#/SyntaxTemplate'
@@ -861,6 +867,7 @@ EligibilityCriterion:
       NCI C-Code: CNEW
       Preferred Term: Study Eligibility Criteria Description
       Definition: A narrative representation of the study eligibility criteria.
+      Relationship Type: Value
       Model Name: name
       Inherited From:
         $ref: '#/SyntaxTemplate'
@@ -871,6 +878,7 @@ EligibilityCriterion:
       Preferred Term: Study Eligibility Criteria Name
       Definition: The literal identifier (i.e., distinctive designation) of the study
         eligibility criteria.
+      Relationship Type: Value
       Model Name: description
       Inherited From:
         $ref: '#/SyntaxTemplate'
@@ -880,6 +888,7 @@ EligibilityCriterion:
       NCI C-Code: CNEW
       Preferred Term: Study Eligibility Criteria Label
       Definition: The short descriptive designation for the study eligibility criteria.
+      Relationship Type: Value
       Model Name: label
       Inherited From:
         $ref: '#/SyntaxTemplate'
@@ -890,13 +899,15 @@ EligibilityCriterion:
       Preferred Term: Eligibility Criteria Text
       Definition: An instance of structured text that represents the study eligibility
         criteria.
+      Relationship Type: Value
       Model Name: text
       Inherited From:
         $ref: '#/SyntaxTemplate'
-    dictionary:
+    dictionaryId:
       Type:
       - $ref: '#/SyntaxTemplateDictionary'
       Cardinality: 0..1
+      Relationship Type: Ref
       Model Name: dictionary
       Inherited From:
         $ref: '#/SyntaxTemplate'
@@ -907,6 +918,7 @@ EligibilityCriterion:
       Preferred Term: Study Eligibility Criterion Identifier
       Definition: A sequence of characters used to identify, name, or characterize
         the inclusion or exclusion criterion.
+      Relationship Type: Value
       Model Name: identifier
     category:
       Type:
@@ -916,23 +928,32 @@ EligibilityCriterion:
       Preferred Term: Study Eligibility Criteria Category
       Definition: A classification of the inclusion exclusion criterion.
       Codelist Ref: SDTM Terminology Codelist C66797
+      Relationship Type: Value
       Model Name: category
-    context:
+    contextId:
       Type:
       - $ref: '#/StudyDesign'
       - $ref: '#/StudyVersion'
       Cardinality: 0..1
+      Relationship Type: Ref
       Model Name: context
-    next:
+    nextId:
       Type:
       - $ref: '#/EligibilityCriterion'
       Cardinality: 0..1
+      Relationship Type: Ref
       Model Name: next
-    previous:
+    previousId:
       Type:
       - $ref: '#/EligibilityCriterion'
       Cardinality: 0..1
+      Relationship Type: Ref
       Model Name: previous
+    instanceType:
+      Type:
+      - $ref: '#/string'
+      Cardinality: 0..1
+      Relationship Type: Value
 Encounter:
   NCI C-Code: C142427
   Preferred Term: Clinical Encounter
@@ -1174,17 +1195,12 @@ Estimand:
       Cardinality: 1..*
       Relationship Type: Value
       Model Name: intercurrentEvents
-    intervention*:
+    interventionId:
       Type:
       - $ref: '#/StudyIntervention'
       Cardinality: '1'
-      Relationship Type: UNKNOWN
+      Relationship Type: Ref
       Model Name: intervention
-    treatmentId:
-      Type:
-      - $ref: '#/string'
-      Cardinality: 0..1
-      Relationship Type: Value
     instanceType:
       Type:
       - $ref: '#/string'
@@ -1495,12 +1511,17 @@ NarrativeContent:
       Definition: An identifying designation for the document section.
       Relationship Type: Value
       Model Name: sectionTitle
-    childrenIds:
+    children*:
       Type:
       - $ref: '#/NarrativeContent'
       Cardinality: 0..*
-      Relationship Type: Ref
+      Relationship Type: UNKNOWN
       Model Name: children
+    childIds:
+      Type:
+      - $ref: UNKNOWN
+      Cardinality: 0..*
+      Relationship Type: Value
     instanceType:
       Type:
       - $ref: '#/string'
@@ -1647,7 +1668,7 @@ Organization:
       Cardinality: 0..1
       Relationship Type: Value
       Model Name: legalAddress
-    organizationType*:
+    organizationType:
       Type:
       - $ref: '#/Code'
       NCI C-Code: C188820
@@ -1658,12 +1679,8 @@ Organization:
         as administrative, legal, political) and the infrastructure to carry out that
         purpose.
       Codelist Ref: C188724
-      Relationship Type: UNKNOWN
-      Model Name: organizationType
-    type:
-      Type:
-      - $ref: UNKNOWN
       Relationship Type: Value
+      Model Name: organizationType
     instanceType:
       Type:
       - $ref: '#/string'
@@ -1976,7 +1993,7 @@ ResearchOrganization:
       Model Name: legalAddress
       Inherited From:
         $ref: '#/Organization'
-    organizationType*:
+    organizationType:
       Type:
       - $ref: '#/Code'
       NCI C-Code: C188820
@@ -1987,7 +2004,7 @@ ResearchOrganization:
         as administrative, legal, political) and the infrastructure to carry out that
         purpose.
       Codelist Ref: C188724
-      Relationship Type: UNKNOWN
+      Relationship Type: Value
       Model Name: organizationType
       Inherited From:
         $ref: '#/Organization'
@@ -1997,10 +2014,6 @@ ResearchOrganization:
       Cardinality: 1..*
       Relationship Type: Ref
       Model Name: manages
-    type:
-      Type:
-      - $ref: UNKNOWN
-      Relationship Type: Value
     instanceType:
       Type:
       - $ref: '#/string'
@@ -2114,11 +2127,11 @@ ScheduleTimeline:
       Cardinality: 0..*
       Relationship Type: Value
       Model Name: exits
-    timings*:
+    timings:
       Type:
       - $ref: '#/Timing'
       Cardinality: 1..*
-      Relationship Type: UNKNOWN
+      Relationship Type: Value
       Model Name: timings
     instanceType:
       Type:
@@ -2200,11 +2213,6 @@ ScheduledActivityInstance:
       Cardinality: 0..1
       Relationship Type: Ref
       Model Name: encounter
-    timings:
-      Type:
-      - $ref: '#/Timing'
-      Cardinality: 0..*
-      Relationship Type: Value
     instanceType:
       Type:
       - $ref: '#/string'
@@ -2266,11 +2274,6 @@ ScheduledDecisionInstance:
         met in order to make a logical decision.
       Relationship Type: Value
       Model Name: conditionAssignments
-    timings:
-      Type:
-      - $ref: '#/Timing'
-      Cardinality: 0..*
-      Relationship Type: Value
     instanceType:
       Type:
       - $ref: '#/string'
@@ -2925,11 +2928,6 @@ StudyDesign:
       - $ref: '#/BiomedicalConceptSurrogate'
       Cardinality: 0..*
       Relationship Type: Value
-    appliesTo:
-      Type:
-      - $ref: '#/StudySite'
-      Cardinality: 0..*
-      Relationship Type: Value
     dictionaries:
       Type:
       - $ref: '#/SyntaxTemplateDictionary'
@@ -3441,12 +3439,17 @@ StudyProtocolDocumentVersion:
       Cardinality: 0..*
       Relationship Type: Value
       Model Name: contents
-    childrenIds:
+    children*:
       Type:
       - $ref: '#/StudyProtocolDocumentVersion'
       Cardinality: 0..*
-      Relationship Type: Ref
+      Relationship Type: UNKNOWN
       Model Name: children
+    childIds:
+      Type:
+      - $ref: UNKNOWN
+      Cardinality: 0..*
+      Relationship Type: Value
     instanceType:
       Type:
       - $ref: '#/string'
@@ -3456,12 +3459,11 @@ StudySite:
   NCI C-Code: C80403
   Preferred Term: Study Site
   Definition: The location at which a study investigator conducts study activities.
-  Modifier: Concrete
+  Modifier: Abstract
   Attributes:
     id:
       Type:
       - $ref: '#/string'
-      Relationship Type: Value
       Model Name: id
     name:
       Type:
@@ -3470,7 +3472,6 @@ StudySite:
       Preferred Term: Study Site Name
       Definition: The literal identifier (i.e., distinctive designation) of the study
         site.
-      Relationship Type: Value
       Model Name: name
     description:
       Type:
@@ -3478,7 +3479,6 @@ StudySite:
       NCI C-Code: CNEW
       Preferred Term: Study Site Description
       Definition: A narrative representation of the study site.
-      Relationship Type: Value
       Model Name: description
     label:
       Type:
@@ -3486,19 +3486,12 @@ StudySite:
       NCI C-Code: CNEW
       Preferred Term: Study Site Label
       Definition: The short descriptive designation for the study site.
-      Relationship Type: Value
       Model Name: label
     currentEnrollment:
       Type:
       - $ref: '#/SubjectEnrollment'
       Cardinality: 0..1
-      Relationship Type: Value
       Model Name: currentEnrollment
-    instanceType:
-      Type:
-      - $ref: '#/string'
-      Cardinality: 0..1
-      Relationship Type: Value
 StudyTitle:
   NCI C-Code: C49802
   Preferred Term: Study Title
@@ -3590,7 +3583,7 @@ StudyVersion:
       Codelist Ref: (Point out to external dictionaries)
       Relationship Type: Value
       Model Name: businessTherapeuticAreas
-    studyType*:
+    studyType:
       Type:
       - $ref: '#/Code'
       NCI C-Code: C142175
@@ -3599,7 +3592,7 @@ StudyVersion:
       Definition: The nature of the investigation for which study information is being
         collected. (After clinicaltrials.gov)
       Codelist Ref: SDTM Terminology Codelist C99077
-      Relationship Type: UNKNOWN
+      Relationship Type: Value
       Model Name: studyType
     dateValues:
       Type:
@@ -3637,10 +3630,6 @@ StudyVersion:
       Cardinality: 1..*
       Relationship Type: Value
       Model Name: titles
-    type:
-      Type:
-      - $ref: UNKNOWN
-      Relationship Type: Value
     instanceType:
       Type:
       - $ref: '#/string'
