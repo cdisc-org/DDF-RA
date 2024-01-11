@@ -501,17 +501,12 @@ BiomedicalConceptCategory:
       Cardinality: 0..*
       Relationship Type: Ref
       Model Name: members
-    children*:
+    childIds:
       Type:
       - $ref: '#/BiomedicalConceptCategory'
       Cardinality: 0..*
-      Relationship Type: UNKNOWN
+      Relationship Type: Ref
       Model Name: children
-    childIds:
-      Type:
-      - $ref: UNKNOWN
-      Cardinality: 0..*
-      Relationship Type: Value
     instanceType:
       Type:
       - $ref: '#/string'
@@ -1511,17 +1506,12 @@ NarrativeContent:
       Definition: An identifying designation for the document section.
       Relationship Type: Value
       Model Name: sectionTitle
-    children*:
+    childIds:
       Type:
       - $ref: '#/NarrativeContent'
       Cardinality: 0..*
-      Relationship Type: UNKNOWN
+      Relationship Type: Ref
       Model Name: children
-    childIds:
-      Type:
-      - $ref: UNKNOWN
-      Cardinality: 0..*
-      Relationship Type: Value
     instanceType:
       Type:
       - $ref: '#/string'
@@ -3439,17 +3429,12 @@ StudyProtocolDocumentVersion:
       Cardinality: 0..*
       Relationship Type: Value
       Model Name: contents
-    children*:
+    childIds:
       Type:
       - $ref: '#/StudyProtocolDocumentVersion'
       Cardinality: 0..*
-      Relationship Type: UNKNOWN
+      Relationship Type: Ref
       Model Name: children
-    childIds:
-      Type:
-      - $ref: UNKNOWN
-      Cardinality: 0..*
-      Relationship Type: Value
     instanceType:
       Type:
       - $ref: '#/string'
