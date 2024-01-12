@@ -1781,11 +1781,11 @@ components:
         instanceType:
           const: ResearchOrganization
           title: Instancetype
-        manageIds:
+        manages:
           items:
-            type: string
+            $ref: '#/components/schemas/StudySite-Input'
           type: array
-          title: Manageids
+          title: Manages
       type: object
       required:
       - id
@@ -1794,7 +1794,7 @@ components:
       - identifierScheme
       - identifier
       - instanceType
-      - manageIds
+      - manages
       title: ResearchOrganization
     ResearchOrganization-Output:
       properties:
@@ -1826,11 +1826,11 @@ components:
         instanceType:
           const: ResearchOrganization
           title: Instancetype
-        manageIds:
+        manages:
           items:
-            type: string
+            $ref: '#/components/schemas/StudySite-Output'
           type: array
-          title: Manageids
+          title: Manages
       type: object
       required:
       - id
@@ -1839,7 +1839,7 @@ components:
       - identifierScheme
       - identifier
       - instanceType
-      - manageIds
+      - manages
       title: ResearchOrganization
     ResponseCode:
       properties:
@@ -3349,6 +3349,72 @@ components:
       - protocolStatus
       - instanceType
       title: StudyProtocolDocumentVersion
+    StudySite-Input:
+      properties:
+        id:
+          type: string
+          minLength: 1
+          title: Id
+        name:
+          type: string
+          minLength: 1
+          title: Name
+        label:
+          anyOf:
+          - type: string
+          - type: 'null'
+          title: Label
+        description:
+          anyOf:
+          - type: string
+          - type: 'null'
+          title: Description
+        currentEnrollment:
+          anyOf:
+          - $ref: '#/components/schemas/SubjectEnrollment-Input'
+          - type: 'null'
+        instanceType:
+          const: StudySite
+          title: Instancetype
+      type: object
+      required:
+      - id
+      - name
+      - instanceType
+      title: StudySite
+    StudySite-Output:
+      properties:
+        id:
+          type: string
+          minLength: 1
+          title: Id
+        name:
+          type: string
+          minLength: 1
+          title: Name
+        label:
+          anyOf:
+          - type: string
+          - type: 'null'
+          title: Label
+        description:
+          anyOf:
+          - type: string
+          - type: 'null'
+          title: Description
+        currentEnrollment:
+          anyOf:
+          - $ref: '#/components/schemas/SubjectEnrollment-Output'
+          - type: 'null'
+        instanceType:
+          const: StudySite
+          title: Instancetype
+      type: object
+      required:
+      - id
+      - name
+      - instanceType
+      title: StudySite
     StudyTitle:
       properties:
         id:
