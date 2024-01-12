@@ -1998,11 +1998,11 @@ ResearchOrganization:
       Model Name: organizationType
       Inherited From:
         $ref: '#/Organization'
-    manageIds:
+    manages:
       Type:
       - $ref: '#/StudySite'
       Cardinality: 1..*
-      Relationship Type: Ref
+      Relationship Type: Value
       Model Name: manages
     instanceType:
       Type:
@@ -3444,11 +3444,12 @@ StudySite:
   NCI C-Code: C80403
   Preferred Term: Study Site
   Definition: The location at which a study investigator conducts study activities.
-  Modifier: Abstract
+  Modifier: Concrete
   Attributes:
     id:
       Type:
       - $ref: '#/string'
+      Relationship Type: Value
       Model Name: id
     name:
       Type:
@@ -3457,6 +3458,7 @@ StudySite:
       Preferred Term: Study Site Name
       Definition: The literal identifier (i.e., distinctive designation) of the study
         site.
+      Relationship Type: Value
       Model Name: name
     description:
       Type:
@@ -3464,6 +3466,7 @@ StudySite:
       NCI C-Code: CNEW
       Preferred Term: Study Site Description
       Definition: A narrative representation of the study site.
+      Relationship Type: Value
       Model Name: description
     label:
       Type:
@@ -3471,12 +3474,19 @@ StudySite:
       NCI C-Code: CNEW
       Preferred Term: Study Site Label
       Definition: The short descriptive designation for the study site.
+      Relationship Type: Value
       Model Name: label
     currentEnrollment:
       Type:
       - $ref: '#/SubjectEnrollment'
       Cardinality: 0..1
+      Relationship Type: Value
       Model Name: currentEnrollment
+    instanceType:
+      Type:
+      - $ref: '#/string'
+      Cardinality: 0..1
+      Relationship Type: Value
 StudyTitle:
   NCI C-Code: C49802
   Preferred Term: Study Title
