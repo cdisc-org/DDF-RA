@@ -22,7 +22,7 @@ jobs:
         id: prev-branch
         run: |
           USER_INPUT=${{ inputs.prev-branch }}
-          echo "::set-output name=value::${USER_INPUT:-"main"}"
+          echo "value=${USER_INPUT:-"main"}" >> "$GITHUB_OUTPUT"
       - name: Checkout selected or current branch to currentRelease dir
         uses: actions/checkout@v4
         with:
