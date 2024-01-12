@@ -18,6 +18,11 @@ jobs:
     name: Generate Diff and Data Dict
     runs-on: ubuntu-latest
     steps:
+      - name: Set prev-branch to main for automated workflows
+        id: prev-branch
+        run: |
+          USER_INPUT=${{ inputs.prev-branch }}
+          echo "::set-output name=value::${USER_INPUT:-"main"}"
       - name: Checkout selected or current branch to currentRelease dir
         uses: actions/checkout@v4
         with:
@@ -26,7 +31,7 @@ jobs:
         uses: actions/checkout@v4
         with:
           path: prevRelease
-          ref: ${{ inputs.prev-branch }}
+          ref: ${{ steps.prev-branch.outputs.value }}
       - name: Checkout the usdm dictionary generator to usdm-dictionary-generator dir
         uses: actions/checkout@v4
         with:
