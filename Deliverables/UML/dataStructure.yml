@@ -2120,7 +2120,7 @@ ScheduleTimeline:
     timings:
       Type:
       - $ref: '#/Timing'
-      Cardinality: 1..*
+      Cardinality: 0..*
       Relationship Type: Value
       Model Name: timings
     instanceType:
@@ -2852,7 +2852,7 @@ StudyDesign:
     organizations:
       Type:
       - $ref: '#/ResearchOrganization'
-      Cardinality: 1..*
+      Cardinality: 0..*
       Relationship Type: Value
       Model Name: organizations
     scheduleTimelines:
@@ -2879,11 +2879,11 @@ StudyDesign:
       Cardinality: 0..*
       Relationship Type: Value
       Model Name: elements
-    documentVersion:
+    documentVersionId:
       Type:
       - $ref: '#/StudyProtocolDocumentVersion'
       Cardinality: 0..1
-      Relationship Type: Value
+      Relationship Type: Ref
       Model Name: documentVersion
     studyInterventions:
       Type:
