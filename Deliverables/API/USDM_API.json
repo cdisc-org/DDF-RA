@@ -1761,7 +1761,6 @@
           "id",
           "name",
           "type",
-          "environmentalSetting",
           "instanceType"
         ],
         "title": "Encounter"
@@ -3716,16 +3715,14 @@
               "$ref": "#/components/schemas/Code"
             },
             "type": "array",
-            "title": "Plannedsex",
-            "default": []
+            "title": "Plannedsex"
           },
           "criteria": {
             "items": {
               "$ref": "#/components/schemas/EligibilityCriterion"
             },
             "type": "array",
-            "title": "Criteria",
-            "default": []
+            "title": "Criteria"
           },
           "plannedAge": {
             "anyOf": [
@@ -3755,6 +3752,8 @@
           "id",
           "name",
           "includesHealthySubjects",
+          "plannedSex",
+          "criteria",
           "instanceType"
         ],
         "title": "StudyCohort"
@@ -3822,16 +3821,14 @@
               "$ref": "#/components/schemas/Code"
             },
             "type": "array",
-            "title": "Plannedsex",
-            "default": []
+            "title": "Plannedsex"
           },
           "criteria": {
             "items": {
               "$ref": "#/components/schemas/EligibilityCriterion"
             },
             "type": "array",
-            "title": "Criteria",
-            "default": []
+            "title": "Criteria"
           },
           "plannedAge": {
             "anyOf": [
@@ -3861,6 +3858,8 @@
           "id",
           "name",
           "includesHealthySubjects",
+          "plannedSex",
+          "criteria",
           "instanceType"
         ],
         "title": "StudyCohort"
@@ -4075,15 +4074,16 @@
             "title": "Scheduletimelines",
             "default": []
           },
-          "documentVersion": {
+          "documentVersionId": {
             "anyOf": [
               {
-                "$ref": "#/components/schemas/StudyProtocolDocumentVersion-Input"
+                "type": "string"
               },
               {
                 "type": "null"
               }
-            ]
+            ],
+            "title": "Documentversionid"
           },
           "dictionaries": {
             "items": {
@@ -4337,15 +4337,16 @@
             "title": "Scheduletimelines",
             "default": []
           },
-          "documentVersion": {
+          "documentVersionId": {
             "anyOf": [
               {
-                "$ref": "#/components/schemas/StudyProtocolDocumentVersion-Output"
+                "type": "string"
               },
               {
                 "type": "null"
               }
-            ]
+            ],
+            "title": "Documentversionid"
           },
           "dictionaries": {
             "items": {
@@ -4452,16 +4453,14 @@
               "$ref": "#/components/schemas/Code"
             },
             "type": "array",
-            "title": "Plannedsex",
-            "default": []
+            "title": "Plannedsex"
           },
           "criteria": {
             "items": {
               "$ref": "#/components/schemas/EligibilityCriterion"
             },
             "type": "array",
-            "title": "Criteria",
-            "default": []
+            "title": "Criteria"
           },
           "plannedAge": {
             "anyOf": [
@@ -4491,6 +4490,8 @@
           "id",
           "name",
           "includesHealthySubjects",
+          "plannedSex",
+          "criteria",
           "instanceType"
         ],
         "title": "StudyDesignPopulation"
@@ -4558,16 +4559,14 @@
               "$ref": "#/components/schemas/Code"
             },
             "type": "array",
-            "title": "Plannedsex",
-            "default": []
+            "title": "Plannedsex"
           },
           "criteria": {
             "items": {
               "$ref": "#/components/schemas/EligibilityCriterion"
             },
             "type": "array",
-            "title": "Criteria",
-            "default": []
+            "title": "Criteria"
           },
           "plannedAge": {
             "anyOf": [
@@ -4597,6 +4596,8 @@
           "id",
           "name",
           "includesHealthySubjects",
+          "plannedSex",
+          "criteria",
           "instanceType"
         ],
         "title": "StudyDesignPopulation"
@@ -4846,7 +4847,14 @@
             "$ref": "#/components/schemas/Code"
           },
           "minimumResponseDuration": {
-            "$ref": "#/components/schemas/Quantity"
+            "anyOf": [
+              {
+                "$ref": "#/components/schemas/Quantity"
+              },
+              {
+                "type": "null"
+              }
+            ]
           },
           "codes": {
             "items": {
@@ -4867,7 +4875,14 @@
             "$ref": "#/components/schemas/Code"
           },
           "pharmacologicClass": {
-            "$ref": "#/components/schemas/Code"
+            "anyOf": [
+              {
+                "$ref": "#/components/schemas/Code"
+              },
+              {
+                "type": "null"
+              }
+            ]
           },
           "instanceType": {
             "const": "StudyIntervention",
@@ -4880,10 +4895,8 @@
           "name",
           "role",
           "type",
-          "minimumResponseDuration",
           "administrations",
           "productDesignation",
-          "pharmacologicClass",
           "instanceType"
         ],
         "title": "StudyIntervention"
@@ -4929,7 +4942,14 @@
             "$ref": "#/components/schemas/Code"
           },
           "minimumResponseDuration": {
-            "$ref": "#/components/schemas/Quantity"
+            "anyOf": [
+              {
+                "$ref": "#/components/schemas/Quantity"
+              },
+              {
+                "type": "null"
+              }
+            ]
           },
           "codes": {
             "items": {
@@ -4950,7 +4970,14 @@
             "$ref": "#/components/schemas/Code"
           },
           "pharmacologicClass": {
-            "$ref": "#/components/schemas/Code"
+            "anyOf": [
+              {
+                "$ref": "#/components/schemas/Code"
+              },
+              {
+                "type": "null"
+              }
+            ]
           },
           "instanceType": {
             "const": "StudyIntervention",
@@ -4963,10 +4990,8 @@
           "name",
           "role",
           "type",
-          "minimumResponseDuration",
           "administrations",
           "productDesignation",
-          "pharmacologicClass",
           "instanceType"
         ],
         "title": "StudyIntervention"

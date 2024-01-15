@@ -1132,7 +1132,6 @@ components:
       - id
       - name
       - type
-      - environmentalSetting
       - instanceType
       title: Encounter
     Endpoint:
@@ -2386,13 +2385,11 @@ components:
             $ref: '#/components/schemas/Code'
           type: array
           title: Plannedsex
-          default: []
         criteria:
           items:
             $ref: '#/components/schemas/EligibilityCriterion'
           type: array
           title: Criteria
-          default: []
         plannedAge:
           anyOf:
           - $ref: '#/components/schemas/Range'
@@ -2411,6 +2408,8 @@ components:
       - id
       - name
       - includesHealthySubjects
+      - plannedSex
+      - criteria
       - instanceType
       title: StudyCohort
     StudyCohort-Output:
@@ -2449,13 +2448,11 @@ components:
             $ref: '#/components/schemas/Code'
           type: array
           title: Plannedsex
-          default: []
         criteria:
           items:
             $ref: '#/components/schemas/EligibilityCriterion'
           type: array
           title: Criteria
-          default: []
         plannedAge:
           anyOf:
           - $ref: '#/components/schemas/Range'
@@ -2474,6 +2471,8 @@ components:
       - id
       - name
       - includesHealthySubjects
+      - plannedSex
+      - criteria
       - instanceType
       title: StudyCohort
     StudyDesign-Input:
@@ -2620,10 +2619,11 @@ components:
           type: array
           title: Scheduletimelines
           default: []
-        documentVersion:
+        documentVersionId:
           anyOf:
-          - $ref: '#/components/schemas/StudyProtocolDocumentVersion-Input'
+          - type: string
           - type: 'null'
+          title: Documentversionid
         dictionaries:
           items:
             $ref: '#/components/schemas/SyntaxTemplateDictionary'
@@ -2800,10 +2800,11 @@ components:
           type: array
           title: Scheduletimelines
           default: []
-        documentVersion:
+        documentVersionId:
           anyOf:
-          - $ref: '#/components/schemas/StudyProtocolDocumentVersion-Output'
+          - type: string
           - type: 'null'
+          title: Documentversionid
         dictionaries:
           items:
             $ref: '#/components/schemas/SyntaxTemplateDictionary'
@@ -2872,13 +2873,11 @@ components:
             $ref: '#/components/schemas/Code'
           type: array
           title: Plannedsex
-          default: []
         criteria:
           items:
             $ref: '#/components/schemas/EligibilityCriterion'
           type: array
           title: Criteria
-          default: []
         plannedAge:
           anyOf:
           - $ref: '#/components/schemas/Range'
@@ -2897,6 +2896,8 @@ components:
       - id
       - name
       - includesHealthySubjects
+      - plannedSex
+      - criteria
       - instanceType
       title: StudyDesignPopulation
     StudyDesignPopulation-Output:
@@ -2935,13 +2936,11 @@ components:
             $ref: '#/components/schemas/Code'
           type: array
           title: Plannedsex
-          default: []
         criteria:
           items:
             $ref: '#/components/schemas/EligibilityCriterion'
           type: array
           title: Criteria
-          default: []
         plannedAge:
           anyOf:
           - $ref: '#/components/schemas/Range'
@@ -2960,6 +2959,8 @@ components:
       - id
       - name
       - includesHealthySubjects
+      - plannedSex
+      - criteria
       - instanceType
       title: StudyDesignPopulation
     StudyElement:
@@ -3114,7 +3115,9 @@ components:
         type:
           $ref: '#/components/schemas/Code'
         minimumResponseDuration:
-          $ref: '#/components/schemas/Quantity'
+          anyOf:
+          - $ref: '#/components/schemas/Quantity'
+          - type: 'null'
         codes:
           items:
             $ref: '#/components/schemas/Code'
@@ -3129,7 +3132,9 @@ components:
         productDesignation:
           $ref: '#/components/schemas/Code'
         pharmacologicClass:
-          $ref: '#/components/schemas/Code'
+          anyOf:
+          - $ref: '#/components/schemas/Code'
+          - type: 'null'
         instanceType:
           const: StudyIntervention
           title: Instancetype
@@ -3139,10 +3144,8 @@ components:
       - name
       - role
       - type
-      - minimumResponseDuration
       - administrations
       - productDesignation
-      - pharmacologicClass
       - instanceType
       title: StudyIntervention
     StudyIntervention-Output:
@@ -3170,7 +3173,9 @@ components:
         type:
           $ref: '#/components/schemas/Code'
         minimumResponseDuration:
-          $ref: '#/components/schemas/Quantity'
+          anyOf:
+          - $ref: '#/components/schemas/Quantity'
+          - type: 'null'
         codes:
           items:
             $ref: '#/components/schemas/Code'
@@ -3185,7 +3190,9 @@ components:
         productDesignation:
           $ref: '#/components/schemas/Code'
         pharmacologicClass:
-          $ref: '#/components/schemas/Code'
+          anyOf:
+          - $ref: '#/components/schemas/Code'
+          - type: 'null'
         instanceType:
           const: StudyIntervention
           title: Instancetype
@@ -3195,10 +3202,8 @@ components:
       - name
       - role
       - type
-      - minimumResponseDuration
       - administrations
       - productDesignation
-      - pharmacologicClass
       - instanceType
       title: StudyIntervention
     StudyProtocolDocument-Input:
