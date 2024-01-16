@@ -1,0 +1,40 @@
+status,class_name,property_name,data_type
+Class - NEW,EligibilityCriterion,,
+,,id,string
+,,name,string
+,,description,string
+,,label,string
+,,text,string
+,,dictionary,SyntaxTemplateDictionary
+,,identifier,string
+,,category,Code
+,,context,"StudyDesign, StudyVersion"
+,,next,EligibilityCriterion
+,,previous,EligibilityCriterion
+Class - DELETED,EligibilityCriteria,,
+,,id,string
+,,name,string
+,,description,string
+,,label,string
+,,text,string
+,,dictionary,SyntaxTemplateDictionary
+,,identifier,string
+,,category,Code
+,,context,"StudyDesign, StudyVersion"
+,,next,EligibilityCriteria
+,,previous,EligibilityCriteria
+,,,
+Property - NEW,Estimand,intervention,StudyIntervention
+Property - NEW,StudyDesign,organizations,ResearchOrganization
+Property - NEW,ResearchOrganization,organizationType,Code
+Property - NEW,Organization,organizationType,Code
+Property - NEW,StudyVersion,studyType,Code
+Property - NEW,ScheduleTimeline,timings,Timing
+Property - DELETED,Estimand,treatment,StudyIntervention
+Property - DELETED,StudyDesign,appliesTo,StudySite
+Property - DELETED,ResearchOrganization,type,Code
+Property - DELETED,Organization,type,Code
+Property - DELETED,StudyVersion,type,Code
+Property - DELETED,ScheduledInstance,timings,Timing
+Property - DELETED,ScheduledDecisionInstance,timings,Timing
+Property - DELETED,ScheduledActivityInstance,timings,Timing
