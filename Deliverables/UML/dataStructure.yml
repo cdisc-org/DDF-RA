@@ -207,7 +207,7 @@ AdministrationDuration:
       Type:
       - $ref: '#/Quantity'
       NCI C-Code: CNEW
-      Cardinality: '1'
+      Cardinality: 0..1
       Preferred Term: Administration Duration Quantity Value
       Definition: The value representing the amount of time elapsed during the administration
         of an agent.
@@ -2159,6 +2159,27 @@ ScheduledActivityInstance:
       Model Name: id
       Inherited From:
         $ref: '#/ScheduledInstance'
+    name*:
+      Type:
+      - $ref: '#/string'
+      Relationship Type: UNKNOWN
+      Model Name: name
+      Inherited From:
+        $ref: '#/ScheduledInstance'
+    description*:
+      Type:
+      - $ref: '#/string'
+      Relationship Type: UNKNOWN
+      Model Name: description
+      Inherited From:
+        $ref: '#/ScheduledInstance'
+    label*:
+      Type:
+      - $ref: '#/string'
+      Relationship Type: UNKNOWN
+      Model Name: label
+      Inherited From:
+        $ref: '#/ScheduledInstance'
     defaultConditionId:
       Type:
       - $ref: '#/ScheduledInstance'
@@ -2223,6 +2244,27 @@ ScheduledDecisionInstance:
       Model Name: id
       Inherited From:
         $ref: '#/ScheduledInstance'
+    name*:
+      Type:
+      - $ref: '#/string'
+      Relationship Type: UNKNOWN
+      Model Name: name
+      Inherited From:
+        $ref: '#/ScheduledInstance'
+    description*:
+      Type:
+      - $ref: '#/string'
+      Relationship Type: UNKNOWN
+      Model Name: description
+      Inherited From:
+        $ref: '#/ScheduledInstance'
+    label*:
+      Type:
+      - $ref: '#/string'
+      Relationship Type: UNKNOWN
+      Model Name: label
+      Inherited From:
+        $ref: '#/ScheduledInstance'
     defaultConditionId:
       Type:
       - $ref: '#/ScheduledInstance'
@@ -2282,6 +2324,18 @@ ScheduledInstance:
       Type:
       - $ref: '#/string'
       Model Name: id
+    name:
+      Type:
+      - $ref: '#/string'
+      Model Name: name
+    description:
+      Type:
+      - $ref: '#/string'
+      Model Name: description
+    label:
+      Type:
+      - $ref: '#/string'
+      Model Name: label
     defaultCondition:
       Type:
       - $ref: '#/ScheduledInstance'
@@ -3261,7 +3315,7 @@ StudyIntervention:
     administrations:
       Type:
       - $ref: '#/AgentAdministration'
-      Cardinality: 1..*
+      Cardinality: 0..*
       Relationship Type: Value
       Model Name: administrations
     type:
