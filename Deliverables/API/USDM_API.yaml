@@ -1,9 +1,9 @@
 openapi: 3.1.0
 info:
-  title: Simple API for DDF
+  title: DDF USDM API
   description: A simple TransCelerate Digital Data Flow (DDF) Study Definitions Repository
     API.
-  version: 2.9.0
+  version: 2.11.0
 paths:
   /v3/studyDefinitions:
     post:
@@ -475,7 +475,9 @@ components:
         duration:
           $ref: '#/components/schemas/AdministrationDuration-Input'
         dose:
-          $ref: '#/components/schemas/Quantity'
+          anyOf:
+          - $ref: '#/components/schemas/Quantity'
+          - type: 'null'
         route:
           $ref: '#/components/schemas/Code'
         frequency:
@@ -488,7 +490,6 @@ components:
       - id
       - name
       - duration
-      - dose
       - route
       - frequency
       - instanceType
@@ -516,7 +517,9 @@ components:
         duration:
           $ref: '#/components/schemas/AdministrationDuration-Output'
         dose:
-          $ref: '#/components/schemas/Quantity'
+          anyOf:
+          - $ref: '#/components/schemas/Quantity'
+          - type: 'null'
         route:
           $ref: '#/components/schemas/Code'
         frequency:
@@ -529,7 +532,6 @@ components:
       - id
       - name
       - duration
-      - dose
       - route
       - frequency
       - instanceType
@@ -1110,6 +1112,7 @@ components:
             $ref: '#/components/schemas/Code'
           type: array
           title: Environmentalsetting
+          default: []
         contactModes:
           items:
             $ref: '#/components/schemas/Code'
@@ -2003,6 +2006,20 @@ components:
           type: string
           minLength: 1
           title: Id
+        name:
+          type: string
+          minLength: 1
+          title: Name
+        label:
+          anyOf:
+          - type: string
+          - type: 'null'
+          title: Label
+        description:
+          anyOf:
+          - type: string
+          - type: 'null'
+          title: Description
         timelineId:
           anyOf:
           - type: string
@@ -2040,6 +2057,7 @@ components:
       type: object
       required:
       - id
+      - name
       - instanceType
       title: ScheduledActivityInstance
     ScheduledDecisionInstance:
@@ -2048,6 +2066,20 @@ components:
           type: string
           minLength: 1
           title: Id
+        name:
+          type: string
+          minLength: 1
+          title: Name
+        label:
+          anyOf:
+          - type: string
+          - type: 'null'
+          title: Label
+        description:
+          anyOf:
+          - type: string
+          - type: 'null'
+          title: Description
         timelineId:
           anyOf:
           - type: string
@@ -2079,6 +2111,7 @@ components:
       type: object
       required:
       - id
+      - name
       - instanceType
       - conditionAssignments
       title: ScheduledDecisionInstance
@@ -3129,6 +3162,7 @@ components:
             $ref: '#/components/schemas/AgentAdministration-Input'
           type: array
           title: Administrations
+          default: []
         productDesignation:
           $ref: '#/components/schemas/Code'
         pharmacologicClass:
@@ -3144,7 +3178,6 @@ components:
       - name
       - role
       - type
-      - administrations
       - productDesignation
       - instanceType
       title: StudyIntervention
@@ -3187,6 +3220,7 @@ components:
             $ref: '#/components/schemas/AgentAdministration-Output'
           type: array
           title: Administrations
+          default: []
         productDesignation:
           $ref: '#/components/schemas/Code'
         pharmacologicClass:
@@ -3202,7 +3236,6 @@ components:
       - name
       - role
       - type
-      - administrations
       - productDesignation
       - instanceType
       title: StudyIntervention
@@ -3786,17 +3819,45 @@ components:
       properties:
         study:
           $ref: '#/components/schemas/Study-Input'
+        usdm_version:
+          type: string
+          title: Usdm Version
+        system_name:
+          anyOf:
+          - type: string
+          - type: 'null'
+          title: System Name
+        system_version:
+          anyOf:
+          - type: string
+          - type: 'null'
+          title: System Version
       type: object
       required:
       - study
+      - usdm_version
       title: Wrapper
     Wrapper-Output:
       properties:
         study:
           $ref: '#/components/schemas/Study-Output'
+        usdm_version:
+          type: string
+          title: Usdm Version
+        system_name:
+          anyOf:
+          - type: string
+          - type: 'null'
+          title: System Name
+        system_version:
+          anyOf:
+          - type: string
+          - type: 'null'
+          title: System Version
       type: object
       required:
       - study
+      - usdm_version
       title: Wrapper
 tags:
 - name: Production

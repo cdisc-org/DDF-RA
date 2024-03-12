@@ -1,9 +1,9 @@
 {
   "openapi": "3.1.0",
   "info": {
-    "title": "Simple API for DDF",
+    "title": "DDF USDM API",
     "description": "A simple TransCelerate Digital Data Flow (DDF) Study Definitions Repository API.",
-    "version": "2.9.0"
+    "version": "2.11.0"
   },
   "paths": {
     "/v3/studyDefinitions": {
@@ -737,7 +737,14 @@
             "$ref": "#/components/schemas/AdministrationDuration-Input"
           },
           "dose": {
-            "$ref": "#/components/schemas/Quantity"
+            "anyOf": [
+              {
+                "$ref": "#/components/schemas/Quantity"
+              },
+              {
+                "type": "null"
+              }
+            ]
           },
           "route": {
             "$ref": "#/components/schemas/Code"
@@ -755,7 +762,6 @@
           "id",
           "name",
           "duration",
-          "dose",
           "route",
           "frequency",
           "instanceType"
@@ -800,7 +806,14 @@
             "$ref": "#/components/schemas/AdministrationDuration-Output"
           },
           "dose": {
-            "$ref": "#/components/schemas/Quantity"
+            "anyOf": [
+              {
+                "$ref": "#/components/schemas/Quantity"
+              },
+              {
+                "type": "null"
+              }
+            ]
           },
           "route": {
             "$ref": "#/components/schemas/Code"
@@ -818,7 +831,6 @@
           "id",
           "name",
           "duration",
-          "dose",
           "route",
           "frequency",
           "instanceType"
@@ -1721,7 +1733,8 @@
               "$ref": "#/components/schemas/Code"
             },
             "type": "array",
-            "title": "Environmentalsetting"
+            "title": "Environmentalsetting",
+            "default": []
           },
           "contactModes": {
             "items": {
@@ -3095,6 +3108,33 @@
             "minLength": 1,
             "title": "Id"
           },
+          "name": {
+            "type": "string",
+            "minLength": 1,
+            "title": "Name"
+          },
+          "label": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Label"
+          },
+          "description": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Description"
+          },
           "timelineId": {
             "anyOf": [
               {
@@ -3166,6 +3206,7 @@
         "type": "object",
         "required": [
           "id",
+          "name",
           "instanceType"
         ],
         "title": "ScheduledActivityInstance"
@@ -3176,6 +3217,33 @@
             "type": "string",
             "minLength": 1,
             "title": "Id"
+          },
+          "name": {
+            "type": "string",
+            "minLength": 1,
+            "title": "Name"
+          },
+          "label": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Label"
+          },
+          "description": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Description"
           },
           "timelineId": {
             "anyOf": [
@@ -3236,6 +3304,7 @@
         "type": "object",
         "required": [
           "id",
+          "name",
           "instanceType",
           "conditionAssignments"
         ],
@@ -4869,7 +4938,8 @@
               "$ref": "#/components/schemas/AgentAdministration-Input"
             },
             "type": "array",
-            "title": "Administrations"
+            "title": "Administrations",
+            "default": []
           },
           "productDesignation": {
             "$ref": "#/components/schemas/Code"
@@ -4895,7 +4965,6 @@
           "name",
           "role",
           "type",
-          "administrations",
           "productDesignation",
           "instanceType"
         ],
@@ -4964,7 +5033,8 @@
               "$ref": "#/components/schemas/AgentAdministration-Output"
             },
             "type": "array",
-            "title": "Administrations"
+            "title": "Administrations",
+            "default": []
           },
           "productDesignation": {
             "$ref": "#/components/schemas/Code"
@@ -4990,7 +5060,6 @@
           "name",
           "role",
           "type",
-          "administrations",
           "productDesignation",
           "instanceType"
         ],
@@ -5898,11 +5967,38 @@
         "properties": {
           "study": {
             "$ref": "#/components/schemas/Study-Input"
+          },
+          "usdm_version": {
+            "type": "string",
+            "title": "Usdm Version"
+          },
+          "system_name": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "System Name"
+          },
+          "system_version": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "System Version"
           }
         },
         "type": "object",
         "required": [
-          "study"
+          "study",
+          "usdm_version"
         ],
         "title": "Wrapper"
       },
@@ -5910,11 +6006,38 @@
         "properties": {
           "study": {
             "$ref": "#/components/schemas/Study-Output"
+          },
+          "usdm_version": {
+            "type": "string",
+            "title": "Usdm Version"
+          },
+          "system_name": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "System Name"
+          },
+          "system_version": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "System Version"
           }
         },
         "type": "object",
         "required": [
-          "study"
+          "study",
+          "usdm_version"
         ],
         "title": "Wrapper"
       }
