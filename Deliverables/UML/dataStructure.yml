@@ -2159,24 +2159,24 @@ ScheduledActivityInstance:
       Model Name: id
       Inherited From:
         $ref: '#/ScheduledInstance'
-    name*:
+    name:
       Type:
       - $ref: '#/string'
-      Relationship Type: UNKNOWN
+      Relationship Type: Value
       Model Name: name
       Inherited From:
         $ref: '#/ScheduledInstance'
-    description*:
+    description:
       Type:
       - $ref: '#/string'
-      Relationship Type: UNKNOWN
+      Relationship Type: Value
       Model Name: description
       Inherited From:
         $ref: '#/ScheduledInstance'
-    label*:
+    label:
       Type:
       - $ref: '#/string'
-      Relationship Type: UNKNOWN
+      Relationship Type: Value
       Model Name: label
       Inherited From:
         $ref: '#/ScheduledInstance'
@@ -2244,24 +2244,24 @@ ScheduledDecisionInstance:
       Model Name: id
       Inherited From:
         $ref: '#/ScheduledInstance'
-    name*:
+    name:
       Type:
       - $ref: '#/string'
-      Relationship Type: UNKNOWN
+      Relationship Type: Value
       Model Name: name
       Inherited From:
         $ref: '#/ScheduledInstance'
-    description*:
+    description:
       Type:
       - $ref: '#/string'
-      Relationship Type: UNKNOWN
+      Relationship Type: Value
       Model Name: description
       Inherited From:
         $ref: '#/ScheduledInstance'
-    label*:
+    label:
       Type:
       - $ref: '#/string'
-      Relationship Type: UNKNOWN
+      Relationship Type: Value
       Model Name: label
       Inherited From:
         $ref: '#/ScheduledInstance'
