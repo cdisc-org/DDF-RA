@@ -2359,14 +2359,7 @@
             "title": "Instancetype"
           },
           "level": {
-            "anyOf": [
-              {
-                "$ref": "#/components/schemas/Code"
-              },
-              {
-                "type": "null"
-              }
-            ]
+            "$ref": "#/components/schemas/Code"
           },
           "endpoints": {
             "items": {
@@ -2382,7 +2375,8 @@
           "id",
           "name",
           "text",
-          "instanceType"
+          "instanceType",
+          "level"
         ],
         "title": "Objective"
       },
@@ -2440,14 +2434,7 @@
             "title": "Instancetype"
           },
           "level": {
-            "anyOf": [
-              {
-                "$ref": "#/components/schemas/Code"
-              },
-              {
-                "type": "null"
-              }
-            ]
+            "$ref": "#/components/schemas/Code"
           },
           "endpoints": {
             "items": {
@@ -2463,7 +2450,8 @@
           "id",
           "name",
           "text",
-          "instanceType"
+          "instanceType",
+          "level"
         ],
         "title": "Objective"
       },

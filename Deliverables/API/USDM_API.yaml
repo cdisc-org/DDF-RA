@@ -1518,9 +1518,7 @@ components:
           const: Objective
           title: Instancetype
         level:
-          anyOf:
-          - $ref: '#/components/schemas/Code'
-          - type: 'null'
+          $ref: '#/components/schemas/Code'
         endpoints:
           items:
             $ref: '#/components/schemas/Endpoint'
@@ -1533,6 +1531,7 @@ components:
       - name
       - text
       - instanceType
+      - level
       title: Objective
     Objective-Output:
       properties:
@@ -1566,9 +1565,7 @@ components:
           const: Objective
           title: Instancetype
         level:
-          anyOf:
-          - $ref: '#/components/schemas/Code'
-          - type: 'null'
+          $ref: '#/components/schemas/Code'
         endpoints:
           items:
             $ref: '#/components/schemas/Endpoint'
@@ -1581,6 +1578,7 @@ components:
       - name
       - text
       - instanceType
+      - level
       title: Objective
     Organization-Input:
       properties:
