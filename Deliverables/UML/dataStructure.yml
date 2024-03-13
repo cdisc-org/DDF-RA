@@ -263,7 +263,7 @@ AgentAdministration:
       Model Name: duration
     route:
       Type:
-      - $ref: '#/Code'
+      - $ref: '#/AliasCode'
       NCI C-Code: C38114
       Cardinality: '1'
       Preferred Term: Route of Administration
@@ -284,7 +284,7 @@ AgentAdministration:
       Model Name: dose
     frequency:
       Type:
-      - $ref: '#/Code'
+      - $ref: '#/AliasCode'
       NCI C-Code: C89081
       Cardinality: '1'
       Preferred Term: Dosing Frequency
@@ -839,6 +839,18 @@ Condition:
       - $ref: '#/string'
       Cardinality: 0..1
       Relationship Type: Value
+ConditionAssignment:
+  Modifier: Abstract
+  Attributes:
+    condition:
+      Type:
+      - $ref: '#/string'
+      Model Name: condition
+    target:
+      Type:
+      - $ref: '#/ScheduledInstance'
+      Cardinality: '1'
+      Model Name: target
 EligibilityCriterion:
   NCI C-Code: C16112
   Preferred Term: Study Eligibility Criteria
@@ -1506,6 +1518,18 @@ NarrativeContent:
       Definition: An identifying designation for the document section.
       Relationship Type: Value
       Model Name: sectionTitle
+    previous*:
+      Type:
+      - $ref: '#/NarrativeContent'
+      Cardinality: 0..*
+      Relationship Type: UNKNOWN
+      Model Name: previous
+    next*:
+      Type:
+      - $ref: '#/NarrativeContent'
+      Cardinality: 0..*
+      Relationship Type: UNKNOWN
+      Model Name: next
     childIds:
       Type:
       - $ref: '#/NarrativeContent'
@@ -1586,7 +1610,7 @@ Objective:
       Type:
       - $ref: '#/Code'
       NCI C-Code: C188823
-      Cardinality: 0..1
+      Cardinality: '1'
       Preferred Term: Study Objective Level
       Definition: A characterization or classification of the study objective that
         determines its category of importance relative to other study objectives.
@@ -1676,6 +1700,17 @@ Organization:
       - $ref: '#/string'
       Cardinality: 0..1
       Relationship Type: Value
+ParameterMap:
+  Modifier: Abstract
+  Attributes:
+    tag:
+      Type:
+      - $ref: '#/string'
+      Model Name: tag
+    reference:
+      Type:
+      - $ref: '#/string'
+      Model Name: reference
 PopulationDefinition:
   NCI C-Code: CNEW
   Preferred Term: Population Definition
@@ -1849,7 +1884,7 @@ Quantity:
       Model Name: value
     unit:
       Type:
-      - $ref: '#/Code'
+      - $ref: '#/AliasCode'
       NCI C-Code: C44258
       Cardinality: 0..1
       Preferred Term: Quantity Unit
@@ -2299,8 +2334,9 @@ ScheduledDecisionInstance:
         $ref: '#/ScheduledInstance'
     conditionAssignments:
       Type:
-      - $ref: '#/Map'
+      - $ref: '#/ConditionAssignment'
       NCI C-Code: C201335
+      Cardinality: 1..*
       Preferred Term: Condition Assignments
       Definition: An allotting or appointment to a set of conditions that are to be
         met in order to make a logical decision.
@@ -3827,15 +3863,16 @@ SyntaxTemplateDictionary:
       Definition: The short descriptive designation for the syntax template dictionary.
       Relationship Type: Value
       Model Name: label
+    parameterMaps*:
+      Type:
+      - $ref: '#/ParameterMap'
+      Cardinality: 1..*
+      Relationship Type: UNKNOWN
+      Model Name: parameterMaps
     parameterMap:
       Type:
-      - $ref: '#/Map'
-      NCI C-Code: CNEW
-      Preferred Term: Syntax Template Dictionary Parameter Map
-      Definition: The paired name and value contained within the syntax template dictionary
-        for a given parameter.
+      - $ref: UNKNOWN
       Relationship Type: Value
-      Model Name: parameterMap
     instanceType:
       Type:
       - $ref: '#/string'
@@ -3886,6 +3923,11 @@ Timing:
         events.
       Relationship Type: Value
       Model Name: value
+    valueLabel*:
+      Type:
+      - $ref: '#/string'
+      Relationship Type: UNKNOWN
+      Model Name: valueLabel
     window:
       Type:
       - $ref: '#/string'
