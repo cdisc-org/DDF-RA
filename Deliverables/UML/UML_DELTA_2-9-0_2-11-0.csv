@@ -1,12 +1,13 @@
 status,class_name,property_name,data_type
 Class - NEW,ConditionAssignment,,
 ,,condition,string
-,,target,ScheduledInstance
+,,conditionTarget,ScheduledInstance
 Class - NEW,ParameterMap,,
 ,,tag,string
 ,,reference,string
 ,,,
 Property - NEW,Timing,valueLabel,string
+Property - NEW,Timing,windowLabel,string
 Property - NEW,NarrativeContent,next,NarrativeContent
 Property - NEW,NarrativeContent,previous,NarrativeContent
 Property - NEW,ScheduledInstance,description,string
@@ -19,4 +20,5 @@ Property - NEW,ScheduledDecisionInstance,name,string
 Property - NEW,ScheduledActivityInstance,description,string
 Property - NEW,ScheduledActivityInstance,label,string
 Property - NEW,ScheduledActivityInstance,name,string
+Property - DELETED,Timing,window,string
 Property - DELETED,SyntaxTemplateDictionary,parameterMap,Map

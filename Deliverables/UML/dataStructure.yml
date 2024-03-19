@@ -846,11 +846,11 @@ ConditionAssignment:
       Type:
       - $ref: '#/string'
       Model Name: condition
-    target:
+    conditionTarget:
       Type:
       - $ref: '#/ScheduledInstance'
       Cardinality: '1'
-      Model Name: target
+      Model Name: conditionTarget
 EligibilityCriterion:
   NCI C-Code: C16112
   Preferred Term: Study Eligibility Criteria
@@ -1758,7 +1758,7 @@ PopulationDefinition:
       Type:
       - $ref: '#/Code'
       NCI C-Code: CNEW
-      Cardinality: '1'
+      Cardinality: 0..1
       Preferred Term: Population Definition Planned Sex
       Definition: The protocol-defined sex within the population definition.
       Codelist Ref: SDTM Terminology Codelist C66732
@@ -2725,7 +2725,7 @@ StudyCohort:
       Type:
       - $ref: '#/Code'
       NCI C-Code: CNEW
-      Cardinality: '1'
+      Cardinality: 0..1
       Preferred Term: Planned Sex of Study Cohort Participants
       Definition: The protocol-defined sex of the study cohort.
       Codelist Ref: SDTM Terminology Codelist C66732
@@ -3085,7 +3085,7 @@ StudyDesignPopulation:
       Type:
       - $ref: '#/Code'
       NCI C-Code: C49696
-      Cardinality: '1'
+      Cardinality: 0..1
       Preferred Term: Sex of Participants
       Definition: The specific sex, either male, female, or mixed of the subject group
         being studied. (NCI)
@@ -3928,15 +3928,11 @@ Timing:
       - $ref: '#/string'
       Relationship Type: UNKNOWN
       Model Name: valueLabel
-    window:
+    windowLabel*:
       Type:
       - $ref: '#/string'
-      NCI C-Code: C48921
-      Preferred Term: Timing Window
-      Definition: A time period, or other type of interval, during which a temporal
-        event may be achieved, obtained, or observed.
-      Relationship Type: Value
-      Model Name: window
+      Relationship Type: UNKNOWN
+      Model Name: windowLabel
     windowLower:
       Type:
       - $ref: '#/string'
@@ -3989,6 +3985,10 @@ Timing:
       Cardinality: 0..1
       Relationship Type: Ref
       Model Name: relativeFromScheduledInstance
+    window:
+      Type:
+      - $ref: UNKNOWN
+      Relationship Type: Value
     instanceType:
       Type:
       - $ref: '#/string'
