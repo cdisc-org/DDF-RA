@@ -842,6 +842,10 @@ Condition:
 ConditionAssignment:
   Modifier: Abstract
   Attributes:
+    id:
+      Type:
+      - $ref: '#/string'
+      Model Name: id
     condition:
       Type:
       - $ref: '#/string'
@@ -1703,6 +1707,10 @@ Organization:
 ParameterMap:
   Modifier: Abstract
   Attributes:
+    id:
+      Type:
+      - $ref: '#/string'
+      Model Name: id
     tag:
       Type:
       - $ref: '#/string'
