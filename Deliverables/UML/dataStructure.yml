@@ -209,8 +209,8 @@ AdministrationDuration:
       NCI C-Code: CNEW
       Cardinality: 0..1
       Preferred Term: Administration Duration Quantity Value
-      Definition: The value representing the amount of time elapsed during the administration
-        of an agent.
+      Definition: The value representing the amount of time over which the administration
+        of an agent occurs.
       Relationship Type: Value
       Model Name: quantity
     instanceType:
@@ -840,6 +840,10 @@ Condition:
       Cardinality: 0..1
       Relationship Type: Value
 ConditionAssignment:
+  NCI C-Code: C201335
+  Preferred Term: Condition Assignment
+  Definition: An allotting or appointment to a condition or set of conditions that
+    are to be met in order to make a logical decision.
   Modifier: Abstract
   Attributes:
     id:
@@ -849,6 +853,10 @@ ConditionAssignment:
     condition:
       Type:
       - $ref: '#/string'
+      NCI C-Code: C47953
+      Preferred Term: Logical Condition
+      Definition: An assumption on which rests the validity or effect of something
+        else.
       Model Name: condition
     conditionTarget:
       Type:
@@ -876,8 +884,9 @@ EligibilityCriterion:
       Type:
       - $ref: '#/string'
       NCI C-Code: CNEW
-      Preferred Term: Study Eligibility Criteria Description
-      Definition: A narrative representation of the study eligibility criteria.
+      Preferred Term: Study Eligibility Criteria Name
+      Definition: The literal identifier (i.e., distinctive designation) of the study
+        eligibility criteria.
       Relationship Type: Value
       Model Name: name
       Inherited From:
@@ -886,9 +895,8 @@ EligibilityCriterion:
       Type:
       - $ref: '#/string'
       NCI C-Code: CNEW
-      Preferred Term: Study Eligibility Criteria Name
-      Definition: The literal identifier (i.e., distinctive designation) of the study
-        eligibility criteria.
+      Preferred Term: Study Eligibility Criteria Description
+      Definition: A narrative representation of the study eligibility criteria.
       Relationship Type: Value
       Model Name: description
       Inherited From:
@@ -1326,8 +1334,8 @@ GovernanceDate:
 Indication:
   NCI C-Code: C41184
   Preferred Term: Disease/Condition Indication
-  Definition: A health problem or disease that is identified as likely to be benefited
-    by a therapy being studied in clinical trials.
+  Definition: The disease or condition the intervention will diagnose, treat, prevent,
+    cure, or mitigate.
   Modifier: Concrete
   Attributes:
     id:
@@ -1339,8 +1347,8 @@ Indication:
       Type:
       - $ref: '#/string'
       NCI C-Code: CNEW
-      Preferred Term: Disease Indication Name
-      Definition: The literal identifier (i.e., distinctive designation) of the disease
+      Preferred Term: Disease/Condition Indication Name
+      Definition: The literal identifier (i.e., distinctive designation) of the disease/condition
         indication.
       Relationship Type: Value
       Model Name: name
@@ -1348,7 +1356,7 @@ Indication:
       Type:
       - $ref: '#/string'
       NCI C-Code: C112038
-      Preferred Term: Trial Disease/Condition Indication Description
+      Preferred Term: Disease/Condition Indication Description
       Definition: A narrative representation of the condition, disease or disorder
         that the clinical trial is intended to investigate or address.
       Relationship Type: Value
@@ -1357,17 +1365,17 @@ Indication:
       Type:
       - $ref: '#/string'
       NCI C-Code: CNEW
-      Preferred Term: Indication Label
-      Definition: The short descriptive designation for the indication.
+      Preferred Term: Disease/Condition Indication Label
+      Definition: The short descriptive designation for the disease/condition indication.
       Relationship Type: Value
       Model Name: label
     isRareDisease:
       Type:
       - $ref: '#/Boolean'
       NCI C-Code: CNEW
-      Preferred Term: Disease Indication Is Rare Disease Indicator
-      Definition: An indication as to whether the disease indication under study is
-        considered a rare disease.
+      Preferred Term: Disease/Condition Indication Is Rare Disease Indicator
+      Definition: An indication as to whether the disease/condition indication under
+        study is considered a rare disease.
       Relationship Type: Value
       Model Name: isRareDisease
     codes:
@@ -1375,8 +1383,9 @@ Indication:
       - $ref: '#/Code'
       NCI C-Code: C188822
       Cardinality: 0..*
-      Preferred Term: Disease Indication Code
-      Definition: A short sequence of characters that represents the disease indication.
+      Preferred Term: Disease/Condition Inidcation Code
+      Definition: A short sequence of characters that represents the disease/condition
+        indication.
       Codelist Ref: (Point out to multiple Biomedical coding dictionaries such as
         SNOMEDCT (for FDA), MedDRA, NCIt, ICD's, etc.)
       Relationship Type: Value
@@ -1441,10 +1450,9 @@ IntercurrentEvent:
 Masking:
   NCI C-Code: C191278
   Preferred Term: Masking
-  Definition: 'The mechanism used to obscure the distinctive characteristics of the
-    study intervention or procedure to make it indistinguishable from the comparator.
-    NOTE: Blinding refers to study participants while masking refers to the study
-    intervention. (CDISC Glossary)'
+  Definition: The mechanism used to obscure the distinctive characteristics of the
+    study intervention or procedure to make it indistinguishable from a comparator.
+    (CDISC Glossary)
   Modifier: Concrete
   Attributes:
     id:
@@ -1652,7 +1660,7 @@ Organization:
       - $ref: '#/string'
       NCI C-Code: C93874
       Preferred Term: Organization Name
-      Definition: A non-unique textual identifier for the organization. (BRIDG)
+      Definition: The literal identifier (i.e., distinctive designation) of the organization.
       Relationship Type: Value
       Model Name: name
     label:
@@ -1705,6 +1713,9 @@ Organization:
       Cardinality: 0..1
       Relationship Type: Value
 ParameterMap:
+  NCI C-Code: CNEW
+  Preferred Term: Parameter Map
+  Definition: The paired name and value for a given parameter.
   Modifier: Abstract
   Attributes:
     id:
@@ -1714,10 +1725,18 @@ ParameterMap:
     tag:
       Type:
       - $ref: '#/string'
+      NCI C-Code: CNEW
+      Preferred Term: Programming Tag
+      Definition: Character strings bounded by angle brackets that act as containers
+        for programming language elements.
       Model Name: tag
     reference:
       Type:
       - $ref: '#/string'
+      NCI C-Code: CNEW
+      Preferred Term: Programming Tag Reference
+      Definition: The reference for a tag used in programming languages, such as a
+        markup language (e.g., HTML, XML), to store attributes and elements.
       Model Name: reference
 PopulationDefinition:
   NCI C-Code: CNEW
@@ -2205,6 +2224,10 @@ ScheduledActivityInstance:
     name:
       Type:
       - $ref: '#/string'
+      NCI C-Code: CNEW
+      Preferred Term: Scheduled Activity Instance Name
+      Definition: The literal identifier (i.e., distinctive designation) of the scheduled
+        activity instance.
       Relationship Type: Value
       Model Name: name
       Inherited From:
@@ -2212,6 +2235,9 @@ ScheduledActivityInstance:
     description:
       Type:
       - $ref: '#/string'
+      NCI C-Code: CNEW
+      Preferred Term: Scheduled Activity Instance Description
+      Definition: A narrative representation of the scheduled activity instance.
       Relationship Type: Value
       Model Name: description
       Inherited From:
@@ -2219,6 +2245,9 @@ ScheduledActivityInstance:
     label:
       Type:
       - $ref: '#/string'
+      NCI C-Code: CNEW
+      Preferred Term: Scheduled Activity Instance Label
+      Definition: The short descriptive designation for the scheduled activity instance.
       Relationship Type: Value
       Model Name: label
       Inherited From:
@@ -2290,6 +2319,10 @@ ScheduledDecisionInstance:
     name:
       Type:
       - $ref: '#/string'
+      NCI C-Code: CNEW
+      Preferred Term: Scheduled Decision Instance Name
+      Definition: The literal identifier (i.e., distinctive designation) of the scheduled
+        Decision instance.
       Relationship Type: Value
       Model Name: name
       Inherited From:
@@ -2297,6 +2330,9 @@ ScheduledDecisionInstance:
     description:
       Type:
       - $ref: '#/string'
+      NCI C-Code: CNEW
+      Preferred Term: Scheduled Decision Instance Description
+      Definition: A narrative representation of the scheduled Decision instance.
       Relationship Type: Value
       Model Name: description
       Inherited From:
@@ -2304,6 +2340,9 @@ ScheduledDecisionInstance:
     label:
       Type:
       - $ref: '#/string'
+      NCI C-Code: CNEW
+      Preferred Term: Scheduled Decision Instance Label
+      Definition: The short descriptive designation for the scheduled Decision instance.
       Relationship Type: Value
       Model Name: label
       Inherited From:
@@ -2343,11 +2382,7 @@ ScheduledDecisionInstance:
     conditionAssignments:
       Type:
       - $ref: '#/ConditionAssignment'
-      NCI C-Code: C201335
       Cardinality: 1..*
-      Preferred Term: Condition Assignments
-      Definition: An allotting or appointment to a set of conditions that are to be
-        met in order to make a logical decision.
       Relationship Type: Value
       Model Name: conditionAssignments
     instanceType:
@@ -2371,14 +2406,24 @@ ScheduledInstance:
     name:
       Type:
       - $ref: '#/string'
+      NCI C-Code: CNEW
+      Preferred Term: Scheduled Instance Name
+      Definition: The literal identifier (i.e., distinctive designation) of the scheduled
+        instance.
       Model Name: name
     description:
       Type:
       - $ref: '#/string'
+      NCI C-Code: CNEW
+      Preferred Term: Scheduled Instance Description
+      Definition: A narrative representation of the scheduled instance.
       Model Name: description
     label:
       Type:
       - $ref: '#/string'
+      NCI C-Code: CNEW
+      Preferred Term: Scheduled Instance Label
+      Definition: The short descriptive designation for the scheduled instance.
       Model Name: label
     defaultCondition:
       Type:
@@ -2404,9 +2449,9 @@ Study:
   NCI C-Code: C15206
   Preferred Term: Clinical Study
   Definition: 'A clinical study involves research using human volunteers (also called
-    participants) that is intended to add to medical knowledge. There are two main
-    types of clinical studies: clinical trials (also called interventional studies)
-    and observational studies. [[http://ClinicalTrials.gov]](CDISC Glossary)'
+    subjects or participants) that is intended to add to medical knowledge. There
+    are two main types of clinical studies: clinical trials (also called interventional
+    studies) and observational studies. [[http://ClinicalTrials.gov]](CDISC Glossary)'
   Modifier: Concrete
   Attributes:
     id:
@@ -2489,8 +2534,8 @@ StudyAmendment:
       - $ref: '#/Boolean'
       NCI C-Code: CNEW
       Preferred Term: Study Amendment Substantial Impact Indicator
-      Definition: An indication as to whether the amendment likely to have a substantial
-        impact on the safety or rights of the participants.
+      Definition: An indication as to whether the amendment is likely to have a substantial
+        impact on the safety or rights of study subjects/participants.
       Relationship Type: Value
       Model Name: substantialImpact
     enrollments:
@@ -2734,8 +2779,8 @@ StudyCohort:
       - $ref: '#/Code'
       NCI C-Code: CNEW
       Cardinality: 0..1
-      Preferred Term: Planned Sex of Study Cohort Participants
-      Definition: The protocol-defined sex of the study cohort.
+      Preferred Term: Study Cohort Planned Sex
+      Definition: The protocol-defined sex within the study cohort.
       Codelist Ref: SDTM Terminology Codelist C66732
       Relationship Type: Value
       Model Name: plannedSex
@@ -2755,7 +2800,7 @@ StudyCohort:
       NCI C-Code: CNEW
       Cardinality: 0..1
       Preferred Term: Study Cohort Planned Age
-      Definition: The protocol-defined age of subjects within the study cohort.
+      Definition: The anticipated age of subjects within the study cohort.
       Relationship Type: Value
       Model Name: plannedAge
       Inherited From:
@@ -2763,10 +2808,11 @@ StudyCohort:
     plannedEnrollmentNumber:
       Type:
       - $ref: '#/Range'
-      NCI C-Code: C49692
+      NCI C-Code: CNEW
       Cardinality: 0..1
-      Preferred Term: Planned Number of Participants in Study Cohort
-      Definition: The protocol-defined number of subjects within a study cohort.
+      Preferred Term: Study Cohort Planned Enrollment Number
+      Definition: The value representing the planned number of subjects to be entered
+        in a clinical trial, within the study cohort.
       Relationship Type: Value
       Model Name: plannedEnrollmentNumber
       Inherited From:
@@ -2913,7 +2959,7 @@ StudyDesign:
       Cardinality: '1'
       Preferred Term: Intervention Model Type
       Definition: The general design of the strategy for assigning interventions to
-        participants in a clinical study. (clinicaltrials.gov)
+        subjects in a clinical study. (clinicaltrials.gov)
       Codelist Ref: SDTM Terminology Codelist C99076
       Relationship Type: Value
       Model Name: interventionModel
@@ -3082,9 +3128,10 @@ StudyDesignPopulation:
       Type:
       - $ref: '#/Boolean'
       NCI C-Code: CNEW
-      Preferred Term: Study Population Includes Healthy Subjects Indicator
-      Definition: An indication as to whether the population definition includes healthy
-        subjects, that is, subjects without the disease or condition under study.
+      Preferred Term: Study Design Population Includes Healthy Subjects Indicator
+      Definition: An indication as to whether the study design population includes
+        healthy subjects, that is, subjects without the disease or condition under
+        study.
       Relationship Type: Value
       Model Name: includesHealthySubjects
       Inherited From:
@@ -3092,11 +3139,10 @@ StudyDesignPopulation:
     plannedSex:
       Type:
       - $ref: '#/Code'
-      NCI C-Code: C49696
+      NCI C-Code: CNEW
       Cardinality: 0..1
-      Preferred Term: Sex of Participants
-      Definition: The specific sex, either male, female, or mixed of the subject group
-        being studied. (NCI)
+      Preferred Term: Study Design Population Planned Sex
+      Definition: The protocol-defined sex within the study design population.
       Codelist Ref: SDTM Terminology Codelist C66732
       Relationship Type: Value
       Model Name: plannedSex
@@ -3116,7 +3162,7 @@ StudyDesignPopulation:
       NCI C-Code: CNEW
       Cardinality: 0..1
       Preferred Term: Study Design Population Planned Age
-      Definition: The protocol-defined age of subjects within the study design population.
+      Definition: The anticipated age of subjects within the study design population.
       Relationship Type: Value
       Model Name: plannedAge
       Inherited From:
@@ -3910,7 +3956,7 @@ Timing:
       - $ref: '#/string'
       NCI C-Code: C164648
       Preferred Term: Timing Description
-      Definition: The textual representation of the chronological relationship between
+      Definition: A narrative representation of the chronological relationship between
         temporal events.
       Relationship Type: Value
       Model Name: description
@@ -3934,11 +3980,18 @@ Timing:
     valueLabel*:
       Type:
       - $ref: '#/string'
+      NCI C-Code: CNEW
+      Preferred Term: Timing Value Label
+      Definition: The short descriptive designation for the timing value.
       Relationship Type: UNKNOWN
       Model Name: valueLabel
     windowLabel*:
       Type:
       - $ref: '#/string'
+      NCI C-Code: CNEW
+      Preferred Term: Timing Window Label
+      Definition: The short descriptive designation for a time period, or other type
+        of interval, during which a temporal event may be achieved, obtained, or observed.
       Relationship Type: UNKNOWN
       Model Name: windowLabel
     windowLower:
