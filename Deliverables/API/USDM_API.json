@@ -631,7 +631,7 @@
             "title": "Id"
           },
           "quantity": {
-            "$ref": "#/components/schemas/Quantity"
+            "$ref": "#/components/schemas/Quantity-Input"
           },
           "description": {
             "type": "string",
@@ -669,7 +669,7 @@
             "title": "Id"
           },
           "quantity": {
-            "$ref": "#/components/schemas/Quantity"
+            "$ref": "#/components/schemas/Quantity-Output"
           },
           "description": {
             "type": "string",
@@ -739,7 +739,7 @@
           "dose": {
             "anyOf": [
               {
-                "$ref": "#/components/schemas/Quantity"
+                "$ref": "#/components/schemas/Quantity-Input"
               },
               {
                 "type": "null"
@@ -747,10 +747,10 @@
             ]
           },
           "route": {
-            "$ref": "#/components/schemas/Code"
+            "$ref": "#/components/schemas/AliasCode"
           },
           "frequency": {
-            "$ref": "#/components/schemas/Code"
+            "$ref": "#/components/schemas/AliasCode"
           },
           "instanceType": {
             "const": "AgentAdministration",
@@ -808,7 +808,7 @@
           "dose": {
             "anyOf": [
               {
-                "$ref": "#/components/schemas/Quantity"
+                "$ref": "#/components/schemas/Quantity-Output"
               },
               {
                 "type": "null"
@@ -816,10 +816,10 @@
             ]
           },
           "route": {
-            "$ref": "#/components/schemas/Code"
+            "$ref": "#/components/schemas/AliasCode"
           },
           "frequency": {
-            "$ref": "#/components/schemas/Code"
+            "$ref": "#/components/schemas/AliasCode"
           },
           "instanceType": {
             "const": "AgentAdministration",
@@ -1552,6 +1552,35 @@
           "instanceType"
         ],
         "title": "Condition"
+      },
+      "ConditionAssignment": {
+        "properties": {
+          "id": {
+            "type": "string",
+            "minLength": 1,
+            "title": "Id"
+          },
+          "condition": {
+            "type": "string",
+            "title": "Condition"
+          },
+          "conditionTargetId": {
+            "type": "string",
+            "title": "Conditiontargetid"
+          },
+          "instanceType": {
+            "const": "ConditionAssignment",
+            "title": "Instancetype"
+          }
+        },
+        "type": "object",
+        "required": [
+          "id",
+          "condition",
+          "conditionTargetId",
+          "instanceType"
+        ],
+        "title": "ConditionAssignment"
       },
       "EligibilityCriterion": {
         "properties": {
@@ -2290,6 +2319,28 @@
             "title": "Childids",
             "default": []
           },
+          "previousId": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Previousid"
+          },
+          "nextId": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Nextid"
+          },
           "instanceType": {
             "const": "NarrativeContent",
             "title": "Instancetype"
@@ -2575,6 +2626,35 @@
         ],
         "title": "Organization"
       },
+      "ParameterMap": {
+        "properties": {
+          "id": {
+            "type": "string",
+            "minLength": 1,
+            "title": "Id"
+          },
+          "tag": {
+            "type": "string",
+            "title": "Tag"
+          },
+          "reference": {
+            "type": "string",
+            "title": "Reference"
+          },
+          "instanceType": {
+            "const": "ParameterMap",
+            "title": "Instancetype"
+          }
+        },
+        "type": "object",
+        "required": [
+          "id",
+          "tag",
+          "reference",
+          "instanceType"
+        ],
+        "title": "ParameterMap"
+      },
       "Procedure": {
         "properties": {
           "id": {
@@ -2642,7 +2722,7 @@
         ],
         "title": "Procedure"
       },
-      "Quantity": {
+      "Quantity-Input": {
         "properties": {
           "id": {
             "type": "string",
@@ -2656,7 +2736,41 @@
           "unit": {
             "anyOf": [
               {
-                "$ref": "#/components/schemas/Code"
+                "$ref": "#/components/schemas/AliasCode"
+              },
+              {
+                "type": "null"
+              }
+            ]
+          },
+          "instanceType": {
+            "const": "Quantity",
+            "title": "Instancetype"
+          }
+        },
+        "type": "object",
+        "required": [
+          "id",
+          "value",
+          "instanceType"
+        ],
+        "title": "Quantity"
+      },
+      "Quantity-Output": {
+        "properties": {
+          "id": {
+            "type": "string",
+            "minLength": 1,
+            "title": "Id"
+          },
+          "value": {
+            "type": "number",
+            "title": "Value"
+          },
+          "unit": {
+            "anyOf": [
+              {
+                "$ref": "#/components/schemas/AliasCode"
               },
               {
                 "type": "null"
@@ -3282,10 +3396,10 @@
             "title": "Instancetype"
           },
           "conditionAssignments": {
-            "additionalProperties": {
-              "type": "string"
+            "items": {
+              "$ref": "#/components/schemas/ConditionAssignment"
             },
-            "type": "object",
+            "type": "array",
             "title": "Conditionassignments"
           }
         },
@@ -3772,7 +3886,8 @@
               "$ref": "#/components/schemas/Code"
             },
             "type": "array",
-            "title": "Plannedsex"
+            "title": "Plannedsex",
+            "default": []
           },
           "criteria": {
             "items": {
@@ -3809,7 +3924,6 @@
           "id",
           "name",
           "includesHealthySubjects",
-          "plannedSex",
           "criteria",
           "instanceType"
         ],
@@ -3878,7 +3992,8 @@
               "$ref": "#/components/schemas/Code"
             },
             "type": "array",
-            "title": "Plannedsex"
+            "title": "Plannedsex",
+            "default": []
           },
           "criteria": {
             "items": {
@@ -3915,7 +4030,6 @@
           "id",
           "name",
           "includesHealthySubjects",
-          "plannedSex",
           "criteria",
           "instanceType"
         ],
@@ -4510,7 +4624,8 @@
               "$ref": "#/components/schemas/Code"
             },
             "type": "array",
-            "title": "Plannedsex"
+            "title": "Plannedsex",
+            "default": []
           },
           "criteria": {
             "items": {
@@ -4547,7 +4662,6 @@
           "id",
           "name",
           "includesHealthySubjects",
-          "plannedSex",
           "criteria",
           "instanceType"
         ],
@@ -4616,7 +4730,8 @@
               "$ref": "#/components/schemas/Code"
             },
             "type": "array",
-            "title": "Plannedsex"
+            "title": "Plannedsex",
+            "default": []
           },
           "criteria": {
             "items": {
@@ -4653,7 +4768,6 @@
           "id",
           "name",
           "includesHealthySubjects",
-          "plannedSex",
           "criteria",
           "instanceType"
         ],
@@ -4906,7 +5020,7 @@
           "minimumResponseDuration": {
             "anyOf": [
               {
-                "$ref": "#/components/schemas/Quantity"
+                "$ref": "#/components/schemas/Quantity-Input"
               },
               {
                 "type": "null"
@@ -5001,7 +5115,7 @@
           "minimumResponseDuration": {
             "anyOf": [
               {
-                "$ref": "#/components/schemas/Quantity"
+                "$ref": "#/components/schemas/Quantity-Output"
               },
               {
                 "type": "null"
@@ -5650,7 +5764,7 @@
             "title": "Instancetype"
           },
           "quantity": {
-            "$ref": "#/components/schemas/Quantity"
+            "$ref": "#/components/schemas/Quantity-Input"
           }
         },
         "type": "object",
@@ -5687,7 +5801,7 @@
             "title": "Instancetype"
           },
           "quantity": {
-            "$ref": "#/components/schemas/Quantity"
+            "$ref": "#/components/schemas/Quantity-Output"
           }
         },
         "type": "object",
@@ -5733,9 +5847,12 @@
             ],
             "title": "Description"
           },
-          "parameterMap": {
-            "type": "object",
-            "title": "Parametermap"
+          "parameterMaps": {
+            "items": {
+              "$ref": "#/components/schemas/ParameterMap"
+            },
+            "type": "array",
+            "title": "Parametermaps"
           },
           "instanceType": {
             "const": "SyntaxTemplateDictionary",
@@ -5746,7 +5863,7 @@
         "required": [
           "id",
           "name",
-          "parameterMap",
+          "parameterMaps",
           "instanceType"
         ],
         "title": "SyntaxTemplateDictionary"
@@ -5791,6 +5908,10 @@
           "value": {
             "type": "string",
             "title": "Value"
+          },
+          "valueLabel": {
+            "type": "string",
+            "title": "Valuelabel"
           },
           "relativeToFrom": {
             "$ref": "#/components/schemas/Code"
@@ -5839,7 +5960,7 @@
             ],
             "title": "Windowupper"
           },
-          "window": {
+          "windowLabel": {
             "anyOf": [
               {
                 "type": "string"
@@ -5848,7 +5969,7 @@
                 "type": "null"
               }
             ],
-            "title": "Window"
+            "title": "Windowlabel"
           },
           "instanceType": {
             "const": "Timing",
@@ -5861,6 +5982,7 @@
           "name",
           "type",
           "value",
+          "valueLabel",
           "relativeToFrom",
           "instanceType"
         ],
