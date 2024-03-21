@@ -844,11 +844,12 @@ ConditionAssignment:
   Preferred Term: Condition Assignment
   Definition: An allotting or appointment to a condition or set of conditions that
     are to be met in order to make a logical decision.
-  Modifier: Abstract
+  Modifier: Concrete
   Attributes:
     id:
       Type:
       - $ref: '#/string'
+      Relationship Type: Value
       Model Name: id
     condition:
       Type:
@@ -857,12 +858,19 @@ ConditionAssignment:
       Preferred Term: Logical Condition
       Definition: An assumption on which rests the validity or effect of something
         else.
+      Relationship Type: Value
       Model Name: condition
-    conditionTarget:
+    conditionTargetId:
       Type:
       - $ref: '#/ScheduledInstance'
       Cardinality: '1'
+      Relationship Type: Ref
       Model Name: conditionTarget
+    instanceType:
+      Type:
+      - $ref: '#/string'
+      Cardinality: 0..1
+      Relationship Type: Value
 EligibilityCriterion:
   NCI C-Code: C16112
   Preferred Term: Study Eligibility Criteria
@@ -1530,17 +1538,17 @@ NarrativeContent:
       Definition: An identifying designation for the document section.
       Relationship Type: Value
       Model Name: sectionTitle
-    previous*:
+    previousId:
       Type:
       - $ref: '#/NarrativeContent'
       Cardinality: 0..*
-      Relationship Type: UNKNOWN
+      Relationship Type: Ref
       Model Name: previous
-    next*:
+    nextId:
       Type:
       - $ref: '#/NarrativeContent'
       Cardinality: 0..*
-      Relationship Type: UNKNOWN
+      Relationship Type: Ref
       Model Name: next
     childIds:
       Type:
@@ -1716,11 +1724,12 @@ ParameterMap:
   NCI C-Code: CNEW
   Preferred Term: Parameter Map
   Definition: The paired name and value for a given parameter.
-  Modifier: Abstract
+  Modifier: Concrete
   Attributes:
     id:
       Type:
       - $ref: '#/string'
+      Relationship Type: Value
       Model Name: id
     tag:
       Type:
@@ -1729,6 +1738,7 @@ ParameterMap:
       Preferred Term: Programming Tag
       Definition: Character strings bounded by angle brackets that act as containers
         for programming language elements.
+      Relationship Type: Value
       Model Name: tag
     reference:
       Type:
@@ -1737,7 +1747,13 @@ ParameterMap:
       Preferred Term: Programming Tag Reference
       Definition: The reference for a tag used in programming languages, such as a
         markup language (e.g., HTML, XML), to store attributes and elements.
+      Relationship Type: Value
       Model Name: reference
+    instanceType:
+      Type:
+      - $ref: '#/string'
+      Cardinality: 0..1
+      Relationship Type: Value
 PopulationDefinition:
   NCI C-Code: CNEW
   Preferred Term: Population Definition
@@ -3917,16 +3933,12 @@ SyntaxTemplateDictionary:
       Definition: The short descriptive designation for the syntax template dictionary.
       Relationship Type: Value
       Model Name: label
-    parameterMaps*:
+    parameterMaps:
       Type:
       - $ref: '#/ParameterMap'
       Cardinality: 1..*
-      Relationship Type: UNKNOWN
-      Model Name: parameterMaps
-    parameterMap:
-      Type:
-      - $ref: UNKNOWN
       Relationship Type: Value
+      Model Name: parameterMaps
     instanceType:
       Type:
       - $ref: '#/string'
@@ -3977,22 +3989,22 @@ Timing:
         events.
       Relationship Type: Value
       Model Name: value
-    valueLabel*:
+    valueLabel:
       Type:
       - $ref: '#/string'
       NCI C-Code: CNEW
       Preferred Term: Timing Value Label
       Definition: The short descriptive designation for the timing value.
-      Relationship Type: UNKNOWN
+      Relationship Type: Value
       Model Name: valueLabel
-    windowLabel*:
+    windowLabel:
       Type:
       - $ref: '#/string'
       NCI C-Code: CNEW
       Preferred Term: Timing Window Label
       Definition: The short descriptive designation for a time period, or other type
         of interval, during which a temporal event may be achieved, obtained, or observed.
-      Relationship Type: UNKNOWN
+      Relationship Type: Value
       Model Name: windowLabel
     windowLower:
       Type:
@@ -4046,10 +4058,6 @@ Timing:
       Cardinality: 0..1
       Relationship Type: Ref
       Model Name: relativeFromScheduledInstance
-    window:
-      Type:
-      - $ref: UNKNOWN
-      Relationship Type: Value
     instanceType:
       Type:
       - $ref: '#/string'
