@@ -6078,11 +6078,11 @@
           "study": {
             "$ref": "#/components/schemas/Study-Input"
           },
-          "usdm_version": {
+          "usdmVersion": {
             "type": "string",
-            "title": "Usdm Version"
+            "title": "Usdmversion"
           },
-          "system_name": {
+          "systemName": {
             "anyOf": [
               {
                 "type": "string"
@@ -6091,9 +6091,9 @@
                 "type": "null"
               }
             ],
-            "title": "System Name"
+            "title": "Systemname"
           },
-          "system_version": {
+          "systemVersion": {
             "anyOf": [
               {
                 "type": "string"
@@ -6102,13 +6102,13 @@
                 "type": "null"
               }
             ],
-            "title": "System Version"
+            "title": "Systemversion"
           }
         },
         "type": "object",
         "required": [
           "study",
-          "usdm_version"
+          "usdmVersion"
         ],
         "title": "Wrapper"
       },
@@ -6117,11 +6117,11 @@
           "study": {
             "$ref": "#/components/schemas/Study-Output"
           },
-          "usdm_version": {
+          "usdmVersion": {
             "type": "string",
-            "title": "Usdm Version"
+            "title": "Usdmversion"
           },
-          "system_name": {
+          "systemName": {
             "anyOf": [
               {
                 "type": "string"
@@ -6130,9 +6130,9 @@
                 "type": "null"
               }
             ],
-            "title": "System Name"
+            "title": "Systemname"
           },
-          "system_version": {
+          "systemVersion": {
             "anyOf": [
               {
                 "type": "string"
@@ -6141,13 +6141,13 @@
                 "type": "null"
               }
             ],
-            "title": "System Version"
+            "title": "Systemversion"
           }
         },
         "type": "object",
         "required": [
           "study",
-          "usdm_version"
+          "usdmVersion"
         ],
         "title": "Wrapper"
       }

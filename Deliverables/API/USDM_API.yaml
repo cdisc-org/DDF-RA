@@ -3899,45 +3899,45 @@ components:
       properties:
         study:
           $ref: '#/components/schemas/Study-Input'
-        usdm_version:
+        usdmVersion:
           type: string
-          title: Usdm Version
-        system_name:
+          title: Usdmversion
+        systemName:
           anyOf:
           - type: string
           - type: 'null'
-          title: System Name
-        system_version:
+          title: Systemname
+        systemVersion:
           anyOf:
           - type: string
           - type: 'null'
-          title: System Version
+          title: Systemversion
       type: object
       required:
       - study
-      - usdm_version
+      - usdmVersion
       title: Wrapper
     Wrapper-Output:
       properties:
         study:
           $ref: '#/components/schemas/Study-Output'
-        usdm_version:
+        usdmVersion:
           type: string
-          title: Usdm Version
-        system_name:
+          title: Usdmversion
+        systemName:
           anyOf:
           - type: string
           - type: 'null'
-          title: System Name
-        system_version:
+          title: Systemname
+        systemVersion:
           anyOf:
           - type: string
           - type: 'null'
-          title: System Version
+          title: Systemversion
       type: object
       required:
       - study
-      - usdm_version
+      - usdmVersion
       title: Wrapper
 tags:
 - name: Production
