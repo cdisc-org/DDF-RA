@@ -16,6 +16,6 @@ Each study example is held in a separate directory and includes the source sprea
 
 These are in the "Other" directory. Each example includes the source spreadsheet and the resulting USDM API JSON file. 
 
-- Simple 1, an basic example of the use of the spreadsheet
+- Amendment 1, an example of using a amendments
 - Cycles 1, an example of using the study cycle construct
-- Profile 1, an example of using a profile (a secondary timeline)
+- Simple 1, an basic example of the use of the spreadsheet

@@ -8713,7 +8713,7 @@
                   "code": "C85826",
                   "codeSystem": "http://www.cdisc.org",
                   "codeSystemVersion": "2023-12-15",
-                  "decode": "Trial Primary Objective",
+                  "decode": "Primary Objective",
                   "instanceType": "Code"
                 },
                 "endpoints": [
@@ -8750,7 +8750,7 @@
                   "code": "C85827",
                   "codeSystem": "http://www.cdisc.org",
                   "codeSystemVersion": "2023-12-15",
-                  "decode": "Trial Secondary Objective",
+                  "decode": "Secondary Objective",
                   "instanceType": "Code"
                 },
                 "endpoints": [
@@ -8787,7 +8787,7 @@
                   "code": "C85827",
                   "codeSystem": "http://www.cdisc.org",
                   "codeSystemVersion": "2023-12-15",
-                  "decode": "Trial Secondary Objective",
+                  "decode": "Secondary Objective",
                   "instanceType": "Code"
                 },
                 "endpoints": [
@@ -8824,7 +8824,7 @@
                   "code": "C85827",
                   "codeSystem": "http://www.cdisc.org",
                   "codeSystemVersion": "2023-12-15",
-                  "decode": "Trial Secondary Objective",
+                  "decode": "Secondary Objective",
                   "instanceType": "Code"
                 },
                 "endpoints": [
@@ -8858,10 +8858,10 @@
                 "instanceType": "Objective",
                 "level": {
                   "id": "Code_504",
-                  "code": "C85827",
+                  "code": "C163559",
                   "codeSystem": "http://www.cdisc.org",
                   "codeSystemVersion": "2023-12-15",
-                  "decode": "Trial Secondary Objective",
+                  "decode": "Exploratory Objective",
                   "instanceType": "Code"
                 },
                 "endpoints": [
@@ -8895,10 +8895,10 @@
                 "instanceType": "Objective",
                 "level": {
                   "id": "Code_506",
-                  "code": "C85827",
+                  "code": "C163559",
                   "codeSystem": "http://www.cdisc.org",
                   "codeSystemVersion": "2023-12-15",
-                  "decode": "Trial Secondary Objective",
+                  "decode": "Exploratory Objective",
                   "instanceType": "Code"
                 },
                 "endpoints": [
@@ -8945,7 +8945,16 @@
                 "isApproximate": false,
                 "instanceType": "Range"
               },
-              "plannedSex": [],
+              "plannedSex": [
+                {
+                  "id": "Code_492",
+                  "code": "C49636",
+                  "codeSystem": "http://www.cdisc.org",
+                  "codeSystemVersion": "2023-12-15",
+                  "decode": "Both",
+                  "instanceType": "Code"
+                }
+              ],
               "criteria": [
                 {
                   "id": "EligibilityCriterion_1",
@@ -13279,5 +13288,5 @@
   },
   "usdmVersion": "2.11.0",
   "systemName": "CDISC E2J",
-  "systemVersion": "0.47.0"
+  "systemVersion": "0.48.0"
 }
