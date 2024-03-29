@@ -631,7 +631,14 @@
             "title": "Id"
           },
           "quantity": {
-            "$ref": "#/components/schemas/Quantity-Input"
+            "anyOf": [
+              {
+                "$ref": "#/components/schemas/Quantity-Input"
+              },
+              {
+                "type": "null"
+              }
+            ]
           },
           "description": {
             "type": "string",
@@ -653,7 +660,6 @@
         "type": "object",
         "required": [
           "id",
-          "quantity",
           "description",
           "durationWillVary",
           "reasonDurationWillVary",
@@ -669,7 +675,14 @@
             "title": "Id"
           },
           "quantity": {
-            "$ref": "#/components/schemas/Quantity-Output"
+            "anyOf": [
+              {
+                "$ref": "#/components/schemas/Quantity-Output"
+              },
+              {
+                "type": "null"
+              }
+            ]
           },
           "description": {
             "type": "string",
@@ -691,7 +704,6 @@
         "type": "object",
         "required": [
           "id",
-          "quantity",
           "description",
           "durationWillVary",
           "reasonDurationWillVary",
@@ -737,14 +749,7 @@
             "$ref": "#/components/schemas/AdministrationDuration-Input"
           },
           "dose": {
-            "anyOf": [
-              {
-                "$ref": "#/components/schemas/Quantity-Input"
-              },
-              {
-                "type": "null"
-              }
-            ]
+            "$ref": "#/components/schemas/Quantity-Input"
           },
           "route": {
             "$ref": "#/components/schemas/AliasCode"
@@ -762,6 +767,7 @@
           "id",
           "name",
           "duration",
+          "dose",
           "route",
           "frequency",
           "instanceType"
@@ -806,14 +812,7 @@
             "$ref": "#/components/schemas/AdministrationDuration-Output"
           },
           "dose": {
-            "anyOf": [
-              {
-                "$ref": "#/components/schemas/Quantity-Output"
-              },
-              {
-                "type": "null"
-              }
-            ]
+            "$ref": "#/components/schemas/Quantity-Output"
           },
           "route": {
             "$ref": "#/components/schemas/AliasCode"
@@ -831,6 +830,7 @@
           "id",
           "name",
           "duration",
+          "dose",
           "route",
           "frequency",
           "instanceType"
