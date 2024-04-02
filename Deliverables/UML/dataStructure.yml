@@ -1553,7 +1553,7 @@ NarrativeContent:
     childIds:
       Type:
       - $ref: '#/NarrativeContent'
-      Cardinality: 0..1
+      Cardinality: 0..*
       Relationship Type: Ref
       Model Name: children
     instanceType:
