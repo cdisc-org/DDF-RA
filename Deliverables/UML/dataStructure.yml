@@ -1541,19 +1541,19 @@ NarrativeContent:
     previousId:
       Type:
       - $ref: '#/NarrativeContent'
-      Cardinality: 0..*
+      Cardinality: 0..1
       Relationship Type: Ref
       Model Name: previous
     nextId:
       Type:
       - $ref: '#/NarrativeContent'
-      Cardinality: 0..*
+      Cardinality: 0..1
       Relationship Type: Ref
       Model Name: next
     childIds:
       Type:
       - $ref: '#/NarrativeContent'
-      Cardinality: 0..*
+      Cardinality: 0..1
       Relationship Type: Ref
       Model Name: children
     instanceType:
