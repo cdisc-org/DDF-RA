@@ -40,42 +40,59 @@ Activity:
       Type:
       - $ref: '#/Procedure'
       Cardinality: 0..*
+      Definition: A USDM relationship between the Activity and Procedure classes which
+        identifies the set of defined procedures associated with the activity.
       Relationship Type: Value
       Model Name: definedProcedures
     biomedicalConceptIds:
       Type:
       - $ref: '#/BiomedicalConcept'
       Cardinality: 0..*
+      Definition: A USDM relationship between the Activity and BiomedicalConcept classes
+        which identifies the set of biomedical concepts associated with the activity.
       Relationship Type: Ref
       Model Name: biomedicalConcepts
     nextId:
       Type:
       - $ref: '#/Activity'
       Cardinality: 0..1
+      Definition: A USDM relationship within the Activity class which identifies the
+        activity that follows the current activity in the display order.
       Relationship Type: Ref
       Model Name: next
     timelineId:
       Type:
       - $ref: '#/ScheduleTimeline'
       Cardinality: 0..1
+      Definition: A USDM relationship between the Activity and ScheduleTimeline classes
+        which provides the details associated with an instance of the scheduled timeline
+        related to a study activity.
       Relationship Type: Ref
       Model Name: timeline
     previousId:
       Type:
       - $ref: '#/Activity'
       Cardinality: 0..1
+      Definition: A USDM relationship within the Activity class which identifies the
+        activity that precedes the current activity in the display order.
       Relationship Type: Ref
       Model Name: previous
     bcSurrogateIds:
       Type:
       - $ref: '#/BiomedicalConceptSurrogate'
       Cardinality: 0..*
+      Definition: A USDM relationship between the Activity and BiomedicalConceptSurrogate
+        classes which identifies the set of biomedical concept surrogates associated
+        with the activity.
       Relationship Type: Ref
       Model Name: bcSurrogates
     bcCategoryIds:
       Type:
       - $ref: '#/BiomedicalConceptCategory'
       Cardinality: 0..*
+      Definition: A USDM relationship between the Activity and BiomedicalConceptCategory
+        classes which identifies the set of biomedical concept categories associated
+        with the activity.
       Relationship Type: Ref
       Model Name: bcCategories
     instanceType:
@@ -259,6 +276,8 @@ AgentAdministration:
       Type:
       - $ref: '#/AdministrationDuration'
       Cardinality: '1'
+      Definition: A USDM relationship between the AgentAdministration and AdministrationDuration
+        classes which provides the duration of an instance of agent administration.
       Relationship Type: Value
       Model Name: duration
     route:
@@ -313,12 +332,16 @@ AliasCode:
       Type:
       - $ref: '#/Code'
       Cardinality: '1'
+      Definition: A USDM relationship between the AliasCode and Code classes which
+        provides the details of the standard code.
       Relationship Type: Value
       Model Name: standardCode
     standardCodeAliases:
       Type:
       - $ref: '#/Code'
       Cardinality: 0..*
+      Definition: A USDM relationship between the AliasCode and Code classes which
+        identifies the set of standard code aliases associated with the alias code.
       Relationship Type: Value
       Model Name: standardCodeAliases
     instanceType:
@@ -441,6 +464,9 @@ BiomedicalConcept:
       Type:
       - $ref: '#/BiomedicalConceptProperty'
       Cardinality: 0..*
+      Definition: A USDM relationship between the BiomedicalConcept and BiomedicalConceptProperty
+        classes which identifies the set of properties associated with the biomedical
+        concept.
       Relationship Type: Value
       Model Name: properties
     instanceType:
@@ -499,12 +525,17 @@ BiomedicalConceptCategory:
       Type:
       - $ref: '#/BiomedicalConcept'
       Cardinality: 0..*
+      Definition: A USDM relationship between the BiomedicalConceptCategory and BiomedicalConcept
+        classes which identifies the set of biomedical concept members associated
+        with the biomedical concept category.
       Relationship Type: Ref
       Model Name: members
     childIds:
       Type:
       - $ref: '#/BiomedicalConceptCategory'
       Cardinality: 0..*
+      Definition: A USDM relationship within the BiomedicalConceptCategory class which
+        identifies the set of child categories of a biomedical concept.
       Relationship Type: Ref
       Model Name: children
     instanceType:
@@ -582,6 +613,9 @@ BiomedicalConceptProperty:
       Type:
       - $ref: '#/ResponseCode'
       Cardinality: 0..*
+      Definition: A USDM relationship between the BiomedicalConceptProperty and ResponseCode
+        classes which identifies the set of response codes associated with the biomedical
+        concept property.
       Relationship Type: Value
       Model Name: responseCodes
     instanceType:
@@ -694,6 +728,8 @@ Characteristic:
       Type:
       - $ref: '#/SyntaxTemplateDictionary'
       Cardinality: 0..1
+      Definition: A USDM relationship between the Characteristic and SyntaxTemplateDictionary
+        classes which provides the set of dictionary entries related to characteristics.
       Relationship Type: Ref
       Model Name: dictionary
       Inherited From:
@@ -813,6 +849,8 @@ Condition:
       Type:
       - $ref: '#/SyntaxTemplateDictionary'
       Cardinality: 0..1
+      Definition: A USDM relationship between the Condition and SyntaxTemplateDictionary
+        classes which provides the set of dictionary entries related to conditions.
       Relationship Type: Ref
       Model Name: dictionary
       Inherited From:
@@ -822,6 +860,9 @@ Condition:
       - $ref: '#/Activity'
       - $ref: '#/ScheduledActivityInstance'
       Cardinality: 0..*
+      Definition: A USDM relationship between the Condition and the ScheduledActivityInstance
+        or Activity classes which identifies the scheduled activity instance or activity
+        to which the condition belongs.
       Relationship Type: Ref
       Model Name: context
     appliesToIds:
@@ -832,6 +873,10 @@ Condition:
       - $ref: '#/BiomedicalConceptSurrogate'
       - $ref: '#/Procedure'
       Cardinality: 0..*
+      Definition: A USDM relationship between the Condition and the Activity, Procedure,
+        BiomedicalConcept, BiomedicalConceptSurrogate, or BiomedicalConceptCategory
+        classes which identifies the procedure, activity, biomedical concept, biomedical
+        concept surrogate, or biomedical concept category that applies to the condition.
       Relationship Type: Ref
       Model Name: appliesTo
     instanceType:
@@ -864,6 +909,9 @@ ConditionAssignment:
       Type:
       - $ref: '#/ScheduledInstance'
       Cardinality: '1'
+      Definition: A USDM relationship between the ConditionAssignment and ScheduledInstance
+        classes which identifies the scheduled instance associated with the condition
+        assignment.
       Relationship Type: Ref
       Model Name: conditionTarget
     instanceType:
@@ -934,6 +982,9 @@ EligibilityCriterion:
       Type:
       - $ref: '#/SyntaxTemplateDictionary'
       Cardinality: 0..1
+      Definition: A USDM relationship between the EligibilityCriterion and SyntxTemplateDictionary
+        classes which provides the set of dictionary entries related to eligibility
+        criteria.
       Relationship Type: Ref
       Model Name: dictionary
       Inherited From:
@@ -962,18 +1013,27 @@ EligibilityCriterion:
       - $ref: '#/StudyDesign'
       - $ref: '#/StudyVersion'
       Cardinality: 0..1
+      Definition: A USDM relationship between the EligibilityCriterion and the StudyDesign
+        or StudyVersion classes which identifies the study design or study version
+        to which the eligibility criterion belongs.
       Relationship Type: Ref
       Model Name: context
     nextId:
       Type:
       - $ref: '#/EligibilityCriterion'
       Cardinality: 0..1
+      Definition: A USDM relationship within the EligibilityCriterion class which
+        identifies the eligibility criterion that follows the current eligibility
+        criterion in the display order.
       Relationship Type: Ref
       Model Name: next
     previousId:
       Type:
       - $ref: '#/EligibilityCriterion'
       Cardinality: 0..1
+      Definition: A USDM relationship within the EligibilityCriterion class which
+        identifies the eligibility criterion that precedes the current eligibility
+        criterion in the display order.
       Relationship Type: Ref
       Model Name: previous
     instanceType:
@@ -1057,30 +1117,42 @@ Encounter:
       Type:
       - $ref: '#/TransitionRule'
       Cardinality: 0..1
+      Definition: A USDM relationship between the Encounter and TransitionRule classes
+        which provides the details associated with a transition rule used to trigger
+        the end of an encounter.
       Relationship Type: Value
       Model Name: transitionEndRule
     nextId:
       Type:
       - $ref: '#/Encounter'
       Cardinality: 0..1
+      Definition: A USDM relationship within the Encounter class which identifies
+        the encounter that chronologically follows the current encounter.
       Relationship Type: Ref
       Model Name: next
     transitionStartRule:
       Type:
       - $ref: '#/TransitionRule'
       Cardinality: 0..1
+      Definition: A USDM relationship between the Encounter and TransitionRule classes
+        which provides the details associated with a transition rule used to trigger
+        the start of an encounter.
       Relationship Type: Value
       Model Name: transitionStartRule
     scheduledAtId:
       Type:
       - $ref: '#/Timing'
       Cardinality: 0..1
+      Definition: A USDM relationship between the Encounter and Timing classes which
+        provides information related to the scheduled timing of a subject encounter.
       Relationship Type: Ref
       Model Name: scheduledAt
     previousId:
       Type:
       - $ref: '#/Encounter'
       Cardinality: 0..1
+      Definition: A USDM relationship within the Encounter class which identifies
+        the encounter that chronologically precedes the current encounter.
       Relationship Type: Ref
       Model Name: previous
     instanceType:
@@ -1153,6 +1225,8 @@ Endpoint:
       Type:
       - $ref: '#/SyntaxTemplateDictionary'
       Cardinality: 0..1
+      Definition: A USDM relationship between the Endpoint and SyntaxTemplateDictionary
+        classes which provides the set of dictionary entries related to study endpoints.
       Relationship Type: Ref
       Model Name: dictionary
       Inherited From:
@@ -1208,24 +1282,35 @@ Estimand:
       Type:
       - $ref: '#/AnalysisPopulation'
       Cardinality: '1'
+      Definition: A USDM relationship between the Estimand and AnalysisPopulation
+        classes which provides the details associated with an instance of the analysis
+        population used to partially define a study estimand.
       Relationship Type: Value
       Model Name: analysisPopulation
     variableOfInterestId:
       Type:
       - $ref: '#/Endpoint'
       Cardinality: '1'
+      Definition: A USDM relationship between the Estimand and Endpoint classes which
+        provides the details associated with an instance of the variable of interest
+        within a study endpoint used to partially define a study estimand.
       Relationship Type: Ref
       Model Name: variableOfInterest
     intercurrentEvents:
       Type:
       - $ref: '#/IntercurrentEvent'
       Cardinality: 1..*
+      Definition: A USDM relationship between the Estimand and IntercurrentEvent classes
+        which identifies the set of intercurrent events associated with the estimand.
       Relationship Type: Value
       Model Name: intercurrentEvents
     interventionId:
       Type:
       - $ref: '#/StudyIntervention'
       Cardinality: '1'
+      Definition: A USDM relationship between the Estimand and StudyIntervention classes
+        which provides the details associated with an instance of the intervention
+        used to partially define a study estimand.
       Relationship Type: Ref
       Model Name: intervention
     instanceType:
@@ -1332,6 +1417,9 @@ GovernanceDate:
       Type:
       - $ref: '#/GeographicScope'
       Cardinality: 1..*
+      Definition: A USDM relationship between the GovernanceDate and GeographicScope
+        classes which identifies the set of geographic scopes associated with the
+        governance date.
       Relationship Type: Value
       Model Name: geographicScopes
     instanceType:
@@ -1542,18 +1630,26 @@ NarrativeContent:
       Type:
       - $ref: '#/NarrativeContent'
       Cardinality: 0..1
+      Definition: A USDM relationship within the NarrativeContent class which identifies
+        the narrative content that precedes the current narrative content in the display
+        order.
       Relationship Type: Ref
       Model Name: previous
     nextId:
       Type:
       - $ref: '#/NarrativeContent'
       Cardinality: 0..1
+      Definition: A USDM relationship within the NarrativeContent class which identifies
+        the narrative content that follows the current narrative content in the display
+        order.
       Relationship Type: Ref
       Model Name: next
     childIds:
       Type:
       - $ref: '#/NarrativeContent'
       Cardinality: 0..*
+      Definition: A USDM relationship within the NarrativeContent class which identifies
+        the set of child content associated with an instance of narrative content.
       Relationship Type: Ref
       Model Name: children
     instanceType:
@@ -1622,6 +1718,8 @@ Objective:
       Type:
       - $ref: '#/SyntaxTemplateDictionary'
       Cardinality: 0..1
+      Definition: A USDM relationship between the Objective and SyntaxTemplateDictionary
+        classes which provides the set of dictionary entries related to study objectives.
       Relationship Type: Ref
       Model Name: dictionary
       Inherited From:
@@ -1641,6 +1739,8 @@ Objective:
       Type:
       - $ref: '#/Endpoint'
       Cardinality: 0..*
+      Definition: A USDM relationship between the Objective and Endpoint classes which
+        identifies the set of endpoints associated with the study objective.
       Relationship Type: Value
       Model Name: endpoints
     instanceType:
@@ -1700,6 +1800,8 @@ Organization:
       Type:
       - $ref: '#/Address'
       Cardinality: 0..1
+      Definition: A USDM relationship between the Organization and Address classes
+        which provides the legal address for an organization.
       Relationship Type: Value
       Model Name: legalAddress
     organizationType:
@@ -1810,6 +1912,9 @@ PopulationDefinition:
       Type:
       - $ref: '#/EligibilityCriterion'
       Cardinality: 1..*
+      Definition: A USDM relationship between the PopulationDefinition and EligibilityCriterion
+        classes which identifies the set of eligibility criteria associated with the
+        population definition.
       Model Name: criteria
     plannedAge:
       Type:
@@ -1898,6 +2003,9 @@ Procedure:
       Type:
       - $ref: '#/StudyIntervention'
       Cardinality: 0..1
+      Definition: A USDM relationship between the Procedure and StudyInterventionclasses
+        which provides the details associated with an instance of an intervention
+        performed during the conduct of a procedure.
       Relationship Type: Ref
       Model Name: studyIntervention
     instanceType:
@@ -2057,6 +2165,8 @@ ResearchOrganization:
       Type:
       - $ref: '#/Address'
       Cardinality: 0..1
+      Definition: A USDM relationship between the ResearchOrganization and Address
+        classes which identifies the legal address for the research organization.
       Relationship Type: Value
       Model Name: legalAddress
       Inherited From:
@@ -2080,6 +2190,9 @@ ResearchOrganization:
       Type:
       - $ref: '#/StudySite'
       Cardinality: 1..*
+      Definition: A USDM relationship between the ResearchOrganization and StudySite
+        classes which identifies the research organization that manages the study
+        site.
       Relationship Type: Value
       Model Name: manages
     instanceType:
@@ -2181,24 +2294,34 @@ ScheduleTimeline:
       Type:
       - $ref: '#/ScheduledInstance'
       Cardinality: 0..*
+      Definition: A USDM relationship between the ScheduleTimeline and ScheduledInstance
+        classes which identifies the set of scheduled instances (e.g., scheduled activity
+        instances or scheduled decision instances) associated with the scheduled timeline.
       Relationship Type: Value
       Model Name: instances
     entryId:
       Type:
       - $ref: '#/ScheduledInstance'
       Cardinality: '1'
+      Definition: A USDM relationship between the ScheduleTimeline and ScheduledInstance
+        classes which defines the entry into a scheduled instance (e.g., scheduled
+        activity instances or scheduled decision instances) for a timeline.
       Relationship Type: Ref
       Model Name: entry
     exits:
       Type:
       - $ref: '#/ScheduleTimelineExit'
       Cardinality: 0..*
+      Definition: A USDM relationship between the ScheduleTimeline and ScheduleTimelineExit
+        classes which identifies the set of exits from the scheduled timeline.
       Relationship Type: Value
       Model Name: exits
     timings:
       Type:
       - $ref: '#/Timing'
       Cardinality: 0..*
+      Definition: A USDM relationship between the ScheduleTimeline and Timing classes
+        which identifies the set of timings associated with the scheduled timeline.
       Relationship Type: Value
       Model Name: timings
     instanceType:
@@ -2272,6 +2395,8 @@ ScheduledActivityInstance:
       Type:
       - $ref: '#/ScheduledInstance'
       Cardinality: 0..1
+      Definition: A USDM relationship within the ScheduledActivityInstance class which
+        identifies the default condition within a scheduled activity instance.
       Relationship Type: Ref
       Model Name: defaultCondition
       Inherited From:
@@ -2280,6 +2405,9 @@ ScheduledActivityInstance:
       Type:
       - $ref: '#/StudyEpoch'
       Cardinality: 0..1
+      Definition: A USDM relationship between the ScheduledActivityInstance and StudyEpoch
+        classes which identifies the study epoch associated with a scheduled activity
+        instance.
       Relationship Type: Ref
       Model Name: epoch
       Inherited From:
@@ -2288,6 +2416,9 @@ ScheduledActivityInstance:
       Type:
       - $ref: '#/ScheduleTimeline'
       Cardinality: 0..1
+      Definition: A USDM relationship between the ScheduledActivityInstance and ScheduleTimeline
+        classes which provides the details associated with an instance of a scheduled
+        timeline related to a scheduled activity instance.
       Relationship Type: Ref
       Model Name: timeline
       Inherited From:
@@ -2296,6 +2427,9 @@ ScheduledActivityInstance:
       Type:
       - $ref: '#/ScheduleTimelineExit'
       Cardinality: 0..1
+      Definition: A USDM relationship between the ScheduledActivityInstance and ScheduleTimelineExit
+        classes which provides the details associated with the exit from a timeline
+        related to a scheduled activity instance.
       Relationship Type: Ref
       Model Name: timelineExit
       Inherited From:
@@ -2304,12 +2438,17 @@ ScheduledActivityInstance:
       Type:
       - $ref: '#/Activity'
       Cardinality: 0..*
+      Definition: A USDM relationship between the ScheduledActivityInstance and Activity
+        classes which identifies the set of activities associated with a scheduled
+        activity instance.
       Relationship Type: Ref
       Model Name: activities
     encounterId:
       Type:
       - $ref: '#/Encounter'
       Cardinality: 0..1
+      Definition: A USDM relationship between the ScheduledActivityInstance and Encounter
+        classes which defines the subject encounter associated with the ScheduleActivityInstance.
       Relationship Type: Ref
       Model Name: encounter
     instanceType:
@@ -2367,6 +2506,8 @@ ScheduledDecisionInstance:
       Type:
       - $ref: '#/ScheduledInstance'
       Cardinality: 0..1
+      Definition: A USDM relationship within the ScheduledDecisionInstance class which
+        identifies the default condition within a scheduled decision instance.
       Relationship Type: Ref
       Model Name: defaultCondition
       Inherited From:
@@ -2375,6 +2516,9 @@ ScheduledDecisionInstance:
       Type:
       - $ref: '#/StudyEpoch'
       Cardinality: 0..1
+      Definition: A USDM relationship between the ScheduledDecisionInstance and StudyEpoch
+        classes which identifies the study epoch associated with a scheduled decision
+        instance.
       Relationship Type: Ref
       Model Name: epoch
       Inherited From:
@@ -2383,6 +2527,9 @@ ScheduledDecisionInstance:
       Type:
       - $ref: '#/ScheduleTimeline'
       Cardinality: 0..1
+      Definition: A USDM relationship between the ScheduledActivityInstance and ScheduleTimeline
+        classes which provides the details associated with an instance of a scheduled
+        timeline related to a scheduled decision instance.
       Relationship Type: Ref
       Model Name: timeline
       Inherited From:
@@ -2391,6 +2538,9 @@ ScheduledDecisionInstance:
       Type:
       - $ref: '#/ScheduleTimelineExit'
       Cardinality: 0..1
+      Definition: A USDM relationship between the ScheduledDecisionInstance and ScheduleTimelineExit
+        classes which provides the details associated with the exit from a timeline
+        related to a scheduled decision instance.
       Relationship Type: Ref
       Model Name: timelineExit
       Inherited From:
@@ -2399,6 +2549,9 @@ ScheduledDecisionInstance:
       Type:
       - $ref: '#/ConditionAssignment'
       Cardinality: 1..*
+      Definition: A USDM relationship between the ScheduledDecisionInstance and ConditionAssignment
+        classes which identifies the set of condition assignments associated with
+        a scheduled decision instance.
       Relationship Type: Value
       Model Name: conditionAssignments
     instanceType:
@@ -2445,21 +2598,31 @@ ScheduledInstance:
       Type:
       - $ref: '#/ScheduledInstance'
       Cardinality: 0..1
+      Definition: A USDM relationship within the ScheduledInstance class which identifies
+        the default condition within a scheduled instance.
       Model Name: defaultCondition
     epoch:
       Type:
       - $ref: '#/StudyEpoch'
       Cardinality: 0..1
+      Definition: A USDM relationship between the ScheduledInstance and StudyEpoch
+        classes which identifies the study epoch associated with a scheduled instance.
       Model Name: epoch
     timeline:
       Type:
       - $ref: '#/ScheduleTimeline'
       Cardinality: 0..1
+      Definition: A USDM relationship between the ScheduledActivityInstance and ScheduleTimeline
+        classes which provides the details associated with an instance of a scheduled
+        timeline related to a scheduled instance.
       Model Name: timeline
     timelineExit:
       Type:
       - $ref: '#/ScheduleTimelineExit'
       Cardinality: 0..1
+      Definition: A USDM relationship between the ScheduledInstance and StudyTimelineExit
+        classes which provides the details associated with the exit from a timeline
+        related to a scheduled instance.
       Model Name: timelineExit
 Study:
   NCI C-Code: C15206
@@ -2503,12 +2666,16 @@ Study:
       Type:
       - $ref: '#/StudyVersion'
       Cardinality: 0..*
+      Definition: A USDM relationship between the Study and StudyVersion classes which
+        identifies the set of versions associated with the study.
       Relationship Type: Value
       Model Name: versions
     documentedBy:
       Type:
       - $ref: '#/StudyProtocolDocument'
       Cardinality: 0..1
+      Definition: A USDM relationship between the Study and StudyProtocolDocument
+        classes signifying that the study is documented in a study protocol document.
       Relationship Type: Value
       Model Name: documentedBy
     instanceType:
@@ -2558,24 +2725,34 @@ StudyAmendment:
       Type:
       - $ref: '#/SubjectEnrollment'
       Cardinality: 1..*
+      Definition: A USDM relationship between the StudyAmendment and SubjectEnrollment
+        classes which provides the set of subject enrollments associated with the
+        study amendment.
       Relationship Type: Value
       Model Name: enrollments
     secondaryReasons:
       Type:
       - $ref: '#/StudyAmendmentReason'
       Cardinality: 0..*
+      Definition: A USDM relationship between the StudyAmendment and StudyAmendmentReason
+        classes which identifies the set of secondary reasons for issuing the study
+        amendment.
       Relationship Type: Value
       Model Name: secondaryReasons
     previousId:
       Type:
       - $ref: '#/StudyAmendment'
       Cardinality: 0..1
+      Definition: A USDM relationship within the StudyAmendment class which identifies
+        the study amendment that chronologically precedes the current study amendment.
       Relationship Type: Ref
       Model Name: previous
     primaryReason:
       Type:
       - $ref: '#/StudyAmendmentReason'
       Cardinality: '1'
+      Definition: A USDM relationship between the StudyAmendment and StudyAmendmentReason
+        classes which identifies the primary reason for issuing the study amendment.
       Relationship Type: Value
       Model Name: primaryReason
     instanceType:
@@ -2690,6 +2867,9 @@ StudyArm:
       Type:
       - $ref: '#/PopulationDefinition'
       Cardinality: 0..*
+      Definition: A USDM relationship between the StudyArm and PopulationDefinition
+        classes which identifies the set of populations associated with the study
+        arm.
       Relationship Type: Ref
       Model Name: populations
     instanceType:
@@ -2713,18 +2893,24 @@ StudyCell:
       Type:
       - $ref: '#/StudyArm'
       Cardinality: '1'
+      Definition: A USDM relationship between the StudyCell and StudyArm classes which
+        identifies the study arm associated with a study cell.
       Relationship Type: Ref
       Model Name: arm
     epochId:
       Type:
       - $ref: '#/StudyEpoch'
       Cardinality: '1'
+      Definition: A USDM relationship between the StudyCell and StudyEpoch classes
+        which identifies the study epoch associated with a study cell.
       Relationship Type: Ref
       Model Name: epoch
     elementIds:
       Type:
       - $ref: '#/StudyElement'
       Cardinality: 0..*
+      Definition: A USDM relationship between the StudyCell and StudyElement classes
+        which identifies the set of study elements associated with the study cell.
       Relationship Type: Ref
       Model Name: elements
     instanceType:
@@ -2806,6 +2992,9 @@ StudyCohort:
       Type:
       - $ref: '#/EligibilityCriterion'
       Cardinality: 1..*
+      Definition: A USDM relationship between the StudyCohort and EligibilityCriterion
+        classes which identifies the set of eligibility criteria associated with the
+        study cohort.
       Relationship Type: Value
       Model Name: criteria
       Inherited From:
@@ -2850,6 +3039,9 @@ StudyCohort:
       Type:
       - $ref: '#/Characteristic'
       Cardinality: 0..*
+      Definition: A USDM relationship between the StudyCohort and Characteristic classes
+        which identifies the set of subject characteristics associated with the study
+        cohort.
       Relationship Type: Value
       Model Name: characteristics
     instanceType:
@@ -2909,6 +3101,8 @@ StudyDesign:
       Type:
       - $ref: '#/Activity'
       Cardinality: 0..*
+      Definition: A USDM relationship between the StudyDesign and Activity classes
+        which identifies the set of activities associated with the study design.
       Relationship Type: Value
       Model Name: activities
     trialIntentTypes:
@@ -2983,84 +3177,116 @@ StudyDesign:
       Type:
       - $ref: '#/Encounter'
       Cardinality: 0..*
+      Definition: A USDM relationship between the StudyDesign and Encounter classes
+        which identifies the set of encounters associated with the study design.
       Relationship Type: Value
       Model Name: encounters
     estimands:
       Type:
       - $ref: '#/Estimand'
       Cardinality: 0..*
+      Definition: A USDM relationship between the StudyDesign and Estimand classes
+        which identifies the set of estimands associated with the study design.
       Relationship Type: Value
       Model Name: estimands
     indications:
       Type:
       - $ref: '#/Indication'
       Cardinality: 0..*
+      Definition: A USDM relationship between the StudyDesign and Indication classes
+        which identifies the set of indications associated with the study design.
       Relationship Type: Value
       Model Name: indications
     maskingRoles:
       Type:
       - $ref: '#/Masking'
       Cardinality: 0..*
+      Definition: A USDM relationship between the StudyDesign and Masking classes
+        which identifies the set of masking roles associated with the study design.
       Relationship Type: Value
       Model Name: maskingRoles
     objectives:
       Type:
       - $ref: '#/Objective'
       Cardinality: 0..*
+      Definition: A USDM relationship between the StudyDesign and Objective classes
+        which identifies the set of objectives associated with the study design.
       Relationship Type: Value
       Model Name: objectives
     organizations:
       Type:
       - $ref: '#/ResearchOrganization'
       Cardinality: 0..*
+      Definition: A USDM relationship between the StudyDesign and ResearchOrganization
+        classes which identifies the set of research organizations associated with
+        the study design.
       Relationship Type: Value
       Model Name: organizations
     scheduleTimelines:
       Type:
       - $ref: '#/ScheduleTimeline'
       Cardinality: 0..*
+      Definition: A USDM relationship between the StudyDesign and ScheduleTimeline
+        classes which identifies the set of scheduled timelines associated with the
+        study design.
       Relationship Type: Value
       Model Name: scheduleTimelines
     arms:
       Type:
       - $ref: '#/StudyArm'
       Cardinality: 1..*
+      Definition: A USDM relationship between the StudyDesign and StudyArm classes
+        which identifies the set of study arms associated with the study design.
       Relationship Type: Value
       Model Name: arms
     studyCells:
       Type:
       - $ref: '#/StudyCell'
       Cardinality: 1..*
+      Definition: 'A USDM relationship between the StudyDesign and StudyCell classes
+        which identifies the set of study cells associated with the study design. '
       Relationship Type: Value
       Model Name: studyCells
     elements:
       Type:
       - $ref: '#/StudyElement'
       Cardinality: 0..*
+      Definition: A USDM relationship between the StudyDesign and StudyElement classes
+        which identifies the set of study elements associated with the study design.
       Relationship Type: Value
       Model Name: elements
     documentVersionId:
       Type:
       - $ref: '#/StudyProtocolDocumentVersion'
       Cardinality: 0..1
+      Definition: A USDM relationship between the StudyDesign and StudyProtocolDocumentVersion
+        classes which identifies the version of the protocol document associated with
+        the study design.
       Relationship Type: Ref
       Model Name: documentVersion
     studyInterventions:
       Type:
       - $ref: '#/StudyIntervention'
       Cardinality: 0..*
+      Definition: A USDM relationship between the StudyDesign and StudyIntervention
+        classes which identifies the set of study interventions associated with study
+        design.
       Relationship Type: Value
       Model Name: studyInterventions
     epochs:
       Type:
       - $ref: '#/StudyEpoch'
       Cardinality: 1..*
+      Definition: A USDM relationship between the StudyDesign and StudyEpoch classes
+        which identifies the set of study epochs associated with the study design.
       Relationship Type: Value
       Model Name: epochs
     population:
       Type:
       - $ref: '#/StudyDesignPopulation'
       Cardinality: 0..1
+      Definition: A USDM relationship between the StudyDesign and StudyDesignPopulation
+        classes which identifies the population associated with the study design.
       Relationship Type: Value
       Model Name: population
     biomedicalConcepts:
@@ -3168,6 +3394,9 @@ StudyDesignPopulation:
       Type:
       - $ref: '#/EligibilityCriterion'
       Cardinality: 1..*
+      Definition: A USDM relationship between the StudyDesignPopulation and EligibilityCriterion
+        classes which identifies the set of eligibility criteria associated with the
+        study design population.
       Relationship Type: Value
       Model Name: criteria
       Inherited From:
@@ -3212,6 +3441,9 @@ StudyDesignPopulation:
       Type:
       - $ref: '#/StudyCohort'
       Cardinality: 0..*
+      Definition: A USDM relationship between the StudyDesignPopulation and StudyCohort
+        classes which identifies the set of study cohorts associated with the study
+        design population.
       Relationship Type: Value
       Model Name: cohorts
     instanceType:
@@ -3261,18 +3493,27 @@ StudyElement:
       Type:
       - $ref: '#/TransitionRule'
       Cardinality: 0..1
+      Definition: A USDM relationship between the StudyElement and TransitionRule
+        classes which provides the details associated with a transition rule used
+        to trigger the end of a study element.
       Relationship Type: Value
       Model Name: transitionEndRule
     studyInterventionIds:
       Type:
       - $ref: '#/StudyIntervention'
       Cardinality: 0..*
+      Definition: A USDM relationship between the StudyElement and StudyIntervention
+        classes which identifies the set of study interventions associated with the
+        study element.
       Relationship Type: Ref
       Model Name: studyInterventions
     transitionStartRule:
       Type:
       - $ref: '#/TransitionRule'
       Cardinality: 0..1
+      Definition: A USDM relationship between the StudyElement and TransitionRule
+        classes which provides the details associated with a transition rule used
+        to trigger the start of a study element.
       Relationship Type: Value
       Model Name: transitionStartRule
     instanceType:
@@ -3336,12 +3577,16 @@ StudyEpoch:
       Type:
       - $ref: '#/StudyEpoch'
       Cardinality: 0..1
+      Definition: A USDM relationship within the StudyEpoch class which identifies
+        the study epoch that chronologically precedes the current study epoch.
       Relationship Type: Ref
       Model Name: previous
     nextId:
       Type:
       - $ref: '#/StudyEpoch'
       Cardinality: 0..1
+      Definition: A USDM relationship within the StudyEpoch class which identifies
+        the study epoch that chronologically follows the current study epoch.
       Relationship Type: Ref
       Model Name: next
     instanceType:
@@ -3374,6 +3619,9 @@ StudyIdentifier:
       Type:
       - $ref: '#/Organization'
       Cardinality: '1'
+      Definition: A USDM relationship between the StudyIdentifier and Organization
+        classes which provides the details associated with each organization that
+        has assigned a study identifier.
       Relationship Type: Value
       Model Name: studyIdentifierScope
     instanceType:
@@ -3422,6 +3670,9 @@ StudyIntervention:
       Type:
       - $ref: '#/AgentAdministration'
       Cardinality: 0..*
+      Definition: A USDM relationship between the StudyIntervention and AgentAdministration
+        classes which identifies the set of agent administrations associated with
+        the study intervention.
       Relationship Type: Value
       Model Name: administrations
     type:
@@ -3534,6 +3785,9 @@ StudyProtocolDocument:
       Type:
       - $ref: '#/StudyProtocolDocumentVersion'
       Cardinality: 0..*
+      Definition: A USDM relationship between the StudyProtocolDocument and StudyProtocolDocumentVersion
+        classes which identifies the set of versions associated with the study protocol
+        document.
       Relationship Type: Value
       Model Name: versions
     instanceType:
@@ -3581,18 +3835,26 @@ StudyProtocolDocumentVersion:
       Type:
       - $ref: '#/GovernanceDate'
       Cardinality: 0..*
+      Definition: A USDM relationship between the StudyProtocolDocumentVersion and
+        GovernanceDate classes which provides the set of governance dates associated
+        with the study protocol document version.
       Relationship Type: Value
       Model Name: dateValues
     contents:
       Type:
       - $ref: '#/NarrativeContent'
       Cardinality: 0..*
+      Definition: A USDM relationship between the StudyProtocolDocumentVersion and
+        NarrativeContent classes which identifies the set of narrative content associated
+        with the version of the study protocol document.
       Relationship Type: Value
       Model Name: contents
     childIds:
       Type:
       - $ref: '#/StudyProtocolDocumentVersion'
       Cardinality: 0..*
+      Definition: A USDM relationship within the StudyProtocolDocumentVersion class
+        which identifies the set of child documents of a protocol document.
       Relationship Type: Ref
       Model Name: children
     instanceType:
@@ -3640,6 +3902,8 @@ StudySite:
       Type:
       - $ref: '#/SubjectEnrollment'
       Cardinality: 0..1
+      Definition: A USDM relationship between the StudySite and SubjectEnrollment
+        classes which provides the current subject enrollment for the study site.
       Relationship Type: Value
       Model Name: currentEnrollment
     instanceType:
@@ -3753,36 +4017,52 @@ StudyVersion:
       Type:
       - $ref: '#/GovernanceDate'
       Cardinality: 0..*
+      Definition: A USDM relationship between the StudyVersion and GovernanceDate
+        classes which provides the set of governance dates associated with the study
+        version.
       Relationship Type: Value
       Model Name: dateValues
     amendments:
       Type:
       - $ref: '#/StudyAmendment'
       Cardinality: 0..*
+      Definition: A USDM relationship between the StudyVersion and StudyAmendment
+        classes which identifies the set of study amendments associated with the study
+        version.
       Relationship Type: Value
       Model Name: amendments
     studyDesigns:
       Type:
       - $ref: '#/StudyDesign'
       Cardinality: 0..*
+      Definition: A USDM relationship between the StudyVersion and StudyDesign classes
+        which identifies the set of study designs associated with the study version.
       Relationship Type: Value
       Model Name: studyDesigns
     studyIdentifiers:
       Type:
       - $ref: '#/StudyIdentifier'
       Cardinality: 0..*
+      Definition: A USDM relationship between the StudyVersion and StudyIdentifier
+        classes which identifies the set of study identifiers associated with the
+        study version.
       Relationship Type: Value
       Model Name: studyIdentifiers
     documentVersionId:
       Type:
       - $ref: '#/StudyProtocolDocumentVersion'
       Cardinality: 0..1
+      Definition: A USDM relationship between the StudyVersion and StudyProtocolDocumentVersion
+        classes which identifies the version of the study protocol document associated
+        with the study version.
       Relationship Type: Ref
       Model Name: documentVersion
     titles:
       Type:
       - $ref: '#/StudyTitle'
       Cardinality: 1..*
+      Definition: A USDM relationship between the StudyVersion and StudyTitle classes
+        which identifies the set of study titles associated with the study version.
       Relationship Type: Value
       Model Name: titles
     instanceType:
@@ -3895,6 +4175,8 @@ SyntaxTemplate:
       Type:
       - $ref: '#/SyntaxTemplateDictionary'
       Cardinality: 0..1
+      Definition: 'A USDM relationship between the SyntaxTemplate and SyntaxTemplateDictionary
+        classes which provides the dictionary entry associated with a syntax template. '
       Model Name: dictionary
 SyntaxTemplateDictionary:
   NCI C-Code: CNEW
@@ -3937,6 +4219,9 @@ SyntaxTemplateDictionary:
       Type:
       - $ref: '#/ParameterMap'
       Cardinality: 1..*
+      Definition: A USDM relationship between the SyntaxTemplateDictionary and ParameterMap
+        classes which identifies the set of parameter maps (parameter map entries)
+        associated with a syntax template dictionary.
       Relationship Type: Value
       Model Name: parameterMaps
     instanceType:
@@ -4050,12 +4335,18 @@ Timing:
       Type:
       - $ref: '#/ScheduledInstance'
       Cardinality: 0..1
+      Definition: A USDM relationship between the Timing and ScheduledInstance classes
+        which identifies the scheduled instance (e.g., scheduled activity instances
+        or scheduled decision instances) to which the timing is relative to.
       Relationship Type: Ref
       Model Name: relativeToScheduledInstance
     relativeFromScheduledInstanceId:
       Type:
       - $ref: '#/ScheduledInstance'
       Cardinality: 0..1
+      Definition: A USDM relationship between the Timing and ScheduledInstance classes
+        which identifies the scheduled instance (e.g., scheduled activity instances
+        or scheduled decision instances) to which the timing applies.
       Relationship Type: Ref
       Model Name: relativeFromScheduledInstance
     instanceType:
