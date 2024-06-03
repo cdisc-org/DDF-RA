@@ -1911,7 +1911,7 @@ PopulationDefinition:
     criteria:
       Type:
       - $ref: '#/EligibilityCriterion'
-      Cardinality: 1..*
+      Cardinality: 0..*
       Definition: A USDM relationship between the PopulationDefinition and EligibilityCriterion
         classes which identifies the set of eligibility criteria associated with the
         population definition.
@@ -2412,28 +2412,6 @@ ScheduledActivityInstance:
       Model Name: epoch
       Inherited From:
         $ref: '#/ScheduledInstance'
-    timelineId:
-      Type:
-      - $ref: '#/ScheduleTimeline'
-      Cardinality: 0..1
-      Definition: A USDM relationship between the ScheduledActivityInstance and ScheduleTimeline
-        classes which provides the details associated with an instance of a scheduled
-        timeline related to a scheduled activity instance.
-      Relationship Type: Ref
-      Model Name: timeline
-      Inherited From:
-        $ref: '#/ScheduledInstance'
-    timelineExitId:
-      Type:
-      - $ref: '#/ScheduleTimelineExit'
-      Cardinality: 0..1
-      Definition: A USDM relationship between the ScheduledActivityInstance and ScheduleTimelineExit
-        classes which provides the details associated with the exit from a timeline
-        related to a scheduled activity instance.
-      Relationship Type: Ref
-      Model Name: timelineExit
-      Inherited From:
-        $ref: '#/ScheduledInstance'
     activityIds:
       Type:
       - $ref: '#/Activity'
@@ -2451,6 +2429,24 @@ ScheduledActivityInstance:
         classes which defines the subject encounter associated with the ScheduleActivityInstance.
       Relationship Type: Ref
       Model Name: encounter
+    timelineId:
+      Type:
+      - $ref: '#/ScheduleTimeline'
+      Cardinality: 0..1
+      Definition: A USDM relationship between the ScheduledActivityInstance and ScheduleTimeline
+        classes which provides the details associated with an instance of a scheduled
+        timeline related to a scheduled activity instance.
+      Relationship Type: Ref
+      Model Name: timeline
+    timelineExitId:
+      Type:
+      - $ref: '#/ScheduleTimelineExit'
+      Cardinality: 0..1
+      Definition: A USDM relationship between the ScheduledActivityInstance and ScheduleTimelineExit
+        classes which provides the details associated with the exit from a timeline
+        related to a scheduled activity instance.
+      Relationship Type: Ref
+      Model Name: timelineExit
     instanceType:
       Type:
       - $ref: '#/string'
@@ -2523,28 +2519,6 @@ ScheduledDecisionInstance:
       Model Name: epoch
       Inherited From:
         $ref: '#/ScheduledInstance'
-    timelineId:
-      Type:
-      - $ref: '#/ScheduleTimeline'
-      Cardinality: 0..1
-      Definition: A USDM relationship between the ScheduledActivityInstance and ScheduleTimeline
-        classes which provides the details associated with an instance of a scheduled
-        timeline related to a scheduled decision instance.
-      Relationship Type: Ref
-      Model Name: timeline
-      Inherited From:
-        $ref: '#/ScheduledInstance'
-    timelineExitId:
-      Type:
-      - $ref: '#/ScheduleTimelineExit'
-      Cardinality: 0..1
-      Definition: A USDM relationship between the ScheduledDecisionInstance and ScheduleTimelineExit
-        classes which provides the details associated with the exit from a timeline
-        related to a scheduled decision instance.
-      Relationship Type: Ref
-      Model Name: timelineExit
-      Inherited From:
-        $ref: '#/ScheduledInstance'
     conditionAssignments:
       Type:
       - $ref: '#/ConditionAssignment'
@@ -2554,6 +2528,14 @@ ScheduledDecisionInstance:
         a scheduled decision instance.
       Relationship Type: Value
       Model Name: conditionAssignments
+    timelineId:
+      Type:
+      - $ref: UNKNOWN
+      Relationship Type: Value
+    timelineExitId:
+      Type:
+      - $ref: UNKNOWN
+      Relationship Type: Value
     instanceType:
       Type:
       - $ref: '#/string'
@@ -2608,22 +2590,6 @@ ScheduledInstance:
       Definition: A USDM relationship between the ScheduledInstance and StudyEpoch
         classes which identifies the study epoch associated with a scheduled instance.
       Model Name: epoch
-    timeline:
-      Type:
-      - $ref: '#/ScheduleTimeline'
-      Cardinality: 0..1
-      Definition: A USDM relationship between the ScheduledActivityInstance and ScheduleTimeline
-        classes which provides the details associated with an instance of a scheduled
-        timeline related to a scheduled instance.
-      Model Name: timeline
-    timelineExit:
-      Type:
-      - $ref: '#/ScheduleTimelineExit'
-      Cardinality: 0..1
-      Definition: A USDM relationship between the ScheduledInstance and StudyTimelineExit
-        classes which provides the details associated with the exit from a timeline
-        related to a scheduled instance.
-      Model Name: timelineExit
 Study:
   NCI C-Code: C15206
   Preferred Term: Clinical Study
@@ -2991,7 +2957,7 @@ StudyCohort:
     criteria:
       Type:
       - $ref: '#/EligibilityCriterion'
-      Cardinality: 1..*
+      Cardinality: 0..*
       Definition: A USDM relationship between the StudyCohort and EligibilityCriterion
         classes which identifies the set of eligibility criteria associated with the
         study cohort.
@@ -3393,7 +3359,7 @@ StudyDesignPopulation:
     criteria:
       Type:
       - $ref: '#/EligibilityCriterion'
-      Cardinality: 1..*
+      Cardinality: 0..*
       Definition: A USDM relationship between the StudyDesignPopulation and EligibilityCriterion
         classes which identifies the set of eligibility criteria associated with the
         study design population.
