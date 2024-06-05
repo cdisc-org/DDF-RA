@@ -1,5 +1,39 @@
 status,class_name,property_name,data_type
+Class - NEW,CommentAnnotation,,
+,,id,string
+,,Text,string
+,,codes,Code
 ,,,
+Property - NEW,BiomedicalConceptCategory,notes,CommentAnnotation
+Property - NEW,Estimand,description,string
+Property - NEW,Estimand,label,string
+Property - NEW,Estimand,name,string
+Property - NEW,Estimand,notes,CommentAnnotation
+Property - NEW,Activity,notes,CommentAnnotation
+Property - NEW,AgentAdministration,notes,CommentAnnotation
+Property - NEW,Endpoint,notes,CommentAnnotation
+Property - NEW,Procedure,notes,CommentAnnotation
+Property - NEW,StudyIntervention,notes,CommentAnnotation
+Property - NEW,StudyElement,note,CommentAnnotation
+Property - NEW,BiomedicalConceptProperty,notes,CommentAnnotation
+Property - NEW,Characteristic,notes,CommentAnnotation
+Property - NEW,BiomedicalConcept,notes,CommentAnnotation
+Property - NEW,Objective,notes,CommentAnnotation
+Property - NEW,AnalysisPopulation,notes,CommentAnnotation
+Property - NEW,Indication,notes,CommentAnnotation
+Property - NEW,StudyEpoch,notes,CommentAnnotation
+Property - NEW,StudyArm,notes,CommentAnnotation
+Property - NEW,StudyDesignPopulation,notes,CommentAnnotation
+Property - NEW,StudyVersion,criteria,EligibilityCriterion
+Property - NEW,SyntaxTemplate,notes,CommentAnnotation
+Property - NEW,Encounter,environmentalSettings,Code
+Property - NEW,Encounter,notes,CommentAnnotation
+Property - NEW,PopulationDefinition,notes,CommentAnnotation
+Property - NEW,IntercurrentEvent,notes,CommentAnnotation
+Property - NEW,Condition,notes,CommentAnnotation
+Property - NEW,StudyCohort,notes,CommentAnnotation
+Property - NEW,EligibilityCriterion,notes,CommentAnnotation
+Property - DELETED,Encounter,environmentalSetting,Code
 Property - DELETED,ScheduledInstance,timeline,ScheduleTimeline
 Property - DELETED,ScheduledInstance,timelineExit,ScheduleTimelineExit
 Property - DELETED,ScheduledDecisionInstance,timeline,ScheduleTimeline

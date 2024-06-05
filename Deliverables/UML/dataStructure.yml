@@ -60,6 +60,12 @@ Activity:
         activity that follows the current activity in the display order.
       Relationship Type: Ref
       Model Name: next
+    notes*:
+      Type:
+      - $ref: '#/CommentAnnotation'
+      Cardinality: 0..*
+      Relationship Type: UNKNOWN
+      Model Name: notes
     timelineId:
       Type:
       - $ref: '#/ScheduleTimeline'
@@ -311,6 +317,12 @@ AgentAdministration:
       Codelist Ref: SDTM Terminology Codelist C71113
       Relationship Type: Value
       Model Name: frequency
+    notes*:
+      Type:
+      - $ref: '#/CommentAnnotation'
+      Cardinality: 0..*
+      Relationship Type: UNKNOWN
+      Model Name: notes
     instanceType:
       Type:
       - $ref: '#/string'
@@ -397,6 +409,12 @@ AnalysisPopulation:
       Definition: The short descriptive designation for the analysis population.
       Relationship Type: Value
       Model Name: label
+    notes*:
+      Type:
+      - $ref: '#/CommentAnnotation'
+      Cardinality: 0..*
+      Relationship Type: UNKNOWN
+      Model Name: notes
     instanceType:
       Type:
       - $ref: '#/string'
@@ -460,6 +478,12 @@ BiomedicalConcept:
         points to the meaning of that biomedical concept.
       Relationship Type: Value
       Model Name: code
+    notes*:
+      Type:
+      - $ref: '#/CommentAnnotation'
+      Cardinality: 0..*
+      Relationship Type: UNKNOWN
+      Model Name: notes
     properties:
       Type:
       - $ref: '#/BiomedicalConceptProperty'
@@ -538,6 +562,12 @@ BiomedicalConceptCategory:
         identifies the set of child categories of a biomedical concept.
       Relationship Type: Ref
       Model Name: children
+    notes*:
+      Type:
+      - $ref: '#/CommentAnnotation'
+      Cardinality: 0..*
+      Relationship Type: UNKNOWN
+      Model Name: notes
     instanceType:
       Type:
       - $ref: '#/string'
@@ -618,6 +648,12 @@ BiomedicalConceptProperty:
         concept property.
       Relationship Type: Value
       Model Name: responseCodes
+    notes*:
+      Type:
+      - $ref: '#/CommentAnnotation'
+      Cardinality: 0..*
+      Relationship Type: UNKNOWN
+      Model Name: notes
     instanceType:
       Type:
       - $ref: '#/string'
@@ -724,6 +760,14 @@ Characteristic:
       Model Name: text
       Inherited From:
         $ref: '#/SyntaxTemplate'
+    notes*:
+      Type:
+      - $ref: '#/CommentAnnotation'
+      Cardinality: 0..*
+      Relationship Type: UNKNOWN
+      Model Name: notes
+      Inherited From:
+        $ref: '#/SyntaxTemplate'
     dictionaryId:
       Type:
       - $ref: '#/SyntaxTemplateDictionary'
@@ -790,6 +834,22 @@ Code:
       - $ref: '#/string'
       Cardinality: 0..1
       Relationship Type: Value
+CommentAnnotation:
+  Modifier: Abstract
+  Attributes:
+    id:
+      Type:
+      - $ref: '#/string'
+      Model Name: id
+    Text:
+      Type:
+      - $ref: '#/string'
+      Model Name: Text
+    codes:
+      Type:
+      - $ref: '#/Code'
+      Cardinality: 0..*
+      Model Name: codes
 Condition:
   NCI C-Code: C25457
   Preferred Term: Condition
@@ -843,6 +903,14 @@ Condition:
       Definition: An instance of structured text that represents the condition.
       Relationship Type: Value
       Model Name: text
+      Inherited From:
+        $ref: '#/SyntaxTemplate'
+    notes*:
+      Type:
+      - $ref: '#/CommentAnnotation'
+      Cardinality: 0..*
+      Relationship Type: UNKNOWN
+      Model Name: notes
       Inherited From:
         $ref: '#/SyntaxTemplate'
     dictionaryId:
@@ -978,6 +1046,14 @@ EligibilityCriterion:
       Model Name: text
       Inherited From:
         $ref: '#/SyntaxTemplate'
+    notes*:
+      Type:
+      - $ref: '#/CommentAnnotation'
+      Cardinality: 0..*
+      Relationship Type: UNKNOWN
+      Model Name: notes
+      Inherited From:
+        $ref: '#/SyntaxTemplate'
     dictionaryId:
       Type:
       - $ref: '#/SyntaxTemplateDictionary'
@@ -1079,12 +1155,17 @@ Encounter:
       Definition: The short descriptive designation for the encounter.
       Relationship Type: Value
       Model Name: label
-    environmentalSetting:
+    environmentalSettings*:
       Type:
       - $ref: '#/Code'
+      NCI C-Code: C188840
       Cardinality: 0..*
-      Relationship Type: Value
-      Model Name: environmentalSetting
+      Preferred Term: Environmental Setting
+      Definition: The environment/setting where the event, intervention, or finding
+        occurred.
+      Codelist Ref: SDTM Terminology Codelist C127262
+      Relationship Type: UNKNOWN
+      Model Name: environmentalSettings
     contactModes:
       Type:
       - $ref: '#/Code'
@@ -1108,6 +1189,12 @@ Encounter:
       Codelist Ref: C188728
       Relationship Type: Value
       Model Name: type
+    notes*:
+      Type:
+      - $ref: '#/CommentAnnotation'
+      Cardinality: 0..*
+      Relationship Type: UNKNOWN
+      Model Name: notes
     transitionEndRule:
       Type:
       - $ref: '#/TransitionRule'
@@ -1150,6 +1237,11 @@ Encounter:
         the encounter that chronologically precedes the current encounter.
       Relationship Type: Ref
       Model Name: previous
+    environmentalSetting:
+      Type:
+      - $ref: '#/Code'
+      Cardinality: 0..*
+      Relationship Type: Value
     instanceType:
       Type:
       - $ref: '#/string'
@@ -1216,6 +1308,14 @@ Endpoint:
       Model Name: text
       Inherited From:
         $ref: '#/SyntaxTemplate'
+    notes*:
+      Type:
+      - $ref: '#/CommentAnnotation'
+      Cardinality: 0..*
+      Relationship Type: UNKNOWN
+      Model Name: notes
+      Inherited From:
+        $ref: '#/SyntaxTemplate'
     dictionaryId:
       Type:
       - $ref: '#/SyntaxTemplateDictionary'
@@ -1273,6 +1373,21 @@ Estimand:
         target study population.
       Relationship Type: Value
       Model Name: summaryMeasure
+    name*:
+      Type:
+      - $ref: '#/string'
+      Relationship Type: UNKNOWN
+      Model Name: name
+    description*:
+      Type:
+      - $ref: '#/string'
+      Relationship Type: UNKNOWN
+      Model Name: description
+    label*:
+      Type:
+      - $ref: '#/string'
+      Relationship Type: UNKNOWN
+      Model Name: label
     analysisPopulation:
       Type:
       - $ref: '#/AnalysisPopulation'
@@ -1282,6 +1397,12 @@ Estimand:
         population used to partially define a study estimand.
       Relationship Type: Value
       Model Name: analysisPopulation
+    notes*:
+      Type:
+      - $ref: '#/CommentAnnotation'
+      Cardinality: 0..*
+      Relationship Type: UNKNOWN
+      Model Name: notes
     variableOfInterestId:
       Type:
       - $ref: '#/Endpoint'
@@ -1481,6 +1602,12 @@ Indication:
         SNOMEDCT (for FDA), MedDRA, NCIt, ICD's, etc.)
       Relationship Type: Value
       Model Name: codes
+    notes*:
+      Type:
+      - $ref: '#/CommentAnnotation'
+      Cardinality: 0..*
+      Relationship Type: UNKNOWN
+      Model Name: notes
     instanceType:
       Type:
       - $ref: '#/string'
@@ -1533,6 +1660,12 @@ IntercurrentEvent:
         intercurrent events.
       Relationship Type: Value
       Model Name: strategy
+    notes*:
+      Type:
+      - $ref: '#/CommentAnnotation'
+      Cardinality: 0..*
+      Relationship Type: UNKNOWN
+      Model Name: notes
     instanceType:
       Type:
       - $ref: '#/string'
@@ -1707,6 +1840,14 @@ Objective:
       Definition: An instance of structured text that represents the study objective.
       Relationship Type: Value
       Model Name: text
+      Inherited From:
+        $ref: '#/SyntaxTemplate'
+    notes*:
+      Type:
+      - $ref: '#/CommentAnnotation'
+      Cardinality: 0..*
+      Relationship Type: UNKNOWN
+      Model Name: notes
       Inherited From:
         $ref: '#/SyntaxTemplate'
     dictionaryId:
@@ -1903,6 +2044,11 @@ PopulationDefinition:
       Definition: The protocol-defined sex within the population definition.
       Codelist Ref: SDTM Terminology Codelist C66732
       Model Name: plannedSex
+    notes:
+      Type:
+      - $ref: '#/CommentAnnotation'
+      Cardinality: 0..*
+      Model Name: notes
     criteria:
       Type:
       - $ref: '#/EligibilityCriterion'
@@ -1994,6 +2140,12 @@ Procedure:
         etc.)
       Relationship Type: Value
       Model Name: code
+    notes*:
+      Type:
+      - $ref: '#/CommentAnnotation'
+      Cardinality: 0..*
+      Relationship Type: UNKNOWN
+      Model Name: notes
     studyInterventionId:
       Type:
       - $ref: '#/StudyIntervention'
@@ -2824,6 +2976,12 @@ StudyArm:
       Codelist Ref: Protocol Terminology Codelist C174222
       Relationship Type: Value
       Model Name: type
+    notes*:
+      Type:
+      - $ref: '#/CommentAnnotation'
+      Cardinality: 0..*
+      Relationship Type: UNKNOWN
+      Model Name: notes
     populationIds:
       Type:
       - $ref: '#/PopulationDefinition'
@@ -2947,6 +3105,14 @@ StudyCohort:
       Codelist Ref: SDTM Terminology Codelist C66732
       Relationship Type: Value
       Model Name: plannedSex
+      Inherited From:
+        $ref: '#/PopulationDefinition'
+    notes*:
+      Type:
+      - $ref: '#/CommentAnnotation'
+      Cardinality: 0..*
+      Relationship Type: UNKNOWN
+      Model Name: notes
       Inherited From:
         $ref: '#/PopulationDefinition'
     criteria:
@@ -3351,6 +3517,14 @@ StudyDesignPopulation:
       Model Name: plannedSex
       Inherited From:
         $ref: '#/PopulationDefinition'
+    notes*:
+      Type:
+      - $ref: '#/CommentAnnotation'
+      Cardinality: 0..*
+      Relationship Type: UNKNOWN
+      Model Name: notes
+      Inherited From:
+        $ref: '#/PopulationDefinition'
     criteria:
       Type:
       - $ref: '#/EligibilityCriterion'
@@ -3450,6 +3624,12 @@ StudyElement:
       Definition: The short descriptive designation for the study element.
       Relationship Type: Value
       Model Name: label
+    note*:
+      Type:
+      - $ref: '#/CommentAnnotation'
+      Cardinality: 0..*
+      Relationship Type: UNKNOWN
+      Model Name: note
     transitionEndRule:
       Type:
       - $ref: '#/TransitionRule'
@@ -3534,6 +3714,12 @@ StudyEpoch:
       Codelist Ref: SDTM Terminology Codelist C99079
       Relationship Type: Value
       Model Name: type
+    notes*:
+      Type:
+      - $ref: '#/CommentAnnotation'
+      Cardinality: 0..*
+      Relationship Type: UNKNOWN
+      Model Name: notes
     previousId:
       Type:
       - $ref: '#/StudyEpoch'
@@ -3690,6 +3876,12 @@ StudyIntervention:
         WHODrug, ATC, UNII, etc.)
       Relationship Type: Value
       Model Name: codes
+    notes*:
+      Type:
+      - $ref: '#/CommentAnnotation'
+      Cardinality: 0..*
+      Relationship Type: UNKNOWN
+      Model Name: notes
     minimumResponseDuration:
       Type:
       - $ref: '#/Quantity'
@@ -3974,6 +4166,12 @@ StudyVersion:
       Codelist Ref: SDTM Terminology Codelist C99077
       Relationship Type: Value
       Model Name: studyType
+    criteria*:
+      Type:
+      - $ref: '#/EligibilityCriterion'
+      Cardinality: 1..*
+      Relationship Type: UNKNOWN
+      Model Name: criteria
     dateValues:
       Type:
       - $ref: '#/GovernanceDate'
@@ -4132,6 +4330,11 @@ SyntaxTemplate:
       Definition: A structured text string containing prescribed text interspersed
         with user-defined parameter values.
       Model Name: text
+    notes:
+      Type:
+      - $ref: '#/CommentAnnotation'
+      Cardinality: 0..*
+      Model Name: notes
     dictionary:
       Type:
       - $ref: '#/SyntaxTemplateDictionary'
