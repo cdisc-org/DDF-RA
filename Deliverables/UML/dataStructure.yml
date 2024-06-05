@@ -3624,12 +3624,12 @@ StudyElement:
       Definition: The short descriptive designation for the study element.
       Relationship Type: Value
       Model Name: label
-    note*:
+    notes*:
       Type:
       - $ref: '#/CommentAnnotation'
       Cardinality: 0..*
       Relationship Type: UNKNOWN
-      Model Name: note
+      Model Name: notes
     transitionEndRule:
       Type:
       - $ref: '#/TransitionRule'
