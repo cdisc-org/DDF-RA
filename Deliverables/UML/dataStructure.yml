@@ -842,22 +842,17 @@ CommentAnnotation:
       - $ref: '#/string'
       Relationship Type: Value
       Model Name: id
-    Text*:
+    text:
       Type:
       - $ref: '#/string'
-      Relationship Type: UNKNOWN
-      Model Name: Text
+      Relationship Type: Value
+      Model Name: text
     codes:
       Type:
       - $ref: '#/Code'
       Cardinality: 0..*
       Relationship Type: Value
       Model Name: codes
-    text:
-      Type:
-      - $ref: '#/string'
-      Cardinality: 0..1
-      Relationship Type: Value
     instanceType:
       Type:
       - $ref: '#/string'
@@ -1097,16 +1092,6 @@ EligibilityCriterion:
       Codelist Ref: SDTM Terminology Codelist C66797
       Relationship Type: Value
       Model Name: category
-    context*:
-      Type:
-      - $ref: '#/StudyDesign'
-      - $ref: '#/StudyVersion'
-      Cardinality: 0..1
-      Definition: A USDM relationship between the EligibilityCriterion and the StudyDesign
-        or StudyVersion classes which identifies the study design or study version
-        to which the eligibility criterion belongs.
-      Relationship Type: UNKNOWN
-      Model Name: context
     nextId:
       Type:
       - $ref: '#/EligibilityCriterion'
