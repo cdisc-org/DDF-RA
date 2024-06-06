@@ -60,11 +60,11 @@ Activity:
         activity that follows the current activity in the display order.
       Relationship Type: Ref
       Model Name: next
-    notes*:
+    notes:
       Type:
       - $ref: '#/CommentAnnotation'
       Cardinality: 0..*
-      Relationship Type: UNKNOWN
+      Relationship Type: Value
       Model Name: notes
     timelineId:
       Type:
@@ -409,11 +409,11 @@ AnalysisPopulation:
       Definition: The short descriptive designation for the analysis population.
       Relationship Type: Value
       Model Name: label
-    notes*:
+    notes:
       Type:
       - $ref: '#/CommentAnnotation'
       Cardinality: 0..*
-      Relationship Type: UNKNOWN
+      Relationship Type: Value
       Model Name: notes
     instanceType:
       Type:
@@ -478,11 +478,11 @@ BiomedicalConcept:
         points to the meaning of that biomedical concept.
       Relationship Type: Value
       Model Name: code
-    notes*:
+    notes:
       Type:
       - $ref: '#/CommentAnnotation'
       Cardinality: 0..*
-      Relationship Type: UNKNOWN
+      Relationship Type: Value
       Model Name: notes
     properties:
       Type:
@@ -562,11 +562,11 @@ BiomedicalConceptCategory:
         identifies the set of child categories of a biomedical concept.
       Relationship Type: Ref
       Model Name: children
-    notes*:
+    notes:
       Type:
       - $ref: '#/CommentAnnotation'
       Cardinality: 0..*
-      Relationship Type: UNKNOWN
+      Relationship Type: Value
       Model Name: notes
     instanceType:
       Type:
@@ -648,11 +648,11 @@ BiomedicalConceptProperty:
         concept property.
       Relationship Type: Value
       Model Name: responseCodes
-    notes*:
+    notes:
       Type:
       - $ref: '#/CommentAnnotation'
       Cardinality: 0..*
-      Relationship Type: UNKNOWN
+      Relationship Type: Value
       Model Name: notes
     instanceType:
       Type:
@@ -760,11 +760,11 @@ Characteristic:
       Model Name: text
       Inherited From:
         $ref: '#/SyntaxTemplate'
-    notes*:
+    notes:
       Type:
       - $ref: '#/CommentAnnotation'
       Cardinality: 0..*
-      Relationship Type: UNKNOWN
+      Relationship Type: Value
       Model Name: notes
       Inherited From:
         $ref: '#/SyntaxTemplate'
@@ -835,21 +835,34 @@ Code:
       Cardinality: 0..1
       Relationship Type: Value
 CommentAnnotation:
-  Modifier: Abstract
+  Modifier: Concrete
   Attributes:
     id:
       Type:
       - $ref: '#/string'
+      Relationship Type: Value
       Model Name: id
-    Text:
+    Text*:
       Type:
       - $ref: '#/string'
+      Relationship Type: UNKNOWN
       Model Name: Text
     codes:
       Type:
       - $ref: '#/Code'
       Cardinality: 0..*
+      Relationship Type: Value
       Model Name: codes
+    text:
+      Type:
+      - $ref: '#/string'
+      Cardinality: 0..1
+      Relationship Type: Value
+    instanceType:
+      Type:
+      - $ref: '#/string'
+      Cardinality: 0..1
+      Relationship Type: Value
 Condition:
   NCI C-Code: C25457
   Preferred Term: Condition
@@ -1046,11 +1059,11 @@ EligibilityCriterion:
       Model Name: text
       Inherited From:
         $ref: '#/SyntaxTemplate'
-    notes*:
+    notes:
       Type:
       - $ref: '#/CommentAnnotation'
       Cardinality: 0..*
-      Relationship Type: UNKNOWN
+      Relationship Type: Value
       Model Name: notes
       Inherited From:
         $ref: '#/SyntaxTemplate'
@@ -1155,7 +1168,7 @@ Encounter:
       Definition: The short descriptive designation for the encounter.
       Relationship Type: Value
       Model Name: label
-    environmentalSettings*:
+    environmentalSettings:
       Type:
       - $ref: '#/Code'
       NCI C-Code: C188840
@@ -1164,7 +1177,7 @@ Encounter:
       Definition: The environment/setting where the event, intervention, or finding
         occurred.
       Codelist Ref: SDTM Terminology Codelist C127262
-      Relationship Type: UNKNOWN
+      Relationship Type: Value
       Model Name: environmentalSettings
     contactModes:
       Type:
@@ -1237,11 +1250,6 @@ Encounter:
         the encounter that chronologically precedes the current encounter.
       Relationship Type: Ref
       Model Name: previous
-    environmentalSetting:
-      Type:
-      - $ref: '#/Code'
-      Cardinality: 0..*
-      Relationship Type: Value
     instanceType:
       Type:
       - $ref: '#/string'
@@ -1308,11 +1316,11 @@ Endpoint:
       Model Name: text
       Inherited From:
         $ref: '#/SyntaxTemplate'
-    notes*:
+    notes:
       Type:
       - $ref: '#/CommentAnnotation'
       Cardinality: 0..*
-      Relationship Type: UNKNOWN
+      Relationship Type: Value
       Model Name: notes
       Inherited From:
         $ref: '#/SyntaxTemplate'
@@ -1373,20 +1381,20 @@ Estimand:
         target study population.
       Relationship Type: Value
       Model Name: summaryMeasure
-    name*:
+    name:
       Type:
       - $ref: '#/string'
-      Relationship Type: UNKNOWN
+      Relationship Type: Value
       Model Name: name
-    description*:
+    description:
       Type:
       - $ref: '#/string'
-      Relationship Type: UNKNOWN
+      Relationship Type: Value
       Model Name: description
-    label*:
+    label:
       Type:
       - $ref: '#/string'
-      Relationship Type: UNKNOWN
+      Relationship Type: Value
       Model Name: label
     analysisPopulation:
       Type:
@@ -1397,11 +1405,11 @@ Estimand:
         population used to partially define a study estimand.
       Relationship Type: Value
       Model Name: analysisPopulation
-    notes*:
+    notes:
       Type:
       - $ref: '#/CommentAnnotation'
       Cardinality: 0..*
-      Relationship Type: UNKNOWN
+      Relationship Type: Value
       Model Name: notes
     variableOfInterestId:
       Type:
@@ -1842,11 +1850,11 @@ Objective:
       Model Name: text
       Inherited From:
         $ref: '#/SyntaxTemplate'
-    notes*:
+    notes:
       Type:
       - $ref: '#/CommentAnnotation'
       Cardinality: 0..*
-      Relationship Type: UNKNOWN
+      Relationship Type: Value
       Model Name: notes
       Inherited From:
         $ref: '#/SyntaxTemplate'
@@ -2140,11 +2148,11 @@ Procedure:
         etc.)
       Relationship Type: Value
       Model Name: code
-    notes*:
+    notes:
       Type:
       - $ref: '#/CommentAnnotation'
       Cardinality: 0..*
-      Relationship Type: UNKNOWN
+      Relationship Type: Value
       Model Name: notes
     studyInterventionId:
       Type:
@@ -2675,14 +2683,6 @@ ScheduledDecisionInstance:
         a scheduled decision instance.
       Relationship Type: Value
       Model Name: conditionAssignments
-    timelineId:
-      Type:
-      - $ref: UNKNOWN
-      Relationship Type: Value
-    timelineExitId:
-      Type:
-      - $ref: UNKNOWN
-      Relationship Type: Value
     instanceType:
       Type:
       - $ref: '#/string'
@@ -3876,11 +3876,11 @@ StudyIntervention:
         WHODrug, ATC, UNII, etc.)
       Relationship Type: Value
       Model Name: codes
-    notes*:
+    notes:
       Type:
       - $ref: '#/CommentAnnotation'
       Cardinality: 0..*
-      Relationship Type: UNKNOWN
+      Relationship Type: Value
       Model Name: notes
     minimumResponseDuration:
       Type:
