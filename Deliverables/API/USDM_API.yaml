@@ -1323,11 +1323,6 @@ components:
           - type: string
           - type: 'null'
           title: Previousid
-        contextId:
-          anyOf:
-          - type: string
-          - type: 'null'
-          title: Contextid
       type: object
       required:
       - id
@@ -1392,11 +1387,6 @@ components:
           - type: string
           - type: 'null'
           title: Previousid
-        contextId:
-          anyOf:
-          - type: string
-          - type: 'null'
-          title: Contextid
       type: object
       required:
       - id
@@ -1617,7 +1607,7 @@ components:
           title: Variableofinterestid
         intercurrentEvents:
           items:
-            $ref: '#/components/schemas/IntercurrentEvent'
+            $ref: '#/components/schemas/IntercurrentEvent-Input'
           type: array
           title: Intercurrentevents
         notes:
@@ -1676,7 +1666,7 @@ components:
           title: Variableofinterestid
         intercurrentEvents:
           items:
-            $ref: '#/components/schemas/IntercurrentEvent'
+            $ref: '#/components/schemas/IntercurrentEvent-Output'
           type: array
           title: Intercurrentevents
         notes:
@@ -1893,7 +1883,7 @@ components:
       - isRareDisease
       - instanceType
       title: Indication
-    IntercurrentEvent:
+    IntercurrentEvent-Input:
       properties:
         id:
           type: string
@@ -1916,6 +1906,54 @@ components:
         strategy:
           type: string
           title: Strategy
+        notes:
+          items:
+            $ref: '#/components/schemas/CommentAnnotation'
+          type: array
+          title: Notes
+          default: []
+        instanceType:
+          type: string
+          enum:
+          - IntercurrentEvent
+          const: IntercurrentEvent
+          title: Instancetype
+      type: object
+      required:
+      - id
+      - name
+      - strategy
+      - instanceType
+      title: IntercurrentEvent
+    IntercurrentEvent-Output:
+      properties:
+        id:
+          type: string
+          minLength: 1
+          title: Id
+        name:
+          type: string
+          minLength: 1
+          title: Name
+        label:
+          anyOf:
+          - type: string
+          - type: 'null'
+          title: Label
+        description:
+          anyOf:
+          - type: string
+          - type: 'null'
+          title: Description
+        strategy:
+          type: string
+          title: Strategy
+        notes:
+          items:
+            $ref: '#/components/schemas/CommentAnnotation'
+          type: array
+          title: Notes
+          default: []
         instanceType:
           type: string
           enum:
@@ -3110,11 +3148,11 @@ components:
           type: array
           title: Plannedsex
           default: []
-        criteria:
+        criteriaIds:
           items:
-            $ref: '#/components/schemas/EligibilityCriterion-Input'
+            type: string
           type: array
-          title: Criteria
+          title: Criteriaids
           default: []
         plannedAge:
           anyOf:
@@ -3176,11 +3214,11 @@ components:
           type: array
           title: Plannedsex
           default: []
-        criteria:
+        criteriaIds:
           items:
-            $ref: '#/components/schemas/EligibilityCriterion-Output'
+            type: string
           type: array
-          title: Criteria
+          title: Criteriaids
           default: []
         plannedAge:
           anyOf:
@@ -3610,11 +3648,11 @@ components:
           type: array
           title: Plannedsex
           default: []
-        criteria:
+        criteriaIds:
           items:
-            $ref: '#/components/schemas/EligibilityCriterion-Input'
+            type: string
           type: array
-          title: Criteria
+          title: Criteriaids
           default: []
         plannedAge:
           anyOf:
@@ -3676,11 +3714,11 @@ components:
           type: array
           title: Plannedsex
           default: []
-        criteria:
+        criteriaIds:
           items:
-            $ref: '#/components/schemas/EligibilityCriterion-Output'
+            type: string
           type: array
-          title: Criteria
+          title: Criteriaids
           default: []
         plannedAge:
           anyOf:
@@ -4294,6 +4332,11 @@ components:
             $ref: '#/components/schemas/StudyTitle'
           type: array
           title: Titles
+        criteria:
+          items:
+            $ref: '#/components/schemas/EligibilityCriterion-Input'
+          type: array
+          title: Criteria
         instanceType:
           type: string
           enum:
@@ -4306,6 +4349,7 @@ components:
       - versionIdentifier
       - rationale
       - titles
+      - criteria
       - instanceType
       title: StudyVersion
     StudyVersion-Output:
@@ -4368,6 +4412,11 @@ components:
             $ref: '#/components/schemas/StudyTitle'
           type: array
           title: Titles
+        criteria:
+          items:
+            $ref: '#/components/schemas/EligibilityCriterion-Output'
+          type: array
+          title: Criteria
         instanceType:
           type: string
           enum:
@@ -4380,6 +4429,7 @@ components:
       - versionIdentifier
       - rationale
       - titles
+      - criteria
       - instanceType
       title: StudyVersion
     SubjectEnrollment-Input:

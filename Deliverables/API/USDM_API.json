@@ -2010,17 +2010,6 @@
               }
             ],
             "title": "Previousid"
-          },
-          "contextId": {
-            "anyOf": [
-              {
-                "type": "string"
-              },
-              {
-                "type": "null"
-              }
-            ],
-            "title": "Contextid"
           }
         },
         "type": "object",
@@ -2127,17 +2116,6 @@
               }
             ],
             "title": "Previousid"
-          },
-          "contextId": {
-            "anyOf": [
-              {
-                "type": "string"
-              },
-              {
-                "type": "null"
-              }
-            ],
-            "title": "Contextid"
           }
         },
         "type": "object",
@@ -2494,7 +2472,7 @@
           },
           "intercurrentEvents": {
             "items": {
-              "$ref": "#/components/schemas/IntercurrentEvent"
+              "$ref": "#/components/schemas/IntercurrentEvent-Input"
             },
             "type": "array",
             "title": "Intercurrentevents"
@@ -2580,7 +2558,7 @@
           },
           "intercurrentEvents": {
             "items": {
-              "$ref": "#/components/schemas/IntercurrentEvent"
+              "$ref": "#/components/schemas/IntercurrentEvent-Output"
             },
             "type": "array",
             "title": "Intercurrentevents"
@@ -2904,7 +2882,7 @@
         ],
         "title": "Indication"
       },
-      "IntercurrentEvent": {
+      "IntercurrentEvent-Input": {
         "properties": {
           "id": {
             "type": "string",
@@ -2941,6 +2919,78 @@
           "strategy": {
             "type": "string",
             "title": "Strategy"
+          },
+          "notes": {
+            "items": {
+              "$ref": "#/components/schemas/CommentAnnotation"
+            },
+            "type": "array",
+            "title": "Notes",
+            "default": []
+          },
+          "instanceType": {
+            "type": "string",
+            "enum": [
+              "IntercurrentEvent"
+            ],
+            "const": "IntercurrentEvent",
+            "title": "Instancetype"
+          }
+        },
+        "type": "object",
+        "required": [
+          "id",
+          "name",
+          "strategy",
+          "instanceType"
+        ],
+        "title": "IntercurrentEvent"
+      },
+      "IntercurrentEvent-Output": {
+        "properties": {
+          "id": {
+            "type": "string",
+            "minLength": 1,
+            "title": "Id"
+          },
+          "name": {
+            "type": "string",
+            "minLength": 1,
+            "title": "Name"
+          },
+          "label": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Label"
+          },
+          "description": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Description"
+          },
+          "strategy": {
+            "type": "string",
+            "title": "Strategy"
+          },
+          "notes": {
+            "items": {
+              "$ref": "#/components/schemas/CommentAnnotation"
+            },
+            "type": "array",
+            "title": "Notes",
+            "default": []
           },
           "instanceType": {
             "type": "string",
@@ -4788,12 +4838,12 @@
             "title": "Plannedsex",
             "default": []
           },
-          "criteria": {
+          "criteriaIds": {
             "items": {
-              "$ref": "#/components/schemas/EligibilityCriterion-Input"
+              "type": "string"
             },
             "type": "array",
-            "title": "Criteria",
+            "title": "Criteriaids",
             "default": []
           },
           "plannedAge": {
@@ -4898,12 +4948,12 @@
             "title": "Plannedsex",
             "default": []
           },
-          "criteria": {
+          "criteriaIds": {
             "items": {
-              "$ref": "#/components/schemas/EligibilityCriterion-Output"
+              "type": "string"
             },
             "type": "array",
-            "title": "Criteria",
+            "title": "Criteriaids",
             "default": []
           },
           "plannedAge": {
@@ -5542,12 +5592,12 @@
             "title": "Plannedsex",
             "default": []
           },
-          "criteria": {
+          "criteriaIds": {
             "items": {
-              "$ref": "#/components/schemas/EligibilityCriterion-Input"
+              "type": "string"
             },
             "type": "array",
-            "title": "Criteria",
+            "title": "Criteriaids",
             "default": []
           },
           "plannedAge": {
@@ -5652,12 +5702,12 @@
             "title": "Plannedsex",
             "default": []
           },
-          "criteria": {
+          "criteriaIds": {
             "items": {
-              "$ref": "#/components/schemas/EligibilityCriterion-Output"
+              "type": "string"
             },
             "type": "array",
-            "title": "Criteria",
+            "title": "Criteriaids",
             "default": []
           },
           "plannedAge": {
@@ -6607,6 +6657,13 @@
             "type": "array",
             "title": "Titles"
           },
+          "criteria": {
+            "items": {
+              "$ref": "#/components/schemas/EligibilityCriterion-Input"
+            },
+            "type": "array",
+            "title": "Criteria"
+          },
           "instanceType": {
             "type": "string",
             "enum": [
@@ -6622,6 +6679,7 @@
           "versionIdentifier",
           "rationale",
           "titles",
+          "criteria",
           "instanceType"
         ],
         "title": "StudyVersion"
@@ -6719,6 +6777,13 @@
             "type": "array",
             "title": "Titles"
           },
+          "criteria": {
+            "items": {
+              "$ref": "#/components/schemas/EligibilityCriterion-Output"
+            },
+            "type": "array",
+            "title": "Criteria"
+          },
           "instanceType": {
             "type": "string",
             "enum": [
@@ -6734,6 +6799,7 @@
           "versionIdentifier",
           "rationale",
           "titles",
+          "criteria",
           "instanceType"
         ],
         "title": "StudyVersion"
