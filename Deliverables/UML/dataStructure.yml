@@ -1097,7 +1097,7 @@ EligibilityCriterion:
       Codelist Ref: SDTM Terminology Codelist C66797
       Relationship Type: Value
       Model Name: category
-    contextId:
+    context*:
       Type:
       - $ref: '#/StudyDesign'
       - $ref: '#/StudyVersion'
@@ -1105,7 +1105,7 @@ EligibilityCriterion:
       Definition: A USDM relationship between the EligibilityCriterion and the StudyDesign
         or StudyVersion classes which identifies the study design or study version
         to which the eligibility criterion belongs.
-      Relationship Type: Ref
+      Relationship Type: UNKNOWN
       Model Name: context
     nextId:
       Type:
@@ -1668,11 +1668,11 @@ IntercurrentEvent:
         intercurrent events.
       Relationship Type: Value
       Model Name: strategy
-    notes*:
+    notes:
       Type:
       - $ref: '#/CommentAnnotation'
       Cardinality: 0..*
-      Relationship Type: UNKNOWN
+      Relationship Type: Value
       Model Name: notes
     instanceType:
       Type:
@@ -3115,14 +3115,14 @@ StudyCohort:
       Model Name: notes
       Inherited From:
         $ref: '#/PopulationDefinition'
-    criteria:
+    criteriaIds:
       Type:
       - $ref: '#/EligibilityCriterion'
       Cardinality: 0..*
       Definition: A USDM relationship between the StudyCohort and EligibilityCriterion
         classes which identifies the set of eligibility criteria associated with the
         study cohort.
-      Relationship Type: Value
+      Relationship Type: Ref
       Model Name: criteria
       Inherited From:
         $ref: '#/PopulationDefinition'
@@ -3525,14 +3525,14 @@ StudyDesignPopulation:
       Model Name: notes
       Inherited From:
         $ref: '#/PopulationDefinition'
-    criteria:
+    criteriaIds:
       Type:
       - $ref: '#/EligibilityCriterion'
       Cardinality: 0..*
       Definition: A USDM relationship between the StudyDesignPopulation and EligibilityCriterion
         classes which identifies the set of eligibility criteria associated with the
         study design population.
-      Relationship Type: Value
+      Relationship Type: Ref
       Model Name: criteria
       Inherited From:
         $ref: '#/PopulationDefinition'
@@ -4166,11 +4166,11 @@ StudyVersion:
       Codelist Ref: SDTM Terminology Codelist C99077
       Relationship Type: Value
       Model Name: studyType
-    criteria*:
+    criteria:
       Type:
       - $ref: '#/EligibilityCriterion'
       Cardinality: 1..*
-      Relationship Type: UNKNOWN
+      Relationship Type: Value
       Model Name: criteria
     dateValues:
       Type:
