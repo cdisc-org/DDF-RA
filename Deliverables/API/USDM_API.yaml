@@ -999,7 +999,7 @@ components:
       - code
       - instanceType
       title: BiomedicalConceptProperty
-    BiomedicalConceptSurrogate:
+    BiomedicalConceptSurrogate-Input:
       properties:
         id:
           type: string
@@ -1024,6 +1024,55 @@ components:
           - type: string
           - type: 'null'
           title: Reference
+        notes:
+          items:
+            $ref: '#/components/schemas/CommentAnnotation'
+          type: array
+          title: Notes
+          default: []
+        instanceType:
+          type: string
+          enum:
+          - BiomedicalConceptSurrogate
+          const: BiomedicalConceptSurrogate
+          title: Instancetype
+      type: object
+      required:
+      - id
+      - name
+      - instanceType
+      title: BiomedicalConceptSurrogate
+    BiomedicalConceptSurrogate-Output:
+      properties:
+        id:
+          type: string
+          minLength: 1
+          title: Id
+        name:
+          type: string
+          minLength: 1
+          title: Name
+        label:
+          anyOf:
+          - type: string
+          - type: 'null'
+          title: Label
+        description:
+          anyOf:
+          - type: string
+          - type: 'null'
+          title: Description
+        reference:
+          anyOf:
+          - type: string
+          - type: 'null'
+          title: Reference
+        notes:
+          items:
+            $ref: '#/components/schemas/CommentAnnotation'
+          type: array
+          title: Notes
+          default: []
         instanceType:
           type: string
           enum:
@@ -3315,7 +3364,7 @@ components:
           default: []
         bcSurrogates:
           items:
-            $ref: '#/components/schemas/BiomedicalConceptSurrogate'
+            $ref: '#/components/schemas/BiomedicalConceptSurrogate-Input'
           type: array
           title: Bcsurrogates
           default: []
@@ -3410,6 +3459,12 @@ components:
           type: array
           title: Organizations
           default: []
+        notes:
+          items:
+            $ref: '#/components/schemas/CommentAnnotation'
+          type: array
+          title: Notes
+          default: []
         instanceType:
           type: string
           enum:
@@ -3499,7 +3554,7 @@ components:
           default: []
         bcSurrogates:
           items:
-            $ref: '#/components/schemas/BiomedicalConceptSurrogate'
+            $ref: '#/components/schemas/BiomedicalConceptSurrogate-Output'
           type: array
           title: Bcsurrogates
           default: []
@@ -3593,6 +3648,12 @@ components:
             $ref: '#/components/schemas/ResearchOrganization-Output'
           type: array
           title: Organizations
+          default: []
+        notes:
+          items:
+            $ref: '#/components/schemas/CommentAnnotation'
+          type: array
+          title: Notes
           default: []
         instanceType:
           type: string
@@ -4337,6 +4398,12 @@ components:
             $ref: '#/components/schemas/EligibilityCriterion-Input'
           type: array
           title: Criteria
+        notes:
+          items:
+            $ref: '#/components/schemas/CommentAnnotation'
+          type: array
+          title: Notes
+          default: []
         instanceType:
           type: string
           enum:
@@ -4417,6 +4484,12 @@ components:
             $ref: '#/components/schemas/EligibilityCriterion-Output'
           type: array
           title: Criteria
+        notes:
+          items:
+            $ref: '#/components/schemas/CommentAnnotation'
+          type: array
+          title: Notes
+          default: []
         instanceType:
           type: string
           enum:

@@ -1510,7 +1510,7 @@
         ],
         "title": "BiomedicalConceptProperty"
       },
-      "BiomedicalConceptSurrogate": {
+      "BiomedicalConceptSurrogate-Input": {
         "properties": {
           "id": {
             "type": "string",
@@ -1554,6 +1554,84 @@
               }
             ],
             "title": "Reference"
+          },
+          "notes": {
+            "items": {
+              "$ref": "#/components/schemas/CommentAnnotation"
+            },
+            "type": "array",
+            "title": "Notes",
+            "default": []
+          },
+          "instanceType": {
+            "type": "string",
+            "enum": [
+              "BiomedicalConceptSurrogate"
+            ],
+            "const": "BiomedicalConceptSurrogate",
+            "title": "Instancetype"
+          }
+        },
+        "type": "object",
+        "required": [
+          "id",
+          "name",
+          "instanceType"
+        ],
+        "title": "BiomedicalConceptSurrogate"
+      },
+      "BiomedicalConceptSurrogate-Output": {
+        "properties": {
+          "id": {
+            "type": "string",
+            "minLength": 1,
+            "title": "Id"
+          },
+          "name": {
+            "type": "string",
+            "minLength": 1,
+            "title": "Name"
+          },
+          "label": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Label"
+          },
+          "description": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Description"
+          },
+          "reference": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Reference"
+          },
+          "notes": {
+            "items": {
+              "$ref": "#/components/schemas/CommentAnnotation"
+            },
+            "type": "array",
+            "title": "Notes",
+            "default": []
           },
           "instanceType": {
             "type": "string",
@@ -5095,7 +5173,7 @@
           },
           "bcSurrogates": {
             "items": {
-              "$ref": "#/components/schemas/BiomedicalConceptSurrogate"
+              "$ref": "#/components/schemas/BiomedicalConceptSurrogate-Input"
             },
             "type": "array",
             "title": "Bcsurrogates",
@@ -5237,6 +5315,14 @@
             "title": "Organizations",
             "default": []
           },
+          "notes": {
+            "items": {
+              "$ref": "#/components/schemas/CommentAnnotation"
+            },
+            "type": "array",
+            "title": "Notes",
+            "default": []
+          },
           "instanceType": {
             "type": "string",
             "enum": [
@@ -5362,7 +5448,7 @@
           },
           "bcSurrogates": {
             "items": {
-              "$ref": "#/components/schemas/BiomedicalConceptSurrogate"
+              "$ref": "#/components/schemas/BiomedicalConceptSurrogate-Output"
             },
             "type": "array",
             "title": "Bcsurrogates",
@@ -5502,6 +5588,14 @@
             },
             "type": "array",
             "title": "Organizations",
+            "default": []
+          },
+          "notes": {
+            "items": {
+              "$ref": "#/components/schemas/CommentAnnotation"
+            },
+            "type": "array",
+            "title": "Notes",
             "default": []
           },
           "instanceType": {
@@ -6664,6 +6758,14 @@
             "type": "array",
             "title": "Criteria"
           },
+          "notes": {
+            "items": {
+              "$ref": "#/components/schemas/CommentAnnotation"
+            },
+            "type": "array",
+            "title": "Notes",
+            "default": []
+          },
           "instanceType": {
             "type": "string",
             "enum": [
@@ -6783,6 +6885,14 @@
             },
             "type": "array",
             "title": "Criteria"
+          },
+          "notes": {
+            "items": {
+              "$ref": "#/components/schemas/CommentAnnotation"
+            },
+            "type": "array",
+            "title": "Notes",
+            "default": []
           },
           "instanceType": {
             "type": "string",
