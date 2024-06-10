@@ -700,6 +700,11 @@ BiomedicalConceptSurrogate:
       Definition: A citation to an authoritative source for a biomedical concept surrogate.
       Relationship Type: Value
       Model Name: reference
+    notes:
+      Type:
+      - $ref: '#/CommentAnnotation'
+      Cardinality: 0..*
+      Relationship Type: Value
     instanceType:
       Type:
       - $ref: '#/string'
@@ -3426,6 +3431,11 @@ StudyDesign:
       - $ref: '#/Condition'
       Cardinality: 0..*
       Relationship Type: Value
+    notes:
+      Type:
+      - $ref: '#/CommentAnnotation'
+      Cardinality: 0..*
+      Relationship Type: Value
     instanceType:
       Type:
       - $ref: '#/string'
@@ -4209,6 +4219,11 @@ StudyVersion:
         which identifies the set of study titles associated with the study version.
       Relationship Type: Value
       Model Name: titles
+    notes:
+      Type:
+      - $ref: '#/CommentAnnotation'
+      Cardinality: 0..*
+      Relationship Type: Value
     instanceType:
       Type:
       - $ref: '#/string'
