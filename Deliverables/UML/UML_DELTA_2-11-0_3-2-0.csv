@@ -3,39 +3,102 @@ Class - NEW,CommentAnnotation,,
 ,,id,string
 ,,text,string
 ,,codes,Code
+Class - NEW,ConditionAssignment,,
+,,id,string
+,,condition,string
+,,conditionTarget,ScheduledInstance
+Class - NEW,EligibilityCriterion,,
+,,id,string
+,,name,string
+,,description,string
+,,label,string
+,,text,string
+,,notes,CommentAnnotation
+,,dictionary,SyntaxTemplateDictionary
+,,identifier,string
+,,category,Code
+,,next,EligibilityCriterion
+,,previous,EligibilityCriterion
+Class - NEW,ParameterMap,,
+,,id,string
+,,tag,string
+,,reference,string
+Class - DELETED,EligibilityCriteria,,
+,,id,string
+,,name,string
+,,description,string
+,,label,string
+,,text,string
+,,dictionary,SyntaxTemplateDictionary
+,,identifier,string
+,,category,Code
+,,context,"StudyDesign, StudyVersion"
+,,next,EligibilityCriteria
+,,previous,EligibilityCriteria
 ,,,
 Property - NEW,BiomedicalConceptCategory,notes,CommentAnnotation
 Property - NEW,Estimand,description,string
+Property - NEW,Estimand,intervention,StudyIntervention
 Property - NEW,Estimand,label,string
 Property - NEW,Estimand,name,string
 Property - NEW,Estimand,notes,CommentAnnotation
 Property - NEW,Activity,notes,CommentAnnotation
+Property - NEW,StudyDesign,notes,CommentAnnotation
+Property - NEW,StudyDesign,organizations,ResearchOrganization
 Property - NEW,AgentAdministration,notes,CommentAnnotation
 Property - NEW,Endpoint,notes,CommentAnnotation
 Property - NEW,Procedure,notes,CommentAnnotation
+Property - NEW,BiomedicalConceptSurrogate,notes,CommentAnnotation
 Property - NEW,StudyIntervention,notes,CommentAnnotation
 Property - NEW,StudyElement,notes,CommentAnnotation
 Property - NEW,BiomedicalConceptProperty,notes,CommentAnnotation
 Property - NEW,Characteristic,notes,CommentAnnotation
+Property - NEW,ResearchOrganization,organizationType,Code
 Property - NEW,BiomedicalConcept,notes,CommentAnnotation
 Property - NEW,Objective,notes,CommentAnnotation
 Property - NEW,AnalysisPopulation,notes,CommentAnnotation
+Property - NEW,Timing,valueLabel,string
+Property - NEW,Timing,windowLabel,string
+Property - NEW,Organization,organizationType,Code
 Property - NEW,Indication,notes,CommentAnnotation
 Property - NEW,StudyEpoch,notes,CommentAnnotation
 Property - NEW,StudyArm,notes,CommentAnnotation
 Property - NEW,StudyDesignPopulation,notes,CommentAnnotation
 Property - NEW,StudyVersion,criteria,EligibilityCriterion
+Property - NEW,StudyVersion,notes,CommentAnnotation
+Property - NEW,StudyVersion,studyType,Code
+Property - NEW,NarrativeContent,next,NarrativeContent
+Property - NEW,NarrativeContent,previous,NarrativeContent
 Property - NEW,SyntaxTemplate,notes,CommentAnnotation
 Property - NEW,Encounter,environmentalSettings,Code
 Property - NEW,Encounter,notes,CommentAnnotation
 Property - NEW,PopulationDefinition,notes,CommentAnnotation
+Property - NEW,ScheduledInstance,description,string
+Property - NEW,ScheduledInstance,label,string
+Property - NEW,ScheduledInstance,name,string
 Property - NEW,IntercurrentEvent,notes,CommentAnnotation
+Property - NEW,SyntaxTemplateDictionary,parameterMaps,ParameterMap
 Property - NEW,Condition,notes,CommentAnnotation
 Property - NEW,StudyCohort,notes,CommentAnnotation
-Property - NEW,EligibilityCriterion,notes,CommentAnnotation
+Property - NEW,ScheduleTimeline,timings,Timing
+Property - NEW,ScheduledDecisionInstance,description,string
+Property - NEW,ScheduledDecisionInstance,label,string
+Property - NEW,ScheduledDecisionInstance,name,string
+Property - NEW,ScheduledActivityInstance,description,string
+Property - NEW,ScheduledActivityInstance,label,string
+Property - NEW,ScheduledActivityInstance,name,string
+Property - DELETED,Estimand,treatment,StudyIntervention
+Property - DELETED,StudyDesign,appliesTo,StudySite
+Property - DELETED,ResearchOrganization,type,Code
+Property - DELETED,Timing,window,string
+Property - DELETED,Organization,type,Code
+Property - DELETED,StudyVersion,type,Code
 Property - DELETED,Encounter,environmentalSetting,Code
 Property - DELETED,ScheduledInstance,timeline,ScheduleTimeline
 Property - DELETED,ScheduledInstance,timelineExit,ScheduleTimelineExit
-Property - DELETED,EligibilityCriterion,context,"StudyDesign, StudyVersion"
+Property - DELETED,ScheduledInstance,timings,Timing
+Property - DELETED,SyntaxTemplateDictionary,parameterMap,Map
 Property - DELETED,ScheduledDecisionInstance,timeline,ScheduleTimeline
 Property - DELETED,ScheduledDecisionInstance,timelineExit,ScheduleTimelineExit
+Property - DELETED,ScheduledDecisionInstance,timings,Timing
+Property - DELETED,ScheduledActivityInstance,timings,Timing

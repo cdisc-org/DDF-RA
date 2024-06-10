@@ -705,6 +705,7 @@ BiomedicalConceptSurrogate:
       - $ref: '#/CommentAnnotation'
       Cardinality: 0..*
       Relationship Type: Value
+      Model Name: notes
     instanceType:
       Type:
       - $ref: '#/string'
@@ -3290,6 +3291,12 @@ StudyDesign:
       Codelist Ref: SDTM Terminology Codelist C99076
       Relationship Type: Value
       Model Name: interventionModel
+    notes:
+      Type:
+      - $ref: '#/CommentAnnotation'
+      Cardinality: 0..*
+      Relationship Type: Value
+      Model Name: notes
     encounters:
       Type:
       - $ref: '#/Encounter'
@@ -3429,11 +3436,6 @@ StudyDesign:
     conditions:
       Type:
       - $ref: '#/Condition'
-      Cardinality: 0..*
-      Relationship Type: Value
-    notes:
-      Type:
-      - $ref: '#/CommentAnnotation'
       Cardinality: 0..*
       Relationship Type: Value
     instanceType:
@@ -4161,6 +4163,12 @@ StudyVersion:
       Codelist Ref: SDTM Terminology Codelist C99077
       Relationship Type: Value
       Model Name: studyType
+    notes:
+      Type:
+      - $ref: '#/CommentAnnotation'
+      Cardinality: 0..*
+      Relationship Type: Value
+      Model Name: notes
     criteria:
       Type:
       - $ref: '#/EligibilityCriterion'
@@ -4219,11 +4227,6 @@ StudyVersion:
         which identifies the set of study titles associated with the study version.
       Relationship Type: Value
       Model Name: titles
-    notes:
-      Type:
-      - $ref: '#/CommentAnnotation'
-      Cardinality: 0..*
-      Relationship Type: Value
     instanceType:
       Type:
       - $ref: '#/string'
