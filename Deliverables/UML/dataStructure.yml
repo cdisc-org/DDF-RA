@@ -919,11 +919,11 @@ Condition:
       Model Name: text
       Inherited From:
         $ref: '#/SyntaxTemplate'
-    notes*:
+    notes:
       Type:
       - $ref: '#/CommentAnnotation'
       Cardinality: 0..*
-      Relationship Type: UNKNOWN
+      Relationship Type: Value
       Model Name: notes
       Inherited From:
         $ref: '#/SyntaxTemplate'
@@ -1601,11 +1601,11 @@ Indication:
         SNOMEDCT (for FDA), MedDRA, NCIt, ICD's, etc.)
       Relationship Type: Value
       Model Name: codes
-    notes*:
+    notes:
       Type:
       - $ref: '#/CommentAnnotation'
       Cardinality: 0..*
-      Relationship Type: UNKNOWN
+      Relationship Type: Value
       Model Name: notes
     instanceType:
       Type:
@@ -2967,11 +2967,11 @@ StudyArm:
       Codelist Ref: Protocol Terminology Codelist C174222
       Relationship Type: Value
       Model Name: type
-    notes*:
+    notes:
       Type:
       - $ref: '#/CommentAnnotation'
       Cardinality: 0..*
-      Relationship Type: UNKNOWN
+      Relationship Type: Value
       Model Name: notes
     populationIds:
       Type:
@@ -3098,11 +3098,11 @@ StudyCohort:
       Model Name: plannedSex
       Inherited From:
         $ref: '#/PopulationDefinition'
-    notes*:
+    notes:
       Type:
       - $ref: '#/CommentAnnotation'
       Cardinality: 0..*
-      Relationship Type: UNKNOWN
+      Relationship Type: Value
       Model Name: notes
       Inherited From:
         $ref: '#/PopulationDefinition'
@@ -3514,11 +3514,11 @@ StudyDesignPopulation:
       Model Name: plannedSex
       Inherited From:
         $ref: '#/PopulationDefinition'
-    notes*:
+    notes:
       Type:
       - $ref: '#/CommentAnnotation'
       Cardinality: 0..*
-      Relationship Type: UNKNOWN
+      Relationship Type: Value
       Model Name: notes
       Inherited From:
         $ref: '#/PopulationDefinition'
@@ -3621,11 +3621,11 @@ StudyElement:
       Definition: The short descriptive designation for the study element.
       Relationship Type: Value
       Model Name: label
-    notes*:
+    notes:
       Type:
       - $ref: '#/CommentAnnotation'
       Cardinality: 0..*
-      Relationship Type: UNKNOWN
+      Relationship Type: Value
       Model Name: notes
     transitionEndRule:
       Type:
@@ -3711,11 +3711,11 @@ StudyEpoch:
       Codelist Ref: SDTM Terminology Codelist C99079
       Relationship Type: Value
       Model Name: type
-    notes*:
+    notes:
       Type:
       - $ref: '#/CommentAnnotation'
       Cardinality: 0..*
-      Relationship Type: UNKNOWN
+      Relationship Type: Value
       Model Name: notes
     previousId:
       Type:
