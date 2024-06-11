@@ -317,11 +317,11 @@ AgentAdministration:
       Codelist Ref: SDTM Terminology Codelist C71113
       Relationship Type: Value
       Model Name: frequency
-    notes*:
+    notes:
       Type:
       - $ref: '#/CommentAnnotation'
       Cardinality: 0..*
-      Relationship Type: UNKNOWN
+      Relationship Type: Value
       Model Name: notes
     instanceType:
       Type:
@@ -1193,11 +1193,11 @@ Encounter:
       Codelist Ref: C188728
       Relationship Type: Value
       Model Name: type
-    notes*:
+    notes:
       Type:
       - $ref: '#/CommentAnnotation'
       Cardinality: 0..*
-      Relationship Type: UNKNOWN
+      Relationship Type: Value
       Model Name: notes
     transitionEndRule:
       Type:
