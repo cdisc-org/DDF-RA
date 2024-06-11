@@ -74,7 +74,7 @@ Activity:
       Cardinality: 0..1
       Definition: A USDM relationship between the Activity and ScheduleTimeline classes
         which provides the details associated with an instance of the scheduled timeline
-        related to a study activity.
+        related to the activity.
       Relationship Type: Ref
       Model Name: timeline
     previousId:
@@ -192,9 +192,6 @@ Address:
       Cardinality: 0..1
       Relationship Type: Value
 AdministrationDuration:
-  NCI C-Code: C69282
-  Preferred Term: Administration Duration
-  Definition: The amount of time elapsed during the administration of an agent.
   Modifier: Concrete
   Attributes:
     id:
@@ -205,37 +202,22 @@ AdministrationDuration:
     description:
       Type:
       - $ref: '#/string'
-      NCI C-Code: CNEW
-      Preferred Term: Administration Duration Description
-      Definition: A narrative representation of the agent administration duration.
       Relationship Type: Value
       Model Name: description
     durationWillVary:
       Type:
       - $ref: '#/Boolean'
-      NCI C-Code: CNEW
-      Preferred Term: Administration Duration Will Vary Indicator
-      Definition: An indication as to whether the agent administration duration is
-        planned to vary within and/or across subjects.
       Relationship Type: Value
       Model Name: durationWillVary
     reasonDurationWillVary:
       Type:
       - $ref: '#/string'
-      NCI C-Code: CNEW
-      Preferred Term: Administration Duration Reason Duration Will Vary
-      Definition: The explanation for why the agent administration duration will vary
-        within and/or across subjects.
       Relationship Type: Value
       Model Name: reasonDurationWillVary
     quantity:
       Type:
       - $ref: '#/Quantity'
-      NCI C-Code: CNEW
       Cardinality: 0..1
-      Preferred Term: Administration Duration Quantity Value
-      Definition: The value representing the amount of time over which the administration
-        of an agent occurs.
       Relationship Type: Value
       Model Name: quantity
     instanceType:
@@ -244,10 +226,6 @@ AdministrationDuration:
       Cardinality: 0..1
       Relationship Type: Value
 AgentAdministration:
-  NCI C-Code: C70962
-  Preferred Term: Agent Administration
-  Definition: The act of the dispensing, applying, or tendering a medical product
-    or other agent.
   Modifier: Concrete
   Attributes:
     id:
@@ -258,73 +236,46 @@ AgentAdministration:
     name:
       Type:
       - $ref: '#/string'
-      NCI C-Code: CNEW
-      Preferred Term: Agent Administration Name
-      Definition: The literal identifier (i.e., distinctive designation) of the agent
-        administration.
       Relationship Type: Value
       Model Name: name
     description:
       Type:
       - $ref: '#/string'
-      NCI C-Code: CNEW
-      Preferred Term: Agent Administration Description
-      Definition: A narrative representation of the agent administration.
       Relationship Type: Value
       Model Name: description
     label:
       Type:
       - $ref: '#/string'
-      NCI C-Code: CNEW
-      Preferred Term: Agent Administration Label
-      Definition: The short descriptive designation for the agent administration.
       Relationship Type: Value
       Model Name: label
     duration:
       Type:
       - $ref: '#/AdministrationDuration'
       Cardinality: '1'
-      Definition: A USDM relationship between the AgentAdministration and AdministrationDuration
-        classes which provides the duration of an instance of agent administration.
       Relationship Type: Value
       Model Name: duration
     route:
       Type:
       - $ref: '#/AliasCode'
-      NCI C-Code: C38114
       Cardinality: '1'
-      Preferred Term: Route of Administration
-      Definition: The pathway by which a substance is administered in order to reach
-        the site of action in the body.
-      Codelist Ref: SDTM Terminology Codelist C66729
       Relationship Type: Value
       Model Name: route
     dose:
       Type:
       - $ref: '#/Quantity'
-      NCI C-Code: CNEW
       Cardinality: '1'
-      Preferred Term: Agent Administration Dose
-      Definition: The value representing the amount of an agent given to an individual
-        at one time.
       Relationship Type: Value
       Model Name: dose
     frequency:
       Type:
       - $ref: '#/AliasCode'
-      NCI C-Code: C89081
       Cardinality: '1'
-      Preferred Term: Dosing Frequency
-      Definition: The number of doses administered per a specific interval.
-      Codelist Ref: SDTM Terminology Codelist C71113
       Relationship Type: Value
       Model Name: frequency
     notes:
       Type:
       - $ref: '#/CommentAnnotation'
       Cardinality: 0..*
-      Definition: A USDM relationship between the AgentAdministration and CommentAnnotation
-        classes which provides the set of notes related to the agent administration.
       Relationship Type: Value
       Model Name: notes
     instanceType:
@@ -443,53 +394,34 @@ BiomedicalConcept:
     name:
       Type:
       - $ref: '#/string'
-      NCI C-Code: C201312
-      Preferred Term: Biomedical Concept Name
-      Definition: The literal identifier (i.e., distinctive designation) of the biomedical
-        concept.
       Relationship Type: Value
       Model Name: name
     label:
       Type:
       - $ref: '#/string'
-      NCI C-Code: CNEW
-      Preferred Term: Biomedical Concept Label
-      Definition: The short descriptive designation for the biomedical concept.
       Relationship Type: Value
       Model Name: label
     synonyms:
       Type:
       - $ref: '#/string'
-      NCI C-Code: C201314
-      Preferred Term: Biomedical Concept Synonym
-      Definition: A word or an expression that serves as a figurative, symbolic, or
-        exact substitute for a biomedical concept, and which has the same meaning.
       Relationship Type: Value
       Model Name: synonyms
     reference:
       Type:
       - $ref: '#/string'
-      NCI C-Code: C201313
-      Preferred Term: Biomedical Concept Reference
-      Definition: A citation to an authoritative source for a biomedical concept.
       Relationship Type: Value
       Model Name: reference
     code:
       Type:
       - $ref: '#/AliasCode'
-      NCI C-Code: CNEW
       Cardinality: '1'
-      Preferred Term: Biomedical Concept Concept Code
-      Definition: A concept unique identifier assigned to a biomedical concept that
-        points to the meaning of that biomedical concept.
       Relationship Type: Value
       Model Name: code
     notes:
       Type:
       - $ref: '#/CommentAnnotation'
       Cardinality: 0..*
-      Definition: A USDM relationship between the BiomedicalConcept and CommentAnnotation
-        classes which provides the set of notes related to the biomedical concept.
+      Definition: N/A
       Relationship Type: Value
       Model Name: notes
     properties:
@@ -507,10 +439,6 @@ BiomedicalConcept:
       Cardinality: 0..1
       Relationship Type: Value
 BiomedicalConceptCategory:
-  NCI C-Code: C201346
-  Preferred Term: Biomedical Concept Category
-  Definition: A grouping of biomedical concepts based on some commonality or by user
-    defined characteristics.
   Modifier: Concrete
   Attributes:
     id:
@@ -521,62 +449,40 @@ BiomedicalConceptCategory:
     name:
       Type:
       - $ref: '#/string'
-      NCI C-Code: C201317
-      Preferred Term: Biomedical Concept Category Name
-      Definition: The literal identifier (i.e., distinctive designation) of the biomedical
-        concept category.
       Relationship Type: Value
       Model Name: name
     description:
       Type:
       - $ref: '#/string'
-      NCI C-Code: C201316
-      Preferred Term: Biomedical Concept Category Description
-      Definition: A narrative representation of the biomedical concept category.
       Relationship Type: Value
       Model Name: description
     label:
       Type:
       - $ref: '#/string'
-      NCI C-Code: CNEW
-      Preferred Term: Biomedical Concept Category Label
-      Definition: The short descriptive designation for the biomedical concept category.
       Relationship Type: Value
       Model Name: label
     code:
       Type:
       - $ref: '#/AliasCode'
-      NCI C-Code: C201315
       Cardinality: 0..1
-      Preferred Term: Biomedical Concept Category Code
-      Definition: A symbol or combination of symbols which is assigned to the biomedical
-        concept category.
       Relationship Type: Value
       Model Name: code
     memberIds:
       Type:
       - $ref: '#/BiomedicalConcept'
       Cardinality: 0..*
-      Definition: A USDM relationship between the BiomedicalConceptCategory and BiomedicalConcept
-        classes which identifies the set of biomedical concept members associated
-        with the biomedical concept category.
       Relationship Type: Ref
       Model Name: members
     childIds:
       Type:
       - $ref: '#/BiomedicalConceptCategory'
       Cardinality: 0..*
-      Definition: A USDM relationship within the BiomedicalConceptCategory class which
-        identifies the set of child categories of a biomedical concept.
       Relationship Type: Ref
       Model Name: children
     notes:
       Type:
       - $ref: '#/CommentAnnotation'
       Cardinality: 0..*
-      Definition: A USDM relationship between the BiomedicalConcept and CommentAnnotation
-        classes which provides the set of notes related to the biomedical concept
-        category.
       Relationship Type: Value
       Model Name: notes
     instanceType:
@@ -585,10 +491,6 @@ BiomedicalConceptCategory:
       Cardinality: 0..1
       Relationship Type: Value
 BiomedicalConceptProperty:
-  NCI C-Code: CNEW
-  Preferred Term: Biomedical Concept Property
-  Definition: A characteristic from a set of characteristics used to define a biomedical
-    concept.
   Modifier: Concrete
   Attributes:
     id:
@@ -599,73 +501,44 @@ BiomedicalConceptProperty:
     name:
       Type:
       - $ref: '#/string'
-      NCI C-Code: CNEW
-      Preferred Term: Biomedical Concept Property Name
-      Definition: The literal identifier (i.e., distinctive designation) of the biomedical
-        concept property.
       Relationship Type: Value
       Model Name: name
     label:
       Type:
       - $ref: '#/string'
-      NCI C-Code: CNEW
-      Preferred Term: Biomedical Concept Property Label
-      Definition: The short descriptive designation for the biomedical concept property.
       Relationship Type: Value
       Model Name: label
     isRequired:
       Type:
       - $ref: '#/Boolean'
-      NCI C-Code: CNEW
-      Preferred Term: Biomedical Concept Property Required Indicator
-      Definition: An indication as to whether the biomedical concept property is required.
       Relationship Type: Value
       Model Name: isRequired
     isEnabled:
       Type:
       - $ref: '#/Boolean'
-      NCI C-Code: CNEW
-      Preferred Term: Biomedical Concept Property Enabled Indicator
-      Definition: An indication as to whether the biomedical concept property is activated
-        for use within a given usage context for a biomedical concept.
       Relationship Type: Value
       Model Name: isEnabled
     datatype:
       Type:
       - $ref: '#/string'
-      NCI C-Code: C201319
-      Preferred Term: Biomedical Concept Property Response Data Type
-      Definition: The structural format of the biomedical concept property response
-        value. The datatype is carried in the attribute and influences the set of
-        allowable values the attribute may assume. (After HL7)
       Relationship Type: Value
       Model Name: datatype
     code:
       Type:
       - $ref: '#/AliasCode'
-      NCI C-Code: C201318
       Cardinality: '1'
-      Preferred Term: Biomedical Concept Property Concept Code
-      Definition: A concept unique identifier assigned to a biomedical concept property
-        that points to the meaning of that biomedical concept property.
       Relationship Type: Value
       Model Name: code
     responseCodes:
       Type:
       - $ref: '#/ResponseCode'
       Cardinality: 0..*
-      Definition: A USDM relationship between the BiomedicalConceptProperty and ResponseCode
-        classes which identifies the set of response codes associated with the biomedical
-        concept property.
       Relationship Type: Value
       Model Name: responseCodes
     notes:
       Type:
       - $ref: '#/CommentAnnotation'
       Cardinality: 0..*
-      Definition: A USDM relationship between the BiomedicalConcept and CommentAnnotation
-        classes which provides the set of notes related to the biomedical concept
-        property.
       Relationship Type: Value
       Model Name: notes
     instanceType:
@@ -684,43 +557,27 @@ BiomedicalConceptSurrogate:
     name:
       Type:
       - $ref: '#/string'
-      NCI C-Code: CNEW
-      Preferred Term: Biomedical Concept Surrogate Name
-      Definition: The literal identifier (i.e., distinctive designation) of the biomedical
-        concept surrogate.
       Relationship Type: Value
       Model Name: name
     description:
       Type:
       - $ref: '#/string'
-      NCI C-Code: C201320
-      Preferred Term: Biomedical Concept Surrogate Description
-      Definition: A narrative representation of the biomedical concept surrogate.
       Relationship Type: Value
       Model Name: description
     label:
       Type:
       - $ref: '#/string'
-      NCI C-Code: CNEW
-      Preferred Term: Biomedical Concept Surrogate Label
-      Definition: The short descriptive designation for the biomedical concept surrogate.
       Relationship Type: Value
       Model Name: label
     reference:
       Type:
       - $ref: '#/string'
-      NCI C-Code: C201321
-      Preferred Term: Biomedical Concept Surrogate Reference
-      Definition: A citation to an authoritative source for a biomedical concept surrogate.
       Relationship Type: Value
       Model Name: reference
     notes:
       Type:
       - $ref: '#/CommentAnnotation'
       Cardinality: 0..*
-      Definition: A USDM relationship between the BiomedicalConcept and CommentAnnotation
-        classes which provides the set of notes related to the biomedical concept
-        surrogate.
       Relationship Type: Value
       Model Name: notes
     instanceType:
@@ -729,9 +586,6 @@ BiomedicalConceptSurrogate:
       Cardinality: 0..1
       Relationship Type: Value
 Characteristic:
-  NCI C-Code: C25447
-  Preferred Term: Characteristic
-  Definition: The distinguishing qualities or prominent aspects of an entity.
   Super Classes:
   - $ref: '#/SyntaxTemplate'
   Modifier: Concrete
@@ -746,9 +600,6 @@ Characteristic:
     name:
       Type:
       - $ref: '#/string'
-      NCI C-Code: CNEW
-      Preferred Term: Characteristic Name
-      Definition: The literal identifier (i.e., distinctive designation) of the characteristic.
       Relationship Type: Value
       Model Name: name
       Inherited From:
@@ -756,9 +607,6 @@ Characteristic:
     description:
       Type:
       - $ref: '#/string'
-      NCI C-Code: CNEW
-      Preferred Term: Characteristic Description
-      Definition: A narrative representation of the characteristic.
       Relationship Type: Value
       Model Name: description
       Inherited From:
@@ -766,9 +614,6 @@ Characteristic:
     label:
       Type:
       - $ref: '#/string'
-      NCI C-Code: CNEW
-      Preferred Term: Characteristic Label
-      Definition: The short descriptive designation for the characteristic.
       Relationship Type: Value
       Model Name: label
       Inherited From:
@@ -776,9 +621,6 @@ Characteristic:
     text:
       Type:
       - $ref: '#/string'
-      NCI C-Code: CNEW
-      Preferred Term: Characteristic Text
-      Definition: An instance of structured text that represents the characteristic.
       Relationship Type: Value
       Model Name: text
       Inherited From:
@@ -787,8 +629,6 @@ Characteristic:
       Type:
       - $ref: '#/CommentAnnotation'
       Cardinality: 0..*
-      Definition: A USDM relationship between the Characteristic and CommentAnnotation
-        classes which provides the set of notes related to the characteristic.
       Relationship Type: Value
       Model Name: notes
       Inherited From:
@@ -797,8 +637,6 @@ Characteristic:
       Type:
       - $ref: '#/SyntaxTemplateDictionary'
       Cardinality: 0..1
-      Definition: A USDM relationship between the Characteristic and SyntaxTemplateDictionary
-        classes which provides the set of dictionary entries related to characteristics.
       Relationship Type: Ref
       Model Name: dictionary
       Inherited From:
@@ -860,11 +698,6 @@ Code:
       Cardinality: 0..1
       Relationship Type: Value
 CommentAnnotation:
-  NCI C-Code: C44272
-  Preferred Term: Comment Annotation
-  Definition: An explanatory or critical comment, or other in-context information
-    (e.g., pattern, motif, link), that has been associated with data or other types
-    of information.
   Modifier: Concrete
   Attributes:
     id:
@@ -875,19 +708,12 @@ CommentAnnotation:
     text:
       Type:
       - $ref: '#/string'
-      NCI C-Code: CNEW
-      Preferred Term: Comment Annotation Text
-      Definition: An instance of unstructured text that represents the comment annotation.
       Relationship Type: Value
       Model Name: text
     codes:
       Type:
       - $ref: '#/Code'
-      NCI C-Code: CNEW
       Cardinality: 0..*
-      Preferred Term: Comment Annotation Code
-      Definition: A symbol or combination of symbols which is assigned to the comment
-        annotation.
       Relationship Type: Value
       Model Name: codes
     instanceType:
@@ -896,9 +722,6 @@ CommentAnnotation:
       Cardinality: 0..1
       Relationship Type: Value
 Condition:
-  NCI C-Code: C25457
-  Preferred Term: Condition
-  Definition: A state of being.
   Super Classes:
   - $ref: '#/SyntaxTemplate'
   Modifier: Concrete
@@ -913,9 +736,6 @@ Condition:
     name:
       Type:
       - $ref: '#/string'
-      NCI C-Code: CNEW
-      Preferred Term: Condition Name
-      Definition: The literal identifier (i.e., distinctive designation) of the condition.
       Relationship Type: Value
       Model Name: name
       Inherited From:
@@ -923,9 +743,6 @@ Condition:
     description:
       Type:
       - $ref: '#/string'
-      NCI C-Code: CNEW
-      Preferred Term: Condition Description
-      Definition: A narrative representation of the condition.
       Relationship Type: Value
       Model Name: description
       Inherited From:
@@ -933,9 +750,6 @@ Condition:
     label:
       Type:
       - $ref: '#/string'
-      NCI C-Code: CNEW
-      Preferred Term: Condition Label
-      Definition: The short descriptive designation for the condition.
       Relationship Type: Value
       Model Name: label
       Inherited From:
@@ -943,9 +757,6 @@ Condition:
     text:
       Type:
       - $ref: '#/string'
-      NCI C-Code: CNEW
-      Preferred Term: Condition Text
-      Definition: An instance of structured text that represents the condition.
       Relationship Type: Value
       Model Name: text
       Inherited From:
@@ -954,8 +765,6 @@ Condition:
       Type:
       - $ref: '#/CommentAnnotation'
       Cardinality: 0..*
-      Definition: A USDM relationship between the Condition and CommentAnnotation
-        classes which provides the set of notes related to the condition.
       Relationship Type: Value
       Model Name: notes
       Inherited From:
@@ -964,8 +773,6 @@ Condition:
       Type:
       - $ref: '#/SyntaxTemplateDictionary'
       Cardinality: 0..1
-      Definition: A USDM relationship between the Condition and SyntaxTemplateDictionary
-        classes which provides the set of dictionary entries related to conditions.
       Relationship Type: Ref
       Model Name: dictionary
       Inherited From:
@@ -975,9 +782,6 @@ Condition:
       - $ref: '#/Activity'
       - $ref: '#/ScheduledActivityInstance'
       Cardinality: 0..*
-      Definition: A USDM relationship between the Condition and the ScheduledActivityInstance
-        or Activity classes which identifies the scheduled activity instance or activity
-        to which the condition belongs.
       Relationship Type: Ref
       Model Name: context
     appliesToIds:
@@ -988,10 +792,6 @@ Condition:
       - $ref: '#/BiomedicalConceptSurrogate'
       - $ref: '#/Procedure'
       Cardinality: 0..*
-      Definition: A USDM relationship between the Condition and the Activity, Procedure,
-        BiomedicalConcept, BiomedicalConceptSurrogate, or BiomedicalConceptCategory
-        classes which identifies the procedure, activity, biomedical concept, biomedical
-        concept surrogate, or biomedical concept category that applies to the condition.
       Relationship Type: Ref
       Model Name: appliesTo
     instanceType:
@@ -1000,10 +800,6 @@ Condition:
       Cardinality: 0..1
       Relationship Type: Value
 ConditionAssignment:
-  NCI C-Code: C201335
-  Preferred Term: Condition Assignment
-  Definition: An allotting or appointment to a condition or set of conditions that
-    are to be met in order to make a logical decision.
   Modifier: Concrete
   Attributes:
     id:
@@ -1014,19 +810,12 @@ ConditionAssignment:
     condition:
       Type:
       - $ref: '#/string'
-      NCI C-Code: C47953
-      Preferred Term: Logical Condition
-      Definition: An assumption on which rests the validity or effect of something
-        else.
       Relationship Type: Value
       Model Name: condition
     conditionTargetId:
       Type:
       - $ref: '#/ScheduledInstance'
       Cardinality: '1'
-      Definition: A USDM relationship between the ConditionAssignment and ScheduledInstance
-        classes which identifies the scheduled instance associated with the condition
-        assignment.
       Relationship Type: Ref
       Model Name: conditionTarget
     instanceType:
@@ -1035,11 +824,6 @@ ConditionAssignment:
       Cardinality: 0..1
       Relationship Type: Value
 EligibilityCriterion:
-  NCI C-Code: C16112
-  Preferred Term: Study Eligibility Criteria
-  Definition: Characteristics which are necessary to allow a subject to participate
-    in a clinical study, as outlined in the study protocol. The concept covers inclusion
-    and exclusion criteria.
   Super Classes:
   - $ref: '#/SyntaxTemplate'
   Modifier: Concrete
@@ -1054,10 +838,6 @@ EligibilityCriterion:
     name:
       Type:
       - $ref: '#/string'
-      NCI C-Code: CNEW
-      Preferred Term: Study Eligibility Criteria Name
-      Definition: The literal identifier (i.e., distinctive designation) of the study
-        eligibility criteria.
       Relationship Type: Value
       Model Name: name
       Inherited From:
@@ -1065,9 +845,6 @@ EligibilityCriterion:
     description:
       Type:
       - $ref: '#/string'
-      NCI C-Code: CNEW
-      Preferred Term: Study Eligibility Criteria Description
-      Definition: A narrative representation of the study eligibility criteria.
       Relationship Type: Value
       Model Name: description
       Inherited From:
@@ -1075,9 +852,6 @@ EligibilityCriterion:
     label:
       Type:
       - $ref: '#/string'
-      NCI C-Code: CNEW
-      Preferred Term: Study Eligibility Criteria Label
-      Definition: The short descriptive designation for the study eligibility criteria.
       Relationship Type: Value
       Model Name: label
       Inherited From:
@@ -1085,10 +859,6 @@ EligibilityCriterion:
     text:
       Type:
       - $ref: '#/string'
-      NCI C-Code: CNEW
-      Preferred Term: Eligibility Criteria Text
-      Definition: An instance of structured text that represents the study eligibility
-        criteria.
       Relationship Type: Value
       Model Name: text
       Inherited From:
@@ -1097,8 +867,6 @@ EligibilityCriterion:
       Type:
       - $ref: '#/CommentAnnotation'
       Cardinality: 0..*
-      Definition: A USDM relationship between the EligibilityCriterion and CommentAnnotation
-        classes which provides the set of notes related to the eligibility criterion.
       Relationship Type: Value
       Model Name: notes
       Inherited From:
@@ -1107,9 +875,6 @@ EligibilityCriterion:
       Type:
       - $ref: '#/SyntaxTemplateDictionary'
       Cardinality: 0..1
-      Definition: A USDM relationship between the EligibilityCriterion and SyntxTemplateDictionary
-        classes which provides the set of dictionary entries related to eligibility
-        criteria.
       Relationship Type: Ref
       Model Name: dictionary
       Inherited From:
@@ -1117,38 +882,24 @@ EligibilityCriterion:
     identifier:
       Type:
       - $ref: '#/string'
-      NCI C-Code: CNEW
-      Preferred Term: Study Eligibility Criterion Identifier
-      Definition: A sequence of characters used to identify, name, or characterize
-        the inclusion or exclusion criterion.
       Relationship Type: Value
       Model Name: identifier
     category:
       Type:
       - $ref: '#/Code'
-      NCI C-Code: C83016
       Cardinality: '1'
-      Preferred Term: Study Eligibility Criteria Category
-      Definition: A classification of the inclusion exclusion criterion.
-      Codelist Ref: SDTM Terminology Codelist C66797
       Relationship Type: Value
       Model Name: category
     nextId:
       Type:
       - $ref: '#/EligibilityCriterion'
       Cardinality: 0..1
-      Definition: A USDM relationship within the EligibilityCriterion class which
-        identifies the eligibility criterion that follows the current eligibility
-        criterion in the display order.
       Relationship Type: Ref
       Model Name: next
     previousId:
       Type:
       - $ref: '#/EligibilityCriterion'
       Cardinality: 0..1
-      Definition: A USDM relationship within the EligibilityCriterion class which
-        identifies the eligibility criterion that precedes the current eligibility
-        criterion in the display order.
       Relationship Type: Ref
       Model Name: previous
     instanceType:
@@ -1267,7 +1018,7 @@ Encounter:
       - $ref: '#/Timing'
       Cardinality: 0..1
       Definition: A USDM relationship between the Encounter and Timing classes which
-        provides information related to the scheduled timing of a subject encounter.
+        provides information related to the scheduled timing of an encounter.
       Relationship Type: Ref
       Model Name: scheduledAt
     previousId:
@@ -1466,7 +1217,7 @@ Estimand:
       - $ref: '#/IntercurrentEvent'
       Cardinality: 1..*
       Definition: A USDM relationship between the Estimand and IntercurrentEvent classes
-        which identifies the set of intercurrent events associated with the estimand.
+        which identifies the set of intercurrent events associated with a study estimand.
       Relationship Type: Value
       Model Name: intercurrentEvents
     interventionId:
@@ -1484,9 +1235,6 @@ Estimand:
       Cardinality: 0..1
       Relationship Type: Value
 GeographicScope:
-  NCI C-Code: CNEW
-  Preferred Term: Geographic Scope
-  Definition: The extent or range related to the physical location of an entity.
   Sub Classes:
   - $ref: '#/SubjectEnrollment'
   Modifier: Concrete
@@ -1499,23 +1247,13 @@ GeographicScope:
     code:
       Type:
       - $ref: '#/AliasCode'
-      NCI C-Code: CNEW
       Cardinality: 0..1
-      Preferred Term: Geographic Scope Code
-      Definition: A symbol or combination of symbols which is assigned to the geographic
-        scope.
-      Codelist Ref: '(Point out to external dictionaries: Standard code is ISO-3166;
-        Alias codes drawn from GENC, UN Region Codes, etc.)'
       Relationship Type: Value
       Model Name: code
     type:
       Type:
       - $ref: '#/Code'
-      NCI C-Code: CNEW
       Cardinality: '1'
-      Preferred Term: Geographic Scope Type
-      Definition: A characterization or classification of the geographic scope.
-      Codelist Ref: CNEW - Geographic Scope Type Response
       Relationship Type: Value
       Model Name: type
     instanceType:
@@ -1524,10 +1262,6 @@ GeographicScope:
       Cardinality: 0..1
       Relationship Type: Value
 GovernanceDate:
-  NCI C-Code: CNEW
-  Preferred Term: Study Governance Date
-  Definition: Any of the dates associated with event milestones within a clinical
-    study's oversight and management framework.
   Modifier: Concrete
   Attributes:
     id:
@@ -1538,53 +1272,33 @@ GovernanceDate:
     name:
       Type:
       - $ref: '#/string'
-      NCI C-Code: CNEW
-      Preferred Term: Study Governance Date Name
-      Definition: The literal identifier (i.e., distinctive designation) of the study
-        governance date
       Relationship Type: Value
       Model Name: name
     description:
       Type:
       - $ref: '#/string'
-      NCI C-Code: CNEW
-      Preferred Term: Study Governance Date Description
-      Definition: A narrative representation of the study governance date.
       Relationship Type: Value
       Model Name: description
     label:
       Type:
       - $ref: '#/string'
-      NCI C-Code: CNEW
-      Preferred Term: Study Governance Date Label
-      Definition: The short descriptive designation for the study governance date.
       Relationship Type: Value
       Model Name: label
     dateValue:
       Type:
       - $ref: '#/Date'
-      NCI C-Code: CNEW
-      Preferred Term: Study Governance Date Value
-      Definition: The information contained in the date field.
       Relationship Type: Value
       Model Name: dateValue
     type:
       Type:
       - $ref: '#/Code'
-      NCI C-Code: CNEW
       Cardinality: '1'
-      Preferred Term: Protocol Approval Date Type
-      Definition: A characterization or classification of the protocol approval date.
-      Codelist Ref: CNEW - Governance Date Type Response
       Relationship Type: Value
       Model Name: type
     geographicScopes:
       Type:
       - $ref: '#/GeographicScope'
       Cardinality: 1..*
-      Definition: A USDM relationship between the GovernanceDate and GeographicScope
-        classes which identifies the set of geographic scopes associated with the
-        governance date.
       Relationship Type: Value
       Model Name: geographicScopes
     instanceType:
@@ -1725,11 +1439,6 @@ IntercurrentEvent:
       Cardinality: 0..1
       Relationship Type: Value
 Masking:
-  NCI C-Code: C191278
-  Preferred Term: Masking
-  Definition: The mechanism used to obscure the distinctive characteristics of the
-    study intervention or procedure to make it indistinguishable from a comparator.
-    (CDISC Glossary)
   Modifier: Concrete
   Attributes:
     id:
@@ -1740,21 +1449,12 @@ Masking:
     description:
       Type:
       - $ref: '#/string'
-      NCI C-Code: CNEW
-      Preferred Term: Masking Description
-      Definition: A narrative representation of the study masking strategy, based
-        on a person's role within the study.
       Relationship Type: Value
       Model Name: description
     role:
       Type:
       - $ref: '#/Code'
-      NCI C-Code: CNEW
       Cardinality: '1'
-      Preferred Term: Masking Role
-      Definition: An identifying designation assigned to a masked individual within
-        a study that corresponds with their function.
-      Codelist Ref: CNEW - Masking Role Response
       Relationship Type: Value
       Model Name: role
     instanceType:
@@ -1763,10 +1463,6 @@ Masking:
       Cardinality: 0..1
       Relationship Type: Value
 NarrativeContent:
-  NCI C-Code: CNEW
-  Preferred Term: Narrative Content
-  Definition: The container that holds an instance of unstructured text and which
-    may include objects such as tables, figures, and images.
   Modifier: Concrete
   Attributes:
     id:
@@ -1777,60 +1473,39 @@ NarrativeContent:
     name:
       Type:
       - $ref: '#/string'
-      NCI C-Code: CNEW
-      Preferred Term: Narrative Content Name
-      Definition: The literal identifier (i.e., distinctive designation) of the narrative
-        content.
       Relationship Type: Value
       Model Name: name
     text:
       Type:
       - $ref: '#/string'
-      NCI C-Code: CNEW
-      Preferred Term: Narrative Content Text
-      Definition: A textual representation of the narrative content.
       Relationship Type: Value
       Model Name: text
     sectionNumber:
       Type:
       - $ref: '#/string'
-      NCI C-Code: CNEW
-      Preferred Term: Section Number
-      Definition: The numeric identifier assigned to a particular document section.
       Relationship Type: Value
       Model Name: sectionNumber
     sectionTitle:
       Type:
       - $ref: '#/string'
-      NCI C-Code: CNEW
-      Preferred Term: Section Title
-      Definition: An identifying designation for the document section.
       Relationship Type: Value
       Model Name: sectionTitle
     previousId:
       Type:
       - $ref: '#/NarrativeContent'
       Cardinality: 0..1
-      Definition: A USDM relationship within the NarrativeContent class which identifies
-        the narrative content that precedes the current narrative content in the display
-        order.
       Relationship Type: Ref
       Model Name: previous
     nextId:
       Type:
       - $ref: '#/NarrativeContent'
       Cardinality: 0..1
-      Definition: A USDM relationship within the NarrativeContent class which identifies
-        the narrative content that follows the current narrative content in the display
-        order.
       Relationship Type: Ref
       Model Name: next
     childIds:
       Type:
       - $ref: '#/NarrativeContent'
       Cardinality: 0..*
-      Definition: A USDM relationship within the NarrativeContent class which identifies
-        the set of child content associated with an instance of narrative content.
       Relationship Type: Ref
       Model Name: children
     instanceType:
@@ -2014,9 +1689,6 @@ Organization:
       Cardinality: 0..1
       Relationship Type: Value
 ParameterMap:
-  NCI C-Code: CNEW
-  Preferred Term: Parameter Map
-  Definition: The paired name and value for a given parameter.
   Modifier: Concrete
   Attributes:
     id:
@@ -2027,19 +1699,11 @@ ParameterMap:
     tag:
       Type:
       - $ref: '#/string'
-      NCI C-Code: CNEW
-      Preferred Term: Programming Tag
-      Definition: Character strings bounded by angle brackets that act as containers
-        for programming language elements.
       Relationship Type: Value
       Model Name: tag
     reference:
       Type:
       - $ref: '#/string'
-      NCI C-Code: CNEW
-      Preferred Term: Programming Tag Reference
-      Definition: The reference for a tag used in programming languages, such as a
-        markup language (e.g., HTML, XML), to store attributes and elements.
       Relationship Type: Value
       Model Name: reference
     instanceType:
@@ -2048,9 +1712,6 @@ ParameterMap:
       Cardinality: 0..1
       Relationship Type: Value
 PopulationDefinition:
-  NCI C-Code: CNEW
-  Preferred Term: Population Definition
-  Definition: A concise explanation of the meaning of a population.
   Sub Classes:
   - $ref: '#/StudyCohort'
   - $ref: '#/StudyDesignPopulation'
@@ -2063,83 +1724,48 @@ PopulationDefinition:
     name:
       Type:
       - $ref: '#/string'
-      NCI C-Code: CNEW
-      Preferred Term: Population Definition Name
-      Definition: The literal identifier (i.e., distinctive designation) of the population
-        definition.
       Model Name: name
     description:
       Type:
       - $ref: '#/string'
-      NCI C-Code: CNEW
-      Preferred Term: Population Definition Description
-      Definition: A narrative representation of the population definition.
       Model Name: description
     label:
       Type:
       - $ref: '#/string'
-      NCI C-Code: CNEW
-      Preferred Term: Population Definition Label
-      Definition: The short descriptive designation for the population definition.
       Model Name: label
     includesHealthySubjects:
       Type:
       - $ref: '#/Boolean'
-      NCI C-Code: CNEW
-      Preferred Term: Population Definition Includes Healthy Subjects Indicator
-      Definition: An indication as to whether the population definition includes healthy
-        subjects, that is, subjects without the disease or condition under study.
       Model Name: includesHealthySubjects
     plannedSex:
       Type:
       - $ref: '#/Code'
-      NCI C-Code: CNEW
       Cardinality: 0..1
-      Preferred Term: Population Definition Planned Sex
-      Definition: The protocol-defined sex within the population definition.
-      Codelist Ref: SDTM Terminology Codelist C66732
       Model Name: plannedSex
     notes:
       Type:
       - $ref: '#/CommentAnnotation'
       Cardinality: 0..*
-      Definition: A USDM relationship between the PopulationDefinition and CommentAnnotation
-        classes which provides the set of notes related to the population definition.
       Model Name: notes
     criteria:
       Type:
       - $ref: '#/EligibilityCriterion'
       Cardinality: 0..*
-      Definition: A USDM relationship between the PopulationDefinition and EligibilityCriterion
-        classes which identifies the set of eligibility criteria associated with the
-        population definition.
       Model Name: criteria
     plannedAge:
       Type:
       - $ref: '#/Range'
-      NCI C-Code: CNEW
       Cardinality: 0..1
-      Preferred Term: Population Definition Planned Age
-      Definition: The anticipated age of subjects within the population definition.
       Model Name: plannedAge
     plannedEnrollmentNumber:
       Type:
       - $ref: '#/Range'
-      NCI C-Code: CNEW
       Cardinality: 0..1
-      Preferred Term: Population Definition Planned Enrollment Number
-      Definition: The value representing the planned number of subjects to be entered
-        in a clinical trial, within the population definition.
       Model Name: plannedEnrollmentNumber
     plannedCompletionNumber:
       Type:
       - $ref: '#/Range'
-      NCI C-Code: CNEW
       Cardinality: 0..1
-      Preferred Term: Population Definition Planned Completion Number
-      Definition: The value representing the planned number of subjects that must
-        complete the study in order to meet the objectives and endpoints of the study,
-        within the population definition.
       Model Name: plannedCompletionNumber
 Procedure:
   NCI C-Code: C98769
@@ -2220,10 +1846,6 @@ Procedure:
       Cardinality: 0..1
       Relationship Type: Value
 Quantity:
-  NCI C-Code: C25256
-  Preferred Term: Quantity
-  Definition: How much there is of something that can be measured; the total amount
-    or number.
   Modifier: Concrete
   Attributes:
     id:
@@ -2234,19 +1856,12 @@ Quantity:
     value:
       Type:
       - $ref: '#/Float'
-      NCI C-Code: C25712
-      Preferred Term: Quantity Value
-      Definition: A numerical quantity measured or assigned or computed.
       Relationship Type: Value
       Model Name: value
     unit:
       Type:
       - $ref: '#/AliasCode'
-      NCI C-Code: C44258
       Cardinality: 0..1
-      Preferred Term: Quantity Unit
-      Definition: The type of unit of measure being used to express a quantity.
-      Codelist Ref: SDTM Terminology Codelist C71620
       Relationship Type: Value
       Model Name: unit
     instanceType:
@@ -2255,10 +1870,6 @@ Quantity:
       Cardinality: 0..1
       Relationship Type: Value
 Range:
-  NCI C-Code: C38013
-  Preferred Term: Range
-  Definition: The difference between the lowest and highest numerical values; the
-    limits or scale of variation.
   Modifier: Concrete
   Attributes:
     id:
@@ -2269,37 +1880,22 @@ Range:
     minValue:
       Type:
       - $ref: '#/Float'
-      NCI C-Code: C25570
-      Preferred Term: Minimum Value
-      Definition: The smallest value in quantity or degree in a set of values.
       Relationship Type: Value
       Model Name: minValue
     maxValue:
       Type:
       - $ref: '#/Float'
-      NCI C-Code: C25564
-      Preferred Term: Maximum Value
-      Definition: The largest value in quantity or degree in a set of values.
       Relationship Type: Value
       Model Name: maxValue
     isApproximate:
       Type:
       - $ref: '#/Boolean'
-      NCI C-Code: CNEW
-      Preferred Term: Value Range is Approximate Indicator
-      Definition: An indication as to whether the value range is almost, but not quite,
-        exact.
       Relationship Type: Value
       Model Name: isApproximate
     unit:
       Type:
       - $ref: '#/Code'
-      NCI C-Code: C25709
       Cardinality: 0..1
-      Preferred Term: Unit of Measure
-      Definition: A named quantity in terms of which other quantities are measured
-        or specified, used as a standard measurement of like kinds.
-      Codelist Ref: SDTM Terminology Codelist C71620
       Relationship Type: Value
       Model Name: unit
     instanceType:
@@ -2308,11 +1904,6 @@ Range:
       Cardinality: 0..1
       Relationship Type: Value
 ResearchOrganization:
-  NCI C-Code: C93448
-  Preferred Term: Research Organization
-  Definition: An organization that undertakes systematic investigation within a field
-    of study in order to discover facts, establish or revise a theory, test a hypothesis,
-    or develop a plan of action based on the facts discovered.
   Super Classes:
   - $ref: '#/Organization'
   Modifier: Concrete
@@ -2327,10 +1918,6 @@ ResearchOrganization:
     name:
       Type:
       - $ref: '#/string'
-      NCI C-Code: CNEW
-      Preferred Term: Research Organization Name
-      Definition: The literal identifier (i.e., distinctive designation) of the research
-        organization.
       Relationship Type: Value
       Model Name: name
       Inherited From:
@@ -2338,9 +1925,6 @@ ResearchOrganization:
     label:
       Type:
       - $ref: '#/string'
-      NCI C-Code: CNEW
-      Preferred Term: Research Organization Label
-      Definition: The short descriptive designation for the research organization.
       Relationship Type: Value
       Model Name: label
       Inherited From:
@@ -2348,10 +1932,6 @@ ResearchOrganization:
     identifier:
       Type:
       - $ref: '#/string'
-      NCI C-Code: CNEW
-      Preferred Term: Research Organization Identifier
-      Definition: A sequence of characters used to identify, name, or characterize
-        the research organization.
       Relationship Type: Value
       Model Name: identifier
       Inherited From:
@@ -2359,10 +1939,6 @@ ResearchOrganization:
     identifierScheme:
       Type:
       - $ref: '#/string'
-      NCI C-Code: CNEW
-      Preferred Term: Identifier Provider Research Organization Name
-      Definition: The name of the research organization that provides the identifier
-        for the entity.
       Relationship Type: Value
       Model Name: identifierScheme
       Inherited From:
@@ -2371,8 +1947,6 @@ ResearchOrganization:
       Type:
       - $ref: '#/Address'
       Cardinality: 0..1
-      Definition: A USDM relationship between the ResearchOrganization and Address
-        classes which identifies the legal address for the research organization.
       Relationship Type: Value
       Model Name: legalAddress
       Inherited From:
@@ -2380,14 +1954,7 @@ ResearchOrganization:
     organizationType:
       Type:
       - $ref: '#/Code'
-      NCI C-Code: C188820
       Cardinality: '1'
-      Preferred Term: Organization Type
-      Definition: A characterization or classification of the formalized group of
-        persons or other organizations collected together for a common purpose (such
-        as administrative, legal, political) and the infrastructure to carry out that
-        purpose.
-      Codelist Ref: C188724
       Relationship Type: Value
       Model Name: organizationType
       Inherited From:
@@ -2396,9 +1963,6 @@ ResearchOrganization:
       Type:
       - $ref: '#/StudySite'
       Cardinality: 1..*
-      Definition: A USDM relationship between the ResearchOrganization and StudySite
-        classes which identifies the research organization that manages the study
-        site.
       Relationship Type: Value
       Model Name: manages
     instanceType:
@@ -2407,10 +1971,6 @@ ResearchOrganization:
       Cardinality: 0..1
       Relationship Type: Value
 ResponseCode:
-  NCI C-Code: C201347
-  Preferred Term: Response Code
-  Definition: A symbol or combination of symbols representing the response to the
-    question.
   Modifier: Concrete
   Attributes:
     id:
@@ -2421,20 +1981,12 @@ ResponseCode:
     isEnabled:
       Type:
       - $ref: '#/Boolean'
-      NCI C-Code: C201330
-      Preferred Term: Response Code Enabled Indicator
-      Definition: An indication as to whether the response code is activated for use
-        within a given usage context.
       Relationship Type: Value
       Model Name: isEnabled
     code:
       Type:
       - $ref: '#/Code'
-      NCI C-Code: C25162
       Cardinality: '1'
-      Preferred Term: Code
-      Definition: A symbol or combination of symbols which is assigned to the members
-        of a collection.
       Relationship Type: Value
       Model Name: code
     instanceType:
@@ -2443,9 +1995,6 @@ ResponseCode:
       Cardinality: 0..1
       Relationship Type: Value
 ScheduleTimeline:
-  NCI C-Code: C201348
-  Preferred Term: Schedule Timeline
-  Definition: A chronological schedule of planned temporal events.
   Modifier: Concrete
   Attributes:
     id:
@@ -2456,78 +2005,50 @@ ScheduleTimeline:
     name:
       Type:
       - $ref: '#/string'
-      NCI C-Code: C201334
-      Preferred Term: Schedule Timeline Name
-      Definition: The literal identifier (i.e., distinctive designation) of the schedule
-        timeline.
       Relationship Type: Value
       Model Name: name
     description:
       Type:
       - $ref: '#/string'
-      NCI C-Code: C201332
-      Preferred Term: Schedule Timeline Description
-      Definition: A narrative representation of the schedule timeline.
       Relationship Type: Value
       Model Name: description
     label:
       Type:
       - $ref: '#/string'
-      NCI C-Code: CNEW
-      Preferred Term: Schedule Timeline Label
-      Definition: The short descriptive designation for the schedule timeline.
       Relationship Type: Value
       Model Name: label
     entryCondition:
       Type:
       - $ref: '#/string'
-      NCI C-Code: C201333
-      Preferred Term: Schedule Timeline Entry Condition
-      Definition: A logical evaluation on which rests the validity of entry into a
-        schedule timeline.
       Relationship Type: Value
       Model Name: entryCondition
     mainTimeline:
       Type:
       - $ref: '#/Boolean'
-      NCI C-Code: C201331
-      Preferred Term: Main Timeline Indicator
-      Definition: An indication as to whether the timeline or timeline component is
-        part of the central or principal timeline.
       Relationship Type: Value
       Model Name: mainTimeline
     instances:
       Type:
       - $ref: '#/ScheduledInstance'
       Cardinality: 0..*
-      Definition: A USDM relationship between the ScheduleTimeline and ScheduledInstance
-        classes which identifies the set of scheduled instances (e.g., scheduled activity
-        instances or scheduled decision instances) associated with the scheduled timeline.
       Relationship Type: Value
       Model Name: instances
     entryId:
       Type:
       - $ref: '#/ScheduledInstance'
       Cardinality: '1'
-      Definition: A USDM relationship between the ScheduleTimeline and ScheduledInstance
-        classes which defines the entry into a scheduled instance (e.g., scheduled
-        activity instances or scheduled decision instances) for a timeline.
       Relationship Type: Ref
       Model Name: entry
     exits:
       Type:
       - $ref: '#/ScheduleTimelineExit'
       Cardinality: 0..*
-      Definition: A USDM relationship between the ScheduleTimeline and ScheduleTimelineExit
-        classes which identifies the set of exits from the scheduled timeline.
       Relationship Type: Value
       Model Name: exits
     timings:
       Type:
       - $ref: '#/Timing'
       Cardinality: 0..*
-      Definition: A USDM relationship between the ScheduleTimeline and Timing classes
-        which identifies the set of timings associated with the scheduled timeline.
       Relationship Type: Value
       Model Name: timings
     instanceType:
@@ -2536,9 +2057,6 @@ ScheduleTimeline:
       Cardinality: 0..1
       Relationship Type: Value
 ScheduleTimelineExit:
-  NCI C-Code: C201349
-  Preferred Term: Schedule Timeline Exit
-  Definition: To go out of or leave the schedule timeline.
   Modifier: Concrete
   Attributes:
     id:
@@ -2552,9 +2070,6 @@ ScheduleTimelineExit:
       Cardinality: 0..1
       Relationship Type: Value
 ScheduledActivityInstance:
-  NCI C-Code: C201350
-  Preferred Term: Scheduled Activity Instance
-  Definition: A scheduled occurrence of an activity event.
   Super Classes:
   - $ref: '#/ScheduledInstance'
   Modifier: Concrete
@@ -2569,10 +2084,6 @@ ScheduledActivityInstance:
     name:
       Type:
       - $ref: '#/string'
-      NCI C-Code: CNEW
-      Preferred Term: Scheduled Activity Instance Name
-      Definition: The literal identifier (i.e., distinctive designation) of the scheduled
-        activity instance.
       Relationship Type: Value
       Model Name: name
       Inherited From:
@@ -2580,9 +2091,6 @@ ScheduledActivityInstance:
     description:
       Type:
       - $ref: '#/string'
-      NCI C-Code: CNEW
-      Preferred Term: Scheduled Activity Instance Description
-      Definition: A narrative representation of the scheduled activity instance.
       Relationship Type: Value
       Model Name: description
       Inherited From:
@@ -2590,9 +2098,6 @@ ScheduledActivityInstance:
     label:
       Type:
       - $ref: '#/string'
-      NCI C-Code: CNEW
-      Preferred Term: Scheduled Activity Instance Label
-      Definition: The short descriptive designation for the scheduled activity instance.
       Relationship Type: Value
       Model Name: label
       Inherited From:
@@ -2601,8 +2106,6 @@ ScheduledActivityInstance:
       Type:
       - $ref: '#/ScheduledInstance'
       Cardinality: 0..1
-      Definition: A USDM relationship within the ScheduledActivityInstance class which
-        identifies the default condition within a scheduled activity instance.
       Relationship Type: Ref
       Model Name: defaultCondition
       Inherited From:
@@ -2611,9 +2114,6 @@ ScheduledActivityInstance:
       Type:
       - $ref: '#/StudyEpoch'
       Cardinality: 0..1
-      Definition: A USDM relationship between the ScheduledActivityInstance and StudyEpoch
-        classes which identifies the study epoch associated with a scheduled activity
-        instance.
       Relationship Type: Ref
       Model Name: epoch
       Inherited From:
@@ -2622,35 +2122,24 @@ ScheduledActivityInstance:
       Type:
       - $ref: '#/Activity'
       Cardinality: 0..*
-      Definition: A USDM relationship between the ScheduledActivityInstance and Activity
-        classes which identifies the set of activities associated with a scheduled
-        activity instance.
       Relationship Type: Ref
       Model Name: activities
     encounterId:
       Type:
       - $ref: '#/Encounter'
       Cardinality: 0..1
-      Definition: A USDM relationship between the ScheduledActivityInstance and Encounter
-        classes which defines the subject encounter associated with the ScheduleActivityInstance.
       Relationship Type: Ref
       Model Name: encounter
     timelineId:
       Type:
       - $ref: '#/ScheduleTimeline'
       Cardinality: 0..1
-      Definition: A USDM relationship between the ScheduledActivityInstance and ScheduleTimeline
-        classes which provides the details associated with an instance of a scheduled
-        timeline related to a scheduled activity instance.
       Relationship Type: Ref
       Model Name: timeline
     timelineExitId:
       Type:
       - $ref: '#/ScheduleTimelineExit'
       Cardinality: 0..1
-      Definition: A USDM relationship between the ScheduledActivityInstance and ScheduleTimelineExit
-        classes which provides the details associated with the exit from a timeline
-        related to a scheduled activity instance.
       Relationship Type: Ref
       Model Name: timelineExit
     instanceType:
@@ -2659,9 +2148,6 @@ ScheduledActivityInstance:
       Cardinality: 0..1
       Relationship Type: Value
 ScheduledDecisionInstance:
-  NCI C-Code: C201351
-  Preferred Term: Scheduled Decision Instance
-  Definition: A scheduled occurrence of a decision event.
   Super Classes:
   - $ref: '#/ScheduledInstance'
   Modifier: Concrete
@@ -2676,10 +2162,6 @@ ScheduledDecisionInstance:
     name:
       Type:
       - $ref: '#/string'
-      NCI C-Code: CNEW
-      Preferred Term: Scheduled Decision Instance Name
-      Definition: The literal identifier (i.e., distinctive designation) of the scheduled
-        Decision instance.
       Relationship Type: Value
       Model Name: name
       Inherited From:
@@ -2687,9 +2169,6 @@ ScheduledDecisionInstance:
     description:
       Type:
       - $ref: '#/string'
-      NCI C-Code: CNEW
-      Preferred Term: Scheduled Decision Instance Description
-      Definition: A narrative representation of the scheduled Decision instance.
       Relationship Type: Value
       Model Name: description
       Inherited From:
@@ -2697,9 +2176,6 @@ ScheduledDecisionInstance:
     label:
       Type:
       - $ref: '#/string'
-      NCI C-Code: CNEW
-      Preferred Term: Scheduled Decision Instance Label
-      Definition: The short descriptive designation for the scheduled Decision instance.
       Relationship Type: Value
       Model Name: label
       Inherited From:
@@ -2708,8 +2184,6 @@ ScheduledDecisionInstance:
       Type:
       - $ref: '#/ScheduledInstance'
       Cardinality: 0..1
-      Definition: A USDM relationship within the ScheduledDecisionInstance class which
-        identifies the default condition within a scheduled decision instance.
       Relationship Type: Ref
       Model Name: defaultCondition
       Inherited From:
@@ -2718,9 +2192,6 @@ ScheduledDecisionInstance:
       Type:
       - $ref: '#/StudyEpoch'
       Cardinality: 0..1
-      Definition: A USDM relationship between the ScheduledDecisionInstance and StudyEpoch
-        classes which identifies the study epoch associated with a scheduled decision
-        instance.
       Relationship Type: Ref
       Model Name: epoch
       Inherited From:
@@ -2729,9 +2200,6 @@ ScheduledDecisionInstance:
       Type:
       - $ref: '#/ConditionAssignment'
       Cardinality: 1..*
-      Definition: A USDM relationship between the ScheduledDecisionInstance and ConditionAssignment
-        classes which identifies the set of condition assignments associated with
-        a scheduled decision instance.
       Relationship Type: Value
       Model Name: conditionAssignments
     instanceType:
@@ -2740,9 +2208,6 @@ ScheduledDecisionInstance:
       Cardinality: 0..1
       Relationship Type: Value
 ScheduledInstance:
-  NCI C-Code: C201299
-  Preferred Term: Scheduled Instance
-  Definition: A scheduled occurrence of a temporal event.
   Sub Classes:
   - $ref: '#/ScheduledActivityInstance'
   - $ref: '#/ScheduledDecisionInstance'
@@ -2755,38 +2220,24 @@ ScheduledInstance:
     name:
       Type:
       - $ref: '#/string'
-      NCI C-Code: CNEW
-      Preferred Term: Scheduled Instance Name
-      Definition: The literal identifier (i.e., distinctive designation) of the scheduled
-        instance.
       Model Name: name
     description:
       Type:
       - $ref: '#/string'
-      NCI C-Code: CNEW
-      Preferred Term: Scheduled Instance Description
-      Definition: A narrative representation of the scheduled instance.
       Model Name: description
     label:
       Type:
       - $ref: '#/string'
-      NCI C-Code: CNEW
-      Preferred Term: Scheduled Instance Label
-      Definition: The short descriptive designation for the scheduled instance.
       Model Name: label
     defaultCondition:
       Type:
       - $ref: '#/ScheduledInstance'
       Cardinality: 0..1
-      Definition: A USDM relationship within the ScheduledInstance class which identifies
-        the default condition within a scheduled instance.
       Model Name: defaultCondition
     epoch:
       Type:
       - $ref: '#/StudyEpoch'
       Cardinality: 0..1
-      Definition: A USDM relationship between the ScheduledInstance and StudyEpoch
-        classes which identifies the study epoch associated with a scheduled instance.
       Model Name: epoch
 Study:
   NCI C-Code: C15206
@@ -2848,10 +2299,6 @@ Study:
       Cardinality: 0..1
       Relationship Type: Value
 StudyAmendment:
-  NCI C-Code: CNEW
-  Preferred Term: Study Amendment
-  Definition: A written description of a change(s) to, or formal clarification of,
-    a study.
   Modifier: Concrete
   Attributes:
     id:
@@ -2862,61 +2309,40 @@ StudyAmendment:
     number:
       Type:
       - $ref: '#/string'
-      NCI C-Code: CNEW
-      Preferred Term: Study Amendment Number
-      Definition: A string of numerals that uniquely identifies a protocol amendment.
       Relationship Type: Value
       Model Name: number
     summary:
       Type:
       - $ref: '#/string'
-      NCI C-Code: CNEW
-      Preferred Term: Study Amendment Summary
-      Definition: A short narrative representation describing the changes introduced
-        in the current version of the protocol.
       Relationship Type: Value
       Model Name: summary
     substantialImpact:
       Type:
       - $ref: '#/Boolean'
-      NCI C-Code: CNEW
-      Preferred Term: Study Amendment Substantial Impact Indicator
-      Definition: An indication as to whether the amendment is likely to have a substantial
-        impact on the safety or rights of study subjects/participants.
       Relationship Type: Value
       Model Name: substantialImpact
     enrollments:
       Type:
       - $ref: '#/SubjectEnrollment'
       Cardinality: 1..*
-      Definition: A USDM relationship between the StudyAmendment and SubjectEnrollment
-        classes which provides the set of subject enrollments associated with the
-        study amendment.
       Relationship Type: Value
       Model Name: enrollments
     secondaryReasons:
       Type:
       - $ref: '#/StudyAmendmentReason'
       Cardinality: 0..*
-      Definition: A USDM relationship between the StudyAmendment and StudyAmendmentReason
-        classes which identifies the set of secondary reasons for issuing the study
-        amendment.
       Relationship Type: Value
       Model Name: secondaryReasons
     previousId:
       Type:
       - $ref: '#/StudyAmendment'
       Cardinality: 0..1
-      Definition: A USDM relationship within the StudyAmendment class which identifies
-        the study amendment that chronologically precedes the current study amendment.
       Relationship Type: Ref
       Model Name: previous
     primaryReason:
       Type:
       - $ref: '#/StudyAmendmentReason'
       Cardinality: '1'
-      Definition: A USDM relationship between the StudyAmendment and StudyAmendmentReason
-        classes which identifies the primary reason for issuing the study amendment.
       Relationship Type: Value
       Model Name: primaryReason
     instanceType:
@@ -2925,9 +2351,6 @@ StudyAmendment:
       Cardinality: 0..1
       Relationship Type: Value
 StudyAmendmentReason:
-  NCI C-Code: CNEW
-  Preferred Term: Study Amendment Reason
-  Definition: The rationale for the change(s) to, or formal clarification of, a protocol.
   Modifier: Concrete
   Attributes:
     id:
@@ -2938,21 +2361,12 @@ StudyAmendmentReason:
     otherReason:
       Type:
       - $ref: '#/string'
-      NCI C-Code: CNEW
-      Preferred Term: Other Reason for Study Amendment
-      Definition: The rationale for the change(s) to, or formal clarification of,
-        a protocol that is not otherwise specified.
       Relationship Type: Value
       Model Name: otherReason
     code:
       Type:
       - $ref: '#/Code'
-      NCI C-Code: CNEW
       Cardinality: '1'
-      Preferred Term: Study Amendment Reason Code
-      Definition: A symbol or combination of symbols which is assigned to the study
-        amendment reason.
-      Codelist Ref: CNEW - Study Amendment Reason Response
       Relationship Type: Value
       Model Name: code
     instanceType:
@@ -3091,10 +2505,6 @@ StudyCell:
       Cardinality: 0..1
       Relationship Type: Value
 StudyCohort:
-  NCI C-Code: C61512
-  Preferred Term: Study Cohort
-  Definition: A group of individuals who share a set of characteristics (e.g., exposures,
-    experiences, attributes), which logically defines a population under study.
   Super Classes:
   - $ref: '#/PopulationDefinition'
   Modifier: Concrete
@@ -3109,10 +2519,6 @@ StudyCohort:
     name:
       Type:
       - $ref: '#/string'
-      NCI C-Code: CNEW
-      Preferred Term: Study Cohort Name
-      Definition: The literal identifier (i.e., distinctive designation) of the study
-        cohort.
       Relationship Type: Value
       Model Name: name
       Inherited From:
@@ -3120,9 +2526,6 @@ StudyCohort:
     description:
       Type:
       - $ref: '#/string'
-      NCI C-Code: CNEW
-      Preferred Term: Study Cohort Description
-      Definition: A narrative representation of the study cohort.
       Relationship Type: Value
       Model Name: description
       Inherited From:
@@ -3130,9 +2533,6 @@ StudyCohort:
     label:
       Type:
       - $ref: '#/string'
-      NCI C-Code: CNEW
-      Preferred Term: Study Cohort Label
-      Definition: The short descriptive designation for the study cohort.
       Relationship Type: Value
       Model Name: label
       Inherited From:
@@ -3140,10 +2540,6 @@ StudyCohort:
     includesHealthySubjects:
       Type:
       - $ref: '#/Boolean'
-      NCI C-Code: CNEW
-      Preferred Term: Study Cohort Includes Healthy Subjects Indicator
-      Definition: An indication as to whether the study cohort includes healthy subjects,
-        that is, subjects without the disease or condition under study.
       Relationship Type: Value
       Model Name: includesHealthySubjects
       Inherited From:
@@ -3151,11 +2547,7 @@ StudyCohort:
     plannedSex:
       Type:
       - $ref: '#/Code'
-      NCI C-Code: CNEW
       Cardinality: 0..1
-      Preferred Term: Study Cohort Planned Sex
-      Definition: The protocol-defined sex within the study cohort.
-      Codelist Ref: SDTM Terminology Codelist C66732
       Relationship Type: Value
       Model Name: plannedSex
       Inherited From:
@@ -3164,8 +2556,6 @@ StudyCohort:
       Type:
       - $ref: '#/CommentAnnotation'
       Cardinality: 0..*
-      Definition: A USDM relationship between the StudyCohort and CommentAnnotation
-        classes which provides the set of notes related to the study cohort.
       Relationship Type: Value
       Model Name: notes
       Inherited From:
@@ -3174,9 +2564,6 @@ StudyCohort:
       Type:
       - $ref: '#/EligibilityCriterion'
       Cardinality: 0..*
-      Definition: A USDM relationship between the StudyCohort and EligibilityCriterion
-        classes which identifies the set of eligibility criteria associated with the
-        study cohort.
       Relationship Type: Ref
       Model Name: criteria
       Inherited From:
@@ -3184,10 +2571,7 @@ StudyCohort:
     plannedAge:
       Type:
       - $ref: '#/Range'
-      NCI C-Code: CNEW
       Cardinality: 0..1
-      Preferred Term: Study Cohort Planned Age
-      Definition: The anticipated age of subjects within the study cohort.
       Relationship Type: Value
       Model Name: plannedAge
       Inherited From:
@@ -3195,11 +2579,7 @@ StudyCohort:
     plannedEnrollmentNumber:
       Type:
       - $ref: '#/Range'
-      NCI C-Code: CNEW
       Cardinality: 0..1
-      Preferred Term: Study Cohort Planned Enrollment Number
-      Definition: The value representing the planned number of subjects to be entered
-        in a clinical trial, within the study cohort.
       Relationship Type: Value
       Model Name: plannedEnrollmentNumber
       Inherited From:
@@ -3207,12 +2587,7 @@ StudyCohort:
     plannedCompletionNumber:
       Type:
       - $ref: '#/Range'
-      NCI C-Code: CNEW
       Cardinality: 0..1
-      Preferred Term: Study Cohort Planned Completion Number
-      Definition: The value representing the planned number of subjects that must
-        complete the study in order to meet the objectives and endpoints of the study,
-        within the study cohort.
       Relationship Type: Value
       Model Name: plannedCompletionNumber
       Inherited From:
@@ -3221,9 +2596,6 @@ StudyCohort:
       Type:
       - $ref: '#/Characteristic'
       Cardinality: 0..*
-      Definition: A USDM relationship between the StudyCohort and Characteristic classes
-        which identifies the set of subject characteristics associated with the study
-        cohort.
       Relationship Type: Value
       Model Name: characteristics
     instanceType:
@@ -3846,10 +3218,6 @@ StudyIdentifier:
       Cardinality: 0..1
       Relationship Type: Value
 StudyIntervention:
-  NCI C-Code: CNEW
-  Preferred Term: Study Intervention
-  Definition: Any agent, device, or procedure being tested or used as a reference
-    or comparator in the conduct of a clinical trial.
   Modifier: Concrete
   Attributes:
     id:
@@ -3860,107 +3228,64 @@ StudyIntervention:
     description:
       Type:
       - $ref: '#/string'
-      NCI C-Code: CNEW
-      Preferred Term: Study Intervention Description
-      Definition: A narrative representation of the study intervention.
       Relationship Type: Value
       Model Name: description
     name:
       Type:
       - $ref: '#/string'
-      NCI C-Code: CNEW
-      Preferred Term: Study Intervention Name
-      Definition: The literal identifier (i.e., distinctive designation) of the study
-        intervention.
       Relationship Type: Value
       Model Name: name
     label:
       Type:
       - $ref: '#/string'
-      NCI C-Code: CNEW
-      Preferred Term: Study Intervention Label
-      Definition: The short descriptive designation for the study intervention.
       Relationship Type: Value
       Model Name: label
     administrations:
       Type:
       - $ref: '#/AgentAdministration'
       Cardinality: 0..*
-      Definition: A USDM relationship between the StudyIntervention and AgentAdministration
-        classes which identifies the set of agent administrations associated with
-        the study intervention.
       Relationship Type: Value
       Model Name: administrations
     type:
       Type:
       - $ref: '#/Code'
-      NCI C-Code: C98747
       Cardinality: '1'
-      Preferred Term: Study Intervention Type
-      Definition: The kind of product or procedure studied in a trial.
-      Codelist Ref: SDTM Terminology Codelist C99078
       Relationship Type: Value
       Model Name: type
     role:
       Type:
       - $ref: '#/Code'
-      NCI C-Code: CNEW
       Cardinality: '1'
-      Preferred Term: Study Intervention Role
-      Definition: The intended use of the trial intervention within the context of
-        the study design.
-      Codelist Ref: CNEW - Study Intervention Role Response
       Relationship Type: Value
       Model Name: role
     productDesignation:
       Type:
       - $ref: '#/Code'
-      NCI C-Code: CNEW
       Cardinality: '1'
-      Preferred Term: Study Intervention Product Designation
-      Definition: An indication as to whether the investigational intervention is
-        an investigational medicinal product or an auxiliary medicinal product.
-      Codelist Ref: CNEW - Study Intervention Product Designation Response
       Relationship Type: Value
       Model Name: productDesignation
     pharmacologicClass:
       Type:
       - $ref: '#/Code'
-      NCI C-Code: C98768
       Cardinality: 0..1
-      Preferred Term: Pharmacologic Class
-      Definition: The pharmacological class of the investigational product.
-      Codelist Ref: (Points to external codelists; FDA requirement to use…)
       Relationship Type: Value
       Model Name: pharmacologicClass
     codes:
       Type:
       - $ref: '#/Code'
-      NCI C-Code: CNEW
       Cardinality: 0..*
-      Preferred Term: Study Intervention Code
-      Definition: A symbol or combination of symbols which is assigned to the study
-        intervention.
-      Codelist Ref: (Point out to multiple Biomedical coding dictionaries such as
-        WHODrug, ATC, UNII, etc.)
       Relationship Type: Value
       Model Name: codes
     notes:
       Type:
       - $ref: '#/CommentAnnotation'
       Cardinality: 0..*
-      Definition: A USDM relationship between the StudyIntervention and CommentAnnotation
-        classes which provides the set of notes related to the study intervention.
       Relationship Type: Value
       Model Name: notes
     minimumResponseDuration:
       Type:
       - $ref: '#/Quantity'
-      NCI C-Code: CNEW
       Cardinality: 0..1
-      Preferred Term: Study Intervention Minimum Response Duration
-      Definition: The value representing the minimum amount of time required to meet
-        the criteria for response to study intervention.
       Relationship Type: Value
       Model Name: minimumResponseDuration
     instanceType:
@@ -3969,10 +3294,6 @@ StudyIntervention:
       Cardinality: 0..1
       Relationship Type: Value
 StudyProtocolDocument:
-  NCI C-Code: C93381
-  Preferred Term: Study Protocol Document
-  Definition: A representation of the study protocol (that persists over time) in
-    document form.
   Modifier: Concrete
   Attributes:
     id:
@@ -3983,35 +3304,22 @@ StudyProtocolDocument:
     name:
       Type:
       - $ref: '#/string'
-      NCI C-Code: CNEW
-      Preferred Term: Study Protocol Document Name
-      Definition: The literal identifier (i.e., distinctive designation) of the study
-        protocol document.
       Relationship Type: Value
       Model Name: name
     description:
       Type:
       - $ref: '#/string'
-      NCI C-Code: CNEW
-      Preferred Term: Study Protocol Document Description
-      Definition: A narrative representation of the study protocol document.
       Relationship Type: Value
       Model Name: description
     label:
       Type:
       - $ref: '#/string'
-      NCI C-Code: CNEW
-      Preferred Term: Study Protocol Document Label
-      Definition: The short descriptive designation for the study protocol document.
       Relationship Type: Value
       Model Name: label
     versions:
       Type:
       - $ref: '#/StudyProtocolDocumentVersion'
       Cardinality: 0..*
-      Definition: A USDM relationship between the StudyProtocolDocument and StudyProtocolDocumentVersion
-        classes which identifies the set of versions associated with the study protocol
-        document.
       Relationship Type: Value
       Model Name: versions
     instanceType:
@@ -4087,9 +3395,6 @@ StudyProtocolDocumentVersion:
       Cardinality: 0..1
       Relationship Type: Value
 StudySite:
-  NCI C-Code: C80403
-  Preferred Term: Study Site
-  Definition: The location at which a study investigator conducts study activities.
   Modifier: Concrete
   Attributes:
     id:
@@ -4100,34 +3405,22 @@ StudySite:
     name:
       Type:
       - $ref: '#/string'
-      NCI C-Code: CNEW
-      Preferred Term: Study Site Name
-      Definition: The literal identifier (i.e., distinctive designation) of the study
-        site.
       Relationship Type: Value
       Model Name: name
     description:
       Type:
       - $ref: '#/string'
-      NCI C-Code: CNEW
-      Preferred Term: Study Site Description
-      Definition: A narrative representation of the study site.
       Relationship Type: Value
       Model Name: description
     label:
       Type:
       - $ref: '#/string'
-      NCI C-Code: CNEW
-      Preferred Term: Study Site Label
-      Definition: The short descriptive designation for the study site.
       Relationship Type: Value
       Model Name: label
     currentEnrollment:
       Type:
       - $ref: '#/SubjectEnrollment'
       Cardinality: 0..1
-      Definition: A USDM relationship between the StudySite and SubjectEnrollment
-        classes which provides the current subject enrollment for the study site.
       Relationship Type: Value
       Model Name: currentEnrollment
     instanceType:
@@ -4136,9 +3429,6 @@ StudySite:
       Cardinality: 0..1
       Relationship Type: Value
 StudyTitle:
-  NCI C-Code: C49802
-  Preferred Term: Study Title
-  Definition: The sponsor-defined name of the clinical study.
   Modifier: Concrete
   Attributes:
     id:
@@ -4149,19 +3439,12 @@ StudyTitle:
     text:
       Type:
       - $ref: '#/string'
-      NCI C-Code: CNEW
-      Preferred Term: Study Title Text
-      Definition: An instance of unstructured text that represents the study title.
       Relationship Type: Value
       Model Name: text
     type:
       Type:
       - $ref: '#/Code'
-      NCI C-Code: CNEW
       Cardinality: '1'
-      Preferred Term: Study Title Type
-      Definition: A characterization or classification of the study title.
-      Codelist Ref: CNEW-Study Title Type Response
       Relationship Type: Value
       Model Name: type
     instanceType:
@@ -4170,9 +3453,6 @@ StudyTitle:
       Cardinality: 0..1
       Relationship Type: Value
 StudyVersion:
-  NCI C-Code: C188816
-  Preferred Term: Study Version
-  Definition: A plan at a particular point in time for a study.
   Modifier: Concrete
   Attributes:
     id:
@@ -4183,127 +3463,77 @@ StudyVersion:
     versionIdentifier:
       Type:
       - $ref: '#/string'
-      NCI C-Code: CNEW
-      Preferred Term: Study Version Identifier
-      Definition: A sequence of characters used to identify, name, or characterize
-        the study version.
       Relationship Type: Value
       Model Name: versionIdentifier
     rationale:
       Type:
       - $ref: '#/string'
-      NCI C-Code: C94122
-      Preferred Term: Study Rationale
-      Definition: A statement describing the overall rationale of the study. This
-        field describes the contribution of this study to product development, i.e.,
-        what knowledge is being contributed from the conduct of this study.
       Relationship Type: Value
       Model Name: rationale
     studyPhase:
       Type:
       - $ref: '#/AliasCode'
-      NCI C-Code: C48281
       Cardinality: 0..1
-      Preferred Term: Trial Phase
-      Definition: 'A step in the clinical research and development of a therapy from
-        initial clinical trials to post-approval studies. NOTE: Clinical trials are
-        generally categorized into four (sometimes five) phases. A therapeutic intervention
-        may be evaluated in two or more phases simultaneously in different trials,
-        and some trials may overlap two different phases. [21 CFR section 312.21;
-        After ICH Topic E8 NOTE FOR GUIDANCE ON GENERAL CONSIDERATIONS FOR CLINICAL
-        TRIALS,  CPMP/ICH/291/95 March 1998]'
-      Codelist Ref: SDTM Terminology Codelist C66737
       Relationship Type: Value
       Model Name: studyPhase
     businessTherapeuticAreas:
       Type:
       - $ref: '#/Code'
-      NCI C-Code: CNEW
       Cardinality: 0..*
-      Preferred Term: Business Therapeutic Areas
-      Definition: A therapeutic area classification based on the structure and operations
-        of the business unit.
-      Codelist Ref: (Point out to external dictionaries)
       Relationship Type: Value
       Model Name: businessTherapeuticAreas
     studyType:
       Type:
       - $ref: '#/Code'
-      NCI C-Code: C142175
       Cardinality: 0..1
-      Preferred Term: Study Type Classification
-      Definition: The nature of the investigation for which study information is being
-        collected. (After clinicaltrials.gov)
-      Codelist Ref: SDTM Terminology Codelist C99077
       Relationship Type: Value
       Model Name: studyType
     notes:
       Type:
       - $ref: '#/CommentAnnotation'
       Cardinality: 0..*
-      Definition: A USDM relationship between the StudyVersion and CommentAnnotation
-        classes which provides the set of notes related to the study version.
       Relationship Type: Value
       Model Name: notes
     criteria:
       Type:
       - $ref: '#/EligibilityCriterion'
       Cardinality: 1..*
-      Definition: A USDM relationship between the StudyVersion and EligibilityCriterion
-        classes which identifies the set of eligibility criteria associated with the
-        study version.
       Relationship Type: Value
       Model Name: criteria
     dateValues:
       Type:
       - $ref: '#/GovernanceDate'
       Cardinality: 0..*
-      Definition: A USDM relationship between the StudyVersion and GovernanceDate
-        classes which provides the set of governance dates associated with the study
-        version.
       Relationship Type: Value
       Model Name: dateValues
     amendments:
       Type:
       - $ref: '#/StudyAmendment'
       Cardinality: 0..*
-      Definition: A USDM relationship between the StudyVersion and StudyAmendment
-        classes which identifies the set of study amendments associated with the study
-        version.
       Relationship Type: Value
       Model Name: amendments
     studyDesigns:
       Type:
       - $ref: '#/StudyDesign'
       Cardinality: 0..*
-      Definition: A USDM relationship between the StudyVersion and StudyDesign classes
-        which identifies the set of study designs associated with the study version.
       Relationship Type: Value
       Model Name: studyDesigns
     studyIdentifiers:
       Type:
       - $ref: '#/StudyIdentifier'
       Cardinality: 0..*
-      Definition: A USDM relationship between the StudyVersion and StudyIdentifier
-        classes which identifies the set of study identifiers associated with the
-        study version.
       Relationship Type: Value
       Model Name: studyIdentifiers
     documentVersionId:
       Type:
       - $ref: '#/StudyProtocolDocumentVersion'
       Cardinality: 0..1
-      Definition: A USDM relationship between the StudyVersion and StudyProtocolDocumentVersion
-        classes which identifies the version of the study protocol document associated
-        with the study version.
       Relationship Type: Ref
       Model Name: documentVersion
     titles:
       Type:
       - $ref: '#/StudyTitle'
       Cardinality: 1..*
-      Definition: A USDM relationship between the StudyVersion and StudyTitle classes
-        which identifies the set of study titles associated with the study version.
       Relationship Type: Value
       Model Name: titles
     instanceType:
@@ -4312,11 +3542,6 @@ StudyVersion:
       Cardinality: 0..1
       Relationship Type: Value
 SubjectEnrollment:
-  NCI C-Code: C37948
-  Preferred Term: Subject Enrollment
-  Definition: The act of enrolling subjects into a study. The subject will have met
-    the inclusion/exclusion criteria to participate in the trial and will have signed
-    an informed consent form. (CDISC Glossary)
   Super Classes:
   - $ref: '#/GeographicScope'
   Modifier: Concrete
@@ -4331,11 +3556,7 @@ SubjectEnrollment:
     code:
       Type:
       - $ref: '#/AliasCode'
-      NCI C-Code: CNEW
       Cardinality: 0..1
-      Preferred Term: Subject Enrollment Code
-      Definition: A symbol or combination of symbols which is assigned to the subject
-        enrollment.
       Relationship Type: Value
       Model Name: code
       Inherited From:
@@ -4343,10 +3564,7 @@ SubjectEnrollment:
     type:
       Type:
       - $ref: '#/Code'
-      NCI C-Code: CNEW
       Cardinality: '1'
-      Preferred Term: Subject Enrollment Type
-      Definition: A characterization or classification of the subject enrollment.
       Relationship Type: Value
       Model Name: type
       Inherited From:
@@ -4354,10 +3572,7 @@ SubjectEnrollment:
     quantity:
       Type:
       - $ref: '#/Quantity'
-      NCI C-Code: CNEW
       Cardinality: '1'
-      Preferred Term: Subject Enrollment Quantity Value
-      Definition: The value representing the number of individuals enrolled in a study.
       Relationship Type: Value
       Model Name: quantity
     instanceType:
@@ -4366,10 +3581,6 @@ SubjectEnrollment:
       Cardinality: 0..1
       Relationship Type: Value
 SyntaxTemplate:
-  NCI C-Code: CNEW
-  Preferred Term: Syntax Template
-  Definition: A standardized pattern used for the arrangement of words and phrases
-    to create well-formed, structured sentences.
   Sub Classes:
   - $ref: '#/Characteristic'
   - $ref: '#/Condition'
@@ -4385,52 +3596,30 @@ SyntaxTemplate:
     name:
       Type:
       - $ref: '#/string'
-      NCI C-Code: CNEW
-      Preferred Term: Syntax Template Name
-      Definition: The literal identifier (i.e., distinctive designation) of the syntax
-        template.
       Model Name: name
     description:
       Type:
       - $ref: '#/string'
-      NCI C-Code: CNEW
-      Preferred Term: Syntax Template Description
-      Definition: A narrative representation of the syntax template.
       Model Name: description
     label:
       Type:
       - $ref: '#/string'
-      NCI C-Code: CNEW
-      Preferred Term: Syntax Template Label
-      Definition: The short descriptive designation for the syntax template.
       Model Name: label
     text:
       Type:
       - $ref: '#/string'
-      NCI C-Code: CNEW
-      Preferred Term: Syntax Template Text
-      Definition: A structured text string containing prescribed text interspersed
-        with user-defined parameter values.
       Model Name: text
     notes:
       Type:
       - $ref: '#/CommentAnnotation'
       Cardinality: 0..*
-      Definition: A USDM relationship between the SyntaxTemplate and CommentAnnotation
-        classes which provides the set of notes related to the syntax template.
       Model Name: notes
     dictionary:
       Type:
       - $ref: '#/SyntaxTemplateDictionary'
       Cardinality: 0..1
-      Definition: 'A USDM relationship between the SyntaxTemplate and SyntaxTemplateDictionary
-        classes which provides the dictionary entry associated with a syntax template. '
       Model Name: dictionary
 SyntaxTemplateDictionary:
-  NCI C-Code: CNEW
-  Preferred Term: Syntax Template Dictionary
-  Definition: A reference source that provides a listing of valid parameter names
-    and values used in syntax template text strings.
   Modifier: Concrete
   Attributes:
     id:
@@ -4441,35 +3630,22 @@ SyntaxTemplateDictionary:
     name:
       Type:
       - $ref: '#/string'
-      NCI C-Code: CNEW
-      Preferred Term: Syntax Template Dictionary Name
-      Definition: The literal identifier (i.e., distinctive designation) of the syntax
-        template dictionary.
       Relationship Type: Value
       Model Name: name
     description:
       Type:
       - $ref: '#/string'
-      NCI C-Code: CNEW
-      Preferred Term: Syntax Template Dictionary Description
-      Definition: A narrative representation of the syntax template dictionary.
       Relationship Type: Value
       Model Name: description
     label:
       Type:
       - $ref: '#/string'
-      NCI C-Code: CNEW
-      Preferred Term: Syntax Template Dictionary Label
-      Definition: The short descriptive designation for the syntax template dictionary.
       Relationship Type: Value
       Model Name: label
     parameterMaps:
       Type:
       - $ref: '#/ParameterMap'
       Cardinality: 1..*
-      Definition: A USDM relationship between the SyntaxTemplateDictionary and ParameterMap
-        classes which identifies the set of parameter maps (parameter map entries)
-        associated with a syntax template dictionary.
       Relationship Type: Value
       Model Name: parameterMaps
     instanceType:
@@ -4478,9 +3654,6 @@ SyntaxTemplateDictionary:
       Cardinality: 0..1
       Relationship Type: Value
 Timing:
-  NCI C-Code: C80484
-  Preferred Term: Timing
-  Definition: The chronological relationship between temporal events.
   Modifier: Concrete
   Attributes:
     id:
@@ -4491,110 +3664,65 @@ Timing:
     name:
       Type:
       - $ref: '#/string'
-      NCI C-Code: CNEW
-      Preferred Term: Timing Name
-      Definition: The literal identifier (i.e., distinctive designation) of the timing.
       Relationship Type: Value
       Model Name: name
     description:
       Type:
       - $ref: '#/string'
-      NCI C-Code: C164648
-      Preferred Term: Timing Description
-      Definition: A narrative representation of the chronological relationship between
-        temporal events.
       Relationship Type: Value
       Model Name: description
     label:
       Type:
       - $ref: '#/string'
-      NCI C-Code: CNEW
-      Preferred Term: Timing Label
-      Definition: The short descriptive designation for the timing.
       Relationship Type: Value
       Model Name: label
     value:
       Type:
       - $ref: '#/string'
-      NCI C-Code: C201341
-      Preferred Term: Timing Value
-      Definition: The temporal value of the chronological relationship between temporal
-        events.
       Relationship Type: Value
       Model Name: value
     valueLabel:
       Type:
       - $ref: '#/string'
-      NCI C-Code: CNEW
-      Preferred Term: Timing Value Label
-      Definition: The short descriptive designation for the timing value.
       Relationship Type: Value
       Model Name: valueLabel
     windowLabel:
       Type:
       - $ref: '#/string'
-      NCI C-Code: CNEW
-      Preferred Term: Timing Window Label
-      Definition: The short descriptive designation for a time period, or other type
-        of interval, during which a temporal event may be achieved, obtained, or observed.
       Relationship Type: Value
       Model Name: windowLabel
     windowLower:
       Type:
       - $ref: '#/string'
-      NCI C-Code: C201342
-      Preferred Term: Timing Window, Lower
-      Definition: The earliest chronological value of an allowable period of time
-        during which a temporal event takes place.
       Relationship Type: Value
       Model Name: windowLower
     windowUpper:
       Type:
       - $ref: '#/string'
-      NCI C-Code: C201343
-      Preferred Term: Timing Window, Upper
-      Definition: The latest chronological value of an allowable period of time during
-        which a temporal event takes place.
       Relationship Type: Value
       Model Name: windowUpper
     relativeToFrom:
       Type:
       - $ref: '#/Code'
-      NCI C-Code: C201297
       Cardinality: '1'
-      Preferred Term: Timing Relative To From
-      Definition: The name of the reference event used to define the temporal relationship
-        with another event.
-      Codelist Ref: C201265
       Relationship Type: Value
       Model Name: relativeToFrom
     type:
       Type:
       - $ref: '#/Code'
-      NCI C-Code: C201298
       Cardinality: '1'
-      Preferred Term: Timing Type
-      Definition: A characterization or classification of the chronological relationship
-        between temporal events.
-      Codelist Ref: C201264
       Relationship Type: Value
       Model Name: type
     relativeToScheduledInstanceId:
       Type:
       - $ref: '#/ScheduledInstance'
       Cardinality: 0..1
-      Definition: A USDM relationship between the Timing and ScheduledInstance classes
-        which identifies the scheduled instance (e.g., scheduled activity instances
-        or scheduled decision instances) to which the timing is relative to.
       Relationship Type: Ref
       Model Name: relativeToScheduledInstance
     relativeFromScheduledInstanceId:
       Type:
       - $ref: '#/ScheduledInstance'
       Cardinality: 0..1
-      Definition: A USDM relationship between the Timing and ScheduledInstance classes
-        which identifies the scheduled instance (e.g., scheduled activity instances
-        or scheduled decision instances) to which the timing applies.
       Relationship Type: Ref
       Model Name: relativeFromScheduledInstance
     instanceType:
