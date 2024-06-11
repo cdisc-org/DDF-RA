@@ -1895,7 +1895,7 @@
         ],
         "title": "CommentAnnotation"
       },
-      "Condition": {
+      "Condition-Input": {
         "properties": {
           "id": {
             "type": "string",
@@ -1944,6 +1944,22 @@
             ],
             "title": "Dictionaryid"
           },
+          "notes": {
+            "items": {
+              "$ref": "#/components/schemas/CommentAnnotation"
+            },
+            "type": "array",
+            "title": "Notes",
+            "default": []
+          },
+          "instanceType": {
+            "type": "string",
+            "enum": [
+              "Condition"
+            ],
+            "const": "Condition",
+            "title": "Instancetype"
+          },
           "contextIds": {
             "items": {
               "type": "string"
@@ -1959,6 +1975,73 @@
             "type": "array",
             "title": "Appliestoids",
             "default": []
+          }
+        },
+        "type": "object",
+        "required": [
+          "id",
+          "name",
+          "text",
+          "instanceType"
+        ],
+        "title": "Condition"
+      },
+      "Condition-Output": {
+        "properties": {
+          "id": {
+            "type": "string",
+            "minLength": 1,
+            "title": "Id"
+          },
+          "name": {
+            "type": "string",
+            "minLength": 1,
+            "title": "Name"
+          },
+          "label": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Label"
+          },
+          "description": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Description"
+          },
+          "text": {
+            "type": "string",
+            "title": "Text"
+          },
+          "dictionaryId": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Dictionaryid"
+          },
+          "notes": {
+            "items": {
+              "$ref": "#/components/schemas/CommentAnnotation"
+            },
+            "type": "array",
+            "title": "Notes",
+            "default": []
           },
           "instanceType": {
             "type": "string",
@@ -1967,6 +2050,22 @@
             ],
             "const": "Condition",
             "title": "Instancetype"
+          },
+          "contextIds": {
+            "items": {
+              "type": "string"
+            },
+            "type": "array",
+            "title": "Contextids",
+            "default": []
+          },
+          "appliesToIds": {
+            "items": {
+              "type": "string"
+            },
+            "type": "array",
+            "title": "Appliestoids",
+            "default": []
           }
         },
         "type": "object",
@@ -3052,7 +3151,7 @@
         "type": "object",
         "title": "HTTPValidationError"
       },
-      "Indication": {
+      "Indication-Input": {
         "properties": {
           "id": {
             "type": "string",
@@ -3097,6 +3196,86 @@
           "isRareDisease": {
             "type": "boolean",
             "title": "Israredisease"
+          },
+          "notes": {
+            "items": {
+              "$ref": "#/components/schemas/CommentAnnotation"
+            },
+            "type": "array",
+            "title": "Notes",
+            "default": []
+          },
+          "instanceType": {
+            "type": "string",
+            "enum": [
+              "Indication"
+            ],
+            "const": "Indication",
+            "title": "Instancetype"
+          }
+        },
+        "type": "object",
+        "required": [
+          "id",
+          "name",
+          "isRareDisease",
+          "instanceType"
+        ],
+        "title": "Indication"
+      },
+      "Indication-Output": {
+        "properties": {
+          "id": {
+            "type": "string",
+            "minLength": 1,
+            "title": "Id"
+          },
+          "name": {
+            "type": "string",
+            "minLength": 1,
+            "title": "Name"
+          },
+          "label": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Label"
+          },
+          "description": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Description"
+          },
+          "codes": {
+            "items": {
+              "$ref": "#/components/schemas/Code"
+            },
+            "type": "array",
+            "title": "Codes",
+            "default": []
+          },
+          "isRareDisease": {
+            "type": "boolean",
+            "title": "Israredisease"
+          },
+          "notes": {
+            "items": {
+              "$ref": "#/components/schemas/CommentAnnotation"
+            },
+            "type": "array",
+            "title": "Notes",
+            "default": []
           },
           "instanceType": {
             "type": "string",
@@ -4893,7 +5072,7 @@
         ],
         "title": "StudyAmendmentReason"
       },
-      "StudyArm": {
+      "StudyArm-Input": {
         "properties": {
           "id": {
             "type": "string",
@@ -4943,6 +5122,94 @@
             },
             "type": "array",
             "title": "Populationids",
+            "default": []
+          },
+          "notes": {
+            "items": {
+              "$ref": "#/components/schemas/CommentAnnotation"
+            },
+            "type": "array",
+            "title": "Notes",
+            "default": []
+          },
+          "instanceType": {
+            "type": "string",
+            "enum": [
+              "StudyArm"
+            ],
+            "const": "StudyArm",
+            "title": "Instancetype"
+          }
+        },
+        "type": "object",
+        "required": [
+          "id",
+          "name",
+          "type",
+          "dataOriginDescription",
+          "dataOriginType",
+          "instanceType"
+        ],
+        "title": "StudyArm"
+      },
+      "StudyArm-Output": {
+        "properties": {
+          "id": {
+            "type": "string",
+            "minLength": 1,
+            "title": "Id"
+          },
+          "name": {
+            "type": "string",
+            "minLength": 1,
+            "title": "Name"
+          },
+          "label": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Label"
+          },
+          "description": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Description"
+          },
+          "type": {
+            "$ref": "#/components/schemas/Code"
+          },
+          "dataOriginDescription": {
+            "type": "string",
+            "title": "Dataorigindescription"
+          },
+          "dataOriginType": {
+            "$ref": "#/components/schemas/Code"
+          },
+          "populationIds": {
+            "items": {
+              "type": "string"
+            },
+            "type": "array",
+            "title": "Populationids",
+            "default": []
+          },
+          "notes": {
+            "items": {
+              "$ref": "#/components/schemas/CommentAnnotation"
+            },
+            "type": "array",
+            "title": "Notes",
             "default": []
           },
           "instanceType": {
@@ -5090,6 +5357,14 @@
               }
             ]
           },
+          "notes": {
+            "items": {
+              "$ref": "#/components/schemas/CommentAnnotation"
+            },
+            "type": "array",
+            "title": "Notes",
+            "default": []
+          },
           "instanceType": {
             "type": "string",
             "enum": [
@@ -5199,6 +5474,14 @@
                 "type": "null"
               }
             ]
+          },
+          "notes": {
+            "items": {
+              "$ref": "#/components/schemas/CommentAnnotation"
+            },
+            "type": "array",
+            "title": "Notes",
+            "default": []
           },
           "instanceType": {
             "type": "string",
@@ -5337,7 +5620,7 @@
           },
           "arms": {
             "items": {
-              "$ref": "#/components/schemas/StudyArm"
+              "$ref": "#/components/schemas/StudyArm-Input"
             },
             "type": "array",
             "title": "Arms"
@@ -5365,14 +5648,14 @@
           },
           "epochs": {
             "items": {
-              "$ref": "#/components/schemas/StudyEpoch"
+              "$ref": "#/components/schemas/StudyEpoch-Input"
             },
             "type": "array",
             "title": "Epochs"
           },
           "elements": {
             "items": {
-              "$ref": "#/components/schemas/StudyElement"
+              "$ref": "#/components/schemas/StudyElement-Input"
             },
             "type": "array",
             "title": "Elements",
@@ -5388,7 +5671,7 @@
           },
           "indications": {
             "items": {
-              "$ref": "#/components/schemas/Indication"
+              "$ref": "#/components/schemas/Indication-Input"
             },
             "type": "array",
             "title": "Indications",
@@ -5457,7 +5740,7 @@
           },
           "conditions": {
             "items": {
-              "$ref": "#/components/schemas/Condition"
+              "$ref": "#/components/schemas/Condition-Input"
             },
             "type": "array",
             "title": "Conditions",
@@ -5612,7 +5895,7 @@
           },
           "arms": {
             "items": {
-              "$ref": "#/components/schemas/StudyArm"
+              "$ref": "#/components/schemas/StudyArm-Output"
             },
             "type": "array",
             "title": "Arms"
@@ -5640,14 +5923,14 @@
           },
           "epochs": {
             "items": {
-              "$ref": "#/components/schemas/StudyEpoch"
+              "$ref": "#/components/schemas/StudyEpoch-Output"
             },
             "type": "array",
             "title": "Epochs"
           },
           "elements": {
             "items": {
-              "$ref": "#/components/schemas/StudyElement"
+              "$ref": "#/components/schemas/StudyElement-Output"
             },
             "type": "array",
             "title": "Elements",
@@ -5663,7 +5946,7 @@
           },
           "indications": {
             "items": {
-              "$ref": "#/components/schemas/Indication"
+              "$ref": "#/components/schemas/Indication-Output"
             },
             "type": "array",
             "title": "Indications",
@@ -5732,7 +6015,7 @@
           },
           "conditions": {
             "items": {
-              "$ref": "#/components/schemas/Condition"
+              "$ref": "#/components/schemas/Condition-Output"
             },
             "type": "array",
             "title": "Conditions",
@@ -5860,6 +6143,14 @@
               }
             ]
           },
+          "notes": {
+            "items": {
+              "$ref": "#/components/schemas/CommentAnnotation"
+            },
+            "type": "array",
+            "title": "Notes",
+            "default": []
+          },
           "instanceType": {
             "type": "string",
             "enum": [
@@ -5970,6 +6261,14 @@
               }
             ]
           },
+          "notes": {
+            "items": {
+              "$ref": "#/components/schemas/CommentAnnotation"
+            },
+            "type": "array",
+            "title": "Notes",
+            "default": []
+          },
           "instanceType": {
             "type": "string",
             "enum": [
@@ -5996,7 +6295,7 @@
         ],
         "title": "StudyDesignPopulation"
       },
-      "StudyElement": {
+      "StudyElement-Input": {
         "properties": {
           "id": {
             "type": "string",
@@ -6058,6 +6357,14 @@
             "title": "Studyinterventionids",
             "default": []
           },
+          "notes": {
+            "items": {
+              "$ref": "#/components/schemas/CommentAnnotation"
+            },
+            "type": "array",
+            "title": "Notes",
+            "default": []
+          },
           "instanceType": {
             "type": "string",
             "enum": [
@@ -6075,7 +6382,94 @@
         ],
         "title": "StudyElement"
       },
-      "StudyEpoch": {
+      "StudyElement-Output": {
+        "properties": {
+          "id": {
+            "type": "string",
+            "minLength": 1,
+            "title": "Id"
+          },
+          "name": {
+            "type": "string",
+            "minLength": 1,
+            "title": "Name"
+          },
+          "label": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Label"
+          },
+          "description": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Description"
+          },
+          "transitionStartRule": {
+            "anyOf": [
+              {
+                "$ref": "#/components/schemas/TransitionRule"
+              },
+              {
+                "type": "null"
+              }
+            ]
+          },
+          "transitionEndRule": {
+            "anyOf": [
+              {
+                "$ref": "#/components/schemas/TransitionRule"
+              },
+              {
+                "type": "null"
+              }
+            ]
+          },
+          "studyInterventionIds": {
+            "items": {
+              "type": "string"
+            },
+            "type": "array",
+            "title": "Studyinterventionids",
+            "default": []
+          },
+          "notes": {
+            "items": {
+              "$ref": "#/components/schemas/CommentAnnotation"
+            },
+            "type": "array",
+            "title": "Notes",
+            "default": []
+          },
+          "instanceType": {
+            "type": "string",
+            "enum": [
+              "StudyElement"
+            ],
+            "const": "StudyElement",
+            "title": "Instancetype"
+          }
+        },
+        "type": "object",
+        "required": [
+          "id",
+          "name",
+          "instanceType"
+        ],
+        "title": "StudyElement"
+      },
+      "StudyEpoch-Input": {
         "properties": {
           "id": {
             "type": "string",
@@ -6133,6 +6527,99 @@
               }
             ],
             "title": "Nextid"
+          },
+          "notes": {
+            "items": {
+              "$ref": "#/components/schemas/CommentAnnotation"
+            },
+            "type": "array",
+            "title": "Notes",
+            "default": []
+          },
+          "instanceType": {
+            "type": "string",
+            "enum": [
+              "StudyEpoch"
+            ],
+            "const": "StudyEpoch",
+            "title": "Instancetype"
+          }
+        },
+        "type": "object",
+        "required": [
+          "id",
+          "name",
+          "type",
+          "instanceType"
+        ],
+        "title": "StudyEpoch"
+      },
+      "StudyEpoch-Output": {
+        "properties": {
+          "id": {
+            "type": "string",
+            "minLength": 1,
+            "title": "Id"
+          },
+          "name": {
+            "type": "string",
+            "minLength": 1,
+            "title": "Name"
+          },
+          "label": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Label"
+          },
+          "description": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Description"
+          },
+          "type": {
+            "$ref": "#/components/schemas/Code"
+          },
+          "previousId": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Previousid"
+          },
+          "nextId": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Nextid"
+          },
+          "notes": {
+            "items": {
+              "$ref": "#/components/schemas/CommentAnnotation"
+            },
+            "type": "array",
+            "title": "Notes",
+            "default": []
           },
           "instanceType": {
             "type": "string",
