@@ -509,6 +509,12 @@ components:
           $ref: '#/components/schemas/AliasCode'
         frequency:
           $ref: '#/components/schemas/AliasCode'
+        notes:
+          items:
+            $ref: '#/components/schemas/CommentAnnotation'
+          type: array
+          title: Notes
+          default: []
         instanceType:
           type: string
           enum:
@@ -553,6 +559,12 @@ components:
           $ref: '#/components/schemas/AliasCode'
         frequency:
           $ref: '#/components/schemas/AliasCode'
+        notes:
+          items:
+            $ref: '#/components/schemas/CommentAnnotation'
+          type: array
+          title: Notes
+          default: []
         instanceType:
           type: string
           enum:
@@ -1445,7 +1457,7 @@ components:
       - category
       - identifier
       title: EligibilityCriterion
-    Encounter:
+    Encounter-Input:
       properties:
         id:
           type: string
@@ -1502,6 +1514,88 @@ components:
           anyOf:
           - $ref: '#/components/schemas/TransitionRule'
           - type: 'null'
+        notes:
+          items:
+            $ref: '#/components/schemas/CommentAnnotation'
+          type: array
+          title: Notes
+          default: []
+        instanceType:
+          type: string
+          enum:
+          - Encounter
+          const: Encounter
+          title: Instancetype
+      type: object
+      required:
+      - id
+      - name
+      - type
+      - instanceType
+      title: Encounter
+    Encounter-Output:
+      properties:
+        id:
+          type: string
+          minLength: 1
+          title: Id
+        name:
+          type: string
+          minLength: 1
+          title: Name
+        label:
+          anyOf:
+          - type: string
+          - type: 'null'
+          title: Label
+        description:
+          anyOf:
+          - type: string
+          - type: 'null'
+          title: Description
+        type:
+          $ref: '#/components/schemas/Code'
+        previousId:
+          anyOf:
+          - type: string
+          - type: 'null'
+          title: Previousid
+        nextId:
+          anyOf:
+          - type: string
+          - type: 'null'
+          title: Nextid
+        scheduledAtId:
+          anyOf:
+          - type: string
+          - type: 'null'
+          title: Scheduledatid
+        environmentalSettings:
+          items:
+            $ref: '#/components/schemas/Code'
+          type: array
+          title: Environmentalsettings
+          default: []
+        contactModes:
+          items:
+            $ref: '#/components/schemas/Code'
+          type: array
+          title: Contactmodes
+          default: []
+        transitionStartRule:
+          anyOf:
+          - $ref: '#/components/schemas/TransitionRule'
+          - type: 'null'
+        transitionEndRule:
+          anyOf:
+          - $ref: '#/components/schemas/TransitionRule'
+          - type: 'null'
+        notes:
+          items:
+            $ref: '#/components/schemas/CommentAnnotation'
+          type: array
+          title: Notes
+          default: []
         instanceType:
           type: string
           enum:
@@ -3340,7 +3434,7 @@ components:
           $ref: '#/components/schemas/Code'
         encounters:
           items:
-            $ref: '#/components/schemas/Encounter'
+            $ref: '#/components/schemas/Encounter-Input'
           type: array
           title: Encounters
           default: []
@@ -3530,7 +3624,7 @@ components:
           $ref: '#/components/schemas/Code'
         encounters:
           items:
-            $ref: '#/components/schemas/Encounter'
+            $ref: '#/components/schemas/Encounter-Output'
           type: array
           title: Encounters
           default: []
