@@ -64,6 +64,8 @@ Activity:
       Type:
       - $ref: '#/CommentAnnotation'
       Cardinality: 0..*
+      Definition: A USDM relationship between the Activity and CommentAnnotation classes
+        which provides the set of notes related to the activity.
       Relationship Type: Value
       Model Name: notes
     timelineId:
@@ -321,6 +323,8 @@ AgentAdministration:
       Type:
       - $ref: '#/CommentAnnotation'
       Cardinality: 0..*
+      Definition: A USDM relationship between the AgentAdministration and CommentAnnotation
+        classes which provides the set of notes related to the agent administration.
       Relationship Type: Value
       Model Name: notes
     instanceType:
@@ -413,6 +417,8 @@ AnalysisPopulation:
       Type:
       - $ref: '#/CommentAnnotation'
       Cardinality: 0..*
+      Definition: A USDM relationship between the AnalysisPopulation and CommentAnnotation
+        classes which provides the set of notes related to the analysis population.
       Relationship Type: Value
       Model Name: notes
     instanceType:
@@ -482,6 +488,8 @@ BiomedicalConcept:
       Type:
       - $ref: '#/CommentAnnotation'
       Cardinality: 0..*
+      Definition: A USDM relationship between the BiomedicalConcept and CommentAnnotation
+        classes which provides the set of notes related to the biomedical concept.
       Relationship Type: Value
       Model Name: notes
     properties:
@@ -566,6 +574,9 @@ BiomedicalConceptCategory:
       Type:
       - $ref: '#/CommentAnnotation'
       Cardinality: 0..*
+      Definition: A USDM relationship between the BiomedicalConcept and CommentAnnotation
+        classes which provides the set of notes related to the biomedical concept
+        category.
       Relationship Type: Value
       Model Name: notes
     instanceType:
@@ -652,6 +663,9 @@ BiomedicalConceptProperty:
       Type:
       - $ref: '#/CommentAnnotation'
       Cardinality: 0..*
+      Definition: A USDM relationship between the BiomedicalConcept and CommentAnnotation
+        classes which provides the set of notes related to the biomedical concept
+        property.
       Relationship Type: Value
       Model Name: notes
     instanceType:
@@ -704,6 +718,9 @@ BiomedicalConceptSurrogate:
       Type:
       - $ref: '#/CommentAnnotation'
       Cardinality: 0..*
+      Definition: A USDM relationship between the BiomedicalConcept and CommentAnnotation
+        classes which provides the set of notes related to the biomedical concept
+        surrogate.
       Relationship Type: Value
       Model Name: notes
     instanceType:
@@ -770,6 +787,8 @@ Characteristic:
       Type:
       - $ref: '#/CommentAnnotation'
       Cardinality: 0..*
+      Definition: A USDM relationship between the Characteristic and CommentAnnotation
+        classes which provides the set of notes related to the characteristic.
       Relationship Type: Value
       Model Name: notes
       Inherited From:
@@ -841,6 +860,11 @@ Code:
       Cardinality: 0..1
       Relationship Type: Value
 CommentAnnotation:
+  NCI C-Code: C44272
+  Preferred Term: Comment Annotation
+  Definition: An explanatory or critical comment, or other in-context information
+    (e.g., pattern, motif, link), that has been associated with data or other types
+    of information.
   Modifier: Concrete
   Attributes:
     id:
@@ -851,12 +875,19 @@ CommentAnnotation:
     text:
       Type:
       - $ref: '#/string'
+      NCI C-Code: CNEW
+      Preferred Term: Comment Annotation Text
+      Definition: An instance of unstructured text that represents the comment annotation.
       Relationship Type: Value
       Model Name: text
     codes:
       Type:
       - $ref: '#/Code'
+      NCI C-Code: CNEW
       Cardinality: 0..*
+      Preferred Term: Comment Annotation Code
+      Definition: A symbol or combination of symbols which is assigned to the comment
+        annotation.
       Relationship Type: Value
       Model Name: codes
     instanceType:
@@ -923,6 +954,8 @@ Condition:
       Type:
       - $ref: '#/CommentAnnotation'
       Cardinality: 0..*
+      Definition: A USDM relationship between the Condition and CommentAnnotation
+        classes which provides the set of notes related to the condition.
       Relationship Type: Value
       Model Name: notes
       Inherited From:
@@ -1064,6 +1097,8 @@ EligibilityCriterion:
       Type:
       - $ref: '#/CommentAnnotation'
       Cardinality: 0..*
+      Definition: A USDM relationship between the EligibilityCriterion and CommentAnnotation
+        classes which provides the set of notes related to the eligibility criterion.
       Relationship Type: Value
       Model Name: notes
       Inherited From:
@@ -1197,6 +1232,8 @@ Encounter:
       Type:
       - $ref: '#/CommentAnnotation'
       Cardinality: 0..*
+      Definition: A USDM relationship between the Encounter and CommentAnnotation
+        classes which provides the set of notes related to an encounter.
       Relationship Type: Value
       Model Name: notes
     transitionEndRule:
@@ -1311,6 +1348,8 @@ Endpoint:
       Type:
       - $ref: '#/CommentAnnotation'
       Cardinality: 0..*
+      Definition: A USDM relationship between the Endpoint and CommentAnnotation classes
+        which provides the set of notes related to the study endpoint.
       Relationship Type: Value
       Model Name: notes
       Inherited From:
@@ -1375,16 +1414,25 @@ Estimand:
     name:
       Type:
       - $ref: '#/string'
+      NCI C-Code: CNEW
+      Preferred Term: Estimand Name
+      Definition: The literal identifier (i.e., distinctive designation) of the estimand.
       Relationship Type: Value
       Model Name: name
     description:
       Type:
       - $ref: '#/string'
+      NCI C-Code: CNEW
+      Preferred Term: Estimand Description
+      Definition: A narrative representation of the estimand.
       Relationship Type: Value
       Model Name: description
     label:
       Type:
       - $ref: '#/string'
+      NCI C-Code: CNEW
+      Preferred Term: Estimand Label
+      Definition: The short descriptive designation for the estimand.
       Relationship Type: Value
       Model Name: label
     analysisPopulation:
@@ -1400,6 +1448,8 @@ Estimand:
       Type:
       - $ref: '#/CommentAnnotation'
       Cardinality: 0..*
+      Definition: A USDM relationship between the Estimand and CommentAnnotation classes
+        which provides the set of notes related to a study estimand.
       Relationship Type: Value
       Model Name: notes
     variableOfInterestId:
@@ -1605,6 +1655,8 @@ Indication:
       Type:
       - $ref: '#/CommentAnnotation'
       Cardinality: 0..*
+      Definition: A USDM relationship between the Indication and CommentAnnotation
+        classes which provides the set of notes related to the disease/condition indication.
       Relationship Type: Value
       Model Name: notes
     instanceType:
@@ -1663,6 +1715,8 @@ IntercurrentEvent:
       Type:
       - $ref: '#/CommentAnnotation'
       Cardinality: 0..*
+      Definition: A USDM relationship between the IntercurrentEvent and CommentAnnotation
+        classes which provides the set of notes related to the intercurrent event.
       Relationship Type: Value
       Model Name: notes
     instanceType:
@@ -1845,6 +1899,8 @@ Objective:
       Type:
       - $ref: '#/CommentAnnotation'
       Cardinality: 0..*
+      Definition: A USDM relationship between the Objective and CommentAnnotation
+        classes which provides the set of notes related to the study objective.
       Relationship Type: Value
       Model Name: notes
       Inherited From:
@@ -2047,6 +2103,8 @@ PopulationDefinition:
       Type:
       - $ref: '#/CommentAnnotation'
       Cardinality: 0..*
+      Definition: A USDM relationship between the PopulationDefinition and CommentAnnotation
+        classes which provides the set of notes related to the population definition.
       Model Name: notes
     criteria:
       Type:
@@ -2143,6 +2201,8 @@ Procedure:
       Type:
       - $ref: '#/CommentAnnotation'
       Cardinality: 0..*
+      Definition: A USDM relationship between the Procedure and CommentAnnotation
+        classes which provides the set of notes related to a procedure.
       Relationship Type: Value
       Model Name: notes
     studyInterventionId:
@@ -2971,6 +3031,8 @@ StudyArm:
       Type:
       - $ref: '#/CommentAnnotation'
       Cardinality: 0..*
+      Definition: A USDM relationship between the StudyArm and CommentAnnotation classes
+        which provides the set of notes related to the study arm.
       Relationship Type: Value
       Model Name: notes
     populationIds:
@@ -3102,6 +3164,8 @@ StudyCohort:
       Type:
       - $ref: '#/CommentAnnotation'
       Cardinality: 0..*
+      Definition: A USDM relationship between the StudyCohort and CommentAnnotation
+        classes which provides the set of notes related to the study cohort.
       Relationship Type: Value
       Model Name: notes
       Inherited From:
@@ -3295,6 +3359,8 @@ StudyDesign:
       Type:
       - $ref: '#/CommentAnnotation'
       Cardinality: 0..*
+      Definition: A USDM relationship between the StudyDesign and CommentAnnotation
+        classes which provides the set of notes related to the study design.
       Relationship Type: Value
       Model Name: notes
     encounters:
@@ -3518,6 +3584,8 @@ StudyDesignPopulation:
       Type:
       - $ref: '#/CommentAnnotation'
       Cardinality: 0..*
+      Definition: A USDM relationship between the StudyDesignPopulation and CommentAnnotation
+        classes which provides the set of notes related to the study design population.
       Relationship Type: Value
       Model Name: notes
       Inherited From:
@@ -3625,6 +3693,8 @@ StudyElement:
       Type:
       - $ref: '#/CommentAnnotation'
       Cardinality: 0..*
+      Definition: A USDM relationship between the StudyElement and CommentAnnotation
+        classes which provides the set of notes related to the study element.
       Relationship Type: Value
       Model Name: notes
     transitionEndRule:
@@ -3715,6 +3785,8 @@ StudyEpoch:
       Type:
       - $ref: '#/CommentAnnotation'
       Cardinality: 0..*
+      Definition: A USDM relationship between the StudyEpoch and CommentAnnotation
+        classes which provides the set of notes related to the study epoch.
       Relationship Type: Value
       Model Name: notes
     previousId:
@@ -3877,6 +3949,8 @@ StudyIntervention:
       Type:
       - $ref: '#/CommentAnnotation'
       Cardinality: 0..*
+      Definition: A USDM relationship between the StudyIntervention and CommentAnnotation
+        classes which provides the set of notes related to the study intervention.
       Relationship Type: Value
       Model Name: notes
     minimumResponseDuration:
@@ -4167,12 +4241,17 @@ StudyVersion:
       Type:
       - $ref: '#/CommentAnnotation'
       Cardinality: 0..*
+      Definition: A USDM relationship between the StudyVersion and CommentAnnotation
+        classes which provides the set of notes related to the study version.
       Relationship Type: Value
       Model Name: notes
     criteria:
       Type:
       - $ref: '#/EligibilityCriterion'
       Cardinality: 1..*
+      Definition: A USDM relationship between the StudyVersion and EligibilityCriterion
+        classes which identifies the set of eligibility criteria associated with the
+        study version.
       Relationship Type: Value
       Model Name: criteria
     dateValues:
@@ -4337,6 +4416,8 @@ SyntaxTemplate:
       Type:
       - $ref: '#/CommentAnnotation'
       Cardinality: 0..*
+      Definition: A USDM relationship between the SyntaxTemplate and CommentAnnotation
+        classes which provides the set of notes related to the syntax template.
       Model Name: notes
     dictionary:
       Type:
