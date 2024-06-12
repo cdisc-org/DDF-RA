@@ -2560,11 +2560,11 @@ StudyCohort:
       Model Name: notes
       Inherited From:
         $ref: '#/PopulationDefinition'
-    criteriaIds:
+    criteria*:
       Type:
       - $ref: '#/EligibilityCriterion'
       Cardinality: 0..*
-      Relationship Type: Ref
+      Relationship Type: UNKNOWN
       Model Name: criteria
       Inherited From:
         $ref: '#/PopulationDefinition'
@@ -2598,6 +2598,11 @@ StudyCohort:
       Cardinality: 0..*
       Relationship Type: Value
       Model Name: characteristics
+    criterionIds:
+      Type:
+      - $ref: UNKNOWN
+      Cardinality: 0..*
+      Relationship Type: Value
     instanceType:
       Type:
       - $ref: '#/string'
@@ -2962,14 +2967,14 @@ StudyDesignPopulation:
       Model Name: notes
       Inherited From:
         $ref: '#/PopulationDefinition'
-    criteriaIds:
+    criteria*:
       Type:
       - $ref: '#/EligibilityCriterion'
       Cardinality: 0..*
       Definition: A USDM relationship between the StudyDesignPopulation and EligibilityCriterion
         classes which identifies the set of eligibility criteria associated with the
         study design population.
-      Relationship Type: Ref
+      Relationship Type: UNKNOWN
       Model Name: criteria
       Inherited From:
         $ref: '#/PopulationDefinition'
@@ -3018,6 +3023,11 @@ StudyDesignPopulation:
         design population.
       Relationship Type: Value
       Model Name: cohorts
+    criterionIds:
+      Type:
+      - $ref: UNKNOWN
+      Cardinality: 0..*
+      Relationship Type: Value
     instanceType:
       Type:
       - $ref: '#/string'
