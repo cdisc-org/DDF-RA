@@ -4259,15 +4259,6 @@ StudyVersion:
         classes which provides the set of notes related to the study version.
       Relationship Type: Value
       Model Name: notes
-    criteria:
-      Type:
-      - $ref: '#/EligibilityCriterion'
-      Cardinality: 1..*
-      Definition: A USDM relationship between the StudyVersion and EligibilityCriterion
-        classes which identifies the set of eligibility criteria associated with the
-        study version.
-      Relationship Type: Value
-      Model Name: criteria
     dateValues:
       Type:
       - $ref: '#/GovernanceDate'
@@ -4320,6 +4311,11 @@ StudyVersion:
         which identifies the set of study titles associated with the study version.
       Relationship Type: Value
       Model Name: titles
+    criteria:
+      Type:
+      - $ref: '#/EligibilityCriterion'
+      Cardinality: 0..*
+      Relationship Type: Value
     instanceType:
       Type:
       - $ref: '#/string'
