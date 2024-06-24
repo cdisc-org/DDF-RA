@@ -77,6 +77,14 @@ Activity:
         related to the activity.
       Relationship Type: Ref
       Model Name: timeline
+    childIds:
+      Type:
+      - $ref: '#/Activity'
+      Cardinality: 0..*
+      Definition: A USDM relationship within the Activity class which identifies the
+        set of child activities associated with an activity.
+      Relationship Type: Ref
+      Model Name: children
     previousId:
       Type:
       - $ref: '#/Activity'
@@ -4601,7 +4609,7 @@ Timing:
     relativeFromScheduledInstanceId:
       Type:
       - $ref: '#/ScheduledInstance'
-      Cardinality: 0..1
+      Cardinality: '1'
       Definition: A USDM relationship between the Timing and ScheduledInstance classes
         which identifies the scheduled instance (e.g., scheduled activity instances
         or scheduled decision instances) to which the timing applies.
