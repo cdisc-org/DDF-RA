@@ -3,7 +3,7 @@ info:
   title: DDF USDM API
   description: A simple TransCelerate Digital Data Flow (DDF) Study Definitions Repository
     API.
-  version: 3.2.0
+  version: 3.3.0
 paths:
   /v3/studyDefinitions:
     post:
@@ -240,6 +240,12 @@ components:
           - type: string
           - type: 'null'
           title: Nextid
+        childIds:
+          items:
+            type: string
+          type: array
+          title: Childids
+          default: []
         definedProcedures:
           items:
             $ref: '#/components/schemas/Procedure-Input'
@@ -317,6 +323,12 @@ components:
           - type: string
           - type: 'null'
           title: Nextid
+        childIds:
+          items:
+            type: string
+          type: array
+          title: Childids
+          default: []
         definedProcedures:
           items:
             $ref: '#/components/schemas/Procedure-Output'
@@ -5040,9 +5052,7 @@ components:
         relativeToFrom:
           $ref: '#/components/schemas/Code'
         relativeFromScheduledInstanceId:
-          anyOf:
-          - type: string
-          - type: 'null'
+          type: string
           title: Relativefromscheduledinstanceid
         relativeToScheduledInstanceId:
           anyOf:
@@ -5078,6 +5088,7 @@ components:
       - value
       - valueLabel
       - relativeToFrom
+      - relativeFromScheduledInstanceId
       - instanceType
       title: Timing
     TransitionRule:
