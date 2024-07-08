@@ -1795,14 +1795,6 @@ NarrativeContent:
         content.
       Relationship Type: Value
       Model Name: name
-    text:
-      Type:
-      - $ref: '#/string'
-      NCI C-Code: CNEW
-      Preferred Term: Narrative Content Text
-      Definition: A textual representation of the narrative content.
-      Relationship Type: Value
-      Model Name: text
     sectionNumber:
       Type:
       - $ref: '#/string'
@@ -1819,6 +1811,22 @@ NarrativeContent:
       Definition: An identifying designation for the document section.
       Relationship Type: Value
       Model Name: sectionTitle
+    displaySectionTitle*:
+      Type:
+      - $ref: '#/Boolean'
+      Relationship Type: UNKNOWN
+      Model Name: displaySectionTitle
+    displaySectionNumber*:
+      Type:
+      - $ref: '#/Boolean'
+      Relationship Type: UNKNOWN
+      Model Name: displaySectionNumber
+    contentItem*:
+      Type:
+      - $ref: '#/NarrativeContentItem'
+      Cardinality: 0..1
+      Relationship Type: UNKNOWN
+      Model Name: contentItem
     previousId:
       Type:
       - $ref: '#/NarrativeContent'
@@ -1845,11 +1853,30 @@ NarrativeContent:
         the set of child content associated with an instance of narrative content.
       Relationship Type: Ref
       Model Name: children
+    text:
+      Type:
+      - $ref: UNKNOWN
+      Relationship Type: Value
     instanceType:
       Type:
       - $ref: '#/string'
       Cardinality: 0..1
       Relationship Type: Value
+NarrativeContentItem:
+  Modifier: Abstract
+  Attributes:
+    id:
+      Type:
+      - $ref: '#/string'
+      Model Name: id
+    name:
+      Type:
+      - $ref: '#/string'
+      Model Name: name
+    text:
+      Type:
+      - $ref: '#/string'
+      Model Name: text
 Objective:
   NCI C-Code: C142450
   Preferred Term: Study Objective
@@ -2848,8 +2875,8 @@ Study:
       Model Name: versions
     documentedBy:
       Type:
-      - $ref: '#/StudyProtocolDocument'
-      Cardinality: 0..1
+      - $ref: '#/StudyDefinitionDocument'
+      Cardinality: 0..*
       Definition: A USDM relationship between the Study and StudyProtocolDocument
         classes signifying that the study is documented in a study protocol document.
       Relationship Type: Value
@@ -3243,6 +3270,85 @@ StudyCohort:
       - $ref: '#/string'
       Cardinality: 0..1
       Relationship Type: Value
+StudyDefinitionDocument:
+  Modifier: Abstract
+  Attributes:
+    id:
+      Type:
+      - $ref: '#/string'
+      Model Name: id
+    name:
+      Type:
+      - $ref: '#/string'
+      Model Name: name
+    description:
+      Type:
+      - $ref: '#/string'
+      Model Name: description
+    label:
+      Type:
+      - $ref: '#/string'
+      Model Name: label
+    template:
+      Type:
+      - $ref: '#/string'
+      Model Name: template
+    language:
+      Type:
+      - $ref: '#/Code'
+      Cardinality: '1'
+      Model Name: language
+    type:
+      Type:
+      - $ref: '#/Code'
+      Cardinality: '1'
+      Model Name: type
+    notes:
+      Type:
+      - $ref: '#/CommentAnnotation'
+      Cardinality: 0..*
+      Model Name: notes
+    versions:
+      Type:
+      - $ref: '#/StudyDefinitionDocumentVersion'
+      Cardinality: 0..*
+      Model Name: versions
+StudyDefinitionDocumentVersion:
+  Modifier: Abstract
+  Attributes:
+    id:
+      Type:
+      - $ref: '#/string'
+      Model Name: id
+    version:
+      Type:
+      - $ref: '#/string'
+      Model Name: version
+    status:
+      Type:
+      - $ref: '#/Code'
+      Cardinality: '1'
+      Model Name: status
+    notes:
+      Type:
+      - $ref: '#/CommentAnnotation'
+      Cardinality: 0..*
+      Model Name: notes
+    dateValues:
+      Type:
+      - $ref: '#/GovernanceDate'
+      Cardinality: 0..*
+      Model Name: dateValues
+    contents:
+      Type:
+      - $ref: '#/NarrativeContent'
+      Cardinality: 0..*
+      Model Name: contents
+    children:
+      Type:
+      - $ref: '#/StudyDefinitionDocumentVersion'
+      Cardinality: 0..*
+      Model Name: children
 StudyDesign:
   NCI C-Code: C15320
   Preferred Term: Study Design
@@ -3449,6 +3555,15 @@ StudyDesign:
         which identifies the set of study cells associated with the study design. '
       Relationship Type: Value
       Model Name: studyCells
+    documentVersionId:
+      Type:
+      - $ref: '#/StudyDefinitionDocumentVersion'
+      Cardinality: 0..1
+      Definition: A USDM relationship between the StudyDesign and StudyProtocolDocumentVersion
+        classes which identifies the version of the protocol document associated with
+        the study design.
+      Relationship Type: Ref
+      Model Name: documentVersion
     elements:
       Type:
       - $ref: '#/StudyElement'
@@ -3457,15 +3572,6 @@ StudyDesign:
         which identifies the set of study elements associated with the study design.
       Relationship Type: Value
       Model Name: elements
-    documentVersionId:
-      Type:
-      - $ref: '#/StudyProtocolDocumentVersion'
-      Cardinality: 0..1
-      Definition: A USDM relationship between the StudyDesign and StudyProtocolDocumentVersion
-        classes which identifies the version of the protocol document associated with
-        the study design.
-      Relationship Type: Ref
-      Model Name: documentVersion
     studyInterventions:
       Type:
       - $ref: '#/StudyIntervention'
@@ -3980,124 +4086,6 @@ StudyIntervention:
       - $ref: '#/string'
       Cardinality: 0..1
       Relationship Type: Value
-StudyProtocolDocument:
-  NCI C-Code: C93381
-  Preferred Term: Study Protocol Document
-  Definition: A representation of the study protocol (that persists over time) in
-    document form.
-  Modifier: Concrete
-  Attributes:
-    id:
-      Type:
-      - $ref: '#/string'
-      Relationship Type: Value
-      Model Name: id
-    name:
-      Type:
-      - $ref: '#/string'
-      NCI C-Code: CNEW
-      Preferred Term: Study Protocol Document Name
-      Definition: The literal identifier (i.e., distinctive designation) of the study
-        protocol document.
-      Relationship Type: Value
-      Model Name: name
-    description:
-      Type:
-      - $ref: '#/string'
-      NCI C-Code: CNEW
-      Preferred Term: Study Protocol Document Description
-      Definition: A narrative representation of the study protocol document.
-      Relationship Type: Value
-      Model Name: description
-    label:
-      Type:
-      - $ref: '#/string'
-      NCI C-Code: CNEW
-      Preferred Term: Study Protocol Document Label
-      Definition: The short descriptive designation for the study protocol document.
-      Relationship Type: Value
-      Model Name: label
-    versions:
-      Type:
-      - $ref: '#/StudyProtocolDocumentVersion'
-      Cardinality: 0..*
-      Definition: A USDM relationship between the StudyProtocolDocument and StudyProtocolDocumentVersion
-        classes which identifies the set of versions associated with the study protocol
-        document.
-      Relationship Type: Value
-      Model Name: versions
-    instanceType:
-      Type:
-      - $ref: '#/string'
-      Cardinality: 0..1
-      Relationship Type: Value
-StudyProtocolDocumentVersion:
-  NCI C-Code: C93490
-  Preferred Term: Study Protocol Version
-  Definition: A plan at a particular point in time for a formal investigation to assess
-    the utility, impact, pharmacological, physiological, and/or psychological effects
-    of a particular treatment, procedure, drug, device, biologic, food product, cosmetic,
-    care plan, or subject characteristic. (BRIDG)
-  Modifier: Concrete
-  Attributes:
-    id:
-      Type:
-      - $ref: '#/string'
-      Relationship Type: Value
-      Model Name: id
-    protocolVersion:
-      Type:
-      - $ref: '#/string'
-      NCI C-Code: C93490
-      Preferred Term: Study Protocol Version
-      Definition: A plan at a particular point in time for a formal investigation
-        to assess the utility, impact, pharmacological, physiological, and/or psychological
-        effects of a particular treatment, procedure, drug, device, biologic, food
-        product, cosmetic, care plan, or subject characteristic. (BRIDG)
-      Relationship Type: Value
-      Model Name: protocolVersion
-    protocolStatus:
-      Type:
-      - $ref: '#/Code'
-      NCI C-Code: C188818
-      Cardinality: '1'
-      Preferred Term: Protocol Status
-      Definition: A condition of the protocol at a point in time with respect to its
-        state of readiness for implementation.
-      Codelist Ref: C188723
-      Relationship Type: Value
-      Model Name: protocolStatus
-    dateValues:
-      Type:
-      - $ref: '#/GovernanceDate'
-      Cardinality: 0..*
-      Definition: A USDM relationship between the StudyProtocolDocumentVersion and
-        GovernanceDate classes which provides the set of governance dates associated
-        with the study protocol document version.
-      Relationship Type: Value
-      Model Name: dateValues
-    contents:
-      Type:
-      - $ref: '#/NarrativeContent'
-      Cardinality: 0..*
-      Definition: A USDM relationship between the StudyProtocolDocumentVersion and
-        NarrativeContent classes which identifies the set of narrative content associated
-        with the version of the study protocol document.
-      Relationship Type: Value
-      Model Name: contents
-    childIds:
-      Type:
-      - $ref: '#/StudyProtocolDocumentVersion'
-      Cardinality: 0..*
-      Definition: A USDM relationship within the StudyProtocolDocumentVersion class
-        which identifies the set of child documents of a protocol document.
-      Relationship Type: Ref
-      Model Name: children
-    instanceType:
-      Type:
-      - $ref: '#/string'
-      Cardinality: 0..1
-      Relationship Type: Value
 StudySite:
   NCI C-Code: C80403
   Preferred Term: Study Site
@@ -4275,6 +4263,12 @@ StudyVersion:
         version.
       Relationship Type: Value
       Model Name: amendments
+    documentVersions*:
+      Type:
+      - $ref: '#/StudyDefinitionDocumentVersion'
+      Cardinality: 0..*
+      Relationship Type: UNKNOWN
+      Model Name: documentVersions
     studyDesigns:
       Type:
       - $ref: '#/StudyDesign'
@@ -4292,15 +4286,6 @@ StudyVersion:
         study version.
       Relationship Type: Value
       Model Name: studyIdentifiers
-    documentVersionId:
-      Type:
-      - $ref: '#/StudyProtocolDocumentVersion'
-      Cardinality: 0..1
-      Definition: A USDM relationship between the StudyVersion and StudyProtocolDocumentVersion
-        classes which identifies the version of the study protocol document associated
-        with the study version.
-      Relationship Type: Ref
-      Model Name: documentVersion
     titles:
       Type:
       - $ref: '#/StudyTitle'
@@ -4309,6 +4294,10 @@ StudyVersion:
         which identifies the set of study titles associated with the study version.
       Relationship Type: Value
       Model Name: titles
+    documentVersionId:
+      Type:
+      - $ref: UNKNOWN
+      Relationship Type: Value
     criteria:
       Type:
       - $ref: '#/EligibilityCriterion'
