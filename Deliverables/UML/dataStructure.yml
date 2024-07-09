@@ -546,7 +546,7 @@ BiomedicalConceptCategory:
     label:
       Type:
       - $ref: '#/string'
-      NCI C-Code: CNEW
+      NCI C-Code: C207471
       Preferred Term: Biomedical Concept Category Label
       Definition: The short descriptive designation for the biomedical concept category.
       Relationship Type: Value
@@ -607,7 +607,7 @@ BiomedicalConceptProperty:
     name:
       Type:
       - $ref: '#/string'
-      NCI C-Code: CNEW
+      NCI C-Code: C202494
       Preferred Term: Biomedical Concept Property Name
       Definition: The literal identifier (i.e., distinctive designation) of the biomedical
         concept property.
@@ -624,7 +624,7 @@ BiomedicalConceptProperty:
     isRequired:
       Type:
       - $ref: '#/Boolean'
-      NCI C-Code: CNEW
+      NCI C-Code: C202495
       Preferred Term: Biomedical Concept Property Required Indicator
       Definition: An indication as to whether the biomedical concept property is required.
       Relationship Type: Value
@@ -632,7 +632,7 @@ BiomedicalConceptProperty:
     isEnabled:
       Type:
       - $ref: '#/Boolean'
-      NCI C-Code: CNEW
+      NCI C-Code: C202496
       Preferred Term: Biomedical Concept Property Enabled Indicator
       Definition: An indication as to whether the biomedical concept property is activated
         for use within a given usage context for a biomedical concept.
@@ -758,7 +758,7 @@ Characteristic:
     name:
       Type:
       - $ref: '#/string'
-      NCI C-Code: CNEW
+      NCI C-Code: C207477
       Preferred Term: Characteristic Name
       Definition: The literal identifier (i.e., distinctive designation) of the characteristic.
       Relationship Type: Value
@@ -768,7 +768,7 @@ Characteristic:
     description:
       Type:
       - $ref: '#/string'
-      NCI C-Code: CNEW
+      NCI C-Code: C207475
       Preferred Term: Characteristic Description
       Definition: A narrative representation of the characteristic.
       Relationship Type: Value
@@ -778,7 +778,7 @@ Characteristic:
     label:
       Type:
       - $ref: '#/string'
-      NCI C-Code: CNEW
+      NCI C-Code: C207476
       Preferred Term: Characteristic Label
       Definition: The short descriptive designation for the characteristic.
       Relationship Type: Value
@@ -788,7 +788,7 @@ Characteristic:
     text:
       Type:
       - $ref: '#/string'
-      NCI C-Code: CNEW
+      NCI C-Code: C207478
       Preferred Term: Characteristic Text
       Definition: An instance of structured text that represents the characteristic.
       Relationship Type: Value
@@ -925,7 +925,7 @@ Condition:
     name:
       Type:
       - $ref: '#/string'
-      NCI C-Code: CNEW
+      NCI C-Code: C207483
       Preferred Term: Condition Name
       Definition: The literal identifier (i.e., distinctive designation) of the condition.
       Relationship Type: Value
@@ -935,7 +935,7 @@ Condition:
     description:
       Type:
       - $ref: '#/string'
-      NCI C-Code: CNEW
+      NCI C-Code: C207481
       Preferred Term: Condition Description
       Definition: A narrative representation of the condition.
       Relationship Type: Value
@@ -945,7 +945,7 @@ Condition:
     label:
       Type:
       - $ref: '#/string'
-      NCI C-Code: CNEW
+      NCI C-Code: C207482
       Preferred Term: Condition Label
       Definition: The short descriptive designation for the condition.
       Relationship Type: Value
@@ -955,7 +955,7 @@ Condition:
     text:
       Type:
       - $ref: '#/string'
-      NCI C-Code: CNEW
+      NCI C-Code: C207484
       Preferred Term: Condition Text
       Definition: An instance of structured text that represents the condition.
       Relationship Type: Value
@@ -1066,7 +1066,7 @@ EligibilityCriterion:
     name:
       Type:
       - $ref: '#/string'
-      NCI C-Code: CNEW
+      NCI C-Code: C207488
       Preferred Term: Study Eligibility Criteria Name
       Definition: The literal identifier (i.e., distinctive designation) of the study
         eligibility criteria.
@@ -1077,7 +1077,7 @@ EligibilityCriterion:
     description:
       Type:
       - $ref: '#/string'
-      NCI C-Code: CNEW
+      NCI C-Code: C207486
       Preferred Term: Study Eligibility Criteria Description
       Definition: A narrative representation of the study eligibility criteria.
       Relationship Type: Value
@@ -1087,7 +1087,7 @@ EligibilityCriterion:
     label:
       Type:
       - $ref: '#/string'
-      NCI C-Code: CNEW
+      NCI C-Code: C207487
       Preferred Term: Study Eligibility Criteria Label
       Definition: The short descriptive designation for the study eligibility criteria.
       Relationship Type: Value
@@ -1097,7 +1097,7 @@ EligibilityCriterion:
     text:
       Type:
       - $ref: '#/string'
-      NCI C-Code: CNEW
+      NCI C-Code: C207485
       Preferred Term: Eligibility Criteria Text
       Definition: An instance of structured text that represents the study eligibility
         criteria.
@@ -1129,7 +1129,7 @@ EligibilityCriterion:
     identifier:
       Type:
       - $ref: '#/string'
-      NCI C-Code: CNEW
+      NCI C-Code: C207489
       Preferred Term: Study Eligibility Criterion Identifier
       Definition: A sequence of characters used to identify, name, or characterize
         the inclusion or exclusion criterion.
@@ -1201,7 +1201,7 @@ Encounter:
     label:
       Type:
       - $ref: '#/string'
-      NCI C-Code: CNEW
+      NCI C-Code: C207490
       Preferred Term: Encounter Label
       Definition: The short descriptive designation for the encounter.
       Relationship Type: Value
@@ -1318,7 +1318,7 @@ Endpoint:
     name:
       Type:
       - $ref: '#/string'
-      NCI C-Code: CNEW
+      NCI C-Code: C207492
       Preferred Term: Endpoint Name
       Definition: The literal identifier (i.e., distinctive designation) of the study
         endpoint.
@@ -1339,7 +1339,7 @@ Endpoint:
     label:
       Type:
       - $ref: '#/string'
-      NCI C-Code: CNEW
+      NCI C-Code: C207491
       Preferred Term: Endpoint Label
       Definition: The short descriptive designation for the study endpoint.
       Relationship Type: Value
@@ -1349,7 +1349,7 @@ Endpoint:
     text:
       Type:
       - $ref: '#/string'
-      NCI C-Code: CNEW
+      NCI C-Code: C207493
       Preferred Term: Study Endpoint Text
       Definition: An instance of structured text that represents the study endpoint.
       Relationship Type: Value
@@ -1511,7 +1511,7 @@ GeographicScope:
     code:
       Type:
       - $ref: '#/AliasCode'
-      NCI C-Code: CNEW
+      NCI C-Code: C207494
       Cardinality: 0..1
       Preferred Term: Geographic Scope Code
       Definition: A symbol or combination of symbols which is assigned to the geographic
@@ -1523,7 +1523,7 @@ GeographicScope:
     type:
       Type:
       - $ref: '#/Code'
-      NCI C-Code: CNEW
+      NCI C-Code: C207495
       Cardinality: '1'
       Preferred Term: Geographic Scope Type
       Definition: A characterization or classification of the geographic scope.
@@ -1550,7 +1550,7 @@ GovernanceDate:
     name:
       Type:
       - $ref: '#/string'
-      NCI C-Code: CNEW
+      NCI C-Code: C207499
       Preferred Term: Study Governance Date Name
       Definition: The literal identifier (i.e., distinctive designation) of the study
         governance date
@@ -1559,7 +1559,7 @@ GovernanceDate:
     description:
       Type:
       - $ref: '#/string'
-      NCI C-Code: CNEW
+      NCI C-Code: C207497
       Preferred Term: Study Governance Date Description
       Definition: A narrative representation of the study governance date.
       Relationship Type: Value
@@ -1567,7 +1567,7 @@ GovernanceDate:
     label:
       Type:
       - $ref: '#/string'
-      NCI C-Code: CNEW
+      NCI C-Code: C207498
       Preferred Term: Study Governance Date Label
       Definition: The short descriptive designation for the study governance date.
       Relationship Type: Value
@@ -1575,7 +1575,7 @@ GovernanceDate:
     dateValue:
       Type:
       - $ref: '#/Date'
-      NCI C-Code: CNEW
+      NCI C-Code: C207500
       Preferred Term: Study Governance Date Value
       Definition: The information contained in the date field.
       Relationship Type: Value
@@ -1583,7 +1583,7 @@ GovernanceDate:
     type:
       Type:
       - $ref: '#/Code'
-      NCI C-Code: CNEW
+      NCI C-Code: C207496
       Cardinality: '1'
       Preferred Term: Protocol Approval Date Type
       Definition: A characterization or classification of the protocol approval date.
@@ -1619,7 +1619,7 @@ Indication:
     name:
       Type:
       - $ref: '#/string'
-      NCI C-Code: CNEW
+      NCI C-Code: C207503
       Preferred Term: Disease/Condition Indication Name
       Definition: The literal identifier (i.e., distinctive designation) of the disease/condition
         indication.
@@ -1637,7 +1637,7 @@ Indication:
     label:
       Type:
       - $ref: '#/string'
-      NCI C-Code: CNEW
+      NCI C-Code: C207502
       Preferred Term: Disease/Condition Indication Label
       Definition: The short descriptive designation for the disease/condition indication.
       Relationship Type: Value
@@ -1645,7 +1645,7 @@ Indication:
     isRareDisease:
       Type:
       - $ref: '#/Boolean'
-      NCI C-Code: CNEW
+      NCI C-Code: C207501
       Preferred Term: Disease/Condition Indication Is Rare Disease Indicator
       Definition: An indication as to whether the disease/condition indication under
         study is considered a rare disease.
@@ -1709,7 +1709,7 @@ IntercurrentEvent:
     label:
       Type:
       - $ref: '#/string'
-      NCI C-Code: CNEW
+      NCI C-Code: C207504
       Preferred Term: Intercurrent Event Label
       Definition: The short descriptive designation for the intercurrent event.
       Relationship Type: Value
@@ -1752,7 +1752,7 @@ Masking:
     description:
       Type:
       - $ref: '#/string'
-      NCI C-Code: CNEW
+      NCI C-Code: C207505
       Preferred Term: Masking Description
       Definition: A narrative representation of the study masking strategy, based
         on a person's role within the study.
@@ -1761,7 +1761,7 @@ Masking:
     role:
       Type:
       - $ref: '#/Code'
-      NCI C-Code: CNEW
+      NCI C-Code: C207506
       Cardinality: '1'
       Preferred Term: Masking Role
       Definition: An identifying designation assigned to a masked individual within
@@ -1789,7 +1789,7 @@ NarrativeContent:
     name:
       Type:
       - $ref: '#/string'
-      NCI C-Code: CNEW
+      NCI C-Code: C207507
       Preferred Term: Narrative Content Name
       Definition: The literal identifier (i.e., distinctive designation) of the narrative
         content.
@@ -1798,7 +1798,7 @@ NarrativeContent:
     sectionNumber:
       Type:
       - $ref: '#/string'
-      NCI C-Code: CNEW
+      NCI C-Code: C207509
       Preferred Term: Section Number
       Definition: The numeric identifier assigned to a particular document section.
       Relationship Type: Value
@@ -1806,7 +1806,7 @@ NarrativeContent:
     sectionTitle:
       Type:
       - $ref: '#/string'
-      NCI C-Code: CNEW
+      NCI C-Code: C207510
       Preferred Term: Section Title
       Definition: An identifying designation for the document section.
       Relationship Type: Value
@@ -1918,7 +1918,7 @@ Objective:
     name:
       Type:
       - $ref: '#/string'
-      NCI C-Code: CNEW
+      NCI C-Code: C207512
       Preferred Term: Study Objective Name
       Definition: The literal identifier (i.e., distinctive designation) of the study
         objective.
@@ -1939,7 +1939,7 @@ Objective:
     label:
       Type:
       - $ref: '#/string'
-      NCI C-Code: CNEW
+      NCI C-Code: C207511
       Preferred Term: Study Objective Label
       Definition: The short descriptive designation for the study objective.
       Relationship Type: Value
@@ -1949,7 +1949,7 @@ Objective:
     text:
       Type:
       - $ref: '#/string'
-      NCI C-Code: CNEW
+      NCI C-Code: C207513
       Preferred Term: Study Objective Text
       Definition: An instance of structured text that represents the study objective.
       Relationship Type: Value
@@ -2026,7 +2026,7 @@ Organization:
     label:
       Type:
       - $ref: '#/string'
-      NCI C-Code: CNEW
+      NCI C-Code: C207514
       Preferred Term: Organization Label
       Definition: The short descriptive designation for the organization.
       Relationship Type: Value
@@ -2088,7 +2088,7 @@ ParameterMap:
     tag:
       Type:
       - $ref: '#/string'
-      NCI C-Code: CNEW
+      NCI C-Code: C207515
       Preferred Term: Programming Tag
       Definition: Character strings bounded by angle brackets that act as containers
         for programming language elements.
@@ -2097,7 +2097,7 @@ ParameterMap:
     reference:
       Type:
       - $ref: '#/string'
-      NCI C-Code: CNEW
+      NCI C-Code: C207516
       Preferred Term: Programming Tag Reference
       Definition: The reference for a tag used in programming languages, such as a
         markup language (e.g., HTML, XML), to store attributes and elements.
@@ -2124,7 +2124,7 @@ PopulationDefinition:
     name:
       Type:
       - $ref: '#/string'
-      NCI C-Code: CNEW
+      NCI C-Code: C207520
       Preferred Term: Population Definition Name
       Definition: The literal identifier (i.e., distinctive designation) of the population
         definition.
@@ -2132,21 +2132,21 @@ PopulationDefinition:
     description:
       Type:
       - $ref: '#/string'
-      NCI C-Code: CNEW
+      NCI C-Code: C207517
       Preferred Term: Population Definition Description
       Definition: A narrative representation of the population definition.
       Model Name: description
     label:
       Type:
       - $ref: '#/string'
-      NCI C-Code: CNEW
+      NCI C-Code: C207519
       Preferred Term: Population Definition Label
       Definition: The short descriptive designation for the population definition.
       Model Name: label
     includesHealthySubjects:
       Type:
       - $ref: '#/Boolean'
-      NCI C-Code: CNEW
+      NCI C-Code: C207518
       Preferred Term: Population Definition Includes Healthy Subjects Indicator
       Definition: An indication as to whether the population definition includes healthy
         subjects, that is, subjects without the disease or condition under study.
@@ -2154,7 +2154,7 @@ PopulationDefinition:
     plannedSex:
       Type:
       - $ref: '#/Code'
-      NCI C-Code: CNEW
+      NCI C-Code: C207523
       Cardinality: 0..1
       Preferred Term: Population Definition Planned Sex
       Definition: The protocol-defined sex within the population definition.
@@ -2186,7 +2186,7 @@ PopulationDefinition:
     plannedEnrollmentNumber:
       Type:
       - $ref: '#/Range'
-      NCI C-Code: CNEW
+      NCI C-Code: C207522
       Cardinality: 0..1
       Preferred Term: Population Definition Planned Enrollment Number
       Definition: The value representing the planned number of subjects to be entered
@@ -2195,7 +2195,7 @@ PopulationDefinition:
     plannedCompletionNumber:
       Type:
       - $ref: '#/Range'
-      NCI C-Code: CNEW
+      NCI C-Code: C207521
       Cardinality: 0..1
       Preferred Term: Population Definition Planned Completion Number
       Definition: The value representing the planned number of subjects that must
@@ -2233,7 +2233,7 @@ Procedure:
     label:
       Type:
       - $ref: '#/string'
-      NCI C-Code: CNEW
+      NCI C-Code: C207524
       Preferred Term: Procedure Label
       Definition: The short descriptive designation for the procedure.
       Relationship Type: Value
@@ -2346,7 +2346,7 @@ Range:
     isApproximate:
       Type:
       - $ref: '#/Boolean'
-      NCI C-Code: CNEW
+      NCI C-Code: C207525
       Preferred Term: Value Range is Approximate Indicator
       Definition: An indication as to whether the value range is almost, but not quite,
         exact.
@@ -2388,7 +2388,7 @@ ResearchOrganization:
     name:
       Type:
       - $ref: '#/string'
-      NCI C-Code: CNEW
+      NCI C-Code: C207529
       Preferred Term: Research Organization Name
       Definition: The literal identifier (i.e., distinctive designation) of the research
         organization.
@@ -2399,7 +2399,7 @@ ResearchOrganization:
     label:
       Type:
       - $ref: '#/string'
-      NCI C-Code: CNEW
+      NCI C-Code: C207528
       Preferred Term: Research Organization Label
       Definition: The short descriptive designation for the research organization.
       Relationship Type: Value
@@ -2409,7 +2409,7 @@ ResearchOrganization:
     identifier:
       Type:
       - $ref: '#/string'
-      NCI C-Code: CNEW
+      NCI C-Code: C207527
       Preferred Term: Research Organization Identifier
       Definition: A sequence of characters used to identify, name, or characterize
         the research organization.
@@ -2420,7 +2420,7 @@ ResearchOrganization:
     identifierScheme:
       Type:
       - $ref: '#/string'
-      NCI C-Code: CNEW
+      NCI C-Code: C207526
       Preferred Term: Identifier Provider Research Organization Name
       Definition: The name of the research organization that provides the identifier
         for the entity.
@@ -2534,7 +2534,7 @@ ScheduleTimeline:
     label:
       Type:
       - $ref: '#/string'
-      NCI C-Code: CNEW
+      NCI C-Code: C207530
       Preferred Term: Schedule Timeline Label
       Definition: The short descriptive designation for the schedule timeline.
       Relationship Type: Value
@@ -2630,7 +2630,7 @@ ScheduledActivityInstance:
     name:
       Type:
       - $ref: '#/string'
-      NCI C-Code: CNEW
+      NCI C-Code: C207533
       Preferred Term: Scheduled Activity Instance Name
       Definition: The literal identifier (i.e., distinctive designation) of the scheduled
         activity instance.
@@ -2641,7 +2641,7 @@ ScheduledActivityInstance:
     description:
       Type:
       - $ref: '#/string'
-      NCI C-Code: CNEW
+      NCI C-Code: C207531
       Preferred Term: Scheduled Activity Instance Description
       Definition: A narrative representation of the scheduled activity instance.
       Relationship Type: Value
@@ -2651,7 +2651,7 @@ ScheduledActivityInstance:
     label:
       Type:
       - $ref: '#/string'
-      NCI C-Code: CNEW
+      NCI C-Code: C207532
       Preferred Term: Scheduled Activity Instance Label
       Definition: The short descriptive designation for the scheduled activity instance.
       Relationship Type: Value
@@ -2737,7 +2737,7 @@ ScheduledDecisionInstance:
     name:
       Type:
       - $ref: '#/string'
-      NCI C-Code: CNEW
+      NCI C-Code: C207536
       Preferred Term: Scheduled Decision Instance Name
       Definition: The literal identifier (i.e., distinctive designation) of the scheduled
         Decision instance.
@@ -2748,7 +2748,7 @@ ScheduledDecisionInstance:
     description:
       Type:
       - $ref: '#/string'
-      NCI C-Code: CNEW
+      NCI C-Code: C207534
       Preferred Term: Scheduled Decision Instance Description
       Definition: A narrative representation of the scheduled Decision instance.
       Relationship Type: Value
@@ -2758,7 +2758,7 @@ ScheduledDecisionInstance:
     label:
       Type:
       - $ref: '#/string'
-      NCI C-Code: CNEW
+      NCI C-Code: C207535
       Preferred Term: Scheduled Decision Instance Label
       Definition: The short descriptive designation for the scheduled Decision instance.
       Relationship Type: Value
@@ -2816,7 +2816,7 @@ ScheduledInstance:
     name:
       Type:
       - $ref: '#/string'
-      NCI C-Code: CNEW
+      NCI C-Code: C207455
       Preferred Term: Scheduled Instance Name
       Definition: The literal identifier (i.e., distinctive designation) of the scheduled
         instance.
@@ -2824,14 +2824,14 @@ ScheduledInstance:
     description:
       Type:
       - $ref: '#/string'
-      NCI C-Code: CNEW
+      NCI C-Code: C207453
       Preferred Term: Scheduled Instance Description
       Definition: A narrative representation of the scheduled instance.
       Model Name: description
     label:
       Type:
       - $ref: '#/string'
-      NCI C-Code: CNEW
+      NCI C-Code: C207454
       Preferred Term: Scheduled Instance Label
       Definition: The short descriptive designation for the scheduled instance.
       Model Name: label
@@ -2882,7 +2882,7 @@ Study:
     label:
       Type:
       - $ref: '#/string'
-      NCI C-Code: CNEW
+      NCI C-Code: C207479
       Preferred Term: Study Label
       Definition: The short descriptive designation for the study.
       Relationship Type: Value
@@ -2923,7 +2923,7 @@ StudyAmendment:
     number:
       Type:
       - $ref: '#/string'
-      NCI C-Code: CNEW
+      NCI C-Code: C207537
       Preferred Term: Study Amendment Number
       Definition: A string of numerals that uniquely identifies a protocol amendment.
       Relationship Type: Value
@@ -2931,7 +2931,7 @@ StudyAmendment:
     summary:
       Type:
       - $ref: '#/string'
-      NCI C-Code: CNEW
+      NCI C-Code: C115627
       Preferred Term: Study Amendment Summary
       Definition: A short narrative representation describing the changes introduced
         in the current version of the protocol.
@@ -2940,7 +2940,7 @@ StudyAmendment:
     substantialImpact:
       Type:
       - $ref: '#/Boolean'
-      NCI C-Code: CNEW
+      NCI C-Code: C207538
       Preferred Term: Study Amendment Substantial Impact Indicator
       Definition: An indication as to whether the amendment is likely to have a substantial
         impact on the safety or rights of study subjects/participants.
@@ -2999,7 +2999,7 @@ StudyAmendmentReason:
     otherReason:
       Type:
       - $ref: '#/string'
-      NCI C-Code: CNEW
+      NCI C-Code: C207539
       Preferred Term: Other Reason for Study Amendment
       Definition: The rationale for the change(s) to, or formal clarification of,
         a protocol that is not otherwise specified.
@@ -3008,7 +3008,7 @@ StudyAmendmentReason:
     code:
       Type:
       - $ref: '#/Code'
-      NCI C-Code: CNEW
+      NCI C-Code: C207540
       Cardinality: '1'
       Preferred Term: Study Amendment Reason Code
       Definition: A symbol or combination of symbols which is assigned to the study
@@ -3054,7 +3054,7 @@ StudyArm:
     label:
       Type:
       - $ref: '#/string'
-      NCI C-Code: CNEW
+      NCI C-Code: C172456
       Preferred Term: Study Arm Label
       Definition: The short descriptive designation for the study arm.
       Relationship Type: Value
@@ -3170,7 +3170,7 @@ StudyCohort:
     name:
       Type:
       - $ref: '#/string'
-      NCI C-Code: CNEW
+      NCI C-Code: C207544
       Preferred Term: Study Cohort Name
       Definition: The literal identifier (i.e., distinctive designation) of the study
         cohort.
@@ -3181,7 +3181,7 @@ StudyCohort:
     description:
       Type:
       - $ref: '#/string'
-      NCI C-Code: CNEW
+      NCI C-Code: C207542
       Preferred Term: Study Cohort Description
       Definition: A narrative representation of the study cohort.
       Relationship Type: Value
@@ -3191,7 +3191,7 @@ StudyCohort:
     label:
       Type:
       - $ref: '#/string'
-      NCI C-Code: CNEW
+      NCI C-Code: C207543
       Preferred Term: Study Cohort Label
       Definition: The short descriptive designation for the study cohort.
       Relationship Type: Value
@@ -3201,7 +3201,7 @@ StudyCohort:
     includesHealthySubjects:
       Type:
       - $ref: '#/Boolean'
-      NCI C-Code: CNEW
+      NCI C-Code: C207480
       Preferred Term: Study Cohort Includes Healthy Subjects Indicator
       Definition: An indication as to whether the study cohort includes healthy subjects,
         that is, subjects without the disease or condition under study.
@@ -3245,7 +3245,7 @@ StudyCohort:
     plannedAge:
       Type:
       - $ref: '#/Range'
-      NCI C-Code: CNEW
+      NCI C-Code: C207545
       Cardinality: 0..1
       Preferred Term: Study Cohort Planned Age
       Definition: The anticipated age of subjects within the study cohort.
@@ -3268,7 +3268,7 @@ StudyCohort:
     plannedCompletionNumber:
       Type:
       - $ref: '#/Range'
-      NCI C-Code: CNEW
+      NCI C-Code: C207546
       Cardinality: 0..1
       Preferred Term: Study Cohort Planned Completion Number
       Definition: The value representing the planned number of subjects that must
@@ -3430,7 +3430,7 @@ StudyDesign:
     label:
       Type:
       - $ref: '#/string'
-      NCI C-Code: CNEW
+      NCI C-Code: C207548
       Preferred Term: Study Design Label
       Definition: The short descriptive designation for the study design.
       Relationship Type: Value
@@ -3492,7 +3492,7 @@ StudyDesign:
     characteristics:
       Type:
       - $ref: '#/Code'
-      NCI C-Code: CNEW
+      NCI C-Code: C207547
       Cardinality: 0..*
       Preferred Term: Study Design Characteristic
       Definition: The distinguishing qualities or prominent aspect of a study design.
@@ -3694,7 +3694,7 @@ StudyDesignPopulation:
     name:
       Type:
       - $ref: '#/string'
-      NCI C-Code: CNEW
+      NCI C-Code: C207553
       Preferred Term: Target Study Population Name
       Definition: The literal identifier (i.e., distinctive designation) of the target
         study population.
@@ -3715,7 +3715,7 @@ StudyDesignPopulation:
     label:
       Type:
       - $ref: '#/string'
-      NCI C-Code: CNEW
+      NCI C-Code: C207550
       Preferred Term: Study Design Population Label
       Definition: The short descriptive designation for the study design population.
       Relationship Type: Value
@@ -3725,7 +3725,7 @@ StudyDesignPopulation:
     includesHealthySubjects:
       Type:
       - $ref: '#/Boolean'
-      NCI C-Code: CNEW
+      NCI C-Code: C207549
       Preferred Term: Study Design Population Includes Healthy Subjects Indicator
       Definition: An indication as to whether the study design population includes
         healthy subjects, that is, subjects without the disease or condition under
@@ -3737,7 +3737,7 @@ StudyDesignPopulation:
     plannedSex:
       Type:
       - $ref: '#/Code'
-      NCI C-Code: CNEW
+      NCI C-Code: C207551
       Cardinality: 0..1
       Preferred Term: Study Design Population Planned Sex
       Definition: The protocol-defined sex within the study design population.
@@ -3770,7 +3770,7 @@ StudyDesignPopulation:
     plannedAge:
       Type:
       - $ref: '#/Range'
-      NCI C-Code: CNEW
+      NCI C-Code: C207450
       Cardinality: 0..1
       Preferred Term: Study Design Population Planned Age
       Definition: The anticipated age of subjects within the study design population.
@@ -3781,7 +3781,7 @@ StudyDesignPopulation:
     plannedEnrollmentNumber:
       Type:
       - $ref: '#/Range'
-      NCI C-Code: CNEW
+      NCI C-Code: C207452
       Cardinality: 0..1
       Preferred Term: Study Design Population Planned Enrollment Number
       Definition: The value representing the planned number of subjects to be entered
@@ -3793,7 +3793,7 @@ StudyDesignPopulation:
     plannedCompletionNumber:
       Type:
       - $ref: '#/Range'
-      NCI C-Code: CNEW
+      NCI C-Code: C207451
       Cardinality: 0..1
       Preferred Term: Study Design Population Planned Completion Number
       Definition: The value representing the planned number of subjects that must
@@ -3850,7 +3850,7 @@ StudyElement:
     label:
       Type:
       - $ref: '#/string'
-      NCI C-Code: CNEW
+      NCI C-Code: C207554
       Preferred Term: Study Element Label
       Definition: The short descriptive designation for the study element.
       Relationship Type: Value
@@ -3930,7 +3930,7 @@ StudyEpoch:
     label:
       Type:
       - $ref: '#/string'
-      NCI C-Code: CNEW
+      NCI C-Code: C207555
       Preferred Term: Study Epoch Label
       Definition: The short descriptive designation for the study epoch.
       Relationship Type: Value
@@ -4034,7 +4034,7 @@ StudyIntervention:
     name:
       Type:
       - $ref: '#/string'
-      NCI C-Code: CNEW
+      NCI C-Code: C207558
       Preferred Term: Study Intervention Name
       Definition: The literal identifier (i.e., distinctive designation) of the study
         intervention.
@@ -4043,7 +4043,7 @@ StudyIntervention:
     label:
       Type:
       - $ref: '#/string'
-      NCI C-Code: CNEW
+      NCI C-Code: C207556
       Preferred Term: Study Intervention Label
       Definition: The short descriptive designation for the study intervention.
       Relationship Type: Value
@@ -4070,7 +4070,7 @@ StudyIntervention:
     role:
       Type:
       - $ref: '#/Code'
-      NCI C-Code: CNEW
+      NCI C-Code: C207560
       Cardinality: '1'
       Preferred Term: Study Intervention Role
       Definition: The intended use of the trial intervention within the context of
@@ -4081,7 +4081,7 @@ StudyIntervention:
     productDesignation:
       Type:
       - $ref: '#/Code'
-      NCI C-Code: CNEW
+      NCI C-Code: C207559
       Cardinality: '1'
       Preferred Term: Study Intervention Product Designation
       Definition: An indication as to whether the investigational intervention is
@@ -4122,7 +4122,7 @@ StudyIntervention:
     minimumResponseDuration:
       Type:
       - $ref: '#/Quantity'
-      NCI C-Code: CNEW
+      NCI C-Code: C207557
       Cardinality: 0..1
       Preferred Term: Study Intervention Minimum Response Duration
       Definition: The value representing the minimum amount of time required to meet
@@ -4148,7 +4148,7 @@ StudySite:
     name:
       Type:
       - $ref: '#/string'
-      NCI C-Code: CNEW
+      NCI C-Code: C207566
       Preferred Term: Study Site Name
       Definition: The literal identifier (i.e., distinctive designation) of the study
         site.
@@ -4157,7 +4157,7 @@ StudySite:
     description:
       Type:
       - $ref: '#/string'
-      NCI C-Code: CNEW
+      NCI C-Code: C207564
       Preferred Term: Study Site Description
       Definition: A narrative representation of the study site.
       Relationship Type: Value
@@ -4165,7 +4165,7 @@ StudySite:
     label:
       Type:
       - $ref: '#/string'
-      NCI C-Code: CNEW
+      NCI C-Code: C207565
       Preferred Term: Study Site Label
       Definition: The short descriptive designation for the study site.
       Relationship Type: Value
@@ -4197,7 +4197,7 @@ StudyTitle:
     text:
       Type:
       - $ref: '#/string'
-      NCI C-Code: CNEW
+      NCI C-Code: C207567
       Preferred Term: Study Title Text
       Definition: An instance of unstructured text that represents the study title.
       Relationship Type: Value
@@ -4205,7 +4205,7 @@ StudyTitle:
     type:
       Type:
       - $ref: '#/Code'
-      NCI C-Code: CNEW
+      NCI C-Code: C207568
       Cardinality: '1'
       Preferred Term: Study Title Type
       Definition: A characterization or classification of the study title.
@@ -4231,7 +4231,7 @@ StudyVersion:
     versionIdentifier:
       Type:
       - $ref: '#/string'
-      NCI C-Code: CNEW
+      NCI C-Code: C207570
       Preferred Term: Study Version Identifier
       Definition: A sequence of characters used to identify, name, or characterize
         the study version.
@@ -4266,7 +4266,7 @@ StudyVersion:
     businessTherapeuticAreas:
       Type:
       - $ref: '#/Code'
-      NCI C-Code: CNEW
+      NCI C-Code: C201322
       Cardinality: 0..*
       Preferred Term: Business Therapeutic Areas
       Definition: A therapeutic area classification based on the structure and operations
@@ -4379,7 +4379,7 @@ SubjectEnrollment:
     code:
       Type:
       - $ref: '#/AliasCode'
-      NCI C-Code: CNEW
+      NCI C-Code: C207571
       Cardinality: 0..1
       Preferred Term: Subject Enrollment Code
       Definition: A symbol or combination of symbols which is assigned to the subject
@@ -4391,7 +4391,7 @@ SubjectEnrollment:
     type:
       Type:
       - $ref: '#/Code'
-      NCI C-Code: CNEW
+      NCI C-Code: C207574
       Cardinality: '1'
       Preferred Term: Subject Enrollment Type
       Definition: A characterization or classification of the subject enrollment.
@@ -4402,7 +4402,7 @@ SubjectEnrollment:
     quantity:
       Type:
       - $ref: '#/Quantity'
-      NCI C-Code: CNEW
+      NCI C-Code: C207573
       Cardinality: '1'
       Preferred Term: Subject Enrollment Quantity Value
       Definition: The value representing the number of individuals enrolled in a study.
@@ -4433,7 +4433,7 @@ SyntaxTemplate:
     name:
       Type:
       - $ref: '#/string'
-      NCI C-Code: CNEW
+      NCI C-Code: C207577
       Preferred Term: Syntax Template Name
       Definition: The literal identifier (i.e., distinctive designation) of the syntax
         template.
@@ -4441,21 +4441,21 @@ SyntaxTemplate:
     description:
       Type:
       - $ref: '#/string'
-      NCI C-Code: CNEW
+      NCI C-Code: C207575
       Preferred Term: Syntax Template Description
       Definition: A narrative representation of the syntax template.
       Model Name: description
     label:
       Type:
       - $ref: '#/string'
-      NCI C-Code: CNEW
+      NCI C-Code: C207576
       Preferred Term: Syntax Template Label
       Definition: The short descriptive designation for the syntax template.
       Model Name: label
     text:
       Type:
       - $ref: '#/string'
-      NCI C-Code: CNEW
+      NCI C-Code: C207578
       Preferred Term: Syntax Template Text
       Definition: A structured text string containing prescribed text interspersed
         with user-defined parameter values.
@@ -4489,7 +4489,7 @@ SyntaxTemplateDictionary:
     name:
       Type:
       - $ref: '#/string'
-      NCI C-Code: CNEW
+      NCI C-Code: C207581
       Preferred Term: Syntax Template Dictionary Name
       Definition: The literal identifier (i.e., distinctive designation) of the syntax
         template dictionary.
@@ -4498,7 +4498,7 @@ SyntaxTemplateDictionary:
     description:
       Type:
       - $ref: '#/string'
-      NCI C-Code: CNEW
+      NCI C-Code: C207579
       Preferred Term: Syntax Template Dictionary Description
       Definition: A narrative representation of the syntax template dictionary.
       Relationship Type: Value
@@ -4506,7 +4506,7 @@ SyntaxTemplateDictionary:
     label:
       Type:
       - $ref: '#/string'
-      NCI C-Code: CNEW
+      NCI C-Code: C207580
       Preferred Term: Syntax Template Dictionary Label
       Definition: The short descriptive designation for the syntax template dictionary.
       Relationship Type: Value
@@ -4539,7 +4539,7 @@ Timing:
     name:
       Type:
       - $ref: '#/string'
-      NCI C-Code: CNEW
+      NCI C-Code: C207584
       Preferred Term: Timing Name
       Definition: The literal identifier (i.e., distinctive designation) of the timing.
       Relationship Type: Value
@@ -4556,7 +4556,7 @@ Timing:
     label:
       Type:
       - $ref: '#/string'
-      NCI C-Code: CNEW
+      NCI C-Code: C207583
       Preferred Term: Timing Label
       Definition: The short descriptive designation for the timing.
       Relationship Type: Value
@@ -4573,7 +4573,7 @@ Timing:
     valueLabel:
       Type:
       - $ref: '#/string'
-      NCI C-Code: CNEW
+      NCI C-Code: C207585
       Preferred Term: Timing Value Label
       Definition: The short descriptive designation for the timing value.
       Relationship Type: Value
@@ -4581,7 +4581,7 @@ Timing:
     windowLabel:
       Type:
       - $ref: '#/string'
-      NCI C-Code: CNEW
+      NCI C-Code: C207586
       Preferred Term: Timing Window Label
       Definition: The short descriptive designation for a time period, or other type
         of interval, during which a temporal event may be achieved, obtained, or observed.
@@ -4666,7 +4666,7 @@ TransitionRule:
     name:
       Type:
       - $ref: '#/string'
-      NCI C-Code: CNEW
+      NCI C-Code: C207588
       Preferred Term: Transition Rule Name
       Definition: The literal identifier (i.e., distinctive designation) of the transition
         rule.
@@ -4683,7 +4683,7 @@ TransitionRule:
     label:
       Type:
       - $ref: '#/string'
-      NCI C-Code: CNEW
+      NCI C-Code: C207587
       Preferred Term: Transition Rule Label
       Definition: The short descriptive designation for the transition rule.
       Relationship Type: Value
@@ -4691,7 +4691,7 @@ TransitionRule:
     text:
       Type:
       - $ref: '#/string'
-      NCI C-Code: CNEW
+      NCI C-Code: C207589
       Preferred Term: Transition Rule Text
       Definition: An instance of unstructured text that represents the transition
         rule.
