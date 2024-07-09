@@ -31,7 +31,7 @@ Activity:
     label:
       Type:
       - $ref: '#/string'
-      NCI C-Code: CNEW
+      NCI C-Code: C207458
       Preferred Term: Activity Label
       Definition: The short descriptive designation for the activity.
       Relationship Type: Value
@@ -213,7 +213,7 @@ AdministrationDuration:
     description:
       Type:
       - $ref: '#/string'
-      NCI C-Code: CNEW
+      NCI C-Code: C207459
       Preferred Term: Administration Duration Description
       Definition: A narrative representation of the agent administration duration.
       Relationship Type: Value
@@ -221,7 +221,7 @@ AdministrationDuration:
     durationWillVary:
       Type:
       - $ref: '#/Boolean'
-      NCI C-Code: CNEW
+      NCI C-Code: C207461
       Preferred Term: Administration Duration Will Vary Indicator
       Definition: An indication as to whether the agent administration duration is
         planned to vary within and/or across subjects.
@@ -230,7 +230,7 @@ AdministrationDuration:
     reasonDurationWillVary:
       Type:
       - $ref: '#/string'
-      NCI C-Code: CNEW
+      NCI C-Code: C207462
       Preferred Term: Administration Duration Reason Duration Will Vary
       Definition: The explanation for why the agent administration duration will vary
         within and/or across subjects.
@@ -239,7 +239,7 @@ AdministrationDuration:
     quantity:
       Type:
       - $ref: '#/Quantity'
-      NCI C-Code: CNEW
+      NCI C-Code: C207460
       Cardinality: 0..1
       Preferred Term: Administration Duration Quantity Value
       Definition: The value representing the amount of time over which the administration
@@ -266,7 +266,7 @@ AgentAdministration:
     name:
       Type:
       - $ref: '#/string'
-      NCI C-Code: CNEW
+      NCI C-Code: C207465
       Preferred Term: Agent Administration Name
       Definition: The literal identifier (i.e., distinctive designation) of the agent
         administration.
@@ -275,7 +275,7 @@ AgentAdministration:
     description:
       Type:
       - $ref: '#/string'
-      NCI C-Code: CNEW
+      NCI C-Code: C207463
       Preferred Term: Agent Administration Description
       Definition: A narrative representation of the agent administration.
       Relationship Type: Value
@@ -283,7 +283,7 @@ AgentAdministration:
     label:
       Type:
       - $ref: '#/string'
-      NCI C-Code: CNEW
+      NCI C-Code: C207464
       Preferred Term: Agent Administration Label
       Definition: The short descriptive designation for the agent administration.
       Relationship Type: Value
@@ -310,7 +310,7 @@ AgentAdministration:
     dose:
       Type:
       - $ref: '#/Quantity'
-      NCI C-Code: CNEW
+      NCI C-Code: C167190
       Cardinality: '1'
       Preferred Term: Agent Administration Dose
       Definition: The value representing the amount of an agent given to an individual
@@ -391,7 +391,7 @@ AnalysisPopulation:
     text:
       Type:
       - $ref: '#/string'
-      NCI C-Code: CNEW
+      NCI C-Code: C207468
       Preferred Term: Analysis Population Text
       Definition: An instance of unstructured text that represents the analysis population.
       Relationship Type: Value
@@ -399,7 +399,7 @@ AnalysisPopulation:
     name:
       Type:
       - $ref: '#/string'
-      NCI C-Code: CNEW
+      NCI C-Code: C207467
       Preferred Term: Analysis Population Name
       Definition: The literal identifier (i.e., distinctive designation) of the analysis
         population.
@@ -416,7 +416,7 @@ AnalysisPopulation:
     label:
       Type:
       - $ref: '#/string'
-      NCI C-Code: CNEW
+      NCI C-Code: C207466
       Preferred Term: Analysis Population Label
       Definition: The short descriptive designation for the analysis population.
       Relationship Type: Value
@@ -460,7 +460,7 @@ BiomedicalConcept:
     label:
       Type:
       - $ref: '#/string'
-      NCI C-Code: CNEW
+      NCI C-Code: C207470
       Preferred Term: Biomedical Concept Label
       Definition: The short descriptive designation for the biomedical concept.
       Relationship Type: Value
@@ -485,7 +485,7 @@ BiomedicalConcept:
     code:
       Type:
       - $ref: '#/AliasCode'
-      NCI C-Code: CNEW
+      NCI C-Code: C207469
       Cardinality: '1'
       Preferred Term: Biomedical Concept Concept Code
       Definition: A concept unique identifier assigned to a biomedical concept that
@@ -616,7 +616,7 @@ BiomedicalConceptProperty:
     label:
       Type:
       - $ref: '#/string'
-      NCI C-Code: CNEW
+      NCI C-Code: C207472
       Preferred Term: Biomedical Concept Property Label
       Definition: The short descriptive designation for the biomedical concept property.
       Relationship Type: Value
@@ -682,7 +682,7 @@ BiomedicalConceptProperty:
       Cardinality: 0..1
       Relationship Type: Value
 BiomedicalConceptSurrogate:
-  NCI C-Code: CNEW
+  NCI C-Code: C207590
   Preferred Term: Biomedical Concept Surrogate
   Definition: A concept that substitutes for a standard biomedical concept from the
     designated source.
@@ -696,7 +696,7 @@ BiomedicalConceptSurrogate:
     name:
       Type:
       - $ref: '#/string'
-      NCI C-Code: CNEW
+      NCI C-Code: C207474
       Preferred Term: Biomedical Concept Surrogate Name
       Definition: The literal identifier (i.e., distinctive designation) of the biomedical
         concept surrogate.
@@ -713,7 +713,7 @@ BiomedicalConceptSurrogate:
     label:
       Type:
       - $ref: '#/string'
-      NCI C-Code: CNEW
+      NCI C-Code: C207473
       Preferred Term: Biomedical Concept Surrogate Label
       Definition: The short descriptive designation for the biomedical concept surrogate.
       Relationship Type: Value
@@ -1496,7 +1496,7 @@ Estimand:
       Cardinality: 0..1
       Relationship Type: Value
 GeographicScope:
-  NCI C-Code: CNEW
+  NCI C-Code: C207591
   Preferred Term: Geographic Scope
   Definition: The extent or range related to the physical location of an entity.
   Sub Classes:
@@ -1536,7 +1536,7 @@ GeographicScope:
       Cardinality: 0..1
       Relationship Type: Value
 GovernanceDate:
-  NCI C-Code: CNEW
+  NCI C-Code: C207595
   Preferred Term: Study Governance Date
   Definition: Any of the dates associated with event milestones within a clinical
     study's oversight and management framework.
@@ -1775,7 +1775,7 @@ Masking:
       Cardinality: 0..1
       Relationship Type: Value
 NarrativeContent:
-  NCI C-Code: CNEW
+  NCI C-Code: C207592
   Preferred Term: Narrative Content
   Definition: The container that holds an instance of unstructured text and which
     may include objects such as tables, figures, and images.
@@ -2075,7 +2075,7 @@ Organization:
       Cardinality: 0..1
       Relationship Type: Value
 ParameterMap:
-  NCI C-Code: CNEW
+  NCI C-Code: C207456
   Preferred Term: Parameter Map
   Definition: The paired name and value for a given parameter.
   Modifier: Concrete
@@ -2109,7 +2109,7 @@ ParameterMap:
       Cardinality: 0..1
       Relationship Type: Value
 PopulationDefinition:
-  NCI C-Code: CNEW
+  NCI C-Code: C207593
   Preferred Term: Population Definition
   Definition: A concise explanation of the meaning of a population.
   Sub Classes:
@@ -2909,7 +2909,7 @@ Study:
       Cardinality: 0..1
       Relationship Type: Value
 StudyAmendment:
-  NCI C-Code: CNEW
+  NCI C-Code: C207594
   Preferred Term: Study Amendment
   Definition: A written description of a change(s) to, or formal clarification of,
     a study.
@@ -2986,7 +2986,7 @@ StudyAmendment:
       Cardinality: 0..1
       Relationship Type: Value
 StudyAmendmentReason:
-  NCI C-Code: CNEW
+  NCI C-Code: C207457
   Preferred Term: Study Amendment Reason
   Definition: The rationale for the change(s) to, or formal clarification of, a protocol.
   Modifier: Concrete
@@ -4012,7 +4012,7 @@ StudyIdentifier:
       Cardinality: 0..1
       Relationship Type: Value
 StudyIntervention:
-  NCI C-Code: CNEW
+  NCI C-Code: C207649
   Preferred Term: Study Intervention
   Definition: Any agent, device, or procedure being tested or used as a reference
     or comparator in the conduct of a clinical trial.
@@ -4026,7 +4026,7 @@ StudyIntervention:
     description:
       Type:
       - $ref: '#/string'
-      NCI C-Code: CNEW
+      NCI C-Code: C207647
       Preferred Term: Study Intervention Description
       Definition: A narrative representation of the study intervention.
       Relationship Type: Value
@@ -4102,7 +4102,7 @@ StudyIntervention:
     codes:
       Type:
       - $ref: '#/Code'
-      NCI C-Code: CNEW
+      NCI C-Code: C207648
       Cardinality: 0..*
       Preferred Term: Study Intervention Code
       Definition: A symbol or combination of symbols which is assigned to the study
@@ -4414,7 +4414,7 @@ SubjectEnrollment:
       Cardinality: 0..1
       Relationship Type: Value
 SyntaxTemplate:
-  NCI C-Code: CNEW
+  NCI C-Code: C207596
   Preferred Term: Syntax Template
   Definition: A standardized pattern used for the arrangement of words and phrases
     to create well-formed, structured sentences.
@@ -4475,7 +4475,7 @@ SyntaxTemplate:
         classes which provides the dictionary entry associated with a syntax template. '
       Model Name: dictionary
 SyntaxTemplateDictionary:
-  NCI C-Code: CNEW
+  NCI C-Code: C207597
   Preferred Term: Syntax Template Dictionary
   Definition: A reference source that provides a listing of valid parameter names
     and values used in syntax template text strings.
