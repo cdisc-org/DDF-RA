@@ -2900,7 +2900,7 @@ Study:
       - $ref: '#/StudyDefinitionDocument'
       Cardinality: 0..*
       Definition: A USDM relationship between the Study and StudyDefinitionDocument
-        classes signifying that the study is documented in a study protocol document.
+        classes signifying that the study is documented in a study definition document.
       Relationship Type: Value
       Model Name: documentedBy
     instanceType:
@@ -4320,7 +4320,7 @@ StudyVersion:
       - $ref: '#/StudyDefinitionDocumentVersion'
       Cardinality: 0..*
       Definition: A USDM relationship between the StudyVersion and StudyDefinitionDocumentVersion
-        classes which identifies the version of the study protocol document associated
+        classes which identifies the version of the study definition document associated
         with the study version.
       Relationship Type: UNKNOWN
       Model Name: documentVersions
