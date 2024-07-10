@@ -3325,10 +3325,14 @@ StudyDefinitionDocument:
       Preferred Term: Study Definition Document Label
       Definition: The short descriptive designation for the study definition document.
       Model Name: label
-    template:
+    templateName:
       Type:
       - $ref: '#/string'
-      Model Name: template
+      NCI C-Code: CNEW
+      Preferred Term: Study Definition Document Template Name
+      Definition: The literal identifier (i.e., distinctive designation) of the study
+        definition document template.
+      Model Name: templateName
     language:
       Type:
       - $ref: '#/Code'
