@@ -15,16 +15,16 @@ Activity:
       Type:
       - $ref: '#/string'
       NCI C-Code: C188842
-      Preferred Term: Clinical Study Activity Name
-      Definition: The literal identifier (i.e., distinctive designation) of the clinical
-        study activity.
+      Preferred Term: Study Activity Name
+      Definition: The literal identifier (i.e., distinctive designation) of the study
+        activity.
       Relationship Type: Value
       Model Name: name
     description:
       Type:
       - $ref: '#/string'
       NCI C-Code: C70960
-      Preferred Term: Clinical Study Activity Description
+      Preferred Term: Study Activity Description
       Definition: A narrative representation of the study activity.
       Relationship Type: Value
       Model Name: description
@@ -32,8 +32,8 @@ Activity:
       Type:
       - $ref: '#/string'
       NCI C-Code: C207458
-      Preferred Term: Activity Label
-      Definition: The short descriptive designation for the activity.
+      Preferred Term: Study Activity Label
+      Definition: The short descriptive designation for the study activity.
       Relationship Type: Value
       Model Name: label
     definedProcedures:
@@ -374,8 +374,8 @@ AliasCode:
       Cardinality: 0..1
       Relationship Type: Value
 AnalysisPopulation:
-  NCI C-Code: C188854
-  Preferred Term: Target Study Population for Analysis
+  NCI C-Code: C188814
+  Preferred Term: Analysis Population
   Definition: A target study population on which an analysis is performed. These may
     be represented by the entire study population, a subgroup defined by a particular
     characteristic measured at baseline, or a principal stratum defined by the occurrence
@@ -409,8 +409,8 @@ AnalysisPopulation:
       Type:
       - $ref: '#/string'
       NCI C-Code: C188854
-      Preferred Term: Target Study Population for Analysis Description
-      Definition: A narrative representation of the study population for analysis.
+      Preferred Term: Analysis Population Description
+      Definition: A narrative representation of the analysis population.
       Relationship Type: Value
       Model Name: description
     label:
@@ -1048,7 +1048,7 @@ ConditionAssignment:
       Relationship Type: Value
 EligibilityCriterion:
   NCI C-Code: C16112
-  Preferred Term: Study Eligibility Criteria
+  Preferred Term: Study Eligibility Criterion
   Definition: Characteristics which are necessary to allow a subject to participate
     in a clinical study, as outlined in the study protocol. The concept covers inclusion
     and exclusion criteria.
@@ -1067,9 +1067,9 @@ EligibilityCriterion:
       Type:
       - $ref: '#/string'
       NCI C-Code: C207488
-      Preferred Term: Study Eligibility Criteria Name
+      Preferred Term: Study Eligibility Criterion Name
       Definition: The literal identifier (i.e., distinctive designation) of the study
-        eligibility criteria.
+        eligibility criterion.
       Relationship Type: Value
       Model Name: name
       Inherited From:
@@ -1078,8 +1078,8 @@ EligibilityCriterion:
       Type:
       - $ref: '#/string'
       NCI C-Code: C207486
-      Preferred Term: Study Eligibility Criteria Description
-      Definition: A narrative representation of the study eligibility criteria.
+      Preferred Term: Study Eligibility Criterion Description
+      Definition: A narrative representation of the study eligibility criterion.
       Relationship Type: Value
       Model Name: description
       Inherited From:
@@ -1088,8 +1088,8 @@ EligibilityCriterion:
       Type:
       - $ref: '#/string'
       NCI C-Code: C207487
-      Preferred Term: Study Eligibility Criteria Label
-      Definition: The short descriptive designation for the study eligibility criteria.
+      Preferred Term: Study Eligibility Criterion Label
+      Definition: The short descriptive designation for the study eligibility criterion.
       Relationship Type: Value
       Model Name: label
       Inherited From:
@@ -1098,9 +1098,9 @@ EligibilityCriterion:
       Type:
       - $ref: '#/string'
       NCI C-Code: C207485
-      Preferred Term: Eligibility Criteria Text
+      Preferred Term: Eligibility Criterion Text
       Definition: An instance of structured text that represents the study eligibility
-        criteria.
+        criterion.
       Relationship Type: Value
       Model Name: text
       Inherited From:
@@ -1140,7 +1140,7 @@ EligibilityCriterion:
       - $ref: '#/Code'
       NCI C-Code: C83016
       Cardinality: '1'
-      Preferred Term: Study Eligibility Criteria Category
+      Preferred Term: Study Eligibility Criterion Category
       Definition: A classification of the inclusion exclusion criterion.
       Codelist Ref: SDTM Terminology Codelist C66797
       Relationship Type: Value
@@ -1169,11 +1169,10 @@ EligibilityCriterion:
       Cardinality: 0..1
       Relationship Type: Value
 Encounter:
-  NCI C-Code: C142427
-  Preferred Term: Clinical Encounter
-  Definition: Contact between subject/patient and healthcare practitioner/researcher,
-    during which an assessment or activity is performed. Contact may be physical or
-    virtual.
+  NCI C-Code: CNEW
+  Preferred Term: Study Encounter
+  Definition: Any physical or virtual contact between two or more parties involved
+    in a study, at which an assessment or activity takes place.
   Modifier: Concrete
   Attributes:
     id:
@@ -1185,25 +1184,25 @@ Encounter:
       Type:
       - $ref: '#/string'
       NCI C-Code: C171010
-      Preferred Term: Clinical Encounter Name
+      Preferred Term: Study Encounter Name
       Definition: The literal identifier (i.e., distinctive designation) for a protocol-defined
-        clinical encounter.
+        study encounter.
       Relationship Type: Value
       Model Name: name
     description:
       Type:
       - $ref: '#/string'
       NCI C-Code: C188836
-      Preferred Term: Clinical Encounter Description
-      Definition: A narrative representation of the protocol-defined clinical encounter.
+      Preferred Term: Study Encounter Description
+      Definition: A narrative representation of the protocol-defined study encounter.
       Relationship Type: Value
       Model Name: description
     label:
       Type:
       - $ref: '#/string'
       NCI C-Code: C207490
-      Preferred Term: Encounter Label
-      Definition: The short descriptive designation for the encounter.
+      Preferred Term: Study Encounter Label
+      Definition: The short descriptive designation for the study encounter.
       Relationship Type: Value
       Model Name: label
     environmentalSettings:
@@ -1233,10 +1232,8 @@ Encounter:
       - $ref: '#/Code'
       NCI C-Code: C188839
       Cardinality: '1'
-      Preferred Term: Clinical Encounter Type
-      Definition: A characterization or classification of contact between subject/patient
-        and healthcare practitioner/researcher, during which an assessment or activity
-        is performed.
+      Preferred Term: Study Encounter Type
+      Definition: A characterization or classification of the study encounter.
       Codelist Ref: C188728
       Relationship Type: Value
       Model Name: type
@@ -1319,7 +1316,7 @@ Endpoint:
       Type:
       - $ref: '#/string'
       NCI C-Code: C207492
-      Preferred Term: Endpoint Name
+      Preferred Term: Study Endpoint Name
       Definition: The literal identifier (i.e., distinctive designation) of the study
         endpoint.
       Relationship Type: Value
@@ -1340,7 +1337,7 @@ Endpoint:
       Type:
       - $ref: '#/string'
       NCI C-Code: C207491
-      Preferred Term: Endpoint Label
+      Preferred Term: Study Endpoint Label
       Definition: The short descriptive designation for the study endpoint.
       Relationship Type: Value
       Model Name: label
@@ -2867,24 +2864,25 @@ Study:
       Type:
       - $ref: '#/string'
       NCI C-Code: C68631
-      Preferred Term: Study Name
-      Definition: The literal identifier (i.e., distinctive designation) of the study.
+      Preferred Term: Clinical Study Name
+      Definition: The literal identifier (i.e., distinctive designation) of the clinical
+        study.
       Relationship Type: Value
       Model Name: name
     description:
       Type:
       - $ref: '#/string'
       NCI C-Code: C142704
-      Preferred Term: Study Description
-      Definition: A narrative representation of the study.
+      Preferred Term: Clinical Study Description
+      Definition: A narrative representation of the clinical study.
       Relationship Type: Value
       Model Name: description
     label:
       Type:
       - $ref: '#/string'
       NCI C-Code: C207479
-      Preferred Term: Study Label
-      Definition: The short descriptive designation for the study.
+      Preferred Term: Clinical Study Label
+      Definition: The short descriptive designation for the clinical study.
       Relationship Type: Value
       Model Name: label
     versions:
@@ -3681,7 +3679,7 @@ StudyDesign:
       Relationship Type: Value
 StudyDesignPopulation:
   NCI C-Code: C142728
-  Preferred Term: Target Study Population
+  Preferred Term: Study Design Population
   Definition: The population within the general population to which the study results
     can be generalized.
   Super Classes:
@@ -3699,9 +3697,9 @@ StudyDesignPopulation:
       Type:
       - $ref: '#/string'
       NCI C-Code: C207553
-      Preferred Term: Target Study Population Name
-      Definition: The literal identifier (i.e., distinctive designation) of the target
-        study population.
+      Preferred Term: Study Design Population Name
+      Definition: The literal identifier (i.e., distinctive designation) of the study
+        design population.
       Relationship Type: Value
       Model Name: name
       Inherited From:
@@ -3710,8 +3708,8 @@ StudyDesignPopulation:
       Type:
       - $ref: '#/string'
       NCI C-Code: C70834
-      Preferred Term: Target Study Population Description
-      Definition: A narrative representation of the study population.
+      Preferred Term: Study Design Population Description
+      Definition: A narrative representation of the study design population.
       Relationship Type: Value
       Model Name: description
       Inherited From:
@@ -3855,8 +3853,8 @@ StudyElement:
       Type:
       - $ref: '#/string'
       NCI C-Code: C207554
-      Preferred Term: Study Element Label
-      Definition: The short descriptive designation for the study element.
+      Preferred Term: Study Design Element Label
+      Definition: The short descriptive designation for the study design element.
       Relationship Type: Value
       Model Name: label
     notes:
