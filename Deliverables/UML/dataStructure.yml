@@ -2175,7 +2175,7 @@ PopulationDefinition:
     plannedAge:
       Type:
       - $ref: '#/Range'
-      NCI C-Code: CNEW
+      NCI C-Code: C207701
       Cardinality: 0..1
       Preferred Term: Population Definition Planned Age
       Definition: The anticipated age of subjects within the population definition.
@@ -3210,7 +3210,7 @@ StudyCohort:
     plannedSex:
       Type:
       - $ref: '#/Code'
-      NCI C-Code: CNEW
+      NCI C-Code: C207541
       Cardinality: 0..1
       Preferred Term: Study Cohort Planned Sex
       Definition: The protocol-defined sex within the study cohort.
@@ -3254,7 +3254,7 @@ StudyCohort:
     plannedEnrollmentNumber:
       Type:
       - $ref: '#/Range'
-      NCI C-Code: CNEW
+      NCI C-Code: C207702
       Cardinality: 0..1
       Preferred Term: Study Cohort Planned Enrollment Number
       Definition: The value representing the planned number of subjects to be entered
