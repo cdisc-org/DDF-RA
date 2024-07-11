@@ -3333,16 +3333,16 @@ StudyDefinitionDocument:
       Definition: The short descriptive designation for the study definition document.
       Relationship Type: Value
       Model Name: label
-    templateName*:
+    templateName:
       Type:
       - $ref: '#/string'
       NCI C-Code: CNEW
       Preferred Term: Study Definition Document Template Name
       Definition: The literal identifier (i.e., distinctive designation) of the study
         definition document template.
-      Relationship Type: UNKNOWN
+      Relationship Type: Value
       Model Name: templateName
-    language*:
+    language:
       Type:
       - $ref: '#/Code'
       NCI C-Code: CNEW
@@ -3350,9 +3350,9 @@ StudyDefinitionDocument:
       Preferred Term: Study Definition Document Language
       Definition: The language in which the study definition document is written.
       Codelist Ref: (Point out to ISO 639 language value list)
-      Relationship Type: UNKNOWN
+      Relationship Type: Value
       Model Name: language
-    type*:
+    type:
       Type:
       - $ref: '#/Code'
       NCI C-Code: CNEW
@@ -3360,15 +3360,15 @@ StudyDefinitionDocument:
       Preferred Term: Study Definition Document Type
       Definition: A characterization or classification of the study definition document.
       Codelist Ref: CNEW
-      Relationship Type: UNKNOWN
+      Relationship Type: Value
       Model Name: type
-    notes*:
+    notes:
       Type:
       - $ref: '#/CommentAnnotation'
       Cardinality: 0..*
       Definition: A USDM relationship between the StudyDefinitionDocument and CommentAnnotation
         classes which provides the set of notes related to the study definition document.
-      Relationship Type: UNKNOWN
+      Relationship Type: Value
       Model Name: notes
     versions:
       Type:
@@ -3391,22 +3391,22 @@ StudyDefinitionDocumentVersion:
       - $ref: '#/string'
       Relationship Type: Value
       Model Name: id
-    version*:
+    version:
       Type:
       - $ref: '#/string'
-      Relationship Type: UNKNOWN
+      Relationship Type: Value
       Model Name: version
-    status*:
+    status:
       Type:
       - $ref: '#/Code'
       Cardinality: '1'
-      Relationship Type: UNKNOWN
+      Relationship Type: Value
       Model Name: status
-    notes*:
+    notes:
       Type:
       - $ref: '#/CommentAnnotation'
       Cardinality: 0..*
-      Relationship Type: UNKNOWN
+      Relationship Type: Value
       Model Name: notes
     dateValues:
       Type:
@@ -3426,15 +3426,6 @@ StudyDefinitionDocumentVersion:
       Cardinality: 0..*
       Relationship Type: Ref
       Model Name: children
-    protocolVersion:
-      Type:
-      - $ref: '#/string'
-      Cardinality: 0..1
-      Relationship Type: Value
-    protocolStatus:
-      Type:
-      - $ref: UNKNOWN
-      Relationship Type: Value
     instanceType:
       Type:
       - $ref: '#/string'
@@ -4354,14 +4345,14 @@ StudyVersion:
         version.
       Relationship Type: Value
       Model Name: amendments
-    documentVersions*:
+    documentVersionIds:
       Type:
       - $ref: '#/StudyDefinitionDocumentVersion'
       Cardinality: 0..*
       Definition: A USDM relationship between the StudyVersion and StudyDefinitionDocumentVersion
         classes which identifies the version of the study definition document associated
         with the study version.
-      Relationship Type: UNKNOWN
+      Relationship Type: Ref
       Model Name: documentVersions
     studyDesigns:
       Type:
@@ -4388,10 +4379,6 @@ StudyVersion:
         which identifies the set of study titles associated with the study version.
       Relationship Type: Value
       Model Name: titles
-    documentVersionId:
-      Type:
-      - $ref: UNKNOWN
-      Relationship Type: Value
     criteria:
       Type:
       - $ref: '#/EligibilityCriterion'
