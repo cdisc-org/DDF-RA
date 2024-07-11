@@ -2277,16 +2277,21 @@ components:
           minLength: 1
           title: Name
         sectionNumber:
-          type: string
-          title: Sectionnumber
-        sectionTitle:
-          type: string
-          title: Sectiontitle
-        text:
           anyOf:
           - type: string
           - type: 'null'
-          title: Text
+          title: Sectionnumber
+        sectionTitle:
+          anyOf:
+          - type: string
+          - type: 'null'
+          title: Sectiontitle
+        displaySectionNumber:
+          type: boolean
+          title: Displaysectionnumber
+        displaySectionTitle:
+          type: boolean
+          title: Displaysectiontitle
         childIds:
           items:
             type: string
@@ -2303,6 +2308,10 @@ components:
           - type: string
           - type: 'null'
           title: Nextid
+        contentItem:
+          anyOf:
+          - $ref: '#/components/schemas/NarrativeContentItem'
+          - type: 'null'
         instanceType:
           type: string
           enum:
@@ -2313,10 +2322,36 @@ components:
       required:
       - id
       - name
-      - sectionNumber
-      - sectionTitle
+      - displaySectionNumber
+      - displaySectionTitle
       - instanceType
       title: NarrativeContent
+    NarrativeContentItem:
+      properties:
+        id:
+          type: string
+          minLength: 1
+          title: Id
+        name:
+          type: string
+          minLength: 1
+          title: Name
+        text:
+          type: string
+          title: Text
+        instanceType:
+          type: string
+          enum:
+          - NarrativeContentItem
+          const: NarrativeContentItem
+          title: Instancetype
+      type: object
+      required:
+      - id
+      - name
+      - text
+      - instanceType
+      title: NarrativeContentItem
     Objective-Input:
       properties:
         id:
@@ -3127,7 +3162,7 @@ components:
           default: []
         documentedBy:
           anyOf:
-          - $ref: '#/components/schemas/StudyProtocolDocument-Input'
+          - $ref: '#/components/schemas/StudyDefinitionDocument-Input'
           - type: 'null'
         instanceType:
           type: string
@@ -3170,7 +3205,7 @@ components:
           default: []
         documentedBy:
           anyOf:
-          - $ref: '#/components/schemas/StudyProtocolDocument-Output'
+          - $ref: '#/components/schemas/StudyDefinitionDocument-Output'
           - type: 'null'
         instanceType:
           type: string
@@ -3589,6 +3624,166 @@ components:
       - includesHealthySubjects
       - instanceType
       title: StudyCohort
+    StudyDefinitionDocument-Input:
+      properties:
+        id:
+          type: string
+          minLength: 1
+          title: Id
+        name:
+          type: string
+          minLength: 1
+          title: Name
+        label:
+          anyOf:
+          - type: string
+          - type: 'null'
+          title: Label
+        description:
+          anyOf:
+          - type: string
+          - type: 'null'
+          title: Description
+        versions:
+          items:
+            $ref: '#/components/schemas/StudyDefinitionDocumentVersion-Input'
+          type: array
+          title: Versions
+          default: []
+        instanceType:
+          type: string
+          enum:
+          - StudyDefinitionDocument
+          const: StudyDefinitionDocument
+          title: Instancetype
+      type: object
+      required:
+      - id
+      - name
+      - instanceType
+      title: StudyDefinitionDocument
+    StudyDefinitionDocument-Output:
+      properties:
+        id:
+          type: string
+          minLength: 1
+          title: Id
+        name:
+          type: string
+          minLength: 1
+          title: Name
+        label:
+          anyOf:
+          - type: string
+          - type: 'null'
+          title: Label
+        description:
+          anyOf:
+          - type: string
+          - type: 'null'
+          title: Description
+        versions:
+          items:
+            $ref: '#/components/schemas/StudyDefinitionDocumentVersion-Output'
+          type: array
+          title: Versions
+          default: []
+        instanceType:
+          type: string
+          enum:
+          - StudyDefinitionDocument
+          const: StudyDefinitionDocument
+          title: Instancetype
+      type: object
+      required:
+      - id
+      - name
+      - instanceType
+      title: StudyDefinitionDocument
+    StudyDefinitionDocumentVersion-Input:
+      properties:
+        id:
+          type: string
+          minLength: 1
+          title: Id
+        protocolVersion:
+          type: string
+          title: Protocolversion
+        protocolStatus:
+          $ref: '#/components/schemas/Code'
+        dateValues:
+          items:
+            $ref: '#/components/schemas/GovernanceDate-Input'
+          type: array
+          title: Datevalues
+          default: []
+        contents:
+          items:
+            $ref: '#/components/schemas/NarrativeContent'
+          type: array
+          title: Contents
+          default: []
+        childIds:
+          items:
+            type: string
+          type: array
+          title: Childids
+          default: []
+        instanceType:
+          type: string
+          enum:
+          - StudyDefinitionDocumentVersion
+          const: StudyDefinitionDocumentVersion
+          title: Instancetype
+      type: object
+      required:
+      - id
+      - protocolVersion
+      - protocolStatus
+      - instanceType
+      title: StudyDefinitionDocumentVersion
+    StudyDefinitionDocumentVersion-Output:
+      properties:
+        id:
+          type: string
+          minLength: 1
+          title: Id
+        protocolVersion:
+          type: string
+          title: Protocolversion
+        protocolStatus:
+          $ref: '#/components/schemas/Code'
+        dateValues:
+          items:
+            $ref: '#/components/schemas/GovernanceDate-Output'
+          type: array
+          title: Datevalues
+          default: []
+        contents:
+          items:
+            $ref: '#/components/schemas/NarrativeContent'
+          type: array
+          title: Contents
+          default: []
+        childIds:
+          items:
+            type: string
+          type: array
+          title: Childids
+          default: []
+        instanceType:
+          type: string
+          enum:
+          - StudyDefinitionDocumentVersion
+          const: StudyDefinitionDocumentVersion
+          title: Instancetype
+      type: object
+      required:
+      - id
+      - protocolVersion
+      - protocolStatus
+      - instanceType
+      title: StudyDefinitionDocumentVersion
     StudyDesign-Input:
       properties:
         id:
@@ -4501,166 +4696,6 @@ components:
       - productDesignation
       - instanceType
       title: StudyIntervention
-    StudyProtocolDocument-Input:
-      properties:
-        id:
-          type: string
-          minLength: 1
-          title: Id
-        name:
-          type: string
-          minLength: 1
-          title: Name
-        label:
-          anyOf:
-          - type: string
-          - type: 'null'
-          title: Label
-        description:
-          anyOf:
-          - type: string
-          - type: 'null'
-          title: Description
-        versions:
-          items:
-            $ref: '#/components/schemas/StudyProtocolDocumentVersion-Input'
-          type: array
-          title: Versions
-          default: []
-        instanceType:
-          type: string
-          enum:
-          - StudyProtocolDocument
-          const: StudyProtocolDocument
-          title: Instancetype
-      type: object
-      required:
-      - id
-      - name
-      - instanceType
-      title: StudyProtocolDocument
-    StudyProtocolDocument-Output:
-      properties:
-        id:
-          type: string
-          minLength: 1
-          title: Id
-        name:
-          type: string
-          minLength: 1
-          title: Name
-        label:
-          anyOf:
-          - type: string
-          - type: 'null'
-          title: Label
-        description:
-          anyOf:
-          - type: string
-          - type: 'null'
-          title: Description
-        versions:
-          items:
-            $ref: '#/components/schemas/StudyProtocolDocumentVersion-Output'
-          type: array
-          title: Versions
-          default: []
-        instanceType:
-          type: string
-          enum:
-          - StudyProtocolDocument
-          const: StudyProtocolDocument
-          title: Instancetype
-      type: object
-      required:
-      - id
-      - name
-      - instanceType
-      title: StudyProtocolDocument
-    StudyProtocolDocumentVersion-Input:
-      properties:
-        id:
-          type: string
-          minLength: 1
-          title: Id
-        protocolVersion:
-          type: string
-          title: Protocolversion
-        protocolStatus:
-          $ref: '#/components/schemas/Code'
-        dateValues:
-          items:
-            $ref: '#/components/schemas/GovernanceDate-Input'
-          type: array
-          title: Datevalues
-          default: []
-        contents:
-          items:
-            $ref: '#/components/schemas/NarrativeContent'
-          type: array
-          title: Contents
-          default: []
-        childIds:
-          items:
-            type: string
-          type: array
-          title: Childids
-          default: []
-        instanceType:
-          type: string
-          enum:
-          - StudyProtocolDocumentVersion
-          const: StudyProtocolDocumentVersion
-          title: Instancetype
-      type: object
-      required:
-      - id
-      - protocolVersion
-      - protocolStatus
-      - instanceType
-      title: StudyProtocolDocumentVersion
-    StudyProtocolDocumentVersion-Output:
-      properties:
-        id:
-          type: string
-          minLength: 1
-          title: Id
-        protocolVersion:
-          type: string
-          title: Protocolversion
-        protocolStatus:
-          $ref: '#/components/schemas/Code'
-        dateValues:
-          items:
-            $ref: '#/components/schemas/GovernanceDate-Output'
-          type: array
-          title: Datevalues
-          default: []
-        contents:
-          items:
-            $ref: '#/components/schemas/NarrativeContent'
-          type: array
-          title: Contents
-          default: []
-        childIds:
-          items:
-            type: string
-          type: array
-          title: Childids
-          default: []
-        instanceType:
-          type: string
-          enum:
-          - StudyProtocolDocumentVersion
-          const: StudyProtocolDocumentVersion
-          title: Instancetype
-      type: object
-      required:
-      - id
-      - protocolVersion
-      - protocolStatus
-      - instanceType
-      title: StudyProtocolDocumentVersion
     StudySite-Input:
       properties:
         id:
