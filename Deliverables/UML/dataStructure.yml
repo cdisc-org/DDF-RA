@@ -1796,16 +1796,18 @@ NarrativeContent:
       Type:
       - $ref: '#/string'
       NCI C-Code: C207509
-      Preferred Term: Section Number
-      Definition: The numeric identifier assigned to a particular document section.
+      Preferred Term: Narrative Content Section Number
+      Definition: The numeric identifier assigned to a particular document section
+        containing narrative content.
       Relationship Type: Value
       Model Name: sectionNumber
     sectionTitle:
       Type:
       - $ref: '#/string'
       NCI C-Code: C207510
-      Preferred Term: Section Title
-      Definition: An identifying designation for the document section.
+      Preferred Term: Narrative Content Section Title
+      Definition: An identifying designation for the document section containing narrative
+        content.
       Relationship Type: Value
       Model Name: sectionTitle
     displaySectionTitle*:
@@ -1814,7 +1816,7 @@ NarrativeContent:
       NCI C-Code: CNEW
       Preferred Term: Narrative Content Section Title Display Indicator
       Definition: An indication as to whether the section title is to be displayed
-        in the document.
+        in the document containing narrative content.
       Relationship Type: UNKNOWN
       Model Name: displaySectionTitle
     displaySectionNumber*:
@@ -1823,7 +1825,7 @@ NarrativeContent:
       NCI C-Code: CNEW
       Preferred Term: Narrative Content Section Number Display Indicator
       Definition: An indication as to whether the section number is to be displayed
-        in the document.
+        in the document containing narrative content.
       Relationship Type: UNKNOWN
       Model Name: displaySectionNumber
     contentItem*:
