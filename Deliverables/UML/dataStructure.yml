@@ -1098,7 +1098,7 @@ EligibilityCriterion:
       Type:
       - $ref: '#/string'
       NCI C-Code: C207485
-      Preferred Term: Eligibility Criterion Text
+      Preferred Term: Study Eligibility Criterion Text
       Definition: An instance of structured text that represents the study eligibility
         criterion.
       Relationship Type: Value
@@ -3609,9 +3609,9 @@ StudyDesign:
       Type:
       - $ref: '#/StudyDefinitionDocumentVersion'
       Cardinality: 0..1
-      Definition: A USDM relationship between the StudyDesign and StudyProtocolDocumentVersion
-        classes which identifies the version of the protocol document associated with
-        the study design.
+      Definition: A USDM relationship between the StudyDesign and StudyDefinitionDocumentVersion
+        classes which identifies the version of the study definition document associated
+        with the study design.
       Relationship Type: Ref
       Model Name: documentVersion
     elements:
