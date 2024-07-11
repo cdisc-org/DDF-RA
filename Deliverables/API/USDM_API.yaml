@@ -3161,9 +3161,11 @@ components:
           title: Versions
           default: []
         documentedBy:
-          anyOf:
-          - $ref: '#/components/schemas/StudyDefinitionDocument-Input'
-          - type: 'null'
+          items:
+            $ref: '#/components/schemas/StudyDefinitionDocument-Input'
+          type: array
+          title: Documentedby
+          default: []
         instanceType:
           type: string
           enum:
@@ -3204,9 +3206,11 @@ components:
           title: Versions
           default: []
         documentedBy:
-          anyOf:
-          - $ref: '#/components/schemas/StudyDefinitionDocument-Output'
-          - type: 'null'
+          items:
+            $ref: '#/components/schemas/StudyDefinitionDocument-Output'
+          type: array
+          title: Documentedby
+          default: []
         instanceType:
           type: string
           enum:
@@ -3644,11 +3648,24 @@ components:
           - type: string
           - type: 'null'
           title: Description
+        language:
+          $ref: '#/components/schemas/Code'
+        type:
+          $ref: '#/components/schemas/Code'
+        templateName:
+          type: string
+          title: Templatename
         versions:
           items:
             $ref: '#/components/schemas/StudyDefinitionDocumentVersion-Input'
           type: array
           title: Versions
+          default: []
+        notes:
+          items:
+            $ref: '#/components/schemas/CommentAnnotation'
+          type: array
+          title: Notes
           default: []
         instanceType:
           type: string
@@ -3660,6 +3677,9 @@ components:
       required:
       - id
       - name
+      - language
+      - type
+      - templateName
       - instanceType
       title: StudyDefinitionDocument
     StudyDefinitionDocument-Output:
@@ -3682,11 +3702,24 @@ components:
           - type: string
           - type: 'null'
           title: Description
+        language:
+          $ref: '#/components/schemas/Code'
+        type:
+          $ref: '#/components/schemas/Code'
+        templateName:
+          type: string
+          title: Templatename
         versions:
           items:
             $ref: '#/components/schemas/StudyDefinitionDocumentVersion-Output'
           type: array
           title: Versions
+          default: []
+        notes:
+          items:
+            $ref: '#/components/schemas/CommentAnnotation'
+          type: array
+          title: Notes
           default: []
         instanceType:
           type: string
@@ -3698,6 +3731,9 @@ components:
       required:
       - id
       - name
+      - language
+      - type
+      - templateName
       - instanceType
       title: StudyDefinitionDocument
     StudyDefinitionDocumentVersion-Input:
@@ -3706,10 +3742,10 @@ components:
           type: string
           minLength: 1
           title: Id
-        protocolVersion:
+        version:
           type: string
-          title: Protocolversion
-        protocolStatus:
+          title: Version
+        status:
           $ref: '#/components/schemas/Code'
         dateValues:
           items:
@@ -3729,6 +3765,12 @@ components:
           type: array
           title: Childids
           default: []
+        notes:
+          items:
+            $ref: '#/components/schemas/CommentAnnotation'
+          type: array
+          title: Notes
+          default: []
         instanceType:
           type: string
           enum:
@@ -3738,8 +3780,8 @@ components:
       type: object
       required:
       - id
-      - protocolVersion
-      - protocolStatus
+      - version
+      - status
       - instanceType
       title: StudyDefinitionDocumentVersion
     StudyDefinitionDocumentVersion-Output:
@@ -3748,10 +3790,10 @@ components:
           type: string
           minLength: 1
           title: Id
-        protocolVersion:
+        version:
           type: string
-          title: Protocolversion
-        protocolStatus:
+          title: Version
+        status:
           $ref: '#/components/schemas/Code'
         dateValues:
           items:
@@ -3771,6 +3813,12 @@ components:
           type: array
           title: Childids
           default: []
+        notes:
+          items:
+            $ref: '#/components/schemas/CommentAnnotation'
+          type: array
+          title: Notes
+          default: []
         instanceType:
           type: string
           enum:
@@ -3780,8 +3828,8 @@ components:
       type: object
       required:
       - id
-      - protocolVersion
-      - protocolStatus
+      - version
+      - status
       - instanceType
       title: StudyDefinitionDocumentVersion
     StudyDesign-Input:
@@ -4812,11 +4860,12 @@ components:
           anyOf:
           - $ref: '#/components/schemas/AliasCode'
           - type: 'null'
-        documentVersionId:
-          anyOf:
-          - type: string
-          - type: 'null'
-          title: Documentversionid
+        documentVersionIds:
+          items:
+            type: string
+          type: array
+          title: Documentversionids
+          default: []
         dateValues:
           items:
             $ref: '#/components/schemas/GovernanceDate-Input'
@@ -4898,11 +4947,12 @@ components:
           anyOf:
           - $ref: '#/components/schemas/AliasCode'
           - type: 'null'
-        documentVersionId:
-          anyOf:
-          - type: string
-          - type: 'null'
-          title: Documentversionid
+        documentVersionIds:
+          items:
+            type: string
+          type: array
+          title: Documentversionids
+          default: []
         dateValues:
           items:
             $ref: '#/components/schemas/GovernanceDate-Output'

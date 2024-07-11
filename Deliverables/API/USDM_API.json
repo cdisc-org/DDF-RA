@@ -4867,14 +4867,12 @@
             "default": []
           },
           "documentedBy": {
-            "anyOf": [
-              {
-                "$ref": "#/components/schemas/StudyDefinitionDocument-Input"
-              },
-              {
-                "type": "null"
-              }
-            ]
+            "items": {
+              "$ref": "#/components/schemas/StudyDefinitionDocument-Input"
+            },
+            "type": "array",
+            "title": "Documentedby",
+            "default": []
           },
           "instanceType": {
             "type": "string",
@@ -4942,14 +4940,12 @@
             "default": []
           },
           "documentedBy": {
-            "anyOf": [
-              {
-                "$ref": "#/components/schemas/StudyDefinitionDocument-Output"
-              },
-              {
-                "type": "null"
-              }
-            ]
+            "items": {
+              "$ref": "#/components/schemas/StudyDefinitionDocument-Output"
+            },
+            "type": "array",
+            "title": "Documentedby",
+            "default": []
           },
           "instanceType": {
             "type": "string",
@@ -5614,12 +5610,30 @@
             ],
             "title": "Description"
           },
+          "language": {
+            "$ref": "#/components/schemas/Code"
+          },
+          "type": {
+            "$ref": "#/components/schemas/Code"
+          },
+          "templateName": {
+            "type": "string",
+            "title": "Templatename"
+          },
           "versions": {
             "items": {
               "$ref": "#/components/schemas/StudyDefinitionDocumentVersion-Input"
             },
             "type": "array",
             "title": "Versions",
+            "default": []
+          },
+          "notes": {
+            "items": {
+              "$ref": "#/components/schemas/CommentAnnotation"
+            },
+            "type": "array",
+            "title": "Notes",
             "default": []
           },
           "instanceType": {
@@ -5635,6 +5649,9 @@
         "required": [
           "id",
           "name",
+          "language",
+          "type",
+          "templateName",
           "instanceType"
         ],
         "title": "StudyDefinitionDocument"
@@ -5673,12 +5690,30 @@
             ],
             "title": "Description"
           },
+          "language": {
+            "$ref": "#/components/schemas/Code"
+          },
+          "type": {
+            "$ref": "#/components/schemas/Code"
+          },
+          "templateName": {
+            "type": "string",
+            "title": "Templatename"
+          },
           "versions": {
             "items": {
               "$ref": "#/components/schemas/StudyDefinitionDocumentVersion-Output"
             },
             "type": "array",
             "title": "Versions",
+            "default": []
+          },
+          "notes": {
+            "items": {
+              "$ref": "#/components/schemas/CommentAnnotation"
+            },
+            "type": "array",
+            "title": "Notes",
             "default": []
           },
           "instanceType": {
@@ -5694,6 +5729,9 @@
         "required": [
           "id",
           "name",
+          "language",
+          "type",
+          "templateName",
           "instanceType"
         ],
         "title": "StudyDefinitionDocument"
@@ -5705,11 +5743,11 @@
             "minLength": 1,
             "title": "Id"
           },
-          "protocolVersion": {
+          "version": {
             "type": "string",
-            "title": "Protocolversion"
+            "title": "Version"
           },
-          "protocolStatus": {
+          "status": {
             "$ref": "#/components/schemas/Code"
           },
           "dateValues": {
@@ -5736,6 +5774,14 @@
             "title": "Childids",
             "default": []
           },
+          "notes": {
+            "items": {
+              "$ref": "#/components/schemas/CommentAnnotation"
+            },
+            "type": "array",
+            "title": "Notes",
+            "default": []
+          },
           "instanceType": {
             "type": "string",
             "enum": [
@@ -5748,8 +5794,8 @@
         "type": "object",
         "required": [
           "id",
-          "protocolVersion",
-          "protocolStatus",
+          "version",
+          "status",
           "instanceType"
         ],
         "title": "StudyDefinitionDocumentVersion"
@@ -5761,11 +5807,11 @@
             "minLength": 1,
             "title": "Id"
           },
-          "protocolVersion": {
+          "version": {
             "type": "string",
-            "title": "Protocolversion"
+            "title": "Version"
           },
-          "protocolStatus": {
+          "status": {
             "$ref": "#/components/schemas/Code"
           },
           "dateValues": {
@@ -5792,6 +5838,14 @@
             "title": "Childids",
             "default": []
           },
+          "notes": {
+            "items": {
+              "$ref": "#/components/schemas/CommentAnnotation"
+            },
+            "type": "array",
+            "title": "Notes",
+            "default": []
+          },
           "instanceType": {
             "type": "string",
             "enum": [
@@ -5804,8 +5858,8 @@
         "type": "object",
         "required": [
           "id",
-          "protocolVersion",
-          "protocolStatus",
+          "version",
+          "status",
           "instanceType"
         ],
         "title": "StudyDefinitionDocumentVersion"
@@ -7407,16 +7461,13 @@
               }
             ]
           },
-          "documentVersionId": {
-            "anyOf": [
-              {
-                "type": "string"
-              },
-              {
-                "type": "null"
-              }
-            ],
-            "title": "Documentversionid"
+          "documentVersionIds": {
+            "items": {
+              "type": "string"
+            },
+            "type": "array",
+            "title": "Documentversionids",
+            "default": []
           },
           "dateValues": {
             "items": {
@@ -7535,16 +7586,13 @@
               }
             ]
           },
-          "documentVersionId": {
-            "anyOf": [
-              {
-                "type": "string"
-              },
-              {
-                "type": "null"
-              }
-            ],
-            "title": "Documentversionid"
+          "documentVersionIds": {
+            "items": {
+              "type": "string"
+            },
+            "type": "array",
+            "title": "Documentversionids",
+            "default": []
           },
           "dateValues": {
             "items": {
