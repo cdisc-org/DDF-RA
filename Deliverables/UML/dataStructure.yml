@@ -1810,31 +1810,31 @@ NarrativeContent:
         content.
       Relationship Type: Value
       Model Name: sectionTitle
-    displaySectionTitle*:
+    displaySectionTitle:
       Type:
       - $ref: '#/Boolean'
       NCI C-Code: CNEW
       Preferred Term: Narrative Content Section Title Display Indicator
       Definition: An indication as to whether the section title is to be displayed
         in the document containing narrative content.
-      Relationship Type: UNKNOWN
+      Relationship Type: Value
       Model Name: displaySectionTitle
-    displaySectionNumber*:
+    displaySectionNumber:
       Type:
       - $ref: '#/Boolean'
       NCI C-Code: CNEW
       Preferred Term: Narrative Content Section Number Display Indicator
       Definition: An indication as to whether the section number is to be displayed
         in the document containing narrative content.
-      Relationship Type: UNKNOWN
+      Relationship Type: Value
       Model Name: displaySectionNumber
-    contentItem*:
+    contentItem:
       Type:
       - $ref: '#/NarrativeContentItem'
       Cardinality: 0..1
       Definition: A USDM relationship between the NarrativeContent and NarrativeContentItem
         classes which identifies the content item associated with the narrative content.
-      Relationship Type: UNKNOWN
+      Relationship Type: Value
       Model Name: contentItem
     previousId:
       Type:
@@ -1862,10 +1862,6 @@ NarrativeContent:
         the set of child content associated with an instance of narrative content.
       Relationship Type: Ref
       Model Name: children
-    text:
-      Type:
-      - $ref: UNKNOWN
-      Relationship Type: Value
     instanceType:
       Type:
       - $ref: '#/string'
@@ -1876,11 +1872,12 @@ NarrativeContentItem:
   Preferred Term: Narrative Content Item
   Definition: An individual item within the container that holds an instance of unstructured
     text and which may include objects such as tables, figures, and images.
-  Modifier: Abstract
+  Modifier: Concrete
   Attributes:
     id:
       Type:
       - $ref: '#/string'
+      Relationship Type: Value
       Model Name: id
     name:
       Type:
@@ -1889,6 +1886,7 @@ NarrativeContentItem:
       Preferred Term: Narrative Content Item Name
       Definition: The literal identifier (i.e., distinctive designation) of the narrative
         content item.
+      Relationship Type: Value
       Model Name: name
     text:
       Type:
@@ -1897,7 +1895,13 @@ NarrativeContentItem:
       Preferred Term: Narrative Content Item Text
       Definition: An instance of unstructured text that represents the narrative content
         item.
+      Relationship Type: Value
       Model Name: text
+    instanceType:
+      Type:
+      - $ref: '#/string'
+      Cardinality: 0..1
+      Relationship Type: Value
 Objective:
   NCI C-Code: C142450
   Preferred Term: Study Objective
@@ -3297,11 +3301,12 @@ StudyDefinitionDocument:
   Preferred Term: Study Definition Document
   Definition: Any physical or electronic document that is related to defining a study
     or part of a study.
-  Modifier: Abstract
+  Modifier: Concrete
   Attributes:
     id:
       Type:
       - $ref: '#/string'
+      Relationship Type: Value
       Model Name: id
     name:
       Type:
@@ -3310,6 +3315,7 @@ StudyDefinitionDocument:
       Preferred Term: Study Definition Document Name
       Definition: The literal identifier (i.e., distinctive designation) of the study
         definition document.
+      Relationship Type: Value
       Model Name: name
     description:
       Type:
@@ -3317,6 +3323,7 @@ StudyDefinitionDocument:
       NCI C-Code: CNEW
       Preferred Term: Study Definition Document Description
       Definition: A narrative representation of the study definition document.
+      Relationship Type: Value
       Model Name: description
     label:
       Type:
@@ -3324,16 +3331,18 @@ StudyDefinitionDocument:
       NCI C-Code: CNEW
       Preferred Term: Study Definition Document Label
       Definition: The short descriptive designation for the study definition document.
+      Relationship Type: Value
       Model Name: label
-    templateName:
+    templateName*:
       Type:
       - $ref: '#/string'
       NCI C-Code: CNEW
       Preferred Term: Study Definition Document Template Name
       Definition: The literal identifier (i.e., distinctive designation) of the study
         definition document template.
+      Relationship Type: UNKNOWN
       Model Name: templateName
-    language:
+    language*:
       Type:
       - $ref: '#/Code'
       NCI C-Code: CNEW
@@ -3341,8 +3350,9 @@ StudyDefinitionDocument:
       Preferred Term: Study Definition Document Language
       Definition: The language in which the study definition document is written.
       Codelist Ref: (Point out to ISO 639 language value list)
+      Relationship Type: UNKNOWN
       Model Name: language
-    type:
+    type*:
       Type:
       - $ref: '#/Code'
       NCI C-Code: CNEW
@@ -3350,13 +3360,15 @@ StudyDefinitionDocument:
       Preferred Term: Study Definition Document Type
       Definition: A characterization or classification of the study definition document.
       Codelist Ref: CNEW
+      Relationship Type: UNKNOWN
       Model Name: type
-    notes:
+    notes*:
       Type:
       - $ref: '#/CommentAnnotation'
       Cardinality: 0..*
       Definition: A USDM relationship between the StudyDefinitionDocument and CommentAnnotation
         classes which provides the set of notes related to the study definition document.
+      Relationship Type: UNKNOWN
       Model Name: notes
     versions:
       Type:
@@ -3364,43 +3376,70 @@ StudyDefinitionDocument:
       Cardinality: 0..*
       Definition: A USDM relationship between the StudyDefinitionDocument and StudyDefinitionDocumentVersion
         classes which
+      Relationship Type: Value
       Model Name: versions
+    instanceType:
+      Type:
+      - $ref: '#/string'
+      Cardinality: 0..1
+      Relationship Type: Value
 StudyDefinitionDocumentVersion:
-  Modifier: Abstract
+  Modifier: Concrete
   Attributes:
     id:
       Type:
       - $ref: '#/string'
+      Relationship Type: Value
       Model Name: id
-    version:
+    version*:
       Type:
       - $ref: '#/string'
+      Relationship Type: UNKNOWN
       Model Name: version
-    status:
+    status*:
       Type:
       - $ref: '#/Code'
       Cardinality: '1'
+      Relationship Type: UNKNOWN
       Model Name: status
-    notes:
+    notes*:
       Type:
       - $ref: '#/CommentAnnotation'
       Cardinality: 0..*
+      Relationship Type: UNKNOWN
       Model Name: notes
     dateValues:
       Type:
       - $ref: '#/GovernanceDate'
       Cardinality: 0..*
+      Relationship Type: Value
       Model Name: dateValues
     contents:
       Type:
       - $ref: '#/NarrativeContent'
       Cardinality: 0..*
+      Relationship Type: Value
       Model Name: contents
-    children:
+    childIds:
       Type:
       - $ref: '#/StudyDefinitionDocumentVersion'
       Cardinality: 0..*
+      Relationship Type: Ref
       Model Name: children
+    protocolVersion:
+      Type:
+      - $ref: '#/string'
+      Cardinality: 0..1
+      Relationship Type: Value
+    protocolStatus:
+      Type:
+      - $ref: UNKNOWN
+      Relationship Type: Value
+    instanceType:
+      Type:
+      - $ref: '#/string'
+      Cardinality: 0..1
+      Relationship Type: Value
 StudyDesign:
   NCI C-Code: C15320
   Preferred Term: Study Design
