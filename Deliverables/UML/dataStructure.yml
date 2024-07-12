@@ -1,3 +1,23 @@
+Abbreviation:
+  Modifier: Abstract
+  Attributes:
+    id:
+      Type:
+      - $ref: '#/string'
+      Model Name: id
+    abbreviation:
+      Type:
+      - $ref: '#/string'
+      Model Name: abbreviation
+    longName:
+      Type:
+      - $ref: '#/string'
+      Model Name: longName
+    notes:
+      Type:
+      - $ref: '#/CommentAnnotation'
+      Cardinality: 0..*
+      Model Name: notes
 Activity:
   NCI C-Code: C71473
   Preferred Term: Study Activity
@@ -4281,6 +4301,12 @@ StudyVersion:
         what knowledge is being contributed from the conduct of this study.
       Relationship Type: Value
       Model Name: rationale
+    abbreviations*:
+      Type:
+      - $ref: '#/Abbreviation'
+      Cardinality: 0..*
+      Relationship Type: UNKNOWN
+      Model Name: abbreviations
     studyPhase:
       Type:
       - $ref: '#/AliasCode'
