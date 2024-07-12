@@ -1,4 +1,8 @@
 Abbreviation:
+  NCI C-Code: C42610
+  Preferred Term: Abbreviation
+  Definition: A set of letters that are drawn from a word or from a sequence of words
+    and that are used for brevity in place of the full word or phrase. (CDISC Glossary)
   Modifier: Abstract
   Attributes:
     id:
@@ -8,15 +12,27 @@ Abbreviation:
     abbreviation:
       Type:
       - $ref: '#/string'
+      NCI C-Code: C42610
+      Preferred Term: Abbreviation
+      Definition: A set of letters that are drawn from a word or from a sequence of
+        words and that are used for brevity in place of the full word or phrase. (CDISC
+        Glossary)
+      Codelist Ref: (Point to CDISC Glossary)
       Model Name: abbreviation
     longName:
       Type:
       - $ref: '#/string'
+      NCI C-Code: CNEW
+      Preferred Term: Abbreviation Long Name
+      Definition: The full literal representation of the abbreviation.
+      Codelist Ref: (Point to CDISC Glossary)
       Model Name: longName
     notes:
       Type:
       - $ref: '#/CommentAnnotation'
       Cardinality: 0..*
+      Definition: A USDM relationship between the Abbreviation and Comment Annotation
+        classes which provides the set of notes related to the abbreviation.
       Model Name: notes
 Activity:
   NCI C-Code: C71473
@@ -4331,6 +4347,8 @@ StudyVersion:
       Type:
       - $ref: '#/Abbreviation'
       Cardinality: 0..*
+      Definition: A USDM relationship between the StudyVersion and Abbreviation classes
+        which provides the set of abbreviations associated with the study version.
       Relationship Type: UNKNOWN
       Model Name: abbreviations
     studyPhase:
