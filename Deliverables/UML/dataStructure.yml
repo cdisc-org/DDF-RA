@@ -3375,7 +3375,8 @@ StudyDefinitionDocument:
       - $ref: '#/StudyDefinitionDocumentVersion'
       Cardinality: 0..*
       Definition: A USDM relationship between the StudyDefinitionDocument and StudyDefinitionDocumentVersion
-        classes which
+        classes which identifies the set of versions associated with the study definition
+        document.
       Relationship Type: Value
       Model Name: versions
     instanceType:
@@ -3384,6 +3385,10 @@ StudyDefinitionDocument:
       Cardinality: 0..1
       Relationship Type: Value
 StudyDefinitionDocumentVersion:
+  NCI C-Code: CNEW
+  Preferred Term: Study Definition Document Version
+  Definition: A representation of a particular edition or snapshot of the study definition
+    document as it exists at a particular point in time.
   Modifier: Concrete
   Attributes:
     id:
@@ -3394,36 +3399,57 @@ StudyDefinitionDocumentVersion:
     version:
       Type:
       - $ref: '#/string'
+      NCI C-Code: CNEW
+      Preferred Term: Study Definition Document Version
+      Definition: A representation of a particular edition or snapshot of the study
+        definition document as it exists at a particular point in time.
       Relationship Type: Value
       Model Name: version
     status:
       Type:
       - $ref: '#/Code'
+      NCI C-Code: CNEW
       Cardinality: '1'
+      Preferred Term: Study Definition Document Status
+      Definition: A condition of the study definition document at a point in time
+        with respect to its state of readiness for implementation.
+      Codelist Ref: C188723
       Relationship Type: Value
       Model Name: status
     notes:
       Type:
       - $ref: '#/CommentAnnotation'
       Cardinality: 0..*
+      Definition: A USDM relationship between the StudyDefinitionDocumentVersion and
+        CommentAnnotation classes which provides the set of notes related to the study
+        definition document version.
       Relationship Type: Value
       Model Name: notes
     dateValues:
       Type:
       - $ref: '#/GovernanceDate'
       Cardinality: 0..*
+      Definition: A USDM relationship between the StudyDefinitionDocumentVersion and
+        GovernanceDate classes which provides the set of governance dates associated
+        with the study definition document version.
       Relationship Type: Value
       Model Name: dateValues
     contents:
       Type:
       - $ref: '#/NarrativeContent'
       Cardinality: 0..*
+      Definition: A USDM relationship between the StudyDefinitionDocumentVersion and
+        NarrativeContent classes which identifies the set of narrative content associated
+        with the version of the study definition document.
       Relationship Type: Value
       Model Name: contents
     childIds:
       Type:
       - $ref: '#/StudyDefinitionDocumentVersion'
       Cardinality: 0..*
+      Definition: A USDM relationship within the StudyDefinitionDocumentVersion class
+        which identifies the set of child documents of a study definition document
+        version.
       Relationship Type: Ref
       Model Name: children
     instanceType:
