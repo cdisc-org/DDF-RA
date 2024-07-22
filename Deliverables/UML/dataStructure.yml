@@ -3,11 +3,12 @@ Abbreviation:
   Preferred Term: Abbreviation
   Definition: A set of letters that are drawn from a word or from a sequence of words
     and that are used for brevity in place of the full word or phrase. (CDISC Glossary)
-  Modifier: Abstract
+  Modifier: Concrete
   Attributes:
     id:
       Type:
       - $ref: '#/string'
+      Relationship Type: Value
       Model Name: id
     abbreviation:
       Type:
@@ -18,14 +19,16 @@ Abbreviation:
         words and that are used for brevity in place of the full word or phrase. (CDISC
         Glossary)
       Codelist Ref: (Point to CDISC Glossary)
+      Relationship Type: Value
       Model Name: abbreviation
-    longName:
+    longName*:
       Type:
       - $ref: '#/string'
       NCI C-Code: CNEW
       Preferred Term: Abbreviation Long Name
       Definition: The full literal representation of the abbreviation.
       Codelist Ref: (Point to CDISC Glossary)
+      Relationship Type: UNKNOWN
       Model Name: longName
     notes:
       Type:
@@ -33,7 +36,18 @@ Abbreviation:
       Cardinality: 0..*
       Definition: A USDM relationship between the Abbreviation and Comment Annotation
         classes which provides the set of notes related to the abbreviation.
+      Relationship Type: Value
       Model Name: notes
+    lomgName:
+      Type:
+      - $ref: '#/string'
+      Cardinality: 0..1
+      Relationship Type: Value
+    instanceType:
+      Type:
+      - $ref: '#/string'
+      Cardinality: 0..1
+      Relationship Type: Value
 Activity:
   NCI C-Code: C71473
   Preferred Term: Study Activity
@@ -4343,13 +4357,13 @@ StudyVersion:
         what knowledge is being contributed from the conduct of this study.
       Relationship Type: Value
       Model Name: rationale
-    abbreviations*:
+    abbreviations:
       Type:
       - $ref: '#/Abbreviation'
       Cardinality: 0..*
       Definition: A USDM relationship between the StudyVersion and Abbreviation classes
         which provides the set of abbreviations associated with the study version.
-      Relationship Type: UNKNOWN
+      Relationship Type: Value
       Model Name: abbreviations
     studyPhase:
       Type:
