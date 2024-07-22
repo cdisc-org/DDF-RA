@@ -21,14 +21,14 @@ Abbreviation:
       Codelist Ref: (Point to CDISC Glossary)
       Relationship Type: Value
       Model Name: abbreviation
-    longName*:
+    longName:
       Type:
       - $ref: '#/string'
       NCI C-Code: CNEW
       Preferred Term: Abbreviation Long Name
       Definition: The full literal representation of the abbreviation.
       Codelist Ref: (Point to CDISC Glossary)
-      Relationship Type: UNKNOWN
+      Relationship Type: Value
       Model Name: longName
     notes:
       Type:
@@ -38,11 +38,6 @@ Abbreviation:
         classes which provides the set of notes related to the abbreviation.
       Relationship Type: Value
       Model Name: notes
-    lomgName:
-      Type:
-      - $ref: '#/string'
-      Cardinality: 0..1
-      Relationship Type: Value
     instanceType:
       Type:
       - $ref: '#/string'
