@@ -219,9 +219,9 @@ components:
         abbreviation:
           type: string
           title: Abbreviation
-        lomgName:
+        longName:
           type: string
-          title: Lomgname
+          title: Longname
         notes:
           items:
             $ref: '#/components/schemas/CommentAnnotation'
@@ -238,7 +238,7 @@ components:
       required:
       - id
       - abbreviation
-      - lomgName
+      - longName
       - instanceType
       title: Abbreviation
     Abbreviation-Output:
@@ -250,9 +250,9 @@ components:
         abbreviation:
           type: string
           title: Abbreviation
-        lomgName:
+        longName:
           type: string
-          title: Lomgname
+          title: Longname
         notes:
           items:
             $ref: '#/components/schemas/CommentAnnotation'
@@ -269,7 +269,7 @@ components:
       required:
       - id
       - abbreviation
-      - lomgName
+      - longName
       - instanceType
       title: Abbreviation
     Activity-Input:
