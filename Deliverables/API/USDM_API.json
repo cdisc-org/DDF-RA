@@ -304,6 +304,88 @@
   },
   "components": {
     "schemas": {
+      "Abbreviation-Input": {
+        "properties": {
+          "id": {
+            "type": "string",
+            "minLength": 1,
+            "title": "Id"
+          },
+          "abbreviation": {
+            "type": "string",
+            "title": "Abbreviation"
+          },
+          "lomgName": {
+            "type": "string",
+            "title": "Lomgname"
+          },
+          "notes": {
+            "items": {
+              "$ref": "#/components/schemas/CommentAnnotation"
+            },
+            "type": "array",
+            "title": "Notes",
+            "default": []
+          },
+          "instanceType": {
+            "type": "string",
+            "enum": [
+              "Address"
+            ],
+            "const": "Address",
+            "title": "Instancetype"
+          }
+        },
+        "type": "object",
+        "required": [
+          "id",
+          "abbreviation",
+          "lomgName",
+          "instanceType"
+        ],
+        "title": "Abbreviation"
+      },
+      "Abbreviation-Output": {
+        "properties": {
+          "id": {
+            "type": "string",
+            "minLength": 1,
+            "title": "Id"
+          },
+          "abbreviation": {
+            "type": "string",
+            "title": "Abbreviation"
+          },
+          "lomgName": {
+            "type": "string",
+            "title": "Lomgname"
+          },
+          "notes": {
+            "items": {
+              "$ref": "#/components/schemas/CommentAnnotation"
+            },
+            "type": "array",
+            "title": "Notes",
+            "default": []
+          },
+          "instanceType": {
+            "type": "string",
+            "enum": [
+              "Address"
+            ],
+            "const": "Address",
+            "title": "Instancetype"
+          }
+        },
+        "type": "object",
+        "required": [
+          "id",
+          "abbreviation",
+          "lomgName",
+          "instanceType"
+        ],
+        "title": "Abbreviation"
+      },
       "Activity-Input": {
         "properties": {
           "id": {
@@ -7523,6 +7605,14 @@
             "type": "array",
             "title": "Criteria"
           },
+          "abbreviations": {
+            "items": {
+              "$ref": "#/components/schemas/Abbreviation-Input"
+            },
+            "type": "array",
+            "title": "Abbreviations",
+            "default": []
+          },
           "notes": {
             "items": {
               "$ref": "#/components/schemas/CommentAnnotation"
@@ -7647,6 +7737,14 @@
             },
             "type": "array",
             "title": "Criteria"
+          },
+          "abbreviations": {
+            "items": {
+              "$ref": "#/components/schemas/Abbreviation-Output"
+            },
+            "type": "array",
+            "title": "Abbreviations",
+            "default": []
           },
           "notes": {
             "items": {
