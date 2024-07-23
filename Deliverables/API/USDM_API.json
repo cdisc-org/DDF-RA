@@ -3,7 +3,7 @@
   "info": {
     "title": "DDF USDM API",
     "description": "A simple TransCelerate Digital Data Flow (DDF) Study Definitions Repository API.",
-    "version": "3.3.0"
+    "version": "3.5.0"
   },
   "paths": {
     "/v3/studyDefinitions": {
@@ -313,10 +313,12 @@
           },
           "abbreviation": {
             "type": "string",
+            "minLength": 1,
             "title": "Abbreviation"
           },
           "longName": {
             "type": "string",
+            "minLength": 1,
             "title": "Longname"
           },
           "notes": {
@@ -330,9 +332,9 @@
           "instanceType": {
             "type": "string",
             "enum": [
-              "Address"
+              "Abbreviation"
             ],
-            "const": "Address",
+            "const": "Abbreviation",
             "title": "Instancetype"
           }
         },
@@ -354,10 +356,12 @@
           },
           "abbreviation": {
             "type": "string",
+            "minLength": 1,
             "title": "Abbreviation"
           },
           "longName": {
             "type": "string",
+            "minLength": 1,
             "title": "Longname"
           },
           "notes": {
@@ -371,9 +375,9 @@
           "instanceType": {
             "type": "string",
             "enum": [
-              "Address"
+              "Abbreviation"
             ],
-            "const": "Address",
+            "const": "Abbreviation",
             "title": "Instancetype"
           }
         },

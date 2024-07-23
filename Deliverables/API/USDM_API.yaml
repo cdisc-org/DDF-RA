@@ -3,7 +3,7 @@ info:
   title: DDF USDM API
   description: A simple TransCelerate Digital Data Flow (DDF) Study Definitions Repository
     API.
-  version: 3.3.0
+  version: 3.5.0
 paths:
   /v3/studyDefinitions:
     post:
@@ -218,9 +218,11 @@ components:
           title: Id
         abbreviation:
           type: string
+          minLength: 1
           title: Abbreviation
         longName:
           type: string
+          minLength: 1
           title: Longname
         notes:
           items:
@@ -231,8 +233,8 @@ components:
         instanceType:
           type: string
           enum:
-          - Address
-          const: Address
+          - Abbreviation
+          const: Abbreviation
           title: Instancetype
       type: object
       required:
@@ -249,9 +251,11 @@ components:
           title: Id
         abbreviation:
           type: string
+          minLength: 1
           title: Abbreviation
         longName:
           type: string
+          minLength: 1
           title: Longname
         notes:
           items:
@@ -262,8 +266,8 @@ components:
         instanceType:
           type: string
           enum:
-          - Address
-          const: Address
+          - Abbreviation
+          const: Abbreviation
           title: Instancetype
       type: object
       required:
