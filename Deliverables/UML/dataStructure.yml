@@ -13,21 +13,11 @@ Abbreviation:
     abbreviation:
       Type:
       - $ref: '#/string'
-      NCI C-Code: C42610
-      Preferred Term: Abbreviation
-      Definition: A set of letters that are drawn from a word or from a sequence of
-        words and that are used for brevity in place of the full word or phrase. (CDISC
-        Glossary)
-      Codelist Ref: (Point to CDISC Glossary)
       Relationship Type: Value
       Model Name: abbreviation
     longName:
       Type:
       - $ref: '#/string'
-      NCI C-Code: CNEW
-      Preferred Term: Abbreviation Long Name
-      Definition: The full literal representation of the abbreviation.
-      Codelist Ref: (Point to CDISC Glossary)
       Relationship Type: Value
       Model Name: longName
     notes:
