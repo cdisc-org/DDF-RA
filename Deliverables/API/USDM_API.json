@@ -311,15 +311,15 @@
             "minLength": 1,
             "title": "Id"
           },
-          "abbreviation": {
+          "abbreviatedText": {
             "type": "string",
             "minLength": 1,
-            "title": "Abbreviation"
+            "title": "Abbreviatedtext"
           },
-          "longName": {
+          "expandedText": {
             "type": "string",
             "minLength": 1,
-            "title": "Longname"
+            "title": "Expandedtext"
           },
           "notes": {
             "items": {
@@ -341,8 +341,8 @@
         "type": "object",
         "required": [
           "id",
-          "abbreviation",
-          "longName",
+          "abbreviatedText",
+          "expandedText",
           "instanceType"
         ],
         "title": "Abbreviation"
@@ -354,15 +354,15 @@
             "minLength": 1,
             "title": "Id"
           },
-          "abbreviation": {
+          "abbreviatedText": {
             "type": "string",
             "minLength": 1,
-            "title": "Abbreviation"
+            "title": "Abbreviatedtext"
           },
-          "longName": {
+          "expandedText": {
             "type": "string",
             "minLength": 1,
-            "title": "Longname"
+            "title": "Expandedtext"
           },
           "notes": {
             "items": {
@@ -384,8 +384,8 @@
         "type": "object",
         "required": [
           "id",
-          "abbreviation",
-          "longName",
+          "abbreviatedText",
+          "expandedText",
           "instanceType"
         ],
         "title": "Abbreviation"
@@ -3635,15 +3635,16 @@
             ],
             "title": "Nextid"
           },
-          "contentItem": {
+          "contentItemId": {
             "anyOf": [
               {
-                "$ref": "#/components/schemas/NarrativeContentItem"
+                "type": "string"
               },
               {
                 "type": "null"
               }
-            ]
+            ],
+            "title": "Contentitemid"
           },
           "instanceType": {
             "type": "string",
@@ -7609,6 +7610,14 @@
             "type": "array",
             "title": "Criteria"
           },
+          "narrativeContentItem": {
+            "items": {
+              "$ref": "#/components/schemas/NarrativeContentItem"
+            },
+            "type": "array",
+            "title": "Narrativecontentitem",
+            "default": []
+          },
           "abbreviations": {
             "items": {
               "$ref": "#/components/schemas/Abbreviation-Input"
@@ -7741,6 +7750,14 @@
             },
             "type": "array",
             "title": "Criteria"
+          },
+          "narrativeContentItem": {
+            "items": {
+              "$ref": "#/components/schemas/NarrativeContentItem"
+            },
+            "type": "array",
+            "title": "Narrativecontentitem",
+            "default": []
           },
           "abbreviations": {
             "items": {

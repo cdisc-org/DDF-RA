@@ -216,14 +216,14 @@ components:
           type: string
           minLength: 1
           title: Id
-        abbreviation:
+        abbreviatedText:
           type: string
           minLength: 1
-          title: Abbreviation
-        longName:
+          title: Abbreviatedtext
+        expandedText:
           type: string
           minLength: 1
-          title: Longname
+          title: Expandedtext
         notes:
           items:
             $ref: '#/components/schemas/CommentAnnotation'
@@ -239,8 +239,8 @@ components:
       type: object
       required:
       - id
-      - abbreviation
-      - longName
+      - abbreviatedText
+      - expandedText
       - instanceType
       title: Abbreviation
     Abbreviation-Output:
@@ -249,14 +249,14 @@ components:
           type: string
           minLength: 1
           title: Id
-        abbreviation:
+        abbreviatedText:
           type: string
           minLength: 1
-          title: Abbreviation
-        longName:
+          title: Abbreviatedtext
+        expandedText:
           type: string
           minLength: 1
-          title: Longname
+          title: Expandedtext
         notes:
           items:
             $ref: '#/components/schemas/CommentAnnotation'
@@ -272,8 +272,8 @@ components:
       type: object
       required:
       - id
-      - abbreviation
-      - longName
+      - abbreviatedText
+      - expandedText
       - instanceType
       title: Abbreviation
     Activity-Input:
@@ -2374,10 +2374,11 @@ components:
           - type: string
           - type: 'null'
           title: Nextid
-        contentItem:
+        contentItemId:
           anyOf:
-          - $ref: '#/components/schemas/NarrativeContentItem'
+          - type: string
           - type: 'null'
+          title: Contentitemid
         instanceType:
           type: string
           enum:
@@ -4972,6 +4973,12 @@ components:
             $ref: '#/components/schemas/EligibilityCriterion-Input'
           type: array
           title: Criteria
+        narrativeContentItem:
+          items:
+            $ref: '#/components/schemas/NarrativeContentItem'
+          type: array
+          title: Narrativecontentitem
+          default: []
         abbreviations:
           items:
             $ref: '#/components/schemas/Abbreviation-Input'
@@ -5065,6 +5072,12 @@ components:
             $ref: '#/components/schemas/EligibilityCriterion-Output'
           type: array
           title: Criteria
+        narrativeContentItem:
+          items:
+            $ref: '#/components/schemas/NarrativeContentItem'
+          type: array
+          title: Narrativecontentitem
+          default: []
         abbreviations:
           items:
             $ref: '#/components/schemas/Abbreviation-Output'
