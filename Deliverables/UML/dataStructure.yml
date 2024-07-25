@@ -10,15 +10,15 @@ Abbreviation:
       - $ref: '#/string'
       Relationship Type: Value
       Model Name: id
-    abbreviation:
+    abbreviation*:
       Type:
       - $ref: '#/string'
-      Relationship Type: Value
+      Relationship Type: UNKNOWN
       Model Name: abbreviation
-    longName:
+    longName*:
       Type:
       - $ref: '#/string'
-      Relationship Type: Value
+      Relationship Type: UNKNOWN
       Model Name: longName
     notes:
       Type:
@@ -28,6 +28,16 @@ Abbreviation:
         classes which provides the set of notes related to the abbreviation.
       Relationship Type: Value
       Model Name: notes
+    abbreviatedText:
+      Type:
+      - $ref: '#/string'
+      Cardinality: 0..1
+      Relationship Type: Value
+    expandedText:
+      Type:
+      - $ref: '#/string'
+      Cardinality: 0..1
+      Relationship Type: Value
     instanceType:
       Type:
       - $ref: '#/string'
@@ -1863,13 +1873,13 @@ NarrativeContent:
         in the document containing narrative content.
       Relationship Type: Value
       Model Name: displaySectionNumber
-    contentItem:
+    contentItemId:
       Type:
       - $ref: '#/NarrativeContentItem'
       Cardinality: 0..1
       Definition: A USDM relationship between the NarrativeContent and NarrativeContentItem
         classes which identifies the content item associated with the narrative content.
-      Relationship Type: Value
+      Relationship Type: Ref
       Model Name: contentItem
     previousId:
       Type:
@@ -4451,6 +4461,11 @@ StudyVersion:
     criteria:
       Type:
       - $ref: '#/EligibilityCriterion'
+      Cardinality: 0..*
+      Relationship Type: Value
+    narrativeContentItem:
+      Type:
+      - $ref: '#/NarrativeContentItem'
       Cardinality: 0..*
       Relationship Type: Value
     instanceType:
