@@ -4973,11 +4973,11 @@ components:
             $ref: '#/components/schemas/EligibilityCriterion-Input'
           type: array
           title: Criteria
-        narrativeContentItem:
+        narrativeContentItems:
           items:
             $ref: '#/components/schemas/NarrativeContentItem'
           type: array
-          title: Narrativecontentitem
+          title: Narrativecontentitems
           default: []
         abbreviations:
           items:
@@ -5072,11 +5072,11 @@ components:
             $ref: '#/components/schemas/EligibilityCriterion-Output'
           type: array
           title: Criteria
-        narrativeContentItem:
+        narrativeContentItems:
           items:
             $ref: '#/components/schemas/NarrativeContentItem'
           type: array
-          title: Narrativecontentitem
+          title: Narrativecontentitems
           default: []
         abbreviations:
           items:

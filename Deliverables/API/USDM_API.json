@@ -7610,12 +7610,12 @@
             "type": "array",
             "title": "Criteria"
           },
-          "narrativeContentItem": {
+          "narrativeContentItems": {
             "items": {
               "$ref": "#/components/schemas/NarrativeContentItem"
             },
             "type": "array",
-            "title": "Narrativecontentitem",
+            "title": "Narrativecontentitems",
             "default": []
           },
           "abbreviations": {
@@ -7751,12 +7751,12 @@
             "type": "array",
             "title": "Criteria"
           },
-          "narrativeContentItem": {
+          "narrativeContentItems": {
             "items": {
               "$ref": "#/components/schemas/NarrativeContentItem"
             },
             "type": "array",
-            "title": "Narrativecontentitem",
+            "title": "Narrativecontentitems",
             "default": []
           },
           "abbreviations": {
