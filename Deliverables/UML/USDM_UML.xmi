@@ -9,12 +9,12 @@
 					<upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="EAID_LI000002_4F1C_4fb4_97D0_5A8A1B0BEDFE" value="1"/>
 					<type xmi:idref="EAJava_String"/>
 				</ownedAttribute>
-				<ownedAttribute xmi:type="uml:Property" xmi:id="EAID_0ADDC163_DF8B_46b2_A8CC_25296BBEC76B" name="abbreviation">
+				<ownedAttribute xmi:type="uml:Property" xmi:id="EAID_0ADDC163_DF8B_46b2_A8CC_25296BBEC76B" name="abbreviatedText">
 					<lowerValue xmi:type="uml:LiteralInteger" xmi:id="EAID_LI000003_DF8B_46b2_A8CC_25296BBEC76B" value="1"/>
 					<upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="EAID_LI000004_DF8B_46b2_A8CC_25296BBEC76B" value="1"/>
 					<type xmi:idref="EAJava_String"/>
 				</ownedAttribute>
-				<ownedAttribute xmi:type="uml:Property" xmi:id="EAID_90581AEB_95A3_488f_8F26_780DB35CC0FE" name="longName">
+				<ownedAttribute xmi:type="uml:Property" xmi:id="EAID_90581AEB_95A3_488f_8F26_780DB35CC0FE" name="expandedText">
 					<lowerValue xmi:type="uml:LiteralInteger" xmi:id="EAID_LI000005_95A3_488f_8F26_780DB35CC0FE" value="1"/>
 					<upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="EAID_LI000006_95A3_488f_8F26_780DB35CC0FE" value="1"/>
 					<type xmi:idref="EAJava_String"/>
@@ -10582,7 +10582,7 @@
 						<tags/>
 						<xrefs/>
 					</attribute>
-					<attribute xmi:idref="EAID_0ADDC163_DF8B_46b2_A8CC_25296BBEC76B" name="abbreviation" scope="Public">
+					<attribute xmi:idref="EAID_0ADDC163_DF8B_46b2_A8CC_25296BBEC76B" name="abbreviatedText" scope="Public">
 						<initial/>
 						<documentation/>
 						<model ea_localid="272" ea_guid="{0ADDC163-DF8B-46b2-A8CC-25296BBEC76B}"/>
@@ -10597,7 +10597,7 @@
 						<tags/>
 						<xrefs/>
 					</attribute>
-					<attribute xmi:idref="EAID_90581AEB_95A3_488f_8F26_780DB35CC0FE" name="longName" scope="Public">
+					<attribute xmi:idref="EAID_90581AEB_95A3_488f_8F26_780DB35CC0FE" name="expandedText" scope="Public">
 						<initial/>
 						<documentation/>
 						<model ea_localid="273" ea_guid="{90581AEB-95A3-488f-8F26-780DB35CC0FE}"/>
