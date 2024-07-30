@@ -10,16 +10,24 @@ Abbreviation:
       - $ref: '#/string'
       Relationship Type: Value
       Model Name: id
-    abbreviation*:
+    abbreviatedText:
       Type:
       - $ref: '#/string'
-      Relationship Type: UNKNOWN
-      Model Name: abbreviation
-    longName*:
+      NCI C-Code: C42610
+      Preferred Term: Abbreviation
+      Definition: A set of letters that are drawn from a word or from a sequence of
+        words and that are used for brevity in place of the full word or phrase. (CDISC
+        Glossary)
+      Relationship Type: Value
+      Model Name: abbreviatedText
+    expandedText:
       Type:
       - $ref: '#/string'
-      Relationship Type: UNKNOWN
-      Model Name: longName
+      NCI C-Code: CNEW
+      Preferred Term: Abbreviation Long Name
+      Definition: The full literal representation of the abbreviation.
+      Relationship Type: Value
+      Model Name: expandedText
     notes:
       Type:
       - $ref: '#/CommentAnnotation'
@@ -28,16 +36,6 @@ Abbreviation:
         classes which provides the set of notes related to the abbreviation.
       Relationship Type: Value
       Model Name: notes
-    abbreviatedText:
-      Type:
-      - $ref: '#/string'
-      Cardinality: 0..1
-      Relationship Type: Value
-    expandedText:
-      Type:
-      - $ref: '#/string'
-      Cardinality: 0..1
-      Relationship Type: Value
     instanceType:
       Type:
       - $ref: '#/string'
