@@ -159,89 +159,143 @@ Activity:
       - $ref: '#/string'
       Cardinality: 0..1
       Relationship Type: Value
-Address:
-  NCI C-Code: C25407
-  Preferred Term: Address
-  Definition: A standardized representation of the location of a person, business,
-    building, or organization. (NCI)
-  Modifier: Concrete
+AdministrableProductDefinition:
+  Modifier: Abstract
   Attributes:
     id:
       Type:
       - $ref: '#/string'
-      Relationship Type: Value
       Model Name: id
+    name:
+      Type:
+      - $ref: '#/string'
+      Model Name: name
+    description:
+      Type:
+      - $ref: '#/string'
+      Model Name: description
+    label:
+      Type:
+      - $ref: '#/string'
+      Model Name: label
+    administrableDoseForm:
+      Type:
+      - $ref: '#/AliasCode'
+      Cardinality: '1'
+      Model Name: administrableDoseForm
+    notes:
+      Type:
+      - $ref: '#/CommentAnnotation'
+      Cardinality: 0..*
+      Model Name: notes
+    identifiers:
+      Type:
+      - $ref: '#/AdministrableProductIdentifier'
+      Cardinality: 0..*
+      Model Name: identifiers
+    properties:
+      Type:
+      - $ref: '#/AdministrableProductProperty'
+      Cardinality: 0..*
+      Model Name: properties
+    ingredients:
+      Type:
+      - $ref: '#/Ingredient'
+      Cardinality: 1..*
+      Model Name: ingredients
+AdministrableProductIdentifier:
+  Super Classes:
+  - $ref: '#/Identifier'
+  Modifier: Abstract
+  Attributes:
+    id:
+      Type:
+      - $ref: '#/string'
+      Model Name: id
+      Inherited From:
+        $ref: '#/Identifier'
     text:
       Type:
       - $ref: '#/string'
-      NCI C-Code: C201311
-      Preferred Term: Address Full Text
-      Definition: A standardized representation of the complete set of components
-        denoting the physical address of the person, business, building, or organization.
-      Relationship Type: Value
       Model Name: text
-    line:
+      Inherited From:
+        $ref: '#/Identifier'
+    identifierScope:
+      Type:
+      - $ref: '#/Organization'
+      Cardinality: '1'
+      Model Name: identifierScope
+      Inherited From:
+        $ref: '#/Identifier'
+AdministrableProductProperty:
+  Modifier: Abstract
+  Attributes:
+    id:
       Type:
       - $ref: '#/string'
-      NCI C-Code: C25690
-      Preferred Term: Address Line
-      Definition: The street name and number, building number, apartment or unit number,
-        or post office box number where an entity is physically located.
-      Relationship Type: Value
-      Model Name: line
-    district:
+      Model Name: id
+    name:
       Type:
       - $ref: '#/string'
-      NCI C-Code: C176229
-      Preferred Term: District
-      Definition: An administrative or territorial division of a city, town, county,
-        parish, state, country, or other locality based on a shared characteristic.
-      Relationship Type: Value
-      Model Name: district
-    city:
+      Model Name: name
+    text:
       Type:
       - $ref: '#/string'
-      NCI C-Code: C25160
-      Preferred Term: City
-      Definition: A relatively large and/or densely populated area of human habitation
-        with administrative or legal status that may be specified as a component of
-        a postal address.
-      Relationship Type: Value
-      Model Name: city
-    postalCode:
-      Type:
-      - $ref: '#/string'
-      NCI C-Code: C25621
-      Preferred Term: Postal Code
-      Definition: An alphanumeric code assigned to a mail delivery area.
-      Relationship Type: Value
-      Model Name: postalCode
-    state:
-      Type:
-      - $ref: '#/string'
-      NCI C-Code: C87194
-      Preferred Term: State
-      Definition: A sub-division of a country that forms part of a federal union.
-        States are usually, but not always, more autonomous than provinces and may
-        have different laws from the central government.
-      Relationship Type: Value
-      Model Name: state
-    country:
+      Model Name: text
+    type:
       Type:
       - $ref: '#/Code'
-      NCI C-Code: C25464
+      Cardinality: '1'
+      Model Name: type
+    quantity:
+      Type:
+      - $ref: '#/Quantity'
       Cardinality: 0..1
-      Preferred Term: Country
-      Definition: A sovereign nation occupying a distinct territory and ruled by an
-        autonomous government.
-      Codelist Ref: (Point out to ISO 3166-1 Alpha-3 Country code)
-      Relationship Type: Value
-      Model Name: country
-    instanceType:
+      Model Name: quantity
+Administration:
+  Modifier: Abstract
+  Attributes:
+    id:
       Type:
       - $ref: '#/string'
-      Cardinality: 0..1
-      Relationship Type: Value
+      Model Name: id
+    name:
+      Type:
+      - $ref: '#/string'
+      Model Name: name
+    description:
+      Type:
+      - $ref: '#/string'
+      Model Name: description
+    label:
+      Type:
+      - $ref: '#/string'
+      Model Name: label
+    route:
+      Type:
+      - $ref: '#/AliasCode'
+      Cardinality: '1'
+      Model Name: route
+    dose:
+      Type:
+      - $ref: '#/Quantity'
+      Cardinality: '1'
+      Model Name: dose
+    frequency:
+      Type:
+      - $ref: '#/AliasCode'
+      Cardinality: '1'
+      Model Name: frequency
+    notes:
+      Type:
+      - $ref: '#/CommentAnnotation'
+      Cardinality: 0..*
+      Model Name: notes
+    duration:
+      Type:
+      - $ref: '#/AdministrationDuration'
+      Cardinality: '1'
+      Model Name: duration
 AdministrationDuration:
   NCI C-Code: C69282
   Preferred Term: Administration Duration
@@ -289,95 +343,6 @@ AdministrationDuration:
         of an agent occurs.
       Relationship Type: Value
       Model Name: quantity
-    instanceType:
-      Type:
-      - $ref: '#/string'
-      Cardinality: 0..1
-      Relationship Type: Value
-AgentAdministration:
-  NCI C-Code: C70962
-  Preferred Term: Agent Administration
-  Definition: The act of the dispensing, applying, or tendering a medical product
-    or other agent.
-  Modifier: Concrete
-  Attributes:
-    id:
-      Type:
-      - $ref: '#/string'
-      Relationship Type: Value
-      Model Name: id
-    name:
-      Type:
-      - $ref: '#/string'
-      NCI C-Code: C207465
-      Preferred Term: Agent Administration Name
-      Definition: The literal identifier (i.e., distinctive designation) of the agent
-        administration.
-      Relationship Type: Value
-      Model Name: name
-    description:
-      Type:
-      - $ref: '#/string'
-      NCI C-Code: C207463
-      Preferred Term: Agent Administration Description
-      Definition: A narrative representation of the agent administration.
-      Relationship Type: Value
-      Model Name: description
-    label:
-      Type:
-      - $ref: '#/string'
-      NCI C-Code: C207464
-      Preferred Term: Agent Administration Label
-      Definition: The short descriptive designation for the agent administration.
-      Relationship Type: Value
-      Model Name: label
-    duration:
-      Type:
-      - $ref: '#/AdministrationDuration'
-      Cardinality: '1'
-      Definition: A USDM relationship between the AgentAdministration and AdministrationDuration
-        classes which provides the duration of an instance of agent administration.
-      Relationship Type: Value
-      Model Name: duration
-    route:
-      Type:
-      - $ref: '#/AliasCode'
-      NCI C-Code: C38114
-      Cardinality: '1'
-      Preferred Term: Route of Administration
-      Definition: The pathway by which a substance is administered in order to reach
-        the site of action in the body.
-      Codelist Ref: SDTM Terminology Codelist C66729
-      Relationship Type: Value
-      Model Name: route
-    dose:
-      Type:
-      - $ref: '#/Quantity'
-      NCI C-Code: C167190
-      Cardinality: '1'
-      Preferred Term: Agent Administration Dose
-      Definition: The value representing the amount of an agent given to an individual
-        at one time.
-      Relationship Type: Value
-      Model Name: dose
-    frequency:
-      Type:
-      - $ref: '#/AliasCode'
-      NCI C-Code: C89081
-      Cardinality: '1'
-      Preferred Term: Dosing Frequency
-      Definition: The number of doses administered per a specific interval.
-      Codelist Ref: SDTM Terminology Codelist C71113
-      Relationship Type: Value
-      Model Name: frequency
-    notes:
-      Type:
-      - $ref: '#/CommentAnnotation'
-      Cardinality: 0..*
-      Definition: A USDM relationship between the AgentAdministration and CommentAnnotation
-        classes which provides the set of notes related to the agent administration.
-      Relationship Type: Value
-      Model Name: notes
     instanceType:
       Type:
       - $ref: '#/string'
@@ -1644,6 +1609,26 @@ GovernanceDate:
       - $ref: '#/string'
       Cardinality: 0..1
       Relationship Type: Value
+Identifier:
+  Sub Classes:
+  - $ref: '#/AdministrableProductIdentifier'
+  - $ref: '#/ReferenceIdentifier'
+  - $ref: '#/StudyIdentifier'
+  Modifier: Abstract
+  Attributes:
+    id:
+      Type:
+      - $ref: '#/string'
+      Model Name: id
+    text:
+      Type:
+      - $ref: '#/string'
+      Model Name: text
+    identifierScope:
+      Type:
+      - $ref: '#/Organization'
+      Cardinality: '1'
+      Model Name: identifierScope
 Indication:
   NCI C-Code: C41184
   Preferred Term: Disease/Condition Indication
@@ -1716,6 +1701,40 @@ Indication:
       - $ref: '#/string'
       Cardinality: 0..1
       Relationship Type: Value
+Ingredient:
+  Modifier: Abstract
+  Attributes:
+    id:
+      Type:
+      - $ref: '#/string'
+      Model Name: id
+    name:
+      Type:
+      - $ref: '#/string'
+      Model Name: name
+    description:
+      Type:
+      - $ref: '#/string'
+      Model Name: description
+    label:
+      Type:
+      - $ref: '#/string'
+      Model Name: label
+    substanceCode:
+      Type:
+      - $ref: '#/AliasCode'
+      Cardinality: 0..1
+      Model Name: substanceCode
+    strengthLowerLimit:
+      Type:
+      - $ref: '#/Strength'
+      Cardinality: '1'
+      Model Name: strengthLowerLimit
+    strengthUpperLimit:
+      Type:
+      - $ref: '#/Strength'
+      Cardinality: 0..1
+      Model Name: strengthUpperLimit
 IntercurrentEvent:
   NCI C-Code: C188815
   Preferred Term: Intercurrent Event
@@ -2414,6 +2433,35 @@ Range:
       - $ref: '#/string'
       Cardinality: 0..1
       Relationship Type: Value
+ReferenceIdentifier:
+  Super Classes:
+  - $ref: '#/Identifier'
+  Modifier: Abstract
+  Attributes:
+    id:
+      Type:
+      - $ref: '#/string'
+      Model Name: id
+      Inherited From:
+        $ref: '#/Identifier'
+    text:
+      Type:
+      - $ref: '#/string'
+      Model Name: text
+      Inherited From:
+        $ref: '#/Identifier'
+    identifierScope:
+      Type:
+      - $ref: '#/Organization'
+      Cardinality: '1'
+      Model Name: identifierScope
+      Inherited From:
+        $ref: '#/Identifier'
+    type:
+      Type:
+      - $ref: '#/Code'
+      Cardinality: '1'
+      Model Name: type
 ResearchOrganization:
   NCI C-Code: C93448
   Preferred Term: Research Organization
@@ -2895,6 +2943,28 @@ ScheduledInstance:
       Definition: A USDM relationship between the ScheduledInstance and StudyEpoch
         classes which identifies the study epoch associated with a scheduled instance.
       Model Name: epoch
+Strength:
+  Modifier: Abstract
+  Attributes:
+    id:
+      Type:
+      - $ref: '#/string'
+      Model Name: id
+    numerator:
+      Type:
+      - $ref: '#/Quantity'
+      Cardinality: '1'
+      Model Name: numerator
+    denominator:
+      Type:
+      - $ref: '#/Quantity'
+      Cardinality: 0..1
+      Model Name: denominator
+    reference:
+      Type:
+      - $ref: '#/Strength'
+      Cardinality: 0..1
+      Model Name: reference
 Study:
   NCI C-Code: C15206
   Preferred Term: Clinical Study
@@ -4084,6 +4154,8 @@ StudyIdentifier:
   Preferred Term: Study Identifier
   Definition: A sequence of characters used to identify, name, or characterize the
     study.
+  Super Classes:
+  - $ref: '#/Identifier'
   Modifier: Concrete
   Attributes:
     id:
@@ -4091,24 +4163,32 @@ StudyIdentifier:
       - $ref: '#/string'
       Relationship Type: Value
       Model Name: id
-    studyIdentifier:
+      Inherited From:
+        $ref: '#/Identifier'
+    text*:
       Type:
       - $ref: '#/string'
-      NCI C-Code: C83082
-      Preferred Term: Study Identifier
-      Definition: A sequence of characters used to identify, name, or characterize
-        the study.
-      Relationship Type: Value
-      Model Name: studyIdentifier
-    studyIdentifierScope:
+      Relationship Type: UNKNOWN
+      Model Name: text
+      Inherited From:
+        $ref: '#/Identifier'
+    identifierScope*:
       Type:
       - $ref: '#/Organization'
       Cardinality: '1'
-      Definition: A USDM relationship between the StudyIdentifier and Organization
-        classes which provides the details associated with each organization that
-        has assigned a study identifier.
+      Relationship Type: UNKNOWN
+      Model Name: identifierScope
+      Inherited From:
+        $ref: '#/Identifier'
+    studyIdentifier:
+      Type:
+      - $ref: '#/string'
+      Cardinality: 0..1
       Relationship Type: Value
-      Model Name: studyIdentifierScope
+    studyIdentifierScope:
+      Type:
+      - $ref: UNKNOWN
+      Relationship Type: Value
     instanceType:
       Type:
       - $ref: '#/string'
@@ -4151,9 +4231,15 @@ StudyIntervention:
       Definition: The short descriptive designation for the study intervention.
       Relationship Type: Value
       Model Name: label
+    administrableProduct*:
+      Type:
+      - $ref: '#/AdministrableProductDefinition'
+      Cardinality: 0..1
+      Relationship Type: UNKNOWN
+      Model Name: administrableProduct
     administrations:
       Type:
-      - $ref: '#/AgentAdministration'
+      - $ref: '#/Administration'
       Cardinality: 0..*
       Definition: A USDM relationship between the StudyIntervention and AgentAdministration
         classes which identifies the set of agent administrations associated with
@@ -4413,6 +4499,12 @@ StudyVersion:
         version.
       Relationship Type: Value
       Model Name: dateValues
+    referenceIdentifiers*:
+      Type:
+      - $ref: '#/ReferenceIdentifier'
+      Cardinality: 0..*
+      Relationship Type: UNKNOWN
+      Model Name: referenceIdentifiers
     amendments:
       Type:
       - $ref: '#/StudyAmendment'
@@ -4442,7 +4534,7 @@ StudyVersion:
     studyIdentifiers:
       Type:
       - $ref: '#/StudyIdentifier'
-      Cardinality: 0..*
+      Cardinality: 1..*
       Definition: A USDM relationship between the StudyVersion and StudyIdentifier
         classes which identifies the set of study identifiers associated with the
         study version.

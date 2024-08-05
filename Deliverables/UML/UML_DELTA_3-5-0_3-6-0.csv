@@ -1,0 +1,79 @@
+status,class_name,property_name,data_type
+Class - NEW,AdministrableProductDefinition,,
+,,id,string
+,,name,string
+,,description,string
+,,label,string
+,,administrableDoseForm,AliasCode
+,,notes,CommentAnnotation
+,,identifiers,AdministrableProductIdentifier
+,,properties,AdministrableProductProperty
+,,ingredients,Ingredient
+Class - NEW,AdministrableProductIdentifier,,
+,,id,string
+,,text,string
+,,identifierScope,Organization
+Class - NEW,AdministrableProductProperty,,
+,,id,string
+,,name,string
+,,text,string
+,,type,Code
+,,quantity,Quantity
+Class - NEW,Administration,,
+,,id,string
+,,name,string
+,,description,string
+,,label,string
+,,route,AliasCode
+,,dose,Quantity
+,,frequency,AliasCode
+,,notes,CommentAnnotation
+,,duration,AdministrationDuration
+Class - NEW,Identifier,,
+,,id,string
+,,text,string
+,,identifierScope,Organization
+Class - NEW,Ingredient,,
+,,id,string
+,,name,string
+,,description,string
+,,label,string
+,,substanceCode,AliasCode
+,,strengthLowerLimit,Strength
+,,strengthUpperLimit,Strength
+Class - NEW,ReferenceIdentifier,,
+,,id,string
+,,text,string
+,,identifierScope,Organization
+,,type,Code
+Class - NEW,Strength,,
+,,id,string
+,,numerator,Quantity
+,,denominator,Quantity
+,,reference,Strength
+Class - DELETED,Address,,
+,,id,string
+,,text,string
+,,line,string
+,,district,string
+,,city,string
+,,postalCode,string
+,,state,string
+,,country,Code
+Class - DELETED,AgentAdministration,,
+,,id,string
+,,name,string
+,,description,string
+,,label,string
+,,duration,AdministrationDuration
+,,route,AliasCode
+,,dose,Quantity
+,,frequency,AliasCode
+,,notes,CommentAnnotation
+,,,
+Property - NEW,StudyIntervention,administrableProduct,AdministrableProductDefinition
+Property - NEW,StudyVersion,referenceIdentifiers,ReferenceIdentifier
+Property - NEW,StudyIdentifier,identifierScope,Organization
+Property - NEW,StudyIdentifier,text,string
+Property - DELETED,StudyIdentifier,studyIdentifier,string
+Property - DELETED,StudyIdentifier,studyIdentifierScope,Organization
