@@ -1610,6 +1610,10 @@ GovernanceDate:
       Cardinality: 0..1
       Relationship Type: Value
 Identifier:
+  NCI C-Code: C25364
+  Preferred Term: Identifier
+  Definition: One or more characters used to identify, name, or characterize the nature,
+    properties, or contents of a thing.
   Sub Classes:
   - $ref: '#/AdministrableProductIdentifier'
   - $ref: '#/ReferenceIdentifier'
@@ -1623,11 +1627,17 @@ Identifier:
     text:
       Type:
       - $ref: '#/string'
+      NCI C-Code: CNEW
+      Preferred Term: Identifier Text
+      Definition: An instance of structured text that represents the identifier.
       Model Name: text
     identifierScope:
       Type:
       - $ref: '#/Organization'
       Cardinality: '1'
+      Definition: A USDM relationship between the Identifier and Organization classes
+        which provides the details associated with each organization that has assigned
+        the identifier.
       Model Name: identifierScope
 Indication:
   NCI C-Code: C41184
@@ -2434,6 +2444,10 @@ Range:
       Cardinality: 0..1
       Relationship Type: Value
 ReferenceIdentifier:
+  NCI C-Code: CNEW
+  Preferred Term: Reference Identifier
+  Definition: A sequence of characters used to identify, name, or characterize the
+    reference.
   Super Classes:
   - $ref: '#/Identifier'
   Modifier: Abstract
@@ -2447,6 +2461,9 @@ ReferenceIdentifier:
     text:
       Type:
       - $ref: '#/string'
+      NCI C-Code: CNEW
+      Preferred Term: Reference Identifier Text
+      Definition: An instance of structured text that represents the reference identifier.
       Model Name: text
       Inherited From:
         $ref: '#/Identifier'
@@ -2454,13 +2471,20 @@ ReferenceIdentifier:
       Type:
       - $ref: '#/Organization'
       Cardinality: '1'
+      Definition: A USDM relationship between the ReferenceIdentifier and Organization
+        classes which provides the details associated with each organization that
+        has assigned the reference identifier.
       Model Name: identifierScope
       Inherited From:
         $ref: '#/Identifier'
     type:
       Type:
       - $ref: '#/Code'
+      NCI C-Code: CNEW
       Cardinality: '1'
+      Preferred Term: Reference Identifier Type
+      Definition: A characterization or classification of the reference identifier.
+      Codelist Ref: CNEW
       Model Name: type
 ResearchOrganization:
   NCI C-Code: C93448
@@ -4168,6 +4192,9 @@ StudyIdentifier:
     text*:
       Type:
       - $ref: '#/string'
+      NCI C-Code: CNEW
+      Preferred Term: Study Identifier Text
+      Definition: An instance of structured text that represents the study identifier.
       Relationship Type: UNKNOWN
       Model Name: text
       Inherited From:
@@ -4176,6 +4203,9 @@ StudyIdentifier:
       Type:
       - $ref: '#/Organization'
       Cardinality: '1'
+      Definition: A USDM relationship between the StudyIdentifier and Organization
+        classes which provides the details associated with each organization that
+        has assigned the study identifier.
       Relationship Type: UNKNOWN
       Model Name: identifierScope
       Inherited From:
@@ -4503,6 +4533,9 @@ StudyVersion:
       Type:
       - $ref: '#/ReferenceIdentifier'
       Cardinality: 0..*
+      Definition: A USDM relationship between the StudyVersion and ReferenceIdentifier
+        classes which identifies the set of reference identifiers associated with
+        the study version.
       Relationship Type: UNKNOWN
       Model Name: referenceIdentifiers
     amendments:
