@@ -1635,9 +1635,6 @@ Identifier:
       Type:
       - $ref: '#/Organization'
       Cardinality: '1'
-      Definition: A USDM relationship between the Identifier and Organization classes
-        which provides the details associated with each organization that has assigned
-        the identifier.
       Model Name: identifierScope
 Indication:
   NCI C-Code: C41184
@@ -2471,9 +2468,6 @@ ReferenceIdentifier:
       Type:
       - $ref: '#/Organization'
       Cardinality: '1'
-      Definition: A USDM relationship between the ReferenceIdentifier and Organization
-        classes which provides the details associated with each organization that
-        has assigned the reference identifier.
       Model Name: identifierScope
       Inherited From:
         $ref: '#/Identifier'
@@ -4203,9 +4197,6 @@ StudyIdentifier:
       Type:
       - $ref: '#/Organization'
       Cardinality: '1'
-      Definition: A USDM relationship between the StudyIdentifier and Organization
-        classes which provides the details associated with each organization that
-        has assigned the study identifier.
       Relationship Type: UNKNOWN
       Model Name: identifierScope
       Inherited From:
