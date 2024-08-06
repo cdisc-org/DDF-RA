@@ -159,6 +159,89 @@ Activity:
       - $ref: '#/string'
       Cardinality: 0..1
       Relationship Type: Value
+Address:
+  NCI C-Code: C25407
+  Preferred Term: Address
+  Definition: A standardized representation of the location of a person, business,
+    building, or organization. (NCI)
+  Modifier: Concrete
+  Attributes:
+    id:
+      Type:
+      - $ref: '#/string'
+      Relationship Type: Value
+      Model Name: id
+    text:
+      Type:
+      - $ref: '#/string'
+      NCI C-Code: C201311
+      Preferred Term: Address Full Text
+      Definition: A standardized representation of the complete set of components
+        denoting the physical address of the person, business, building, or organization.
+      Relationship Type: Value
+      Model Name: text
+    line:
+      Type:
+      - $ref: '#/string'
+      NCI C-Code: C25690
+      Preferred Term: Address Line
+      Definition: The street name and number, building number, apartment or unit number,
+        or post office box number where an entity is physically located.
+      Relationship Type: Value
+      Model Name: line
+    district:
+      Type:
+      - $ref: '#/string'
+      NCI C-Code: C176229
+      Preferred Term: District
+      Definition: An administrative or territorial division of a city, town, county,
+        parish, state, country, or other locality based on a shared characteristic.
+      Relationship Type: Value
+      Model Name: district
+    city:
+      Type:
+      - $ref: '#/string'
+      NCI C-Code: C25160
+      Preferred Term: City
+      Definition: A relatively large and/or densely populated area of human habitation
+        with administrative or legal status that may be specified as a component of
+        a postal address.
+      Relationship Type: Value
+      Model Name: city
+    postalCode:
+      Type:
+      - $ref: '#/string'
+      NCI C-Code: C25621
+      Preferred Term: Postal Code
+      Definition: An alphanumeric code assigned to a mail delivery area.
+      Relationship Type: Value
+      Model Name: postalCode
+    state:
+      Type:
+      - $ref: '#/string'
+      NCI C-Code: C87194
+      Preferred Term: State
+      Definition: A sub-division of a country that forms part of a federal union.
+        States are usually, but not always, more autonomous than provinces and may
+        have different laws from the central government.
+      Relationship Type: Value
+      Model Name: state
+    country:
+      Type:
+      - $ref: '#/Code'
+      NCI C-Code: C25464
+      Cardinality: 0..1
+      Preferred Term: Country
+      Definition: A sovereign nation occupying a distinct territory and ruled by an
+        autonomous government.
+      Codelist Ref: (Point out to ISO 3166-1 Alpha-3 Country code)
+      Relationship Type: Value
+      Model Name: country
+    instanceType:
+      Type:
+      - $ref: '#/string'
+      Cardinality: 0..1
+      Relationship Type: Value
 AdministrableProductDefinition:
   Modifier: Abstract
   Attributes:
@@ -220,11 +303,11 @@ AdministrableProductIdentifier:
       Model Name: text
       Inherited From:
         $ref: '#/Identifier'
-    identifierScope:
+    scope:
       Type:
       - $ref: '#/Organization'
       Cardinality: '1'
-      Model Name: identifierScope
+      Model Name: scope
       Inherited From:
         $ref: '#/Identifier'
 AdministrableProductProperty:
@@ -271,20 +354,25 @@ Administration:
       Type:
       - $ref: '#/string'
       Model Name: label
+    administrableProduct:
+      Type:
+      - $ref: '#/AdministrableProductDefinition'
+      Cardinality: 0..1
+      Model Name: administrableProduct
     route:
       Type:
       - $ref: '#/AliasCode'
-      Cardinality: '1'
+      Cardinality: 0..1
       Model Name: route
     dose:
       Type:
       - $ref: '#/Quantity'
-      Cardinality: '1'
+      Cardinality: 0..1
       Model Name: dose
     frequency:
       Type:
       - $ref: '#/AliasCode'
-      Cardinality: '1'
+      Cardinality: 0..1
       Model Name: frequency
     notes:
       Type:
@@ -1631,11 +1719,14 @@ Identifier:
       Preferred Term: Identifier Text
       Definition: An instance of structured text that represents the identifier.
       Model Name: text
-    identifierScope:
+    scope:
       Type:
       - $ref: '#/Organization'
       Cardinality: '1'
-      Model Name: identifierScope
+      Definition: A USDM relationship between the Identifier and Organization classes
+        which provides the details associated with each organization that has assigned
+        the identifier.
+      Model Name: scope
 Indication:
   NCI C-Code: C41184
   Preferred Term: Disease/Condition Indication
@@ -2464,11 +2555,14 @@ ReferenceIdentifier:
       Model Name: text
       Inherited From:
         $ref: '#/Identifier'
-    identifierScope:
+    scope:
       Type:
       - $ref: '#/Organization'
       Cardinality: '1'
-      Model Name: identifierScope
+      Definition: A USDM relationship between the ReferenceIdentifier and Organization
+        classes which provides the details associated with each organization that
+        has assigned the reference identifier.
+      Model Name: scope
       Inherited From:
         $ref: '#/Identifier'
     type:
@@ -4193,12 +4287,15 @@ StudyIdentifier:
       Model Name: text
       Inherited From:
         $ref: '#/Identifier'
-    identifierScope*:
+    scope*:
       Type:
       - $ref: '#/Organization'
       Cardinality: '1'
+      Definition: A USDM relationship between the StudyIdentifier and Organization
+        classes which provides the details associated with each organization that
+        has assigned the study identifier.
       Relationship Type: UNKNOWN
-      Model Name: identifierScope
+      Model Name: scope
       Inherited From:
         $ref: '#/Identifier'
     studyIdentifier:
@@ -4252,12 +4349,6 @@ StudyIntervention:
       Definition: The short descriptive designation for the study intervention.
       Relationship Type: Value
       Model Name: label
-    administrableProduct*:
-      Type:
-      - $ref: '#/AdministrableProductDefinition'
-      Cardinality: 0..1
-      Relationship Type: UNKNOWN
-      Model Name: administrableProduct
     administrations:
       Type:
       - $ref: '#/Administration'
