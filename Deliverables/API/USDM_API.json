@@ -3,7 +3,7 @@
   "info": {
     "title": "DDF USDM API",
     "description": "A simple TransCelerate Digital Data Flow (DDF) Study Definitions Repository API.",
-    "version": "3.5.0"
+    "version": "3.6.0"
   },
   "paths": {
     "/v3/studyDefinitions": {
@@ -4316,6 +4316,78 @@
         ],
         "title": "Range"
       },
+      "ReferenceIdentifier-Input": {
+        "properties": {
+          "id": {
+            "type": "string",
+            "minLength": 1,
+            "title": "Id"
+          },
+          "text": {
+            "type": "string",
+            "title": "Text"
+          },
+          "scope": {
+            "$ref": "#/components/schemas/Organization-Input"
+          },
+          "instanceType": {
+            "type": "string",
+            "enum": [
+              "ReferenceIdentifier"
+            ],
+            "const": "ReferenceIdentifier",
+            "title": "Instancetype"
+          },
+          "type": {
+            "$ref": "#/components/schemas/Code"
+          }
+        },
+        "type": "object",
+        "required": [
+          "id",
+          "text",
+          "scope",
+          "instanceType",
+          "type"
+        ],
+        "title": "ReferenceIdentifier"
+      },
+      "ReferenceIdentifier-Output": {
+        "properties": {
+          "id": {
+            "type": "string",
+            "minLength": 1,
+            "title": "Id"
+          },
+          "text": {
+            "type": "string",
+            "title": "Text"
+          },
+          "scope": {
+            "$ref": "#/components/schemas/Organization-Output"
+          },
+          "instanceType": {
+            "type": "string",
+            "enum": [
+              "ReferenceIdentifier"
+            ],
+            "const": "ReferenceIdentifier",
+            "title": "Instancetype"
+          },
+          "type": {
+            "$ref": "#/components/schemas/Code"
+          }
+        },
+        "type": "object",
+        "required": [
+          "id",
+          "text",
+          "scope",
+          "instanceType",
+          "type"
+        ],
+        "title": "ReferenceIdentifier"
+      },
       "ResearchOrganization-Input": {
         "properties": {
           "id": {
@@ -7088,11 +7160,11 @@
             "minLength": 1,
             "title": "Id"
           },
-          "studyIdentifier": {
+          "text": {
             "type": "string",
-            "title": "Studyidentifier"
+            "title": "Text"
           },
-          "studyIdentifierScope": {
+          "scope": {
             "$ref": "#/components/schemas/Organization-Input"
           },
           "instanceType": {
@@ -7107,8 +7179,8 @@
         "type": "object",
         "required": [
           "id",
-          "studyIdentifier",
-          "studyIdentifierScope",
+          "text",
+          "scope",
           "instanceType"
         ],
         "title": "StudyIdentifier"
@@ -7120,11 +7192,11 @@
             "minLength": 1,
             "title": "Id"
           },
-          "studyIdentifier": {
+          "text": {
             "type": "string",
-            "title": "Studyidentifier"
+            "title": "Text"
           },
-          "studyIdentifierScope": {
+          "scope": {
             "$ref": "#/components/schemas/Organization-Output"
           },
           "instanceType": {
@@ -7139,8 +7211,8 @@
         "type": "object",
         "required": [
           "id",
-          "studyIdentifier",
-          "studyIdentifierScope",
+          "text",
+          "scope",
           "instanceType"
         ],
         "title": "StudyIdentifier"
@@ -7585,7 +7657,14 @@
               "$ref": "#/components/schemas/StudyIdentifier-Input"
             },
             "type": "array",
-            "title": "Studyidentifiers",
+            "title": "Studyidentifiers"
+          },
+          "referenceIdentifiers": {
+            "items": {
+              "$ref": "#/components/schemas/ReferenceIdentifier-Input"
+            },
+            "type": "array",
+            "title": "Referenceidentifiers",
             "default": []
           },
           "studyDesigns": {
@@ -7648,6 +7727,7 @@
           "id",
           "versionIdentifier",
           "rationale",
+          "studyIdentifiers",
           "titles",
           "criteria",
           "instanceType"
@@ -7726,7 +7806,14 @@
               "$ref": "#/components/schemas/StudyIdentifier-Output"
             },
             "type": "array",
-            "title": "Studyidentifiers",
+            "title": "Studyidentifiers"
+          },
+          "referenceIdentifiers": {
+            "items": {
+              "$ref": "#/components/schemas/ReferenceIdentifier-Output"
+            },
+            "type": "array",
+            "title": "Referenceidentifiers",
             "default": []
           },
           "studyDesigns": {
@@ -7789,6 +7876,7 @@
           "id",
           "versionIdentifier",
           "rationale",
+          "studyIdentifiers",
           "titles",
           "criteria",
           "instanceType"
