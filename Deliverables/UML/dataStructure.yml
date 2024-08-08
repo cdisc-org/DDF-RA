@@ -2538,11 +2538,12 @@ ReferenceIdentifier:
     reference.
   Super Classes:
   - $ref: '#/Identifier'
-  Modifier: Abstract
+  Modifier: Concrete
   Attributes:
     id:
       Type:
       - $ref: '#/string'
+      Relationship Type: Value
       Model Name: id
       Inherited From:
         $ref: '#/Identifier'
@@ -2552,6 +2553,7 @@ ReferenceIdentifier:
       NCI C-Code: CNEW
       Preferred Term: Reference Identifier Text
       Definition: An instance of structured text that represents the reference identifier.
+      Relationship Type: Value
       Model Name: text
       Inherited From:
         $ref: '#/Identifier'
@@ -2562,6 +2564,7 @@ ReferenceIdentifier:
       Definition: A USDM relationship between the ReferenceIdentifier and Organization
         classes which provides the details associated with each organization that
         has assigned the reference identifier.
+      Relationship Type: Value
       Model Name: scope
       Inherited From:
         $ref: '#/Identifier'
@@ -2573,7 +2576,13 @@ ReferenceIdentifier:
       Preferred Term: Reference Identifier Type
       Definition: A characterization or classification of the reference identifier.
       Codelist Ref: CNEW
+      Relationship Type: Value
       Model Name: type
+    instanceType:
+      Type:
+      - $ref: '#/string'
+      Cardinality: 0..1
+      Relationship Type: Value
 ResearchOrganization:
   NCI C-Code: C93448
   Preferred Term: Research Organization
@@ -4277,36 +4286,27 @@ StudyIdentifier:
       Model Name: id
       Inherited From:
         $ref: '#/Identifier'
-    text*:
+    text:
       Type:
       - $ref: '#/string'
       NCI C-Code: CNEW
       Preferred Term: Study Identifier Text
       Definition: An instance of structured text that represents the study identifier.
-      Relationship Type: UNKNOWN
+      Relationship Type: Value
       Model Name: text
       Inherited From:
         $ref: '#/Identifier'
-    scope*:
+    scope:
       Type:
       - $ref: '#/Organization'
       Cardinality: '1'
       Definition: A USDM relationship between the StudyIdentifier and Organization
         classes which provides the details associated with each organization that
         has assigned the study identifier.
-      Relationship Type: UNKNOWN
+      Relationship Type: Value
       Model Name: scope
       Inherited From:
         $ref: '#/Identifier'
-    studyIdentifier:
-      Type:
-      - $ref: '#/string'
-      Cardinality: 0..1
-      Relationship Type: Value
-    studyIdentifierScope:
-      Type:
-      - $ref: UNKNOWN
-      Relationship Type: Value
     instanceType:
       Type:
       - $ref: '#/string'
@@ -4611,14 +4611,14 @@ StudyVersion:
         version.
       Relationship Type: Value
       Model Name: dateValues
-    referenceIdentifiers*:
+    referenceIdentifiers:
       Type:
       - $ref: '#/ReferenceIdentifier'
       Cardinality: 0..*
       Definition: A USDM relationship between the StudyVersion and ReferenceIdentifier
         classes which identifies the set of reference identifiers associated with
         the study version.
-      Relationship Type: UNKNOWN
+      Relationship Type: Value
       Model Name: referenceIdentifiers
     amendments:
       Type:
