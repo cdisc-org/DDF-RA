@@ -1,11 +1,12 @@
 status,class_name,property_name,data_type
-Class - NEW,AdministrableProductDefinition,,
+Class - NEW,AdministrableProduct,,
 ,,id,string
 ,,name,string
 ,,description,string
 ,,label,string
 ,,administrableDoseForm,AliasCode
 ,,notes,CommentAnnotation
+,,pharmacologicClass,Code
 ,,identifiers,AdministrableProductIdentifier
 ,,properties,AdministrableProductProperty
 ,,ingredients,Ingredient
@@ -24,7 +25,7 @@ Class - NEW,Administration,,
 ,,name,string
 ,,description,string
 ,,label,string
-,,administrableProduct,AdministrableProductDefinition
+,,administrableProduct,AdministrableProduct
 ,,route,AliasCode
 ,,dose,Quantity
 ,,frequency,AliasCode
@@ -40,8 +41,8 @@ Class - NEW,Ingredient,,
 ,,description,string
 ,,label,string
 ,,substanceCode,AliasCode
-,,strengthLowerLimit,Strength
-,,strengthUpperLimit,Strength
+,,strengthsLowerLimit,Strength
+,,strengthsUpperLimit,Strength
 Class - NEW,ReferenceIdentifier,,
 ,,id,string
 ,,text,string
@@ -49,6 +50,9 @@ Class - NEW,ReferenceIdentifier,,
 ,,type,Code
 Class - NEW,Strength,,
 ,,id,string
+,,name,string
+,,description,string
+,,label,string
 ,,numerator,Quantity
 ,,denominator,Quantity
 ,,reference,Strength
@@ -66,5 +70,6 @@ Class - DELETED,AgentAdministration,,
 Property - NEW,StudyVersion,referenceIdentifiers,ReferenceIdentifier
 Property - NEW,StudyIdentifier,scope,Organization
 Property - NEW,StudyIdentifier,text,string
+Property - DELETED,StudyIntervention,pharmacologicClass,Code
 Property - DELETED,StudyIdentifier,studyIdentifier,string
 Property - DELETED,StudyIdentifier,studyIdentifierScope,Organization

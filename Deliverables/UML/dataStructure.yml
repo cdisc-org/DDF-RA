@@ -242,7 +242,7 @@ Address:
       - $ref: '#/string'
       Cardinality: 0..1
       Relationship Type: Value
-AdministrableProductDefinition:
+AdministrableProduct:
   Modifier: Abstract
   Attributes:
     id:
@@ -271,6 +271,11 @@ AdministrableProductDefinition:
       - $ref: '#/CommentAnnotation'
       Cardinality: 0..*
       Model Name: notes
+    pharmacologicClass:
+      Type:
+      - $ref: '#/Code'
+      Cardinality: 0..1
+      Model Name: pharmacologicClass
     identifiers:
       Type:
       - $ref: '#/AdministrableProductIdentifier'
@@ -356,7 +361,7 @@ Administration:
       Model Name: label
     administrableProduct:
       Type:
-      - $ref: '#/AdministrableProductDefinition'
+      - $ref: '#/AdministrableProduct'
       Cardinality: 0..1
       Model Name: administrableProduct
     route:
@@ -1823,16 +1828,16 @@ Ingredient:
       - $ref: '#/AliasCode'
       Cardinality: 0..1
       Model Name: substanceCode
-    strengthLowerLimit:
+    strengthsLowerLimit:
       Type:
       - $ref: '#/Strength'
-      Cardinality: '1'
-      Model Name: strengthLowerLimit
-    strengthUpperLimit:
+      Cardinality: 1..*
+      Model Name: strengthsLowerLimit
+    strengthsUpperLimit:
       Type:
       - $ref: '#/Strength'
-      Cardinality: 0..1
-      Model Name: strengthUpperLimit
+      Cardinality: 0..*
+      Model Name: strengthsUpperLimit
 IntercurrentEvent:
   NCI C-Code: C188815
   Preferred Term: Intercurrent Event
@@ -3071,6 +3076,18 @@ Strength:
       Type:
       - $ref: '#/string'
       Model Name: id
+    name:
+      Type:
+      - $ref: '#/string'
+      Model Name: name
+    description:
+      Type:
+      - $ref: '#/string'
+      Model Name: description
+    label:
+      Type:
+      - $ref: '#/string'
+      Model Name: label
     numerator:
       Type:
       - $ref: '#/Quantity'
@@ -4390,16 +4407,6 @@ StudyIntervention:
       Codelist Ref: CNEW - Study Intervention Product Designation Response
       Relationship Type: Value
       Model Name: productDesignation
-    pharmacologicClass:
-      Type:
-      - $ref: '#/Code'
-      NCI C-Code: C98768
-      Cardinality: 0..1
-      Preferred Term: Pharmacologic Class
-      Definition: The pharmacological class of the investigational product.
-      Codelist Ref: (Points to external codelists; FDA requirement to use…)
-      Relationship Type: Value
-      Model Name: pharmacologicClass
     codes:
       Type:
       - $ref: '#/Code'
@@ -4430,6 +4437,10 @@ StudyIntervention:
         the criteria for response to study intervention.
       Relationship Type: Value
       Model Name: minimumResponseDuration
+    pharmacologicClass:
+      Type:
+      - $ref: UNKNOWN
+      Relationship Type: Value
     instanceType:
       Type:
       - $ref: '#/string'
