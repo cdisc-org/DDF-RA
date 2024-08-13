@@ -43,6 +43,7 @@ Class - NEW,Ingredient,,
 ,,substanceCode,AliasCode
 ,,strengthsLowerLimit,Strength
 ,,strengthsUpperLimit,Strength
+,,reference,Ingredient
 Class - NEW,ReferenceIdentifier,,
 ,,id,string
 ,,text,string
@@ -55,7 +56,6 @@ Class - NEW,Strength,,
 ,,label,string
 ,,numerator,Quantity
 ,,denominator,Quantity
-,,reference,Strength
 Class - DELETED,AgentAdministration,,
 ,,id,string
 ,,name,string

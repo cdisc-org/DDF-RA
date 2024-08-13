@@ -1838,6 +1838,11 @@ Ingredient:
       - $ref: '#/Strength'
       Cardinality: 0..*
       Model Name: strengthsUpperLimit
+    reference:
+      Type:
+      - $ref: '#/Ingredient'
+      Cardinality: 0..1
+      Model Name: reference
 IntercurrentEvent:
   NCI C-Code: C188815
   Preferred Term: Intercurrent Event
@@ -3098,11 +3103,6 @@ Strength:
       - $ref: '#/Quantity'
       Cardinality: 0..1
       Model Name: denominator
-    reference:
-      Type:
-      - $ref: '#/Strength'
-      Cardinality: 0..1
-      Model Name: reference
 Study:
   NCI C-Code: C15206
   Preferred Term: Clinical Study
