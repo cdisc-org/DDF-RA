@@ -289,7 +289,7 @@ AdministrableProduct:
     ingredients:
       Type:
       - $ref: '#/Ingredient'
-      Cardinality: 1..*
+      Cardinality: 0..*
       Model Name: ingredients
 AdministrableProductIdentifier:
   Super Classes:
@@ -1807,42 +1807,11 @@ Indication:
 Ingredient:
   Modifier: Abstract
   Attributes:
-    id:
+    substance:
       Type:
-      - $ref: '#/string'
-      Model Name: id
-    name:
-      Type:
-      - $ref: '#/string'
-      Model Name: name
-    description:
-      Type:
-      - $ref: '#/string'
-      Model Name: description
-    label:
-      Type:
-      - $ref: '#/string'
-      Model Name: label
-    substanceCode:
-      Type:
-      - $ref: '#/AliasCode'
-      Cardinality: 0..1
-      Model Name: substanceCode
-    strengthsLowerLimit:
-      Type:
-      - $ref: '#/Strength'
-      Cardinality: 1..*
-      Model Name: strengthsLowerLimit
-    strengthsUpperLimit:
-      Type:
-      - $ref: '#/Strength'
-      Cardinality: 0..*
-      Model Name: strengthsUpperLimit
-    reference:
-      Type:
-      - $ref: '#/Ingredient'
-      Cardinality: 0..1
-      Model Name: reference
+      - $ref: '#/Substance'
+      Cardinality: '1'
+      Model Name: substance
 IntercurrentEvent:
   NCI C-Code: C188815
   Preferred Term: Intercurrent Event
@@ -4743,6 +4712,45 @@ SubjectEnrollment:
       - $ref: '#/string'
       Cardinality: 0..1
       Relationship Type: Value
+Substance:
+  Modifier: Abstract
+  Attributes:
+    id:
+      Type:
+      - $ref: '#/string'
+      Model Name: id
+    name:
+      Type:
+      - $ref: '#/string'
+      Model Name: name
+    description:
+      Type:
+      - $ref: '#/string'
+      Model Name: description
+    label:
+      Type:
+      - $ref: '#/string'
+      Model Name: label
+    code:
+      Type:
+      - $ref: '#/AliasCode'
+      Cardinality: 0..1
+      Model Name: code
+    strengthsLowerLimit:
+      Type:
+      - $ref: '#/Strength'
+      Cardinality: 1..*
+      Model Name: strengthsLowerLimit
+    strengthsUpperLimit:
+      Type:
+      - $ref: '#/Strength'
+      Cardinality: 0..*
+      Model Name: strengthsUpperLimit
+    referenceSubstance:
+      Type:
+      - $ref: '#/Substance'
+      Cardinality: 0..1
+      Model Name: referenceSubstance
 SyntaxTemplate:
   NCI C-Code: C207596
   Preferred Term: Syntax Template
