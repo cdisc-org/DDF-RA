@@ -1807,6 +1807,15 @@ Indication:
 Ingredient:
   Modifier: Abstract
   Attributes:
+    id:
+      Type:
+      - $ref: '#/string'
+      Model Name: id
+    role:
+      Type:
+      - $ref: '#/Code'
+      Cardinality: '1'
+      Model Name: role
     substance:
       Type:
       - $ref: '#/Substance'
@@ -3065,7 +3074,8 @@ Strength:
     numerator:
       Type:
       - $ref: '#/Quantity'
-      Cardinality: '1'
+      - $ref: '#/Range'
+      Cardinality: 0..1
       Model Name: numerator
     denominator:
       Type:
@@ -4736,16 +4746,11 @@ Substance:
       - $ref: '#/AliasCode'
       Cardinality: 0..1
       Model Name: code
-    strengthsLowerLimit:
+    strengths:
       Type:
       - $ref: '#/Strength'
       Cardinality: 1..*
-      Model Name: strengthsLowerLimit
-    strengthsUpperLimit:
-      Type:
-      - $ref: '#/Strength'
-      Cardinality: 0..*
-      Model Name: strengthsUpperLimit
+      Model Name: strengths
     referenceSubstance:
       Type:
       - $ref: '#/Substance'
