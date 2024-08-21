@@ -252,44 +252,74 @@ AdministrableProduct:
     name:
       Type:
       - $ref: '#/string'
+      NCI C-Code: CNEW
+      Preferred Term: Administrable Product Definition Name
+      Definition: The literal identifier (i.e., distinctive designation) of the administrable
+        product.
       Model Name: name
     description:
       Type:
       - $ref: '#/string'
+      NCI C-Code: CNEW
+      Preferred Term: Administrable Product Definition Description
+      Definition: A narrative representation of the administrable product.
       Model Name: description
     label:
       Type:
       - $ref: '#/string'
+      NCI C-Code: CNEW
+      Preferred Term: Administrable Product Definition Label
+      Definition: The short descriptive designation for the administrable product.
       Model Name: label
     administrableDoseForm:
       Type:
       - $ref: '#/AliasCode'
+      NCI C-Code: C42636
       Cardinality: '1'
+      Preferred Term: Dose Form
+      Definition: The physical form in which active and/or inert ingredient(s) are
+        presented.
+      Codelist Ref: C66726
       Model Name: administrableDoseForm
     notes:
       Type:
       - $ref: '#/CommentAnnotation'
       Cardinality: 0..*
+      Definition: A USDM relationship between the AdministrableProductn and CommentAnnotation
+        classes which provides the set of notes related to the administrable product.
       Model Name: notes
     pharmacologicClass:
       Type:
       - $ref: '#/Code'
+      NCI C-Code: C98768
       Cardinality: 0..1
+      Preferred Term: Pharmacologic Class
+      Definition: The pharmacological class of the investigational product.
+      Codelist Ref: (Points to external codelists such as UNII, MED-RT)
       Model Name: pharmacologicClass
     identifiers:
       Type:
       - $ref: '#/AdministrableProductIdentifier'
       Cardinality: 0..*
+      Definition: A USDM relationship between the AdministrableProduct and AdministrableProductIdentifier
+        classes which provides the set of identifiers related to the administrable
+        product.
       Model Name: identifiers
     properties:
       Type:
       - $ref: '#/AdministrableProductProperty'
       Cardinality: 0..*
+      Definition: A USDM relationship between the AdministrableProduct and AdministrableProductProperty
+        classes which provides the set of properties related to the administrable
+        product.
       Model Name: properties
     ingredients:
       Type:
       - $ref: '#/Ingredient'
       Cardinality: 0..*
+      Definition: A USDM relationship between the AdministrableProduct and Ingredient
+        classes which provides the set of ingredients related to the administrable
+        product.
       Model Name: ingredients
 AdministrableProductIdentifier:
   Super Classes:
@@ -305,6 +335,10 @@ AdministrableProductIdentifier:
     text:
       Type:
       - $ref: '#/string'
+      NCI C-Code: CNEW
+      Preferred Term: Administrable Product Identifier Text
+      Definition: An instance of structured text that represents the administrable
+        product.
       Model Name: text
       Inherited From:
         $ref: '#/Identifier'
@@ -312,6 +346,10 @@ AdministrableProductIdentifier:
       Type:
       - $ref: '#/Organization'
       Cardinality: '1'
+      Definition: A USDM relationship between the AdministrableProductIdentifier and
+        Organization class which provides the details associated with which provides
+        the details associated with each organization that has assigned the administrable
+        product identifier.
       Model Name: scope
       Inherited From:
         $ref: '#/Identifier'
@@ -325,20 +363,36 @@ AdministrableProductProperty:
     name:
       Type:
       - $ref: '#/string'
+      NCI C-Code: CNEW
+      Preferred Term: Administrable Product Property Name
+      Definition: The literal identifier (i.e., distinctive designation) of the administrable
+        product property.
       Model Name: name
     text:
       Type:
       - $ref: '#/string'
+      NCI C-Code: CNEW
+      Preferred Term: Administrable Product Property Text
+      Definition: An instance of structured text that represents the administrable
+        product property.
       Model Name: text
     type:
       Type:
       - $ref: '#/Code'
+      NCI C-Code: CNEW
       Cardinality: '1'
+      Preferred Term: Administrable Product Property Type
+      Definition: A characterization or classification of the administrable product
+        property.
+      Codelist Ref: CNEW Administrable Product Property Type
       Model Name: type
     quantity:
       Type:
       - $ref: '#/Quantity'
+      NCI C-Code: CNEW
       Cardinality: 0..1
+      Preferred Term: Administrable Product Property Quantity Value
+      Definition: The numeric value associated with an administrable product property.
       Model Name: quantity
 Administration:
   Modifier: Abstract
@@ -1625,7 +1679,7 @@ GeographicScope:
       Cardinality: '1'
       Preferred Term: Geographic Scope Type
       Definition: A characterization or classification of the geographic scope.
-      Codelist Ref: CNEW - Geographic Scope Type Response
+      Codelist Ref: C207412
       Relationship Type: Value
       Model Name: type
     instanceType:
@@ -1685,7 +1739,7 @@ GovernanceDate:
       Cardinality: '1'
       Preferred Term: Protocol Approval Date Type
       Definition: A characterization or classification of the protocol approval date.
-      Codelist Ref: CNEW - Governance Date Type Response
+      Codelist Ref: C207413
       Relationship Type: Value
       Model Name: type
     geographicScopes:
@@ -1814,12 +1868,19 @@ Ingredient:
     role:
       Type:
       - $ref: '#/Code'
+      NCI C-Code: CNEW
       Cardinality: '1'
+      Preferred Term: Ingredient Role
+      Definition: The intended use of the ingredient within the context of the compounded
+        substance or mixture.
+      Codelist Ref: '(Point to FHIR value set: Ingredient Role)'
       Model Name: role
     substance:
       Type:
       - $ref: '#/Substance'
       Cardinality: '1'
+      Definition: A USDM relationship between the Ingredient and Substance classes
+        that identifies the substance associated with the ingredient.
       Model Name: substance
 IntercurrentEvent:
   NCI C-Code: C188815
@@ -1911,7 +1972,7 @@ Masking:
       Preferred Term: Masking Role
       Definition: An identifying designation assigned to a masked individual within
         a study that corresponds with their function.
-      Codelist Ref: CNEW - Masking Role Response
+      Codelist Ref: C207414
       Relationship Type: Value
       Model Name: role
     instanceType:
@@ -2563,7 +2624,7 @@ ReferenceIdentifier:
       Cardinality: '1'
       Preferred Term: Reference Identifier Type
       Definition: A characterization or classification of the reference identifier.
-      Codelist Ref: CNEW
+      Codelist Ref: CNEW Reference Identifier Type
       Relationship Type: Value
       Model Name: type
     instanceType:
@@ -3062,25 +3123,40 @@ Strength:
     name:
       Type:
       - $ref: '#/string'
+      NCI C-Code: CNEW
+      Preferred Term: Substance Strength Name
+      Definition: The literal identifier (i.e., distinctive designation) of the substance
+        strength.
       Model Name: name
     description:
       Type:
       - $ref: '#/string'
+      NCI C-Code: CNEW
+      Preferred Term: Substance Strength Description
+      Definition: A narrative representation of the substance strength.
       Model Name: description
     label:
       Type:
       - $ref: '#/string'
+      NCI C-Code: CNEW
+      Preferred Term: Substance Strength Label
+      Definition: The short descriptive designation for the substance strength.
       Model Name: label
     numerator:
       Type:
       - $ref: '#/Quantity'
       - $ref: '#/Range'
       Cardinality: 0..1
+      Definition: A USDM relationship between the Strength and the Quantity and Range
+        classes that identifies the numerator's value or range of values associated
+        with the substance  strength.
       Model Name: numerator
     denominator:
       Type:
       - $ref: '#/Quantity'
       Cardinality: 0..1
+      Definition: A USDM relationship between the Strength and Quantity classes that
+        identifies the denominator associated with the substance strength.
       Model Name: denominator
 Study:
   NCI C-Code: C15206
@@ -3247,7 +3323,7 @@ StudyAmendmentReason:
       Preferred Term: Study Amendment Reason Code
       Definition: A symbol or combination of symbols which is assigned to the study
         amendment reason.
-      Codelist Ref: CNEW - Study Amendment Reason Response
+      Codelist Ref: C207415
       Relationship Type: Value
       Model Name: code
     instanceType:
@@ -3589,7 +3665,7 @@ StudyDefinitionDocument:
       Cardinality: '1'
       Preferred Term: Study Definition Document Type
       Definition: A characterization or classification of the study definition document.
-      Codelist Ref: CNEW
+      Codelist Ref: CNEW Study Definition Document Type
       Relationship Type: Value
       Model Name: type
     notes:
@@ -3786,7 +3862,7 @@ StudyDesign:
       Cardinality: 0..*
       Preferred Term: Study Design Characteristic
       Definition: The distinguishing qualities or prominent aspect of a study design.
-      Codelist Ref: CNEW - Study Design Characteristics Response
+      Codelist Ref: C207416
       Relationship Type: Value
       Model Name: characteristics
     trialTypes:
@@ -4372,7 +4448,7 @@ StudyIntervention:
       Preferred Term: Study Intervention Role
       Definition: The intended use of the trial intervention within the context of
         the study design.
-      Codelist Ref: CNEW - Study Intervention Role Response
+      Codelist Ref: C207417
       Relationship Type: Value
       Model Name: role
     productDesignation:
@@ -4383,7 +4459,7 @@ StudyIntervention:
       Preferred Term: Study Intervention Product Designation
       Definition: An indication as to whether the investigational intervention is
         an investigational medicinal product or an auxiliary medicinal product.
-      Codelist Ref: CNEW - Study Intervention Product Designation Response
+      Codelist Ref: C207418
       Relationship Type: Value
       Model Name: productDesignation
     codes:
@@ -4500,7 +4576,7 @@ StudyTitle:
       Cardinality: '1'
       Preferred Term: Study Title Type
       Definition: A characterization or classification of the study title.
-      Codelist Ref: CNEW-Study Title Type Response
+      Codelist Ref: C207419
       Relationship Type: Value
       Model Name: type
     instanceType:
@@ -4732,29 +4808,48 @@ Substance:
     name:
       Type:
       - $ref: '#/string'
+      NCI C-Code: CNEW
+      Preferred Term: Substance Name
+      Definition: The literal identifier (i.e., distinctive designation) of the substance.
       Model Name: name
     description:
       Type:
       - $ref: '#/string'
+      NCI C-Code: CNEW
+      Preferred Term: Substance Description
+      Definition: A narrative representation of the substance.
       Model Name: description
     label:
       Type:
       - $ref: '#/string'
+      NCI C-Code: CNEW
+      Preferred Term: Substance Label
+      Definition: The short descriptive designation for the substance.
       Model Name: label
     code:
       Type:
       - $ref: '#/AliasCode'
+      NCI C-Code: CNEW
       Cardinality: 0..1
+      Preferred Term: Substance Code
+      Definition: A symbol or combination of symbols which is assigned to the substance.
+      Codelist Ref: (Point out to multiple Biomedical coding dictionaries such as
+        WHODrug, ATC, UNII, etc.)
       Model Name: code
     strengths:
       Type:
       - $ref: '#/Strength'
       Cardinality: 1..*
+      Definition: A USDM relationship between the Substance and Strength class which
+        provides the values of the strengths of the substance.
       Model Name: strengths
     referenceSubstance:
       Type:
       - $ref: '#/Substance'
       Cardinality: 0..1
+      Definition: A USDM relationship within the Substance class that identifies the
+        association between two substances, one of which is used as a reference for
+        the other.
       Model Name: referenceSubstance
 SyntaxTemplate:
   NCI C-Code: C207596
