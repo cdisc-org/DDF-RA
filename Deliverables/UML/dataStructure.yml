@@ -395,6 +395,9 @@ AdministrableProductProperty:
       Definition: The numeric value associated with an administrable product property.
       Model Name: quantity
 Administration:
+  NCI C-Code: C25409
+  Preferred Term: Administration
+  Definition: The act of dispensing, applying, or tendering a product, agent, or therapy.
   Modifier: Abstract
   Attributes:
     id:
@@ -404,44 +407,78 @@ Administration:
     name:
       Type:
       - $ref: '#/string'
+      NCI C-Code: C207465
+      Preferred Term: Administration Name
+      Definition: The literal identifier (i.e., distinctive designation) for the administration
+        of a product, agent, or therapy.
       Model Name: name
     description:
       Type:
       - $ref: '#/string'
+      NCI C-Code: C207463
+      Preferred Term: Administration Description
+      Definition: A narrative representation for the administration of a product,
+        agent, or therapy.
       Model Name: description
     label:
       Type:
       - $ref: '#/string'
+      NCI C-Code: C207464
+      Preferred Term: Administration Label
+      Definition: The short descriptive designation for the administration of a product,
+        agent, or therapy.
       Model Name: label
     administrableProduct:
       Type:
       - $ref: '#/AdministrableProduct'
       Cardinality: 0..1
+      Definition: A USDM relationship between the Administration and AdministrableProductDefinition
+        classes which identifies the administrable product associated with the administration
+        of the product, agent, or therapy.
       Model Name: administrableProduct
     route:
       Type:
       - $ref: '#/AliasCode'
+      NCI C-Code: C38114
       Cardinality: 0..1
+      Preferred Term: Route of Administration
+      Definition: The pathway by which a substance is administered in order to reach
+        the site of action in the body.
+      Codelist Ref: SDTM Terminology Codelist C66729
       Model Name: route
     dose:
       Type:
       - $ref: '#/Quantity'
+      NCI C-Code: C167190
       Cardinality: 0..1
+      Preferred Term: Administration Dose
+      Definition: The value representing the amount of an agent given to an individual
+        at one time.
       Model Name: dose
     frequency:
       Type:
       - $ref: '#/AliasCode'
+      NCI C-Code: C89081
       Cardinality: 0..1
+      Preferred Term: Dosing Frequency
+      Definition: The number of doses administered per a specific interval.
+      Codelist Ref: SDTM Terminology Codelist C71113
       Model Name: frequency
     notes:
       Type:
       - $ref: '#/CommentAnnotation'
       Cardinality: 0..*
+      Definition: A USDM relationship between the Administration and CommentAnnotation
+        classes which provides the set of notes related to the administration of the
+        product, agent, or therapy.
       Model Name: notes
     duration:
       Type:
       - $ref: '#/AdministrationDuration'
       Cardinality: '1'
+      Definition: A USDM relationship between the Administration and AdministrationDuration
+        classes which provides the duration of an instance of product, agent, or therapy
+        administration.
       Model Name: duration
 AdministrationDuration:
   NCI C-Code: C69282
