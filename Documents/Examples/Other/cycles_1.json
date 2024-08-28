@@ -30,7 +30,7 @@
           "standardCodeAliases": [],
           "instanceType": "AliasCode"
         },
-        "documentVersionId": "StudyProtocolDocumentVersion_1",
+        "documentVersionIds": [],
         "dateValues": [],
         "amendments": [],
         "businessTherapeuticAreas": [
@@ -170,7 +170,7 @@
                 "previousId": null,
                 "nextId": "Encounter_2",
                 "scheduledAtId": null,
-                "environmentalSetting": [
+                "environmentalSettings": [
                   {
                     "id": "Code_59",
                     "code": "C51282",
@@ -206,6 +206,7 @@
                   "text": "IEs passed",
                   "instanceType": "TransitionRule"
                 },
+                "notes": [],
                 "instanceType": "Encounter"
               },
               {
@@ -224,7 +225,7 @@
                 "previousId": "Encounter_1",
                 "nextId": "Encounter_3",
                 "scheduledAtId": null,
-                "environmentalSetting": [
+                "environmentalSettings": [
                   {
                     "id": "Code_62",
                     "code": "C51282",
@@ -253,6 +254,7 @@
                   "instanceType": "TransitionRule"
                 },
                 "transitionEndRule": null,
+                "notes": [],
                 "instanceType": "Encounter"
               },
               {
@@ -271,7 +273,7 @@
                 "previousId": "Encounter_2",
                 "nextId": "Encounter_4",
                 "scheduledAtId": null,
-                "environmentalSetting": [
+                "environmentalSettings": [
                   {
                     "id": "Code_65",
                     "code": "C51282",
@@ -293,6 +295,7 @@
                 ],
                 "transitionStartRule": null,
                 "transitionEndRule": null,
+                "notes": [],
                 "instanceType": "Encounter"
               },
               {
@@ -311,7 +314,7 @@
                 "previousId": "Encounter_3",
                 "nextId": "Encounter_5",
                 "scheduledAtId": null,
-                "environmentalSetting": [
+                "environmentalSettings": [
                   {
                     "id": "Code_68",
                     "code": "C51282",
@@ -333,6 +336,7 @@
                 ],
                 "transitionStartRule": null,
                 "transitionEndRule": null,
+                "notes": [],
                 "instanceType": "Encounter"
               },
               {
@@ -351,7 +355,7 @@
                 "previousId": "Encounter_4",
                 "nextId": "Encounter_6",
                 "scheduledAtId": null,
-                "environmentalSetting": [
+                "environmentalSettings": [
                   {
                     "id": "Code_71",
                     "code": "C51282",
@@ -373,6 +377,7 @@
                 ],
                 "transitionStartRule": null,
                 "transitionEndRule": null,
+                "notes": [],
                 "instanceType": "Encounter"
               },
               {
@@ -391,7 +396,7 @@
                 "previousId": "Encounter_5",
                 "nextId": "Encounter_7",
                 "scheduledAtId": null,
-                "environmentalSetting": [
+                "environmentalSettings": [
                   {
                     "id": "Code_74",
                     "code": "C51282",
@@ -413,6 +418,7 @@
                 ],
                 "transitionStartRule": null,
                 "transitionEndRule": null,
+                "notes": [],
                 "instanceType": "Encounter"
               },
               {
@@ -431,7 +437,7 @@
                 "previousId": "Encounter_6",
                 "nextId": "Encounter_8",
                 "scheduledAtId": null,
-                "environmentalSetting": [
+                "environmentalSettings": [
                   {
                     "id": "Code_77",
                     "code": "C51282",
@@ -453,6 +459,7 @@
                 ],
                 "transitionStartRule": null,
                 "transitionEndRule": null,
+                "notes": [],
                 "instanceType": "Encounter"
               },
               {
@@ -471,7 +478,7 @@
                 "previousId": "Encounter_7",
                 "nextId": "Encounter_9",
                 "scheduledAtId": null,
-                "environmentalSetting": [
+                "environmentalSettings": [
                   {
                     "id": "Code_80",
                     "code": "C51282",
@@ -493,6 +500,7 @@
                 ],
                 "transitionStartRule": null,
                 "transitionEndRule": null,
+                "notes": [],
                 "instanceType": "Encounter"
               },
               {
@@ -511,7 +519,7 @@
                 "previousId": "Encounter_8",
                 "nextId": "Encounter_10",
                 "scheduledAtId": null,
-                "environmentalSetting": [
+                "environmentalSettings": [
                   {
                     "id": "Code_83",
                     "code": "C51282",
@@ -533,6 +541,7 @@
                 ],
                 "transitionStartRule": null,
                 "transitionEndRule": null,
+                "notes": [],
                 "instanceType": "Encounter"
               },
               {
@@ -551,7 +560,7 @@
                 "previousId": "Encounter_9",
                 "nextId": "Encounter_11",
                 "scheduledAtId": null,
-                "environmentalSetting": [
+                "environmentalSettings": [
                   {
                     "id": "Code_86",
                     "code": "C51282",
@@ -580,6 +589,7 @@
                   "text": "End of treatment",
                   "instanceType": "TransitionRule"
                 },
+                "notes": [],
                 "instanceType": "Encounter"
               },
               {
@@ -598,7 +608,7 @@
                 "previousId": "Encounter_10",
                 "nextId": null,
                 "scheduledAtId": null,
-                "environmentalSetting": [
+                "environmentalSettings": [
                   {
                     "id": "Code_89",
                     "code": "C18002",
@@ -620,6 +630,7 @@
                 ],
                 "transitionStartRule": null,
                 "transitionEndRule": null,
+                "notes": [],
                 "instanceType": "Encounter"
               }
             ],
@@ -627,38 +638,43 @@
               {
                 "id": "Activity_1",
                 "name": "Informed Consent",
-                "label": null,
+                "label": "Informed Consent",
                 "description": "Informed Consent",
                 "previousId": null,
                 "nextId": "Activity_2",
+                "childIds": [],
                 "definedProcedures": [],
                 "biomedicalConceptIds": [],
                 "bcCategoryIds": [],
                 "bcSurrogateIds": [],
-                "timelineId": "",
+                "timelineId": null,
+                "notes": [],
                 "instanceType": "Activity"
               },
               {
                 "id": "Activity_2",
                 "name": "Inclusion / Exclusion Criteria",
-                "label": null,
+                "label": "Inclusion / Exclusion Criteria",
                 "description": "Inclusion / Exclusion Criteria",
                 "previousId": "Activity_1",
                 "nextId": "Activity_3",
+                "childIds": [],
                 "definedProcedures": [],
                 "biomedicalConceptIds": [],
                 "bcCategoryIds": [],
                 "bcSurrogateIds": [],
-                "timelineId": "",
+                "timelineId": null,
+                "notes": [],
                 "instanceType": "Activity"
               },
               {
                 "id": "Activity_3",
                 "name": "Physical Examination",
-                "label": null,
+                "label": "Physical Examination",
                 "description": "Physical Examination",
                 "previousId": "Activity_2",
                 "nextId": null,
+                "childIds": [],
                 "definedProcedures": [],
                 "biomedicalConceptIds": [
                   "BiomedicalConcept_1",
@@ -669,7 +685,8 @@
                   "BiomedicalConceptSurrogate_1",
                   "BiomedicalConceptSurrogate_2"
                 ],
-                "timelineId": "",
+                "timelineId": null,
+                "notes": [],
                 "instanceType": "Activity"
               }
             ],
@@ -705,6 +722,7 @@
                       "standardCodeAliases": [],
                       "instanceType": "AliasCode"
                     },
+                    "notes": [],
                     "instanceType": "BiomedicalConceptProperty"
                   },
                   {
@@ -728,6 +746,7 @@
                       "standardCodeAliases": [],
                       "instanceType": "AliasCode"
                     },
+                    "notes": [],
                     "instanceType": "BiomedicalConceptProperty"
                   },
                   {
@@ -791,6 +810,7 @@
                       "standardCodeAliases": [],
                       "instanceType": "AliasCode"
                     },
+                    "notes": [],
                     "instanceType": "BiomedicalConceptProperty"
                   }
                 ],
@@ -807,6 +827,7 @@
                   "standardCodeAliases": [],
                   "instanceType": "AliasCode"
                 },
+                "notes": [],
                 "instanceType": "BiomedicalConcept"
               },
               {
@@ -840,6 +861,7 @@
                       "standardCodeAliases": [],
                       "instanceType": "AliasCode"
                     },
+                    "notes": [],
                     "instanceType": "BiomedicalConceptProperty"
                   },
                   {
@@ -863,6 +885,7 @@
                       "standardCodeAliases": [],
                       "instanceType": "AliasCode"
                     },
+                    "notes": [],
                     "instanceType": "BiomedicalConceptProperty"
                   },
                   {
@@ -926,6 +949,7 @@
                       "standardCodeAliases": [],
                       "instanceType": "AliasCode"
                     },
+                    "notes": [],
                     "instanceType": "BiomedicalConceptProperty"
                   }
                 ],
@@ -942,6 +966,7 @@
                   "standardCodeAliases": [],
                   "instanceType": "AliasCode"
                 },
+                "notes": [],
                 "instanceType": "BiomedicalConcept"
               }
             ],
@@ -953,6 +978,7 @@
                 "label": "PE 1",
                 "description": "PE 1",
                 "reference": "None set",
+                "notes": [],
                 "instanceType": "BiomedicalConceptSurrogate"
               },
               {
@@ -961,6 +987,7 @@
                 "label": "PE 2",
                 "description": "PE 2",
                 "reference": "None set",
+                "notes": [],
                 "instanceType": "BiomedicalConceptSurrogate"
               }
             ],
@@ -988,6 +1015,7 @@
                   "instanceType": "Code"
                 },
                 "populationIds": [],
+                "notes": [],
                 "instanceType": "StudyArm"
               },
               {
@@ -1000,7 +1028,7 @@
                   "code": "C174268",
                   "codeSystem": "http://www.cdisc.org",
                   "codeSystemVersion": "2023-12-15",
-                  "decode": "Placebo Comparator Arm",
+                  "decode": "Placebo Control Arm",
                   "instanceType": "Code"
                 },
                 "dataOriginDescription": "Data collected from subjects",
@@ -1013,6 +1041,7 @@
                   "instanceType": "Code"
                 },
                 "populationIds": [],
+                "notes": [],
                 "instanceType": "StudyArm"
               }
             ],
@@ -1102,6 +1131,7 @@
                 },
                 "previousId": null,
                 "nextId": "StudyEpoch_2",
+                "notes": [],
                 "instanceType": "StudyEpoch"
               },
               {
@@ -1119,6 +1149,7 @@
                 },
                 "previousId": "StudyEpoch_1",
                 "nextId": "StudyEpoch_3",
+                "notes": [],
                 "instanceType": "StudyEpoch"
               },
               {
@@ -1136,6 +1167,7 @@
                 },
                 "previousId": "StudyEpoch_2",
                 "nextId": null,
+                "notes": [],
                 "instanceType": "StudyEpoch"
               }
             ],
@@ -1162,6 +1194,7 @@
                   "instanceType": "TransitionRule"
                 },
                 "studyInterventionIds": [],
+                "notes": [],
                 "instanceType": "StudyElement"
               },
               {
@@ -1186,6 +1219,7 @@
                   "instanceType": "TransitionRule"
                 },
                 "studyInterventionIds": [],
+                "notes": [],
                 "instanceType": "StudyElement"
               },
               {
@@ -1210,12 +1244,16 @@
                   "instanceType": "TransitionRule"
                 },
                 "studyInterventionIds": [],
+                "notes": [],
                 "instanceType": "StudyElement"
               }
             ],
             "estimands": [
               {
                 "id": "Estimand_1",
+                "name": "EST1",
+                "label": "EST1",
+                "description": "",
                 "summaryMeasure": "Survival of all patients",
                 "analysisPopulation": {
                   "id": "AnalysisPopulation_1",
@@ -1223,6 +1261,7 @@
                   "label": null,
                   "description": null,
                   "text": "ITT",
+                  "notes": [],
                   "instanceType": "AnalysisPopulation"
                 },
                 "interventionId": "StudyIntervention_1",
@@ -1234,9 +1273,11 @@
                     "label": "",
                     "description": "IC Event Description",
                     "strategy": "Patients with out of range lab values before dosing will be excluded",
+                    "notes": [],
                     "instanceType": "IntercurrentEvent"
                   }
                 ],
+                "notes": [],
                 "instanceType": "Estimand"
               }
             ],
@@ -1257,6 +1298,7 @@
                   }
                 ],
                 "isRareDisease": false,
+                "notes": [],
                 "instanceType": "Indication"
               },
               {
@@ -1275,6 +1317,7 @@
                   }
                 ],
                 "isRareDisease": false,
+                "notes": [],
                 "instanceType": "Indication"
               }
             ],
@@ -1404,6 +1447,7 @@
                       "standardCodeAliases": [],
                       "instanceType": "AliasCode"
                     },
+                    "notes": [],
                     "instanceType": "AgentAdministration"
                   }
                 ],
@@ -1419,10 +1463,11 @@
                   "id": "Code_128",
                   "code": "A",
                   "codeSystem": "FDA",
-                  "codeSystemVersion": "None set",
+                  "codeSystemVersion": "",
                   "decode": "B",
                   "instanceType": "Code"
                 },
+                "notes": [],
                 "instanceType": "StudyIntervention"
               },
               {
@@ -1549,6 +1594,7 @@
                       "standardCodeAliases": [],
                       "instanceType": "AliasCode"
                     },
+                    "notes": [],
                     "instanceType": "AgentAdministration"
                   }
                 ],
@@ -1564,10 +1610,11 @@
                   "id": "Code_138",
                   "code": "A",
                   "codeSystem": "FDA",
-                  "codeSystemVersion": "None set",
+                  "codeSystemVersion": "",
                   "decode": "B",
                   "instanceType": "Code"
                 },
+                "notes": [],
                 "instanceType": "StudyIntervention"
               }
             ],
@@ -1579,6 +1626,7 @@
                 "description": "",
                 "text": "Obj Desc",
                 "dictionaryId": null,
+                "notes": [],
                 "instanceType": "Objective",
                 "level": {
                   "id": "Code_145",
@@ -1596,6 +1644,7 @@
                     "description": "",
                     "text": "End Desc",
                     "dictionaryId": null,
+                    "notes": [],
                     "instanceType": "Endpoint",
                     "purpose": "",
                     "level": {
@@ -1642,8 +1691,9 @@
                   "instanceType": "Code"
                 }
               ],
-              "criteria": [],
+              "criterionIds": [],
               "plannedAge": null,
+              "notes": [],
               "instanceType": "StudyDesignPopulation",
               "cohorts": [
                 {
@@ -1655,7 +1705,7 @@
                   "plannedEnrollmentNumber": null,
                   "plannedCompletionNumber": null,
                   "plannedSex": [],
-                  "criteria": [],
+                  "criterionIds": [],
                   "plannedAge": {
                     "id": "Range_3",
                     "minValue": 18.0,
@@ -1671,6 +1721,7 @@
                     "isApproximate": false,
                     "instanceType": "Range"
                   },
+                  "notes": [],
                   "instanceType": "StudyCohort",
                   "characteristics": []
                 },
@@ -1683,7 +1734,7 @@
                   "plannedEnrollmentNumber": null,
                   "plannedCompletionNumber": null,
                   "plannedSex": [],
-                  "criteria": [],
+                  "criterionIds": [],
                   "plannedAge": {
                     "id": "Range_4",
                     "minValue": 31.0,
@@ -1699,6 +1750,7 @@
                     "isApproximate": false,
                     "instanceType": "Range"
                   },
+                  "notes": [],
                   "instanceType": "StudyCohort",
                   "characteristics": []
                 }
@@ -2207,11 +2259,11 @@
                     "name": "SCREEN",
                     "label": "",
                     "description": "",
-                    "timelineId": null,
-                    "timelineExitId": null,
                     "defaultConditionId": "ScheduledActivityInstance_2",
                     "epochId": "StudyEpoch_1",
                     "instanceType": "ScheduledActivityInstance",
+                    "timelineId": null,
+                    "timelineExitId": null,
                     "activityIds": [
                       "Activity_1",
                       "Activity_2",
@@ -2224,11 +2276,11 @@
                     "name": "DAY_1",
                     "label": "",
                     "description": "",
-                    "timelineId": null,
-                    "timelineExitId": null,
                     "defaultConditionId": "ScheduledActivityInstance_3",
                     "epochId": "StudyEpoch_2",
                     "instanceType": "ScheduledActivityInstance",
+                    "timelineId": null,
+                    "timelineExitId": null,
                     "activityIds": [],
                     "encounterId": null
                   },
@@ -2237,11 +2289,11 @@
                     "name": "C1-D1",
                     "label": "",
                     "description": "",
-                    "timelineId": null,
-                    "timelineExitId": null,
                     "defaultConditionId": "ScheduledActivityInstance_4",
                     "epochId": "StudyEpoch_2",
                     "instanceType": "ScheduledActivityInstance",
+                    "timelineId": null,
+                    "timelineExitId": null,
                     "activityIds": [
                       "Activity_2",
                       "Activity_3"
@@ -2253,11 +2305,11 @@
                     "name": "C1-D15",
                     "label": "",
                     "description": "",
-                    "timelineId": null,
-                    "timelineExitId": null,
                     "defaultConditionId": "ScheduledActivityInstance_5",
                     "epochId": "StudyEpoch_2",
                     "instanceType": "ScheduledActivityInstance",
+                    "timelineId": null,
+                    "timelineExitId": null,
                     "activityIds": [
                       "Activity_3"
                     ],
@@ -2268,11 +2320,11 @@
                     "name": "C2-D1",
                     "label": "",
                     "description": "",
-                    "timelineId": null,
-                    "timelineExitId": null,
                     "defaultConditionId": "ScheduledActivityInstance_6",
                     "epochId": "StudyEpoch_2",
                     "instanceType": "ScheduledActivityInstance",
+                    "timelineId": null,
+                    "timelineExitId": null,
                     "activityIds": [
                       "Activity_3"
                     ],
@@ -2283,11 +2335,11 @@
                     "name": "C2-D15",
                     "label": "",
                     "description": "",
-                    "timelineId": null,
-                    "timelineExitId": null,
                     "defaultConditionId": "ScheduledActivityInstance_7",
                     "epochId": "StudyEpoch_2",
                     "instanceType": "ScheduledActivityInstance",
+                    "timelineId": null,
+                    "timelineExitId": null,
                     "activityIds": [
                       "Activity_3"
                     ],
@@ -2298,11 +2350,11 @@
                     "name": "C3-D1",
                     "label": "",
                     "description": "",
-                    "timelineId": null,
-                    "timelineExitId": null,
                     "defaultConditionId": "ScheduledActivityInstance_8",
                     "epochId": "StudyEpoch_2",
                     "instanceType": "ScheduledActivityInstance",
+                    "timelineId": null,
+                    "timelineExitId": null,
                     "activityIds": [
                       "Activity_3"
                     ],
@@ -2313,11 +2365,11 @@
                     "name": "C3-D15",
                     "label": "",
                     "description": "",
-                    "timelineId": null,
-                    "timelineExitId": null,
                     "defaultConditionId": "ScheduledActivityInstance_9",
                     "epochId": "StudyEpoch_2",
                     "instanceType": "ScheduledActivityInstance",
+                    "timelineId": null,
+                    "timelineExitId": null,
                     "activityIds": [],
                     "encounterId": "Encounter_7"
                   },
@@ -2326,11 +2378,11 @@
                     "name": "C4-12-BASE",
                     "label": "",
                     "description": "",
-                    "timelineId": null,
-                    "timelineExitId": null,
                     "defaultConditionId": "ScheduledActivityInstance_10",
                     "epochId": "StudyEpoch_2",
                     "instanceType": "ScheduledActivityInstance",
+                    "timelineId": null,
+                    "timelineExitId": null,
                     "activityIds": [],
                     "encounterId": null
                   },
@@ -2339,11 +2391,11 @@
                     "name": "C4-12-D1",
                     "label": "",
                     "description": "",
-                    "timelineId": null,
-                    "timelineExitId": null,
                     "defaultConditionId": "ScheduledActivityInstance_11",
                     "epochId": "StudyEpoch_2",
                     "instanceType": "ScheduledActivityInstance",
+                    "timelineId": null,
+                    "timelineExitId": null,
                     "activityIds": [
                       "Activity_3"
                     ],
@@ -2354,11 +2406,11 @@
                     "name": "C4-12-DELAY",
                     "label": "",
                     "description": "",
-                    "timelineId": null,
-                    "timelineExitId": null,
                     "defaultConditionId": "ScheduledDecisionInstance_1",
                     "epochId": "StudyEpoch_2",
                     "instanceType": "ScheduledActivityInstance",
+                    "timelineId": null,
+                    "timelineExitId": null,
                     "activityIds": [],
                     "encounterId": null
                   },
@@ -2367,8 +2419,6 @@
                     "name": "C4-12-CYCLE",
                     "label": "",
                     "description": "",
-                    "timelineId": null,
-                    "timelineExitId": null,
                     "defaultConditionId": "ScheduledActivityInstance_12",
                     "epochId": null,
                     "instanceType": "ScheduledDecisionInstance",
@@ -2386,11 +2436,11 @@
                     "name": "C13-PLUS-BASE",
                     "label": "",
                     "description": "",
-                    "timelineId": null,
-                    "timelineExitId": null,
                     "defaultConditionId": "ScheduledActivityInstance_13",
                     "epochId": "StudyEpoch_2",
                     "instanceType": "ScheduledActivityInstance",
+                    "timelineId": null,
+                    "timelineExitId": null,
                     "activityIds": [],
                     "encounterId": null
                   },
@@ -2399,11 +2449,11 @@
                     "name": "C13-PLUS-D1",
                     "label": "",
                     "description": "",
-                    "timelineId": null,
-                    "timelineExitId": null,
                     "defaultConditionId": "ScheduledActivityInstance_14",
                     "epochId": "StudyEpoch_2",
                     "instanceType": "ScheduledActivityInstance",
+                    "timelineId": null,
+                    "timelineExitId": null,
                     "activityIds": [
                       "Activity_3"
                     ],
@@ -2414,11 +2464,11 @@
                     "name": "C13-PLUS-DELAY",
                     "label": "",
                     "description": "",
-                    "timelineId": null,
-                    "timelineExitId": null,
                     "defaultConditionId": "ScheduledDecisionInstance_2",
                     "epochId": "StudyEpoch_2",
                     "instanceType": "ScheduledActivityInstance",
+                    "timelineId": null,
+                    "timelineExitId": null,
                     "activityIds": [],
                     "encounterId": null
                   },
@@ -2427,8 +2477,6 @@
                     "name": "C13-PLUS-CYCLE",
                     "label": "",
                     "description": "",
-                    "timelineId": null,
-                    "timelineExitId": null,
                     "defaultConditionId": "ScheduledActivityInstance_15",
                     "epochId": null,
                     "instanceType": "ScheduledDecisionInstance",
@@ -2446,11 +2494,11 @@
                     "name": "EOT",
                     "label": "",
                     "description": "",
-                    "timelineId": null,
-                    "timelineExitId": null,
                     "defaultConditionId": "ScheduledActivityInstance_16",
                     "epochId": "StudyEpoch_2",
                     "instanceType": "ScheduledActivityInstance",
+                    "timelineId": null,
+                    "timelineExitId": null,
                     "activityIds": [
                       "Activity_3"
                     ],
@@ -2461,11 +2509,11 @@
                     "name": "FOLLOW-UP",
                     "label": "",
                     "description": "",
-                    "timelineId": null,
-                    "timelineExitId": "ScheduleTimelineExit_1",
                     "defaultConditionId": null,
                     "epochId": "StudyEpoch_3",
                     "instanceType": "ScheduledActivityInstance",
+                    "timelineId": null,
+                    "timelineExitId": "ScheduleTimelineExit_1",
                     "activityIds": [],
                     "encounterId": "Encounter_11"
                   }
@@ -2477,6 +2525,7 @@
             "dictionaries": [],
             "conditions": [],
             "organizations": [],
+            "notes": [],
             "instanceType": "StudyDesign"
           }
         ],
@@ -2547,37 +2596,17 @@
             "instanceType": "StudyTitle"
           }
         ],
+        "criteria": [],
+        "narrativeContentItems": [],
+        "abbreviations": [],
+        "notes": [],
         "instanceType": "StudyVersion"
       }
     ],
-    "documentedBy": {
-      "id": "StudyProtocolDocument_1",
-      "name": "Protocol_Document_CYCLES1",
-      "label": null,
-      "description": null,
-      "versions": [
-        {
-          "id": "StudyProtocolDocumentVersion_1",
-          "protocolVersion": "1",
-          "protocolStatus": {
-            "id": "Code_10",
-            "code": "C85255",
-            "codeSystem": "http://www.cdisc.org",
-            "codeSystemVersion": "2023-12-15",
-            "decode": "Draft",
-            "instanceType": "Code"
-          },
-          "dateValues": [],
-          "contents": [],
-          "childIds": [],
-          "instanceType": "StudyProtocolDocumentVersion"
-        }
-      ],
-      "instanceType": "StudyProtocolDocument"
-    },
+    "documentedBy": [],
     "instanceType": "Study"
   },
-  "usdmVersion": "2.11.0",
-  "systemName": "CDISC E2J",
-  "systemVersion": "0.48.0"
+  "usdmVersion": "3.5.0",
+  "systemName": "CDISC USDM E2J",
+  "systemVersion": "0.52.0"
 }

@@ -11,6 +11,7 @@ Each study example is held in a separate directory and includes the source sprea
 
 - The old CDISC Pilot Study (LZZT)
 - An Eli Lilly Diabetes Study (NCT03421379)
+- An Alexion Wilson's Disease Study (NCT04573309)
 
 # Other Examples
 
