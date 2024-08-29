@@ -275,7 +275,7 @@ AdministrableProduct:
       Definition: The short descriptive designation for the administrable product.
       Relationship Type: Value
       Model Name: label
-    administrableDoseForm*:
+    administrableDoseForm:
       Type:
       - $ref: '#/AliasCode'
       NCI C-Code: C42636
@@ -284,7 +284,7 @@ AdministrableProduct:
       Definition: The physical form in which active and/or inert ingredient(s) are
         presented.
       Codelist Ref: C66726
-      Relationship Type: UNKNOWN
+      Relationship Type: Value
       Model Name: administrableDoseForm
     notes:
       Type:
@@ -331,10 +331,6 @@ AdministrableProduct:
         product.
       Relationship Type: Value
       Model Name: ingredients
-    admoinistrableDoseForm:
-      Type:
-      - $ref: UNKNOWN
-      Relationship Type: Value
     instanceType:
       Type:
       - $ref: '#/string'
@@ -4600,10 +4596,6 @@ StudyIntervention:
         the criteria for response to study intervention.
       Relationship Type: Value
       Model Name: minimumResponseDuration
-    pharmacologicClass:
-      Type:
-      - $ref: UNKNOWN
-      Relationship Type: Value
     instanceType:
       Type:
       - $ref: '#/string'
