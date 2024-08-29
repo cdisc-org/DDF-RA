@@ -243,11 +243,12 @@ Address:
       Cardinality: 0..1
       Relationship Type: Value
 AdministrableProduct:
-  Modifier: Abstract
+  Modifier: Concrete
   Attributes:
     id:
       Type:
       - $ref: '#/string'
+      Relationship Type: Value
       Model Name: id
     name:
       Type:
@@ -256,6 +257,7 @@ AdministrableProduct:
       Preferred Term: Administrable Product Definition Name
       Definition: The literal identifier (i.e., distinctive designation) of the administrable
         product.
+      Relationship Type: Value
       Model Name: name
     description:
       Type:
@@ -263,6 +265,7 @@ AdministrableProduct:
       NCI C-Code: CNEW
       Preferred Term: Administrable Product Definition Description
       Definition: A narrative representation of the administrable product.
+      Relationship Type: Value
       Model Name: description
     label:
       Type:
@@ -270,8 +273,9 @@ AdministrableProduct:
       NCI C-Code: CNEW
       Preferred Term: Administrable Product Definition Label
       Definition: The short descriptive designation for the administrable product.
+      Relationship Type: Value
       Model Name: label
-    administrableDoseForm:
+    administrableDoseForm*:
       Type:
       - $ref: '#/AliasCode'
       NCI C-Code: C42636
@@ -280,6 +284,7 @@ AdministrableProduct:
       Definition: The physical form in which active and/or inert ingredient(s) are
         presented.
       Codelist Ref: C66726
+      Relationship Type: UNKNOWN
       Model Name: administrableDoseForm
     notes:
       Type:
@@ -287,6 +292,7 @@ AdministrableProduct:
       Cardinality: 0..*
       Definition: A USDM relationship between the AdministrableProductn and CommentAnnotation
         classes which provides the set of notes related to the administrable product.
+      Relationship Type: Value
       Model Name: notes
     pharmacologicClass:
       Type:
@@ -296,6 +302,7 @@ AdministrableProduct:
       Preferred Term: Pharmacologic Class
       Definition: The pharmacological class of the investigational product.
       Codelist Ref: (Points to external codelists such as UNII, MED-RT)
+      Relationship Type: Value
       Model Name: pharmacologicClass
     identifiers:
       Type:
@@ -304,6 +311,7 @@ AdministrableProduct:
       Definition: A USDM relationship between the AdministrableProduct and AdministrableProductIdentifier
         classes which provides the set of identifiers related to the administrable
         product.
+      Relationship Type: Value
       Model Name: identifiers
     properties:
       Type:
@@ -312,6 +320,7 @@ AdministrableProduct:
       Definition: A USDM relationship between the AdministrableProduct and AdministrableProductProperty
         classes which provides the set of properties related to the administrable
         product.
+      Relationship Type: Value
       Model Name: properties
     ingredients:
       Type:
@@ -320,15 +329,26 @@ AdministrableProduct:
       Definition: A USDM relationship between the AdministrableProduct and Ingredient
         classes which provides the set of ingredients related to the administrable
         product.
+      Relationship Type: Value
       Model Name: ingredients
+    admoinistrableDoseForm:
+      Type:
+      - $ref: UNKNOWN
+      Relationship Type: Value
+    instanceType:
+      Type:
+      - $ref: '#/string'
+      Cardinality: 0..1
+      Relationship Type: Value
 AdministrableProductIdentifier:
   Super Classes:
   - $ref: '#/Identifier'
-  Modifier: Abstract
+  Modifier: Concrete
   Attributes:
     id:
       Type:
       - $ref: '#/string'
+      Relationship Type: Value
       Model Name: id
       Inherited From:
         $ref: '#/Identifier'
@@ -339,6 +359,7 @@ AdministrableProductIdentifier:
       Preferred Term: Administrable Product Identifier Text
       Definition: An instance of structured text that represents the administrable
         product.
+      Relationship Type: Value
       Model Name: text
       Inherited From:
         $ref: '#/Identifier'
@@ -350,15 +371,22 @@ AdministrableProductIdentifier:
         Organization class which provides the details associated with which provides
         the details associated with each organization that has assigned the administrable
         product identifier.
+      Relationship Type: Value
       Model Name: scope
       Inherited From:
         $ref: '#/Identifier'
+    instanceType:
+      Type:
+      - $ref: '#/string'
+      Cardinality: 0..1
+      Relationship Type: Value
 AdministrableProductProperty:
-  Modifier: Abstract
+  Modifier: Concrete
   Attributes:
     id:
       Type:
       - $ref: '#/string'
+      Relationship Type: Value
       Model Name: id
     name:
       Type:
@@ -367,6 +395,7 @@ AdministrableProductProperty:
       Preferred Term: Administrable Product Property Name
       Definition: The literal identifier (i.e., distinctive designation) of the administrable
         product property.
+      Relationship Type: Value
       Model Name: name
     text:
       Type:
@@ -375,6 +404,7 @@ AdministrableProductProperty:
       Preferred Term: Administrable Product Property Text
       Definition: An instance of structured text that represents the administrable
         product property.
+      Relationship Type: Value
       Model Name: text
     type:
       Type:
@@ -385,6 +415,7 @@ AdministrableProductProperty:
       Definition: A characterization or classification of the administrable product
         property.
       Codelist Ref: CNEW Administrable Product Property Type
+      Relationship Type: Value
       Model Name: type
     quantity:
       Type:
@@ -393,16 +424,23 @@ AdministrableProductProperty:
       Cardinality: 0..1
       Preferred Term: Administrable Product Property Quantity Value
       Definition: The numeric value associated with an administrable product property.
+      Relationship Type: Value
       Model Name: quantity
+    instanceType:
+      Type:
+      - $ref: '#/string'
+      Cardinality: 0..1
+      Relationship Type: Value
 Administration:
   NCI C-Code: C25409
   Preferred Term: Administration
   Definition: The act of dispensing, applying, or tendering a product, agent, or therapy.
-  Modifier: Abstract
+  Modifier: Concrete
   Attributes:
     id:
       Type:
       - $ref: '#/string'
+      Relationship Type: Value
       Model Name: id
     name:
       Type:
@@ -411,6 +449,7 @@ Administration:
       Preferred Term: Administration Name
       Definition: The literal identifier (i.e., distinctive designation) for the administration
         of a product, agent, or therapy.
+      Relationship Type: Value
       Model Name: name
     description:
       Type:
@@ -419,6 +458,7 @@ Administration:
       Preferred Term: Administration Description
       Definition: A narrative representation for the administration of a product,
         agent, or therapy.
+      Relationship Type: Value
       Model Name: description
     label:
       Type:
@@ -427,6 +467,7 @@ Administration:
       Preferred Term: Administration Label
       Definition: The short descriptive designation for the administration of a product,
         agent, or therapy.
+      Relationship Type: Value
       Model Name: label
     administrableProduct:
       Type:
@@ -435,6 +476,7 @@ Administration:
       Definition: A USDM relationship between the Administration and AdministrableProductDefinition
         classes which identifies the administrable product associated with the administration
         of the product, agent, or therapy.
+      Relationship Type: Value
       Model Name: administrableProduct
     route:
       Type:
@@ -445,6 +487,7 @@ Administration:
       Definition: The pathway by which a substance is administered in order to reach
         the site of action in the body.
       Codelist Ref: SDTM Terminology Codelist C66729
+      Relationship Type: Value
       Model Name: route
     dose:
       Type:
@@ -454,6 +497,7 @@ Administration:
       Preferred Term: Administration Dose
       Definition: The value representing the amount of an agent given to an individual
         at one time.
+      Relationship Type: Value
       Model Name: dose
     frequency:
       Type:
@@ -463,6 +507,7 @@ Administration:
       Preferred Term: Dosing Frequency
       Definition: The number of doses administered per a specific interval.
       Codelist Ref: SDTM Terminology Codelist C71113
+      Relationship Type: Value
       Model Name: frequency
     notes:
       Type:
@@ -471,6 +516,7 @@ Administration:
       Definition: A USDM relationship between the Administration and CommentAnnotation
         classes which provides the set of notes related to the administration of the
         product, agent, or therapy.
+      Relationship Type: Value
       Model Name: notes
     duration:
       Type:
@@ -479,7 +525,13 @@ Administration:
       Definition: A USDM relationship between the Administration and AdministrationDuration
         classes which provides the duration of an instance of product, agent, or therapy
         administration.
+      Relationship Type: Value
       Model Name: duration
+    instanceType:
+      Type:
+      - $ref: '#/string'
+      Cardinality: 0..1
+      Relationship Type: Value
 AdministrationDuration:
   NCI C-Code: C69282
   Preferred Term: Administration Duration
@@ -1896,11 +1948,12 @@ Indication:
       Cardinality: 0..1
       Relationship Type: Value
 Ingredient:
-  Modifier: Abstract
+  Modifier: Concrete
   Attributes:
     id:
       Type:
       - $ref: '#/string'
+      Relationship Type: Value
       Model Name: id
     role:
       Type:
@@ -1911,6 +1964,7 @@ Ingredient:
       Definition: The intended use of the ingredient within the context of the compounded
         substance or mixture.
       Codelist Ref: '(Point to FHIR value set: Ingredient Role)'
+      Relationship Type: Value
       Model Name: role
     substance:
       Type:
@@ -1918,7 +1972,13 @@ Ingredient:
       Cardinality: '1'
       Definition: A USDM relationship between the Ingredient and Substance classes
         that identifies the substance associated with the ingredient.
+      Relationship Type: Value
       Model Name: substance
+    instanceType:
+      Type:
+      - $ref: '#/string'
+      Cardinality: 0..1
+      Relationship Type: Value
 IntercurrentEvent:
   NCI C-Code: C188815
   Preferred Term: Intercurrent Event
@@ -3151,11 +3211,12 @@ ScheduledInstance:
         classes which identifies the study epoch associated with a scheduled instance.
       Model Name: epoch
 Strength:
-  Modifier: Abstract
+  Modifier: Concrete
   Attributes:
     id:
       Type:
       - $ref: '#/string'
+      Relationship Type: Value
       Model Name: id
     name:
       Type:
@@ -3164,6 +3225,7 @@ Strength:
       Preferred Term: Substance Strength Name
       Definition: The literal identifier (i.e., distinctive designation) of the substance
         strength.
+      Relationship Type: Value
       Model Name: name
     description:
       Type:
@@ -3171,6 +3233,7 @@ Strength:
       NCI C-Code: CNEW
       Preferred Term: Substance Strength Description
       Definition: A narrative representation of the substance strength.
+      Relationship Type: Value
       Model Name: description
     label:
       Type:
@@ -3178,6 +3241,7 @@ Strength:
       NCI C-Code: CNEW
       Preferred Term: Substance Strength Label
       Definition: The short descriptive designation for the substance strength.
+      Relationship Type: Value
       Model Name: label
     numerator:
       Type:
@@ -3187,6 +3251,7 @@ Strength:
       Definition: A USDM relationship between the Strength and the Quantity and Range
         classes that identifies the numerator's value or range of values associated
         with the substance  strength.
+      Relationship Type: Value
       Model Name: numerator
     denominator:
       Type:
@@ -3194,7 +3259,13 @@ Strength:
       Cardinality: 0..1
       Definition: A USDM relationship between the Strength and Quantity classes that
         identifies the denominator associated with the substance strength.
+      Relationship Type: Value
       Model Name: denominator
+    instanceType:
+      Type:
+      - $ref: '#/string'
+      Cardinality: 0..1
+      Relationship Type: Value
 Study:
   NCI C-Code: C15206
   Preferred Term: Clinical Study
@@ -4836,11 +4907,12 @@ SubjectEnrollment:
       Cardinality: 0..1
       Relationship Type: Value
 Substance:
-  Modifier: Abstract
+  Modifier: Concrete
   Attributes:
     id:
       Type:
       - $ref: '#/string'
+      Relationship Type: Value
       Model Name: id
     name:
       Type:
@@ -4848,6 +4920,7 @@ Substance:
       NCI C-Code: CNEW
       Preferred Term: Substance Name
       Definition: The literal identifier (i.e., distinctive designation) of the substance.
+      Relationship Type: Value
       Model Name: name
     description:
       Type:
@@ -4855,6 +4928,7 @@ Substance:
       NCI C-Code: CNEW
       Preferred Term: Substance Description
       Definition: A narrative representation of the substance.
+      Relationship Type: Value
       Model Name: description
     label:
       Type:
@@ -4862,6 +4936,7 @@ Substance:
       NCI C-Code: CNEW
       Preferred Term: Substance Label
       Definition: The short descriptive designation for the substance.
+      Relationship Type: Value
       Model Name: label
     code:
       Type:
@@ -4872,6 +4947,7 @@ Substance:
       Definition: A symbol or combination of symbols which is assigned to the substance.
       Codelist Ref: (Point out to multiple Biomedical coding dictionaries such as
         WHODrug, ATC, UNII, etc.)
+      Relationship Type: Value
       Model Name: code
     strengths:
       Type:
@@ -4879,6 +4955,7 @@ Substance:
       Cardinality: 1..*
       Definition: A USDM relationship between the Substance and Strength class which
         provides the values of the strengths of the substance.
+      Relationship Type: Value
       Model Name: strengths
     referenceSubstance:
       Type:
@@ -4887,7 +4964,13 @@ Substance:
       Definition: A USDM relationship within the Substance class that identifies the
         association between two substances, one of which is used as a reference for
         the other.
+      Relationship Type: Value
       Model Name: referenceSubstance
+    instanceType:
+      Type:
+      - $ref: '#/string'
+      Cardinality: 0..1
+      Relationship Type: Value
 SyntaxTemplate:
   NCI C-Code: C207596
   Preferred Term: Syntax Template
