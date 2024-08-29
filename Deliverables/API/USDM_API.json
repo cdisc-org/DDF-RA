@@ -797,7 +797,7 @@
               }
             ]
           },
-          "admoinistrableDoseForm": {
+          "administrableDoseForm": {
             "$ref": "#/components/schemas/AliasCode"
           },
           "properties": {
@@ -845,7 +845,7 @@
         "required": [
           "id",
           "name",
-          "admoinistrableDoseForm",
+          "administrableDoseForm",
           "instanceType"
         ],
         "title": "AdministrableProduct"
@@ -894,7 +894,7 @@
               }
             ]
           },
-          "admoinistrableDoseForm": {
+          "administrableDoseForm": {
             "$ref": "#/components/schemas/AliasCode"
           },
           "properties": {
@@ -942,7 +942,7 @@
         "required": [
           "id",
           "name",
-          "admoinistrableDoseForm",
+          "administrableDoseForm",
           "instanceType"
         ],
         "title": "AdministrableProduct"
@@ -7860,16 +7860,6 @@
           "productDesignation": {
             "$ref": "#/components/schemas/Code"
           },
-          "pharmacologicClass": {
-            "anyOf": [
-              {
-                "$ref": "#/components/schemas/Code"
-              },
-              {
-                "type": "null"
-              }
-            ]
-          },
           "notes": {
             "items": {
               "$ref": "#/components/schemas/CommentAnnotation"
@@ -7966,16 +7956,6 @@
           },
           "productDesignation": {
             "$ref": "#/components/schemas/Code"
-          },
-          "pharmacologicClass": {
-            "anyOf": [
-              {
-                "$ref": "#/components/schemas/Code"
-              },
-              {
-                "type": "null"
-              }
-            ]
           },
           "notes": {
             "items": {
