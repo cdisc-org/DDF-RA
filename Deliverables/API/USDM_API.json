@@ -753,6 +753,518 @@
         ],
         "title": "Address"
       },
+      "AdministrableProduct-Input": {
+        "properties": {
+          "id": {
+            "type": "string",
+            "minLength": 1,
+            "title": "Id"
+          },
+          "name": {
+            "type": "string",
+            "minLength": 1,
+            "title": "Name"
+          },
+          "label": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Label"
+          },
+          "description": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Description"
+          },
+          "pharmacologicClass": {
+            "anyOf": [
+              {
+                "$ref": "#/components/schemas/Code"
+              },
+              {
+                "type": "null"
+              }
+            ]
+          },
+          "admoinistrableDoseForm": {
+            "$ref": "#/components/schemas/AliasCode"
+          },
+          "properties": {
+            "items": {
+              "$ref": "#/components/schemas/AdministrableProductProperty-Input"
+            },
+            "type": "array",
+            "title": "Properties",
+            "default": []
+          },
+          "identifiers": {
+            "items": {
+              "$ref": "#/components/schemas/AdministrableProductIdentifier-Input"
+            },
+            "type": "array",
+            "title": "Identifiers",
+            "default": []
+          },
+          "ingredients": {
+            "items": {
+              "$ref": "#/components/schemas/Ingredient-Input"
+            },
+            "type": "array",
+            "title": "Ingredients",
+            "default": []
+          },
+          "notes": {
+            "items": {
+              "$ref": "#/components/schemas/CommentAnnotation"
+            },
+            "type": "array",
+            "title": "Notes",
+            "default": []
+          },
+          "instanceType": {
+            "type": "string",
+            "enum": [
+              "AdministrableProduct"
+            ],
+            "const": "AdministrableProduct",
+            "title": "Instancetype"
+          }
+        },
+        "type": "object",
+        "required": [
+          "id",
+          "name",
+          "admoinistrableDoseForm",
+          "instanceType"
+        ],
+        "title": "AdministrableProduct"
+      },
+      "AdministrableProduct-Output": {
+        "properties": {
+          "id": {
+            "type": "string",
+            "minLength": 1,
+            "title": "Id"
+          },
+          "name": {
+            "type": "string",
+            "minLength": 1,
+            "title": "Name"
+          },
+          "label": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Label"
+          },
+          "description": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Description"
+          },
+          "pharmacologicClass": {
+            "anyOf": [
+              {
+                "$ref": "#/components/schemas/Code"
+              },
+              {
+                "type": "null"
+              }
+            ]
+          },
+          "admoinistrableDoseForm": {
+            "$ref": "#/components/schemas/AliasCode"
+          },
+          "properties": {
+            "items": {
+              "$ref": "#/components/schemas/AdministrableProductProperty-Output"
+            },
+            "type": "array",
+            "title": "Properties",
+            "default": []
+          },
+          "identifiers": {
+            "items": {
+              "$ref": "#/components/schemas/AdministrableProductIdentifier-Output"
+            },
+            "type": "array",
+            "title": "Identifiers",
+            "default": []
+          },
+          "ingredients": {
+            "items": {
+              "$ref": "#/components/schemas/Ingredient-Output"
+            },
+            "type": "array",
+            "title": "Ingredients",
+            "default": []
+          },
+          "notes": {
+            "items": {
+              "$ref": "#/components/schemas/CommentAnnotation"
+            },
+            "type": "array",
+            "title": "Notes",
+            "default": []
+          },
+          "instanceType": {
+            "type": "string",
+            "enum": [
+              "AdministrableProduct"
+            ],
+            "const": "AdministrableProduct",
+            "title": "Instancetype"
+          }
+        },
+        "type": "object",
+        "required": [
+          "id",
+          "name",
+          "admoinistrableDoseForm",
+          "instanceType"
+        ],
+        "title": "AdministrableProduct"
+      },
+      "AdministrableProductIdentifier-Input": {
+        "properties": {
+          "id": {
+            "type": "string",
+            "minLength": 1,
+            "title": "Id"
+          },
+          "text": {
+            "type": "string",
+            "title": "Text"
+          },
+          "scope": {
+            "$ref": "#/components/schemas/Organization-Input"
+          },
+          "instanceType": {
+            "type": "string",
+            "enum": [
+              "AdministrableProductIdentifier"
+            ],
+            "const": "AdministrableProductIdentifier",
+            "title": "Instancetype"
+          }
+        },
+        "type": "object",
+        "required": [
+          "id",
+          "text",
+          "scope",
+          "instanceType"
+        ],
+        "title": "AdministrableProductIdentifier"
+      },
+      "AdministrableProductIdentifier-Output": {
+        "properties": {
+          "id": {
+            "type": "string",
+            "minLength": 1,
+            "title": "Id"
+          },
+          "text": {
+            "type": "string",
+            "title": "Text"
+          },
+          "scope": {
+            "$ref": "#/components/schemas/Organization-Output"
+          },
+          "instanceType": {
+            "type": "string",
+            "enum": [
+              "AdministrableProductIdentifier"
+            ],
+            "const": "AdministrableProductIdentifier",
+            "title": "Instancetype"
+          }
+        },
+        "type": "object",
+        "required": [
+          "id",
+          "text",
+          "scope",
+          "instanceType"
+        ],
+        "title": "AdministrableProductIdentifier"
+      },
+      "AdministrableProductProperty-Input": {
+        "properties": {
+          "id": {
+            "type": "string",
+            "minLength": 1,
+            "title": "Id"
+          },
+          "name": {
+            "type": "string",
+            "minLength": 1,
+            "title": "Name"
+          },
+          "text": {
+            "type": "string",
+            "title": "Text"
+          },
+          "type": {
+            "$ref": "#/components/schemas/Code"
+          },
+          "quantity": {
+            "$ref": "#/components/schemas/Quantity-Input"
+          },
+          "instanceType": {
+            "type": "string",
+            "enum": [
+              "AdministrableProductProperty"
+            ],
+            "const": "AdministrableProductProperty",
+            "title": "Instancetype"
+          }
+        },
+        "type": "object",
+        "required": [
+          "id",
+          "name",
+          "text",
+          "type",
+          "quantity",
+          "instanceType"
+        ],
+        "title": "AdministrableProductProperty"
+      },
+      "AdministrableProductProperty-Output": {
+        "properties": {
+          "id": {
+            "type": "string",
+            "minLength": 1,
+            "title": "Id"
+          },
+          "name": {
+            "type": "string",
+            "minLength": 1,
+            "title": "Name"
+          },
+          "text": {
+            "type": "string",
+            "title": "Text"
+          },
+          "type": {
+            "$ref": "#/components/schemas/Code"
+          },
+          "quantity": {
+            "$ref": "#/components/schemas/Quantity-Output"
+          },
+          "instanceType": {
+            "type": "string",
+            "enum": [
+              "AdministrableProductProperty"
+            ],
+            "const": "AdministrableProductProperty",
+            "title": "Instancetype"
+          }
+        },
+        "type": "object",
+        "required": [
+          "id",
+          "name",
+          "text",
+          "type",
+          "quantity",
+          "instanceType"
+        ],
+        "title": "AdministrableProductProperty"
+      },
+      "Administration-Input": {
+        "properties": {
+          "id": {
+            "type": "string",
+            "minLength": 1,
+            "title": "Id"
+          },
+          "name": {
+            "type": "string",
+            "minLength": 1,
+            "title": "Name"
+          },
+          "label": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Label"
+          },
+          "description": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Description"
+          },
+          "duration": {
+            "$ref": "#/components/schemas/AdministrationDuration-Input"
+          },
+          "dose": {
+            "$ref": "#/components/schemas/Quantity-Input"
+          },
+          "route": {
+            "$ref": "#/components/schemas/AliasCode"
+          },
+          "frequency": {
+            "$ref": "#/components/schemas/AliasCode"
+          },
+          "administrableProduct": {
+            "anyOf": [
+              {
+                "$ref": "#/components/schemas/AdministrableProduct-Input"
+              },
+              {
+                "type": "null"
+              }
+            ]
+          },
+          "notes": {
+            "items": {
+              "$ref": "#/components/schemas/CommentAnnotation"
+            },
+            "type": "array",
+            "title": "Notes",
+            "default": []
+          },
+          "instanceType": {
+            "type": "string",
+            "enum": [
+              "AgentAdministration"
+            ],
+            "const": "AgentAdministration",
+            "title": "Instancetype"
+          }
+        },
+        "type": "object",
+        "required": [
+          "id",
+          "name",
+          "duration",
+          "dose",
+          "route",
+          "frequency",
+          "instanceType"
+        ],
+        "title": "Administration"
+      },
+      "Administration-Output": {
+        "properties": {
+          "id": {
+            "type": "string",
+            "minLength": 1,
+            "title": "Id"
+          },
+          "name": {
+            "type": "string",
+            "minLength": 1,
+            "title": "Name"
+          },
+          "label": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Label"
+          },
+          "description": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Description"
+          },
+          "duration": {
+            "$ref": "#/components/schemas/AdministrationDuration-Output"
+          },
+          "dose": {
+            "$ref": "#/components/schemas/Quantity-Output"
+          },
+          "route": {
+            "$ref": "#/components/schemas/AliasCode"
+          },
+          "frequency": {
+            "$ref": "#/components/schemas/AliasCode"
+          },
+          "administrableProduct": {
+            "anyOf": [
+              {
+                "$ref": "#/components/schemas/AdministrableProduct-Output"
+              },
+              {
+                "type": "null"
+              }
+            ]
+          },
+          "notes": {
+            "items": {
+              "$ref": "#/components/schemas/CommentAnnotation"
+            },
+            "type": "array",
+            "title": "Notes",
+            "default": []
+          },
+          "instanceType": {
+            "type": "string",
+            "enum": [
+              "AgentAdministration"
+            ],
+            "const": "AgentAdministration",
+            "title": "Instancetype"
+          }
+        },
+        "type": "object",
+        "required": [
+          "id",
+          "name",
+          "duration",
+          "dose",
+          "route",
+          "frequency",
+          "instanceType"
+        ],
+        "title": "Administration"
+      },
       "AdministrationDuration-Input": {
         "properties": {
           "id": {
@@ -848,156 +1360,6 @@
           "instanceType"
         ],
         "title": "AdministrationDuration"
-      },
-      "AgentAdministration-Input": {
-        "properties": {
-          "id": {
-            "type": "string",
-            "minLength": 1,
-            "title": "Id"
-          },
-          "name": {
-            "type": "string",
-            "minLength": 1,
-            "title": "Name"
-          },
-          "label": {
-            "anyOf": [
-              {
-                "type": "string"
-              },
-              {
-                "type": "null"
-              }
-            ],
-            "title": "Label"
-          },
-          "description": {
-            "anyOf": [
-              {
-                "type": "string"
-              },
-              {
-                "type": "null"
-              }
-            ],
-            "title": "Description"
-          },
-          "duration": {
-            "$ref": "#/components/schemas/AdministrationDuration-Input"
-          },
-          "dose": {
-            "$ref": "#/components/schemas/Quantity-Input"
-          },
-          "route": {
-            "$ref": "#/components/schemas/AliasCode"
-          },
-          "frequency": {
-            "$ref": "#/components/schemas/AliasCode"
-          },
-          "notes": {
-            "items": {
-              "$ref": "#/components/schemas/CommentAnnotation"
-            },
-            "type": "array",
-            "title": "Notes",
-            "default": []
-          },
-          "instanceType": {
-            "type": "string",
-            "enum": [
-              "AgentAdministration"
-            ],
-            "const": "AgentAdministration",
-            "title": "Instancetype"
-          }
-        },
-        "type": "object",
-        "required": [
-          "id",
-          "name",
-          "duration",
-          "dose",
-          "route",
-          "frequency",
-          "instanceType"
-        ],
-        "title": "AgentAdministration"
-      },
-      "AgentAdministration-Output": {
-        "properties": {
-          "id": {
-            "type": "string",
-            "minLength": 1,
-            "title": "Id"
-          },
-          "name": {
-            "type": "string",
-            "minLength": 1,
-            "title": "Name"
-          },
-          "label": {
-            "anyOf": [
-              {
-                "type": "string"
-              },
-              {
-                "type": "null"
-              }
-            ],
-            "title": "Label"
-          },
-          "description": {
-            "anyOf": [
-              {
-                "type": "string"
-              },
-              {
-                "type": "null"
-              }
-            ],
-            "title": "Description"
-          },
-          "duration": {
-            "$ref": "#/components/schemas/AdministrationDuration-Output"
-          },
-          "dose": {
-            "$ref": "#/components/schemas/Quantity-Output"
-          },
-          "route": {
-            "$ref": "#/components/schemas/AliasCode"
-          },
-          "frequency": {
-            "$ref": "#/components/schemas/AliasCode"
-          },
-          "notes": {
-            "items": {
-              "$ref": "#/components/schemas/CommentAnnotation"
-            },
-            "type": "array",
-            "title": "Notes",
-            "default": []
-          },
-          "instanceType": {
-            "type": "string",
-            "enum": [
-              "AgentAdministration"
-            ],
-            "const": "AgentAdministration",
-            "title": "Instancetype"
-          }
-        },
-        "type": "object",
-        "required": [
-          "id",
-          "name",
-          "duration",
-          "dose",
-          "route",
-          "frequency",
-          "instanceType"
-        ],
-        "title": "AgentAdministration"
       },
       "AliasCode": {
         "properties": {
@@ -3397,6 +3759,68 @@
         ],
         "title": "Indication"
       },
+      "Ingredient-Input": {
+        "properties": {
+          "id": {
+            "type": "string",
+            "minLength": 1,
+            "title": "Id"
+          },
+          "role": {
+            "$ref": "#/components/schemas/Code"
+          },
+          "substance": {
+            "$ref": "#/components/schemas/Substance-Input"
+          },
+          "instanceType": {
+            "type": "string",
+            "enum": [
+              "Ingredient"
+            ],
+            "const": "Ingredient",
+            "title": "Instancetype"
+          }
+        },
+        "type": "object",
+        "required": [
+          "id",
+          "role",
+          "substance",
+          "instanceType"
+        ],
+        "title": "Ingredient"
+      },
+      "Ingredient-Output": {
+        "properties": {
+          "id": {
+            "type": "string",
+            "minLength": 1,
+            "title": "Id"
+          },
+          "role": {
+            "$ref": "#/components/schemas/Code"
+          },
+          "substance": {
+            "$ref": "#/components/schemas/Substance-Output"
+          },
+          "instanceType": {
+            "type": "string",
+            "enum": [
+              "Ingredient"
+            ],
+            "const": "Ingredient",
+            "title": "Instancetype"
+          }
+        },
+        "type": "object",
+        "required": [
+          "id",
+          "role",
+          "substance",
+          "instanceType"
+        ],
+        "title": "Ingredient"
+      },
       "IntercurrentEvent-Input": {
         "properties": {
           "id": {
@@ -4975,6 +5399,156 @@
           "conditionAssignments"
         ],
         "title": "ScheduledDecisionInstance"
+      },
+      "Strength-Input": {
+        "properties": {
+          "id": {
+            "type": "string",
+            "minLength": 1,
+            "title": "Id"
+          },
+          "name": {
+            "type": "string",
+            "minLength": 1,
+            "title": "Name"
+          },
+          "label": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Label"
+          },
+          "description": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Description"
+          },
+          "denominator": {
+            "anyOf": [
+              {
+                "$ref": "#/components/schemas/Quantity-Input"
+              },
+              {
+                "type": "null"
+              }
+            ]
+          },
+          "numerator": {
+            "anyOf": [
+              {
+                "$ref": "#/components/schemas/Quantity-Input"
+              },
+              {
+                "$ref": "#/components/schemas/Range"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Numerator"
+          },
+          "instanceType": {
+            "type": "string",
+            "enum": [
+              "Strength"
+            ],
+            "const": "Strength",
+            "title": "Instancetype"
+          }
+        },
+        "type": "object",
+        "required": [
+          "id",
+          "name",
+          "instanceType"
+        ],
+        "title": "Strength"
+      },
+      "Strength-Output": {
+        "properties": {
+          "id": {
+            "type": "string",
+            "minLength": 1,
+            "title": "Id"
+          },
+          "name": {
+            "type": "string",
+            "minLength": 1,
+            "title": "Name"
+          },
+          "label": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Label"
+          },
+          "description": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Description"
+          },
+          "denominator": {
+            "anyOf": [
+              {
+                "$ref": "#/components/schemas/Quantity-Output"
+              },
+              {
+                "type": "null"
+              }
+            ]
+          },
+          "numerator": {
+            "anyOf": [
+              {
+                "$ref": "#/components/schemas/Quantity-Output"
+              },
+              {
+                "$ref": "#/components/schemas/Range"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Numerator"
+          },
+          "instanceType": {
+            "type": "string",
+            "enum": [
+              "Strength"
+            ],
+            "const": "Strength",
+            "title": "Instancetype"
+          }
+        },
+        "type": "object",
+        "required": [
+          "id",
+          "name",
+          "instanceType"
+        ],
+        "title": "Strength"
       },
       "Study-Input": {
         "properties": {
@@ -7277,7 +7851,7 @@
           },
           "administrations": {
             "items": {
-              "$ref": "#/components/schemas/AgentAdministration-Input"
+              "$ref": "#/components/schemas/Administration-Input"
             },
             "type": "array",
             "title": "Administrations",
@@ -7384,7 +7958,7 @@
           },
           "administrations": {
             "items": {
-              "$ref": "#/components/schemas/AgentAdministration-Output"
+              "$ref": "#/components/schemas/Administration-Output"
             },
             "type": "array",
             "title": "Administrations",
@@ -7964,6 +8538,152 @@
           "quantity"
         ],
         "title": "SubjectEnrollment"
+      },
+      "Substance-Input": {
+        "properties": {
+          "id": {
+            "type": "string",
+            "minLength": 1,
+            "title": "Id"
+          },
+          "name": {
+            "type": "string",
+            "minLength": 1,
+            "title": "Name"
+          },
+          "label": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Label"
+          },
+          "description": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Description"
+          },
+          "code": {
+            "$ref": "#/components/schemas/Code"
+          },
+          "strengths": {
+            "items": {
+              "$ref": "#/components/schemas/Strength-Input"
+            },
+            "type": "array",
+            "title": "Strengths"
+          },
+          "referenceSubstance": {
+            "anyOf": [
+              {
+                "$ref": "#/components/schemas/Substance-Input"
+              },
+              {
+                "type": "null"
+              }
+            ]
+          },
+          "instanceType": {
+            "type": "string",
+            "enum": [
+              "Substance"
+            ],
+            "const": "Substance",
+            "title": "Instancetype"
+          }
+        },
+        "type": "object",
+        "required": [
+          "id",
+          "name",
+          "code",
+          "strengths",
+          "instanceType"
+        ],
+        "title": "Substance"
+      },
+      "Substance-Output": {
+        "properties": {
+          "id": {
+            "type": "string",
+            "minLength": 1,
+            "title": "Id"
+          },
+          "name": {
+            "type": "string",
+            "minLength": 1,
+            "title": "Name"
+          },
+          "label": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Label"
+          },
+          "description": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Description"
+          },
+          "code": {
+            "$ref": "#/components/schemas/Code"
+          },
+          "strengths": {
+            "items": {
+              "$ref": "#/components/schemas/Strength-Output"
+            },
+            "type": "array",
+            "title": "Strengths"
+          },
+          "referenceSubstance": {
+            "anyOf": [
+              {
+                "$ref": "#/components/schemas/Substance-Output"
+              },
+              {
+                "type": "null"
+              }
+            ]
+          },
+          "instanceType": {
+            "type": "string",
+            "enum": [
+              "Substance"
+            ],
+            "const": "Substance",
+            "title": "Instancetype"
+          }
+        },
+        "type": "object",
+        "required": [
+          "id",
+          "name",
+          "code",
+          "strengths",
+          "instanceType"
+        ],
+        "title": "Substance"
       },
       "SyntaxTemplateDictionary": {
         "properties": {
