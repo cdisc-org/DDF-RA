@@ -243,6 +243,10 @@ Address:
       Cardinality: 0..1
       Relationship Type: Value
 AdministrableProduct:
+  NCI C-Code: CNEW
+  Preferred Term: Administrable Product
+  Definition: Any study product that is formulated and presented in the form that
+    is suitable for administration to a study participant.
   Modifier: Concrete
   Attributes:
     id:
@@ -337,6 +341,10 @@ AdministrableProduct:
       Cardinality: 0..1
       Relationship Type: Value
 AdministrableProductIdentifier:
+  NCI C-Code: CNEW
+  Preferred Term: Administrable Product Identifier
+  Definition: A sequence of characters used to identify, name, or characterize the
+    administrable product.
   Super Classes:
   - $ref: '#/Identifier'
   Modifier: Concrete
@@ -377,6 +385,10 @@ AdministrableProductIdentifier:
       Cardinality: 0..1
       Relationship Type: Value
 AdministrableProductProperty:
+  NCI C-Code: CNEW
+  Preferred Term: Administrable Product Property
+  Definition: A characteristic from a set of characteristics used to define an administrable
+    product.
   Modifier: Concrete
   Attributes:
     id:
@@ -1944,6 +1956,9 @@ Indication:
       Cardinality: 0..1
       Relationship Type: Value
 Ingredient:
+  NCI C-Code: C51981
+  Preferred Term: Ingredient
+  Definition: Any component that constitutes a part of a compounded substance or mixture.
   Modifier: Concrete
   Attributes:
     id:
@@ -3207,6 +3222,11 @@ ScheduledInstance:
         classes which identifies the study epoch associated with a scheduled instance.
       Model Name: epoch
 Strength:
+  NCI C-Code: CNEW
+  Preferred Term: Substance Strength
+  Definition: The content of an substance expressed quantitatively per dosage unit,
+    per unit of volume, or per unit of weight, according to the pharmaceutical dose
+    form of the product.
   Modifier: Concrete
   Attributes:
     id:
@@ -4899,6 +4919,10 @@ SubjectEnrollment:
       Cardinality: 0..1
       Relationship Type: Value
 Substance:
+  NCI C-Code: C45306
+  Preferred Term: Substance
+  Definition: Any matter of defined composition that has discrete existence, whose
+    origin may be biological, mineral or chemical.
   Modifier: Concrete
   Attributes:
     id:
