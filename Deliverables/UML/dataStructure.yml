@@ -282,11 +282,11 @@ AdministrableProduct:
     administrableDoseForm:
       Type:
       - $ref: '#/AliasCode'
-      NCI C-Code: C42636
+      NCI C-Code: CNEW
       Cardinality: '1'
-      Preferred Term: Dose Form
-      Definition: The physical form in which active and/or inert ingredient(s) are
-        presented.
+      Preferred Term: Administrable Product Dose Form
+      Definition: The physical form in which formulated ingredient(s) are presented
+        in the administrable product.
       Codelist Ref: SDTM Terminology Codelist C66726
       Relationship Type: Value
       Model Name: administrableDoseForm
@@ -301,10 +301,10 @@ AdministrableProduct:
     pharmacologicClass:
       Type:
       - $ref: '#/Code'
-      NCI C-Code: C98768
+      NCI C-Code: CNEW
       Cardinality: 0..1
-      Preferred Term: Pharmacologic Class
-      Definition: The pharmacological class of the investigational product.
+      Preferred Term: Administrable Product Pharmacologic Class
+      Definition: The pharmacological class of the administrable product.
       Codelist Ref: (Points to external codelists such as UNII, MED-RT)
       Relationship Type: Value
       Model Name: pharmacologicClass
