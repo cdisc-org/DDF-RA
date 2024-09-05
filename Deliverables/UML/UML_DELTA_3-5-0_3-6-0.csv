@@ -31,6 +31,10 @@ Class - NEW,Administration,,
 ,,frequency,AliasCode
 ,,notes,CommentAnnotation
 ,,duration,AdministrationDuration
+Class - NEW,AssignedPerson,,
+,,id,string
+,,name,string
+,,organization,Organization
 Class - NEW,Identifier,,
 ,,id,string
 ,,text,string
@@ -51,6 +55,16 @@ Class - NEW,Strength,,
 ,,label,string
 ,,numerator,"Quantity, Range"
 ,,denominator,Quantity
+Class - NEW,StudyRole,,
+,,id,string
+,,name,string
+,,label,string
+,,description,string
+,,assignedPersons,AssignedPerson
+,,role,Code
+,,masking,Masking
+,,organizations,Organization
+,,appliesTo,"StudyDesign, StudyVersion"
 Class - NEW,Substance,,
 ,,id,string
 ,,name,string
@@ -69,10 +83,25 @@ Class - DELETED,AgentAdministration,,
 ,,dose,Quantity
 ,,frequency,AliasCode
 ,,notes,CommentAnnotation
+Class - DELETED,ResearchOrganization,,
+,,id,string
+,,name,string
+,,label,string
+,,identifier,string
+,,identifierScheme,string
+,,legalAddress,Address
+,,organizationType,Code
+,,manages,StudySite
 ,,,
+Property - NEW,Organization,managedSites,StudySite
 Property - NEW,StudyVersion,referenceIdentifiers,ReferenceIdentifier
+Property - NEW,SubjectEnrollment,appliesTo,StudySite
 Property - NEW,StudyIdentifier,scope,Organization
 Property - NEW,StudyIdentifier,text,string
+Property - DELETED,StudyDesign,maskingRoles,Masking
+Property - DELETED,StudyDesign,organizations,ResearchOrganization
+Property - DELETED,Masking,role,Code
 Property - DELETED,StudyIntervention,pharmacologicClass,Code
 Property - DELETED,StudyIdentifier,studyIdentifier,string
 Property - DELETED,StudyIdentifier,studyIdentifierScope,Organization
+Property - DELETED,StudySite,currentEnrollment,SubjectEnrollment

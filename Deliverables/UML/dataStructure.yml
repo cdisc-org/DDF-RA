@@ -686,6 +686,22 @@ AnalysisPopulation:
       - $ref: '#/string'
       Cardinality: 0..1
       Relationship Type: Value
+AssignedPerson:
+  Modifier: Abstract
+  Attributes:
+    id:
+      Type:
+      - $ref: '#/string'
+      Model Name: id
+    name:
+      Type:
+      - $ref: '#/string'
+      Model Name: name
+    organization:
+      Type:
+      - $ref: '#/Organization'
+      Cardinality: 0..1
+      Model Name: organization
 BiomedicalConcept:
   NCI C-Code: C201345
   Preferred Term: Biomedical Concept
@@ -2074,15 +2090,8 @@ Masking:
       Model Name: description
     role:
       Type:
-      - $ref: '#/Code'
-      NCI C-Code: C207506
-      Cardinality: '1'
-      Preferred Term: Masking Role
-      Definition: An identifying designation assigned to a masked individual within
-        a study that corresponds with their function.
-      Codelist Ref: C207414
+      - $ref: UNKNOWN
       Relationship Type: Value
-      Model Name: role
     instanceType:
       Type:
       - $ref: '#/string'
@@ -2326,8 +2335,6 @@ Organization:
   Definition: A formalized group of persons or other organizations collected together
     for a common purpose (such as administrative, legal, political) and the infrastructure
     to carry out that purpose. (BRIDG)
-  Sub Classes:
-  - $ref: '#/ResearchOrganization'
   Modifier: Concrete
   Attributes:
     id:
@@ -2389,6 +2396,12 @@ Organization:
       Codelist Ref: C188724
       Relationship Type: Value
       Model Name: organizationType
+    managedSites*:
+      Type:
+      - $ref: '#/StudySite'
+      Cardinality: 0..*
+      Relationship Type: UNKNOWN
+      Model Name: managedSites
     instanceType:
       Type:
       - $ref: '#/string'
@@ -2735,105 +2748,6 @@ ReferenceIdentifier:
       Codelist Ref: CNEW Reference Identifier Type
       Relationship Type: Value
       Model Name: type
-    instanceType:
-      Type:
-      - $ref: '#/string'
-      Cardinality: 0..1
-      Relationship Type: Value
-ResearchOrganization:
-  NCI C-Code: C93448
-  Preferred Term: Research Organization
-  Definition: An organization that undertakes systematic investigation within a field
-    of study in order to discover facts, establish or revise a theory, test a hypothesis,
-    or develop a plan of action based on the facts discovered.
-  Super Classes:
-  - $ref: '#/Organization'
-  Modifier: Concrete
-  Attributes:
-    id:
-      Type:
-      - $ref: '#/string'
-      Relationship Type: Value
-      Model Name: id
-      Inherited From:
-        $ref: '#/Organization'
-    name:
-      Type:
-      - $ref: '#/string'
-      NCI C-Code: C207529
-      Preferred Term: Research Organization Name
-      Definition: The literal identifier (i.e., distinctive designation) of the research
-        organization.
-      Relationship Type: Value
-      Model Name: name
-      Inherited From:
-        $ref: '#/Organization'
-    label:
-      Type:
-      - $ref: '#/string'
-      NCI C-Code: C207528
-      Preferred Term: Research Organization Label
-      Definition: The short descriptive designation for the research organization.
-      Relationship Type: Value
-      Model Name: label
-      Inherited From:
-        $ref: '#/Organization'
-    identifier:
-      Type:
-      - $ref: '#/string'
-      NCI C-Code: C207527
-      Preferred Term: Research Organization Identifier
-      Definition: A sequence of characters used to identify, name, or characterize
-        the research organization.
-      Relationship Type: Value
-      Model Name: identifier
-      Inherited From:
-        $ref: '#/Organization'
-    identifierScheme:
-      Type:
-      - $ref: '#/string'
-      NCI C-Code: C207526
-      Preferred Term: Identifier Provider Research Organization Name
-      Definition: The name of the research organization that provides the identifier
-        for the entity.
-      Relationship Type: Value
-      Model Name: identifierScheme
-      Inherited From:
-        $ref: '#/Organization'
-    legalAddress:
-      Type:
-      - $ref: '#/Address'
-      Cardinality: 0..1
-      Definition: A USDM relationship between the ResearchOrganization and Address
-        classes which identifies the legal address for the research organization.
-      Relationship Type: Value
-      Model Name: legalAddress
-      Inherited From:
-        $ref: '#/Organization'
-    organizationType:
-      Type:
-      - $ref: '#/Code'
-      NCI C-Code: C188820
-      Cardinality: '1'
-      Preferred Term: Organization Type
-      Definition: A characterization or classification of the formalized group of
-        persons or other organizations collected together for a common purpose (such
-        as administrative, legal, political) and the infrastructure to carry out that
-        purpose.
-      Codelist Ref: C188724
-      Relationship Type: Value
-      Model Name: organizationType
-      Inherited From:
-        $ref: '#/Organization'
-    manages:
-      Type:
-      - $ref: '#/StudySite'
-      Cardinality: 1..*
-      Definition: A USDM relationship between the ResearchOrganization and StudySite
-        classes which identifies the research organization that manages the study
-        site.
-      Relationship Type: Value
-      Model Name: manages
     instanceType:
       Type:
       - $ref: '#/string'
@@ -4043,14 +3957,6 @@ StudyDesign:
         which identifies the set of indications associated with the study design.
       Relationship Type: Value
       Model Name: indications
-    maskingRoles:
-      Type:
-      - $ref: '#/Masking'
-      Cardinality: 0..*
-      Definition: A USDM relationship between the StudyDesign and Masking classes
-        which identifies the set of masking roles associated with the study design.
-      Relationship Type: Value
-      Model Name: maskingRoles
     objectives:
       Type:
       - $ref: '#/Objective'
@@ -4059,15 +3965,6 @@ StudyDesign:
         which identifies the set of objectives associated with the study design.
       Relationship Type: Value
       Model Name: objectives
-    organizations:
-      Type:
-      - $ref: '#/ResearchOrganization'
-      Cardinality: 0..*
-      Definition: A USDM relationship between the StudyDesign and ResearchOrganization
-        classes which identifies the set of research organizations associated with
-        the study design.
-      Relationship Type: Value
-      Model Name: organizations
     scheduleTimelines:
       Type:
       - $ref: '#/ScheduleTimeline'
@@ -4150,6 +4047,11 @@ StudyDesign:
       - $ref: '#/BiomedicalConceptSurrogate'
       Cardinality: 0..*
       Relationship Type: Value
+    maskingRoles:
+      Type:
+      - $ref: '#/Masking'
+      Cardinality: 0..*
+      Relationship Type: Value
     dictionaries:
       Type:
       - $ref: '#/SyntaxTemplateDictionary'
@@ -4158,6 +4060,11 @@ StudyDesign:
     conditions:
       Type:
       - $ref: '#/Condition'
+      Cardinality: 0..*
+      Relationship Type: Value
+    organizations:
+      Type:
+      - $ref: '#/ResearchOrganization'
       Cardinality: 0..*
       Relationship Type: Value
     instanceType:
@@ -4621,6 +4528,51 @@ StudyIntervention:
       - $ref: '#/string'
       Cardinality: 0..1
       Relationship Type: Value
+StudyRole:
+  Modifier: Abstract
+  Attributes:
+    id:
+      Type:
+      - $ref: '#/string'
+      Model Name: id
+    name:
+      Type:
+      - $ref: '#/string'
+      Model Name: name
+    label:
+      Type:
+      - $ref: '#/string'
+      Model Name: label
+    description:
+      Type:
+      - $ref: '#/string'
+      Model Name: description
+    assignedPersons:
+      Type:
+      - $ref: '#/AssignedPerson'
+      Cardinality: 0..*
+      Model Name: assignedPersons
+    role:
+      Type:
+      - $ref: '#/Code'
+      Cardinality: '1'
+      Model Name: role
+    masking:
+      Type:
+      - $ref: '#/Masking'
+      Cardinality: 0..1
+      Model Name: masking
+    organizations:
+      Type:
+      - $ref: '#/Organization'
+      Cardinality: 0..*
+      Model Name: organizations
+    appliesTo:
+      Type:
+      - $ref: '#/StudyDesign'
+      - $ref: '#/StudyVersion'
+      Cardinality: 0..1
+      Model Name: appliesTo
 StudySite:
   NCI C-Code: C80403
   Preferred Term: Study Site
@@ -4659,12 +4611,8 @@ StudySite:
       Model Name: label
     currentEnrollment:
       Type:
-      - $ref: '#/SubjectEnrollment'
-      Cardinality: 0..1
-      Definition: A USDM relationship between the StudySite and SubjectEnrollment
-        classes which provides the current subject enrollment for the study site.
+      - $ref: UNKNOWN
       Relationship Type: Value
-      Model Name: currentEnrollment
     instanceType:
       Type:
       - $ref: '#/string'
@@ -4913,6 +4861,12 @@ SubjectEnrollment:
       Definition: The value representing the number of individuals enrolled in a study.
       Relationship Type: Value
       Model Name: quantity
+    appliesTo*:
+      Type:
+      - $ref: '#/StudySite'
+      Cardinality: 0..1
+      Relationship Type: UNKNOWN
+      Model Name: appliesTo
     instanceType:
       Type:
       - $ref: '#/string'
