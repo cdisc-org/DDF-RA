@@ -34,6 +34,9 @@ Class - NEW,Administration,,
 Class - NEW,AssignedPerson,,
 ,,id,string
 ,,name,string
+,,description,string
+,,label,string
+,,jobTitle,string
 ,,organization,Organization
 Class - NEW,Identifier,,
 ,,id,string
@@ -61,7 +64,7 @@ Class - NEW,StudyRole,,
 ,,label,string
 ,,description,string
 ,,assignedPersons,AssignedPerson
-,,role,Code
+,,code,Code
 ,,masking,Masking
 ,,organizations,Organization
 ,,appliesTo,"StudyDesign, StudyVersion"
@@ -70,7 +73,7 @@ Class - NEW,Substance,,
 ,,name,string
 ,,description,string
 ,,label,string
-,,code,AliasCode
+,,code,Code
 ,,strengths,Strength
 ,,referenceSubstance,Substance
 Class - DELETED,AgentAdministration,,
@@ -94,6 +97,7 @@ Class - DELETED,ResearchOrganization,,
 ,,manages,StudySite
 ,,,
 Property - NEW,Organization,managedSites,StudySite
+Property - NEW,Organization,type,Code
 Property - NEW,StudyVersion,referenceIdentifiers,ReferenceIdentifier
 Property - NEW,SubjectEnrollment,appliesTo,StudySite
 Property - NEW,StudyIdentifier,scope,Organization
@@ -102,6 +106,7 @@ Property - DELETED,StudyDesign,maskingRoles,Masking
 Property - DELETED,StudyDesign,organizations,ResearchOrganization
 Property - DELETED,Masking,role,Code
 Property - DELETED,StudyIntervention,pharmacologicClass,Code
+Property - DELETED,Organization,organizationType,Code
 Property - DELETED,StudyIdentifier,studyIdentifier,string
 Property - DELETED,StudyIdentifier,studyIdentifierScope,Organization
 Property - DELETED,StudySite,currentEnrollment,SubjectEnrollment

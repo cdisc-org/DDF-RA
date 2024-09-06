@@ -697,6 +697,18 @@ AssignedPerson:
       Type:
       - $ref: '#/string'
       Model Name: name
+    description:
+      Type:
+      - $ref: '#/string'
+      Model Name: description
+    label:
+      Type:
+      - $ref: '#/string'
+      Model Name: label
+    jobTitle:
+      Type:
+      - $ref: '#/string'
+      Model Name: jobTitle
     organization:
       Type:
       - $ref: '#/Organization'
@@ -2383,25 +2395,22 @@ Organization:
         which provides the legal address for an organization.
       Relationship Type: Value
       Model Name: legalAddress
-    organizationType:
+    type*:
       Type:
       - $ref: '#/Code'
-      NCI C-Code: C188820
       Cardinality: '1'
-      Preferred Term: Organization Type
-      Definition: A characterization or classification of the formalized group of
-        persons or other organizations collected together for a common purpose (such
-        as administrative, legal, political) and the infrastructure to carry out that
-        purpose.
-      Codelist Ref: C188724
-      Relationship Type: Value
-      Model Name: organizationType
+      Relationship Type: UNKNOWN
+      Model Name: type
     managedSites*:
       Type:
       - $ref: '#/StudySite'
       Cardinality: 0..*
       Relationship Type: UNKNOWN
       Model Name: managedSites
+    organizationType:
+      Type:
+      - $ref: UNKNOWN
+      Relationship Type: Value
     instanceType:
       Type:
       - $ref: '#/string'
@@ -4552,11 +4561,11 @@ StudyRole:
       - $ref: '#/AssignedPerson'
       Cardinality: 0..*
       Model Name: assignedPersons
-    role:
+    code:
       Type:
       - $ref: '#/Code'
       Cardinality: '1'
-      Model Name: role
+      Model Name: code
     masking:
       Type:
       - $ref: '#/Masking'
@@ -4910,7 +4919,7 @@ Substance:
       Model Name: label
     code:
       Type:
-      - $ref: '#/AliasCode'
+      - $ref: '#/Code'
       NCI C-Code: CNEW
       Cardinality: 0..1
       Preferred Term: Substance Code
