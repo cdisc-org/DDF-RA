@@ -1118,7 +1118,7 @@
 					<upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="EAID_LI000290__FBF5_4b0f_8E50_0AC8D3B81D2A" value="1"/>
 				</ownedEnd>
 			</packagedElement>
-			<packagedElement xmi:type="uml:Association" xmi:id="EAID_103CB955_2421_4cef_BEFA_1F6AF30B9A8C" name="code">
+			<packagedElement xmi:type="uml:Association" xmi:id="EAID_103CB955_2421_4cef_BEFA_1F6AF30B9A8C" name="codes">
 				<memberEnd xmi:idref="EAID_dst3CB955_2421_4cef_BEFA_1F6AF30B9A8C"/>
 				<memberEnd xmi:idref="EAID_src3CB955_2421_4cef_BEFA_1F6AF30B9A8C"/>
 				<ownedEnd xmi:type="uml:Property" xmi:id="EAID_src3CB955_2421_4cef_BEFA_1F6AF30B9A8C" association="EAID_103CB955_2421_4cef_BEFA_1F6AF30B9A8C">
@@ -7292,8 +7292,8 @@
 				<ownedElement xmi:type="umldi:UMLMultiplicityLabel" xmi:id="EAID_SML000000_59E0_444e_BEFA_1F6AF30B9A8C" text="1" modelElement="EAID_src3CB955_2421_4cef_BEFA_1F6AF30B9A8C">
 					<bounds xmi:type="dc:bounds" xmi:id="EAID_DBSML000000_59E0_444e_BEFA_1F6AF30B9A8C" x="1120" y="3221" width="6" height="14"/>
 				</ownedElement>
-				<ownedElement xmi:type="umldi:UMLNameLabel" xmi:id="EAID_NL000000_59E0_444e_BEFA_1F6AF30B9A8C" text="code">
-					<bounds xmi:type="dc:bounds" xmi:id="EAID_DBNL000000_59E0_444e_BEFA_1F6AF30B9A8C" x="1103" y="3204" width="20" height="14"/>
+				<ownedElement xmi:type="umldi:UMLNameLabel" xmi:id="EAID_NL000000_59E0_444e_BEFA_1F6AF30B9A8C" text="codes">
+					<bounds xmi:type="dc:bounds" xmi:id="EAID_DBNL000000_59E0_444e_BEFA_1F6AF30B9A8C" x="1099" y="3204" width="20" height="14"/>
 				</ownedElement>
 				<ownedElement xmi:type="umldi:UMLMultiplicityLabel" xmi:id="EAID_TML000000_59E0_444e_BEFA_1F6AF30B9A8C" text="0..1" modelElement="EAID_dst3CB955_2421_4cef_BEFA_1F6AF30B9A8C">
 					<bounds xmi:type="dc:bounds" xmi:id="EAID_DBTML000000_59E0_444e_BEFA_1F6AF30B9A8C" x="1352" y="480" width="17" height="14"/>
@@ -8016,8 +8016,8 @@
 				<ownedElement xmi:type="umldi:UMLMultiplicityLabel" xmi:id="EAID_SML000000_5208_43a4_BEFA_1F6AF30B9A8C" text="1" modelElement="EAID_src3CB955_2421_4cef_BEFA_1F6AF30B9A8C">
 					<bounds xmi:type="dc:bounds" xmi:id="EAID_DBSML000000_5208_43a4_BEFA_1F6AF30B9A8C" x="608" y="797" width="6" height="14"/>
 				</ownedElement>
-				<ownedElement xmi:type="umldi:UMLNameLabel" xmi:id="EAID_NL000000_5208_43a4_BEFA_1F6AF30B9A8C" text="code">
-					<bounds xmi:type="dc:bounds" xmi:id="EAID_DBNL000000_5208_43a4_BEFA_1F6AF30B9A8C" x="608" y="772" width="20" height="14"/>
+				<ownedElement xmi:type="umldi:UMLNameLabel" xmi:id="EAID_NL000000_5208_43a4_BEFA_1F6AF30B9A8C" text="codes">
+					<bounds xmi:type="dc:bounds" xmi:id="EAID_DBNL000000_5208_43a4_BEFA_1F6AF30B9A8C" x="604" y="772" width="20" height="14"/>
 				</ownedElement>
 				<ownedElement xmi:type="umldi:UMLMultiplicityLabel" xmi:id="EAID_TML000000_5208_43a4_BEFA_1F6AF30B9A8C" text="0..1" modelElement="EAID_dst3CB955_2421_4cef_BEFA_1F6AF30B9A8C">
 					<bounds xmi:type="dc:bounds" xmi:id="EAID_DBTML000000_5208_43a4_BEFA_1F6AF30B9A8C" x="318" y="114" width="17" height="14"/>
@@ -18976,7 +18976,7 @@
 				<xrefs/>
 				<tags/>
 			</connector>
-			<connector xmi:idref="EAID_103CB955_2421_4cef_BEFA_1F6AF30B9A8C" name="code">
+			<connector xmi:idref="EAID_103CB955_2421_4cef_BEFA_1F6AF30B9A8C" name="codes">
 				<source xmi:idref="EAID_1B96C4C6_10D2_4cc6_A50F_824CA5B89A7E">
 					<model ea_localid="175" type="Class" name="Substance"/>
 					<role visibility="Public" targetScope="instance"/>
@@ -19005,7 +19005,7 @@
 				<parameterSubstitutions/>
 				<documentation/>
 				<appearance linemode="3" linecolor="-1" linewidth="0" seqno="0" headStyle="0" lineStyle="0"/>
-				<labels lb="1" mt="code" rb="0..1"/>
+				<labels lb="1" mt="codes" rb="0..1"/>
 				<extendedProperties virtualInheritance="0"/>
 				<style/>
 				<xrefs/>
