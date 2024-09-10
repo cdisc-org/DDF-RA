@@ -2427,13 +2427,13 @@ Organization:
       Codelist Ref: C188724
       Relationship Type: UNKNOWN
       Model Name: type
-    managedSites*:
+    managedSites:
       Type:
       - $ref: '#/StudySite'
       Cardinality: 0..*
       Definition: A USDM relationship between the Organization and StudySite classes
         which identifies the set of study sites managed by the organization.
-      Relationship Type: UNKNOWN
+      Relationship Type: Value
       Model Name: managedSites
     organizationType:
       Type:
@@ -4099,11 +4099,6 @@ StudyDesign:
       - $ref: '#/Condition'
       Cardinality: 0..*
       Relationship Type: Value
-    organizations:
-      Type:
-      - $ref: '#/ResearchOrganization'
-      Cardinality: 0..*
-      Relationship Type: Value
     instanceType:
       Type:
       - $ref: '#/string'
@@ -4670,10 +4665,6 @@ StudySite:
       Definition: The short descriptive designation for the study site.
       Relationship Type: Value
       Model Name: label
-    currentEnrollment:
-      Type:
-      - $ref: UNKNOWN
-      Relationship Type: Value
     instanceType:
       Type:
       - $ref: '#/string'
@@ -4934,6 +4925,10 @@ SubjectEnrollment:
       Type:
       - $ref: '#/string'
       Cardinality: 0..1
+      Relationship Type: Value
+    appliedTo:
+      Type:
+      - $ref: UNKNOWN
       Relationship Type: Value
 Substance:
   NCI C-Code: C45306
