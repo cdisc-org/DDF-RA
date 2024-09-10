@@ -2850,6 +2850,12 @@ components:
           anyOf:
           - $ref: '#/components/schemas/Address'
           - type: 'null'
+        managedSites:
+          items:
+            $ref: '#/components/schemas/StudySite'
+          type: array
+          title: Managedsites
+          default: []
         instanceType:
           type: string
           enum:
@@ -2892,6 +2898,12 @@ components:
           anyOf:
           - $ref: '#/components/schemas/Address'
           - type: 'null'
+        managedSites:
+          items:
+            $ref: '#/components/schemas/StudySite'
+          type: array
+          title: Managedsites
+          default: []
         instanceType:
           type: string
           enum:
@@ -3169,102 +3181,6 @@ components:
       - instanceType
       - type
       title: ReferenceIdentifier
-    ResearchOrganization-Input:
-      properties:
-        id:
-          type: string
-          minLength: 1
-          title: Id
-        name:
-          type: string
-          minLength: 1
-          title: Name
-        label:
-          anyOf:
-          - type: string
-          - type: 'null'
-          title: Label
-        organizationType:
-          $ref: '#/components/schemas/Code'
-        identifierScheme:
-          type: string
-          title: Identifierscheme
-        identifier:
-          type: string
-          title: Identifier
-        legalAddress:
-          anyOf:
-          - $ref: '#/components/schemas/Address'
-          - type: 'null'
-        instanceType:
-          type: string
-          enum:
-          - ResearchOrganization
-          const: ResearchOrganization
-          title: Instancetype
-        manages:
-          items:
-            $ref: '#/components/schemas/StudySite-Input'
-          type: array
-          title: Manages
-      type: object
-      required:
-      - id
-      - name
-      - organizationType
-      - identifierScheme
-      - identifier
-      - instanceType
-      - manages
-      title: ResearchOrganization
-    ResearchOrganization-Output:
-      properties:
-        id:
-          type: string
-          minLength: 1
-          title: Id
-        name:
-          type: string
-          minLength: 1
-          title: Name
-        label:
-          anyOf:
-          - type: string
-          - type: 'null'
-          title: Label
-        organizationType:
-          $ref: '#/components/schemas/Code'
-        identifierScheme:
-          type: string
-          title: Identifierscheme
-        identifier:
-          type: string
-          title: Identifier
-        legalAddress:
-          anyOf:
-          - $ref: '#/components/schemas/Address'
-          - type: 'null'
-        instanceType:
-          type: string
-          enum:
-          - ResearchOrganization
-          const: ResearchOrganization
-          title: Instancetype
-        manages:
-          items:
-            $ref: '#/components/schemas/StudySite-Output'
-          type: array
-          title: Manages
-      type: object
-      required:
-      - id
-      - name
-      - organizationType
-      - identifierScheme
-      - identifier
-      - instanceType
-      - manages
-      title: ResearchOrganization
     ResponseCode:
       properties:
         id:
@@ -4490,12 +4406,6 @@ components:
           type: array
           title: Conditions
           default: []
-        organizations:
-          items:
-            $ref: '#/components/schemas/ResearchOrganization-Input'
-          type: array
-          title: Organizations
-          default: []
         notes:
           items:
             $ref: '#/components/schemas/CommentAnnotation'
@@ -4679,12 +4589,6 @@ components:
             $ref: '#/components/schemas/Condition-Output'
           type: array
           title: Conditions
-          default: []
-        organizations:
-          items:
-            $ref: '#/components/schemas/ResearchOrganization-Output'
-          type: array
-          title: Organizations
           default: []
         notes:
           items:
@@ -5233,7 +5137,7 @@ components:
       - productDesignation
       - instanceType
       title: StudyIntervention
-    StudySite-Input:
+    StudySite:
       properties:
         id:
           type: string
@@ -5253,46 +5157,6 @@ components:
           - type: string
           - type: 'null'
           title: Description
-        currentEnrollment:
-          anyOf:
-          - $ref: '#/components/schemas/SubjectEnrollment-Input'
-          - type: 'null'
-        instanceType:
-          type: string
-          enum:
-          - StudySite
-          const: StudySite
-          title: Instancetype
-      type: object
-      required:
-      - id
-      - name
-      - instanceType
-      title: StudySite
-    StudySite-Output:
-      properties:
-        id:
-          type: string
-          minLength: 1
-          title: Id
-        name:
-          type: string
-          minLength: 1
-          title: Name
-        label:
-          anyOf:
-          - type: string
-          - type: 'null'
-          title: Label
-        description:
-          anyOf:
-          - type: string
-          - type: 'null'
-          title: Description
-        currentEnrollment:
-          anyOf:
-          - $ref: '#/components/schemas/SubjectEnrollment-Output'
-          - type: 'null'
         instanceType:
           type: string
           enum:
@@ -5559,6 +5423,10 @@ components:
           title: Instancetype
         quantity:
           $ref: '#/components/schemas/Quantity-Input'
+        appliedTo:
+          anyOf:
+          - $ref: '#/components/schemas/StudySite'
+          - type: 'null'
       type: object
       required:
       - id
@@ -5586,6 +5454,10 @@ components:
           title: Instancetype
         quantity:
           $ref: '#/components/schemas/Quantity-Output'
+        appliedTo:
+          anyOf:
+          - $ref: '#/components/schemas/StudySite'
+          - type: 'null'
       type: object
       required:
       - id
@@ -5614,7 +5486,9 @@ components:
           - type: 'null'
           title: Description
         code:
-          $ref: '#/components/schemas/Code'
+          anyOf:
+          - $ref: '#/components/schemas/Code'
+          - type: 'null'
         strengths:
           items:
             $ref: '#/components/schemas/Strength-Input'
@@ -5634,7 +5508,6 @@ components:
       required:
       - id
       - name
-      - code
       - strengths
       - instanceType
       title: Substance
@@ -5659,7 +5532,9 @@ components:
           - type: 'null'
           title: Description
         code:
-          $ref: '#/components/schemas/Code'
+          anyOf:
+          - $ref: '#/components/schemas/Code'
+          - type: 'null'
         strengths:
           items:
             $ref: '#/components/schemas/Strength-Output'
@@ -5679,7 +5554,6 @@ components:
       required:
       - id
       - name
-      - code
       - strengths
       - instanceType
       title: Substance
