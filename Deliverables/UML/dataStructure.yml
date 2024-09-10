@@ -4966,17 +4966,12 @@ Substance:
       Definition: The short descriptive designation for the substance.
       Relationship Type: Value
       Model Name: label
-    code:
+    codes*:
       Type:
       - $ref: '#/Code'
-      NCI C-Code: CNEW
       Cardinality: 0..1
-      Preferred Term: Substance Code
-      Definition: A symbol or combination of symbols which is assigned to the substance.
-      Codelist Ref: (Point out to multiple Biomedical coding dictionaries such as
-        WHODrug, ATC, UNII, etc.)
-      Relationship Type: Value
-      Model Name: code
+      Relationship Type: UNKNOWN
+      Model Name: codes
     strengths:
       Type:
       - $ref: '#/Strength'
@@ -4994,6 +4989,10 @@ Substance:
         the other.
       Relationship Type: Value
       Model Name: referenceSubstance
+    code:
+      Type:
+      - $ref: UNKNOWN
+      Relationship Type: Value
     instanceType:
       Type:
       - $ref: '#/string'
