@@ -4969,7 +4969,7 @@ Substance:
     codes*:
       Type:
       - $ref: '#/Code'
-      Cardinality: 0..1
+      Cardinality: 0..*
       Relationship Type: UNKNOWN
       Model Name: codes
     strengths:
