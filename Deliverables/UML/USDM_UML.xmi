@@ -3996,7 +3996,7 @@
 				<ownedAttribute xmi:type="uml:Property" xmi:id="EAID_dst3CB955_2421_4cef_BEFA_1F6AF30B9A8C" association="EAID_103CB955_2421_4cef_BEFA_1F6AF30B9A8C">
 					<type xmi:idref="EAID_06DA84B5_6A66_42f6_BFF2_CFC7508C49BD"/>
 					<lowerValue xmi:type="uml:LiteralInteger" xmi:id="EAID_LI001199__2421_4cef_BEFA_1F6AF30B9A8C" value="0"/>
-					<upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="EAID_LI001200__2421_4cef_BEFA_1F6AF30B9A8C" value="1"/>
+					<upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="EAID_LI001200__2421_4cef_BEFA_1F6AF30B9A8C" value="*"/>
 				</ownedAttribute>
 				<ownedAttribute xmi:type="uml:Property" xmi:id="EAID_dst7102C9_C747_417d_8C3E_B2B43C5AE1D2" association="EAID_117102C9_C747_417d_8C3E_B2B43C5AE1D2">
 					<type xmi:idref="EAID_69FC4AE8_D271_4a98_8272_11680E8742F4"/>
@@ -7295,7 +7295,7 @@
 				<ownedElement xmi:type="umldi:UMLNameLabel" xmi:id="EAID_NL000000_59E0_444e_BEFA_1F6AF30B9A8C" text="codes">
 					<bounds xmi:type="dc:bounds" xmi:id="EAID_DBNL000000_59E0_444e_BEFA_1F6AF30B9A8C" x="1099" y="3204" width="20" height="14"/>
 				</ownedElement>
-				<ownedElement xmi:type="umldi:UMLMultiplicityLabel" xmi:id="EAID_TML000000_59E0_444e_BEFA_1F6AF30B9A8C" text="0..1" modelElement="EAID_dst3CB955_2421_4cef_BEFA_1F6AF30B9A8C">
+				<ownedElement xmi:type="umldi:UMLMultiplicityLabel" xmi:id="EAID_TML000000_59E0_444e_BEFA_1F6AF30B9A8C" text="0..*" modelElement="EAID_dst3CB955_2421_4cef_BEFA_1F6AF30B9A8C">
 					<bounds xmi:type="dc:bounds" xmi:id="EAID_DBTML000000_59E0_444e_BEFA_1F6AF30B9A8C" x="1352" y="480" width="17" height="14"/>
 				</ownedElement>
 				<waypoint xmi:type="dc:waypoint" xmi:id="EAID_WP000000_59E0_444e_BEFA_1F6AF30B9A8C" x="1117" y="3244"/>
@@ -8019,7 +8019,7 @@
 				<ownedElement xmi:type="umldi:UMLNameLabel" xmi:id="EAID_NL000000_5208_43a4_BEFA_1F6AF30B9A8C" text="codes">
 					<bounds xmi:type="dc:bounds" xmi:id="EAID_DBNL000000_5208_43a4_BEFA_1F6AF30B9A8C" x="604" y="772" width="20" height="14"/>
 				</ownedElement>
-				<ownedElement xmi:type="umldi:UMLMultiplicityLabel" xmi:id="EAID_TML000000_5208_43a4_BEFA_1F6AF30B9A8C" text="0..1" modelElement="EAID_dst3CB955_2421_4cef_BEFA_1F6AF30B9A8C">
+				<ownedElement xmi:type="umldi:UMLMultiplicityLabel" xmi:id="EAID_TML000000_5208_43a4_BEFA_1F6AF30B9A8C" text="0..*" modelElement="EAID_dst3CB955_2421_4cef_BEFA_1F6AF30B9A8C">
 					<bounds xmi:type="dc:bounds" xmi:id="EAID_DBTML000000_5208_43a4_BEFA_1F6AF30B9A8C" x="318" y="114" width="17" height="14"/>
 				</ownedElement>
 				<waypoint xmi:type="dc:waypoint" xmi:id="EAID_WP000000_5208_43a4_BEFA_1F6AF30B9A8C" x="605" y="792"/>
@@ -18991,7 +18991,7 @@
 				<target xmi:idref="EAID_06DA84B5_6A66_42f6_BFF2_CFC7508C49BD">
 					<model ea_localid="45" type="Class" name="Code"/>
 					<role visibility="Public" targetScope="instance"/>
-					<type multiplicity="0..1" aggregation="none" containment="Unspecified"/>
+					<type multiplicity="0..*" aggregation="none" containment="Unspecified"/>
 					<constraints/>
 					<modifiers isOrdered="false" changeable="none" isNavigable="false"/>
 					<style value="Union=0;Derived=0;AllowDuplicates=0;Owned=0;Navigable=Navigable;"/>
@@ -19005,7 +19005,7 @@
 				<parameterSubstitutions/>
 				<documentation/>
 				<appearance linemode="3" linecolor="-1" linewidth="0" seqno="0" headStyle="0" lineStyle="0"/>
-				<labels lb="1" mt="codes" rb="0..1"/>
+				<labels lb="1" mt="codes" rb="0..*"/>
 				<extendedProperties virtualInheritance="0"/>
 				<style/>
 				<xrefs/>
