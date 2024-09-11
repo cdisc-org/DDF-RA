@@ -2467,7 +2467,7 @@
 				<ownedAttribute xmi:type="uml:Property" xmi:id="EAID_dst63FAA6_CB3B_441d_BB80_01AB66C66992" association="EAID_0363FAA6_CB3B_441d_BB80_01AB66C66992">
 					<type xmi:idref="EAID_06DA84B5_6A66_42f6_BFF2_CFC7508C49BD"/>
 					<lowerValue xmi:type="uml:LiteralInteger" xmi:id="EAID_LI000687__CB3B_441d_BB80_01AB66C66992" value="0"/>
-					<upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="EAID_LI000688__CB3B_441d_BB80_01AB66C66992" value="1"/>
+					<upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="EAID_LI000688__CB3B_441d_BB80_01AB66C66992" value="2"/>
 				</ownedAttribute>
 				<ownedAttribute xmi:type="uml:Property" xmi:id="EAID_dst544B9C_12B2_41ff_AE88_8787DF3C2C37" association="EAID_42544B9C_12B2_41ff_AE88_8787DF3C2C37">
 					<type xmi:idref="EAID_48BF7449_3B02_4887_9AFD_6F3712CAD3A7"/>
@@ -6292,7 +6292,7 @@
 				<ownedElement xmi:type="umldi:UMLNameLabel" xmi:id="EAID_NL000000_59E0_444e_BB80_01AB66C66992" text="plannedSex">
 					<bounds xmi:type="dc:bounds" xmi:id="EAID_DBNL000000_59E0_444e_BB80_01AB66C66992" x="803" y="1600" width="47" height="14"/>
 				</ownedElement>
-				<ownedElement xmi:type="umldi:UMLMultiplicityLabel" xmi:id="EAID_TML000000_59E0_444e_BB80_01AB66C66992" text="0..1" modelElement="EAID_dst63FAA6_CB3B_441d_BB80_01AB66C66992">
+				<ownedElement xmi:type="umldi:UMLMultiplicityLabel" xmi:id="EAID_TML000000_59E0_444e_BB80_01AB66C66992" text="0..2" modelElement="EAID_dst63FAA6_CB3B_441d_BB80_01AB66C66992">
 					<bounds xmi:type="dc:bounds" xmi:id="EAID_DBTML000000_59E0_444e_BB80_01AB66C66992" x="1352" y="781" width="17" height="14"/>
 				</ownedElement>
 				<waypoint xmi:type="dc:waypoint" xmi:id="EAID_WP000000_59E0_444e_BB80_01AB66C66992" x="841" y="1636"/>
@@ -8356,7 +8356,7 @@
 				<ownedElement xmi:type="umldi:UMLNameLabel" xmi:id="EAID_NL000000_B4D4_49db_BB80_01AB66C66992" text="plannedSex">
 					<bounds xmi:type="dc:bounds" xmi:id="EAID_DBNL000000_B4D4_49db_BB80_01AB66C66992" x="375" y="576" width="47" height="14"/>
 				</ownedElement>
-				<ownedElement xmi:type="umldi:UMLMultiplicityLabel" xmi:id="EAID_TML000000_B4D4_49db_BB80_01AB66C66992" text="0..1" modelElement="EAID_dst63FAA6_CB3B_441d_BB80_01AB66C66992">
+				<ownedElement xmi:type="umldi:UMLMultiplicityLabel" xmi:id="EAID_TML000000_B4D4_49db_BB80_01AB66C66992" text="0..2" modelElement="EAID_dst63FAA6_CB3B_441d_BB80_01AB66C66992">
 					<bounds xmi:type="dc:bounds" xmi:id="EAID_DBTML000000_B4D4_49db_BB80_01AB66C66992" x="421" y="659" width="17" height="14"/>
 				</ownedElement>
 				<waypoint xmi:type="dc:waypoint" xmi:id="EAID_WP000000_B4D4_49db_BB80_01AB66C66992" x="413" y="551"/>
@@ -18851,7 +18851,7 @@
 				<target xmi:idref="EAID_06DA84B5_6A66_42f6_BFF2_CFC7508C49BD">
 					<model ea_localid="45" type="Class" name="Code"/>
 					<role visibility="Public" targetScope="instance"/>
-					<type multiplicity="0..1" aggregation="none" containment="Unspecified"/>
+					<type multiplicity="0..2" aggregation="none" containment="Unspecified"/>
 					<constraints/>
 					<modifiers isOrdered="false" changeable="none" isNavigable="true"/>
 					<style value="Union=0;Derived=0;AllowDuplicates=0;Owned=0;Navigable=Navigable;"/>
@@ -18865,7 +18865,7 @@
 				<parameterSubstitutions/>
 				<documentation/>
 				<appearance linemode="3" linecolor="-1" linewidth="0" seqno="0" headStyle="0" lineStyle="0"/>
-				<labels lb="1" mt="plannedSex" rb="0..1"/>
+				<labels lb="1" mt="plannedSex" rb="0..2"/>
 				<extendedProperties/>
 				<style/>
 				<xrefs/>
