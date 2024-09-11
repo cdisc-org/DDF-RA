@@ -2525,7 +2525,7 @@ PopulationDefinition:
       Type:
       - $ref: '#/Code'
       NCI C-Code: C207523
-      Cardinality: 0..1
+      Cardinality: 0..2
       Preferred Term: Population Definition Planned Sex
       Definition: The protocol-defined sex within the population definition.
       Codelist Ref: SDTM Terminology Codelist C66732
@@ -3598,7 +3598,7 @@ StudyCohort:
       Type:
       - $ref: '#/Code'
       NCI C-Code: C207541
-      Cardinality: 0..1
+      Cardinality: 0..2
       Preferred Term: Study Cohort Planned Sex
       Definition: The protocol-defined sex within the study cohort.
       Codelist Ref: SDTM Terminology Codelist C66732
@@ -4167,7 +4167,7 @@ StudyDesignPopulation:
       Type:
       - $ref: '#/Code'
       NCI C-Code: C207551
-      Cardinality: 0..1
+      Cardinality: 0..2
       Preferred Term: Study Design Population Planned Sex
       Definition: The protocol-defined sex within the study design population.
       Codelist Ref: SDTM Terminology Codelist C66732
