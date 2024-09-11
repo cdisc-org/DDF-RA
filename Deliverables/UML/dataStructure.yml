@@ -4604,7 +4604,12 @@ StudyRole:
     code:
       Type:
       - $ref: '#/Code'
+      NCI C-Code: CNEW
       Cardinality: '1'
+      Preferred Term: Study Role Code
+      Definition: A symbol or combination of symbols which is assigned to the study
+        role.
+      Codelist Ref: CNEW Study Role Code
       Model Name: code
     masking:
       Type:
@@ -4969,7 +4974,12 @@ Substance:
     codes*:
       Type:
       - $ref: '#/Code'
+      NCI C-Code: CNEW
       Cardinality: 0..*
+      Preferred Term: Substance Code
+      Definition: A symbol or combination of symbols which is assigned to the substance.
+      Codelist Ref: (Point out to multiple Biomedical coding dictionaries such as
+        WHODrug, ATC, UNII, etc.)
       Relationship Type: UNKNOWN
       Model Name: codes
     strengths:
