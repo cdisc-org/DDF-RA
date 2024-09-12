@@ -4005,9 +4005,6 @@
             ],
             "title": "Description"
           },
-          "role": {
-            "$ref": "#/components/schemas/Code"
-          },
           "instanceType": {
             "type": "string",
             "enum": [
@@ -4020,7 +4017,6 @@
         "type": "object",
         "required": [
           "id",
-          "role",
           "instanceType"
         ],
         "title": "Masking"
@@ -4358,7 +4354,7 @@
             ],
             "title": "Label"
           },
-          "organizationType": {
+          "type": {
             "$ref": "#/components/schemas/Code"
           },
           "identifierScheme": {
@@ -4400,7 +4396,7 @@
         "required": [
           "id",
           "name",
-          "organizationType",
+          "type",
           "identifierScheme",
           "identifier",
           "instanceType"
@@ -4430,7 +4426,7 @@
             ],
             "title": "Label"
           },
-          "organizationType": {
+          "type": {
             "$ref": "#/components/schemas/Code"
           },
           "identifierScheme": {
@@ -4472,7 +4468,7 @@
         "required": [
           "id",
           "name",
-          "organizationType",
+          "type",
           "identifierScheme",
           "identifier",
           "instanceType"
@@ -7813,93 +7809,7 @@
         ],
         "title": "StudyIntervention"
       },
-      "StudyRole-Input": {
-        "properties": {
-          "id": {
-            "type": "string",
-            "minLength": 1,
-            "title": "Id"
-          },
-          "name": {
-            "type": "string",
-            "minLength": 1,
-            "title": "Name"
-          },
-          "label": {
-            "anyOf": [
-              {
-                "type": "string"
-              },
-              {
-                "type": "null"
-              }
-            ],
-            "title": "Label"
-          },
-          "description": {
-            "anyOf": [
-              {
-                "type": "string"
-              },
-              {
-                "type": "null"
-              }
-            ],
-            "title": "Description"
-          },
-          "code": {
-            "$ref": "#/components/schemas/Code"
-          },
-          "appliesToId": {
-            "type": "string",
-            "title": "Appliestoid"
-          },
-          "assignedPersons": {
-            "items": {
-              "$ref": "#/components/schemas/AssignedPerson"
-            },
-            "type": "array",
-            "title": "Assignedpersons",
-            "default": []
-          },
-          "organizationIds": {
-            "items": {
-              "type": "string"
-            },
-            "type": "array",
-            "title": "Organizationids",
-            "default": []
-          },
-          "masking": {
-            "anyOf": [
-              {
-                "$ref": "#/components/schemas/Masking"
-              },
-              {
-                "type": "null"
-              }
-            ]
-          },
-          "instanceType": {
-            "type": "string",
-            "enum": [
-              "StudyRole"
-            ],
-            "const": "StudyRole",
-            "title": "Instancetype"
-          }
-        },
-        "type": "object",
-        "required": [
-          "id",
-          "name",
-          "code",
-          "appliesToId",
-          "instanceType"
-        ],
-        "title": "StudyRole"
-      },
-      "StudyRole-Output": {
+      "StudyRole": {
         "properties": {
           "id": {
             "type": "string",
@@ -8190,7 +8100,7 @@
           },
           "roles": {
             "items": {
-              "$ref": "#/components/schemas/StudyRole-Input"
+              "$ref": "#/components/schemas/StudyRole"
             },
             "type": "array",
             "title": "Roles",
@@ -8363,7 +8273,7 @@
           },
           "roles": {
             "items": {
-              "$ref": "#/components/schemas/StudyRole-Output"
+              "$ref": "#/components/schemas/StudyRole"
             },
             "type": "array",
             "title": "Roles",
