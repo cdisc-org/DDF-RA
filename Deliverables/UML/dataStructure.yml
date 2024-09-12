@@ -367,7 +367,7 @@ AdministrableProductIdentifier:
       Model Name: text
       Inherited From:
         $ref: '#/Identifier'
-    scope:
+    scopeId:
       Type:
       - $ref: '#/Organization'
       Cardinality: '1'
@@ -375,7 +375,7 @@ AdministrableProductIdentifier:
         Organization class which provides the details associated with which provides
         the details associated with each organization that has assigned the administrable
         product identifier.
-      Relationship Type: Value
+      Relationship Type: Ref
       Model Name: scope
       Inherited From:
         $ref: '#/Identifier'
@@ -477,14 +477,14 @@ Administration:
         agent, or therapy.
       Relationship Type: Value
       Model Name: label
-    administrableProduct:
+    administrableProductId:
       Type:
       - $ref: '#/AdministrableProduct'
       Cardinality: 0..1
       Definition: A USDM relationship between the Administration and AdministrableProductDefinition
         classes which identifies the administrable product associated with the administration
         of the product, agent, or therapy.
-      Relationship Type: Value
+      Relationship Type: Ref
       Model Name: administrableProduct
     route:
       Type:
@@ -691,11 +691,12 @@ AssignedPerson:
   Preferred Term: Assigned Person
   Definition: An individual person who is allotted or appointed to a particular role,
     function, or other entity.
-  Modifier: Abstract
+  Modifier: Concrete
   Attributes:
     id:
       Type:
       - $ref: '#/string'
+      Relationship Type: Value
       Model Name: id
     name:
       Type:
@@ -704,6 +705,7 @@ AssignedPerson:
       Preferred Term: Assigned Person Name
       Definition: The literal identifier (i.e., distinctive designation) of the assigned
         person.
+      Relationship Type: Value
       Model Name: name
     description:
       Type:
@@ -711,6 +713,7 @@ AssignedPerson:
       NCI C-Code: CNEW
       Preferred Term: Assigned Person Description
       Definition: A narrative representation of the assigned person.
+      Relationship Type: Value
       Model Name: description
     label:
       Type:
@@ -718,6 +721,7 @@ AssignedPerson:
       NCI C-Code: CNEW
       Preferred Term: Assigned Person Label
       Definition: The short descriptive designation for the assigned person.
+      Relationship Type: Value
       Model Name: label
     jobTitle:
       Type:
@@ -725,14 +729,21 @@ AssignedPerson:
       NCI C-Code: CNEW
       Preferred Term: Assigned Person Job Title
       Definition: An identifying designation related to the assigned person's occupation.
+      Relationship Type: Value
       Model Name: jobTitle
-    organization:
+    organizationId:
       Type:
       - $ref: '#/Organization'
       Cardinality: 0..1
       Definition: A USDM relationship between the AssignedPerson and Organization
         classes that identifies that organization to which the assigned person belongs.
+      Relationship Type: Ref
       Model Name: organization
+    instanceType:
+      Type:
+      - $ref: '#/string'
+      Cardinality: 0..1
+      Relationship Type: Value
 BiomedicalConcept:
   NCI C-Code: C201345
   Preferred Term: Biomedical Concept
@@ -2764,14 +2775,14 @@ ReferenceIdentifier:
       Model Name: text
       Inherited From:
         $ref: '#/Identifier'
-    scope:
+    scopeId:
       Type:
       - $ref: '#/Organization'
       Cardinality: '1'
       Definition: A USDM relationship between the ReferenceIdentifier and Organization
         classes which provides the details associated with each organization that
         has assigned the reference identifier.
-      Relationship Type: Value
+      Relationship Type: Ref
       Model Name: scope
       Inherited From:
         $ref: '#/Identifier'
@@ -4431,14 +4442,14 @@ StudyIdentifier:
       Model Name: text
       Inherited From:
         $ref: '#/Identifier'
-    scope:
+    scopeId:
       Type:
       - $ref: '#/Organization'
       Cardinality: '1'
       Definition: A USDM relationship between the StudyIdentifier and Organization
         classes which provides the details associated with each organization that
         has assigned the study identifier.
-      Relationship Type: Value
+      Relationship Type: Ref
       Model Name: scope
       Inherited From:
         $ref: '#/Identifier'
@@ -4565,11 +4576,12 @@ StudyRole:
   Preferred Term: Study Role
   Definition: A designation that identifies the function of study personnel within
     the context of the study.
-  Modifier: Abstract
+  Modifier: Concrete
   Attributes:
     id:
       Type:
       - $ref: '#/string'
+      Relationship Type: Value
       Model Name: id
     name:
       Type:
@@ -4578,6 +4590,7 @@ StudyRole:
       Preferred Term: Study Role Name
       Definition: The literal identifier (i.e., distinctive designation) of the study
         role.
+      Relationship Type: Value
       Model Name: name
     label:
       Type:
@@ -4585,6 +4598,7 @@ StudyRole:
       NCI C-Code: CNEW
       Preferred Term: Study Role Label
       Definition: The short descriptive designation for the study role.
+      Relationship Type: Value
       Model Name: label
     description:
       Type:
@@ -4592,6 +4606,7 @@ StudyRole:
       NCI C-Code: CNEW
       Preferred Term: Study Role Description
       Definition: A narrative representation of the study role.
+      Relationship Type: Value
       Model Name: description
     assignedPersons:
       Type:
@@ -4600,6 +4615,7 @@ StudyRole:
       Definition: A USDM relationship between the StudyRole and AssignedPerson classes
         that identifies the set of individuals that are assigned to fill a particular
         role within the study.
+      Relationship Type: Value
       Model Name: assignedPersons
     code:
       Type:
@@ -4610,6 +4626,7 @@ StudyRole:
       Definition: A symbol or combination of symbols which is assigned to the study
         role.
       Codelist Ref: CNEW Study Role Code
+      Relationship Type: Value
       Model Name: code
     masking:
       Type:
@@ -4617,15 +4634,17 @@ StudyRole:
       Cardinality: 0..1
       Definition: A USDM relationship between the StudyRole and Masking classes which
         describes the masking associated with the study role.
+      Relationship Type: Value
       Model Name: masking
-    organizations:
+    organizationIds:
       Type:
       - $ref: '#/Organization'
       Cardinality: 0..*
       Definition: A USDM relationship between the StudyRole and Organization classes
         which identifies the set of organizations associated with the study role.
+      Relationship Type: Ref
       Model Name: organizations
-    appliesTo:
+    appliesToId:
       Type:
       - $ref: '#/StudyDesign'
       - $ref: '#/StudyVersion'
@@ -4633,7 +4652,13 @@ StudyRole:
       Definition: A USDM relationship between the StudyRole and StudyVersion and StudyDesign
         classes that identifies the study version or study design that applies to
         the study role.
+      Relationship Type: Ref
       Model Name: appliesTo
+    instanceType:
+      Type:
+      - $ref: '#/string'
+      Cardinality: 0..1
+      Relationship Type: Value
 StudySite:
   NCI C-Code: C80403
   Preferred Term: Study Site
@@ -4864,6 +4889,21 @@ StudyVersion:
       - $ref: '#/NarrativeContentItem'
       Cardinality: 0..*
       Relationship Type: Value
+    roles:
+      Type:
+      - $ref: '#/StudyRole'
+      Cardinality: 0..*
+      Relationship Type: Value
+    organizations:
+      Type:
+      - $ref: '#/Organization'
+      Cardinality: 0..*
+      Relationship Type: Value
+    administrableProducts:
+      Type:
+      - $ref: '#/AdministrableProduct'
+      Cardinality: 0..*
+      Relationship Type: Value
     instanceType:
       Type:
       - $ref: '#/string'
@@ -4971,7 +5011,7 @@ Substance:
       Definition: The short descriptive designation for the substance.
       Relationship Type: Value
       Model Name: label
-    codes*:
+    codes:
       Type:
       - $ref: '#/Code'
       NCI C-Code: CNEW
@@ -4980,7 +5020,7 @@ Substance:
       Definition: A symbol or combination of symbols which is assigned to the substance.
       Codelist Ref: (Point out to multiple Biomedical coding dictionaries such as
         WHODrug, ATC, UNII, etc.)
-      Relationship Type: UNKNOWN
+      Relationship Type: Value
       Model Name: codes
     strengths:
       Type:
@@ -4999,10 +5039,6 @@ Substance:
         the other.
       Relationship Type: Value
       Model Name: referenceSubstance
-    code:
-      Type:
-      - $ref: UNKNOWN
-      Relationship Type: Value
     instanceType:
       Type:
       - $ref: '#/string'
