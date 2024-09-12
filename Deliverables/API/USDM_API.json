@@ -810,7 +810,7 @@
           },
           "identifiers": {
             "items": {
-              "$ref": "#/components/schemas/AdministrableProductIdentifier-Input"
+              "$ref": "#/components/schemas/AdministrableProductIdentifier"
             },
             "type": "array",
             "title": "Identifiers",
@@ -907,7 +907,7 @@
           },
           "identifiers": {
             "items": {
-              "$ref": "#/components/schemas/AdministrableProductIdentifier-Output"
+              "$ref": "#/components/schemas/AdministrableProductIdentifier"
             },
             "type": "array",
             "title": "Identifiers",
@@ -947,7 +947,7 @@
         ],
         "title": "AdministrableProduct"
       },
-      "AdministrableProductIdentifier-Input": {
+      "AdministrableProductIdentifier": {
         "properties": {
           "id": {
             "type": "string",
@@ -958,8 +958,9 @@
             "type": "string",
             "title": "Text"
           },
-          "scope": {
-            "$ref": "#/components/schemas/Organization-Input"
+          "scopeId": {
+            "type": "string",
+            "title": "Scopeid"
           },
           "instanceType": {
             "type": "string",
@@ -974,39 +975,7 @@
         "required": [
           "id",
           "text",
-          "scope",
-          "instanceType"
-        ],
-        "title": "AdministrableProductIdentifier"
-      },
-      "AdministrableProductIdentifier-Output": {
-        "properties": {
-          "id": {
-            "type": "string",
-            "minLength": 1,
-            "title": "Id"
-          },
-          "text": {
-            "type": "string",
-            "title": "Text"
-          },
-          "scope": {
-            "$ref": "#/components/schemas/Organization-Output"
-          },
-          "instanceType": {
-            "type": "string",
-            "enum": [
-              "AdministrableProductIdentifier"
-            ],
-            "const": "AdministrableProductIdentifier",
-            "title": "Instancetype"
-          }
-        },
-        "type": "object",
-        "required": [
-          "id",
-          "text",
-          "scope",
+          "scopeId",
           "instanceType"
         ],
         "title": "AdministrableProductIdentifier"
@@ -1141,15 +1110,16 @@
           "frequency": {
             "$ref": "#/components/schemas/AliasCode"
           },
-          "administrableProduct": {
+          "administrableProductId": {
             "anyOf": [
               {
-                "$ref": "#/components/schemas/AdministrableProduct-Input"
+                "type": "string"
               },
               {
                 "type": "null"
               }
-            ]
+            ],
+            "title": "Administrableproductid"
           },
           "notes": {
             "items": {
@@ -1226,15 +1196,16 @@
           "frequency": {
             "$ref": "#/components/schemas/AliasCode"
           },
-          "administrableProduct": {
+          "administrableProductId": {
             "anyOf": [
               {
-                "$ref": "#/components/schemas/AdministrableProduct-Output"
+                "type": "string"
               },
               {
                 "type": "null"
               }
-            ]
+            ],
+            "title": "Administrableproductid"
           },
           "notes": {
             "items": {
@@ -1523,6 +1494,73 @@
           "instanceType"
         ],
         "title": "AnalysisPopulation"
+      },
+      "AssignedPerson": {
+        "properties": {
+          "id": {
+            "type": "string",
+            "minLength": 1,
+            "title": "Id"
+          },
+          "name": {
+            "type": "string",
+            "minLength": 1,
+            "title": "Name"
+          },
+          "label": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Label"
+          },
+          "description": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Description"
+          },
+          "jobTitle": {
+            "type": "string",
+            "title": "Jobtitle"
+          },
+          "organizationId": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Organizationid"
+          },
+          "instanceType": {
+            "type": "string",
+            "enum": [
+              "AssignedRole"
+            ],
+            "const": "AssignedRole",
+            "title": "Instancetype"
+          }
+        },
+        "type": "object",
+        "required": [
+          "id",
+          "name",
+          "jobTitle",
+          "instanceType"
+        ],
+        "title": "AssignedPerson"
       },
       "BiomedicalConcept-Input": {
         "properties": {
@@ -4756,7 +4794,7 @@
         ],
         "title": "Range"
       },
-      "ReferenceIdentifier-Input": {
+      "ReferenceIdentifier": {
         "properties": {
           "id": {
             "type": "string",
@@ -4767,8 +4805,9 @@
             "type": "string",
             "title": "Text"
           },
-          "scope": {
-            "$ref": "#/components/schemas/Organization-Input"
+          "scopeId": {
+            "type": "string",
+            "title": "Scopeid"
           },
           "instanceType": {
             "type": "string",
@@ -4786,43 +4825,7 @@
         "required": [
           "id",
           "text",
-          "scope",
-          "instanceType",
-          "type"
-        ],
-        "title": "ReferenceIdentifier"
-      },
-      "ReferenceIdentifier-Output": {
-        "properties": {
-          "id": {
-            "type": "string",
-            "minLength": 1,
-            "title": "Id"
-          },
-          "text": {
-            "type": "string",
-            "title": "Text"
-          },
-          "scope": {
-            "$ref": "#/components/schemas/Organization-Output"
-          },
-          "instanceType": {
-            "type": "string",
-            "enum": [
-              "ReferenceIdentifier"
-            ],
-            "const": "ReferenceIdentifier",
-            "title": "Instancetype"
-          },
-          "type": {
-            "$ref": "#/components/schemas/Code"
-          }
-        },
-        "type": "object",
-        "required": [
-          "id",
-          "text",
-          "scope",
+          "scopeId",
           "instanceType",
           "type"
         ],
@@ -7583,7 +7586,7 @@
         ],
         "title": "StudyEpoch"
       },
-      "StudyIdentifier-Input": {
+      "StudyIdentifier": {
         "properties": {
           "id": {
             "type": "string",
@@ -7594,8 +7597,9 @@
             "type": "string",
             "title": "Text"
           },
-          "scope": {
-            "$ref": "#/components/schemas/Organization-Input"
+          "scopeId": {
+            "type": "string",
+            "title": "Scopeid"
           },
           "instanceType": {
             "type": "string",
@@ -7610,39 +7614,7 @@
         "required": [
           "id",
           "text",
-          "scope",
-          "instanceType"
-        ],
-        "title": "StudyIdentifier"
-      },
-      "StudyIdentifier-Output": {
-        "properties": {
-          "id": {
-            "type": "string",
-            "minLength": 1,
-            "title": "Id"
-          },
-          "text": {
-            "type": "string",
-            "title": "Text"
-          },
-          "scope": {
-            "$ref": "#/components/schemas/Organization-Output"
-          },
-          "instanceType": {
-            "type": "string",
-            "enum": [
-              "StudyIdentifier"
-            ],
-            "const": "StudyIdentifier",
-            "title": "Instancetype"
-          }
-        },
-        "type": "object",
-        "required": [
-          "id",
-          "text",
-          "scope",
+          "scopeId",
           "instanceType"
         ],
         "title": "StudyIdentifier"
@@ -7841,6 +7813,178 @@
         ],
         "title": "StudyIntervention"
       },
+      "StudyRole-Input": {
+        "properties": {
+          "id": {
+            "type": "string",
+            "minLength": 1,
+            "title": "Id"
+          },
+          "name": {
+            "type": "string",
+            "minLength": 1,
+            "title": "Name"
+          },
+          "label": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Label"
+          },
+          "description": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Description"
+          },
+          "code": {
+            "$ref": "#/components/schemas/Code"
+          },
+          "appliesToId": {
+            "type": "string",
+            "title": "Appliestoid"
+          },
+          "assignedPersons": {
+            "items": {
+              "$ref": "#/components/schemas/AssignedPerson"
+            },
+            "type": "array",
+            "title": "Assignedpersons",
+            "default": []
+          },
+          "organizationIds": {
+            "items": {
+              "type": "string"
+            },
+            "type": "array",
+            "title": "Organizationids",
+            "default": []
+          },
+          "masking": {
+            "anyOf": [
+              {
+                "$ref": "#/components/schemas/Masking"
+              },
+              {
+                "type": "null"
+              }
+            ]
+          },
+          "instanceType": {
+            "type": "string",
+            "enum": [
+              "StudyRole"
+            ],
+            "const": "StudyRole",
+            "title": "Instancetype"
+          }
+        },
+        "type": "object",
+        "required": [
+          "id",
+          "name",
+          "code",
+          "appliesToId",
+          "instanceType"
+        ],
+        "title": "StudyRole"
+      },
+      "StudyRole-Output": {
+        "properties": {
+          "id": {
+            "type": "string",
+            "minLength": 1,
+            "title": "Id"
+          },
+          "name": {
+            "type": "string",
+            "minLength": 1,
+            "title": "Name"
+          },
+          "label": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Label"
+          },
+          "description": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Description"
+          },
+          "code": {
+            "$ref": "#/components/schemas/Code"
+          },
+          "appliesToId": {
+            "type": "string",
+            "title": "Appliestoid"
+          },
+          "assignedPersons": {
+            "items": {
+              "$ref": "#/components/schemas/AssignedPerson"
+            },
+            "type": "array",
+            "title": "Assignedpersons",
+            "default": []
+          },
+          "organizationIds": {
+            "items": {
+              "type": "string"
+            },
+            "type": "array",
+            "title": "Organizationids",
+            "default": []
+          },
+          "masking": {
+            "anyOf": [
+              {
+                "$ref": "#/components/schemas/Masking"
+              },
+              {
+                "type": "null"
+              }
+            ]
+          },
+          "instanceType": {
+            "type": "string",
+            "enum": [
+              "StudyRole"
+            ],
+            "const": "StudyRole",
+            "title": "Instancetype"
+          }
+        },
+        "type": "object",
+        "required": [
+          "id",
+          "name",
+          "code",
+          "appliesToId",
+          "instanceType"
+        ],
+        "title": "StudyRole"
+      },
       "StudySite": {
         "properties": {
           "id": {
@@ -7993,14 +8137,14 @@
           },
           "studyIdentifiers": {
             "items": {
-              "$ref": "#/components/schemas/StudyIdentifier-Input"
+              "$ref": "#/components/schemas/StudyIdentifier"
             },
             "type": "array",
             "title": "Studyidentifiers"
           },
           "referenceIdentifiers": {
             "items": {
-              "$ref": "#/components/schemas/ReferenceIdentifier-Input"
+              "$ref": "#/components/schemas/ReferenceIdentifier"
             },
             "type": "array",
             "title": "Referenceidentifiers",
@@ -8042,6 +8186,30 @@
             },
             "type": "array",
             "title": "Abbreviations",
+            "default": []
+          },
+          "roles": {
+            "items": {
+              "$ref": "#/components/schemas/StudyRole-Input"
+            },
+            "type": "array",
+            "title": "Roles",
+            "default": []
+          },
+          "organizations": {
+            "items": {
+              "$ref": "#/components/schemas/Organization-Input"
+            },
+            "type": "array",
+            "title": "Organizations",
+            "default": []
+          },
+          "administrableProducts": {
+            "items": {
+              "$ref": "#/components/schemas/AdministrableProduct-Input"
+            },
+            "type": "array",
+            "title": "Administrableproducts",
             "default": []
           },
           "notes": {
@@ -8142,14 +8310,14 @@
           },
           "studyIdentifiers": {
             "items": {
-              "$ref": "#/components/schemas/StudyIdentifier-Output"
+              "$ref": "#/components/schemas/StudyIdentifier"
             },
             "type": "array",
             "title": "Studyidentifiers"
           },
           "referenceIdentifiers": {
             "items": {
-              "$ref": "#/components/schemas/ReferenceIdentifier-Output"
+              "$ref": "#/components/schemas/ReferenceIdentifier"
             },
             "type": "array",
             "title": "Referenceidentifiers",
@@ -8191,6 +8359,30 @@
             },
             "type": "array",
             "title": "Abbreviations",
+            "default": []
+          },
+          "roles": {
+            "items": {
+              "$ref": "#/components/schemas/StudyRole-Output"
+            },
+            "type": "array",
+            "title": "Roles",
+            "default": []
+          },
+          "organizations": {
+            "items": {
+              "$ref": "#/components/schemas/Organization-Output"
+            },
+            "type": "array",
+            "title": "Organizations",
+            "default": []
+          },
+          "administrableProducts": {
+            "items": {
+              "$ref": "#/components/schemas/AdministrableProduct-Output"
+            },
+            "type": "array",
+            "title": "Administrableproducts",
             "default": []
           },
           "notes": {
@@ -8358,15 +8550,13 @@
             ],
             "title": "Description"
           },
-          "code": {
-            "anyOf": [
-              {
-                "$ref": "#/components/schemas/Code"
-              },
-              {
-                "type": "null"
-              }
-            ]
+          "codes": {
+            "items": {
+              "$ref": "#/components/schemas/Code"
+            },
+            "type": "array",
+            "title": "Codes",
+            "default": []
           },
           "strengths": {
             "items": {
@@ -8437,15 +8627,13 @@
             ],
             "title": "Description"
           },
-          "code": {
-            "anyOf": [
-              {
-                "$ref": "#/components/schemas/Code"
-              },
-              {
-                "type": "null"
-              }
-            ]
+          "codes": {
+            "items": {
+              "$ref": "#/components/schemas/Code"
+            },
+            "type": "array",
+            "title": "Codes",
+            "default": []
           },
           "strengths": {
             "items": {
