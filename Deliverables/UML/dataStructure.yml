@@ -2130,10 +2130,6 @@ Masking:
         on a person's role within the study.
       Relationship Type: Value
       Model Name: description
-    role:
-      Type:
-      - $ref: UNKNOWN
-      Relationship Type: Value
     instanceType:
       Type:
       - $ref: '#/string'
@@ -2425,7 +2421,7 @@ Organization:
         which provides the legal address for an organization.
       Relationship Type: Value
       Model Name: legalAddress
-    type*:
+    type:
       Type:
       - $ref: '#/Code'
       NCI C-Code: C188820
@@ -2436,7 +2432,7 @@ Organization:
         as administrative, legal, political) and the infrastructure to carry out that
         purpose.
       Codelist Ref: C188724
-      Relationship Type: UNKNOWN
+      Relationship Type: Value
       Model Name: type
     managedSites:
       Type:
@@ -2446,10 +2442,6 @@ Organization:
         which identifies the set of study sites managed by the organization.
       Relationship Type: Value
       Model Name: managedSites
-    organizationType:
-      Type:
-      - $ref: UNKNOWN
-      Relationship Type: Value
     instanceType:
       Type:
       - $ref: '#/string'
