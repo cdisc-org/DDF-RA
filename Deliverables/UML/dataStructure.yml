@@ -4087,11 +4087,6 @@ StudyDesign:
       - $ref: '#/BiomedicalConceptSurrogate'
       Cardinality: 0..*
       Relationship Type: Value
-    maskingRoles:
-      Type:
-      - $ref: '#/Masking'
-      Cardinality: 0..*
-      Relationship Type: Value
     dictionaries:
       Type:
       - $ref: '#/SyntaxTemplateDictionary'
@@ -4950,22 +4945,18 @@ SubjectEnrollment:
       Definition: The value representing the number of individuals enrolled in a study.
       Relationship Type: Value
       Model Name: quantity
-    appliesTo*:
+    appliesTo:
       Type:
       - $ref: '#/StudySite'
       Cardinality: 0..1
       Definition: A USDM relationship between the SubjectEnrollment and StudySite
         classes which identifies the study site that applies to the subject enrollments.
-      Relationship Type: UNKNOWN
+      Relationship Type: Value
       Model Name: appliesTo
     instanceType:
       Type:
       - $ref: '#/string'
       Cardinality: 0..1
-      Relationship Type: Value
-    appliedTo:
-      Type:
-      - $ref: UNKNOWN
       Relationship Type: Value
 Substance:
   NCI C-Code: C45306
