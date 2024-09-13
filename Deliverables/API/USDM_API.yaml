@@ -4352,12 +4352,6 @@ components:
           type: array
           title: Indications
           default: []
-        maskingRoles:
-          items:
-            $ref: '#/components/schemas/Masking'
-          type: array
-          title: Maskingroles
-          default: []
         studyInterventions:
           items:
             $ref: '#/components/schemas/StudyIntervention-Input'
@@ -4535,12 +4529,6 @@ components:
             $ref: '#/components/schemas/Indication-Output'
           type: array
           title: Indications
-          default: []
-        maskingRoles:
-          items:
-            $ref: '#/components/schemas/Masking'
-          type: array
-          title: Maskingroles
           default: []
         studyInterventions:
           items:
@@ -5482,7 +5470,7 @@ components:
           title: Instancetype
         quantity:
           $ref: '#/components/schemas/Quantity-Input'
-        appliedTo:
+        appliesTo:
           anyOf:
           - $ref: '#/components/schemas/StudySite'
           - type: 'null'
@@ -5513,7 +5501,7 @@ components:
           title: Instancetype
         quantity:
           $ref: '#/components/schemas/Quantity-Output'
-        appliedTo:
+        appliesTo:
           anyOf:
           - $ref: '#/components/schemas/StudySite'
           - type: 'null'

@@ -6636,14 +6636,6 @@
             "title": "Indications",
             "default": []
           },
-          "maskingRoles": {
-            "items": {
-              "$ref": "#/components/schemas/Masking"
-            },
-            "type": "array",
-            "title": "Maskingroles",
-            "default": []
-          },
           "studyInterventions": {
             "items": {
               "$ref": "#/components/schemas/StudyIntervention-Input"
@@ -6901,14 +6893,6 @@
             },
             "type": "array",
             "title": "Indications",
-            "default": []
-          },
-          "maskingRoles": {
-            "items": {
-              "$ref": "#/components/schemas/Masking"
-            },
-            "type": "array",
-            "title": "Maskingroles",
             "default": []
           },
           "studyInterventions": {
@@ -8355,7 +8339,7 @@
           "quantity": {
             "$ref": "#/components/schemas/Quantity-Input"
           },
-          "appliedTo": {
+          "appliesTo": {
             "anyOf": [
               {
                 "$ref": "#/components/schemas/StudySite"
@@ -8406,7 +8390,7 @@
           "quantity": {
             "$ref": "#/components/schemas/Quantity-Output"
           },
-          "appliedTo": {
+          "appliesTo": {
             "anyOf": [
               {
                 "$ref": "#/components/schemas/StudySite"
