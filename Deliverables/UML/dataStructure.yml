@@ -4621,7 +4621,7 @@ StudyRole:
         which identifies the set of organizations associated with the study role.
       Relationship Type: Ref
       Model Name: organizations
-    appliesToId:
+    appliesToIds:
       Type:
       - $ref: '#/StudyDesign'
       - $ref: '#/StudyVersion'
