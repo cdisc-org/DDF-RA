@@ -5210,9 +5210,12 @@ components:
           title: Description
         code:
           $ref: '#/components/schemas/model__code__Code__1'
-        appliesToId:
-          type: string
-          title: Appliestoid
+        appliesToIds:
+          items:
+            type: string
+          type: array
+          title: Appliestoids
+          default: []
         assignedPersons:
           items:
             $ref: '#/components/schemas/AssignedPerson'
@@ -5240,7 +5243,6 @@ components:
       - id
       - name
       - code
-      - appliesToId
       - instanceType
       title: StudyRole
     StudySite:

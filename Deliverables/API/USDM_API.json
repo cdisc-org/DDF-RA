@@ -7951,9 +7951,13 @@
           "code": {
             "$ref": "#/components/schemas/model__code__Code__1"
           },
-          "appliesToId": {
-            "type": "string",
-            "title": "Appliestoid"
+          "appliesToIds": {
+            "items": {
+              "type": "string"
+            },
+            "type": "array",
+            "title": "Appliestoids",
+            "default": []
           },
           "assignedPersons": {
             "items": {
@@ -7995,7 +7999,6 @@
           "id",
           "name",
           "code",
-          "appliesToId",
           "instanceType"
         ],
         "title": "StudyRole"
