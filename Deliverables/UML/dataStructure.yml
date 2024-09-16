@@ -4625,7 +4625,7 @@ StudyRole:
       Type:
       - $ref: '#/StudyDesign'
       - $ref: '#/StudyVersion'
-      Cardinality: 0..1
+      Cardinality: 0..*
       Definition: A USDM relationship between the StudyRole and StudyVersion and StudyDesign
         classes that identifies the study version or study design that applies to
         the study role.
