@@ -730,7 +730,7 @@
           "country": {
             "anyOf": [
               {
-                "$ref": "#/components/schemas/Code"
+                "$ref": "#/components/schemas/model__code__Code__1"
               },
               {
                 "type": "null"
@@ -790,7 +790,7 @@
           "pharmacologicClass": {
             "anyOf": [
               {
-                "$ref": "#/components/schemas/Code"
+                "$ref": "#/components/schemas/model__code__Code__1"
               },
               {
                 "type": "null"
@@ -887,7 +887,7 @@
           "pharmacologicClass": {
             "anyOf": [
               {
-                "$ref": "#/components/schemas/Code"
+                "$ref": "#/components/schemas/model__code__Code__1"
               },
               {
                 "type": "null"
@@ -997,7 +997,7 @@
             "title": "Text"
           },
           "type": {
-            "$ref": "#/components/schemas/Code"
+            "$ref": "#/components/schemas/model__code__Code__1"
           },
           "quantity": {
             "$ref": "#/components/schemas/Quantity-Input"
@@ -1039,7 +1039,7 @@
             "title": "Text"
           },
           "type": {
-            "$ref": "#/components/schemas/Code"
+            "$ref": "#/components/schemas/model__code__Code__1"
           },
           "quantity": {
             "$ref": "#/components/schemas/Quantity-Output"
@@ -1340,11 +1340,11 @@
             "title": "Id"
           },
           "standardCode": {
-            "$ref": "#/components/schemas/Code"
+            "$ref": "#/components/schemas/model__code__Code__1"
           },
           "standardCodeAliases": {
             "items": {
-              "$ref": "#/components/schemas/Code"
+              "$ref": "#/components/schemas/model__code__Code__1"
             },
             "type": "array",
             "title": "Standardcodealiases",
@@ -2318,49 +2318,6 @@
         ],
         "title": "Characteristic"
       },
-      "Code": {
-        "properties": {
-          "id": {
-            "type": "string",
-            "minLength": 1,
-            "title": "Id"
-          },
-          "code": {
-            "type": "string",
-            "title": "Code"
-          },
-          "codeSystem": {
-            "type": "string",
-            "title": "Codesystem"
-          },
-          "codeSystemVersion": {
-            "type": "string",
-            "title": "Codesystemversion"
-          },
-          "decode": {
-            "type": "string",
-            "title": "Decode"
-          },
-          "instanceType": {
-            "type": "string",
-            "enum": [
-              "Code"
-            ],
-            "const": "Code",
-            "title": "Instancetype"
-          }
-        },
-        "type": "object",
-        "required": [
-          "id",
-          "code",
-          "codeSystem",
-          "codeSystemVersion",
-          "decode",
-          "instanceType"
-        ],
-        "title": "Code"
-      },
       "CommentAnnotation": {
         "properties": {
           "id": {
@@ -2374,7 +2331,7 @@
           },
           "codes": {
             "items": {
-              "$ref": "#/components/schemas/Code"
+              "$ref": "#/components/schemas/model__code__Code__1"
             },
             "type": "array",
             "title": "Codes",
@@ -2678,7 +2635,7 @@
             "title": "Instancetype"
           },
           "category": {
-            "$ref": "#/components/schemas/Code"
+            "$ref": "#/components/schemas/model__code__Code__1"
           },
           "identifier": {
             "type": "string",
@@ -2784,7 +2741,7 @@
             "title": "Instancetype"
           },
           "category": {
-            "$ref": "#/components/schemas/Code"
+            "$ref": "#/components/schemas/model__code__Code__1"
           },
           "identifier": {
             "type": "string",
@@ -2859,7 +2816,7 @@
             "title": "Description"
           },
           "type": {
-            "$ref": "#/components/schemas/Code"
+            "$ref": "#/components/schemas/model__code__Code__1"
           },
           "previousId": {
             "anyOf": [
@@ -2896,7 +2853,7 @@
           },
           "environmentalSettings": {
             "items": {
-              "$ref": "#/components/schemas/Code"
+              "$ref": "#/components/schemas/model__code__Code__1"
             },
             "type": "array",
             "title": "Environmentalsettings",
@@ -2904,7 +2861,7 @@
           },
           "contactModes": {
             "items": {
-              "$ref": "#/components/schemas/Code"
+              "$ref": "#/components/schemas/model__code__Code__1"
             },
             "type": "array",
             "title": "Contactmodes",
@@ -2991,7 +2948,7 @@
             "title": "Description"
           },
           "type": {
-            "$ref": "#/components/schemas/Code"
+            "$ref": "#/components/schemas/model__code__Code__1"
           },
           "previousId": {
             "anyOf": [
@@ -3028,7 +2985,7 @@
           },
           "environmentalSettings": {
             "items": {
-              "$ref": "#/components/schemas/Code"
+              "$ref": "#/components/schemas/model__code__Code__1"
             },
             "type": "array",
             "title": "Environmentalsettings",
@@ -3036,7 +2993,7 @@
           },
           "contactModes": {
             "items": {
-              "$ref": "#/components/schemas/Code"
+              "$ref": "#/components/schemas/model__code__Code__1"
             },
             "type": "array",
             "title": "Contactmodes",
@@ -3158,7 +3115,7 @@
             "title": "Purpose"
           },
           "level": {
-            "$ref": "#/components/schemas/Code"
+            "$ref": "#/components/schemas/model__code__Code__1"
           }
         },
         "type": "object",
@@ -3242,7 +3199,7 @@
             "title": "Purpose"
           },
           "level": {
-            "$ref": "#/components/schemas/Code"
+            "$ref": "#/components/schemas/model__code__Code__1"
           }
         },
         "type": "object",
@@ -3436,7 +3393,7 @@
             "title": "Id"
           },
           "type": {
-            "$ref": "#/components/schemas/Code"
+            "$ref": "#/components/schemas/model__code__Code__1"
           },
           "code": {
             "anyOf": [
@@ -3473,7 +3430,7 @@
             "title": "Id"
           },
           "type": {
-            "$ref": "#/components/schemas/Code"
+            "$ref": "#/components/schemas/model__code__Code__1"
           },
           "code": {
             "anyOf": [
@@ -3537,7 +3494,7 @@
             "title": "Description"
           },
           "type": {
-            "$ref": "#/components/schemas/Code"
+            "$ref": "#/components/schemas/model__code__Code__1"
           },
           "dateValue": {
             "type": "string",
@@ -3606,7 +3563,7 @@
             "title": "Description"
           },
           "type": {
-            "$ref": "#/components/schemas/Code"
+            "$ref": "#/components/schemas/model__code__Code__1"
           },
           "dateValue": {
             "type": "string",
@@ -3689,7 +3646,7 @@
           },
           "codes": {
             "items": {
-              "$ref": "#/components/schemas/Code"
+              "$ref": "#/components/schemas/model__code__Code__1"
             },
             "type": "array",
             "title": "Codes",
@@ -3761,7 +3718,7 @@
           },
           "codes": {
             "items": {
-              "$ref": "#/components/schemas/Code"
+              "$ref": "#/components/schemas/model__code__Code__1"
             },
             "type": "array",
             "title": "Codes",
@@ -3805,7 +3762,7 @@
             "title": "Id"
           },
           "role": {
-            "$ref": "#/components/schemas/Code"
+            "$ref": "#/components/schemas/model__code__Code__1"
           },
           "substance": {
             "$ref": "#/components/schemas/Substance-Input"
@@ -3836,7 +3793,7 @@
             "title": "Id"
           },
           "role": {
-            "$ref": "#/components/schemas/Code"
+            "$ref": "#/components/schemas/model__code__Code__1"
           },
           "substance": {
             "$ref": "#/components/schemas/Substance-Output"
@@ -4223,7 +4180,7 @@
             "title": "Instancetype"
           },
           "level": {
-            "$ref": "#/components/schemas/Code"
+            "$ref": "#/components/schemas/model__code__Code__1"
           },
           "endpoints": {
             "items": {
@@ -4310,7 +4267,7 @@
             "title": "Instancetype"
           },
           "level": {
-            "$ref": "#/components/schemas/Code"
+            "$ref": "#/components/schemas/model__code__Code__1"
           },
           "endpoints": {
             "items": {
@@ -4355,7 +4312,7 @@
             "title": "Label"
           },
           "type": {
-            "$ref": "#/components/schemas/Code"
+            "$ref": "#/components/schemas/model__code__Code__1"
           },
           "identifierScheme": {
             "type": "string",
@@ -4427,7 +4384,7 @@
             "title": "Label"
           },
           "type": {
-            "$ref": "#/components/schemas/Code"
+            "$ref": "#/components/schemas/model__code__Code__1"
           },
           "identifierScheme": {
             "type": "string",
@@ -4547,7 +4504,7 @@
             "title": "Proceduretype"
           },
           "code": {
-            "$ref": "#/components/schemas/Code"
+            "$ref": "#/components/schemas/model__code__Code__1"
           },
           "studyInterventionId": {
             "anyOf": [
@@ -4626,7 +4583,7 @@
             "title": "Proceduretype"
           },
           "code": {
-            "$ref": "#/components/schemas/Code"
+            "$ref": "#/components/schemas/model__code__Code__1"
           },
           "studyInterventionId": {
             "anyOf": [
@@ -4760,7 +4717,7 @@
           "unit": {
             "anyOf": [
               {
-                "$ref": "#/components/schemas/Code"
+                "$ref": "#/components/schemas/model__code__Code__1"
               },
               {
                 "type": "null"
@@ -4814,7 +4771,7 @@
             "title": "Instancetype"
           },
           "type": {
-            "$ref": "#/components/schemas/Code"
+            "$ref": "#/components/schemas/model__code__Code__1"
           }
         },
         "type": "object",
@@ -4839,7 +4796,7 @@
             "title": "Isenabled"
           },
           "code": {
-            "$ref": "#/components/schemas/Code"
+            "$ref": "#/components/schemas/model__code__Code__1"
           },
           "instanceType": {
             "type": "string",
@@ -5713,7 +5670,7 @@
             "title": "Id"
           },
           "code": {
-            "$ref": "#/components/schemas/Code"
+            "$ref": "#/components/schemas/model__code__Code__1"
           },
           "otherReason": {
             "anyOf": [
@@ -5778,14 +5735,14 @@
             "title": "Description"
           },
           "type": {
-            "$ref": "#/components/schemas/Code"
+            "$ref": "#/components/schemas/model__code__Code__1"
           },
           "dataOriginDescription": {
             "type": "string",
             "title": "Dataorigindescription"
           },
           "dataOriginType": {
-            "$ref": "#/components/schemas/Code"
+            "$ref": "#/components/schemas/model__code__Code__1"
           },
           "populationIds": {
             "items": {
@@ -5858,14 +5815,14 @@
             "title": "Description"
           },
           "type": {
-            "$ref": "#/components/schemas/Code"
+            "$ref": "#/components/schemas/model__code__Code__1"
           },
           "dataOriginDescription": {
             "type": "string",
             "title": "Dataorigindescription"
           },
           "dataOriginType": {
-            "$ref": "#/components/schemas/Code"
+            "$ref": "#/components/schemas/model__code__Code__1"
           },
           "populationIds": {
             "items": {
@@ -6004,7 +5961,48 @@
           },
           "plannedSex": {
             "items": {
-              "$ref": "#/components/schemas/Code"
+              "properties": {
+                "id": {
+                  "type": "string",
+                  "minLength": 1,
+                  "title": "Id"
+                },
+                "code": {
+                  "type": "string",
+                  "title": "Code"
+                },
+                "codeSystem": {
+                  "type": "string",
+                  "title": "Codesystem"
+                },
+                "codeSystemVersion": {
+                  "type": "string",
+                  "title": "Codesystemversion"
+                },
+                "decode": {
+                  "type": "string",
+                  "title": "Decode"
+                },
+                "instanceType": {
+                  "type": "string",
+                  "enum": [
+                    "Code"
+                  ],
+                  "const": "Code",
+                  "title": "Instancetype"
+                }
+              },
+              "type": "object",
+              "maxLength": 2,
+              "required": [
+                "id",
+                "code",
+                "codeSystem",
+                "codeSystemVersion",
+                "decode",
+                "instanceType"
+              ],
+              "title": "Code"
             },
             "type": "array",
             "title": "Plannedsex",
@@ -6122,7 +6120,48 @@
           },
           "plannedSex": {
             "items": {
-              "$ref": "#/components/schemas/Code"
+              "properties": {
+                "id": {
+                  "type": "string",
+                  "minLength": 1,
+                  "title": "Id"
+                },
+                "code": {
+                  "type": "string",
+                  "title": "Code"
+                },
+                "codeSystem": {
+                  "type": "string",
+                  "title": "Codesystem"
+                },
+                "codeSystemVersion": {
+                  "type": "string",
+                  "title": "Codesystemversion"
+                },
+                "decode": {
+                  "type": "string",
+                  "title": "Decode"
+                },
+                "instanceType": {
+                  "type": "string",
+                  "enum": [
+                    "Code"
+                  ],
+                  "const": "Code",
+                  "title": "Instancetype"
+                }
+              },
+              "type": "object",
+              "maxLength": 2,
+              "required": [
+                "id",
+                "code",
+                "codeSystem",
+                "codeSystemVersion",
+                "decode",
+                "instanceType"
+              ],
+              "title": "Code"
             },
             "type": "array",
             "title": "Plannedsex",
@@ -6215,10 +6254,10 @@
             "title": "Description"
           },
           "language": {
-            "$ref": "#/components/schemas/Code"
+            "$ref": "#/components/schemas/model__code__Code__1"
           },
           "type": {
-            "$ref": "#/components/schemas/Code"
+            "$ref": "#/components/schemas/model__code__Code__1"
           },
           "templateName": {
             "type": "string",
@@ -6295,10 +6334,10 @@
             "title": "Description"
           },
           "language": {
-            "$ref": "#/components/schemas/Code"
+            "$ref": "#/components/schemas/model__code__Code__1"
           },
           "type": {
-            "$ref": "#/components/schemas/Code"
+            "$ref": "#/components/schemas/model__code__Code__1"
           },
           "templateName": {
             "type": "string",
@@ -6352,7 +6391,7 @@
             "title": "Version"
           },
           "status": {
-            "$ref": "#/components/schemas/Code"
+            "$ref": "#/components/schemas/model__code__Code__1"
           },
           "dateValues": {
             "items": {
@@ -6416,7 +6455,7 @@
             "title": "Version"
           },
           "status": {
-            "$ref": "#/components/schemas/Code"
+            "$ref": "#/components/schemas/model__code__Code__1"
           },
           "dateValues": {
             "items": {
@@ -6504,7 +6543,7 @@
           },
           "trialIntentTypes": {
             "items": {
-              "$ref": "#/components/schemas/Code"
+              "$ref": "#/components/schemas/model__code__Code__1"
             },
             "type": "array",
             "title": "Trialintenttypes",
@@ -6512,7 +6551,7 @@
           },
           "trialTypes": {
             "items": {
-              "$ref": "#/components/schemas/Code"
+              "$ref": "#/components/schemas/model__code__Code__1"
             },
             "type": "array",
             "title": "Trialtypes",
@@ -6520,7 +6559,7 @@
           },
           "therapeuticAreas": {
             "items": {
-              "$ref": "#/components/schemas/Code"
+              "$ref": "#/components/schemas/model__code__Code__1"
             },
             "type": "array",
             "title": "Therapeuticareas",
@@ -6528,14 +6567,14 @@
           },
           "characteristics": {
             "items": {
-              "$ref": "#/components/schemas/Code"
+              "$ref": "#/components/schemas/model__code__Code__1"
             },
             "type": "array",
             "title": "Characteristics",
             "default": []
           },
           "interventionModel": {
-            "$ref": "#/components/schemas/Code"
+            "$ref": "#/components/schemas/model__code__Code__1"
           },
           "encounters": {
             "items": {
@@ -6763,7 +6802,7 @@
           },
           "trialIntentTypes": {
             "items": {
-              "$ref": "#/components/schemas/Code"
+              "$ref": "#/components/schemas/model__code__Code__1"
             },
             "type": "array",
             "title": "Trialintenttypes",
@@ -6771,7 +6810,7 @@
           },
           "trialTypes": {
             "items": {
-              "$ref": "#/components/schemas/Code"
+              "$ref": "#/components/schemas/model__code__Code__1"
             },
             "type": "array",
             "title": "Trialtypes",
@@ -6779,7 +6818,7 @@
           },
           "therapeuticAreas": {
             "items": {
-              "$ref": "#/components/schemas/Code"
+              "$ref": "#/components/schemas/model__code__Code__1"
             },
             "type": "array",
             "title": "Therapeuticareas",
@@ -6787,14 +6826,14 @@
           },
           "characteristics": {
             "items": {
-              "$ref": "#/components/schemas/Code"
+              "$ref": "#/components/schemas/model__code__Code__1"
             },
             "type": "array",
             "title": "Characteristics",
             "default": []
           },
           "interventionModel": {
-            "$ref": "#/components/schemas/Code"
+            "$ref": "#/components/schemas/model__code__Code__1"
           },
           "encounters": {
             "items": {
@@ -7046,7 +7085,48 @@
           },
           "plannedSex": {
             "items": {
-              "$ref": "#/components/schemas/Code"
+              "properties": {
+                "id": {
+                  "type": "string",
+                  "minLength": 1,
+                  "title": "Id"
+                },
+                "code": {
+                  "type": "string",
+                  "title": "Code"
+                },
+                "codeSystem": {
+                  "type": "string",
+                  "title": "Codesystem"
+                },
+                "codeSystemVersion": {
+                  "type": "string",
+                  "title": "Codesystemversion"
+                },
+                "decode": {
+                  "type": "string",
+                  "title": "Decode"
+                },
+                "instanceType": {
+                  "type": "string",
+                  "enum": [
+                    "Code"
+                  ],
+                  "const": "Code",
+                  "title": "Instancetype"
+                }
+              },
+              "type": "object",
+              "maxLength": 2,
+              "required": [
+                "id",
+                "code",
+                "codeSystem",
+                "codeSystemVersion",
+                "decode",
+                "instanceType"
+              ],
+              "title": "Code"
             },
             "type": "array",
             "title": "Plannedsex",
@@ -7164,7 +7244,48 @@
           },
           "plannedSex": {
             "items": {
-              "$ref": "#/components/schemas/Code"
+              "properties": {
+                "id": {
+                  "type": "string",
+                  "minLength": 1,
+                  "title": "Id"
+                },
+                "code": {
+                  "type": "string",
+                  "title": "Code"
+                },
+                "codeSystem": {
+                  "type": "string",
+                  "title": "Codesystem"
+                },
+                "codeSystemVersion": {
+                  "type": "string",
+                  "title": "Codesystemversion"
+                },
+                "decode": {
+                  "type": "string",
+                  "title": "Decode"
+                },
+                "instanceType": {
+                  "type": "string",
+                  "enum": [
+                    "Code"
+                  ],
+                  "const": "Code",
+                  "title": "Instancetype"
+                }
+              },
+              "type": "object",
+              "maxLength": 2,
+              "required": [
+                "id",
+                "code",
+                "codeSystem",
+                "codeSystemVersion",
+                "decode",
+                "instanceType"
+              ],
+              "title": "Code"
             },
             "type": "array",
             "title": "Plannedsex",
@@ -7431,7 +7552,7 @@
             "title": "Description"
           },
           "type": {
-            "$ref": "#/components/schemas/Code"
+            "$ref": "#/components/schemas/model__code__Code__1"
           },
           "previousId": {
             "anyOf": [
@@ -7516,7 +7637,7 @@
             "title": "Description"
           },
           "type": {
-            "$ref": "#/components/schemas/Code"
+            "$ref": "#/components/schemas/model__code__Code__1"
           },
           "previousId": {
             "anyOf": [
@@ -7634,10 +7755,10 @@
             "title": "Description"
           },
           "role": {
-            "$ref": "#/components/schemas/Code"
+            "$ref": "#/components/schemas/model__code__Code__1"
           },
           "type": {
-            "$ref": "#/components/schemas/Code"
+            "$ref": "#/components/schemas/model__code__Code__1"
           },
           "minimumResponseDuration": {
             "anyOf": [
@@ -7651,7 +7772,7 @@
           },
           "codes": {
             "items": {
-              "$ref": "#/components/schemas/Code"
+              "$ref": "#/components/schemas/model__code__Code__1"
             },
             "type": "array",
             "title": "Codes",
@@ -7666,7 +7787,7 @@
             "default": []
           },
           "productDesignation": {
-            "$ref": "#/components/schemas/Code"
+            "$ref": "#/components/schemas/model__code__Code__1"
           },
           "notes": {
             "items": {
@@ -7731,10 +7852,10 @@
             "title": "Description"
           },
           "role": {
-            "$ref": "#/components/schemas/Code"
+            "$ref": "#/components/schemas/model__code__Code__1"
           },
           "type": {
-            "$ref": "#/components/schemas/Code"
+            "$ref": "#/components/schemas/model__code__Code__1"
           },
           "minimumResponseDuration": {
             "anyOf": [
@@ -7748,7 +7869,7 @@
           },
           "codes": {
             "items": {
-              "$ref": "#/components/schemas/Code"
+              "$ref": "#/components/schemas/model__code__Code__1"
             },
             "type": "array",
             "title": "Codes",
@@ -7763,7 +7884,7 @@
             "default": []
           },
           "productDesignation": {
-            "$ref": "#/components/schemas/Code"
+            "$ref": "#/components/schemas/model__code__Code__1"
           },
           "notes": {
             "items": {
@@ -7828,7 +7949,7 @@
             "title": "Description"
           },
           "code": {
-            "$ref": "#/components/schemas/Code"
+            "$ref": "#/components/schemas/model__code__Code__1"
           },
           "appliesToId": {
             "type": "string",
@@ -7942,7 +8063,7 @@
             "title": "Text"
           },
           "type": {
-            "$ref": "#/components/schemas/Code"
+            "$ref": "#/components/schemas/model__code__Code__1"
           },
           "instanceType": {
             "type": "string",
@@ -7980,7 +8101,7 @@
           "studyType": {
             "anyOf": [
               {
-                "$ref": "#/components/schemas/Code"
+                "$ref": "#/components/schemas/model__code__Code__1"
               },
               {
                 "type": "null"
@@ -8023,7 +8144,7 @@
           },
           "businessTherapeuticAreas": {
             "items": {
-              "$ref": "#/components/schemas/Code"
+              "$ref": "#/components/schemas/model__code__Code__1"
             },
             "type": "array",
             "title": "Businesstherapeuticareas",
@@ -8153,7 +8274,7 @@
           "studyType": {
             "anyOf": [
               {
-                "$ref": "#/components/schemas/Code"
+                "$ref": "#/components/schemas/model__code__Code__1"
               },
               {
                 "type": "null"
@@ -8196,7 +8317,7 @@
           },
           "businessTherapeuticAreas": {
             "items": {
-              "$ref": "#/components/schemas/Code"
+              "$ref": "#/components/schemas/model__code__Code__1"
             },
             "type": "array",
             "title": "Businesstherapeuticareas",
@@ -8316,7 +8437,7 @@
             "title": "Id"
           },
           "type": {
-            "$ref": "#/components/schemas/Code"
+            "$ref": "#/components/schemas/model__code__Code__1"
           },
           "code": {
             "anyOf": [
@@ -8367,7 +8488,7 @@
             "title": "Id"
           },
           "type": {
-            "$ref": "#/components/schemas/Code"
+            "$ref": "#/components/schemas/model__code__Code__1"
           },
           "code": {
             "anyOf": [
@@ -8446,7 +8567,7 @@
           },
           "codes": {
             "items": {
-              "$ref": "#/components/schemas/Code"
+              "$ref": "#/components/schemas/model__code__Code__1"
             },
             "type": "array",
             "title": "Codes",
@@ -8523,7 +8644,7 @@
           },
           "codes": {
             "items": {
-              "$ref": "#/components/schemas/Code"
+              "$ref": "#/components/schemas/model__code__Code__1"
             },
             "type": "array",
             "title": "Codes",
@@ -8658,7 +8779,7 @@
             "title": "Description"
           },
           "type": {
-            "$ref": "#/components/schemas/Code"
+            "$ref": "#/components/schemas/model__code__Code__1"
           },
           "value": {
             "type": "string",
@@ -8669,7 +8790,7 @@
             "title": "Valuelabel"
           },
           "relativeToFrom": {
-            "$ref": "#/components/schemas/Code"
+            "$ref": "#/components/schemas/model__code__Code__1"
           },
           "relativeFromScheduledInstanceId": {
             "type": "string",
@@ -8907,6 +9028,93 @@
           "usdmVersion"
         ],
         "title": "Wrapper"
+      },
+      "model__code__Code__1": {
+        "properties": {
+          "id": {
+            "type": "string",
+            "minLength": 1,
+            "title": "Id"
+          },
+          "code": {
+            "type": "string",
+            "title": "Code"
+          },
+          "codeSystem": {
+            "type": "string",
+            "title": "Codesystem"
+          },
+          "codeSystemVersion": {
+            "type": "string",
+            "title": "Codesystemversion"
+          },
+          "decode": {
+            "type": "string",
+            "title": "Decode"
+          },
+          "instanceType": {
+            "type": "string",
+            "enum": [
+              "Code"
+            ],
+            "const": "Code",
+            "title": "Instancetype"
+          }
+        },
+        "type": "object",
+        "required": [
+          "id",
+          "code",
+          "codeSystem",
+          "codeSystemVersion",
+          "decode",
+          "instanceType"
+        ],
+        "title": "Code"
+      },
+      "model__code__Code__2": {
+        "properties": {
+          "id": {
+            "type": "string",
+            "minLength": 1,
+            "title": "Id"
+          },
+          "code": {
+            "type": "string",
+            "title": "Code"
+          },
+          "codeSystem": {
+            "type": "string",
+            "title": "Codesystem"
+          },
+          "codeSystemVersion": {
+            "type": "string",
+            "title": "Codesystemversion"
+          },
+          "decode": {
+            "type": "string",
+            "title": "Decode"
+          },
+          "instanceType": {
+            "type": "string",
+            "enum": [
+              "Code"
+            ],
+            "const": "Code",
+            "title": "Instancetype"
+          }
+        },
+        "type": "object",
+        "maxLength": 2,
+        "required": [
+          "id",
+          "code",
+          "codeSystem",
+          "codeSystemVersion",
+          "decode",
+          "instanceType"
+        ],
+        "title": "Code"
       }
     }
   },
