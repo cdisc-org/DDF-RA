@@ -3210,7 +3210,7 @@ Strength:
       Cardinality: 0..1
       Definition: A USDM relationship between the Strength and the Quantity and Range
         classes that identifies the numerator's value or range of values associated
-        with the substance  strength.
+        with the substance strength.
       Relationship Type: Value
       Model Name: numerator
     denominator:
@@ -4626,9 +4626,9 @@ StudyRole:
       - $ref: '#/StudyDesign'
       - $ref: '#/StudyVersion'
       Cardinality: 0..*
-      Definition: A USDM relationship between the StudyRole and StudyVersion and StudyDesign
-        classes that identifies the study version or study design that applies to
-        the study role.
+      Definition: A USDM relationship between the StudyRole and either StudyVersion
+        or StudyDesign classes that identifies the study version or study design to
+        which the study role applies.
       Relationship Type: Ref
       Model Name: appliesTo
     instanceType:
@@ -4761,7 +4761,7 @@ StudyVersion:
         may be evaluated in two or more phases simultaneously in different trials,
         and some trials may overlap two different phases. [21 CFR section 312.21;
         After ICH Topic E8 NOTE FOR GUIDANCE ON GENERAL CONSIDERATIONS FOR CLINICAL
-        TRIALS,  CPMP/ICH/291/95 March 1998]'
+        TRIALS, CPMP/ICH/291/95 March 1998]'
       Codelist Ref: SDTM Terminology Codelist C66737
       Relationship Type: Value
       Model Name: studyPhase
