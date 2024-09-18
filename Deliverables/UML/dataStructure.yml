@@ -242,6 +242,304 @@ Address:
       - $ref: '#/string'
       Cardinality: 0..1
       Relationship Type: Value
+AdministrableProduct:
+  NCI C-Code: CNEW
+  Preferred Term: Administrable Product
+  Definition: Any study product that is formulated and presented in the form that
+    is suitable for administration to a study participant.
+  Modifier: Concrete
+  Attributes:
+    id:
+      Type:
+      - $ref: '#/string'
+      Relationship Type: Value
+      Model Name: id
+    name:
+      Type:
+      - $ref: '#/string'
+      NCI C-Code: CNEW
+      Preferred Term: Administrable Product Definition Name
+      Definition: The literal identifier (i.e., distinctive designation) of the administrable
+        product.
+      Relationship Type: Value
+      Model Name: name
+    description:
+      Type:
+      - $ref: '#/string'
+      NCI C-Code: CNEW
+      Preferred Term: Administrable Product Definition Description
+      Definition: A narrative representation of the administrable product.
+      Relationship Type: Value
+      Model Name: description
+    label:
+      Type:
+      - $ref: '#/string'
+      NCI C-Code: CNEW
+      Preferred Term: Administrable Product Definition Label
+      Definition: The short descriptive designation for the administrable product.
+      Relationship Type: Value
+      Model Name: label
+    administrableDoseForm:
+      Type:
+      - $ref: '#/AliasCode'
+      NCI C-Code: CNEW
+      Cardinality: '1'
+      Preferred Term: Administrable Product Dose Form
+      Definition: The physical form in which formulated ingredient(s) are presented
+        in the administrable product.
+      Codelist Ref: SDTM Terminology Codelist C66726
+      Relationship Type: Value
+      Model Name: administrableDoseForm
+    notes:
+      Type:
+      - $ref: '#/CommentAnnotation'
+      Cardinality: 0..*
+      Definition: A USDM relationship between the AdministrableProductn and CommentAnnotation
+        classes which provides the set of notes related to the administrable product.
+      Relationship Type: Value
+      Model Name: notes
+    pharmacologicClass:
+      Type:
+      - $ref: '#/Code'
+      NCI C-Code: CNEW
+      Cardinality: 0..1
+      Preferred Term: Administrable Product Pharmacologic Class
+      Definition: The pharmacological class of the administrable product.
+      Codelist Ref: (Points to external codelists such as UNII, MED-RT)
+      Relationship Type: Value
+      Model Name: pharmacologicClass
+    identifiers:
+      Type:
+      - $ref: '#/AdministrableProductIdentifier'
+      Cardinality: 0..*
+      Definition: A USDM relationship between the AdministrableProduct and AdministrableProductIdentifier
+        classes which provides the set of identifiers related to the administrable
+        product.
+      Relationship Type: Value
+      Model Name: identifiers
+    properties:
+      Type:
+      - $ref: '#/AdministrableProductProperty'
+      Cardinality: 0..*
+      Definition: A USDM relationship between the AdministrableProduct and AdministrableProductProperty
+        classes which provides the set of properties related to the administrable
+        product.
+      Relationship Type: Value
+      Model Name: properties
+    ingredients:
+      Type:
+      - $ref: '#/Ingredient'
+      Cardinality: 0..*
+      Definition: A USDM relationship between the AdministrableProduct and Ingredient
+        classes which provides the set of ingredients related to the administrable
+        product.
+      Relationship Type: Value
+      Model Name: ingredients
+    instanceType:
+      Type:
+      - $ref: '#/string'
+      Cardinality: 0..1
+      Relationship Type: Value
+AdministrableProductIdentifier:
+  NCI C-Code: CNEW
+  Preferred Term: Administrable Product Identifier
+  Definition: A sequence of characters used to identify, name, or characterize the
+    administrable product.
+  Super Classes:
+  - $ref: '#/Identifier'
+  Modifier: Concrete
+  Attributes:
+    id:
+      Type:
+      - $ref: '#/string'
+      Relationship Type: Value
+      Model Name: id
+      Inherited From:
+        $ref: '#/Identifier'
+    text:
+      Type:
+      - $ref: '#/string'
+      NCI C-Code: CNEW
+      Preferred Term: Administrable Product Identifier Text
+      Definition: An instance of structured text that represents the administrable
+        product.
+      Relationship Type: Value
+      Model Name: text
+      Inherited From:
+        $ref: '#/Identifier'
+    scopeId:
+      Type:
+      - $ref: '#/Organization'
+      Cardinality: '1'
+      Definition: A USDM relationship between the AdministrableProductIdentifier and
+        Organization class which provides the details associated with which provides
+        the details associated with each organization that has assigned the administrable
+        product identifier.
+      Relationship Type: Ref
+      Model Name: scope
+      Inherited From:
+        $ref: '#/Identifier'
+    instanceType:
+      Type:
+      - $ref: '#/string'
+      Cardinality: 0..1
+      Relationship Type: Value
+AdministrableProductProperty:
+  NCI C-Code: CNEW
+  Preferred Term: Administrable Product Property
+  Definition: A characteristic from a set of characteristics used to define an administrable
+    product.
+  Modifier: Concrete
+  Attributes:
+    id:
+      Type:
+      - $ref: '#/string'
+      Relationship Type: Value
+      Model Name: id
+    name:
+      Type:
+      - $ref: '#/string'
+      NCI C-Code: CNEW
+      Preferred Term: Administrable Product Property Name
+      Definition: The literal identifier (i.e., distinctive designation) of the administrable
+        product property.
+      Relationship Type: Value
+      Model Name: name
+    text:
+      Type:
+      - $ref: '#/string'
+      NCI C-Code: CNEW
+      Preferred Term: Administrable Product Property Text
+      Definition: An instance of structured text that represents the administrable
+        product property.
+      Relationship Type: Value
+      Model Name: text
+    type:
+      Type:
+      - $ref: '#/Code'
+      NCI C-Code: CNEW
+      Cardinality: '1'
+      Preferred Term: Administrable Product Property Type
+      Definition: A characterization or classification of the administrable product
+        property.
+      Codelist Ref: CNEW Administrable Product Property Type
+      Relationship Type: Value
+      Model Name: type
+    quantity:
+      Type:
+      - $ref: '#/Quantity'
+      NCI C-Code: CNEW
+      Cardinality: 0..1
+      Preferred Term: Administrable Product Property Quantity Value
+      Definition: The numeric value associated with an administrable product property.
+      Relationship Type: Value
+      Model Name: quantity
+    instanceType:
+      Type:
+      - $ref: '#/string'
+      Cardinality: 0..1
+      Relationship Type: Value
+Administration:
+  NCI C-Code: C25409
+  Preferred Term: Administration
+  Definition: The act of dispensing, applying, or tendering a product, agent, or therapy.
+  Modifier: Concrete
+  Attributes:
+    id:
+      Type:
+      - $ref: '#/string'
+      Relationship Type: Value
+      Model Name: id
+    name:
+      Type:
+      - $ref: '#/string'
+      NCI C-Code: C207465
+      Preferred Term: Administration Name
+      Definition: The literal identifier (i.e., distinctive designation) for the administration
+        of a product, agent, or therapy.
+      Relationship Type: Value
+      Model Name: name
+    description:
+      Type:
+      - $ref: '#/string'
+      NCI C-Code: C207463
+      Preferred Term: Administration Description
+      Definition: A narrative representation for the administration of a product,
+        agent, or therapy.
+      Relationship Type: Value
+      Model Name: description
+    label:
+      Type:
+      - $ref: '#/string'
+      NCI C-Code: C207464
+      Preferred Term: Administration Label
+      Definition: The short descriptive designation for the administration of a product,
+        agent, or therapy.
+      Relationship Type: Value
+      Model Name: label
+    administrableProductId:
+      Type:
+      - $ref: '#/AdministrableProduct'
+      Cardinality: 0..1
+      Definition: A USDM relationship between the Administration and AdministrableProductDefinition
+        classes which identifies the administrable product associated with the administration
+        of the product, agent, or therapy.
+      Relationship Type: Ref
+      Model Name: administrableProduct
+    route:
+      Type:
+      - $ref: '#/AliasCode'
+      NCI C-Code: C38114
+      Cardinality: 0..1
+      Preferred Term: Route of Administration
+      Definition: The pathway by which a substance is administered in order to reach
+        the site of action in the body.
+      Codelist Ref: SDTM Terminology Codelist C66729
+      Relationship Type: Value
+      Model Name: route
+    dose:
+      Type:
+      - $ref: '#/Quantity'
+      NCI C-Code: C167190
+      Cardinality: 0..1
+      Preferred Term: Administration Dose
+      Definition: The value representing the amount of an agent given to an individual
+        at one time.
+      Relationship Type: Value
+      Model Name: dose
+    frequency:
+      Type:
+      - $ref: '#/AliasCode'
+      NCI C-Code: C89081
+      Cardinality: 0..1
+      Preferred Term: Dosing Frequency
+      Definition: The number of doses administered per a specific interval.
+      Codelist Ref: SDTM Terminology Codelist C71113
+      Relationship Type: Value
+      Model Name: frequency
+    notes:
+      Type:
+      - $ref: '#/CommentAnnotation'
+      Cardinality: 0..*
+      Definition: A USDM relationship between the Administration and CommentAnnotation
+        classes which provides the set of notes related to the administration of the
+        product, agent, or therapy.
+      Relationship Type: Value
+      Model Name: notes
+    duration:
+      Type:
+      - $ref: '#/AdministrationDuration'
+      Cardinality: '1'
+      Definition: A USDM relationship between the Administration and AdministrationDuration
+        classes which provides the duration of an instance of product, agent, or therapy
+        administration.
+      Relationship Type: Value
+      Model Name: duration
+    instanceType:
+      Type:
+      - $ref: '#/string'
+      Cardinality: 0..1
+      Relationship Type: Value
 AdministrationDuration:
   NCI C-Code: C69282
   Preferred Term: Administration Duration
@@ -289,95 +587,6 @@ AdministrationDuration:
         of an agent occurs.
       Relationship Type: Value
       Model Name: quantity
-    instanceType:
-      Type:
-      - $ref: '#/string'
-      Cardinality: 0..1
-      Relationship Type: Value
-AgentAdministration:
-  NCI C-Code: C70962
-  Preferred Term: Agent Administration
-  Definition: The act of the dispensing, applying, or tendering a medical product
-    or other agent.
-  Modifier: Concrete
-  Attributes:
-    id:
-      Type:
-      - $ref: '#/string'
-      Relationship Type: Value
-      Model Name: id
-    name:
-      Type:
-      - $ref: '#/string'
-      NCI C-Code: C207465
-      Preferred Term: Agent Administration Name
-      Definition: The literal identifier (i.e., distinctive designation) of the agent
-        administration.
-      Relationship Type: Value
-      Model Name: name
-    description:
-      Type:
-      - $ref: '#/string'
-      NCI C-Code: C207463
-      Preferred Term: Agent Administration Description
-      Definition: A narrative representation of the agent administration.
-      Relationship Type: Value
-      Model Name: description
-    label:
-      Type:
-      - $ref: '#/string'
-      NCI C-Code: C207464
-      Preferred Term: Agent Administration Label
-      Definition: The short descriptive designation for the agent administration.
-      Relationship Type: Value
-      Model Name: label
-    duration:
-      Type:
-      - $ref: '#/AdministrationDuration'
-      Cardinality: '1'
-      Definition: A USDM relationship between the AgentAdministration and AdministrationDuration
-        classes which provides the duration of an instance of agent administration.
-      Relationship Type: Value
-      Model Name: duration
-    route:
-      Type:
-      - $ref: '#/AliasCode'
-      NCI C-Code: C38114
-      Cardinality: '1'
-      Preferred Term: Route of Administration
-      Definition: The pathway by which a substance is administered in order to reach
-        the site of action in the body.
-      Codelist Ref: SDTM Terminology Codelist C66729
-      Relationship Type: Value
-      Model Name: route
-    dose:
-      Type:
-      - $ref: '#/Quantity'
-      NCI C-Code: C167190
-      Cardinality: '1'
-      Preferred Term: Agent Administration Dose
-      Definition: The value representing the amount of an agent given to an individual
-        at one time.
-      Relationship Type: Value
-      Model Name: dose
-    frequency:
-      Type:
-      - $ref: '#/AliasCode'
-      NCI C-Code: C89081
-      Cardinality: '1'
-      Preferred Term: Dosing Frequency
-      Definition: The number of doses administered per a specific interval.
-      Codelist Ref: SDTM Terminology Codelist C71113
-      Relationship Type: Value
-      Model Name: frequency
-    notes:
-      Type:
-      - $ref: '#/CommentAnnotation'
-      Cardinality: 0..*
-      Definition: A USDM relationship between the AgentAdministration and CommentAnnotation
-        classes which provides the set of notes related to the agent administration.
-      Relationship Type: Value
-      Model Name: notes
     instanceType:
       Type:
       - $ref: '#/string'
@@ -472,6 +681,64 @@ AnalysisPopulation:
         classes which provides the set of notes related to the analysis population.
       Relationship Type: Value
       Model Name: notes
+    instanceType:
+      Type:
+      - $ref: '#/string'
+      Cardinality: 0..1
+      Relationship Type: Value
+AssignedPerson:
+  NCI C-Code: CNEW
+  Preferred Term: Assigned Person
+  Definition: An individual person who is allotted or appointed to a particular role,
+    function, or other entity.
+  Modifier: Concrete
+  Attributes:
+    id:
+      Type:
+      - $ref: '#/string'
+      Relationship Type: Value
+      Model Name: id
+    name:
+      Type:
+      - $ref: '#/string'
+      NCI C-Code: CNEW
+      Preferred Term: Assigned Person Name
+      Definition: The literal identifier (i.e., distinctive designation) of the assigned
+        person.
+      Relationship Type: Value
+      Model Name: name
+    description:
+      Type:
+      - $ref: '#/string'
+      NCI C-Code: CNEW
+      Preferred Term: Assigned Person Description
+      Definition: A narrative representation of the assigned person.
+      Relationship Type: Value
+      Model Name: description
+    label:
+      Type:
+      - $ref: '#/string'
+      NCI C-Code: CNEW
+      Preferred Term: Assigned Person Label
+      Definition: The short descriptive designation for the assigned person.
+      Relationship Type: Value
+      Model Name: label
+    jobTitle:
+      Type:
+      - $ref: '#/string'
+      NCI C-Code: CNEW
+      Preferred Term: Assigned Person Job Title
+      Definition: An identifying designation related to the assigned person's occupation.
+      Relationship Type: Value
+      Model Name: jobTitle
+    organizationId:
+      Type:
+      - $ref: '#/Organization'
+      Cardinality: 0..1
+      Definition: A USDM relationship between the AssignedPerson and Organization
+        classes that identifies that organization to which the assigned person belongs.
+      Relationship Type: Ref
+      Model Name: organization
     instanceType:
       Type:
       - $ref: '#/string'
@@ -868,12 +1135,11 @@ Code:
   Preferred Term: Code
   Definition: A symbol or combination of symbols which is assigned to the members
     of a collection.
-  Modifier: Concrete
+  Modifier: Abstract
   Attributes:
     id:
       Type:
       - $ref: '#/string'
-      Relationship Type: Value
       Model Name: id
     code:
       Type:
@@ -881,7 +1147,6 @@ Code:
       NCI C-Code: C188858
       Preferred Term: Code Value
       Definition: The literal value of a code.
-      Relationship Type: Value
       Model Name: code
     codeSystem:
       Type:
@@ -890,7 +1155,6 @@ Code:
       Preferred Term: Code System Name
       Definition: The literal identifier (i.e., distinctive designation) of the system
         used to assign and/or manage codes.
-      Relationship Type: Value
       Model Name: codeSystem
     codeSystemVersion:
       Type:
@@ -898,7 +1162,6 @@ Code:
       NCI C-Code: C188868
       Preferred Term: Code System Version
       Definition: The version of the code system.
-      Relationship Type: Value
       Model Name: codeSystemVersion
     decode:
       Type:
@@ -907,13 +1170,7 @@ Code:
       Preferred Term: Decode
       Definition: Standardized or dictionary-derived human readable text associated
         with a code.
-      Relationship Type: Value
       Model Name: decode
-    instanceType:
-      Type:
-      - $ref: '#/string'
-      Cardinality: 0..1
-      Relationship Type: Value
 CommentAnnotation:
   NCI C-Code: C44272
   Preferred Term: Comment Annotation
@@ -1567,7 +1824,7 @@ GeographicScope:
       Cardinality: '1'
       Preferred Term: Geographic Scope Type
       Definition: A characterization or classification of the geographic scope.
-      Codelist Ref: CNEW - Geographic Scope Type Response
+      Codelist Ref: C207412
       Relationship Type: Value
       Model Name: type
     instanceType:
@@ -1625,9 +1882,9 @@ GovernanceDate:
       - $ref: '#/Code'
       NCI C-Code: C207496
       Cardinality: '1'
-      Preferred Term: Protocol Approval Date Type
-      Definition: A characterization or classification of the protocol approval date.
-      Codelist Ref: CNEW - Governance Date Type Response
+      Preferred Term: Study Governance Date Type
+      Definition: A characterization or classification of the study governance date.
+      Codelist Ref: C207413
       Relationship Type: Value
       Model Name: type
     geographicScopes:
@@ -1644,6 +1901,36 @@ GovernanceDate:
       - $ref: '#/string'
       Cardinality: 0..1
       Relationship Type: Value
+Identifier:
+  NCI C-Code: C25364
+  Preferred Term: Identifier
+  Definition: One or more characters used to identify, name, or characterize the nature,
+    properties, or contents of a thing.
+  Sub Classes:
+  - $ref: '#/AdministrableProductIdentifier'
+  - $ref: '#/ReferenceIdentifier'
+  - $ref: '#/StudyIdentifier'
+  Modifier: Abstract
+  Attributes:
+    id:
+      Type:
+      - $ref: '#/string'
+      Model Name: id
+    text:
+      Type:
+      - $ref: '#/string'
+      NCI C-Code: CNEW
+      Preferred Term: Identifier Text
+      Definition: An instance of structured text that represents the identifier.
+      Model Name: text
+    scope:
+      Type:
+      - $ref: '#/Organization'
+      Cardinality: '1'
+      Definition: A USDM relationship between the Identifier and Organization classes
+        which provides the details associated with each organization that has assigned
+        the identifier.
+      Model Name: scope
 Indication:
   NCI C-Code: C41184
   Preferred Term: Disease/Condition Indication
@@ -1711,6 +1998,41 @@ Indication:
         classes which provides the set of notes related to the disease/condition indication.
       Relationship Type: Value
       Model Name: notes
+    instanceType:
+      Type:
+      - $ref: '#/string'
+      Cardinality: 0..1
+      Relationship Type: Value
+Ingredient:
+  NCI C-Code: C51981
+  Preferred Term: Ingredient
+  Definition: Any component that constitutes a part of a compounded substance or mixture.
+  Modifier: Concrete
+  Attributes:
+    id:
+      Type:
+      - $ref: '#/string'
+      Relationship Type: Value
+      Model Name: id
+    role:
+      Type:
+      - $ref: '#/Code'
+      NCI C-Code: CNEW
+      Cardinality: '1'
+      Preferred Term: Ingredient Role
+      Definition: The intended use of the ingredient within the context of the compounded
+        substance or mixture.
+      Codelist Ref: '(Point to FHIR value set: Ingredient Role)'
+      Relationship Type: Value
+      Model Name: role
+    substance:
+      Type:
+      - $ref: '#/Substance'
+      Cardinality: '1'
+      Definition: A USDM relationship between the Ingredient and Substance classes
+        that identifies the substance associated with the ingredient.
+      Relationship Type: Value
+      Model Name: substance
     instanceType:
       Type:
       - $ref: '#/string'
@@ -1798,17 +2120,6 @@ Masking:
         on a person's role within the study.
       Relationship Type: Value
       Model Name: description
-    role:
-      Type:
-      - $ref: '#/Code'
-      NCI C-Code: C207506
-      Cardinality: '1'
-      Preferred Term: Masking Role
-      Definition: An identifying designation assigned to a masked individual within
-        a study that corresponds with their function.
-      Codelist Ref: CNEW - Masking Role Response
-      Relationship Type: Value
-      Model Name: role
     instanceType:
       Type:
       - $ref: '#/string'
@@ -2052,8 +2363,6 @@ Organization:
   Definition: A formalized group of persons or other organizations collected together
     for a common purpose (such as administrative, legal, political) and the infrastructure
     to carry out that purpose. (BRIDG)
-  Sub Classes:
-  - $ref: '#/ResearchOrganization'
   Modifier: Concrete
   Attributes:
     id:
@@ -2102,7 +2411,7 @@ Organization:
         which provides the legal address for an organization.
       Relationship Type: Value
       Model Name: legalAddress
-    organizationType:
+    type:
       Type:
       - $ref: '#/Code'
       NCI C-Code: C188820
@@ -2114,7 +2423,15 @@ Organization:
         purpose.
       Codelist Ref: C188724
       Relationship Type: Value
-      Model Name: organizationType
+      Model Name: type
+    managedSites:
+      Type:
+      - $ref: '#/StudySite'
+      Cardinality: 0..*
+      Definition: A USDM relationship between the Organization and StudySite classes
+        which identifies the set of study sites managed by the organization.
+      Relationship Type: Value
+      Model Name: managedSites
     instanceType:
       Type:
       - $ref: '#/string'
@@ -2201,7 +2518,7 @@ PopulationDefinition:
       Type:
       - $ref: '#/Code'
       NCI C-Code: C207523
-      Cardinality: 0..1
+      Cardinality: 0..2
       Preferred Term: Population Definition Planned Sex
       Definition: The protocol-defined sex within the population definition.
       Codelist Ref: SDTM Terminology Codelist C66732
@@ -2414,14 +2731,13 @@ Range:
       - $ref: '#/string'
       Cardinality: 0..1
       Relationship Type: Value
-ResearchOrganization:
-  NCI C-Code: C93448
-  Preferred Term: Research Organization
-  Definition: An organization that undertakes systematic investigation within a field
-    of study in order to discover facts, establish or revise a theory, test a hypothesis,
-    or develop a plan of action based on the facts discovered.
+ReferenceIdentifier:
+  NCI C-Code: CNEW
+  Preferred Term: Reference Identifier
+  Definition: A sequence of characters used to identify, name, or characterize the
+    reference.
   Super Classes:
-  - $ref: '#/Organization'
+  - $ref: '#/Identifier'
   Modifier: Concrete
   Attributes:
     id:
@@ -2430,84 +2746,38 @@ ResearchOrganization:
       Relationship Type: Value
       Model Name: id
       Inherited From:
-        $ref: '#/Organization'
-    name:
+        $ref: '#/Identifier'
+    text:
       Type:
       - $ref: '#/string'
-      NCI C-Code: C207529
-      Preferred Term: Research Organization Name
-      Definition: The literal identifier (i.e., distinctive designation) of the research
-        organization.
+      NCI C-Code: CNEW
+      Preferred Term: Reference Identifier Text
+      Definition: An instance of structured text that represents the reference identifier.
       Relationship Type: Value
-      Model Name: name
+      Model Name: text
       Inherited From:
-        $ref: '#/Organization'
-    label:
+        $ref: '#/Identifier'
+    scopeId:
       Type:
-      - $ref: '#/string'
-      NCI C-Code: C207528
-      Preferred Term: Research Organization Label
-      Definition: The short descriptive designation for the research organization.
-      Relationship Type: Value
-      Model Name: label
+      - $ref: '#/Organization'
+      Cardinality: '1'
+      Definition: A USDM relationship between the ReferenceIdentifier and Organization
+        classes which provides the details associated with each organization that
+        has assigned the reference identifier.
+      Relationship Type: Ref
+      Model Name: scope
       Inherited From:
-        $ref: '#/Organization'
-    identifier:
-      Type:
-      - $ref: '#/string'
-      NCI C-Code: C207527
-      Preferred Term: Research Organization Identifier
-      Definition: A sequence of characters used to identify, name, or characterize
-        the research organization.
-      Relationship Type: Value
-      Model Name: identifier
-      Inherited From:
-        $ref: '#/Organization'
-    identifierScheme:
-      Type:
-      - $ref: '#/string'
-      NCI C-Code: C207526
-      Preferred Term: Identifier Provider Research Organization Name
-      Definition: The name of the research organization that provides the identifier
-        for the entity.
-      Relationship Type: Value
-      Model Name: identifierScheme
-      Inherited From:
-        $ref: '#/Organization'
-    legalAddress:
-      Type:
-      - $ref: '#/Address'
-      Cardinality: 0..1
-      Definition: A USDM relationship between the ResearchOrganization and Address
-        classes which identifies the legal address for the research organization.
-      Relationship Type: Value
-      Model Name: legalAddress
-      Inherited From:
-        $ref: '#/Organization'
-    organizationType:
+        $ref: '#/Identifier'
+    type:
       Type:
       - $ref: '#/Code'
-      NCI C-Code: C188820
+      NCI C-Code: CNEW
       Cardinality: '1'
-      Preferred Term: Organization Type
-      Definition: A characterization or classification of the formalized group of
-        persons or other organizations collected together for a common purpose (such
-        as administrative, legal, political) and the infrastructure to carry out that
-        purpose.
-      Codelist Ref: C188724
+      Preferred Term: Reference Identifier Type
+      Definition: A characterization or classification of the reference identifier.
+      Codelist Ref: CNEW Reference Identifier Type
       Relationship Type: Value
-      Model Name: organizationType
-      Inherited From:
-        $ref: '#/Organization'
-    manages:
-      Type:
-      - $ref: '#/StudySite'
-      Cardinality: 1..*
-      Definition: A USDM relationship between the ResearchOrganization and StudySite
-        classes which identifies the research organization that manages the study
-        site.
-      Relationship Type: Value
-      Model Name: manages
+      Model Name: type
     instanceType:
       Type:
       - $ref: '#/string'
@@ -2895,6 +3165,67 @@ ScheduledInstance:
       Definition: A USDM relationship between the ScheduledInstance and StudyEpoch
         classes which identifies the study epoch associated with a scheduled instance.
       Model Name: epoch
+Strength:
+  NCI C-Code: CNEW
+  Preferred Term: Substance Strength
+  Definition: The content of an substance expressed quantitatively per dosage unit,
+    per unit of volume, or per unit of weight, according to the pharmaceutical dose
+    form of the product.
+  Modifier: Concrete
+  Attributes:
+    id:
+      Type:
+      - $ref: '#/string'
+      Relationship Type: Value
+      Model Name: id
+    name:
+      Type:
+      - $ref: '#/string'
+      NCI C-Code: CNEW
+      Preferred Term: Substance Strength Name
+      Definition: The literal identifier (i.e., distinctive designation) of the substance
+        strength.
+      Relationship Type: Value
+      Model Name: name
+    description:
+      Type:
+      - $ref: '#/string'
+      NCI C-Code: CNEW
+      Preferred Term: Substance Strength Description
+      Definition: A narrative representation of the substance strength.
+      Relationship Type: Value
+      Model Name: description
+    label:
+      Type:
+      - $ref: '#/string'
+      NCI C-Code: CNEW
+      Preferred Term: Substance Strength Label
+      Definition: The short descriptive designation for the substance strength.
+      Relationship Type: Value
+      Model Name: label
+    numerator:
+      Type:
+      - $ref: '#/Quantity'
+      - $ref: '#/Range'
+      Cardinality: 0..1
+      Definition: A USDM relationship between the Strength and the Quantity and Range
+        classes that identifies the numerator's value or range of values associated
+        with the substance strength.
+      Relationship Type: Value
+      Model Name: numerator
+    denominator:
+      Type:
+      - $ref: '#/Quantity'
+      Cardinality: 0..1
+      Definition: A USDM relationship between the Strength and Quantity classes that
+        identifies the denominator associated with the substance strength.
+      Relationship Type: Value
+      Model Name: denominator
+    instanceType:
+      Type:
+      - $ref: '#/string'
+      Cardinality: 0..1
+      Relationship Type: Value
 Study:
   NCI C-Code: C15206
   Preferred Term: Clinical Study
@@ -3060,7 +3391,7 @@ StudyAmendmentReason:
       Preferred Term: Study Amendment Reason Code
       Definition: A symbol or combination of symbols which is assigned to the study
         amendment reason.
-      Codelist Ref: CNEW - Study Amendment Reason Response
+      Codelist Ref: C207415
       Relationship Type: Value
       Model Name: code
     instanceType:
@@ -3260,7 +3591,7 @@ StudyCohort:
       Type:
       - $ref: '#/Code'
       NCI C-Code: C207541
-      Cardinality: 0..1
+      Cardinality: 0..2
       Preferred Term: Study Cohort Planned Sex
       Definition: The protocol-defined sex within the study cohort.
       Codelist Ref: SDTM Terminology Codelist C66732
@@ -3402,7 +3733,7 @@ StudyDefinitionDocument:
       Cardinality: '1'
       Preferred Term: Study Definition Document Type
       Definition: A characterization or classification of the study definition document.
-      Codelist Ref: CNEW
+      Codelist Ref: CNEW Study Definition Document Type
       Relationship Type: Value
       Model Name: type
     notes:
@@ -3599,7 +3930,7 @@ StudyDesign:
       Cardinality: 0..*
       Preferred Term: Study Design Characteristic
       Definition: The distinguishing qualities or prominent aspect of a study design.
-      Codelist Ref: CNEW - Study Design Characteristics Response
+      Codelist Ref: C207416
       Relationship Type: Value
       Model Name: characteristics
     trialTypes:
@@ -3656,14 +3987,6 @@ StudyDesign:
         which identifies the set of indications associated with the study design.
       Relationship Type: Value
       Model Name: indications
-    maskingRoles:
-      Type:
-      - $ref: '#/Masking'
-      Cardinality: 0..*
-      Definition: A USDM relationship between the StudyDesign and Masking classes
-        which identifies the set of masking roles associated with the study design.
-      Relationship Type: Value
-      Model Name: maskingRoles
     objectives:
       Type:
       - $ref: '#/Objective'
@@ -3672,15 +3995,6 @@ StudyDesign:
         which identifies the set of objectives associated with the study design.
       Relationship Type: Value
       Model Name: objectives
-    organizations:
-      Type:
-      - $ref: '#/ResearchOrganization'
-      Cardinality: 0..*
-      Definition: A USDM relationship between the StudyDesign and ResearchOrganization
-        classes which identifies the set of research organizations associated with
-        the study design.
-      Relationship Type: Value
-      Model Name: organizations
     scheduleTimelines:
       Type:
       - $ref: '#/ScheduleTimeline'
@@ -3841,7 +4155,7 @@ StudyDesignPopulation:
       Type:
       - $ref: '#/Code'
       NCI C-Code: C207551
-      Cardinality: 0..1
+      Cardinality: 0..2
       Preferred Term: Study Design Population Planned Sex
       Definition: The protocol-defined sex within the study design population.
       Codelist Ref: SDTM Terminology Codelist C66732
@@ -4084,6 +4398,8 @@ StudyIdentifier:
   Preferred Term: Study Identifier
   Definition: A sequence of characters used to identify, name, or characterize the
     study.
+  Super Classes:
+  - $ref: '#/Identifier'
   Modifier: Concrete
   Attributes:
     id:
@@ -4091,24 +4407,29 @@ StudyIdentifier:
       - $ref: '#/string'
       Relationship Type: Value
       Model Name: id
-    studyIdentifier:
+      Inherited From:
+        $ref: '#/Identifier'
+    text:
       Type:
       - $ref: '#/string'
-      NCI C-Code: C83082
-      Preferred Term: Study Identifier
-      Definition: A sequence of characters used to identify, name, or characterize
-        the study.
+      NCI C-Code: CNEW
+      Preferred Term: Study Identifier Text
+      Definition: An instance of structured text that represents the study identifier.
       Relationship Type: Value
-      Model Name: studyIdentifier
-    studyIdentifierScope:
+      Model Name: text
+      Inherited From:
+        $ref: '#/Identifier'
+    scopeId:
       Type:
       - $ref: '#/Organization'
       Cardinality: '1'
       Definition: A USDM relationship between the StudyIdentifier and Organization
         classes which provides the details associated with each organization that
-        has assigned a study identifier.
-      Relationship Type: Value
-      Model Name: studyIdentifierScope
+        has assigned the study identifier.
+      Relationship Type: Ref
+      Model Name: scope
+      Inherited From:
+        $ref: '#/Identifier'
     instanceType:
       Type:
       - $ref: '#/string'
@@ -4153,7 +4474,7 @@ StudyIntervention:
       Model Name: label
     administrations:
       Type:
-      - $ref: '#/AgentAdministration'
+      - $ref: '#/Administration'
       Cardinality: 0..*
       Definition: A USDM relationship between the StudyIntervention and AgentAdministration
         classes which identifies the set of agent administrations associated with
@@ -4178,7 +4499,7 @@ StudyIntervention:
       Preferred Term: Study Intervention Role
       Definition: The intended use of the trial intervention within the context of
         the study design.
-      Codelist Ref: CNEW - Study Intervention Role Response
+      Codelist Ref: C207417
       Relationship Type: Value
       Model Name: role
     productDesignation:
@@ -4189,19 +4510,9 @@ StudyIntervention:
       Preferred Term: Study Intervention Product Designation
       Definition: An indication as to whether the investigational intervention is
         an investigational medicinal product or an auxiliary medicinal product.
-      Codelist Ref: CNEW - Study Intervention Product Designation Response
+      Codelist Ref: C207418
       Relationship Type: Value
       Model Name: productDesignation
-    pharmacologicClass:
-      Type:
-      - $ref: '#/Code'
-      NCI C-Code: C98768
-      Cardinality: 0..1
-      Preferred Term: Pharmacologic Class
-      Definition: The pharmacological class of the investigational product.
-      Codelist Ref: (Points to external codelists; FDA requirement to use…)
-      Relationship Type: Value
-      Model Name: pharmacologicClass
     codes:
       Type:
       - $ref: '#/Code'
@@ -4232,6 +4543,94 @@ StudyIntervention:
         the criteria for response to study intervention.
       Relationship Type: Value
       Model Name: minimumResponseDuration
+    instanceType:
+      Type:
+      - $ref: '#/string'
+      Cardinality: 0..1
+      Relationship Type: Value
+StudyRole:
+  NCI C-Code: CNEW
+  Preferred Term: Study Role
+  Definition: A designation that identifies the function of study personnel within
+    the context of the study.
+  Modifier: Concrete
+  Attributes:
+    id:
+      Type:
+      - $ref: '#/string'
+      Relationship Type: Value
+      Model Name: id
+    name:
+      Type:
+      - $ref: '#/string'
+      NCI C-Code: CNEW
+      Preferred Term: Study Role Name
+      Definition: The literal identifier (i.e., distinctive designation) of the study
+        role.
+      Relationship Type: Value
+      Model Name: name
+    label:
+      Type:
+      - $ref: '#/string'
+      NCI C-Code: CNEW
+      Preferred Term: Study Role Label
+      Definition: The short descriptive designation for the study role.
+      Relationship Type: Value
+      Model Name: label
+    description:
+      Type:
+      - $ref: '#/string'
+      NCI C-Code: CNEW
+      Preferred Term: Study Role Description
+      Definition: A narrative representation of the study role.
+      Relationship Type: Value
+      Model Name: description
+    assignedPersons:
+      Type:
+      - $ref: '#/AssignedPerson'
+      Cardinality: 0..*
+      Definition: A USDM relationship between the StudyRole and AssignedPerson classes
+        that identifies the set of individuals that are assigned to fill a particular
+        role within the study.
+      Relationship Type: Value
+      Model Name: assignedPersons
+    code:
+      Type:
+      - $ref: '#/Code'
+      NCI C-Code: CNEW
+      Cardinality: '1'
+      Preferred Term: Study Role Code
+      Definition: A symbol or combination of symbols which is assigned to the study
+        role.
+      Codelist Ref: CNEW Study Role Code
+      Relationship Type: Value
+      Model Name: code
+    masking:
+      Type:
+      - $ref: '#/Masking'
+      Cardinality: 0..1
+      Definition: A USDM relationship between the StudyRole and Masking classes which
+        describes the masking associated with the study role.
+      Relationship Type: Value
+      Model Name: masking
+    organizationIds:
+      Type:
+      - $ref: '#/Organization'
+      Cardinality: 0..*
+      Definition: A USDM relationship between the StudyRole and Organization classes
+        which identifies the set of organizations associated with the study role.
+      Relationship Type: Ref
+      Model Name: organizations
+    appliesToIds:
+      Type:
+      - $ref: '#/StudyDesign'
+      - $ref: '#/StudyVersion'
+      Cardinality: 0..*
+      Definition: A USDM relationship between the StudyRole and either StudyVersion
+        or StudyDesign classes that identifies the study version or study design to
+        which the study role applies.
+      Relationship Type: Ref
+      Model Name: appliesTo
     instanceType:
       Type:
       - $ref: '#/string'
@@ -4273,14 +4672,6 @@ StudySite:
       Definition: The short descriptive designation for the study site.
       Relationship Type: Value
       Model Name: label
-    currentEnrollment:
-      Type:
-      - $ref: '#/SubjectEnrollment'
-      Cardinality: 0..1
-      Definition: A USDM relationship between the StudySite and SubjectEnrollment
-        classes which provides the current subject enrollment for the study site.
-      Relationship Type: Value
-      Model Name: currentEnrollment
     instanceType:
       Type:
       - $ref: '#/string'
@@ -4312,7 +4703,7 @@ StudyTitle:
       Cardinality: '1'
       Preferred Term: Study Title Type
       Definition: A characterization or classification of the study title.
-      Codelist Ref: CNEW-Study Title Type Response
+      Codelist Ref: C207419
       Relationship Type: Value
       Model Name: type
     instanceType:
@@ -4370,7 +4761,7 @@ StudyVersion:
         may be evaluated in two or more phases simultaneously in different trials,
         and some trials may overlap two different phases. [21 CFR section 312.21;
         After ICH Topic E8 NOTE FOR GUIDANCE ON GENERAL CONSIDERATIONS FOR CLINICAL
-        TRIALS,  CPMP/ICH/291/95 March 1998]'
+        TRIALS, CPMP/ICH/291/95 March 1998]'
       Codelist Ref: SDTM Terminology Codelist C66737
       Relationship Type: Value
       Model Name: studyPhase
@@ -4413,6 +4804,15 @@ StudyVersion:
         version.
       Relationship Type: Value
       Model Name: dateValues
+    referenceIdentifiers:
+      Type:
+      - $ref: '#/ReferenceIdentifier'
+      Cardinality: 0..*
+      Definition: A USDM relationship between the StudyVersion and ReferenceIdentifier
+        classes which identifies the set of reference identifiers associated with
+        the study version.
+      Relationship Type: Value
+      Model Name: referenceIdentifiers
     amendments:
       Type:
       - $ref: '#/StudyAmendment'
@@ -4442,7 +4842,7 @@ StudyVersion:
     studyIdentifiers:
       Type:
       - $ref: '#/StudyIdentifier'
-      Cardinality: 0..*
+      Cardinality: 1..*
       Definition: A USDM relationship between the StudyVersion and StudyIdentifier
         classes which identifies the set of study identifiers associated with the
         study version.
@@ -4464,6 +4864,21 @@ StudyVersion:
     narrativeContentItems:
       Type:
       - $ref: '#/NarrativeContentItem'
+      Cardinality: 0..*
+      Relationship Type: Value
+    roles:
+      Type:
+      - $ref: '#/StudyRole'
+      Cardinality: 0..*
+      Relationship Type: Value
+    organizations:
+      Type:
+      - $ref: '#/Organization'
+      Cardinality: 0..*
+      Relationship Type: Value
+    administrableProducts:
+      Type:
+      - $ref: '#/AdministrableProduct'
       Cardinality: 0..*
       Relationship Type: Value
     instanceType:
@@ -4520,6 +4935,83 @@ SubjectEnrollment:
       Definition: The value representing the number of individuals enrolled in a study.
       Relationship Type: Value
       Model Name: quantity
+    appliesTo:
+      Type:
+      - $ref: '#/StudySite'
+      Cardinality: 0..1
+      Definition: A USDM relationship between the SubjectEnrollment and StudySite
+        classes which identifies the study site that applies to the subject enrollments.
+      Relationship Type: Value
+      Model Name: appliesTo
+    instanceType:
+      Type:
+      - $ref: '#/string'
+      Cardinality: 0..1
+      Relationship Type: Value
+Substance:
+  NCI C-Code: C45306
+  Preferred Term: Substance
+  Definition: Any matter of defined composition that has discrete existence, whose
+    origin may be biological, mineral or chemical.
+  Modifier: Concrete
+  Attributes:
+    id:
+      Type:
+      - $ref: '#/string'
+      Relationship Type: Value
+      Model Name: id
+    name:
+      Type:
+      - $ref: '#/string'
+      NCI C-Code: CNEW
+      Preferred Term: Substance Name
+      Definition: The literal identifier (i.e., distinctive designation) of the substance.
+      Relationship Type: Value
+      Model Name: name
+    description:
+      Type:
+      - $ref: '#/string'
+      NCI C-Code: CNEW
+      Preferred Term: Substance Description
+      Definition: A narrative representation of the substance.
+      Relationship Type: Value
+      Model Name: description
+    label:
+      Type:
+      - $ref: '#/string'
+      NCI C-Code: CNEW
+      Preferred Term: Substance Label
+      Definition: The short descriptive designation for the substance.
+      Relationship Type: Value
+      Model Name: label
+    codes:
+      Type:
+      - $ref: '#/Code'
+      NCI C-Code: CNEW
+      Cardinality: 0..*
+      Preferred Term: Substance Code
+      Definition: A symbol or combination of symbols which is assigned to the substance.
+      Codelist Ref: (Point out to multiple Biomedical coding dictionaries such as
+        WHODrug, ATC, UNII, etc.)
+      Relationship Type: Value
+      Model Name: codes
+    strengths:
+      Type:
+      - $ref: '#/Strength'
+      Cardinality: 1..*
+      Definition: A USDM relationship between the Substance and Strength class which
+        provides the values of the strengths of the substance.
+      Relationship Type: Value
+      Model Name: strengths
+    referenceSubstance:
+      Type:
+      - $ref: '#/Substance'
+      Cardinality: 0..1
+      Definition: A USDM relationship within the Substance class that identifies the
+        association between two substances, one of which is used as a reference for
+        the other.
+      Relationship Type: Value
+      Model Name: referenceSubstance
     instanceType:
       Type:
       - $ref: '#/string'

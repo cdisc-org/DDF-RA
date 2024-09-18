@@ -3,7 +3,7 @@
   "info": {
     "title": "DDF USDM API",
     "description": "A simple TransCelerate Digital Data Flow (DDF) Study Definitions Repository API.",
-    "version": "3.5.0"
+    "version": "3.6.0"
   },
   "paths": {
     "/v3/studyDefinitions": {
@@ -730,7 +730,7 @@
           "country": {
             "anyOf": [
               {
-                "$ref": "#/components/schemas/Code"
+                "$ref": "#/components/schemas/model__code__Code__1"
               },
               {
                 "type": "null"
@@ -752,6 +752,489 @@
           "instanceType"
         ],
         "title": "Address"
+      },
+      "AdministrableProduct-Input": {
+        "properties": {
+          "id": {
+            "type": "string",
+            "minLength": 1,
+            "title": "Id"
+          },
+          "name": {
+            "type": "string",
+            "minLength": 1,
+            "title": "Name"
+          },
+          "label": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Label"
+          },
+          "description": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Description"
+          },
+          "pharmacologicClass": {
+            "anyOf": [
+              {
+                "$ref": "#/components/schemas/model__code__Code__1"
+              },
+              {
+                "type": "null"
+              }
+            ]
+          },
+          "administrableDoseForm": {
+            "$ref": "#/components/schemas/AliasCode"
+          },
+          "properties": {
+            "items": {
+              "$ref": "#/components/schemas/AdministrableProductProperty-Input"
+            },
+            "type": "array",
+            "title": "Properties",
+            "default": []
+          },
+          "identifiers": {
+            "items": {
+              "$ref": "#/components/schemas/AdministrableProductIdentifier"
+            },
+            "type": "array",
+            "title": "Identifiers",
+            "default": []
+          },
+          "ingredients": {
+            "items": {
+              "$ref": "#/components/schemas/Ingredient-Input"
+            },
+            "type": "array",
+            "title": "Ingredients",
+            "default": []
+          },
+          "notes": {
+            "items": {
+              "$ref": "#/components/schemas/CommentAnnotation"
+            },
+            "type": "array",
+            "title": "Notes",
+            "default": []
+          },
+          "instanceType": {
+            "type": "string",
+            "enum": [
+              "AdministrableProduct"
+            ],
+            "const": "AdministrableProduct",
+            "title": "Instancetype"
+          }
+        },
+        "type": "object",
+        "required": [
+          "id",
+          "name",
+          "administrableDoseForm",
+          "instanceType"
+        ],
+        "title": "AdministrableProduct"
+      },
+      "AdministrableProduct-Output": {
+        "properties": {
+          "id": {
+            "type": "string",
+            "minLength": 1,
+            "title": "Id"
+          },
+          "name": {
+            "type": "string",
+            "minLength": 1,
+            "title": "Name"
+          },
+          "label": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Label"
+          },
+          "description": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Description"
+          },
+          "pharmacologicClass": {
+            "anyOf": [
+              {
+                "$ref": "#/components/schemas/model__code__Code__1"
+              },
+              {
+                "type": "null"
+              }
+            ]
+          },
+          "administrableDoseForm": {
+            "$ref": "#/components/schemas/AliasCode"
+          },
+          "properties": {
+            "items": {
+              "$ref": "#/components/schemas/AdministrableProductProperty-Output"
+            },
+            "type": "array",
+            "title": "Properties",
+            "default": []
+          },
+          "identifiers": {
+            "items": {
+              "$ref": "#/components/schemas/AdministrableProductIdentifier"
+            },
+            "type": "array",
+            "title": "Identifiers",
+            "default": []
+          },
+          "ingredients": {
+            "items": {
+              "$ref": "#/components/schemas/Ingredient-Output"
+            },
+            "type": "array",
+            "title": "Ingredients",
+            "default": []
+          },
+          "notes": {
+            "items": {
+              "$ref": "#/components/schemas/CommentAnnotation"
+            },
+            "type": "array",
+            "title": "Notes",
+            "default": []
+          },
+          "instanceType": {
+            "type": "string",
+            "enum": [
+              "AdministrableProduct"
+            ],
+            "const": "AdministrableProduct",
+            "title": "Instancetype"
+          }
+        },
+        "type": "object",
+        "required": [
+          "id",
+          "name",
+          "administrableDoseForm",
+          "instanceType"
+        ],
+        "title": "AdministrableProduct"
+      },
+      "AdministrableProductIdentifier": {
+        "properties": {
+          "id": {
+            "type": "string",
+            "minLength": 1,
+            "title": "Id"
+          },
+          "text": {
+            "type": "string",
+            "title": "Text"
+          },
+          "scopeId": {
+            "type": "string",
+            "title": "Scopeid"
+          },
+          "instanceType": {
+            "type": "string",
+            "enum": [
+              "AdministrableProductIdentifier"
+            ],
+            "const": "AdministrableProductIdentifier",
+            "title": "Instancetype"
+          }
+        },
+        "type": "object",
+        "required": [
+          "id",
+          "text",
+          "scopeId",
+          "instanceType"
+        ],
+        "title": "AdministrableProductIdentifier"
+      },
+      "AdministrableProductProperty-Input": {
+        "properties": {
+          "id": {
+            "type": "string",
+            "minLength": 1,
+            "title": "Id"
+          },
+          "name": {
+            "type": "string",
+            "minLength": 1,
+            "title": "Name"
+          },
+          "text": {
+            "type": "string",
+            "title": "Text"
+          },
+          "type": {
+            "$ref": "#/components/schemas/model__code__Code__1"
+          },
+          "quantity": {
+            "$ref": "#/components/schemas/Quantity-Input"
+          },
+          "instanceType": {
+            "type": "string",
+            "enum": [
+              "AdministrableProductProperty"
+            ],
+            "const": "AdministrableProductProperty",
+            "title": "Instancetype"
+          }
+        },
+        "type": "object",
+        "required": [
+          "id",
+          "name",
+          "text",
+          "type",
+          "quantity",
+          "instanceType"
+        ],
+        "title": "AdministrableProductProperty"
+      },
+      "AdministrableProductProperty-Output": {
+        "properties": {
+          "id": {
+            "type": "string",
+            "minLength": 1,
+            "title": "Id"
+          },
+          "name": {
+            "type": "string",
+            "minLength": 1,
+            "title": "Name"
+          },
+          "text": {
+            "type": "string",
+            "title": "Text"
+          },
+          "type": {
+            "$ref": "#/components/schemas/model__code__Code__1"
+          },
+          "quantity": {
+            "$ref": "#/components/schemas/Quantity-Output"
+          },
+          "instanceType": {
+            "type": "string",
+            "enum": [
+              "AdministrableProductProperty"
+            ],
+            "const": "AdministrableProductProperty",
+            "title": "Instancetype"
+          }
+        },
+        "type": "object",
+        "required": [
+          "id",
+          "name",
+          "text",
+          "type",
+          "quantity",
+          "instanceType"
+        ],
+        "title": "AdministrableProductProperty"
+      },
+      "Administration-Input": {
+        "properties": {
+          "id": {
+            "type": "string",
+            "minLength": 1,
+            "title": "Id"
+          },
+          "name": {
+            "type": "string",
+            "minLength": 1,
+            "title": "Name"
+          },
+          "label": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Label"
+          },
+          "description": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Description"
+          },
+          "duration": {
+            "$ref": "#/components/schemas/AdministrationDuration-Input"
+          },
+          "dose": {
+            "$ref": "#/components/schemas/Quantity-Input"
+          },
+          "route": {
+            "$ref": "#/components/schemas/AliasCode"
+          },
+          "frequency": {
+            "$ref": "#/components/schemas/AliasCode"
+          },
+          "administrableProductId": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Administrableproductid"
+          },
+          "notes": {
+            "items": {
+              "$ref": "#/components/schemas/CommentAnnotation"
+            },
+            "type": "array",
+            "title": "Notes",
+            "default": []
+          },
+          "instanceType": {
+            "type": "string",
+            "enum": [
+              "AgentAdministration"
+            ],
+            "const": "AgentAdministration",
+            "title": "Instancetype"
+          }
+        },
+        "type": "object",
+        "required": [
+          "id",
+          "name",
+          "duration",
+          "dose",
+          "route",
+          "frequency",
+          "instanceType"
+        ],
+        "title": "Administration"
+      },
+      "Administration-Output": {
+        "properties": {
+          "id": {
+            "type": "string",
+            "minLength": 1,
+            "title": "Id"
+          },
+          "name": {
+            "type": "string",
+            "minLength": 1,
+            "title": "Name"
+          },
+          "label": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Label"
+          },
+          "description": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Description"
+          },
+          "duration": {
+            "$ref": "#/components/schemas/AdministrationDuration-Output"
+          },
+          "dose": {
+            "$ref": "#/components/schemas/Quantity-Output"
+          },
+          "route": {
+            "$ref": "#/components/schemas/AliasCode"
+          },
+          "frequency": {
+            "$ref": "#/components/schemas/AliasCode"
+          },
+          "administrableProductId": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Administrableproductid"
+          },
+          "notes": {
+            "items": {
+              "$ref": "#/components/schemas/CommentAnnotation"
+            },
+            "type": "array",
+            "title": "Notes",
+            "default": []
+          },
+          "instanceType": {
+            "type": "string",
+            "enum": [
+              "AgentAdministration"
+            ],
+            "const": "AgentAdministration",
+            "title": "Instancetype"
+          }
+        },
+        "type": "object",
+        "required": [
+          "id",
+          "name",
+          "duration",
+          "dose",
+          "route",
+          "frequency",
+          "instanceType"
+        ],
+        "title": "Administration"
       },
       "AdministrationDuration-Input": {
         "properties": {
@@ -849,156 +1332,6 @@
         ],
         "title": "AdministrationDuration"
       },
-      "AgentAdministration-Input": {
-        "properties": {
-          "id": {
-            "type": "string",
-            "minLength": 1,
-            "title": "Id"
-          },
-          "name": {
-            "type": "string",
-            "minLength": 1,
-            "title": "Name"
-          },
-          "label": {
-            "anyOf": [
-              {
-                "type": "string"
-              },
-              {
-                "type": "null"
-              }
-            ],
-            "title": "Label"
-          },
-          "description": {
-            "anyOf": [
-              {
-                "type": "string"
-              },
-              {
-                "type": "null"
-              }
-            ],
-            "title": "Description"
-          },
-          "duration": {
-            "$ref": "#/components/schemas/AdministrationDuration-Input"
-          },
-          "dose": {
-            "$ref": "#/components/schemas/Quantity-Input"
-          },
-          "route": {
-            "$ref": "#/components/schemas/AliasCode"
-          },
-          "frequency": {
-            "$ref": "#/components/schemas/AliasCode"
-          },
-          "notes": {
-            "items": {
-              "$ref": "#/components/schemas/CommentAnnotation"
-            },
-            "type": "array",
-            "title": "Notes",
-            "default": []
-          },
-          "instanceType": {
-            "type": "string",
-            "enum": [
-              "AgentAdministration"
-            ],
-            "const": "AgentAdministration",
-            "title": "Instancetype"
-          }
-        },
-        "type": "object",
-        "required": [
-          "id",
-          "name",
-          "duration",
-          "dose",
-          "route",
-          "frequency",
-          "instanceType"
-        ],
-        "title": "AgentAdministration"
-      },
-      "AgentAdministration-Output": {
-        "properties": {
-          "id": {
-            "type": "string",
-            "minLength": 1,
-            "title": "Id"
-          },
-          "name": {
-            "type": "string",
-            "minLength": 1,
-            "title": "Name"
-          },
-          "label": {
-            "anyOf": [
-              {
-                "type": "string"
-              },
-              {
-                "type": "null"
-              }
-            ],
-            "title": "Label"
-          },
-          "description": {
-            "anyOf": [
-              {
-                "type": "string"
-              },
-              {
-                "type": "null"
-              }
-            ],
-            "title": "Description"
-          },
-          "duration": {
-            "$ref": "#/components/schemas/AdministrationDuration-Output"
-          },
-          "dose": {
-            "$ref": "#/components/schemas/Quantity-Output"
-          },
-          "route": {
-            "$ref": "#/components/schemas/AliasCode"
-          },
-          "frequency": {
-            "$ref": "#/components/schemas/AliasCode"
-          },
-          "notes": {
-            "items": {
-              "$ref": "#/components/schemas/CommentAnnotation"
-            },
-            "type": "array",
-            "title": "Notes",
-            "default": []
-          },
-          "instanceType": {
-            "type": "string",
-            "enum": [
-              "AgentAdministration"
-            ],
-            "const": "AgentAdministration",
-            "title": "Instancetype"
-          }
-        },
-        "type": "object",
-        "required": [
-          "id",
-          "name",
-          "duration",
-          "dose",
-          "route",
-          "frequency",
-          "instanceType"
-        ],
-        "title": "AgentAdministration"
-      },
       "AliasCode": {
         "properties": {
           "id": {
@@ -1007,11 +1340,11 @@
             "title": "Id"
           },
           "standardCode": {
-            "$ref": "#/components/schemas/Code"
+            "$ref": "#/components/schemas/model__code__Code__1"
           },
           "standardCodeAliases": {
             "items": {
-              "$ref": "#/components/schemas/Code"
+              "$ref": "#/components/schemas/model__code__Code__1"
             },
             "type": "array",
             "title": "Standardcodealiases",
@@ -1161,6 +1494,73 @@
           "instanceType"
         ],
         "title": "AnalysisPopulation"
+      },
+      "AssignedPerson": {
+        "properties": {
+          "id": {
+            "type": "string",
+            "minLength": 1,
+            "title": "Id"
+          },
+          "name": {
+            "type": "string",
+            "minLength": 1,
+            "title": "Name"
+          },
+          "label": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Label"
+          },
+          "description": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Description"
+          },
+          "jobTitle": {
+            "type": "string",
+            "title": "Jobtitle"
+          },
+          "organizationId": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Organizationid"
+          },
+          "instanceType": {
+            "type": "string",
+            "enum": [
+              "AssignedRole"
+            ],
+            "const": "AssignedRole",
+            "title": "Instancetype"
+          }
+        },
+        "type": "object",
+        "required": [
+          "id",
+          "name",
+          "jobTitle",
+          "instanceType"
+        ],
+        "title": "AssignedPerson"
       },
       "BiomedicalConcept-Input": {
         "properties": {
@@ -1918,49 +2318,6 @@
         ],
         "title": "Characteristic"
       },
-      "Code": {
-        "properties": {
-          "id": {
-            "type": "string",
-            "minLength": 1,
-            "title": "Id"
-          },
-          "code": {
-            "type": "string",
-            "title": "Code"
-          },
-          "codeSystem": {
-            "type": "string",
-            "title": "Codesystem"
-          },
-          "codeSystemVersion": {
-            "type": "string",
-            "title": "Codesystemversion"
-          },
-          "decode": {
-            "type": "string",
-            "title": "Decode"
-          },
-          "instanceType": {
-            "type": "string",
-            "enum": [
-              "Code"
-            ],
-            "const": "Code",
-            "title": "Instancetype"
-          }
-        },
-        "type": "object",
-        "required": [
-          "id",
-          "code",
-          "codeSystem",
-          "codeSystemVersion",
-          "decode",
-          "instanceType"
-        ],
-        "title": "Code"
-      },
       "CommentAnnotation": {
         "properties": {
           "id": {
@@ -1974,7 +2331,7 @@
           },
           "codes": {
             "items": {
-              "$ref": "#/components/schemas/Code"
+              "$ref": "#/components/schemas/model__code__Code__1"
             },
             "type": "array",
             "title": "Codes",
@@ -2278,7 +2635,7 @@
             "title": "Instancetype"
           },
           "category": {
-            "$ref": "#/components/schemas/Code"
+            "$ref": "#/components/schemas/model__code__Code__1"
           },
           "identifier": {
             "type": "string",
@@ -2384,7 +2741,7 @@
             "title": "Instancetype"
           },
           "category": {
-            "$ref": "#/components/schemas/Code"
+            "$ref": "#/components/schemas/model__code__Code__1"
           },
           "identifier": {
             "type": "string",
@@ -2459,7 +2816,7 @@
             "title": "Description"
           },
           "type": {
-            "$ref": "#/components/schemas/Code"
+            "$ref": "#/components/schemas/model__code__Code__1"
           },
           "previousId": {
             "anyOf": [
@@ -2496,7 +2853,7 @@
           },
           "environmentalSettings": {
             "items": {
-              "$ref": "#/components/schemas/Code"
+              "$ref": "#/components/schemas/model__code__Code__1"
             },
             "type": "array",
             "title": "Environmentalsettings",
@@ -2504,7 +2861,7 @@
           },
           "contactModes": {
             "items": {
-              "$ref": "#/components/schemas/Code"
+              "$ref": "#/components/schemas/model__code__Code__1"
             },
             "type": "array",
             "title": "Contactmodes",
@@ -2591,7 +2948,7 @@
             "title": "Description"
           },
           "type": {
-            "$ref": "#/components/schemas/Code"
+            "$ref": "#/components/schemas/model__code__Code__1"
           },
           "previousId": {
             "anyOf": [
@@ -2628,7 +2985,7 @@
           },
           "environmentalSettings": {
             "items": {
-              "$ref": "#/components/schemas/Code"
+              "$ref": "#/components/schemas/model__code__Code__1"
             },
             "type": "array",
             "title": "Environmentalsettings",
@@ -2636,7 +2993,7 @@
           },
           "contactModes": {
             "items": {
-              "$ref": "#/components/schemas/Code"
+              "$ref": "#/components/schemas/model__code__Code__1"
             },
             "type": "array",
             "title": "Contactmodes",
@@ -2758,7 +3115,7 @@
             "title": "Purpose"
           },
           "level": {
-            "$ref": "#/components/schemas/Code"
+            "$ref": "#/components/schemas/model__code__Code__1"
           }
         },
         "type": "object",
@@ -2842,7 +3199,7 @@
             "title": "Purpose"
           },
           "level": {
-            "$ref": "#/components/schemas/Code"
+            "$ref": "#/components/schemas/model__code__Code__1"
           }
         },
         "type": "object",
@@ -3036,7 +3393,7 @@
             "title": "Id"
           },
           "type": {
-            "$ref": "#/components/schemas/Code"
+            "$ref": "#/components/schemas/model__code__Code__1"
           },
           "code": {
             "anyOf": [
@@ -3073,7 +3430,7 @@
             "title": "Id"
           },
           "type": {
-            "$ref": "#/components/schemas/Code"
+            "$ref": "#/components/schemas/model__code__Code__1"
           },
           "code": {
             "anyOf": [
@@ -3137,7 +3494,7 @@
             "title": "Description"
           },
           "type": {
-            "$ref": "#/components/schemas/Code"
+            "$ref": "#/components/schemas/model__code__Code__1"
           },
           "dateValue": {
             "type": "string",
@@ -3206,7 +3563,7 @@
             "title": "Description"
           },
           "type": {
-            "$ref": "#/components/schemas/Code"
+            "$ref": "#/components/schemas/model__code__Code__1"
           },
           "dateValue": {
             "type": "string",
@@ -3289,7 +3646,7 @@
           },
           "codes": {
             "items": {
-              "$ref": "#/components/schemas/Code"
+              "$ref": "#/components/schemas/model__code__Code__1"
             },
             "type": "array",
             "title": "Codes",
@@ -3361,7 +3718,7 @@
           },
           "codes": {
             "items": {
-              "$ref": "#/components/schemas/Code"
+              "$ref": "#/components/schemas/model__code__Code__1"
             },
             "type": "array",
             "title": "Codes",
@@ -3396,6 +3753,68 @@
           "instanceType"
         ],
         "title": "Indication"
+      },
+      "Ingredient-Input": {
+        "properties": {
+          "id": {
+            "type": "string",
+            "minLength": 1,
+            "title": "Id"
+          },
+          "role": {
+            "$ref": "#/components/schemas/model__code__Code__1"
+          },
+          "substance": {
+            "$ref": "#/components/schemas/Substance-Input"
+          },
+          "instanceType": {
+            "type": "string",
+            "enum": [
+              "Ingredient"
+            ],
+            "const": "Ingredient",
+            "title": "Instancetype"
+          }
+        },
+        "type": "object",
+        "required": [
+          "id",
+          "role",
+          "substance",
+          "instanceType"
+        ],
+        "title": "Ingredient"
+      },
+      "Ingredient-Output": {
+        "properties": {
+          "id": {
+            "type": "string",
+            "minLength": 1,
+            "title": "Id"
+          },
+          "role": {
+            "$ref": "#/components/schemas/model__code__Code__1"
+          },
+          "substance": {
+            "$ref": "#/components/schemas/Substance-Output"
+          },
+          "instanceType": {
+            "type": "string",
+            "enum": [
+              "Ingredient"
+            ],
+            "const": "Ingredient",
+            "title": "Instancetype"
+          }
+        },
+        "type": "object",
+        "required": [
+          "id",
+          "role",
+          "substance",
+          "instanceType"
+        ],
+        "title": "Ingredient"
       },
       "IntercurrentEvent-Input": {
         "properties": {
@@ -3543,9 +3962,6 @@
             ],
             "title": "Description"
           },
-          "role": {
-            "$ref": "#/components/schemas/Code"
-          },
           "instanceType": {
             "type": "string",
             "enum": [
@@ -3558,7 +3974,6 @@
         "type": "object",
         "required": [
           "id",
-          "role",
           "instanceType"
         ],
         "title": "Masking"
@@ -3765,7 +4180,7 @@
             "title": "Instancetype"
           },
           "level": {
-            "$ref": "#/components/schemas/Code"
+            "$ref": "#/components/schemas/model__code__Code__1"
           },
           "endpoints": {
             "items": {
@@ -3852,7 +4267,7 @@
             "title": "Instancetype"
           },
           "level": {
-            "$ref": "#/components/schemas/Code"
+            "$ref": "#/components/schemas/model__code__Code__1"
           },
           "endpoints": {
             "items": {
@@ -3896,8 +4311,8 @@
             ],
             "title": "Label"
           },
-          "organizationType": {
-            "$ref": "#/components/schemas/Code"
+          "type": {
+            "$ref": "#/components/schemas/model__code__Code__1"
           },
           "identifierScheme": {
             "type": "string",
@@ -3917,6 +4332,14 @@
               }
             ]
           },
+          "managedSites": {
+            "items": {
+              "$ref": "#/components/schemas/StudySite"
+            },
+            "type": "array",
+            "title": "Managedsites",
+            "default": []
+          },
           "instanceType": {
             "type": "string",
             "enum": [
@@ -3930,7 +4353,7 @@
         "required": [
           "id",
           "name",
-          "organizationType",
+          "type",
           "identifierScheme",
           "identifier",
           "instanceType"
@@ -3960,8 +4383,8 @@
             ],
             "title": "Label"
           },
-          "organizationType": {
-            "$ref": "#/components/schemas/Code"
+          "type": {
+            "$ref": "#/components/schemas/model__code__Code__1"
           },
           "identifierScheme": {
             "type": "string",
@@ -3981,6 +4404,14 @@
               }
             ]
           },
+          "managedSites": {
+            "items": {
+              "$ref": "#/components/schemas/StudySite"
+            },
+            "type": "array",
+            "title": "Managedsites",
+            "default": []
+          },
           "instanceType": {
             "type": "string",
             "enum": [
@@ -3994,7 +4425,7 @@
         "required": [
           "id",
           "name",
-          "organizationType",
+          "type",
           "identifierScheme",
           "identifier",
           "instanceType"
@@ -4073,7 +4504,7 @@
             "title": "Proceduretype"
           },
           "code": {
-            "$ref": "#/components/schemas/Code"
+            "$ref": "#/components/schemas/model__code__Code__1"
           },
           "studyInterventionId": {
             "anyOf": [
@@ -4152,7 +4583,7 @@
             "title": "Proceduretype"
           },
           "code": {
-            "$ref": "#/components/schemas/Code"
+            "$ref": "#/components/schemas/model__code__Code__1"
           },
           "studyInterventionId": {
             "anyOf": [
@@ -4286,7 +4717,7 @@
           "unit": {
             "anyOf": [
               {
-                "$ref": "#/components/schemas/Code"
+                "$ref": "#/components/schemas/model__code__Code__1"
               },
               {
                 "type": "null"
@@ -4316,149 +4747,42 @@
         ],
         "title": "Range"
       },
-      "ResearchOrganization-Input": {
+      "ReferenceIdentifier": {
         "properties": {
           "id": {
             "type": "string",
             "minLength": 1,
             "title": "Id"
           },
-          "name": {
+          "text": {
             "type": "string",
-            "minLength": 1,
-            "title": "Name"
+            "title": "Text"
           },
-          "label": {
-            "anyOf": [
-              {
-                "type": "string"
-              },
-              {
-                "type": "null"
-              }
-            ],
-            "title": "Label"
-          },
-          "organizationType": {
-            "$ref": "#/components/schemas/Code"
-          },
-          "identifierScheme": {
+          "scopeId": {
             "type": "string",
-            "title": "Identifierscheme"
-          },
-          "identifier": {
-            "type": "string",
-            "title": "Identifier"
-          },
-          "legalAddress": {
-            "anyOf": [
-              {
-                "$ref": "#/components/schemas/Address"
-              },
-              {
-                "type": "null"
-              }
-            ]
+            "title": "Scopeid"
           },
           "instanceType": {
             "type": "string",
             "enum": [
-              "ResearchOrganization"
+              "ReferenceIdentifier"
             ],
-            "const": "ResearchOrganization",
+            "const": "ReferenceIdentifier",
             "title": "Instancetype"
           },
-          "manages": {
-            "items": {
-              "$ref": "#/components/schemas/StudySite-Input"
-            },
-            "type": "array",
-            "title": "Manages"
+          "type": {
+            "$ref": "#/components/schemas/model__code__Code__1"
           }
         },
         "type": "object",
         "required": [
           "id",
-          "name",
-          "organizationType",
-          "identifierScheme",
-          "identifier",
+          "text",
+          "scopeId",
           "instanceType",
-          "manages"
+          "type"
         ],
-        "title": "ResearchOrganization"
-      },
-      "ResearchOrganization-Output": {
-        "properties": {
-          "id": {
-            "type": "string",
-            "minLength": 1,
-            "title": "Id"
-          },
-          "name": {
-            "type": "string",
-            "minLength": 1,
-            "title": "Name"
-          },
-          "label": {
-            "anyOf": [
-              {
-                "type": "string"
-              },
-              {
-                "type": "null"
-              }
-            ],
-            "title": "Label"
-          },
-          "organizationType": {
-            "$ref": "#/components/schemas/Code"
-          },
-          "identifierScheme": {
-            "type": "string",
-            "title": "Identifierscheme"
-          },
-          "identifier": {
-            "type": "string",
-            "title": "Identifier"
-          },
-          "legalAddress": {
-            "anyOf": [
-              {
-                "$ref": "#/components/schemas/Address"
-              },
-              {
-                "type": "null"
-              }
-            ]
-          },
-          "instanceType": {
-            "type": "string",
-            "enum": [
-              "ResearchOrganization"
-            ],
-            "const": "ResearchOrganization",
-            "title": "Instancetype"
-          },
-          "manages": {
-            "items": {
-              "$ref": "#/components/schemas/StudySite-Output"
-            },
-            "type": "array",
-            "title": "Manages"
-          }
-        },
-        "type": "object",
-        "required": [
-          "id",
-          "name",
-          "organizationType",
-          "identifierScheme",
-          "identifier",
-          "instanceType",
-          "manages"
-        ],
-        "title": "ResearchOrganization"
+        "title": "ReferenceIdentifier"
       },
       "ResponseCode": {
         "properties": {
@@ -4472,7 +4796,7 @@
             "title": "Isenabled"
           },
           "code": {
-            "$ref": "#/components/schemas/Code"
+            "$ref": "#/components/schemas/model__code__Code__1"
           },
           "instanceType": {
             "type": "string",
@@ -4904,6 +5228,156 @@
         ],
         "title": "ScheduledDecisionInstance"
       },
+      "Strength-Input": {
+        "properties": {
+          "id": {
+            "type": "string",
+            "minLength": 1,
+            "title": "Id"
+          },
+          "name": {
+            "type": "string",
+            "minLength": 1,
+            "title": "Name"
+          },
+          "label": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Label"
+          },
+          "description": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Description"
+          },
+          "denominator": {
+            "anyOf": [
+              {
+                "$ref": "#/components/schemas/Quantity-Input"
+              },
+              {
+                "type": "null"
+              }
+            ]
+          },
+          "numerator": {
+            "anyOf": [
+              {
+                "$ref": "#/components/schemas/Quantity-Input"
+              },
+              {
+                "$ref": "#/components/schemas/Range"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Numerator"
+          },
+          "instanceType": {
+            "type": "string",
+            "enum": [
+              "Strength"
+            ],
+            "const": "Strength",
+            "title": "Instancetype"
+          }
+        },
+        "type": "object",
+        "required": [
+          "id",
+          "name",
+          "instanceType"
+        ],
+        "title": "Strength"
+      },
+      "Strength-Output": {
+        "properties": {
+          "id": {
+            "type": "string",
+            "minLength": 1,
+            "title": "Id"
+          },
+          "name": {
+            "type": "string",
+            "minLength": 1,
+            "title": "Name"
+          },
+          "label": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Label"
+          },
+          "description": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Description"
+          },
+          "denominator": {
+            "anyOf": [
+              {
+                "$ref": "#/components/schemas/Quantity-Output"
+              },
+              {
+                "type": "null"
+              }
+            ]
+          },
+          "numerator": {
+            "anyOf": [
+              {
+                "$ref": "#/components/schemas/Quantity-Output"
+              },
+              {
+                "$ref": "#/components/schemas/Range"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Numerator"
+          },
+          "instanceType": {
+            "type": "string",
+            "enum": [
+              "Strength"
+            ],
+            "const": "Strength",
+            "title": "Instancetype"
+          }
+        },
+        "type": "object",
+        "required": [
+          "id",
+          "name",
+          "instanceType"
+        ],
+        "title": "Strength"
+      },
       "Study-Input": {
         "properties": {
           "id": {
@@ -5196,7 +5670,7 @@
             "title": "Id"
           },
           "code": {
-            "$ref": "#/components/schemas/Code"
+            "$ref": "#/components/schemas/model__code__Code__1"
           },
           "otherReason": {
             "anyOf": [
@@ -5261,14 +5735,14 @@
             "title": "Description"
           },
           "type": {
-            "$ref": "#/components/schemas/Code"
+            "$ref": "#/components/schemas/model__code__Code__1"
           },
           "dataOriginDescription": {
             "type": "string",
             "title": "Dataorigindescription"
           },
           "dataOriginType": {
-            "$ref": "#/components/schemas/Code"
+            "$ref": "#/components/schemas/model__code__Code__1"
           },
           "populationIds": {
             "items": {
@@ -5341,14 +5815,14 @@
             "title": "Description"
           },
           "type": {
-            "$ref": "#/components/schemas/Code"
+            "$ref": "#/components/schemas/model__code__Code__1"
           },
           "dataOriginDescription": {
             "type": "string",
             "title": "Dataorigindescription"
           },
           "dataOriginType": {
-            "$ref": "#/components/schemas/Code"
+            "$ref": "#/components/schemas/model__code__Code__1"
           },
           "populationIds": {
             "items": {
@@ -5487,7 +5961,48 @@
           },
           "plannedSex": {
             "items": {
-              "$ref": "#/components/schemas/Code"
+              "properties": {
+                "id": {
+                  "type": "string",
+                  "minLength": 1,
+                  "title": "Id"
+                },
+                "code": {
+                  "type": "string",
+                  "title": "Code"
+                },
+                "codeSystem": {
+                  "type": "string",
+                  "title": "Codesystem"
+                },
+                "codeSystemVersion": {
+                  "type": "string",
+                  "title": "Codesystemversion"
+                },
+                "decode": {
+                  "type": "string",
+                  "title": "Decode"
+                },
+                "instanceType": {
+                  "type": "string",
+                  "enum": [
+                    "Code"
+                  ],
+                  "const": "Code",
+                  "title": "Instancetype"
+                }
+              },
+              "type": "object",
+              "maxLength": 2,
+              "required": [
+                "id",
+                "code",
+                "codeSystem",
+                "codeSystemVersion",
+                "decode",
+                "instanceType"
+              ],
+              "title": "Code"
             },
             "type": "array",
             "title": "Plannedsex",
@@ -5605,7 +6120,48 @@
           },
           "plannedSex": {
             "items": {
-              "$ref": "#/components/schemas/Code"
+              "properties": {
+                "id": {
+                  "type": "string",
+                  "minLength": 1,
+                  "title": "Id"
+                },
+                "code": {
+                  "type": "string",
+                  "title": "Code"
+                },
+                "codeSystem": {
+                  "type": "string",
+                  "title": "Codesystem"
+                },
+                "codeSystemVersion": {
+                  "type": "string",
+                  "title": "Codesystemversion"
+                },
+                "decode": {
+                  "type": "string",
+                  "title": "Decode"
+                },
+                "instanceType": {
+                  "type": "string",
+                  "enum": [
+                    "Code"
+                  ],
+                  "const": "Code",
+                  "title": "Instancetype"
+                }
+              },
+              "type": "object",
+              "maxLength": 2,
+              "required": [
+                "id",
+                "code",
+                "codeSystem",
+                "codeSystemVersion",
+                "decode",
+                "instanceType"
+              ],
+              "title": "Code"
             },
             "type": "array",
             "title": "Plannedsex",
@@ -5698,10 +6254,10 @@
             "title": "Description"
           },
           "language": {
-            "$ref": "#/components/schemas/Code"
+            "$ref": "#/components/schemas/model__code__Code__1"
           },
           "type": {
-            "$ref": "#/components/schemas/Code"
+            "$ref": "#/components/schemas/model__code__Code__1"
           },
           "templateName": {
             "type": "string",
@@ -5778,10 +6334,10 @@
             "title": "Description"
           },
           "language": {
-            "$ref": "#/components/schemas/Code"
+            "$ref": "#/components/schemas/model__code__Code__1"
           },
           "type": {
-            "$ref": "#/components/schemas/Code"
+            "$ref": "#/components/schemas/model__code__Code__1"
           },
           "templateName": {
             "type": "string",
@@ -5835,7 +6391,7 @@
             "title": "Version"
           },
           "status": {
-            "$ref": "#/components/schemas/Code"
+            "$ref": "#/components/schemas/model__code__Code__1"
           },
           "dateValues": {
             "items": {
@@ -5899,7 +6455,7 @@
             "title": "Version"
           },
           "status": {
-            "$ref": "#/components/schemas/Code"
+            "$ref": "#/components/schemas/model__code__Code__1"
           },
           "dateValues": {
             "items": {
@@ -5987,7 +6543,7 @@
           },
           "trialIntentTypes": {
             "items": {
-              "$ref": "#/components/schemas/Code"
+              "$ref": "#/components/schemas/model__code__Code__1"
             },
             "type": "array",
             "title": "Trialintenttypes",
@@ -5995,7 +6551,7 @@
           },
           "trialTypes": {
             "items": {
-              "$ref": "#/components/schemas/Code"
+              "$ref": "#/components/schemas/model__code__Code__1"
             },
             "type": "array",
             "title": "Trialtypes",
@@ -6003,7 +6559,7 @@
           },
           "therapeuticAreas": {
             "items": {
-              "$ref": "#/components/schemas/Code"
+              "$ref": "#/components/schemas/model__code__Code__1"
             },
             "type": "array",
             "title": "Therapeuticareas",
@@ -6011,14 +6567,14 @@
           },
           "characteristics": {
             "items": {
-              "$ref": "#/components/schemas/Code"
+              "$ref": "#/components/schemas/model__code__Code__1"
             },
             "type": "array",
             "title": "Characteristics",
             "default": []
           },
           "interventionModel": {
-            "$ref": "#/components/schemas/Code"
+            "$ref": "#/components/schemas/model__code__Code__1"
           },
           "encounters": {
             "items": {
@@ -6119,14 +6675,6 @@
             "title": "Indications",
             "default": []
           },
-          "maskingRoles": {
-            "items": {
-              "$ref": "#/components/schemas/Masking"
-            },
-            "type": "array",
-            "title": "Maskingroles",
-            "default": []
-          },
           "studyInterventions": {
             "items": {
               "$ref": "#/components/schemas/StudyIntervention-Input"
@@ -6186,14 +6734,6 @@
             },
             "type": "array",
             "title": "Conditions",
-            "default": []
-          },
-          "organizations": {
-            "items": {
-              "$ref": "#/components/schemas/ResearchOrganization-Input"
-            },
-            "type": "array",
-            "title": "Organizations",
             "default": []
           },
           "notes": {
@@ -6262,7 +6802,7 @@
           },
           "trialIntentTypes": {
             "items": {
-              "$ref": "#/components/schemas/Code"
+              "$ref": "#/components/schemas/model__code__Code__1"
             },
             "type": "array",
             "title": "Trialintenttypes",
@@ -6270,7 +6810,7 @@
           },
           "trialTypes": {
             "items": {
-              "$ref": "#/components/schemas/Code"
+              "$ref": "#/components/schemas/model__code__Code__1"
             },
             "type": "array",
             "title": "Trialtypes",
@@ -6278,7 +6818,7 @@
           },
           "therapeuticAreas": {
             "items": {
-              "$ref": "#/components/schemas/Code"
+              "$ref": "#/components/schemas/model__code__Code__1"
             },
             "type": "array",
             "title": "Therapeuticareas",
@@ -6286,14 +6826,14 @@
           },
           "characteristics": {
             "items": {
-              "$ref": "#/components/schemas/Code"
+              "$ref": "#/components/schemas/model__code__Code__1"
             },
             "type": "array",
             "title": "Characteristics",
             "default": []
           },
           "interventionModel": {
-            "$ref": "#/components/schemas/Code"
+            "$ref": "#/components/schemas/model__code__Code__1"
           },
           "encounters": {
             "items": {
@@ -6394,14 +6934,6 @@
             "title": "Indications",
             "default": []
           },
-          "maskingRoles": {
-            "items": {
-              "$ref": "#/components/schemas/Masking"
-            },
-            "type": "array",
-            "title": "Maskingroles",
-            "default": []
-          },
           "studyInterventions": {
             "items": {
               "$ref": "#/components/schemas/StudyIntervention-Output"
@@ -6461,14 +6993,6 @@
             },
             "type": "array",
             "title": "Conditions",
-            "default": []
-          },
-          "organizations": {
-            "items": {
-              "$ref": "#/components/schemas/ResearchOrganization-Output"
-            },
-            "type": "array",
-            "title": "Organizations",
             "default": []
           },
           "notes": {
@@ -6561,7 +7085,48 @@
           },
           "plannedSex": {
             "items": {
-              "$ref": "#/components/schemas/Code"
+              "properties": {
+                "id": {
+                  "type": "string",
+                  "minLength": 1,
+                  "title": "Id"
+                },
+                "code": {
+                  "type": "string",
+                  "title": "Code"
+                },
+                "codeSystem": {
+                  "type": "string",
+                  "title": "Codesystem"
+                },
+                "codeSystemVersion": {
+                  "type": "string",
+                  "title": "Codesystemversion"
+                },
+                "decode": {
+                  "type": "string",
+                  "title": "Decode"
+                },
+                "instanceType": {
+                  "type": "string",
+                  "enum": [
+                    "Code"
+                  ],
+                  "const": "Code",
+                  "title": "Instancetype"
+                }
+              },
+              "type": "object",
+              "maxLength": 2,
+              "required": [
+                "id",
+                "code",
+                "codeSystem",
+                "codeSystemVersion",
+                "decode",
+                "instanceType"
+              ],
+              "title": "Code"
             },
             "type": "array",
             "title": "Plannedsex",
@@ -6679,7 +7244,48 @@
           },
           "plannedSex": {
             "items": {
-              "$ref": "#/components/schemas/Code"
+              "properties": {
+                "id": {
+                  "type": "string",
+                  "minLength": 1,
+                  "title": "Id"
+                },
+                "code": {
+                  "type": "string",
+                  "title": "Code"
+                },
+                "codeSystem": {
+                  "type": "string",
+                  "title": "Codesystem"
+                },
+                "codeSystemVersion": {
+                  "type": "string",
+                  "title": "Codesystemversion"
+                },
+                "decode": {
+                  "type": "string",
+                  "title": "Decode"
+                },
+                "instanceType": {
+                  "type": "string",
+                  "enum": [
+                    "Code"
+                  ],
+                  "const": "Code",
+                  "title": "Instancetype"
+                }
+              },
+              "type": "object",
+              "maxLength": 2,
+              "required": [
+                "id",
+                "code",
+                "codeSystem",
+                "codeSystemVersion",
+                "decode",
+                "instanceType"
+              ],
+              "title": "Code"
             },
             "type": "array",
             "title": "Plannedsex",
@@ -6946,7 +7552,7 @@
             "title": "Description"
           },
           "type": {
-            "$ref": "#/components/schemas/Code"
+            "$ref": "#/components/schemas/model__code__Code__1"
           },
           "previousId": {
             "anyOf": [
@@ -7031,7 +7637,7 @@
             "title": "Description"
           },
           "type": {
-            "$ref": "#/components/schemas/Code"
+            "$ref": "#/components/schemas/model__code__Code__1"
           },
           "previousId": {
             "anyOf": [
@@ -7081,19 +7687,20 @@
         ],
         "title": "StudyEpoch"
       },
-      "StudyIdentifier-Input": {
+      "StudyIdentifier": {
         "properties": {
           "id": {
             "type": "string",
             "minLength": 1,
             "title": "Id"
           },
-          "studyIdentifier": {
+          "text": {
             "type": "string",
-            "title": "Studyidentifier"
+            "title": "Text"
           },
-          "studyIdentifierScope": {
-            "$ref": "#/components/schemas/Organization-Input"
+          "scopeId": {
+            "type": "string",
+            "title": "Scopeid"
           },
           "instanceType": {
             "type": "string",
@@ -7107,40 +7714,8 @@
         "type": "object",
         "required": [
           "id",
-          "studyIdentifier",
-          "studyIdentifierScope",
-          "instanceType"
-        ],
-        "title": "StudyIdentifier"
-      },
-      "StudyIdentifier-Output": {
-        "properties": {
-          "id": {
-            "type": "string",
-            "minLength": 1,
-            "title": "Id"
-          },
-          "studyIdentifier": {
-            "type": "string",
-            "title": "Studyidentifier"
-          },
-          "studyIdentifierScope": {
-            "$ref": "#/components/schemas/Organization-Output"
-          },
-          "instanceType": {
-            "type": "string",
-            "enum": [
-              "StudyIdentifier"
-            ],
-            "const": "StudyIdentifier",
-            "title": "Instancetype"
-          }
-        },
-        "type": "object",
-        "required": [
-          "id",
-          "studyIdentifier",
-          "studyIdentifierScope",
+          "text",
+          "scopeId",
           "instanceType"
         ],
         "title": "StudyIdentifier"
@@ -7180,10 +7755,10 @@
             "title": "Description"
           },
           "role": {
-            "$ref": "#/components/schemas/Code"
+            "$ref": "#/components/schemas/model__code__Code__1"
           },
           "type": {
-            "$ref": "#/components/schemas/Code"
+            "$ref": "#/components/schemas/model__code__Code__1"
           },
           "minimumResponseDuration": {
             "anyOf": [
@@ -7197,7 +7772,7 @@
           },
           "codes": {
             "items": {
-              "$ref": "#/components/schemas/Code"
+              "$ref": "#/components/schemas/model__code__Code__1"
             },
             "type": "array",
             "title": "Codes",
@@ -7205,24 +7780,14 @@
           },
           "administrations": {
             "items": {
-              "$ref": "#/components/schemas/AgentAdministration-Input"
+              "$ref": "#/components/schemas/Administration-Input"
             },
             "type": "array",
             "title": "Administrations",
             "default": []
           },
           "productDesignation": {
-            "$ref": "#/components/schemas/Code"
-          },
-          "pharmacologicClass": {
-            "anyOf": [
-              {
-                "$ref": "#/components/schemas/Code"
-              },
-              {
-                "type": "null"
-              }
-            ]
+            "$ref": "#/components/schemas/model__code__Code__1"
           },
           "notes": {
             "items": {
@@ -7287,10 +7852,10 @@
             "title": "Description"
           },
           "role": {
-            "$ref": "#/components/schemas/Code"
+            "$ref": "#/components/schemas/model__code__Code__1"
           },
           "type": {
-            "$ref": "#/components/schemas/Code"
+            "$ref": "#/components/schemas/model__code__Code__1"
           },
           "minimumResponseDuration": {
             "anyOf": [
@@ -7304,7 +7869,7 @@
           },
           "codes": {
             "items": {
-              "$ref": "#/components/schemas/Code"
+              "$ref": "#/components/schemas/model__code__Code__1"
             },
             "type": "array",
             "title": "Codes",
@@ -7312,24 +7877,14 @@
           },
           "administrations": {
             "items": {
-              "$ref": "#/components/schemas/AgentAdministration-Output"
+              "$ref": "#/components/schemas/Administration-Output"
             },
             "type": "array",
             "title": "Administrations",
             "default": []
           },
           "productDesignation": {
-            "$ref": "#/components/schemas/Code"
-          },
-          "pharmacologicClass": {
-            "anyOf": [
-              {
-                "$ref": "#/components/schemas/Code"
-              },
-              {
-                "type": "null"
-              }
-            ]
+            "$ref": "#/components/schemas/model__code__Code__1"
           },
           "notes": {
             "items": {
@@ -7359,7 +7914,7 @@
         ],
         "title": "StudyIntervention"
       },
-      "StudySite-Input": {
+      "StudyRole": {
         "properties": {
           "id": {
             "type": "string",
@@ -7393,10 +7948,37 @@
             ],
             "title": "Description"
           },
-          "currentEnrollment": {
+          "code": {
+            "$ref": "#/components/schemas/model__code__Code__1"
+          },
+          "appliesToIds": {
+            "items": {
+              "type": "string"
+            },
+            "type": "array",
+            "title": "Appliestoids",
+            "default": []
+          },
+          "assignedPersons": {
+            "items": {
+              "$ref": "#/components/schemas/AssignedPerson"
+            },
+            "type": "array",
+            "title": "Assignedpersons",
+            "default": []
+          },
+          "organizationIds": {
+            "items": {
+              "type": "string"
+            },
+            "type": "array",
+            "title": "Organizationids",
+            "default": []
+          },
+          "masking": {
             "anyOf": [
               {
-                "$ref": "#/components/schemas/SubjectEnrollment-Input"
+                "$ref": "#/components/schemas/Masking"
               },
               {
                 "type": "null"
@@ -7406,9 +7988,9 @@
           "instanceType": {
             "type": "string",
             "enum": [
-              "StudySite"
+              "StudyRole"
             ],
-            "const": "StudySite",
+            "const": "StudyRole",
             "title": "Instancetype"
           }
         },
@@ -7416,11 +7998,12 @@
         "required": [
           "id",
           "name",
+          "code",
           "instanceType"
         ],
-        "title": "StudySite"
+        "title": "StudyRole"
       },
-      "StudySite-Output": {
+      "StudySite": {
         "properties": {
           "id": {
             "type": "string",
@@ -7453,16 +8036,6 @@
               }
             ],
             "title": "Description"
-          },
-          "currentEnrollment": {
-            "anyOf": [
-              {
-                "$ref": "#/components/schemas/SubjectEnrollment-Output"
-              },
-              {
-                "type": "null"
-              }
-            ]
           },
           "instanceType": {
             "type": "string",
@@ -7493,7 +8066,7 @@
             "title": "Text"
           },
           "type": {
-            "$ref": "#/components/schemas/Code"
+            "$ref": "#/components/schemas/model__code__Code__1"
           },
           "instanceType": {
             "type": "string",
@@ -7531,7 +8104,7 @@
           "studyType": {
             "anyOf": [
               {
-                "$ref": "#/components/schemas/Code"
+                "$ref": "#/components/schemas/model__code__Code__1"
               },
               {
                 "type": "null"
@@ -7574,7 +8147,7 @@
           },
           "businessTherapeuticAreas": {
             "items": {
-              "$ref": "#/components/schemas/Code"
+              "$ref": "#/components/schemas/model__code__Code__1"
             },
             "type": "array",
             "title": "Businesstherapeuticareas",
@@ -7582,10 +8155,17 @@
           },
           "studyIdentifiers": {
             "items": {
-              "$ref": "#/components/schemas/StudyIdentifier-Input"
+              "$ref": "#/components/schemas/StudyIdentifier"
             },
             "type": "array",
-            "title": "Studyidentifiers",
+            "title": "Studyidentifiers"
+          },
+          "referenceIdentifiers": {
+            "items": {
+              "$ref": "#/components/schemas/ReferenceIdentifier"
+            },
+            "type": "array",
+            "title": "Referenceidentifiers",
             "default": []
           },
           "studyDesigns": {
@@ -7626,6 +8206,30 @@
             "title": "Abbreviations",
             "default": []
           },
+          "roles": {
+            "items": {
+              "$ref": "#/components/schemas/StudyRole"
+            },
+            "type": "array",
+            "title": "Roles",
+            "default": []
+          },
+          "organizations": {
+            "items": {
+              "$ref": "#/components/schemas/Organization-Input"
+            },
+            "type": "array",
+            "title": "Organizations",
+            "default": []
+          },
+          "administrableProducts": {
+            "items": {
+              "$ref": "#/components/schemas/AdministrableProduct-Input"
+            },
+            "type": "array",
+            "title": "Administrableproducts",
+            "default": []
+          },
           "notes": {
             "items": {
               "$ref": "#/components/schemas/CommentAnnotation"
@@ -7648,6 +8252,7 @@
           "id",
           "versionIdentifier",
           "rationale",
+          "studyIdentifiers",
           "titles",
           "criteria",
           "instanceType"
@@ -7672,7 +8277,7 @@
           "studyType": {
             "anyOf": [
               {
-                "$ref": "#/components/schemas/Code"
+                "$ref": "#/components/schemas/model__code__Code__1"
               },
               {
                 "type": "null"
@@ -7715,7 +8320,7 @@
           },
           "businessTherapeuticAreas": {
             "items": {
-              "$ref": "#/components/schemas/Code"
+              "$ref": "#/components/schemas/model__code__Code__1"
             },
             "type": "array",
             "title": "Businesstherapeuticareas",
@@ -7723,10 +8328,17 @@
           },
           "studyIdentifiers": {
             "items": {
-              "$ref": "#/components/schemas/StudyIdentifier-Output"
+              "$ref": "#/components/schemas/StudyIdentifier"
             },
             "type": "array",
-            "title": "Studyidentifiers",
+            "title": "Studyidentifiers"
+          },
+          "referenceIdentifiers": {
+            "items": {
+              "$ref": "#/components/schemas/ReferenceIdentifier"
+            },
+            "type": "array",
+            "title": "Referenceidentifiers",
             "default": []
           },
           "studyDesigns": {
@@ -7767,6 +8379,30 @@
             "title": "Abbreviations",
             "default": []
           },
+          "roles": {
+            "items": {
+              "$ref": "#/components/schemas/StudyRole"
+            },
+            "type": "array",
+            "title": "Roles",
+            "default": []
+          },
+          "organizations": {
+            "items": {
+              "$ref": "#/components/schemas/Organization-Output"
+            },
+            "type": "array",
+            "title": "Organizations",
+            "default": []
+          },
+          "administrableProducts": {
+            "items": {
+              "$ref": "#/components/schemas/AdministrableProduct-Output"
+            },
+            "type": "array",
+            "title": "Administrableproducts",
+            "default": []
+          },
           "notes": {
             "items": {
               "$ref": "#/components/schemas/CommentAnnotation"
@@ -7789,6 +8425,7 @@
           "id",
           "versionIdentifier",
           "rationale",
+          "studyIdentifiers",
           "titles",
           "criteria",
           "instanceType"
@@ -7803,7 +8440,7 @@
             "title": "Id"
           },
           "type": {
-            "$ref": "#/components/schemas/Code"
+            "$ref": "#/components/schemas/model__code__Code__1"
           },
           "code": {
             "anyOf": [
@@ -7825,6 +8462,16 @@
           },
           "quantity": {
             "$ref": "#/components/schemas/Quantity-Input"
+          },
+          "appliesTo": {
+            "anyOf": [
+              {
+                "$ref": "#/components/schemas/StudySite"
+              },
+              {
+                "type": "null"
+              }
+            ]
           }
         },
         "type": "object",
@@ -7844,7 +8491,7 @@
             "title": "Id"
           },
           "type": {
-            "$ref": "#/components/schemas/Code"
+            "$ref": "#/components/schemas/model__code__Code__1"
           },
           "code": {
             "anyOf": [
@@ -7866,6 +8513,16 @@
           },
           "quantity": {
             "$ref": "#/components/schemas/Quantity-Output"
+          },
+          "appliesTo": {
+            "anyOf": [
+              {
+                "$ref": "#/components/schemas/StudySite"
+              },
+              {
+                "type": "null"
+              }
+            ]
           }
         },
         "type": "object",
@@ -7876,6 +8533,160 @@
           "quantity"
         ],
         "title": "SubjectEnrollment"
+      },
+      "Substance-Input": {
+        "properties": {
+          "id": {
+            "type": "string",
+            "minLength": 1,
+            "title": "Id"
+          },
+          "name": {
+            "type": "string",
+            "minLength": 1,
+            "title": "Name"
+          },
+          "label": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Label"
+          },
+          "description": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Description"
+          },
+          "codes": {
+            "items": {
+              "$ref": "#/components/schemas/model__code__Code__1"
+            },
+            "type": "array",
+            "title": "Codes",
+            "default": []
+          },
+          "strengths": {
+            "items": {
+              "$ref": "#/components/schemas/Strength-Input"
+            },
+            "type": "array",
+            "title": "Strengths"
+          },
+          "referenceSubstance": {
+            "anyOf": [
+              {
+                "$ref": "#/components/schemas/Substance-Input"
+              },
+              {
+                "type": "null"
+              }
+            ]
+          },
+          "instanceType": {
+            "type": "string",
+            "enum": [
+              "Substance"
+            ],
+            "const": "Substance",
+            "title": "Instancetype"
+          }
+        },
+        "type": "object",
+        "required": [
+          "id",
+          "name",
+          "strengths",
+          "instanceType"
+        ],
+        "title": "Substance"
+      },
+      "Substance-Output": {
+        "properties": {
+          "id": {
+            "type": "string",
+            "minLength": 1,
+            "title": "Id"
+          },
+          "name": {
+            "type": "string",
+            "minLength": 1,
+            "title": "Name"
+          },
+          "label": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Label"
+          },
+          "description": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Description"
+          },
+          "codes": {
+            "items": {
+              "$ref": "#/components/schemas/model__code__Code__1"
+            },
+            "type": "array",
+            "title": "Codes",
+            "default": []
+          },
+          "strengths": {
+            "items": {
+              "$ref": "#/components/schemas/Strength-Output"
+            },
+            "type": "array",
+            "title": "Strengths"
+          },
+          "referenceSubstance": {
+            "anyOf": [
+              {
+                "$ref": "#/components/schemas/Substance-Output"
+              },
+              {
+                "type": "null"
+              }
+            ]
+          },
+          "instanceType": {
+            "type": "string",
+            "enum": [
+              "Substance"
+            ],
+            "const": "Substance",
+            "title": "Instancetype"
+          }
+        },
+        "type": "object",
+        "required": [
+          "id",
+          "name",
+          "strengths",
+          "instanceType"
+        ],
+        "title": "Substance"
       },
       "SyntaxTemplateDictionary": {
         "properties": {
@@ -7971,7 +8782,7 @@
             "title": "Description"
           },
           "type": {
-            "$ref": "#/components/schemas/Code"
+            "$ref": "#/components/schemas/model__code__Code__1"
           },
           "value": {
             "type": "string",
@@ -7982,7 +8793,7 @@
             "title": "Valuelabel"
           },
           "relativeToFrom": {
-            "$ref": "#/components/schemas/Code"
+            "$ref": "#/components/schemas/model__code__Code__1"
           },
           "relativeFromScheduledInstanceId": {
             "type": "string",
@@ -8220,6 +9031,93 @@
           "usdmVersion"
         ],
         "title": "Wrapper"
+      },
+      "model__code__Code__1": {
+        "properties": {
+          "id": {
+            "type": "string",
+            "minLength": 1,
+            "title": "Id"
+          },
+          "code": {
+            "type": "string",
+            "title": "Code"
+          },
+          "codeSystem": {
+            "type": "string",
+            "title": "Codesystem"
+          },
+          "codeSystemVersion": {
+            "type": "string",
+            "title": "Codesystemversion"
+          },
+          "decode": {
+            "type": "string",
+            "title": "Decode"
+          },
+          "instanceType": {
+            "type": "string",
+            "enum": [
+              "Code"
+            ],
+            "const": "Code",
+            "title": "Instancetype"
+          }
+        },
+        "type": "object",
+        "required": [
+          "id",
+          "code",
+          "codeSystem",
+          "codeSystemVersion",
+          "decode",
+          "instanceType"
+        ],
+        "title": "Code"
+      },
+      "model__code__Code__2": {
+        "properties": {
+          "id": {
+            "type": "string",
+            "minLength": 1,
+            "title": "Id"
+          },
+          "code": {
+            "type": "string",
+            "title": "Code"
+          },
+          "codeSystem": {
+            "type": "string",
+            "title": "Codesystem"
+          },
+          "codeSystemVersion": {
+            "type": "string",
+            "title": "Codesystemversion"
+          },
+          "decode": {
+            "type": "string",
+            "title": "Decode"
+          },
+          "instanceType": {
+            "type": "string",
+            "enum": [
+              "Code"
+            ],
+            "const": "Code",
+            "title": "Instancetype"
+          }
+        },
+        "type": "object",
+        "maxLength": 2,
+        "required": [
+          "id",
+          "code",
+          "codeSystem",
+          "codeSystemVersion",
+          "decode",
+          "instanceType"
+        ],
+        "title": "Code"
       }
     }
   },
