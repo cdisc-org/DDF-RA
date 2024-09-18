@@ -180,15 +180,11 @@ Address:
         denoting the physical address of the person, business, building, or organization.
       Relationship Type: Value
       Model Name: text
-    line:
+    lines*:
       Type:
       - $ref: '#/string'
-      NCI C-Code: C25690
-      Preferred Term: Address Line
-      Definition: The street name and number, building number, apartment or unit number,
-        or post office box number where an entity is physically located.
-      Relationship Type: Value
-      Model Name: line
+      Relationship Type: UNKNOWN
+      Model Name: lines
     district:
       Type:
       - $ref: '#/string'
@@ -237,6 +233,10 @@ Address:
       Codelist Ref: (Point out to ISO 3166-1 Alpha-3 Country code)
       Relationship Type: Value
       Model Name: country
+    line:
+      Type:
+      - $ref: UNKNOWN
+      Relationship Type: Value
     instanceType:
       Type:
       - $ref: '#/string'
@@ -1796,8 +1796,6 @@ GeographicScope:
   NCI C-Code: C207591
   Preferred Term: Geographic Scope
   Definition: The extent or range related to the physical location of an entity.
-  Sub Classes:
-  - $ref: '#/SubjectEnrollment'
   Modifier: Concrete
   Attributes:
     id:
@@ -3315,15 +3313,30 @@ StudyAmendment:
         in the current version of the protocol.
       Relationship Type: Value
       Model Name: summary
-    substantialImpact:
+    notes*:
       Type:
-      - $ref: '#/Boolean'
-      NCI C-Code: C207538
-      Preferred Term: Study Amendment Substantial Impact Indicator
-      Definition: An indication as to whether the amendment is likely to have a substantial
-        impact on the safety or rights of study subjects/participants.
-      Relationship Type: Value
-      Model Name: substantialImpact
+      - $ref: '#/CommentAnnotation'
+      Cardinality: 0..*
+      Relationship Type: UNKNOWN
+      Model Name: notes
+    geographicScopes*:
+      Type:
+      - $ref: '#/GeographicScope'
+      Cardinality: 1..*
+      Relationship Type: UNKNOWN
+      Model Name: geographicScopes
+    dateValues*:
+      Type:
+      - $ref: '#/GovernanceDate'
+      Cardinality: 0..*
+      Relationship Type: UNKNOWN
+      Model Name: dateValues
+    substantialImpacts*:
+      Type:
+      - $ref: '#/StudyAmendmentImpact'
+      Cardinality: 1..*
+      Relationship Type: UNKNOWN
+      Model Name: substantialImpacts
     enrollments:
       Type:
       - $ref: '#/SubjectEnrollment'
@@ -3342,6 +3355,12 @@ StudyAmendment:
         amendment.
       Relationship Type: Value
       Model Name: secondaryReasons
+    changes*:
+      Type:
+      - $ref: '#/StudyAmendmentChange'
+      Cardinality: 1..*
+      Relationship Type: UNKNOWN
+      Model Name: changes
     previousId:
       Type:
       - $ref: '#/StudyAmendment'
@@ -3358,11 +3377,71 @@ StudyAmendment:
         classes which identifies the primary reason for issuing the study amendment.
       Relationship Type: Value
       Model Name: primaryReason
+    substantialImpact:
+      Type:
+      - $ref: UNKNOWN
+      Relationship Type: Value
     instanceType:
       Type:
       - $ref: '#/string'
       Cardinality: 0..1
       Relationship Type: Value
+StudyAmendmentChange:
+  Modifier: Abstract
+  Attributes:
+    id:
+      Type:
+      - $ref: '#/string'
+      Model Name: id
+    name:
+      Type:
+      - $ref: '#/string'
+      Model Name: name
+    description:
+      Type:
+      - $ref: '#/string'
+      Model Name: description
+    label:
+      Type:
+      - $ref: '#/string'
+      Model Name: label
+    rationale:
+      Type:
+      - $ref: '#/string'
+      Model Name: rationale
+    sectionNumber:
+      Type:
+      - $ref: '#/string'
+      Model Name: sectionNumber
+    sectionTitle:
+      Type:
+      - $ref: '#/string'
+      Model Name: sectionTitle
+StudyAmendmentImpact:
+  Modifier: Abstract
+  Attributes:
+    id:
+      Type:
+      - $ref: '#/string'
+      Model Name: id
+    rationale:
+      Type:
+      - $ref: '#/string'
+      Model Name: rationale
+    substantial:
+      Type:
+      - $ref: '#/Boolean'
+      Model Name: substantial
+    type:
+      Type:
+      - $ref: '#/Code'
+      Cardinality: '1'
+      Model Name: type
+    notes:
+      Type:
+      - $ref: '#/CommentAnnotation'
+      Cardinality: 0..*
+      Model Name: notes
 StudyAmendmentReason:
   NCI C-Code: C207457
   Preferred Term: Study Amendment Reason
@@ -4672,6 +4751,12 @@ StudySite:
       Definition: The short descriptive designation for the study site.
       Relationship Type: Value
       Model Name: label
+    country*:
+      Type:
+      - $ref: '#/Code'
+      Cardinality: '1'
+      Relationship Type: UNKNOWN
+      Model Name: country
     instanceType:
       Type:
       - $ref: '#/string'
@@ -4892,8 +4977,6 @@ SubjectEnrollment:
   Definition: The act of enrolling subjects into a study. The subject will have met
     the inclusion/exclusion criteria to participate in the trial and will have signed
     an informed consent form. (CDISC Glossary)
-  Super Classes:
-  - $ref: '#/GeographicScope'
   Modifier: Concrete
   Attributes:
     id:
@@ -4901,31 +4984,31 @@ SubjectEnrollment:
       - $ref: '#/string'
       Relationship Type: Value
       Model Name: id
-      Inherited From:
-        $ref: '#/GeographicScope'
-    code:
+    name*:
       Type:
-      - $ref: '#/AliasCode'
-      NCI C-Code: C207571
-      Cardinality: 0..1
-      Preferred Term: Subject Enrollment Code
-      Definition: A symbol or combination of symbols which is assigned to the subject
-        enrollment.
-      Relationship Type: Value
-      Model Name: code
-      Inherited From:
-        $ref: '#/GeographicScope'
-    type:
+      - $ref: '#/string'
+      Relationship Type: UNKNOWN
+      Model Name: name
+    description*:
       Type:
-      - $ref: '#/Code'
-      NCI C-Code: C207574
-      Cardinality: '1'
-      Preferred Term: Subject Enrollment Type
-      Definition: A characterization or classification of the subject enrollment.
+      - $ref: '#/string'
+      Relationship Type: UNKNOWN
+      Model Name: description
+    label*:
+      Type:
+      - $ref: '#/string'
+      Relationship Type: UNKNOWN
+      Model Name: label
+    appliesTo:
+      Type:
+      - $ref: '#/GeographicScope'
+      - $ref: '#/StudyCohort'
+      - $ref: '#/StudySite'
+      Cardinality: 0..*
+      Definition: A USDM relationship between the SubjectEnrollment and StudySite
+        classes which identifies the study site that applies to the subject enrollments.
       Relationship Type: Value
-      Model Name: type
-      Inherited From:
-        $ref: '#/GeographicScope'
+      Model Name: appliesTo
     quantity:
       Type:
       - $ref: '#/Quantity'
@@ -4935,14 +5018,14 @@ SubjectEnrollment:
       Definition: The value representing the number of individuals enrolled in a study.
       Relationship Type: Value
       Model Name: quantity
-    appliesTo:
+    type:
       Type:
-      - $ref: '#/StudySite'
-      Cardinality: 0..1
-      Definition: A USDM relationship between the SubjectEnrollment and StudySite
-        classes which identifies the study site that applies to the subject enrollments.
+      - $ref: UNKNOWN
       Relationship Type: Value
-      Model Name: appliesTo
+    code:
+      Type:
+      - $ref: UNKNOWN
+      Relationship Type: Value
     instanceType:
       Type:
       - $ref: '#/string'

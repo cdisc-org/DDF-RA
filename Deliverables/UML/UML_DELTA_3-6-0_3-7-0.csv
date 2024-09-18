@@ -1,0 +1,30 @@
+status,class_name,property_name,data_type
+Class - NEW,StudyAmendmentChange,,
+,,id,string
+,,name,string
+,,description,string
+,,label,string
+,,rationale,string
+,,sectionNumber,string
+,,sectionTitle,string
+Class - NEW,StudyAmendmentImpact,,
+,,id,string
+,,rationale,string
+,,substantial,Boolean
+,,type,Code
+,,notes,CommentAnnotation
+,,,
+Property - NEW,Address,lines,string
+Property - NEW,SubjectEnrollment,description,string
+Property - NEW,SubjectEnrollment,label,string
+Property - NEW,SubjectEnrollment,name,string
+Property - NEW,StudyAmendment,changes,StudyAmendmentChange
+Property - NEW,StudyAmendment,dateValues,GovernanceDate
+Property - NEW,StudyAmendment,geographicScopes,GeographicScope
+Property - NEW,StudyAmendment,notes,CommentAnnotation
+Property - NEW,StudyAmendment,substantialImpacts,StudyAmendmentImpact
+Property - NEW,StudySite,country,Code
+Property - DELETED,Address,line,string
+Property - DELETED,SubjectEnrollment,code,AliasCode
+Property - DELETED,SubjectEnrollment,type,Code
+Property - DELETED,StudyAmendment,substantialImpact,Boolean
