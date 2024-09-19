@@ -180,10 +180,10 @@ Address:
         denoting the physical address of the person, business, building, or organization.
       Relationship Type: Value
       Model Name: text
-    lines*:
+    lines:
       Type:
       - $ref: '#/string'
-      Relationship Type: UNKNOWN
+      Relationship Type: Value
       Model Name: lines
     district:
       Type:
@@ -233,10 +233,6 @@ Address:
       Codelist Ref: (Point out to ISO 3166-1 Alpha-3 Country code)
       Relationship Type: Value
       Model Name: country
-    line:
-      Type:
-      - $ref: UNKNOWN
-      Relationship Type: Value
     instanceType:
       Type:
       - $ref: '#/string'
