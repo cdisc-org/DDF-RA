@@ -3331,12 +3331,12 @@ StudyAmendment:
       Cardinality: 0..*
       Relationship Type: UNKNOWN
       Model Name: dateValues
-    substantialImpacts*:
+    impacts*:
       Type:
       - $ref: '#/StudyAmendmentImpact'
-      Cardinality: 1..*
+      Cardinality: 0..*
       Relationship Type: UNKNOWN
-      Model Name: substantialImpacts
+      Model Name: impacts
     enrollments:
       Type:
       - $ref: '#/SubjectEnrollment'
@@ -5004,7 +5004,7 @@ SubjectEnrollment:
       - $ref: '#/GeographicScope'
       - $ref: '#/StudyCohort'
       - $ref: '#/StudySite'
-      Cardinality: 0..*
+      Cardinality: 1..*
       Definition: A USDM relationship between the SubjectEnrollment and StudySite
         classes which identifies the study site that applies to the subject enrollments.
       Relationship Type: Value
