@@ -3,7 +3,7 @@ info:
   title: DDF USDM API
   description: A simple TransCelerate Digital Data Flow (DDF) Study Definitions Repository
     API.
-  version: 3.6.0
+  version: 3.7.0
 paths:
   /v3/studyDefinitions:
     post:
@@ -453,11 +453,12 @@ components:
           - type: string
           - type: 'null'
           title: Text
-        line:
-          anyOf:
-          - type: string
-          - type: 'null'
-          title: Line
+        lines:
+          items:
+            type: string
+          type: array
+          title: Lines
+          default: []
         city:
           anyOf:
           - type: string
