@@ -3336,7 +3336,7 @@ StudyAmendment:
     enrollments:
       Type:
       - $ref: '#/SubjectEnrollment'
-      Cardinality: 1..*
+      Cardinality: 0..*
       Definition: A USDM relationship between the StudyAmendment and SubjectEnrollment
         classes which provides the set of subject enrollments associated with the
         study amendment.
@@ -5000,7 +5000,7 @@ SubjectEnrollment:
       - $ref: '#/GeographicScope'
       - $ref: '#/StudyCohort'
       - $ref: '#/StudySite'
-      Cardinality: 1..*
+      Cardinality: 0..1
       Definition: A USDM relationship between the SubjectEnrollment and StudySite
         classes which identifies the study site that applies to the subject enrollments.
       Relationship Type: Value
