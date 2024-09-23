@@ -3113,7 +3113,7 @@
 				</ownedAttribute>
 				<ownedAttribute xmi:type="uml:Property" xmi:id="EAID_dstFF239E_3D2D_4d77_BEAB_192FA3BBD84B" association="EAID_18FF239E_3D2D_4d77_BEAB_192FA3BBD84B">
 					<type xmi:idref="EAID_07048DE5_ACB3_4d8e_B513_2FB7761989F4"/>
-					<lowerValue xmi:type="uml:LiteralInteger" xmi:id="EAID_LI000891__3D2D_4d77_BEAB_192FA3BBD84B" value="1"/>
+					<lowerValue xmi:type="uml:LiteralInteger" xmi:id="EAID_LI000891__3D2D_4d77_BEAB_192FA3BBD84B" value="0"/>
 					<upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="EAID_LI000892__3D2D_4d77_BEAB_192FA3BBD84B" value="*"/>
 				</ownedAttribute>
 				<ownedAttribute xmi:type="uml:Property" xmi:id="EAID_dstB9EC1D_17DC_4763_82B2_A11BE9FB499C" association="EAID_5AB9EC1D_17DC_4763_82B2_A11BE9FB499C">
@@ -4176,8 +4176,8 @@
 				</ownedAttribute>
 				<ownedAttribute xmi:type="uml:Property" xmi:id="EAID_dst2A36F6_0759_455f_A4B0_885AD11DA35B" association="EAID_F42A36F6_0759_455f_A4B0_885AD11DA35B">
 					<type xmi:idref="EAID_2A9F0223_343C_476f_BC2C_B38152077680"/>
-					<lowerValue xmi:type="uml:LiteralInteger" xmi:id="EAID_LI001253__0759_455f_A4B0_885AD11DA35B" value="1"/>
-					<upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="EAID_LI001254__0759_455f_A4B0_885AD11DA35B" value="*"/>
+					<lowerValue xmi:type="uml:LiteralInteger" xmi:id="EAID_LI001253__0759_455f_A4B0_885AD11DA35B" value="0"/>
+					<upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="EAID_LI001254__0759_455f_A4B0_885AD11DA35B" value="1"/>
 				</ownedAttribute>
 			</packagedElement>
 			<packagedElement xmi:type="uml:Class" xmi:id="EAID_1B96C4C6_10D2_4cc6_A50F_824CA5B89A7E" name="Substance">
@@ -6948,7 +6948,7 @@
 				<ownedElement xmi:type="umldi:UMLNameLabel" xmi:id="EAID_NL000000_59E0_444e_BEAB_192FA3BBD84B" text="enrollments">
 					<bounds xmi:type="dc:bounds" xmi:id="EAID_DBNL000000_59E0_444e_BEAB_192FA3BBD84B" x="2528" y="1575" width="48" height="14"/>
 				</ownedElement>
-				<ownedElement xmi:type="umldi:UMLMultiplicityLabel" xmi:id="EAID_TML000000_59E0_444e_BEAB_192FA3BBD84B" text="1..*" modelElement="EAID_dstFF239E_3D2D_4d77_BEAB_192FA3BBD84B">
+				<ownedElement xmi:type="umldi:UMLMultiplicityLabel" xmi:id="EAID_TML000000_59E0_444e_BEAB_192FA3BBD84B" text="0..*" modelElement="EAID_dstFF239E_3D2D_4d77_BEAB_192FA3BBD84B">
 					<bounds xmi:type="dc:bounds" xmi:id="EAID_DBTML000000_59E0_444e_BEAB_192FA3BBD84B" x="2738" y="1545" width="17" height="14"/>
 				</ownedElement>
 				<waypoint xmi:type="dc:waypoint" xmi:id="EAID_WP000000_59E0_444e_BEAB_192FA3BBD84B" x="2567" y="1616"/>
@@ -7127,7 +7127,7 @@
 				<ownedElement xmi:type="umldi:UMLNameLabel" xmi:id="EAID_NL000000_59E0_444e_A4B0_885AD11DA35B" text="appliesTo">
 					<bounds xmi:type="dc:bounds" xmi:id="EAID_DBNL000000_59E0_444e_A4B0_885AD11DA35B" x="2606" y="1492" width="39" height="14"/>
 				</ownedElement>
-				<ownedElement xmi:type="umldi:UMLMultiplicityLabel" xmi:id="EAID_TML000000_59E0_444e_A4B0_885AD11DA35B" text="1..*" modelElement="EAID_dst2A36F6_0759_455f_A4B0_885AD11DA35B">
+				<ownedElement xmi:type="umldi:UMLMultiplicityLabel" xmi:id="EAID_TML000000_59E0_444e_A4B0_885AD11DA35B" text="0..1" modelElement="EAID_dst2A36F6_0759_455f_A4B0_885AD11DA35B">
 					<bounds xmi:type="dc:bounds" xmi:id="EAID_DBTML000000_59E0_444e_A4B0_885AD11DA35B" x="2270" y="1539" width="17" height="14"/>
 				</ownedElement>
 				<waypoint xmi:type="dc:waypoint" xmi:id="EAID_WP000000_59E0_444e_A4B0_885AD11DA35B" x="2672" y="1513"/>
@@ -9018,7 +9018,7 @@
 				<ownedElement xmi:type="umldi:UMLNameLabel" xmi:id="EAID_NL000000_D4D2_4c01_BEAB_192FA3BBD84B" text="enrollments">
 					<bounds xmi:type="dc:bounds" xmi:id="EAID_DBNL000000_D4D2_4c01_BEAB_192FA3BBD84B" x="519" y="524" width="48" height="14"/>
 				</ownedElement>
-				<ownedElement xmi:type="umldi:UMLMultiplicityLabel" xmi:id="EAID_TML000000_D4D2_4c01_BEAB_192FA3BBD84B" text="1..*" modelElement="EAID_dstFF239E_3D2D_4d77_BEAB_192FA3BBD84B">
+				<ownedElement xmi:type="umldi:UMLMultiplicityLabel" xmi:id="EAID_TML000000_D4D2_4c01_BEAB_192FA3BBD84B" text="0..*" modelElement="EAID_dstFF239E_3D2D_4d77_BEAB_192FA3BBD84B">
 					<bounds xmi:type="dc:bounds" xmi:id="EAID_DBTML000000_D4D2_4c01_BEAB_192FA3BBD84B" x="884" y="557" width="17" height="14"/>
 				</ownedElement>
 				<waypoint xmi:type="dc:waypoint" xmi:id="EAID_WP000000_D4D2_4c01_BEAB_192FA3BBD84B" x="525" y="546"/>
@@ -9467,7 +9467,7 @@
 				<ownedElement xmi:type="umldi:UMLNameLabel" xmi:id="EAID_NL000000_D4D2_4c01_A4B0_885AD11DA35B" text="appliesTo">
 					<bounds xmi:type="dc:bounds" xmi:id="EAID_DBNL000000_D4D2_4c01_A4B0_885AD11DA35B" x="757" y="598" width="39" height="14"/>
 				</ownedElement>
-				<ownedElement xmi:type="umldi:UMLMultiplicityLabel" xmi:id="EAID_TML000000_D4D2_4c01_A4B0_885AD11DA35B" text="1..*" modelElement="EAID_dst2A36F6_0759_455f_A4B0_885AD11DA35B">
+				<ownedElement xmi:type="umldi:UMLMultiplicityLabel" xmi:id="EAID_TML000000_D4D2_4c01_A4B0_885AD11DA35B" text="0..1" modelElement="EAID_dst2A36F6_0759_455f_A4B0_885AD11DA35B">
 					<bounds xmi:type="dc:bounds" xmi:id="EAID_DBTML000000_D4D2_4c01_A4B0_885AD11DA35B" x="708" y="411" width="17" height="14"/>
 				</ownedElement>
 				<waypoint xmi:type="dc:waypoint" xmi:id="EAID_WP000000_D4D2_4c01_A4B0_885AD11DA35B" x="811" y="617"/>
@@ -11530,7 +11530,7 @@
 				<ownedElement xmi:type="umldi:UMLNameLabel" xmi:id="EAID_NL000000_2E12_4b1c_A4B0_885AD11DA35B" text="appliesTo">
 					<bounds xmi:type="dc:bounds" xmi:id="EAID_DBNL000000_2E12_4b1c_A4B0_885AD11DA35B" x="269" y="455" width="39" height="14"/>
 				</ownedElement>
-				<ownedElement xmi:type="umldi:UMLMultiplicityLabel" xmi:id="EAID_TML000000_2E12_4b1c_A4B0_885AD11DA35B" text="1..*" modelElement="EAID_dst2A36F6_0759_455f_A4B0_885AD11DA35B">
+				<ownedElement xmi:type="umldi:UMLMultiplicityLabel" xmi:id="EAID_TML000000_2E12_4b1c_A4B0_885AD11DA35B" text="0..1" modelElement="EAID_dst2A36F6_0759_455f_A4B0_885AD11DA35B">
 					<bounds xmi:type="dc:bounds" xmi:id="EAID_DBTML000000_2E12_4b1c_A4B0_885AD11DA35B" x="269" y="481" width="17" height="14"/>
 				</ownedElement>
 				<waypoint xmi:type="dc:waypoint" xmi:id="EAID_WP000000_2E12_4b1c_A4B0_885AD11DA35B" x="323" y="476"/>
@@ -22426,7 +22426,7 @@
 				<target xmi:idref="EAID_2A9F0223_343C_476f_BC2C_B38152077680">
 					<model ea_localid="58" type="Class" name="GeographicScope"/>
 					<role visibility="Public" targetScope="instance"/>
-					<type multiplicity="1..*" aggregation="none" containment="Unspecified"/>
+					<type multiplicity="0..1" aggregation="none" containment="Unspecified"/>
 					<constraints/>
 					<modifiers isOrdered="false" changeable="none" isNavigable="false"/>
 					<style value="Union=0;Derived=0;AllowDuplicates=0;Owned=0;Navigable=Navigable;"/>
@@ -22440,7 +22440,7 @@
 				<parameterSubstitutions/>
 				<documentation/>
 				<appearance linemode="3" linecolor="-1" linewidth="0" seqno="0" headStyle="0" lineStyle="0"/>
-				<labels lb="1" mt="appliesTo" rb="1..*"/>
+				<labels lb="1" mt="appliesTo" rb="0..1"/>
 				<extendedProperties virtualInheritance="0"/>
 				<style/>
 				<xrefs/>
@@ -24169,7 +24169,7 @@
 				<target xmi:idref="EAID_07048DE5_ACB3_4d8e_B513_2FB7761989F4">
 					<model ea_localid="59" type="Class" name="SubjectEnrollment"/>
 					<role visibility="Public" targetScope="instance"/>
-					<type multiplicity="1..*" aggregation="none" containment="Unspecified"/>
+					<type multiplicity="0..*" aggregation="none" containment="Unspecified"/>
 					<constraints/>
 					<modifiers isOrdered="false" changeable="none" isNavigable="true"/>
 					<style value="Union=0;Derived=0;AllowDuplicates=0;Owned=0;Navigable=Navigable;"/>
@@ -24183,7 +24183,7 @@
 				<parameterSubstitutions/>
 				<documentation/>
 				<appearance linemode="3" linecolor="-1" linewidth="0" seqno="0" headStyle="0" lineStyle="0"/>
-				<labels lb="1" mt="enrollments" rb="1..*"/>
+				<labels lb="1" mt="enrollments" rb="0..*"/>
 				<extendedProperties/>
 				<style/>
 				<xrefs/>
