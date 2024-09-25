@@ -1046,21 +1046,6 @@ BiomedicalConceptSurrogate:
       - $ref: '#/string'
       Cardinality: 0..1
       Relationship Type: Value
-ChangedSection:
-  Modifier: Abstract
-  Attributes:
-    id:
-      Type:
-      - $ref: '#/string'
-      Model Name: id
-    sectionNumber:
-      Type:
-      - $ref: '#/string'
-      Model Name: sectionNumber
-    sectionTitle:
-      Type:
-      - $ref: '#/string'
-      Model Name: sectionTitle
 Characteristic:
   NCI C-Code: C25447
   Preferred Term: Characteristic
@@ -1357,6 +1342,21 @@ ConditionAssignment:
       - $ref: '#/string'
       Cardinality: 0..1
       Relationship Type: Value
+DocumentContentReference:
+  Modifier: Abstract
+  Attributes:
+    id:
+      Type:
+      - $ref: '#/string'
+      Model Name: id
+    sectionNumber:
+      Type:
+      - $ref: '#/string'
+      Model Name: sectionNumber
+    sectionTitle:
+      Type:
+      - $ref: '#/string'
+      Model Name: sectionTitle
 EligibilityCriterion:
   NCI C-Code: C16112
   Preferred Term: Study Eligibility Criterion
@@ -3368,7 +3368,7 @@ StudyAmendment:
       Model Name: secondaryReasons
     changes*:
       Type:
-      - $ref: '#/StudyAmendmentChange'
+      - $ref: '#/StudyChange'
       Cardinality: 1..*
       Relationship Type: UNKNOWN
       Model Name: changes
@@ -3397,34 +3397,6 @@ StudyAmendment:
       - $ref: '#/string'
       Cardinality: 0..1
       Relationship Type: Value
-StudyAmendmentChange:
-  Modifier: Abstract
-  Attributes:
-    id:
-      Type:
-      - $ref: '#/string'
-      Model Name: id
-    name:
-      Type:
-      - $ref: '#/string'
-      Model Name: name
-    description:
-      Type:
-      - $ref: '#/string'
-      Model Name: description
-    label:
-      Type:
-      - $ref: '#/string'
-      Model Name: label
-    rationale:
-      Type:
-      - $ref: '#/string'
-      Model Name: rationale
-    sections:
-      Type:
-      - $ref: '#/ChangedSection'
-      Cardinality: 1..*
-      Model Name: sections
 StudyAmendmentImpact:
   Modifier: Abstract
   Attributes:
@@ -3432,14 +3404,14 @@ StudyAmendmentImpact:
       Type:
       - $ref: '#/string'
       Model Name: id
-    rationale:
+    description:
       Type:
       - $ref: '#/string'
-      Model Name: rationale
-    substantial:
+      Model Name: description
+    isSubstantial:
       Type:
       - $ref: '#/Boolean'
-      Model Name: substantial
+      Model Name: isSubstantial
     type:
       Type:
       - $ref: '#/Code'
@@ -3616,6 +3588,38 @@ StudyCell:
       - $ref: '#/string'
       Cardinality: 0..1
       Relationship Type: Value
+StudyChange:
+  Modifier: Abstract
+  Attributes:
+    id:
+      Type:
+      - $ref: '#/string'
+      Model Name: id
+    name:
+      Type:
+      - $ref: '#/string'
+      Model Name: name
+    description:
+      Type:
+      - $ref: '#/string'
+      Model Name: description
+    label:
+      Type:
+      - $ref: '#/string'
+      Model Name: label
+    rationale:
+      Type:
+      - $ref: '#/string'
+      Model Name: rationale
+    text:
+      Type:
+      - $ref: '#/string'
+      Model Name: text
+    changedSections:
+      Type:
+      - $ref: '#/DocumentContentReference'
+      Cardinality: 1..*
+      Model Name: changedSections
 StudyCohort:
   NCI C-Code: C61512
   Preferred Term: Study Cohort

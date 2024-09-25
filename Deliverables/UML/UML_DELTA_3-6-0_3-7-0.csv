@@ -1,27 +1,28 @@
 status,class_name,property_name,data_type
-Class - NEW,ChangedSection,,
+Class - NEW,DocumentContentReference,,
 ,,id,string
 ,,sectionNumber,string
 ,,sectionTitle,string
-Class - NEW,StudyAmendmentChange,,
+Class - NEW,StudyAmendmentImpact,,
+,,id,string
+,,description,string
+,,isSubstantial,Boolean
+,,type,Code
+,,notes,CommentAnnotation
+Class - NEW,StudyChange,,
 ,,id,string
 ,,name,string
 ,,description,string
 ,,label,string
 ,,rationale,string
-,,sections,ChangedSection
-Class - NEW,StudyAmendmentImpact,,
-,,id,string
-,,rationale,string
-,,substantial,Boolean
-,,type,Code
-,,notes,CommentAnnotation
+,,text,string
+,,changedSections,DocumentContentReference
 ,,,
 Property - NEW,Address,lines,string
 Property - NEW,SubjectEnrollment,description,string
 Property - NEW,SubjectEnrollment,label,string
 Property - NEW,SubjectEnrollment,name,string
-Property - NEW,StudyAmendment,changes,StudyAmendmentChange
+Property - NEW,StudyAmendment,changes,StudyChange
 Property - NEW,StudyAmendment,dateValues,GovernanceDate
 Property - NEW,StudyAmendment,geographicScopes,GeographicScope
 Property - NEW,StudyAmendment,impacts,StudyAmendmentImpact
