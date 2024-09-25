@@ -1046,6 +1046,21 @@ BiomedicalConceptSurrogate:
       - $ref: '#/string'
       Cardinality: 0..1
       Relationship Type: Value
+ChangedSection:
+  Modifier: Abstract
+  Attributes:
+    id:
+      Type:
+      - $ref: '#/string'
+      Model Name: id
+    sectionNumber:
+      Type:
+      - $ref: '#/string'
+      Model Name: sectionNumber
+    sectionTitle:
+      Type:
+      - $ref: '#/string'
+      Model Name: sectionTitle
 Characteristic:
   NCI C-Code: C25447
   Preferred Term: Characteristic
@@ -3405,14 +3420,11 @@ StudyAmendmentChange:
       Type:
       - $ref: '#/string'
       Model Name: rationale
-    sectionNumber:
+    sections:
       Type:
-      - $ref: '#/string'
-      Model Name: sectionNumber
-    sectionTitle:
-      Type:
-      - $ref: '#/string'
-      Model Name: sectionTitle
+      - $ref: '#/ChangedSection'
+      Cardinality: 1..*
+      Model Name: sections
 StudyAmendmentImpact:
   Modifier: Abstract
   Attributes:

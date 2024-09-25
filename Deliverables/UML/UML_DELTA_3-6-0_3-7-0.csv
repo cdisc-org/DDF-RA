@@ -1,12 +1,15 @@
 status,class_name,property_name,data_type
+Class - NEW,ChangedSection,,
+,,id,string
+,,sectionNumber,string
+,,sectionTitle,string
 Class - NEW,StudyAmendmentChange,,
 ,,id,string
 ,,name,string
 ,,description,string
 ,,label,string
 ,,rationale,string
-,,sectionNumber,string
-,,sectionTitle,string
+,,sections,ChangedSection
 Class - NEW,StudyAmendmentImpact,,
 ,,id,string
 ,,rationale,string
