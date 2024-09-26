@@ -2566,6 +2566,39 @@
         ],
         "title": "ConditionAssignment"
       },
+      "DocumentContentReference": {
+        "properties": {
+          "id": {
+            "type": "string",
+            "minLength": 1,
+            "title": "Id"
+          },
+          "sectionNumber": {
+            "type": "string",
+            "title": "Sectionnumber"
+          },
+          "sectionTitle": {
+            "type": "string",
+            "title": "Sectiontitle"
+          },
+          "instanceType": {
+            "type": "string",
+            "enum": [
+              "DocumentContentReference"
+            ],
+            "const": "DocumentContentReference",
+            "title": "Instancetype"
+          }
+        },
+        "type": "object",
+        "required": [
+          "id",
+          "sectionNumber",
+          "sectionTitle",
+          "instanceType"
+        ],
+        "title": "DocumentContentReference"
+      },
       "EligibilityCriterion-Input": {
         "properties": {
           "id": {
@@ -3949,14 +3982,7 @@
             "title": "Id"
           },
           "description": {
-            "anyOf": [
-              {
-                "type": "string"
-              },
-              {
-                "type": "null"
-              }
-            ],
+            "type": "string",
             "title": "Description"
           },
           "instanceType": {
@@ -3971,6 +3997,7 @@
         "type": "object",
         "required": [
           "id",
+          "description",
           "instanceType"
         ],
         "title": "Masking"
@@ -5536,10 +5563,6 @@
             "type": "string",
             "title": "Summary"
           },
-          "substantialImpact": {
-            "type": "boolean",
-            "title": "Substantialimpact"
-          },
           "primaryReason": {
             "$ref": "#/components/schemas/StudyAmendmentReason"
           },
@@ -5551,12 +5574,43 @@
             "title": "Secondaryreasons",
             "default": []
           },
+          "changes": {
+            "items": {
+              "$ref": "#/components/schemas/StudyChange"
+            },
+            "type": "array",
+            "title": "Changes"
+          },
+          "impacts": {
+            "items": {
+              "$ref": "#/components/schemas/StudyAmendmentImpact-Input"
+            },
+            "type": "array",
+            "title": "Impacts",
+            "default": []
+          },
+          "geographicScopes": {
+            "items": {
+              "$ref": "#/components/schemas/GeographicScope-Input"
+            },
+            "type": "array",
+            "title": "Geographicscopes"
+          },
           "enrollments": {
             "items": {
               "$ref": "#/components/schemas/SubjectEnrollment-Input"
             },
             "type": "array",
-            "title": "Enrollments"
+            "title": "Enrollments",
+            "default": []
+          },
+          "dateValues": {
+            "items": {
+              "$ref": "#/components/schemas/GovernanceDate-Input"
+            },
+            "type": "array",
+            "title": "Datevalues",
+            "default": []
           },
           "previousId": {
             "anyOf": [
@@ -5568,6 +5622,14 @@
               }
             ],
             "title": "Previousid"
+          },
+          "notes": {
+            "items": {
+              "$ref": "#/components/schemas/CommentAnnotation"
+            },
+            "type": "array",
+            "title": "Notes",
+            "default": []
           },
           "instanceType": {
             "type": "string",
@@ -5583,9 +5645,9 @@
           "id",
           "number",
           "summary",
-          "substantialImpact",
           "primaryReason",
-          "enrollments",
+          "changes",
+          "geographicScopes",
           "instanceType"
         ],
         "title": "StudyAmendment"
@@ -5605,10 +5667,6 @@
             "type": "string",
             "title": "Summary"
           },
-          "substantialImpact": {
-            "type": "boolean",
-            "title": "Substantialimpact"
-          },
           "primaryReason": {
             "$ref": "#/components/schemas/StudyAmendmentReason"
           },
@@ -5620,12 +5678,43 @@
             "title": "Secondaryreasons",
             "default": []
           },
+          "changes": {
+            "items": {
+              "$ref": "#/components/schemas/StudyChange"
+            },
+            "type": "array",
+            "title": "Changes"
+          },
+          "impacts": {
+            "items": {
+              "$ref": "#/components/schemas/StudyAmendmentImpact-Output"
+            },
+            "type": "array",
+            "title": "Impacts",
+            "default": []
+          },
+          "geographicScopes": {
+            "items": {
+              "$ref": "#/components/schemas/GeographicScope-Output"
+            },
+            "type": "array",
+            "title": "Geographicscopes"
+          },
           "enrollments": {
             "items": {
               "$ref": "#/components/schemas/SubjectEnrollment-Output"
             },
             "type": "array",
-            "title": "Enrollments"
+            "title": "Enrollments",
+            "default": []
+          },
+          "dateValues": {
+            "items": {
+              "$ref": "#/components/schemas/GovernanceDate-Output"
+            },
+            "type": "array",
+            "title": "Datevalues",
+            "default": []
           },
           "previousId": {
             "anyOf": [
@@ -5637,6 +5726,14 @@
               }
             ],
             "title": "Previousid"
+          },
+          "notes": {
+            "items": {
+              "$ref": "#/components/schemas/CommentAnnotation"
+            },
+            "type": "array",
+            "title": "Notes",
+            "default": []
           },
           "instanceType": {
             "type": "string",
@@ -5652,12 +5749,102 @@
           "id",
           "number",
           "summary",
-          "substantialImpact",
           "primaryReason",
-          "enrollments",
+          "changes",
+          "geographicScopes",
           "instanceType"
         ],
         "title": "StudyAmendment"
+      },
+      "StudyAmendmentImpact-Input": {
+        "properties": {
+          "id": {
+            "type": "string",
+            "minLength": 1,
+            "title": "Id"
+          },
+          "type": {
+            "$ref": "#/components/schemas/model__code__Code__1"
+          },
+          "description": {
+            "type": "string",
+            "title": "Description"
+          },
+          "isSubstantial": {
+            "type": "boolean",
+            "title": "Issubstantial"
+          },
+          "notes": {
+            "items": {
+              "$ref": "#/components/schemas/CommentAnnotation"
+            },
+            "type": "array",
+            "title": "Notes",
+            "default": []
+          },
+          "instanceType": {
+            "type": "string",
+            "enum": [
+              "StudyAmendmentImpact"
+            ],
+            "const": "StudyAmendmentImpact",
+            "title": "Instancetype"
+          }
+        },
+        "type": "object",
+        "required": [
+          "id",
+          "type",
+          "description",
+          "isSubstantial",
+          "instanceType"
+        ],
+        "title": "StudyAmendmentImpact"
+      },
+      "StudyAmendmentImpact-Output": {
+        "properties": {
+          "id": {
+            "type": "string",
+            "minLength": 1,
+            "title": "Id"
+          },
+          "type": {
+            "$ref": "#/components/schemas/model__code__Code__1"
+          },
+          "description": {
+            "type": "string",
+            "title": "Description"
+          },
+          "isSubstantial": {
+            "type": "boolean",
+            "title": "Issubstantial"
+          },
+          "notes": {
+            "items": {
+              "$ref": "#/components/schemas/CommentAnnotation"
+            },
+            "type": "array",
+            "title": "Notes",
+            "default": []
+          },
+          "instanceType": {
+            "type": "string",
+            "enum": [
+              "StudyAmendmentImpact"
+            ],
+            "const": "StudyAmendmentImpact",
+            "title": "Instancetype"
+          }
+        },
+        "type": "object",
+        "required": [
+          "id",
+          "type",
+          "description",
+          "isSubstantial",
+          "instanceType"
+        ],
+        "title": "StudyAmendmentImpact"
       },
       "StudyAmendmentReason": {
         "properties": {
@@ -5897,6 +6084,75 @@
           "instanceType"
         ],
         "title": "StudyCell"
+      },
+      "StudyChange": {
+        "properties": {
+          "id": {
+            "type": "string",
+            "minLength": 1,
+            "title": "Id"
+          },
+          "name": {
+            "type": "string",
+            "minLength": 1,
+            "title": "Name"
+          },
+          "label": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Label"
+          },
+          "description": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Description"
+          },
+          "text": {
+            "type": "string",
+            "title": "Text"
+          },
+          "rationale": {
+            "type": "string",
+            "title": "Rationale"
+          },
+          "changedSections": {
+            "items": {
+              "$ref": "#/components/schemas/DocumentContentReference"
+            },
+            "type": "array",
+            "title": "Changedsections"
+          },
+          "instanceType": {
+            "type": "string",
+            "enum": [
+              "StudyChange"
+            ],
+            "const": "StudyChange",
+            "title": "Instancetype"
+          }
+        },
+        "type": "object",
+        "required": [
+          "id",
+          "name",
+          "text",
+          "rationale",
+          "changedSections",
+          "instanceType"
+        ],
+        "title": "StudyChange"
       },
       "StudyCohort-Input": {
         "properties": {
@@ -8034,6 +8290,9 @@
             ],
             "title": "Description"
           },
+          "country": {
+            "$ref": "#/components/schemas/model__code__Code__1"
+          },
           "instanceType": {
             "type": "string",
             "enum": [
@@ -8047,6 +8306,7 @@
         "required": [
           "id",
           "name",
+          "country",
           "instanceType"
         ],
         "title": "StudySite"
@@ -8436,18 +8696,56 @@
             "minLength": 1,
             "title": "Id"
           },
-          "type": {
-            "$ref": "#/components/schemas/model__code__Code__1"
+          "name": {
+            "type": "string",
+            "minLength": 1,
+            "title": "Name"
           },
-          "code": {
+          "label": {
             "anyOf": [
               {
-                "$ref": "#/components/schemas/AliasCode"
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Label"
+          },
+          "description": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Description"
+          },
+          "quantity": {
+            "$ref": "#/components/schemas/Quantity-Input"
+          },
+          "appliesTo": {
+            "anyOf": [
+              {
+                "$ref": "#/components/schemas/GeographicScope-Input"
               },
               {
                 "type": "null"
               }
             ]
+          },
+          "appliesToId": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Appliestoid"
           },
           "instanceType": {
             "type": "string",
@@ -8456,27 +8754,14 @@
             ],
             "const": "SubjectEnrollment",
             "title": "Instancetype"
-          },
-          "quantity": {
-            "$ref": "#/components/schemas/Quantity-Input"
-          },
-          "appliesTo": {
-            "anyOf": [
-              {
-                "$ref": "#/components/schemas/StudySite"
-              },
-              {
-                "type": "null"
-              }
-            ]
           }
         },
         "type": "object",
         "required": [
           "id",
-          "type",
-          "instanceType",
-          "quantity"
+          "name",
+          "quantity",
+          "instanceType"
         ],
         "title": "SubjectEnrollment"
       },
@@ -8487,18 +8772,56 @@
             "minLength": 1,
             "title": "Id"
           },
-          "type": {
-            "$ref": "#/components/schemas/model__code__Code__1"
+          "name": {
+            "type": "string",
+            "minLength": 1,
+            "title": "Name"
           },
-          "code": {
+          "label": {
             "anyOf": [
               {
-                "$ref": "#/components/schemas/AliasCode"
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Label"
+          },
+          "description": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Description"
+          },
+          "quantity": {
+            "$ref": "#/components/schemas/Quantity-Output"
+          },
+          "appliesTo": {
+            "anyOf": [
+              {
+                "$ref": "#/components/schemas/GeographicScope-Output"
               },
               {
                 "type": "null"
               }
             ]
+          },
+          "appliesToId": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Appliestoid"
           },
           "instanceType": {
             "type": "string",
@@ -8507,27 +8830,14 @@
             ],
             "const": "SubjectEnrollment",
             "title": "Instancetype"
-          },
-          "quantity": {
-            "$ref": "#/components/schemas/Quantity-Output"
-          },
-          "appliesTo": {
-            "anyOf": [
-              {
-                "$ref": "#/components/schemas/StudySite"
-              },
-              {
-                "type": "null"
-              }
-            ]
           }
         },
         "type": "object",
         "required": [
           "id",
-          "type",
-          "instanceType",
-          "quantity"
+          "name",
+          "quantity",
+          "instanceType"
         ],
         "title": "SubjectEnrollment"
       },
