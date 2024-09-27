@@ -1343,20 +1343,28 @@ ConditionAssignment:
       Cardinality: 0..1
       Relationship Type: Value
 DocumentContentReference:
-  Modifier: Abstract
+  Modifier: Concrete
   Attributes:
     id:
       Type:
       - $ref: '#/string'
+      Relationship Type: Value
       Model Name: id
     sectionNumber:
       Type:
       - $ref: '#/string'
+      Relationship Type: Value
       Model Name: sectionNumber
     sectionTitle:
       Type:
       - $ref: '#/string'
+      Relationship Type: Value
       Model Name: sectionTitle
+    instanceType:
+      Type:
+      - $ref: '#/string'
+      Cardinality: 0..1
+      Relationship Type: Value
 EligibilityCriterion:
   NCI C-Code: C16112
   Preferred Term: Study Eligibility Criterion
@@ -3324,29 +3332,29 @@ StudyAmendment:
         in the current version of the protocol.
       Relationship Type: Value
       Model Name: summary
-    notes*:
+    notes:
       Type:
       - $ref: '#/CommentAnnotation'
       Cardinality: 0..*
-      Relationship Type: UNKNOWN
+      Relationship Type: Value
       Model Name: notes
-    geographicScopes*:
+    geographicScopes:
       Type:
       - $ref: '#/GeographicScope'
       Cardinality: 1..*
-      Relationship Type: UNKNOWN
+      Relationship Type: Value
       Model Name: geographicScopes
-    dateValues*:
+    dateValues:
       Type:
       - $ref: '#/GovernanceDate'
       Cardinality: 0..*
-      Relationship Type: UNKNOWN
+      Relationship Type: Value
       Model Name: dateValues
-    impacts*:
+    impacts:
       Type:
       - $ref: '#/StudyAmendmentImpact'
       Cardinality: 0..*
-      Relationship Type: UNKNOWN
+      Relationship Type: Value
       Model Name: impacts
     enrollments:
       Type:
@@ -3366,11 +3374,11 @@ StudyAmendment:
         amendment.
       Relationship Type: Value
       Model Name: secondaryReasons
-    changes*:
+    changes:
       Type:
       - $ref: '#/StudyChange'
       Cardinality: 1..*
-      Relationship Type: UNKNOWN
+      Relationship Type: Value
       Model Name: changes
     previousId:
       Type:
@@ -3388,40 +3396,46 @@ StudyAmendment:
         classes which identifies the primary reason for issuing the study amendment.
       Relationship Type: Value
       Model Name: primaryReason
-    substantialImpact:
-      Type:
-      - $ref: UNKNOWN
-      Relationship Type: Value
     instanceType:
       Type:
       - $ref: '#/string'
       Cardinality: 0..1
       Relationship Type: Value
 StudyAmendmentImpact:
-  Modifier: Abstract
+  Modifier: Concrete
   Attributes:
     id:
       Type:
       - $ref: '#/string'
+      Relationship Type: Value
       Model Name: id
     description:
       Type:
       - $ref: '#/string'
+      Relationship Type: Value
       Model Name: description
     isSubstantial:
       Type:
       - $ref: '#/Boolean'
+      Relationship Type: Value
       Model Name: isSubstantial
     type:
       Type:
       - $ref: '#/Code'
       Cardinality: '1'
+      Relationship Type: Value
       Model Name: type
     notes:
       Type:
       - $ref: '#/CommentAnnotation'
       Cardinality: 0..*
+      Relationship Type: Value
       Model Name: notes
+    instanceType:
+      Type:
+      - $ref: '#/string'
+      Cardinality: 0..1
+      Relationship Type: Value
 StudyAmendmentReason:
   NCI C-Code: C207457
   Preferred Term: Study Amendment Reason
@@ -3589,37 +3603,49 @@ StudyCell:
       Cardinality: 0..1
       Relationship Type: Value
 StudyChange:
-  Modifier: Abstract
+  Modifier: Concrete
   Attributes:
     id:
       Type:
       - $ref: '#/string'
+      Relationship Type: Value
       Model Name: id
     name:
       Type:
       - $ref: '#/string'
+      Relationship Type: Value
       Model Name: name
     description:
       Type:
       - $ref: '#/string'
+      Relationship Type: Value
       Model Name: description
     label:
       Type:
       - $ref: '#/string'
+      Relationship Type: Value
       Model Name: label
     rationale:
       Type:
       - $ref: '#/string'
+      Relationship Type: Value
       Model Name: rationale
     text:
       Type:
       - $ref: '#/string'
+      Relationship Type: Value
       Model Name: text
     changedSections:
       Type:
       - $ref: '#/DocumentContentReference'
       Cardinality: 1..*
+      Relationship Type: Value
       Model Name: changedSections
+    instanceType:
+      Type:
+      - $ref: '#/string'
+      Cardinality: 0..1
+      Relationship Type: Value
 StudyCohort:
   NCI C-Code: C61512
   Preferred Term: Study Cohort
@@ -4763,11 +4789,11 @@ StudySite:
       Definition: The short descriptive designation for the study site.
       Relationship Type: Value
       Model Name: label
-    country*:
+    country:
       Type:
       - $ref: '#/Code'
       Cardinality: '1'
-      Relationship Type: UNKNOWN
+      Relationship Type: Value
       Model Name: country
     instanceType:
       Type:
@@ -4996,20 +5022,20 @@ SubjectEnrollment:
       - $ref: '#/string'
       Relationship Type: Value
       Model Name: id
-    name*:
+    name:
       Type:
       - $ref: '#/string'
-      Relationship Type: UNKNOWN
+      Relationship Type: Value
       Model Name: name
-    description*:
+    description:
       Type:
       - $ref: '#/string'
-      Relationship Type: UNKNOWN
+      Relationship Type: Value
       Model Name: description
-    label*:
+    label:
       Type:
       - $ref: '#/string'
-      Relationship Type: UNKNOWN
+      Relationship Type: Value
       Model Name: label
     appliesTo:
       Type:
@@ -5030,11 +5056,7 @@ SubjectEnrollment:
       Definition: The value representing the number of individuals enrolled in a study.
       Relationship Type: Value
       Model Name: quantity
-    type:
-      Type:
-      - $ref: UNKNOWN
-      Relationship Type: Value
-    code:
+    appliesToId:
       Type:
       - $ref: UNKNOWN
       Relationship Type: Value
