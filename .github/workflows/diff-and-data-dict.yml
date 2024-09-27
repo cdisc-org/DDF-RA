@@ -47,10 +47,28 @@ jobs:
         uses: stCarolas/setup-maven@v4.5
         with:
           maven-version: 3.9.5
+      - name: Install XML Starlet
+        run: sudo apt-get install -y xmlstarlet
       - name: Get the previous and current version numbers
         run: |
           echo "PREVIOUS_VERSION=$(jq -r '.info.version' prevRelease/Deliverables/API/USDM_API.json | cut -d ' ' -f1 | tr . -)" >> $GITHUB_ENV
           echo "CURRENT_VERSION=${GITHUB_REF_NAME//release-/}" >> $GITHUB_ENV
+          echo "CURRENT_API_VERSION=$(jq -r '.info.version' currentRelease/Deliverables/API/USDM_API.json | cut -d ' ' -f1 | tr . -)" >> $GITHUB_ENV
+          echo "CURRENT_UML_VERSION=$(xmlstarlet sel -t -v '//diagram/properties[@name="USDM" and @type="Logical"]/../project/@version' currentRelease/Deliverables/UML/USDM_UML.xmi | cut -d ' ' -f1 | tr . -)" >> $GITHUB_ENV
+      - name: Check version numbers
+        if: ${{ !(contains(env.PREVIOUS_VERSION,'-') && contains(env.CURRENT_VERSION,'-') && contains(env.CURRENT_API_VERSION,'-') && contains(env.CURRENT_UML_VERSION,'-') && env.PREVIOUS_VERSION != env.CURRENT_VERSION && env.CURRENT_API_VERSION == env.CURRENT_VERSION && startsWith(env.CURRENT_VERSION, env.CURRENT_UML_VERSION))}}
+        run: |
+          echo "Previous and current version numbers are not as expected!"
+          echo "- PREVIOUS_VERSION comes from the info/version value in USDM_API.json in the previous branch"
+          echo "- CURRENT_VERSION comes from the name of the current branch"
+          echo "- CURRENT_API_VERSION comes from the info/version value in USDM_API.json in the current branch"
+          echo "- CURRENT_UML_VERSION comes from the version property of the UML diagram called 'USDM'"
+          echo "Dots in any extracted version numbers are changed to hyphens, and it is expected that:"
+          echo "- A value is found for every version number"
+          echo "- PREVIOUS_VERSION and CURRENT_VERSION are different"
+          echo "- CURRENT_API_VERSION is the same as CURRENT_VERSION"
+          echo "- The value of CURRENT_UML_VERSION is found at the start of CURRENT_VERSION"
+          exit 1
       - name: Copy the files needed by the usdm dictionary generator
         run: |
           cp prevRelease/Deliverables/UML/USDM_UML.xmi usdm-dictionary-generator/src/main/resources/prevRelease/.
