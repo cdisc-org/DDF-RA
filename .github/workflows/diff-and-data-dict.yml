@@ -55,7 +55,7 @@ jobs:
           echo "CURRENT_VERSION=${GITHUB_REF_NAME//release-/}" >> $GITHUB_ENV
           echo "CURRENT_API_VERSION=$(jq -r '.info.version' currentRelease/Deliverables/API/USDM_API.json | cut -d ' ' -f1 | tr . -)" >> $GITHUB_ENV
           echo "CURRENT_UML_VERSION=$(xmlstarlet sel -t -v '//diagram/properties[@name="USDM" and @type="Logical"]/../project/@version' currentRelease/Deliverables/UML/USDM_UML.xmi | cut -d ' ' -f1 | tr . -)" >> $GITHUB_ENV
-      - name: Check version numbers
+      - name: Fail due to unexpected version numbers
         if: ${{ !(contains(env.PREVIOUS_VERSION,'-') && contains(env.CURRENT_VERSION,'-') && contains(env.CURRENT_API_VERSION,'-') && contains(env.CURRENT_UML_VERSION,'-') && env.PREVIOUS_VERSION != env.CURRENT_VERSION && env.CURRENT_API_VERSION == env.CURRENT_VERSION && startsWith(env.CURRENT_VERSION, env.CURRENT_UML_VERSION))}}
         run: |
           echo "Previous and current version numbers are not as expected!"
