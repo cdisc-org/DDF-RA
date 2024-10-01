@@ -5766,9 +5766,9 @@
           "type": {
             "$ref": "#/components/schemas/model__code__Code__1"
           },
-          "description": {
+          "text": {
             "type": "string",
-            "title": "Description"
+            "title": "Text"
           },
           "isSubstantial": {
             "type": "boolean",
@@ -5795,7 +5795,7 @@
         "required": [
           "id",
           "type",
-          "description",
+          "text",
           "isSubstantial",
           "instanceType"
         ],
@@ -5811,9 +5811,9 @@
           "type": {
             "$ref": "#/components/schemas/model__code__Code__1"
           },
-          "description": {
+          "text": {
             "type": "string",
-            "title": "Description"
+            "title": "Text"
           },
           "isSubstantial": {
             "type": "boolean",
@@ -5840,7 +5840,7 @@
         "required": [
           "id",
           "type",
-          "description",
+          "text",
           "isSubstantial",
           "instanceType"
         ],
@@ -6119,9 +6119,9 @@
             ],
             "title": "Description"
           },
-          "text": {
+          "summary": {
             "type": "string",
-            "title": "Text"
+            "title": "Summary"
           },
           "rationale": {
             "type": "string",
@@ -6147,7 +6147,7 @@
         "required": [
           "id",
           "name",
-          "text",
+          "summary",
           "rationale",
           "changedSections",
           "instanceType"

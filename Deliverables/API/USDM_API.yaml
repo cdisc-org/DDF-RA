@@ -3776,9 +3776,9 @@ components:
           title: Id
         type:
           $ref: '#/components/schemas/model__code__Code__1'
-        description:
+        text:
           type: string
-          title: Description
+          title: Text
         isSubstantial:
           type: boolean
           title: Issubstantial
@@ -3798,7 +3798,7 @@ components:
       required:
       - id
       - type
-      - description
+      - text
       - isSubstantial
       - instanceType
       title: StudyAmendmentImpact
@@ -3810,9 +3810,9 @@ components:
           title: Id
         type:
           $ref: '#/components/schemas/model__code__Code__1'
-        description:
+        text:
           type: string
-          title: Description
+          title: Text
         isSubstantial:
           type: boolean
           title: Issubstantial
@@ -3832,7 +3832,7 @@ components:
       required:
       - id
       - type
-      - description
+      - text
       - isSubstantial
       - instanceType
       title: StudyAmendmentImpact
@@ -4020,9 +4020,9 @@ components:
           - type: string
           - type: 'null'
           title: Description
-        text:
+        summary:
           type: string
-          title: Text
+          title: Summary
         rationale:
           type: string
           title: Rationale
@@ -4041,7 +4041,7 @@ components:
       required:
       - id
       - name
-      - text
+      - summary
       - rationale
       - changedSections
       - instanceType
