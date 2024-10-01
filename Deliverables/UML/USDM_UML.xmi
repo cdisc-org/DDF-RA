@@ -3242,7 +3242,7 @@
 					<upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="EAID_LI000918_D703_4921_8025_312D0D7F53F4" value="1"/>
 					<type xmi:idref="EAJava_String"/>
 				</ownedAttribute>
-				<ownedAttribute xmi:type="uml:Property" xmi:id="EAID_337DE93C_7D8D_426a_8098_BD37072D5947" name="description">
+				<ownedAttribute xmi:type="uml:Property" xmi:id="EAID_337DE93C_7D8D_426a_8098_BD37072D5947" name="text">
 					<lowerValue xmi:type="uml:LiteralInteger" xmi:id="EAID_LI000919_7D8D_426a_8098_BD37072D5947" value="1"/>
 					<upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="EAID_LI000920_7D8D_426a_8098_BD37072D5947" value="1"/>
 					<type xmi:idref="EAJava_String"/>
@@ -3420,7 +3420,7 @@
 					<upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="EAID_LI000980_5478_4e99_AD4F_64A0D35C6F4D" value="1"/>
 					<type xmi:idref="EAJava_String"/>
 				</ownedAttribute>
-				<ownedAttribute xmi:type="uml:Property" xmi:id="EAID_645782C5_EC26_4bf3_85F6_4848E6772562" name="text">
+				<ownedAttribute xmi:type="uml:Property" xmi:id="EAID_645782C5_EC26_4bf3_85F6_4848E6772562" name="summary">
 					<lowerValue xmi:type="uml:LiteralInteger" xmi:id="EAID_LI000981_EC26_4bf3_85F6_4848E6772562" value="1"/>
 					<upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="EAID_LI000982_EC26_4bf3_85F6_4848E6772562" value="1"/>
 					<type xmi:idref="EAJava_String"/>
@@ -15975,7 +15975,7 @@
 						<tags/>
 						<xrefs/>
 					</attribute>
-					<attribute xmi:idref="EAID_337DE93C_7D8D_426a_8098_BD37072D5947" name="description" scope="Public">
+					<attribute xmi:idref="EAID_337DE93C_7D8D_426a_8098_BD37072D5947" name="text" scope="Public">
 						<initial/>
 						<documentation/>
 						<model ea_localid="311" ea_guid="{337DE93C-7D8D-426a-8098-BD37072D5947}"/>
@@ -16272,7 +16272,7 @@
 						<tags/>
 						<xrefs/>
 					</attribute>
-					<attribute xmi:idref="EAID_645782C5_EC26_4bf3_85F6_4848E6772562" name="text" scope="Public">
+					<attribute xmi:idref="EAID_645782C5_EC26_4bf3_85F6_4848E6772562" name="summary" scope="Public">
 						<initial/>
 						<documentation/>
 						<model ea_localid="316" ea_guid="{645782C5-EC26-4bf3-85F6-4848E6772562}"/>
