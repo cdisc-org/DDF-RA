@@ -3409,11 +3409,11 @@ StudyAmendmentImpact:
       - $ref: '#/string'
       Relationship Type: Value
       Model Name: id
-    description*:
+    text:
       Type:
       - $ref: '#/string'
-      Relationship Type: UNKNOWN
-      Model Name: description
+      Relationship Type: Value
+      Model Name: text
     isSubstantial:
       Type:
       - $ref: '#/Boolean'
@@ -3431,11 +3431,6 @@ StudyAmendmentImpact:
       Cardinality: 0..*
       Relationship Type: Value
       Model Name: notes
-    text:
-      Type:
-      - $ref: '#/string'
-      Cardinality: 0..1
-      Relationship Type: Value
     instanceType:
       Type:
       - $ref: '#/string'
@@ -3635,22 +3630,17 @@ StudyChange:
       - $ref: '#/string'
       Relationship Type: Value
       Model Name: rationale
-    text*:
+    summary:
       Type:
       - $ref: '#/string'
-      Relationship Type: UNKNOWN
-      Model Name: text
+      Relationship Type: Value
+      Model Name: summary
     changedSections:
       Type:
       - $ref: '#/DocumentContentReference'
       Cardinality: 1..*
       Relationship Type: Value
       Model Name: changedSections
-    summary:
-      Type:
-      - $ref: '#/string'
-      Cardinality: 0..1
-      Relationship Type: Value
     instanceType:
       Type:
       - $ref: '#/string'

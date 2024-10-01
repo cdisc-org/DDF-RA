@@ -5,7 +5,7 @@ Class - NEW,DocumentContentReference,,
 ,,sectionTitle,string
 Class - NEW,StudyAmendmentImpact,,
 ,,id,string
-,,description,string
+,,text,string
 ,,isSubstantial,Boolean
 ,,type,Code
 ,,notes,CommentAnnotation
@@ -15,7 +15,7 @@ Class - NEW,StudyChange,,
 ,,description,string
 ,,label,string
 ,,rationale,string
-,,text,string
+,,summary,string
 ,,changedSections,DocumentContentReference
 ,,,
 Property - NEW,Address,lines,string
