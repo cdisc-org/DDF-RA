@@ -3472,6 +3472,8 @@ StudyAmendmentImpact:
       Type:
       - $ref: '#/CommentAnnotation'
       Cardinality: 0..*
+      Definition: A USDM relationship between the StudyAmendmentImpact and CommentAnnotation
+        classes which provides the set of notes related to the study amendment impact.
       Relationship Type: Value
       Model Name: notes
     instanceType:
@@ -3703,6 +3705,9 @@ StudyChange:
       Type:
       - $ref: '#/DocumentContentReference'
       Cardinality: 1..*
+      Definition: A USDM relationship between the StudyChange and DocumentContentReference
+        class which provides the set of changed document sections related to the study
+        change.
       Relationship Type: Value
       Model Name: changedSections
     instanceType:
@@ -5129,7 +5134,10 @@ SubjectEnrollment:
     quantity:
       Type:
       - $ref: '#/Quantity'
+      NCI C-Code: C207573
       Cardinality: '1'
+      Preferred Term: Subject Enrollment Quantity Value
+      Definition: The value representing the number of individuals enrolled in a study.
       Relationship Type: Value
       Model Name: quantity
     appliesToId:
