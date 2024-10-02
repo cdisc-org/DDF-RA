@@ -751,8 +751,8 @@ components:
         instanceType:
           type: string
           enum:
-          - AgentAdministration
-          const: AgentAdministration
+          - Administration
+          const: Administration
           title: Instancetype
       type: object
       required:
@@ -806,8 +806,8 @@ components:
         instanceType:
           type: string
           enum:
-          - AgentAdministration
-          const: AgentAdministration
+          - Administration
+          const: Administration
           title: Instancetype
       type: object
       required:
