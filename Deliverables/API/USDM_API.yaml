@@ -3,7 +3,7 @@ info:
   title: DDF USDM API
   description: A simple TransCelerate Digital Data Flow (DDF) Study Definitions Repository
     API.
-  version: 3.6.0
+  version: 3.7.0
 paths:
   /v3/studyDefinitions:
     post:
@@ -453,11 +453,12 @@ components:
           - type: string
           - type: 'null'
           title: Text
-        line:
-          anyOf:
-          - type: string
-          - type: 'null'
-          title: Line
+        lines:
+          items:
+            type: string
+          type: array
+          title: Lines
+          default: []
         city:
           anyOf:
           - type: string
@@ -750,8 +751,8 @@ components:
         instanceType:
           type: string
           enum:
-          - AgentAdministration
-          const: AgentAdministration
+          - Administration
+          const: Administration
           title: Instancetype
       type: object
       required:
@@ -805,8 +806,8 @@ components:
         instanceType:
           type: string
           enum:
-          - AgentAdministration
-          const: AgentAdministration
+          - Administration
+          const: Administration
           title: Instancetype
       type: object
       required:
@@ -1025,8 +1026,8 @@ components:
         instanceType:
           type: string
           enum:
-          - AssignedRole
-          const: AssignedRole
+          - AssignedPerson
+          const: AssignedPerson
           title: Instancetype
       type: object
       required:
@@ -1705,6 +1706,31 @@ components:
       - conditionTargetId
       - instanceType
       title: ConditionAssignment
+    DocumentContentReference:
+      properties:
+        id:
+          type: string
+          minLength: 1
+          title: Id
+        sectionNumber:
+          type: string
+          title: Sectionnumber
+        sectionTitle:
+          type: string
+          title: Sectiontitle
+        instanceType:
+          type: string
+          enum:
+          - DocumentContentReference
+          const: DocumentContentReference
+          title: Instancetype
+      type: object
+      required:
+      - id
+      - sectionNumber
+      - sectionTitle
+      - instanceType
+      title: DocumentContentReference
     EligibilityCriterion-Input:
       properties:
         id:
@@ -2593,9 +2619,7 @@ components:
           minLength: 1
           title: Id
         description:
-          anyOf:
-          - type: string
-          - type: 'null'
+          type: string
           title: Description
         instanceType:
           type: string
@@ -2606,6 +2630,7 @@ components:
       type: object
       required:
       - id
+      - description
       - instanceType
       title: Masking
     NarrativeContent:
@@ -3605,9 +3630,6 @@ components:
         summary:
           type: string
           title: Summary
-        substantialImpact:
-          type: boolean
-          title: Substantialimpact
         primaryReason:
           $ref: '#/components/schemas/StudyAmendmentReason'
         secondaryReasons:
@@ -3616,16 +3638,45 @@ components:
           type: array
           title: Secondaryreasons
           default: []
+        changes:
+          items:
+            $ref: '#/components/schemas/StudyChange'
+          type: array
+          title: Changes
+        impacts:
+          items:
+            $ref: '#/components/schemas/StudyAmendmentImpact-Input'
+          type: array
+          title: Impacts
+          default: []
+        geographicScopes:
+          items:
+            $ref: '#/components/schemas/GeographicScope-Input'
+          type: array
+          title: Geographicscopes
         enrollments:
           items:
             $ref: '#/components/schemas/SubjectEnrollment-Input'
           type: array
           title: Enrollments
+          default: []
+        dateValues:
+          items:
+            $ref: '#/components/schemas/GovernanceDate-Input'
+          type: array
+          title: Datevalues
+          default: []
         previousId:
           anyOf:
           - type: string
           - type: 'null'
           title: Previousid
+        notes:
+          items:
+            $ref: '#/components/schemas/CommentAnnotation'
+          type: array
+          title: Notes
+          default: []
         instanceType:
           type: string
           enum:
@@ -3637,9 +3688,9 @@ components:
       - id
       - number
       - summary
-      - substantialImpact
       - primaryReason
-      - enrollments
+      - changes
+      - geographicScopes
       - instanceType
       title: StudyAmendment
     StudyAmendment-Output:
@@ -3654,9 +3705,6 @@ components:
         summary:
           type: string
           title: Summary
-        substantialImpact:
-          type: boolean
-          title: Substantialimpact
         primaryReason:
           $ref: '#/components/schemas/StudyAmendmentReason'
         secondaryReasons:
@@ -3665,16 +3713,45 @@ components:
           type: array
           title: Secondaryreasons
           default: []
+        changes:
+          items:
+            $ref: '#/components/schemas/StudyChange'
+          type: array
+          title: Changes
+        impacts:
+          items:
+            $ref: '#/components/schemas/StudyAmendmentImpact-Output'
+          type: array
+          title: Impacts
+          default: []
+        geographicScopes:
+          items:
+            $ref: '#/components/schemas/GeographicScope-Output'
+          type: array
+          title: Geographicscopes
         enrollments:
           items:
             $ref: '#/components/schemas/SubjectEnrollment-Output'
           type: array
           title: Enrollments
+          default: []
+        dateValues:
+          items:
+            $ref: '#/components/schemas/GovernanceDate-Output'
+          type: array
+          title: Datevalues
+          default: []
         previousId:
           anyOf:
           - type: string
           - type: 'null'
           title: Previousid
+        notes:
+          items:
+            $ref: '#/components/schemas/CommentAnnotation'
+          type: array
+          title: Notes
+          default: []
         instanceType:
           type: string
           enum:
@@ -3686,11 +3763,79 @@ components:
       - id
       - number
       - summary
-      - substantialImpact
       - primaryReason
-      - enrollments
+      - changes
+      - geographicScopes
       - instanceType
       title: StudyAmendment
+    StudyAmendmentImpact-Input:
+      properties:
+        id:
+          type: string
+          minLength: 1
+          title: Id
+        type:
+          $ref: '#/components/schemas/model__code__Code__1'
+        text:
+          type: string
+          title: Text
+        isSubstantial:
+          type: boolean
+          title: Issubstantial
+        notes:
+          items:
+            $ref: '#/components/schemas/CommentAnnotation'
+          type: array
+          title: Notes
+          default: []
+        instanceType:
+          type: string
+          enum:
+          - StudyAmendmentImpact
+          const: StudyAmendmentImpact
+          title: Instancetype
+      type: object
+      required:
+      - id
+      - type
+      - text
+      - isSubstantial
+      - instanceType
+      title: StudyAmendmentImpact
+    StudyAmendmentImpact-Output:
+      properties:
+        id:
+          type: string
+          minLength: 1
+          title: Id
+        type:
+          $ref: '#/components/schemas/model__code__Code__1'
+        text:
+          type: string
+          title: Text
+        isSubstantial:
+          type: boolean
+          title: Issubstantial
+        notes:
+          items:
+            $ref: '#/components/schemas/CommentAnnotation'
+          type: array
+          title: Notes
+          default: []
+        instanceType:
+          type: string
+          enum:
+          - StudyAmendmentImpact
+          const: StudyAmendmentImpact
+          title: Instancetype
+      type: object
+      required:
+      - id
+      - type
+      - text
+      - isSubstantial
+      - instanceType
+      title: StudyAmendmentImpact
     StudyAmendmentReason:
       properties:
         id:
@@ -3855,6 +4000,52 @@ components:
       - epochId
       - instanceType
       title: StudyCell
+    StudyChange:
+      properties:
+        id:
+          type: string
+          minLength: 1
+          title: Id
+        name:
+          type: string
+          minLength: 1
+          title: Name
+        label:
+          anyOf:
+          - type: string
+          - type: 'null'
+          title: Label
+        description:
+          anyOf:
+          - type: string
+          - type: 'null'
+          title: Description
+        summary:
+          type: string
+          title: Summary
+        rationale:
+          type: string
+          title: Rationale
+        changedSections:
+          items:
+            $ref: '#/components/schemas/DocumentContentReference'
+          type: array
+          title: Changedsections
+        instanceType:
+          type: string
+          enum:
+          - StudyChange
+          const: StudyChange
+          title: Instancetype
+      type: object
+      required:
+      - id
+      - name
+      - summary
+      - rationale
+      - changedSections
+      - instanceType
+      title: StudyChange
     StudyCohort-Input:
       properties:
         id:
@@ -5265,6 +5456,8 @@ components:
           - type: string
           - type: 'null'
           title: Description
+        country:
+          $ref: '#/components/schemas/model__code__Code__1'
         instanceType:
           type: string
           enum:
@@ -5275,6 +5468,7 @@ components:
       required:
       - id
       - name
+      - country
       - instanceType
       title: StudySite
     StudyTitle:
@@ -5553,30 +5747,43 @@ components:
           type: string
           minLength: 1
           title: Id
-        type:
-          $ref: '#/components/schemas/model__code__Code__1'
-        code:
+        name:
+          type: string
+          minLength: 1
+          title: Name
+        label:
           anyOf:
-          - $ref: '#/components/schemas/AliasCode'
+          - type: string
           - type: 'null'
+          title: Label
+        description:
+          anyOf:
+          - type: string
+          - type: 'null'
+          title: Description
+        quantity:
+          $ref: '#/components/schemas/Quantity-Input'
+        appliesTo:
+          anyOf:
+          - $ref: '#/components/schemas/GeographicScope-Input'
+          - type: 'null'
+        appliesToId:
+          anyOf:
+          - type: string
+          - type: 'null'
+          title: Appliestoid
         instanceType:
           type: string
           enum:
           - SubjectEnrollment
           const: SubjectEnrollment
           title: Instancetype
-        quantity:
-          $ref: '#/components/schemas/Quantity-Input'
-        appliesTo:
-          anyOf:
-          - $ref: '#/components/schemas/StudySite'
-          - type: 'null'
       type: object
       required:
       - id
-      - type
-      - instanceType
+      - name
       - quantity
+      - instanceType
       title: SubjectEnrollment
     SubjectEnrollment-Output:
       properties:
@@ -5584,30 +5791,43 @@ components:
           type: string
           minLength: 1
           title: Id
-        type:
-          $ref: '#/components/schemas/model__code__Code__1'
-        code:
+        name:
+          type: string
+          minLength: 1
+          title: Name
+        label:
           anyOf:
-          - $ref: '#/components/schemas/AliasCode'
+          - type: string
           - type: 'null'
+          title: Label
+        description:
+          anyOf:
+          - type: string
+          - type: 'null'
+          title: Description
+        quantity:
+          $ref: '#/components/schemas/Quantity-Output'
+        appliesTo:
+          anyOf:
+          - $ref: '#/components/schemas/GeographicScope-Output'
+          - type: 'null'
+        appliesToId:
+          anyOf:
+          - type: string
+          - type: 'null'
+          title: Appliestoid
         instanceType:
           type: string
           enum:
           - SubjectEnrollment
           const: SubjectEnrollment
           title: Instancetype
-        quantity:
-          $ref: '#/components/schemas/Quantity-Output'
-        appliesTo:
-          anyOf:
-          - $ref: '#/components/schemas/StudySite'
-          - type: 'null'
       type: object
       required:
       - id
-      - type
-      - instanceType
+      - name
       - quantity
+      - instanceType
       title: SubjectEnrollment
     Substance-Input:
       properties:

@@ -180,7 +180,7 @@ Address:
         denoting the physical address of the person, business, building, or organization.
       Relationship Type: Value
       Model Name: text
-    line:
+    lines:
       Type:
       - $ref: '#/string'
       NCI C-Code: C25690
@@ -188,7 +188,7 @@ Address:
       Definition: The street name and number, building number, apartment or unit number,
         or post office box number where an entity is physically located.
       Relationship Type: Value
-      Model Name: line
+      Model Name: lines
     district:
       Type:
       - $ref: '#/string'
@@ -1346,6 +1346,40 @@ ConditionAssignment:
       - $ref: '#/string'
       Cardinality: 0..1
       Relationship Type: Value
+DocumentContentReference:
+  NCI C-Code: CNEW
+  Preferred Term: Document Content Reference
+  Definition: A citation pointing to the location of specific content within a document.
+  Modifier: Concrete
+  Attributes:
+    id:
+      Type:
+      - $ref: '#/string'
+      Relationship Type: Value
+      Model Name: id
+    sectionNumber:
+      Type:
+      - $ref: '#/string'
+      NCI C-Code: CNEW
+      Preferred Term: Document Content Reference Section Number
+      Definition: The numeric identifier of a particular section for the document
+        content reference.
+      Relationship Type: Value
+      Model Name: sectionNumber
+    sectionTitle:
+      Type:
+      - $ref: '#/string'
+      NCI C-Code: CNEW
+      Preferred Term: Document Content Reference Section Title
+      Definition: An identifying designation for a particular section for the document
+        content reference.
+      Relationship Type: Value
+      Model Name: sectionTitle
+    instanceType:
+      Type:
+      - $ref: '#/string'
+      Cardinality: 0..1
+      Relationship Type: Value
 EligibilityCriterion:
   NCI C-Code: C16112
   Preferred Term: Study Eligibility Criterion
@@ -1796,8 +1830,6 @@ GeographicScope:
   NCI C-Code: C207591
   Preferred Term: Geographic Scope
   Definition: The extent or range related to the physical location of an entity.
-  Sub Classes:
-  - $ref: '#/SubjectEnrollment'
   Modifier: Concrete
   Attributes:
     id:
@@ -3315,19 +3347,45 @@ StudyAmendment:
         in the current version of the protocol.
       Relationship Type: Value
       Model Name: summary
-    substantialImpact:
+    notes:
       Type:
-      - $ref: '#/Boolean'
-      NCI C-Code: C207538
-      Preferred Term: Study Amendment Substantial Impact Indicator
-      Definition: An indication as to whether the amendment is likely to have a substantial
-        impact on the safety or rights of study subjects/participants.
+      - $ref: '#/CommentAnnotation'
+      Cardinality: 0..*
+      Definition: A USDM relationship between the StudyAmendment and CommentAnnotation
+        classes which provides the set of notes related to the study amendment.
       Relationship Type: Value
-      Model Name: substantialImpact
+      Model Name: notes
+    geographicScopes:
+      Type:
+      - $ref: '#/GeographicScope'
+      Cardinality: 1..*
+      Definition: A USDM relationship between the StudyAmendment and GeographicScope
+        classes which identifies the set of geographic scopes associated with the
+        study amendment.
+      Relationship Type: Value
+      Model Name: geographicScopes
+    dateValues:
+      Type:
+      - $ref: '#/GovernanceDate'
+      Cardinality: 0..*
+      Definition: A USDM relationship between the StudyAmendment and GovernanceDate
+        classes which provides the set of governance dates associated with the study
+        amendment.
+      Relationship Type: Value
+      Model Name: dateValues
+    impacts:
+      Type:
+      - $ref: '#/StudyAmendmentImpact'
+      Cardinality: 0..*
+      Definition: A USDM relationship between the StudyAmendment and StudyAmendmentImpact
+        classes which identifies the set of impacts that the study amendment has on
+        the study or study subjects.
+      Relationship Type: Value
+      Model Name: impacts
     enrollments:
       Type:
       - $ref: '#/SubjectEnrollment'
-      Cardinality: 1..*
+      Cardinality: 0..*
       Definition: A USDM relationship between the StudyAmendment and SubjectEnrollment
         classes which provides the set of subject enrollments associated with the
         study amendment.
@@ -3342,6 +3400,14 @@ StudyAmendment:
         amendment.
       Relationship Type: Value
       Model Name: secondaryReasons
+    changes:
+      Type:
+      - $ref: '#/StudyChange'
+      Cardinality: 1..*
+      Definition: A USDM relationship between the StudyAmendment and  StudyChange
+        classes which identifies the set of changes associated with the study amendment.
+      Relationship Type: Value
+      Model Name: changes
     previousId:
       Type:
       - $ref: '#/StudyAmendment'
@@ -3358,6 +3424,58 @@ StudyAmendment:
         classes which identifies the primary reason for issuing the study amendment.
       Relationship Type: Value
       Model Name: primaryReason
+    instanceType:
+      Type:
+      - $ref: '#/string'
+      Cardinality: 0..1
+      Relationship Type: Value
+StudyAmendmentImpact:
+  NCI C-Code: CNEW
+  Preferred Term: Study Amendment Impact
+  Definition: The effect or consequence of an amendment on some aspect of the study.
+  Modifier: Concrete
+  Attributes:
+    id:
+      Type:
+      - $ref: '#/string'
+      Relationship Type: Value
+      Model Name: id
+    text:
+      Type:
+      - $ref: '#/string'
+      NCI C-Code: CNEW
+      Preferred Term: Study Amendment Impact Text
+      Definition: An instance of unstructured text that represents the study amendment
+        impact.
+      Relationship Type: Value
+      Model Name: text
+    isSubstantial:
+      Type:
+      - $ref: '#/Boolean'
+      NCI C-Code: C207538
+      Preferred Term: Study Amendment Impact Substantial Indicator
+      Definition: An indication as to whether the study amendment's impact on the
+        study is substantial.
+      Relationship Type: Value
+      Model Name: isSubstantial
+    type:
+      Type:
+      - $ref: '#/Code'
+      NCI C-Code: CNEW
+      Cardinality: '1'
+      Preferred Term: Study Amendment Impact Type
+      Definition: A characterization or classification of the study amendment impact.
+      Codelist Ref: CNEW Study Amendment Impact Type Response
+      Relationship Type: Value
+      Model Name: type
+    notes:
+      Type:
+      - $ref: '#/CommentAnnotation'
+      Cardinality: 0..*
+      Definition: A USDM relationship between the StudyAmendmentImpact and CommentAnnotation
+        classes which provides the set of notes related to the study amendment impact.
+      Relationship Type: Value
+      Model Name: notes
     instanceType:
       Type:
       - $ref: '#/string'
@@ -3524,6 +3642,74 @@ StudyCell:
         which identifies the set of study elements associated with the study cell.
       Relationship Type: Ref
       Model Name: elements
+    instanceType:
+      Type:
+      - $ref: '#/string'
+      Cardinality: 0..1
+      Relationship Type: Value
+StudyChange:
+  NCI C-Code: CNEW
+  Preferred Term: Study Change
+  Definition: The act of alteration or modification to a study.
+  Modifier: Concrete
+  Attributes:
+    id:
+      Type:
+      - $ref: '#/string'
+      Relationship Type: Value
+      Model Name: id
+    name:
+      Type:
+      - $ref: '#/string'
+      NCI C-Code: CNEW
+      Preferred Term: Study Change Name
+      Definition: The literal identifier (i.e., distinctive designation) of the study
+        change.
+      Relationship Type: Value
+      Model Name: name
+    description:
+      Type:
+      - $ref: '#/string'
+      NCI C-Code: CNEW
+      Preferred Term: Study Change Description
+      Definition: A narrative representation of the study change.
+      Relationship Type: Value
+      Model Name: description
+    label:
+      Type:
+      - $ref: '#/string'
+      NCI C-Code: CNEW
+      Preferred Term: Study Change Label
+      Definition: The short descriptive designation for the study change.
+      Relationship Type: Value
+      Model Name: label
+    rationale:
+      Type:
+      - $ref: '#/string'
+      NCI C-Code: CNEW
+      Preferred Term: Study Change Rationale
+      Definition: An explanation as to the logical reasons for why a study change
+        has occurred.
+      Relationship Type: Value
+      Model Name: rationale
+    summary:
+      Type:
+      - $ref: '#/string'
+      NCI C-Code: CNEW
+      Preferred Term: Study Change Summary
+      Definition: A short narrative representation describing the changes introduced
+        in the current version of the study.
+      Relationship Type: Value
+      Model Name: summary
+    changedSections:
+      Type:
+      - $ref: '#/DocumentContentReference'
+      Cardinality: 1..*
+      Definition: A USDM relationship between the StudyChange and DocumentContentReference
+        class which provides the set of changed document sections related to the study
+        change.
+      Relationship Type: Value
+      Model Name: changedSections
     instanceType:
       Type:
       - $ref: '#/string'
@@ -4672,6 +4858,16 @@ StudySite:
       Definition: The short descriptive designation for the study site.
       Relationship Type: Value
       Model Name: label
+    country:
+      Type:
+      - $ref: '#/Code'
+      NCI C-Code: C170990
+      Cardinality: '1'
+      Preferred Term: Country of Study Site
+      Definition: The country in which the study site is located.
+      Codelist Ref: (Point out to ISO 3166-1 Alpha-3 Country code)
+      Relationship Type: Value
+      Model Name: country
     instanceType:
       Type:
       - $ref: '#/string'
@@ -4892,8 +5088,6 @@ SubjectEnrollment:
   Definition: The act of enrolling subjects into a study. The subject will have met
     the inclusion/exclusion criteria to participate in the trial and will have signed
     an informed consent form. (CDISC Glossary)
-  Super Classes:
-  - $ref: '#/GeographicScope'
   Modifier: Concrete
   Attributes:
     id:
@@ -4901,31 +5095,42 @@ SubjectEnrollment:
       - $ref: '#/string'
       Relationship Type: Value
       Model Name: id
-      Inherited From:
-        $ref: '#/GeographicScope'
-    code:
+    name:
       Type:
-      - $ref: '#/AliasCode'
-      NCI C-Code: C207571
-      Cardinality: 0..1
-      Preferred Term: Subject Enrollment Code
-      Definition: A symbol or combination of symbols which is assigned to the subject
+      - $ref: '#/string'
+      NCI C-Code: CNEW
+      Preferred Term: Subject Enrollment Name
+      Definition: The literal identifier (i.e., distinctive designation) of the subject
         enrollment.
       Relationship Type: Value
-      Model Name: code
-      Inherited From:
-        $ref: '#/GeographicScope'
-    type:
+      Model Name: name
+    description:
       Type:
-      - $ref: '#/Code'
-      NCI C-Code: C207574
-      Cardinality: '1'
-      Preferred Term: Subject Enrollment Type
-      Definition: A characterization or classification of the subject enrollment.
+      - $ref: '#/string'
+      NCI C-Code: CNEW
+      Preferred Term: Subject Enrollment Description
+      Definition: A narrative representation of the subject enrollment.
       Relationship Type: Value
-      Model Name: type
-      Inherited From:
-        $ref: '#/GeographicScope'
+      Model Name: description
+    label:
+      Type:
+      - $ref: '#/string'
+      NCI C-Code: CNEW
+      Preferred Term: Subject Enrollment Label
+      Definition: The short descriptive designation for the subject enrollment..
+      Relationship Type: Value
+      Model Name: label
+    appliesTo:
+      Type:
+      - $ref: '#/GeographicScope'
+      - $ref: '#/StudyCohort'
+      - $ref: '#/StudySite'
+      Cardinality: 0..1
+      Definition: A USDM relationship between the SubjectEnrollment and StudySite,
+        StudyCohort, or GeographicScope classes which identifies the study site, study
+        cohort, or geographic scope to which the subject enrollment applies.
+      Relationship Type: Value
+      Model Name: appliesTo
     quantity:
       Type:
       - $ref: '#/Quantity'
@@ -4935,14 +5140,10 @@ SubjectEnrollment:
       Definition: The value representing the number of individuals enrolled in a study.
       Relationship Type: Value
       Model Name: quantity
-    appliesTo:
+    appliesToId:
       Type:
-      - $ref: '#/StudySite'
-      Cardinality: 0..1
-      Definition: A USDM relationship between the SubjectEnrollment and StudySite
-        classes which identifies the study site that applies to the subject enrollments.
+      - $ref: UNKNOWN
       Relationship Type: Value
-      Model Name: appliesTo
     instanceType:
       Type:
       - $ref: '#/string'
