@@ -17,6 +17,8 @@ jobs:
   Diff_And_Data_Dict:
     name: Generate Diff and Data Dict
     runs-on: ubuntu-latest
+    permissions:
+      contents: write
     steps:
       - name: Set prev-branch to main for automated workflows
         id: prev-branch
