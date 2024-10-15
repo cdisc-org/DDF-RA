@@ -673,6 +673,12 @@ AnalysisPopulation:
       Definition: The short descriptive designation for the analysis population.
       Relationship Type: Value
       Model Name: label
+    subsetOf*:
+      Type:
+      - $ref: '#/PopulationDefinition'
+      Cardinality: 0..*
+      Relationship Type: UNKNOWN
+      Model Name: subsetOf
     notes:
       Type:
       - $ref: '#/CommentAnnotation'
@@ -1745,15 +1751,11 @@ Estimand:
       - $ref: '#/string'
       Relationship Type: Value
       Model Name: id
-    summaryMeasure:
+    populationSummary*:
       Type:
       - $ref: '#/string'
-      NCI C-Code: C188853
-      Preferred Term: Population-Level Summary
-      Definition: A synopsis of the clinical endpoint of interest within the analysis
-        target study population.
-      Relationship Type: Value
-      Model Name: summaryMeasure
+      Relationship Type: UNKNOWN
+      Model Name: populationSummary
     name:
       Type:
       - $ref: '#/string'
@@ -1812,15 +1814,22 @@ Estimand:
         which identifies the set of intercurrent events associated with a study estimand.
       Relationship Type: Value
       Model Name: intercurrentEvents
-    interventionId:
+    interventions*:
       Type:
       - $ref: '#/StudyIntervention'
-      Cardinality: '1'
-      Definition: A USDM relationship between the Estimand and StudyIntervention classes
-        which provides the details associated with an instance of the intervention
-        used to partially define a study estimand.
-      Relationship Type: Ref
-      Model Name: intervention
+      Cardinality: 1..*
+      Relationship Type: UNKNOWN
+      Model Name: interventions
+    summaryMeasure:
+      Type:
+      - $ref: '#/string'
+      Cardinality: 0..1
+      Relationship Type: Value
+    interventionId:
+      Type:
+      - $ref: '#/string'
+      Cardinality: 0..1
+      Relationship Type: Value
     instanceType:
       Type:
       - $ref: '#/string'
@@ -2076,6 +2085,8 @@ IntercurrentEvent:
   Definition: An event(s) occurring after treatment initiation that affects either
     the interpretation or the existence of the measurements associated with the clinical
     question of interest. (ICH E9 Addendum on Estimands)
+  Super Classes:
+  - $ref: '#/SyntaxTemplate'
   Modifier: Concrete
   Attributes:
     id:
@@ -2083,6 +2094,8 @@ IntercurrentEvent:
       - $ref: '#/string'
       Relationship Type: Value
       Model Name: id
+      Inherited From:
+        $ref: '#/SyntaxTemplate'
     name:
       Type:
       - $ref: '#/string'
@@ -2092,6 +2105,8 @@ IntercurrentEvent:
         event.
       Relationship Type: Value
       Model Name: name
+      Inherited From:
+        $ref: '#/SyntaxTemplate'
     description:
       Type:
       - $ref: '#/string'
@@ -2100,6 +2115,8 @@ IntercurrentEvent:
       Definition: A narrative representation of the intercurrent event.
       Relationship Type: Value
       Model Name: description
+      Inherited From:
+        $ref: '#/SyntaxTemplate'
     label:
       Type:
       - $ref: '#/string'
@@ -2108,6 +2125,33 @@ IntercurrentEvent:
       Definition: The short descriptive designation for the intercurrent event.
       Relationship Type: Value
       Model Name: label
+      Inherited From:
+        $ref: '#/SyntaxTemplate'
+    text*:
+      Type:
+      - $ref: '#/string'
+      Relationship Type: UNKNOWN
+      Model Name: text
+      Inherited From:
+        $ref: '#/SyntaxTemplate'
+    notes:
+      Type:
+      - $ref: '#/CommentAnnotation'
+      Cardinality: 0..*
+      Definition: A USDM relationship between the IntercurrentEvent and CommentAnnotation
+        classes which provides the set of notes related to the intercurrent event.
+      Relationship Type: Value
+      Model Name: notes
+      Inherited From:
+        $ref: '#/SyntaxTemplate'
+    dictionary*:
+      Type:
+      - $ref: '#/SyntaxTemplateDictionary'
+      Cardinality: 0..1
+      Relationship Type: UNKNOWN
+      Model Name: dictionary
+      Inherited From:
+        $ref: '#/SyntaxTemplate'
     strategy:
       Type:
       - $ref: '#/string'
@@ -2117,14 +2161,6 @@ IntercurrentEvent:
         intercurrent events.
       Relationship Type: Value
       Model Name: strategy
-    notes:
-      Type:
-      - $ref: '#/CommentAnnotation'
-      Cardinality: 0..*
-      Definition: A USDM relationship between the IntercurrentEvent and CommentAnnotation
-        classes which provides the set of notes related to the intercurrent event.
-      Relationship Type: Value
-      Model Name: notes
     instanceType:
       Type:
       - $ref: '#/string'
@@ -4206,15 +4242,12 @@ StudyDesign:
         which identifies the set of study cells associated with the study design. '
       Relationship Type: Value
       Model Name: studyCells
-    documentVersionId:
+    documentVersions*:
       Type:
       - $ref: '#/StudyDefinitionDocumentVersion'
-      Cardinality: 0..1
-      Definition: A USDM relationship between the StudyDesign and StudyDefinitionDocumentVersion
-        classes which identifies the version of the study definition document associated
-        with the study design.
-      Relationship Type: Ref
-      Model Name: documentVersion
+      Cardinality: 0..*
+      Relationship Type: UNKNOWN
+      Model Name: documentVersions
     elements:
       Type:
       - $ref: '#/StudyElement'
@@ -4262,6 +4295,10 @@ StudyDesign:
       Type:
       - $ref: '#/BiomedicalConceptSurrogate'
       Cardinality: 0..*
+      Relationship Type: Value
+    documentVersionId:
+      Type:
+      - $ref: UNKNOWN
       Relationship Type: Value
     dictionaries:
       Type:
@@ -5228,6 +5265,7 @@ SyntaxTemplate:
   - $ref: '#/Condition'
   - $ref: '#/EligibilityCriterion'
   - $ref: '#/Endpoint'
+  - $ref: '#/IntercurrentEvent'
   - $ref: '#/Objective'
   Modifier: Abstract
   Attributes:

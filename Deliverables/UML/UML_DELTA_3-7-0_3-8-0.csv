@@ -1,0 +1,11 @@
+status,class_name,property_name,data_type
+,,,
+Property - NEW,Estimand,interventions,StudyIntervention
+Property - NEW,Estimand,populationSummary,string
+Property - NEW,StudyDesign,documentVersions,StudyDefinitionDocumentVersion
+Property - NEW,AnalysisPopulation,subsetOf,PopulationDefinition
+Property - NEW,IntercurrentEvent,dictionary,SyntaxTemplateDictionary
+Property - NEW,IntercurrentEvent,text,string
+Property - DELETED,Estimand,intervention,StudyIntervention
+Property - DELETED,Estimand,summaryMeasure,string
+Property - DELETED,StudyDesign,documentVersion,StudyDefinitionDocumentVersion
