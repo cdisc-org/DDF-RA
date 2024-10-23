@@ -673,14 +673,14 @@ AnalysisPopulation:
       Definition: The short descriptive designation for the analysis population.
       Relationship Type: Value
       Model Name: label
-    subsetOf*:
+    subsetOfIds:
       Type:
       - $ref: '#/PopulationDefinition'
       Cardinality: 0..*
       Definition: A USDM relationship between the AnalysisPopulation and PopulationDefinition
         classes which identifies the population definition of which the analysis population
         is a subset.
-      Relationship Type: UNKNOWN
+      Relationship Type: Ref
       Model Name: subsetOf
     notes:
       Type:
@@ -1754,14 +1754,14 @@ Estimand:
       - $ref: '#/string'
       Relationship Type: Value
       Model Name: id
-    populationSummary*:
+    populationSummary:
       Type:
       - $ref: '#/string'
       NCI C-Code: C188853
       Preferred Term: Population-Level Summary
       Definition: A synopsis of the clinical endpoint of interest within the analysis
         target study population.
-      Relationship Type: UNKNOWN
+      Relationship Type: Value
       Model Name: populationSummary
     name:
       Type:
@@ -1821,24 +1821,14 @@ Estimand:
         which identifies the set of intercurrent events associated with a study estimand.
       Relationship Type: Value
       Model Name: intercurrentEvents
-    interventions*:
+    interventionIds:
       Type:
       - $ref: '#/StudyIntervention'
       Cardinality: 1..*
       Definition: A USDM relationship between the Estimand and StudyIntervention classes
         which identifies the set of study interventions associated with the Estimand.
-      Relationship Type: UNKNOWN
+      Relationship Type: Ref
       Model Name: interventions
-    summaryMeasure:
-      Type:
-      - $ref: '#/string'
-      Cardinality: 0..1
-      Relationship Type: Value
-    interventionId:
-      Type:
-      - $ref: '#/string'
-      Cardinality: 0..1
-      Relationship Type: Value
     instanceType:
       Type:
       - $ref: '#/string'
@@ -2136,14 +2126,14 @@ IntercurrentEvent:
       Model Name: label
       Inherited From:
         $ref: '#/SyntaxTemplate'
-    text*:
+    text:
       Type:
       - $ref: '#/string'
       NCI C-Code: CNEW
       Preferred Term: Intercurrent Event Text
       Definition: An instance of structured text that represents the intercurrent
         event.
-      Relationship Type: UNKNOWN
+      Relationship Type: Value
       Model Name: text
       Inherited From:
         $ref: '#/SyntaxTemplate'
@@ -2157,14 +2147,14 @@ IntercurrentEvent:
       Model Name: notes
       Inherited From:
         $ref: '#/SyntaxTemplate'
-    dictionary*:
+    dictionaryId:
       Type:
       - $ref: '#/SyntaxTemplateDictionary'
       Cardinality: 0..1
       Definition: 'A USDM relationship between the IntercurrentEvent and SyntaxTemplateDictionary
         classes which provides the set of dictionary entries related to the intercurrent
         event. '
-      Relationship Type: UNKNOWN
+      Relationship Type: Ref
       Model Name: dictionary
       Inherited From:
         $ref: '#/SyntaxTemplate'
@@ -4258,14 +4248,14 @@ StudyDesign:
         which identifies the set of study cells associated with the study design. '
       Relationship Type: Value
       Model Name: studyCells
-    documentVersions*:
+    documentVersionIds:
       Type:
       - $ref: '#/StudyDefinitionDocumentVersion'
       Cardinality: 0..*
       Definition: A USDM relationship between the StudyDesign and StudyDefinitionDocumentVersion
         classes which identifies the version of the study definition documents associated
         with the study design.
-      Relationship Type: UNKNOWN
+      Relationship Type: Ref
       Model Name: documentVersions
     elements:
       Type:
@@ -4314,10 +4304,6 @@ StudyDesign:
       Type:
       - $ref: '#/BiomedicalConceptSurrogate'
       Cardinality: 0..*
-      Relationship Type: Value
-    documentVersionId:
-      Type:
-      - $ref: UNKNOWN
       Relationship Type: Value
     dictionaries:
       Type:
