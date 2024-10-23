@@ -934,6 +934,12 @@ components:
         text:
           type: string
           title: Text
+        subsetOfIds:
+          items:
+            type: string
+          type: array
+          title: Subsetofids
+          default: []
         notes:
           items:
             $ref: '#/components/schemas/CommentAnnotation'
@@ -976,6 +982,12 @@ components:
         text:
           type: string
           title: Text
+        subsetOfIds:
+          items:
+            type: string
+          type: array
+          title: Subsetofids
+          default: []
         notes:
           items:
             $ref: '#/components/schemas/CommentAnnotation'
@@ -2139,14 +2151,16 @@ components:
           - type: string
           - type: 'null'
           title: Description
-        summaryMeasure:
+        populationSummary:
           type: string
-          title: Summarymeasure
+          title: Populationsummary
         analysisPopulation:
           $ref: '#/components/schemas/AnalysisPopulation-Input'
-        interventionId:
-          type: string
-          title: Interventionid
+        interventionIds:
+          items:
+            type: string
+          type: array
+          title: Interventionids
         variableOfInterestId:
           type: string
           title: Variableofinterestid
@@ -2171,9 +2185,9 @@ components:
       required:
       - id
       - name
-      - summaryMeasure
+      - populationSummary
       - analysisPopulation
-      - interventionId
+      - interventionIds
       - variableOfInterestId
       - intercurrentEvents
       - instanceType
@@ -2198,14 +2212,16 @@ components:
           - type: string
           - type: 'null'
           title: Description
-        summaryMeasure:
+        populationSummary:
           type: string
-          title: Summarymeasure
+          title: Populationsummary
         analysisPopulation:
           $ref: '#/components/schemas/AnalysisPopulation-Output'
-        interventionId:
-          type: string
-          title: Interventionid
+        interventionIds:
+          items:
+            type: string
+          type: array
+          title: Interventionids
         variableOfInterestId:
           type: string
           title: Variableofinterestid
@@ -2230,9 +2246,9 @@ components:
       required:
       - id
       - name
-      - summaryMeasure
+      - populationSummary
       - analysisPopulation
-      - interventionId
+      - interventionIds
       - variableOfInterestId
       - intercurrentEvents
       - instanceType
@@ -2548,9 +2564,14 @@ components:
           - type: string
           - type: 'null'
           title: Description
-        strategy:
+        text:
           type: string
-          title: Strategy
+          title: Text
+        dictionaryId:
+          anyOf:
+          - type: string
+          - type: 'null'
+          title: Dictionaryid
         notes:
           items:
             $ref: '#/components/schemas/CommentAnnotation'
@@ -2563,12 +2584,16 @@ components:
           - IntercurrentEvent
           const: IntercurrentEvent
           title: Instancetype
+        strategy:
+          type: string
+          title: Strategy
       type: object
       required:
       - id
       - name
-      - strategy
+      - text
       - instanceType
+      - strategy
       title: IntercurrentEvent
     IntercurrentEvent-Output:
       properties:
@@ -2590,9 +2615,14 @@ components:
           - type: string
           - type: 'null'
           title: Description
-        strategy:
+        text:
           type: string
-          title: Strategy
+          title: Text
+        dictionaryId:
+          anyOf:
+          - type: string
+          - type: 'null'
+          title: Dictionaryid
         notes:
           items:
             $ref: '#/components/schemas/CommentAnnotation'
@@ -2605,12 +2635,16 @@ components:
           - IntercurrentEvent
           const: IntercurrentEvent
           title: Instancetype
+        strategy:
+          type: string
+          title: Strategy
       type: object
       required:
       - id
       - name
-      - strategy
+      - text
       - instanceType
+      - strategy
       title: IntercurrentEvent
     Masking:
       properties:
@@ -4596,11 +4630,12 @@ components:
           type: array
           title: Scheduletimelines
           default: []
-        documentVersionId:
-          anyOf:
-          - type: string
-          - type: 'null'
-          title: Documentversionid
+        documentVersionIds:
+          items:
+            type: string
+          type: array
+          title: Documentversionids
+          default: []
         dictionaries:
           items:
             $ref: '#/components/schemas/SyntaxTemplateDictionary'
@@ -4774,11 +4809,12 @@ components:
           type: array
           title: Scheduletimelines
           default: []
-        documentVersionId:
-          anyOf:
-          - type: string
-          - type: 'null'
-          title: Documentversionid
+        documentVersionIds:
+          items:
+            type: string
+          type: array
+          title: Documentversionids
+          default: []
         dictionaries:
           items:
             $ref: '#/components/schemas/SyntaxTemplateDictionary'

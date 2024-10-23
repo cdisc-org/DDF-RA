@@ -1402,6 +1402,14 @@
             "type": "string",
             "title": "Text"
           },
+          "subsetOfIds": {
+            "items": {
+              "type": "string"
+            },
+            "type": "array",
+            "title": "Subsetofids",
+            "default": []
+          },
           "notes": {
             "items": {
               "$ref": "#/components/schemas/CommentAnnotation"
@@ -1465,6 +1473,14 @@
           "text": {
             "type": "string",
             "title": "Text"
+          },
+          "subsetOfIds": {
+            "items": {
+              "type": "string"
+            },
+            "type": "array",
+            "title": "Subsetofids",
+            "default": []
           },
           "notes": {
             "items": {
@@ -3277,16 +3293,19 @@
             ],
             "title": "Description"
           },
-          "summaryMeasure": {
+          "populationSummary": {
             "type": "string",
-            "title": "Summarymeasure"
+            "title": "Populationsummary"
           },
           "analysisPopulation": {
             "$ref": "#/components/schemas/AnalysisPopulation-Input"
           },
-          "interventionId": {
-            "type": "string",
-            "title": "Interventionid"
+          "interventionIds": {
+            "items": {
+              "type": "string"
+            },
+            "type": "array",
+            "title": "Interventionids"
           },
           "variableOfInterestId": {
             "type": "string",
@@ -3320,9 +3339,9 @@
         "required": [
           "id",
           "name",
-          "summaryMeasure",
+          "populationSummary",
           "analysisPopulation",
-          "interventionId",
+          "interventionIds",
           "variableOfInterestId",
           "intercurrentEvents",
           "instanceType"
@@ -3363,16 +3382,19 @@
             ],
             "title": "Description"
           },
-          "summaryMeasure": {
+          "populationSummary": {
             "type": "string",
-            "title": "Summarymeasure"
+            "title": "Populationsummary"
           },
           "analysisPopulation": {
             "$ref": "#/components/schemas/AnalysisPopulation-Output"
           },
-          "interventionId": {
-            "type": "string",
-            "title": "Interventionid"
+          "interventionIds": {
+            "items": {
+              "type": "string"
+            },
+            "type": "array",
+            "title": "Interventionids"
           },
           "variableOfInterestId": {
             "type": "string",
@@ -3406,9 +3428,9 @@
         "required": [
           "id",
           "name",
-          "summaryMeasure",
+          "populationSummary",
           "analysisPopulation",
-          "interventionId",
+          "interventionIds",
           "variableOfInterestId",
           "intercurrentEvents",
           "instanceType"
@@ -3880,9 +3902,20 @@
             ],
             "title": "Description"
           },
-          "strategy": {
+          "text": {
             "type": "string",
-            "title": "Strategy"
+            "title": "Text"
+          },
+          "dictionaryId": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Dictionaryid"
           },
           "notes": {
             "items": {
@@ -3899,14 +3932,19 @@
             ],
             "const": "IntercurrentEvent",
             "title": "Instancetype"
+          },
+          "strategy": {
+            "type": "string",
+            "title": "Strategy"
           }
         },
         "type": "object",
         "required": [
           "id",
           "name",
-          "strategy",
-          "instanceType"
+          "text",
+          "instanceType",
+          "strategy"
         ],
         "title": "IntercurrentEvent"
       },
@@ -3944,9 +3982,20 @@
             ],
             "title": "Description"
           },
-          "strategy": {
+          "text": {
             "type": "string",
-            "title": "Strategy"
+            "title": "Text"
+          },
+          "dictionaryId": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Dictionaryid"
           },
           "notes": {
             "items": {
@@ -3963,14 +4012,19 @@
             ],
             "const": "IntercurrentEvent",
             "title": "Instancetype"
+          },
+          "strategy": {
+            "type": "string",
+            "title": "Strategy"
           }
         },
         "type": "object",
         "required": [
           "id",
           "name",
-          "strategy",
-          "instanceType"
+          "text",
+          "instanceType",
+          "strategy"
         ],
         "title": "IntercurrentEvent"
       },
@@ -6962,16 +7016,13 @@
             "title": "Scheduletimelines",
             "default": []
           },
-          "documentVersionId": {
-            "anyOf": [
-              {
-                "type": "string"
-              },
-              {
-                "type": "null"
-              }
-            ],
-            "title": "Documentversionid"
+          "documentVersionIds": {
+            "items": {
+              "type": "string"
+            },
+            "type": "array",
+            "title": "Documentversionids",
+            "default": []
           },
           "dictionaries": {
             "items": {
@@ -7221,16 +7272,13 @@
             "title": "Scheduletimelines",
             "default": []
           },
-          "documentVersionId": {
-            "anyOf": [
-              {
-                "type": "string"
-              },
-              {
-                "type": "null"
-              }
-            ],
-            "title": "Documentversionid"
+          "documentVersionIds": {
+            "items": {
+              "type": "string"
+            },
+            "type": "array",
+            "title": "Documentversionids",
+            "default": []
           },
           "dictionaries": {
             "items": {
