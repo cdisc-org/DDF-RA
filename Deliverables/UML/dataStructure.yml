@@ -1787,14 +1787,14 @@ Estimand:
       Definition: The short descriptive designation for the estimand.
       Relationship Type: Value
       Model Name: label
-    analysisPopulation:
+    analysisPopulationId:
       Type:
       - $ref: '#/AnalysisPopulation'
       Cardinality: '1'
       Definition: A USDM relationship between the Estimand and AnalysisPopulation
         classes which provides the details associated with an instance of the analysis
         population used to partially define a study estimand.
-      Relationship Type: Value
+      Relationship Type: Ref
       Model Name: analysisPopulation
     notes:
       Type:
@@ -4303,6 +4303,11 @@ StudyDesign:
     bcSurrogates:
       Type:
       - $ref: '#/BiomedicalConceptSurrogate'
+      Cardinality: 0..*
+      Relationship Type: Value
+    analysisPopulations:
+      Type:
+      - $ref: '#/AnalysisPopulation'
       Cardinality: 0..*
       Relationship Type: Value
     dictionaries:
