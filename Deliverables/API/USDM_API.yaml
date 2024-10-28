@@ -2154,8 +2154,9 @@ components:
         populationSummary:
           type: string
           title: Populationsummary
-        analysisPopulation:
-          $ref: '#/components/schemas/AnalysisPopulation-Input'
+        analysisPopulationId:
+          type: string
+          title: Analysispopulationid
         interventionIds:
           items:
             type: string
@@ -2186,7 +2187,7 @@ components:
       - id
       - name
       - populationSummary
-      - analysisPopulation
+      - analysisPopulationId
       - interventionIds
       - variableOfInterestId
       - intercurrentEvents
@@ -2215,8 +2216,9 @@ components:
         populationSummary:
           type: string
           title: Populationsummary
-        analysisPopulation:
-          $ref: '#/components/schemas/AnalysisPopulation-Output'
+        analysisPopulationId:
+          type: string
+          title: Analysispopulationid
         interventionIds:
           items:
             type: string
@@ -2247,7 +2249,7 @@ components:
       - id
       - name
       - populationSummary
-      - analysisPopulation
+      - analysisPopulationId
       - interventionIds
       - variableOfInterestId
       - intercurrentEvents
@@ -4624,6 +4626,12 @@ components:
           anyOf:
           - $ref: '#/components/schemas/StudyDesignPopulation-Input'
           - type: 'null'
+        analysisPopulations:
+          items:
+            $ref: '#/components/schemas/AnalysisPopulation-Input'
+          type: array
+          title: Analysispopulations
+          default: []
         scheduleTimelines:
           items:
             $ref: '#/components/schemas/ScheduleTimeline-Input'
@@ -4803,6 +4811,12 @@ components:
           anyOf:
           - $ref: '#/components/schemas/StudyDesignPopulation-Output'
           - type: 'null'
+        analysisPopulations:
+          items:
+            $ref: '#/components/schemas/AnalysisPopulation-Output'
+          type: array
+          title: Analysispopulations
+          default: []
         scheduleTimelines:
           items:
             $ref: '#/components/schemas/ScheduleTimeline-Output'
