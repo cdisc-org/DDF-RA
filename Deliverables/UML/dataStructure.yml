@@ -1388,6 +1388,9 @@ DocumentContentReference:
       Type:
       - $ref: '#/StudyDefinitionDocument'
       Cardinality: '1'
+      Definition: A USDM relationship between the DocumentContentReference and StudyDefinitionDocument
+        classes which identifies the study definition document to which the document
+        content reference applies.
       Relationship Type: Ref
       Model Name: appliesTo
     instanceType:
