@@ -1386,9 +1386,10 @@ DocumentContentReference:
       Model Name: sectionTitle
     appliesToId:
       Type:
-      - $ref: '#/string'
-      Cardinality: 0..1
-      Relationship Type: Value
+      - $ref: '#/StudyDefinitionDocument'
+      Cardinality: '1'
+      Relationship Type: Ref
+      Model Name: appliesTo
     instanceType:
       Type:
       - $ref: '#/string'
