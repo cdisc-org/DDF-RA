@@ -2597,6 +2597,10 @@
             "type": "string",
             "title": "Sectiontitle"
           },
+          "appliesToId": {
+            "type": "string",
+            "title": "Appliestoid"
+          },
           "instanceType": {
             "type": "string",
             "enum": [
@@ -2611,6 +2615,7 @@
           "id",
           "sectionNumber",
           "sectionTitle",
+          "appliesToId",
           "instanceType"
         ],
         "title": "DocumentContentReference"
