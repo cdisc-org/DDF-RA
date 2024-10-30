@@ -481,7 +481,7 @@ components:
           title: Postalcode
         country:
           anyOf:
-          - $ref: '#/components/schemas/model__code__Code__1'
+          - $ref: '#/components/schemas/Code'
           - type: 'null'
         instanceType:
           type: string
@@ -516,7 +516,7 @@ components:
           title: Description
         pharmacologicClass:
           anyOf:
-          - $ref: '#/components/schemas/model__code__Code__1'
+          - $ref: '#/components/schemas/Code'
           - type: 'null'
         administrableDoseForm:
           $ref: '#/components/schemas/AliasCode'
@@ -579,7 +579,7 @@ components:
           title: Description
         pharmacologicClass:
           anyOf:
-          - $ref: '#/components/schemas/model__code__Code__1'
+          - $ref: '#/components/schemas/Code'
           - type: 'null'
         administrableDoseForm:
           $ref: '#/components/schemas/AliasCode'
@@ -659,7 +659,7 @@ components:
           type: string
           title: Text
         type:
-          $ref: '#/components/schemas/model__code__Code__1'
+          $ref: '#/components/schemas/Code'
         quantity:
           $ref: '#/components/schemas/Quantity-Input'
         instanceType:
@@ -691,7 +691,7 @@ components:
           type: string
           title: Text
         type:
-          $ref: '#/components/schemas/model__code__Code__1'
+          $ref: '#/components/schemas/Code'
         quantity:
           $ref: '#/components/schemas/Quantity-Output'
         instanceType:
@@ -892,10 +892,10 @@ components:
           minLength: 1
           title: Id
         standardCode:
-          $ref: '#/components/schemas/model__code__Code__1'
+          $ref: '#/components/schemas/Code'
         standardCodeAliases:
           items:
-            $ref: '#/components/schemas/model__code__Code__1'
+            $ref: '#/components/schemas/Code'
           type: array
           title: Standardcodealiases
           default: []
@@ -1548,6 +1548,39 @@ components:
       - text
       - instanceType
       title: Characteristic
+    Code:
+      properties:
+        id:
+          type: string
+          minLength: 1
+          title: Id
+        code:
+          type: string
+          title: Code
+        codeSystem:
+          type: string
+          title: Codesystem
+        codeSystemVersion:
+          type: string
+          title: Codesystemversion
+        decode:
+          type: string
+          title: Decode
+        instanceType:
+          type: string
+          enum:
+          - Code
+          const: Code
+          title: Instancetype
+      type: object
+      required:
+      - id
+      - code
+      - codeSystem
+      - codeSystemVersion
+      - decode
+      - instanceType
+      title: Code
     CommentAnnotation:
       properties:
         id:
@@ -1559,7 +1592,7 @@ components:
           title: Text
         codes:
           items:
-            $ref: '#/components/schemas/model__code__Code__1'
+            $ref: '#/components/schemas/Code'
           type: array
           title: Codes
           default: []
@@ -1788,7 +1821,7 @@ components:
           const: EligibilityCriterion
           title: Instancetype
         category:
-          $ref: '#/components/schemas/model__code__Code__1'
+          $ref: '#/components/schemas/Code'
         identifier:
           type: string
           title: Identifier
@@ -1852,7 +1885,7 @@ components:
           const: EligibilityCriterion
           title: Instancetype
         category:
-          $ref: '#/components/schemas/model__code__Code__1'
+          $ref: '#/components/schemas/Code'
         identifier:
           type: string
           title: Identifier
@@ -1896,7 +1929,7 @@ components:
           - type: 'null'
           title: Description
         type:
-          $ref: '#/components/schemas/model__code__Code__1'
+          $ref: '#/components/schemas/Code'
         previousId:
           anyOf:
           - type: string
@@ -1914,13 +1947,13 @@ components:
           title: Scheduledatid
         environmentalSettings:
           items:
-            $ref: '#/components/schemas/model__code__Code__1'
+            $ref: '#/components/schemas/Code'
           type: array
           title: Environmentalsettings
           default: []
         contactModes:
           items:
-            $ref: '#/components/schemas/model__code__Code__1'
+            $ref: '#/components/schemas/Code'
           type: array
           title: Contactmodes
           default: []
@@ -1972,7 +2005,7 @@ components:
           - type: 'null'
           title: Description
         type:
-          $ref: '#/components/schemas/model__code__Code__1'
+          $ref: '#/components/schemas/Code'
         previousId:
           anyOf:
           - type: string
@@ -1990,13 +2023,13 @@ components:
           title: Scheduledatid
         environmentalSettings:
           items:
-            $ref: '#/components/schemas/model__code__Code__1'
+            $ref: '#/components/schemas/Code'
           type: array
           title: Environmentalsettings
           default: []
         contactModes:
           items:
-            $ref: '#/components/schemas/model__code__Code__1'
+            $ref: '#/components/schemas/Code'
           type: array
           title: Contactmodes
           default: []
@@ -2071,7 +2104,7 @@ components:
           type: string
           title: Purpose
         level:
-          $ref: '#/components/schemas/model__code__Code__1'
+          $ref: '#/components/schemas/Code'
       type: object
       required:
       - id
@@ -2125,7 +2158,7 @@ components:
           type: string
           title: Purpose
         level:
-          $ref: '#/components/schemas/model__code__Code__1'
+          $ref: '#/components/schemas/Code'
       type: object
       required:
       - id
@@ -2266,7 +2299,7 @@ components:
           minLength: 1
           title: Id
         type:
-          $ref: '#/components/schemas/model__code__Code__1'
+          $ref: '#/components/schemas/Code'
         code:
           anyOf:
           - $ref: '#/components/schemas/AliasCode'
@@ -2290,7 +2323,7 @@ components:
           minLength: 1
           title: Id
         type:
-          $ref: '#/components/schemas/model__code__Code__1'
+          $ref: '#/components/schemas/Code'
         code:
           anyOf:
           - $ref: '#/components/schemas/AliasCode'
@@ -2328,7 +2361,7 @@ components:
           - type: 'null'
           title: Description
         type:
-          $ref: '#/components/schemas/model__code__Code__1'
+          $ref: '#/components/schemas/Code'
         dateValue:
           type: string
           format: date
@@ -2374,7 +2407,7 @@ components:
           - type: 'null'
           title: Description
         type:
-          $ref: '#/components/schemas/model__code__Code__1'
+          $ref: '#/components/schemas/Code'
         dateValue:
           type: string
           format: date
@@ -2430,7 +2463,7 @@ components:
           title: Description
         codes:
           items:
-            $ref: '#/components/schemas/model__code__Code__1'
+            $ref: '#/components/schemas/Code'
           type: array
           title: Codes
           default: []
@@ -2478,7 +2511,7 @@ components:
           title: Description
         codes:
           items:
-            $ref: '#/components/schemas/model__code__Code__1'
+            $ref: '#/components/schemas/Code'
           type: array
           title: Codes
           default: []
@@ -2511,7 +2544,7 @@ components:
           minLength: 1
           title: Id
         role:
-          $ref: '#/components/schemas/model__code__Code__1'
+          $ref: '#/components/schemas/Code'
         substance:
           $ref: '#/components/schemas/Substance-Input'
         instanceType:
@@ -2534,7 +2567,7 @@ components:
           minLength: 1
           title: Id
         role:
-          $ref: '#/components/schemas/model__code__Code__1'
+          $ref: '#/components/schemas/Code'
         substance:
           $ref: '#/components/schemas/Substance-Output'
         instanceType:
@@ -2801,7 +2834,7 @@ components:
           const: Objective
           title: Instancetype
         level:
-          $ref: '#/components/schemas/model__code__Code__1'
+          $ref: '#/components/schemas/Code'
         endpoints:
           items:
             $ref: '#/components/schemas/Endpoint-Input'
@@ -2857,7 +2890,7 @@ components:
           const: Objective
           title: Instancetype
         level:
-          $ref: '#/components/schemas/model__code__Code__1'
+          $ref: '#/components/schemas/Code'
         endpoints:
           items:
             $ref: '#/components/schemas/Endpoint-Output'
@@ -2888,7 +2921,7 @@ components:
           - type: 'null'
           title: Label
         type:
-          $ref: '#/components/schemas/model__code__Code__1'
+          $ref: '#/components/schemas/Code'
         identifierScheme:
           type: string
           title: Identifierscheme
@@ -2936,7 +2969,7 @@ components:
           - type: 'null'
           title: Label
         type:
-          $ref: '#/components/schemas/model__code__Code__1'
+          $ref: '#/components/schemas/Code'
         identifierScheme:
           type: string
           title: Identifierscheme
@@ -3017,7 +3050,7 @@ components:
           type: string
           title: Proceduretype
         code:
-          $ref: '#/components/schemas/model__code__Code__1'
+          $ref: '#/components/schemas/Code'
         studyInterventionId:
           anyOf:
           - type: string
@@ -3067,7 +3100,7 @@ components:
           type: string
           title: Proceduretype
         code:
-          $ref: '#/components/schemas/model__code__Code__1'
+          $ref: '#/components/schemas/Code'
         studyInterventionId:
           anyOf:
           - type: string
@@ -3157,7 +3190,7 @@ components:
           title: Maxvalue
         unit:
           anyOf:
-          - $ref: '#/components/schemas/model__code__Code__1'
+          - $ref: '#/components/schemas/Code'
           - type: 'null'
         isApproximate:
           type: boolean
@@ -3195,7 +3228,7 @@ components:
           const: ReferenceIdentifier
           title: Instancetype
         type:
-          $ref: '#/components/schemas/model__code__Code__1'
+          $ref: '#/components/schemas/Code'
       type: object
       required:
       - id
@@ -3214,7 +3247,7 @@ components:
           type: boolean
           title: Isenabled
         code:
-          $ref: '#/components/schemas/model__code__Code__1'
+          $ref: '#/components/schemas/Code'
         instanceType:
           type: string
           enum:
@@ -3815,7 +3848,7 @@ components:
           minLength: 1
           title: Id
         type:
-          $ref: '#/components/schemas/model__code__Code__1'
+          $ref: '#/components/schemas/Code'
         text:
           type: string
           title: Text
@@ -3849,7 +3882,7 @@ components:
           minLength: 1
           title: Id
         type:
-          $ref: '#/components/schemas/model__code__Code__1'
+          $ref: '#/components/schemas/Code'
         text:
           type: string
           title: Text
@@ -3883,7 +3916,7 @@ components:
           minLength: 1
           title: Id
         code:
-          $ref: '#/components/schemas/model__code__Code__1'
+          $ref: '#/components/schemas/Code'
         otherReason:
           anyOf:
           - type: string
@@ -3922,12 +3955,12 @@ components:
           - type: 'null'
           title: Description
         type:
-          $ref: '#/components/schemas/model__code__Code__1'
+          $ref: '#/components/schemas/Code'
         dataOriginDescription:
           type: string
           title: Dataorigindescription
         dataOriginType:
-          $ref: '#/components/schemas/model__code__Code__1'
+          $ref: '#/components/schemas/Code'
         populationIds:
           items:
             type: string
@@ -3976,12 +4009,12 @@ components:
           - type: 'null'
           title: Description
         type:
-          $ref: '#/components/schemas/model__code__Code__1'
+          $ref: '#/components/schemas/Code'
         dataOriginDescription:
           type: string
           title: Dataorigindescription
         dataOriginType:
-          $ref: '#/components/schemas/model__code__Code__1'
+          $ref: '#/components/schemas/Code'
         populationIds:
           items:
             type: string
@@ -4119,40 +4152,9 @@ components:
           - type: 'null'
         plannedSex:
           items:
-            properties:
-              id:
-                type: string
-                minLength: 1
-                title: Id
-              code:
-                type: string
-                title: Code
-              codeSystem:
-                type: string
-                title: Codesystem
-              codeSystemVersion:
-                type: string
-                title: Codesystemversion
-              decode:
-                type: string
-                title: Decode
-              instanceType:
-                type: string
-                enum:
-                - Code
-                const: Code
-                title: Instancetype
-            type: object
-            maxLength: 2
-            required:
-            - id
-            - code
-            - codeSystem
-            - codeSystemVersion
-            - decode
-            - instanceType
-            title: Code
+            $ref: '#/components/schemas/Code'
           type: array
+          maxItems: 2
           title: Plannedsex
           default: []
         criterionIds:
@@ -4223,40 +4225,9 @@ components:
           - type: 'null'
         plannedSex:
           items:
-            properties:
-              id:
-                type: string
-                minLength: 1
-                title: Id
-              code:
-                type: string
-                title: Code
-              codeSystem:
-                type: string
-                title: Codesystem
-              codeSystemVersion:
-                type: string
-                title: Codesystemversion
-              decode:
-                type: string
-                title: Decode
-              instanceType:
-                type: string
-                enum:
-                - Code
-                const: Code
-                title: Instancetype
-            type: object
-            maxLength: 2
-            required:
-            - id
-            - code
-            - codeSystem
-            - codeSystemVersion
-            - decode
-            - instanceType
-            title: Code
+            $ref: '#/components/schemas/Code'
           type: array
+          maxItems: 2
           title: Plannedsex
           default: []
         criterionIds:
@@ -4315,9 +4286,9 @@ components:
           - type: 'null'
           title: Description
         language:
-          $ref: '#/components/schemas/model__code__Code__1'
+          $ref: '#/components/schemas/Code'
         type:
-          $ref: '#/components/schemas/model__code__Code__1'
+          $ref: '#/components/schemas/Code'
         templateName:
           type: string
           title: Templatename
@@ -4369,9 +4340,9 @@ components:
           - type: 'null'
           title: Description
         language:
-          $ref: '#/components/schemas/model__code__Code__1'
+          $ref: '#/components/schemas/Code'
         type:
-          $ref: '#/components/schemas/model__code__Code__1'
+          $ref: '#/components/schemas/Code'
         templateName:
           type: string
           title: Templatename
@@ -4412,7 +4383,7 @@ components:
           type: string
           title: Version
         status:
-          $ref: '#/components/schemas/model__code__Code__1'
+          $ref: '#/components/schemas/Code'
         dateValues:
           items:
             $ref: '#/components/schemas/GovernanceDate-Input'
@@ -4460,7 +4431,7 @@ components:
           type: string
           title: Version
         status:
-          $ref: '#/components/schemas/model__code__Code__1'
+          $ref: '#/components/schemas/Code'
         dateValues:
           items:
             $ref: '#/components/schemas/GovernanceDate-Output'
@@ -4520,30 +4491,30 @@ components:
           title: Description
         trialIntentTypes:
           items:
-            $ref: '#/components/schemas/model__code__Code__1'
+            $ref: '#/components/schemas/Code'
           type: array
           title: Trialintenttypes
           default: []
         trialTypes:
           items:
-            $ref: '#/components/schemas/model__code__Code__1'
+            $ref: '#/components/schemas/Code'
           type: array
           title: Trialtypes
           default: []
         therapeuticAreas:
           items:
-            $ref: '#/components/schemas/model__code__Code__1'
+            $ref: '#/components/schemas/Code'
           type: array
           title: Therapeuticareas
           default: []
         characteristics:
           items:
-            $ref: '#/components/schemas/model__code__Code__1'
+            $ref: '#/components/schemas/Code'
           type: array
           title: Characteristics
           default: []
         interventionModel:
-          $ref: '#/components/schemas/model__code__Code__1'
+          $ref: '#/components/schemas/Code'
         encounters:
           items:
             $ref: '#/components/schemas/Encounter-Input'
@@ -4705,30 +4676,30 @@ components:
           title: Description
         trialIntentTypes:
           items:
-            $ref: '#/components/schemas/model__code__Code__1'
+            $ref: '#/components/schemas/Code'
           type: array
           title: Trialintenttypes
           default: []
         trialTypes:
           items:
-            $ref: '#/components/schemas/model__code__Code__1'
+            $ref: '#/components/schemas/Code'
           type: array
           title: Trialtypes
           default: []
         therapeuticAreas:
           items:
-            $ref: '#/components/schemas/model__code__Code__1'
+            $ref: '#/components/schemas/Code'
           type: array
           title: Therapeuticareas
           default: []
         characteristics:
           items:
-            $ref: '#/components/schemas/model__code__Code__1'
+            $ref: '#/components/schemas/Code'
           type: array
           title: Characteristics
           default: []
         interventionModel:
-          $ref: '#/components/schemas/model__code__Code__1'
+          $ref: '#/components/schemas/Code'
         encounters:
           items:
             $ref: '#/components/schemas/Encounter-Output'
@@ -4901,40 +4872,9 @@ components:
           - type: 'null'
         plannedSex:
           items:
-            properties:
-              id:
-                type: string
-                minLength: 1
-                title: Id
-              code:
-                type: string
-                title: Code
-              codeSystem:
-                type: string
-                title: Codesystem
-              codeSystemVersion:
-                type: string
-                title: Codesystemversion
-              decode:
-                type: string
-                title: Decode
-              instanceType:
-                type: string
-                enum:
-                - Code
-                const: Code
-                title: Instancetype
-            type: object
-            maxLength: 2
-            required:
-            - id
-            - code
-            - codeSystem
-            - codeSystemVersion
-            - decode
-            - instanceType
-            title: Code
+            $ref: '#/components/schemas/Code'
           type: array
+          maxItems: 2
           title: Plannedsex
           default: []
         criterionIds:
@@ -5005,40 +4945,9 @@ components:
           - type: 'null'
         plannedSex:
           items:
-            properties:
-              id:
-                type: string
-                minLength: 1
-                title: Id
-              code:
-                type: string
-                title: Code
-              codeSystem:
-                type: string
-                title: Codesystem
-              codeSystemVersion:
-                type: string
-                title: Codesystemversion
-              decode:
-                type: string
-                title: Decode
-              instanceType:
-                type: string
-                enum:
-                - Code
-                const: Code
-                title: Instancetype
-            type: object
-            maxLength: 2
-            required:
-            - id
-            - code
-            - codeSystem
-            - codeSystemVersion
-            - decode
-            - instanceType
-            title: Code
+            $ref: '#/components/schemas/Code'
           type: array
+          maxItems: 2
           title: Plannedsex
           default: []
         criterionIds:
@@ -5201,7 +5110,7 @@ components:
           - type: 'null'
           title: Description
         type:
-          $ref: '#/components/schemas/model__code__Code__1'
+          $ref: '#/components/schemas/Code'
         previousId:
           anyOf:
           - type: string
@@ -5252,7 +5161,7 @@ components:
           - type: 'null'
           title: Description
         type:
-          $ref: '#/components/schemas/model__code__Code__1'
+          $ref: '#/components/schemas/Code'
         previousId:
           anyOf:
           - type: string
@@ -5328,16 +5237,16 @@ components:
           - type: 'null'
           title: Description
         role:
-          $ref: '#/components/schemas/model__code__Code__1'
+          $ref: '#/components/schemas/Code'
         type:
-          $ref: '#/components/schemas/model__code__Code__1'
+          $ref: '#/components/schemas/Code'
         minimumResponseDuration:
           anyOf:
           - $ref: '#/components/schemas/Quantity-Input'
           - type: 'null'
         codes:
           items:
-            $ref: '#/components/schemas/model__code__Code__1'
+            $ref: '#/components/schemas/Code'
           type: array
           title: Codes
           default: []
@@ -5348,7 +5257,7 @@ components:
           title: Administrations
           default: []
         productDesignation:
-          $ref: '#/components/schemas/model__code__Code__1'
+          $ref: '#/components/schemas/Code'
         notes:
           items:
             $ref: '#/components/schemas/CommentAnnotation'
@@ -5391,16 +5300,16 @@ components:
           - type: 'null'
           title: Description
         role:
-          $ref: '#/components/schemas/model__code__Code__1'
+          $ref: '#/components/schemas/Code'
         type:
-          $ref: '#/components/schemas/model__code__Code__1'
+          $ref: '#/components/schemas/Code'
         minimumResponseDuration:
           anyOf:
           - $ref: '#/components/schemas/Quantity-Output'
           - type: 'null'
         codes:
           items:
-            $ref: '#/components/schemas/model__code__Code__1'
+            $ref: '#/components/schemas/Code'
           type: array
           title: Codes
           default: []
@@ -5411,7 +5320,7 @@ components:
           title: Administrations
           default: []
         productDesignation:
-          $ref: '#/components/schemas/model__code__Code__1'
+          $ref: '#/components/schemas/Code'
         notes:
           items:
             $ref: '#/components/schemas/CommentAnnotation'
@@ -5454,7 +5363,7 @@ components:
           - type: 'null'
           title: Description
         code:
-          $ref: '#/components/schemas/model__code__Code__1'
+          $ref: '#/components/schemas/Code'
         appliesToIds:
           items:
             type: string
@@ -5511,7 +5420,7 @@ components:
           - type: 'null'
           title: Description
         country:
-          $ref: '#/components/schemas/model__code__Code__1'
+          $ref: '#/components/schemas/Code'
         instanceType:
           type: string
           enum:
@@ -5535,7 +5444,7 @@ components:
           type: string
           title: Text
         type:
-          $ref: '#/components/schemas/model__code__Code__1'
+          $ref: '#/components/schemas/Code'
         instanceType:
           type: string
           enum:
@@ -5563,7 +5472,7 @@ components:
           title: Rationale
         studyType:
           anyOf:
-          - $ref: '#/components/schemas/model__code__Code__1'
+          - $ref: '#/components/schemas/Code'
           - type: 'null'
         studyPhase:
           anyOf:
@@ -5589,7 +5498,7 @@ components:
           default: []
         businessTherapeuticAreas:
           items:
-            $ref: '#/components/schemas/model__code__Code__1'
+            $ref: '#/components/schemas/Code'
           type: array
           title: Businesstherapeuticareas
           default: []
@@ -5686,7 +5595,7 @@ components:
           title: Rationale
         studyType:
           anyOf:
-          - $ref: '#/components/schemas/model__code__Code__1'
+          - $ref: '#/components/schemas/Code'
           - type: 'null'
         studyPhase:
           anyOf:
@@ -5712,7 +5621,7 @@ components:
           default: []
         businessTherapeuticAreas:
           items:
-            $ref: '#/components/schemas/model__code__Code__1'
+            $ref: '#/components/schemas/Code'
           type: array
           title: Businesstherapeuticareas
           default: []
@@ -5905,7 +5814,7 @@ components:
           title: Description
         codes:
           items:
-            $ref: '#/components/schemas/model__code__Code__1'
+            $ref: '#/components/schemas/Code'
           type: array
           title: Codes
           default: []
@@ -5953,7 +5862,7 @@ components:
           title: Description
         codes:
           items:
-            $ref: '#/components/schemas/model__code__Code__1'
+            $ref: '#/components/schemas/Code'
           type: array
           title: Codes
           default: []
@@ -6038,7 +5947,7 @@ components:
           - type: 'null'
           title: Description
         type:
-          $ref: '#/components/schemas/model__code__Code__1'
+          $ref: '#/components/schemas/Code'
         value:
           type: string
           title: Value
@@ -6046,7 +5955,7 @@ components:
           type: string
           title: Valuelabel
         relativeToFrom:
-          $ref: '#/components/schemas/model__code__Code__1'
+          $ref: '#/components/schemas/Code'
         relativeFromScheduledInstanceId:
           type: string
           title: Relativefromscheduledinstanceid
@@ -6188,73 +6097,6 @@ components:
       - study
       - usdmVersion
       title: Wrapper
-    model__code__Code__1:
-      properties:
-        id:
-          type: string
-          minLength: 1
-          title: Id
-        code:
-          type: string
-          title: Code
-        codeSystem:
-          type: string
-          title: Codesystem
-        codeSystemVersion:
-          type: string
-          title: Codesystemversion
-        decode:
-          type: string
-          title: Decode
-        instanceType:
-          type: string
-          enum:
-          - Code
-          const: Code
-          title: Instancetype
-      type: object
-      required:
-      - id
-      - code
-      - codeSystem
-      - codeSystemVersion
-      - decode
-      - instanceType
-      title: Code
-    model__code__Code__2:
-      properties:
-        id:
-          type: string
-          minLength: 1
-          title: Id
-        code:
-          type: string
-          title: Code
-        codeSystem:
-          type: string
-          title: Codesystem
-        codeSystemVersion:
-          type: string
-          title: Codesystemversion
-        decode:
-          type: string
-          title: Decode
-        instanceType:
-          type: string
-          enum:
-          - Code
-          const: Code
-          title: Instancetype
-      type: object
-      maxLength: 2
-      required:
-      - id
-      - code
-      - codeSystem
-      - codeSystemVersion
-      - decode
-      - instanceType
-      title: Code
 tags:
 - name: Production
   description: Routes that form the production specification.
