@@ -1144,11 +1144,12 @@ Code:
   Preferred Term: Code
   Definition: A symbol or combination of symbols which is assigned to the members
     of a collection.
-  Modifier: Abstract
+  Modifier: Concrete
   Attributes:
     id:
       Type:
       - $ref: '#/string'
+      Relationship Type: Value
       Model Name: id
     code:
       Type:
@@ -1156,6 +1157,7 @@ Code:
       NCI C-Code: C188858
       Preferred Term: Code Value
       Definition: The literal value of a code.
+      Relationship Type: Value
       Model Name: code
     codeSystem:
       Type:
@@ -1164,6 +1166,7 @@ Code:
       Preferred Term: Code System Name
       Definition: The literal identifier (i.e., distinctive designation) of the system
         used to assign and/or manage codes.
+      Relationship Type: Value
       Model Name: codeSystem
     codeSystemVersion:
       Type:
@@ -1171,6 +1174,7 @@ Code:
       NCI C-Code: C188868
       Preferred Term: Code System Version
       Definition: The version of the code system.
+      Relationship Type: Value
       Model Name: codeSystemVersion
     decode:
       Type:
@@ -1179,7 +1183,13 @@ Code:
       Preferred Term: Decode
       Definition: Standardized or dictionary-derived human readable text associated
         with a code.
+      Relationship Type: Value
       Model Name: decode
+    instanceType:
+      Type:
+      - $ref: '#/string'
+      Cardinality: 0..1
+      Relationship Type: Value
 CommentAnnotation:
   NCI C-Code: C44272
   Preferred Term: Comment Annotation
