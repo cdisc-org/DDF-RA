@@ -279,6 +279,12 @@ AdministrableProduct:
       Definition: The short descriptive designation for the administrable product.
       Relationship Type: Value
       Model Name: label
+    productDesignation*:
+      Type:
+      - $ref: '#/Code'
+      Cardinality: '1'
+      Relationship Type: UNKNOWN
+      Model Name: productDesignation
     administrableDoseForm:
       Type:
       - $ref: '#/AliasCode'
@@ -326,6 +332,12 @@ AdministrableProduct:
         product.
       Relationship Type: Value
       Model Name: properties
+    sourcing*:
+      Type:
+      - $ref: '#/Code'
+      Cardinality: 0..1
+      Relationship Type: UNKNOWN
+      Model Name: sourcing
     ingredients:
       Type:
       - $ref: '#/Ingredient'
@@ -535,6 +547,12 @@ Administration:
         administration.
       Relationship Type: Value
       Model Name: duration
+    medicalDevice*:
+      Type:
+      - $ref: '#/MedicalDevice'
+      Cardinality: 0..1
+      Relationship Type: UNKNOWN
+      Model Name: medicalDevice
     instanceType:
       Type:
       - $ref: '#/string'
@@ -1967,6 +1985,7 @@ Identifier:
     properties, or contents of a thing.
   Sub Classes:
   - $ref: '#/AdministrableProductIdentifier'
+  - $ref: '#/MedicalDeviceIdentifier'
   - $ref: '#/ReferenceIdentifier'
   - $ref: '#/StudyIdentifier'
   Modifier: Abstract
@@ -2218,6 +2237,81 @@ Masking:
       - $ref: '#/string'
       Cardinality: 0..1
       Relationship Type: Value
+MedicalDevice:
+  Modifier: Abstract
+  Attributes:
+    id:
+      Type:
+      - $ref: '#/string'
+      Model Name: id
+    name:
+      Type:
+      - $ref: '#/string'
+      Model Name: name
+    description:
+      Type:
+      - $ref: '#/string'
+      Model Name: description
+    label:
+      Type:
+      - $ref: '#/string'
+      Model Name: label
+    hardwareVersion:
+      Type:
+      - $ref: '#/string'
+      Model Name: hardwareVersion
+    softwareVersion:
+      Type:
+      - $ref: '#/string'
+      Model Name: softwareVersion
+    embeddedProduct:
+      Type:
+      - $ref: '#/AdministrableProduct'
+      Cardinality: 0..1
+      Model Name: embeddedProduct
+    sourcing:
+      Type:
+      - $ref: '#/Code'
+      Cardinality: 0..1
+      Model Name: sourcing
+    notes:
+      Type:
+      - $ref: '#/CommentAnnotation'
+      Model Name: notes
+    identifiers:
+      Type:
+      - $ref: '#/MedicalDeviceIdentifier'
+      Cardinality: 0..*
+      Model Name: identifiers
+MedicalDeviceIdentifier:
+  Super Classes:
+  - $ref: '#/Identifier'
+  Modifier: Abstract
+  Attributes:
+    id:
+      Type:
+      - $ref: '#/string'
+      Model Name: id
+      Inherited From:
+        $ref: '#/Identifier'
+    text:
+      Type:
+      - $ref: '#/string'
+      Model Name: text
+      Inherited From:
+        $ref: '#/Identifier'
+    scope:
+      Type:
+      - $ref: '#/Organization'
+      Cardinality: '1'
+      Model Name: scope
+      Inherited From:
+        $ref: '#/Identifier'
+    type:
+      Type:
+      - $ref: '#/Code'
+      Cardinality: '1'
+      Model Name: type
 NarrativeContent:
   NCI C-Code: C207592
   Preferred Term: Narrative Content
@@ -2810,7 +2904,7 @@ Range:
       Model Name: isApproximate
     unit:
       Type:
-      - $ref: '#/Code'
+      - $ref: '#/AliasCode'
       NCI C-Code: C25709
       Cardinality: 0..1
       Preferred Term: Unit of Measure
@@ -4754,17 +4848,6 @@ StudyIntervention:
       Codelist Ref: C207417
       Relationship Type: Value
       Model Name: role
-    productDesignation:
-      Type:
-      - $ref: '#/Code'
-      NCI C-Code: C207559
-      Cardinality: '1'
-      Preferred Term: Study Intervention Product Designation
-      Definition: An indication as to whether the investigational intervention is
-        an investigational medicinal product or an auxiliary medicinal product.
-      Codelist Ref: C207418
-      Relationship Type: Value
-      Model Name: productDesignation
     codes:
       Type:
       - $ref: '#/Code'
@@ -4795,6 +4878,10 @@ StudyIntervention:
         the criteria for response to study intervention.
       Relationship Type: Value
       Model Name: minimumResponseDuration
+    productDesignation:
+      Type:
+      - $ref: UNKNOWN
+      Relationship Type: Value
     instanceType:
       Type:
       - $ref: '#/string'
@@ -4837,6 +4924,13 @@ StudyRole:
       Definition: A narrative representation of the study role.
       Relationship Type: Value
       Model Name: description
+    for*:
+      Type:
+      - $ref: '#/AdministrableProduct'
+      - $ref: '#/MedicalDevice'
+      Cardinality: 0..*
+      Relationship Type: UNKNOWN
+      Model Name: for
     assignedPersons:
       Type:
       - $ref: '#/AssignedPerson'

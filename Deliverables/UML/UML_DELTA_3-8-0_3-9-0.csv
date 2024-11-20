@@ -1,2 +1,23 @@
 status,class_name,property_name,data_type
+Class - NEW,MedicalDevice,,
+,,id,string
+,,name,string
+,,description,string
+,,label,string
+,,hardwareVersion,string
+,,softwareVersion,string
+,,embeddedProduct,AdministrableProduct
+,,sourcing,Code
+,,notes,CommentAnnotation
+,,identifiers,MedicalDeviceIdentifier
+Class - NEW,MedicalDeviceIdentifier,,
+,,id,string
+,,text,string
+,,scope,Organization
+,,type,Code
 ,,,
+Property - NEW,AdministrableProduct,productDesignation,Code
+Property - NEW,AdministrableProduct,sourcing,Code
+Property - NEW,StudyRole,for,"AdministrableProduct, MedicalDevice"
+Property - NEW,Administration,medicalDevice,MedicalDevice
+Property - DELETED,StudyIntervention,productDesignation,Code
