@@ -279,11 +279,11 @@ AdministrableProduct:
       Definition: The short descriptive designation for the administrable product.
       Relationship Type: Value
       Model Name: label
-    productDesignation*:
+    productDesignation:
       Type:
       - $ref: '#/Code'
       Cardinality: '1'
-      Relationship Type: UNKNOWN
+      Relationship Type: Value
       Model Name: productDesignation
     administrableDoseForm:
       Type:
@@ -332,11 +332,11 @@ AdministrableProduct:
         product.
       Relationship Type: Value
       Model Name: properties
-    sourcing*:
+    sourcing:
       Type:
       - $ref: '#/Code'
       Cardinality: 0..1
-      Relationship Type: UNKNOWN
+      Relationship Type: Value
       Model Name: sourcing
     ingredients:
       Type:
@@ -547,11 +547,11 @@ Administration:
         administration.
       Relationship Type: Value
       Model Name: duration
-    medicalDevice*:
+    medicalDeviceId:
       Type:
       - $ref: '#/MedicalDevice'
       Cardinality: 0..1
-      Relationship Type: UNKNOWN
+      Relationship Type: Ref
       Model Name: medicalDevice
     instanceType:
       Type:
@@ -2238,72 +2238,90 @@ Masking:
       Cardinality: 0..1
       Relationship Type: Value
 MedicalDevice:
-  Modifier: Abstract
+  Modifier: Concrete
   Attributes:
     id:
       Type:
       - $ref: '#/string'
+      Relationship Type: Value
       Model Name: id
     name:
       Type:
       - $ref: '#/string'
+      Relationship Type: Value
       Model Name: name
     description:
       Type:
       - $ref: '#/string'
+      Relationship Type: Value
       Model Name: description
     label:
       Type:
       - $ref: '#/string'
+      Relationship Type: Value
       Model Name: label
     hardwareVersion:
       Type:
       - $ref: '#/string'
+      Relationship Type: Value
       Model Name: hardwareVersion
     softwareVersion:
       Type:
       - $ref: '#/string'
+      Relationship Type: Value
       Model Name: softwareVersion
-    embeddedProduct:
+    embeddedProductId:
       Type:
       - $ref: '#/AdministrableProduct'
       Cardinality: 0..1
+      Relationship Type: Ref
       Model Name: embeddedProduct
     sourcing:
       Type:
       - $ref: '#/Code'
       Cardinality: 0..1
+      Relationship Type: Value
       Model Name: sourcing
     notes:
       Type:
       - $ref: '#/CommentAnnotation'
+      Relationship Type: Value
       Model Name: notes
     identifiers:
       Type:
       - $ref: '#/MedicalDeviceIdentifier'
       Cardinality: 0..*
+      Relationship Type: Value
       Model Name: identifiers
+    instanceType:
+      Type:
+      - $ref: '#/string'
+      Cardinality: 0..1
+      Relationship Type: Value
 MedicalDeviceIdentifier:
   Super Classes:
   - $ref: '#/Identifier'
-  Modifier: Abstract
+  Modifier: Concrete
   Attributes:
     id:
       Type:
       - $ref: '#/string'
+      Relationship Type: Value
       Model Name: id
       Inherited From:
         $ref: '#/Identifier'
     text:
       Type:
       - $ref: '#/string'
+      Relationship Type: Value
       Model Name: text
       Inherited From:
         $ref: '#/Identifier'
-    scope:
+    scopeId:
       Type:
       - $ref: '#/Organization'
       Cardinality: '1'
+      Relationship Type: Ref
       Model Name: scope
       Inherited From:
         $ref: '#/Identifier'
@@ -2311,7 +2329,13 @@ MedicalDeviceIdentifier:
       Type:
       - $ref: '#/Code'
       Cardinality: '1'
+      Relationship Type: Value
       Model Name: type
+    instanceType:
+      Type:
+      - $ref: '#/string'
+      Cardinality: 0..1
+      Relationship Type: Value
 NarrativeContent:
   NCI C-Code: C207592
   Preferred Term: Narrative Content
@@ -4878,10 +4902,6 @@ StudyIntervention:
         the criteria for response to study intervention.
       Relationship Type: Value
       Model Name: minimumResponseDuration
-    productDesignation:
-      Type:
-      - $ref: UNKNOWN
-      Relationship Type: Value
     instanceType:
       Type:
       - $ref: '#/string'
@@ -5235,6 +5255,16 @@ StudyVersion:
     administrableProducts:
       Type:
       - $ref: '#/AdministrableProduct'
+      Cardinality: 0..*
+      Relationship Type: Value
+    medicalDevices:
+      Type:
+      - $ref: '#/MedicalDevice'
+      Cardinality: 0..*
+      Relationship Type: Value
+    productOrganizationRoles:
+      Type:
+      - $ref: '#/ProductOrganizationRole'
       Cardinality: 0..*
       Relationship Type: Value
     instanceType:
