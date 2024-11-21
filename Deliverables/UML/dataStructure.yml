@@ -2854,6 +2854,53 @@ Procedure:
       - $ref: '#/string'
       Cardinality: 0..1
       Relationship Type: Value
+ProductOrganizationRole:
+  Modifier: Concrete
+  Attributes:
+    id:
+      Type:
+      - $ref: '#/string'
+      Relationship Type: Value
+      Model Name: id
+    name:
+      Type:
+      - $ref: '#/string'
+      Relationship Type: Value
+      Model Name: name
+    description:
+      Type:
+      - $ref: '#/string'
+      Relationship Type: Value
+      Model Name: description
+    label:
+      Type:
+      - $ref: '#/string'
+      Relationship Type: Value
+      Model Name: label
+    appliesToIds:
+      Type:
+      - $ref: '#/AdministrableProduct'
+      - $ref: '#/MedicalDevice'
+      Cardinality: 0..*
+      Relationship Type: Ref
+      Model Name: appliesTo
+    code:
+      Type:
+      - $ref: '#/Code'
+      Cardinality: '1'
+      Relationship Type: Value
+      Model Name: code
+    organizationId:
+      Type:
+      - $ref: '#/Organization'
+      Cardinality: '1'
+      Relationship Type: Ref
+      Model Name: organization
+    instanceType:
+      Type:
+      - $ref: '#/string'
+      Cardinality: 0..1
+      Relationship Type: Value
 Quantity:
   NCI C-Code: C25256
   Preferred Term: Quantity
@@ -4944,13 +4991,6 @@ StudyRole:
       Definition: A narrative representation of the study role.
       Relationship Type: Value
       Model Name: description
-    for*:
-      Type:
-      - $ref: '#/AdministrableProduct'
-      - $ref: '#/MedicalDevice'
-      Cardinality: 0..*
-      Relationship Type: UNKNOWN
-      Model Name: for
     assignedPersons:
       Type:
       - $ref: '#/AssignedPerson'
