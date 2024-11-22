@@ -3331,6 +3331,7 @@ components:
             type: string
           type: array
           title: Appliestoids
+          default: []
         organizationId:
           type: string
           title: Organizationid
@@ -3345,7 +3346,6 @@ components:
       - id
       - name
       - code
-      - appliesToIds
       - organizationId
       - instanceType
       title: ProductOrganizationRole

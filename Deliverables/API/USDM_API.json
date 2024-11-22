@@ -5100,7 +5100,8 @@
               "type": "string"
             },
             "type": "array",
-            "title": "Appliestoids"
+            "title": "Appliestoids",
+            "default": []
           },
           "organizationId": {
             "type": "string",
@@ -5120,7 +5121,6 @@
           "id",
           "name",
           "code",
-          "appliesToIds",
           "organizationId",
           "instanceType"
         ],
