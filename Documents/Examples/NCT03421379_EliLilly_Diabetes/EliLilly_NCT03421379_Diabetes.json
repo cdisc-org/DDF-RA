@@ -118,7 +118,8 @@
                   "value": 0.0,
                   "unit": null,
                   "instanceType": "Quantity"
-                }
+                },
+                "appliesTo": null
               }
             ],
             "previousId": null,
@@ -129,83 +130,18 @@
         "studyIdentifiers": [
           {
             "id": "StudyIdentifier_1",
-            "studyIdentifier": "I8R-JE-IGBJ",
-            "studyIdentifierScope": {
-              "id": "Organization_1",
-              "name": "Eli Lilly Japan K.K",
-              "label": "",
-              "organizationType": {
-                "id": "Code_84",
-                "code": "C70793",
-                "codeSystem": "http://www.cdisc.org",
-                "codeSystemVersion": "2023-12-15",
-                "decode": "Clinical Study Sponsor",
-                "instanceType": "Code"
-              },
-              "identifierScheme": "DUNS",
-              "identifier": "006421325",
-              "legalAddress": {
-                "id": "Address_1",
-                "text": "5-1-28, ISOGAMIDORI, CHUO-KU LILLY PLAZA ONE BLDG, KOBE, HYOGO, 651-0086, Japan",
-                "line": "5-1-28, ISOGAMIDORI, CHUO-KU LILLY PLAZA ONE BLDG",
-                "city": "KOBE",
-                "district": "HYOGO",
-                "state": "",
-                "postalCode": "651-0086",
-                "country": {
-                  "id": "Code_85",
-                  "code": "JPN",
-                  "codeSystem": "ISO 3166 1 alpha3",
-                  "codeSystemVersion": "2020-08",
-                  "decode": "Japan",
-                  "instanceType": "Code"
-                },
-                "instanceType": "Address"
-              },
-              "instanceType": "Organization"
-            },
+            "text": "I8R-JE-IGBJ",
+            "scopeId": "Organization_1",
             "instanceType": "StudyIdentifier"
           },
           {
             "id": "StudyIdentifier_2",
-            "studyIdentifier": "NCT03421379",
-            "studyIdentifierScope": {
-              "id": "Organization_2",
-              "name": "ClinicalTrials.gov",
-              "label": "",
-              "organizationType": {
-                "id": "Code_86",
-                "code": "C93453",
-                "codeSystem": "http://www.cdisc.org",
-                "codeSystemVersion": "2023-12-15",
-                "decode": "Study Registry",
-                "instanceType": "Code"
-              },
-              "identifierScheme": "USGOV",
-              "identifier": "CT-GOV",
-              "legalAddress": {
-                "id": "Address_2",
-                "text": "Clinical trials, Washington, Washington DC, 12345, United States of America",
-                "line": "Clinical trials",
-                "city": "Washington",
-                "district": "",
-                "state": "Washington DC",
-                "postalCode": "12345",
-                "country": {
-                  "id": "Code_87",
-                  "code": "USA",
-                  "codeSystem": "ISO 3166 1 alpha3",
-                  "codeSystemVersion": "2020-08",
-                  "decode": "United States of America",
-                  "instanceType": "Code"
-                },
-                "instanceType": "Address"
-              },
-              "instanceType": "Organization"
-            },
+            "text": "NCT03421379",
+            "scopeId": "Organization_2",
             "instanceType": "StudyIdentifier"
           }
         ],
+        "referenceIdentifiers": [],
         "studyDesigns": [
           {
             "id": "StudyDesign_1",
@@ -8728,7 +8664,6 @@
                 "instanceType": "Indication"
               }
             ],
-            "maskingRoles": [],
             "studyInterventions": [
               {
                 "id": "StudyIntervention_1",
@@ -8757,7 +8692,7 @@
                   "unit": {
                     "id": "AliasCode_209",
                     "standardCode": {
-                      "id": "Code_481",
+                      "id": "Code_480",
                       "code": "C25301",
                       "codeSystem": "http://www.cdisc.org",
                       "codeSystemVersion": "2023-12-15",
@@ -8781,7 +8716,7 @@
                 ],
                 "administrations": [
                   {
-                    "id": "AgentAdministration_1",
+                    "id": "Administration_1",
                     "name": "LY_ADMIN",
                     "label": "",
                     "description": "Administer a single nasal dose upon hypoglycemia onset",
@@ -8816,7 +8751,7 @@
                       "unit": {
                         "id": "AliasCode_206",
                         "standardCode": {
-                          "id": "Code_474",
+                          "id": "Code_473",
                           "code": "C28253",
                           "codeSystem": "http://www.cdisc.org",
                           "codeSystemVersion": "2023-12-15",
@@ -8831,7 +8766,7 @@
                     "route": {
                       "id": "AliasCode_207",
                       "standardCode": {
-                        "id": "Code_473",
+                        "id": "Code_474",
                         "code": "C38284",
                         "codeSystem": "http://www.cdisc.org",
                         "codeSystemVersion": "2023-12-15",
@@ -8854,24 +8789,17 @@
                       "standardCodeAliases": [],
                       "instanceType": "AliasCode"
                     },
+                    "administrableProductId": null,
                     "notes": [],
-                    "instanceType": "AgentAdministration"
+                    "instanceType": "Administration"
                   }
                 ],
                 "productDesignation": {
-                  "id": "Code_480",
+                  "id": "Code_479",
                   "code": "C99909x1",
                   "codeSystem": "http://www.cdisc.org",
                   "codeSystemVersion": "2023-12-15",
                   "decode": "IMP",
-                  "instanceType": "Code"
-                },
-                "pharmacologicClass": {
-                  "id": "Code_479",
-                  "code": "A",
-                  "codeSystem": "FDA",
-                  "codeSystemVersion": "",
-                  "decode": "B",
                   "instanceType": "Code"
                 },
                 "notes": [],
@@ -8883,7 +8811,7 @@
                 "label": "GlucaGen",
                 "description": "Glucagon",
                 "role": {
-                  "id": "Code_487",
+                  "id": "Code_486",
                   "code": "C41161",
                   "codeSystem": "http://www.cdisc.org",
                   "codeSystemVersion": "2023-12-15",
@@ -8891,7 +8819,7 @@
                   "instanceType": "Code"
                 },
                 "type": {
-                  "id": "Code_488",
+                  "id": "Code_487",
                   "code": "C1909",
                   "codeSystem": "http://www.cdisc.org",
                   "codeSystemVersion": "2023-12-15",
@@ -8904,7 +8832,7 @@
                   "unit": {
                     "id": "AliasCode_214",
                     "standardCode": {
-                      "id": "Code_491",
+                      "id": "Code_489",
                       "code": "C25301",
                       "codeSystem": "http://www.cdisc.org",
                       "codeSystemVersion": "2023-12-15",
@@ -8918,7 +8846,7 @@
                 },
                 "codes": [
                   {
-                    "id": "Code_486",
+                    "id": "Code_485",
                     "code": "A",
                     "codeSystem": "SPONSOR",
                     "codeSystemVersion": "12",
@@ -8928,7 +8856,7 @@
                 ],
                 "administrations": [
                   {
-                    "id": "AgentAdministration_2",
+                    "id": "Administration_2",
                     "name": "IMG_ADMIN",
                     "label": "",
                     "description": "Administer a single intramuscular injection upon hypoglycemia onset",
@@ -8940,7 +8868,7 @@
                         "unit": {
                           "id": "AliasCode_210",
                           "standardCode": {
-                            "id": "Code_482",
+                            "id": "Code_481",
                             "code": "C25301",
                             "codeSystem": "http://www.cdisc.org",
                             "codeSystemVersion": "2023-12-15",
@@ -8963,7 +8891,7 @@
                       "unit": {
                         "id": "AliasCode_211",
                         "standardCode": {
-                          "id": "Code_484",
+                          "id": "Code_482",
                           "code": "C28253",
                           "codeSystem": "http://www.cdisc.org",
                           "codeSystemVersion": "2023-12-15",
@@ -8991,7 +8919,7 @@
                     "frequency": {
                       "id": "AliasCode_213",
                       "standardCode": {
-                        "id": "Code_485",
+                        "id": "Code_484",
                         "code": "C64576",
                         "codeSystem": "http://www.cdisc.org",
                         "codeSystemVersion": "2023-12-15",
@@ -9001,24 +8929,17 @@
                       "standardCodeAliases": [],
                       "instanceType": "AliasCode"
                     },
+                    "administrableProductId": null,
                     "notes": [],
-                    "instanceType": "AgentAdministration"
+                    "instanceType": "Administration"
                   }
                 ],
                 "productDesignation": {
-                  "id": "Code_490",
+                  "id": "Code_488",
                   "code": "C99909x1",
                   "codeSystem": "http://www.cdisc.org",
                   "codeSystemVersion": "2023-12-15",
                   "decode": "IMP",
-                  "instanceType": "Code"
-                },
-                "pharmacologicClass": {
-                  "id": "Code_489",
-                  "code": "A",
-                  "codeSystem": "FDA",
-                  "codeSystemVersion": "",
-                  "decode": "B",
                   "instanceType": "Code"
                 },
                 "notes": [],
@@ -9036,7 +8957,7 @@
                 "notes": [],
                 "instanceType": "Objective",
                 "level": {
-                  "id": "Code_496",
+                  "id": "Code_494",
                   "code": "C85826",
                   "codeSystem": "http://www.cdisc.org",
                   "codeSystemVersion": "2023-12-15",
@@ -9055,7 +8976,7 @@
                     "instanceType": "Endpoint",
                     "purpose": "",
                     "level": {
-                      "id": "Code_495",
+                      "id": "Code_493",
                       "code": "C94496",
                       "codeSystem": "http://www.cdisc.org",
                       "codeSystemVersion": "2023-12-15",
@@ -9075,7 +8996,7 @@
                 "notes": [],
                 "instanceType": "Objective",
                 "level": {
-                  "id": "Code_498",
+                  "id": "Code_496",
                   "code": "C85827",
                   "codeSystem": "http://www.cdisc.org",
                   "codeSystemVersion": "2023-12-15",
@@ -9094,7 +9015,7 @@
                     "instanceType": "Endpoint",
                     "purpose": "",
                     "level": {
-                      "id": "Code_497",
+                      "id": "Code_495",
                       "code": "C139173",
                       "codeSystem": "http://www.cdisc.org",
                       "codeSystemVersion": "2023-12-15",
@@ -9114,7 +9035,7 @@
                 "notes": [],
                 "instanceType": "Objective",
                 "level": {
-                  "id": "Code_500",
+                  "id": "Code_498",
                   "code": "C85827",
                   "codeSystem": "http://www.cdisc.org",
                   "codeSystemVersion": "2023-12-15",
@@ -9133,7 +9054,7 @@
                     "instanceType": "Endpoint",
                     "purpose": "",
                     "level": {
-                      "id": "Code_499",
+                      "id": "Code_497",
                       "code": "C139173",
                       "codeSystem": "http://www.cdisc.org",
                       "codeSystemVersion": "2023-12-15",
@@ -9153,7 +9074,7 @@
                 "notes": [],
                 "instanceType": "Objective",
                 "level": {
-                  "id": "Code_502",
+                  "id": "Code_500",
                   "code": "C85827",
                   "codeSystem": "http://www.cdisc.org",
                   "codeSystemVersion": "2023-12-15",
@@ -9172,7 +9093,7 @@
                     "instanceType": "Endpoint",
                     "purpose": "",
                     "level": {
-                      "id": "Code_501",
+                      "id": "Code_499",
                       "code": "C139173",
                       "codeSystem": "http://www.cdisc.org",
                       "codeSystemVersion": "2023-12-15",
@@ -9192,7 +9113,7 @@
                 "notes": [],
                 "instanceType": "Objective",
                 "level": {
-                  "id": "Code_504",
+                  "id": "Code_502",
                   "code": "C163559",
                   "codeSystem": "http://www.cdisc.org",
                   "codeSystemVersion": "2023-12-15",
@@ -9211,7 +9132,7 @@
                     "instanceType": "Endpoint",
                     "purpose": "",
                     "level": {
-                      "id": "Code_503",
+                      "id": "Code_501",
                       "code": "C170559",
                       "codeSystem": "http://www.cdisc.org",
                       "codeSystemVersion": "2023-12-15",
@@ -9231,7 +9152,7 @@
                 "notes": [],
                 "instanceType": "Objective",
                 "level": {
-                  "id": "Code_506",
+                  "id": "Code_504",
                   "code": "C163559",
                   "codeSystem": "http://www.cdisc.org",
                   "codeSystemVersion": "2023-12-15",
@@ -9250,7 +9171,7 @@
                     "instanceType": "Endpoint",
                     "purpose": "",
                     "level": {
-                      "id": "Code_505",
+                      "id": "Code_503",
                       "code": "C170559",
                       "codeSystem": "http://www.cdisc.org",
                       "codeSystemVersion": "2023-12-15",
@@ -9285,7 +9206,7 @@
               },
               "plannedSex": [
                 {
-                  "id": "Code_492",
+                  "id": "Code_490",
                   "code": "C49636",
                   "codeSystem": "http://www.cdisc.org",
                   "codeSystemVersion": "2023-12-15",
@@ -9357,7 +9278,7 @@
                     "minValue": 18.0,
                     "maxValue": 64.0,
                     "unit": {
-                      "id": "Code_493",
+                      "id": "Code_491",
                       "code": "C29848",
                       "codeSystem": "http://www.cdisc.org",
                       "codeSystemVersion": "2023-12-15",
@@ -9393,7 +9314,7 @@
                     "minValue": 20.0,
                     "maxValue": 70.0,
                     "unit": {
-                      "id": "Code_494",
+                      "id": "Code_492",
                       "code": "C29848",
                       "codeSystem": "http://www.cdisc.org",
                       "codeSystemVersion": "2023-12-15",
@@ -11485,7 +11406,6 @@
                 ]
               }
             ],
-            "organizations": [],
             "notes": [],
             "instanceType": "StudyDesign"
           }
@@ -11529,7 +11449,7 @@
             "notes": [],
             "instanceType": "EligibilityCriterion",
             "category": {
-              "id": "Code_507",
+              "id": "Code_505",
               "code": "C25532",
               "codeSystem": "http://www.cdisc.org",
               "codeSystemVersion": "2023-12-15",
@@ -11550,7 +11470,7 @@
             "notes": [],
             "instanceType": "EligibilityCriterion",
             "category": {
-              "id": "Code_508",
+              "id": "Code_506",
               "code": "C25532",
               "codeSystem": "http://www.cdisc.org",
               "codeSystemVersion": "2023-12-15",
@@ -11571,7 +11491,7 @@
             "notes": [],
             "instanceType": "EligibilityCriterion",
             "category": {
-              "id": "Code_509",
+              "id": "Code_507",
               "code": "C25532",
               "codeSystem": "http://www.cdisc.org",
               "codeSystemVersion": "2023-12-15",
@@ -11592,7 +11512,7 @@
             "notes": [],
             "instanceType": "EligibilityCriterion",
             "category": {
-              "id": "Code_510",
+              "id": "Code_508",
               "code": "C25532",
               "codeSystem": "http://www.cdisc.org",
               "codeSystemVersion": "2023-12-15",
@@ -11613,7 +11533,7 @@
             "notes": [],
             "instanceType": "EligibilityCriterion",
             "category": {
-              "id": "Code_511",
+              "id": "Code_509",
               "code": "C25532",
               "codeSystem": "http://www.cdisc.org",
               "codeSystemVersion": "2023-12-15",
@@ -11634,7 +11554,7 @@
             "notes": [],
             "instanceType": "EligibilityCriterion",
             "category": {
-              "id": "Code_512",
+              "id": "Code_510",
               "code": "C25532",
               "codeSystem": "http://www.cdisc.org",
               "codeSystemVersion": "2023-12-15",
@@ -11655,7 +11575,7 @@
             "notes": [],
             "instanceType": "EligibilityCriterion",
             "category": {
-              "id": "Code_513",
+              "id": "Code_511",
               "code": "C25532",
               "codeSystem": "http://www.cdisc.org",
               "codeSystemVersion": "2023-12-15",
@@ -11676,7 +11596,7 @@
             "notes": [],
             "instanceType": "EligibilityCriterion",
             "category": {
-              "id": "Code_514",
+              "id": "Code_512",
               "code": "C25532",
               "codeSystem": "http://www.cdisc.org",
               "codeSystemVersion": "2023-12-15",
@@ -11697,7 +11617,7 @@
             "notes": [],
             "instanceType": "EligibilityCriterion",
             "category": {
-              "id": "Code_515",
+              "id": "Code_513",
               "code": "C25532",
               "codeSystem": "http://www.cdisc.org",
               "codeSystemVersion": "2023-12-15",
@@ -11718,7 +11638,7 @@
             "notes": [],
             "instanceType": "EligibilityCriterion",
             "category": {
-              "id": "Code_516",
+              "id": "Code_514",
               "code": "C25532",
               "codeSystem": "http://www.cdisc.org",
               "codeSystemVersion": "2023-12-15",
@@ -11739,7 +11659,7 @@
             "notes": [],
             "instanceType": "EligibilityCriterion",
             "category": {
-              "id": "Code_517",
+              "id": "Code_515",
               "code": "C25370",
               "codeSystem": "http://www.cdisc.org",
               "codeSystemVersion": "2023-12-15",
@@ -11760,7 +11680,7 @@
             "notes": [],
             "instanceType": "EligibilityCriterion",
             "category": {
-              "id": "Code_518",
+              "id": "Code_516",
               "code": "C25370",
               "codeSystem": "http://www.cdisc.org",
               "codeSystemVersion": "2023-12-15",
@@ -11781,7 +11701,7 @@
             "notes": [],
             "instanceType": "EligibilityCriterion",
             "category": {
-              "id": "Code_519",
+              "id": "Code_517",
               "code": "C25370",
               "codeSystem": "http://www.cdisc.org",
               "codeSystemVersion": "2023-12-15",
@@ -11802,7 +11722,7 @@
             "notes": [],
             "instanceType": "EligibilityCriterion",
             "category": {
-              "id": "Code_520",
+              "id": "Code_518",
               "code": "C25370",
               "codeSystem": "http://www.cdisc.org",
               "codeSystemVersion": "2023-12-15",
@@ -11823,7 +11743,7 @@
             "notes": [],
             "instanceType": "EligibilityCriterion",
             "category": {
-              "id": "Code_521",
+              "id": "Code_519",
               "code": "C25370",
               "codeSystem": "http://www.cdisc.org",
               "codeSystemVersion": "2023-12-15",
@@ -11844,7 +11764,7 @@
             "notes": [],
             "instanceType": "EligibilityCriterion",
             "category": {
-              "id": "Code_522",
+              "id": "Code_520",
               "code": "C25370",
               "codeSystem": "http://www.cdisc.org",
               "codeSystemVersion": "2023-12-15",
@@ -11865,7 +11785,7 @@
             "notes": [],
             "instanceType": "EligibilityCriterion",
             "category": {
-              "id": "Code_523",
+              "id": "Code_521",
               "code": "C25370",
               "codeSystem": "http://www.cdisc.org",
               "codeSystemVersion": "2023-12-15",
@@ -11886,7 +11806,7 @@
             "notes": [],
             "instanceType": "EligibilityCriterion",
             "category": {
-              "id": "Code_524",
+              "id": "Code_522",
               "code": "C25370",
               "codeSystem": "http://www.cdisc.org",
               "codeSystemVersion": "2023-12-15",
@@ -11907,7 +11827,7 @@
             "notes": [],
             "instanceType": "EligibilityCriterion",
             "category": {
-              "id": "Code_525",
+              "id": "Code_523",
               "code": "C25370",
               "codeSystem": "http://www.cdisc.org",
               "codeSystemVersion": "2023-12-15",
@@ -11928,7 +11848,7 @@
             "notes": [],
             "instanceType": "EligibilityCriterion",
             "category": {
-              "id": "Code_526",
+              "id": "Code_524",
               "code": "C25370",
               "codeSystem": "http://www.cdisc.org",
               "codeSystemVersion": "2023-12-15",
@@ -11949,7 +11869,7 @@
             "notes": [],
             "instanceType": "EligibilityCriterion",
             "category": {
-              "id": "Code_527",
+              "id": "Code_525",
               "code": "C25370",
               "codeSystem": "http://www.cdisc.org",
               "codeSystemVersion": "2023-12-15",
@@ -11970,7 +11890,7 @@
             "notes": [],
             "instanceType": "EligibilityCriterion",
             "category": {
-              "id": "Code_528",
+              "id": "Code_526",
               "code": "C25370",
               "codeSystem": "http://www.cdisc.org",
               "codeSystemVersion": "2023-12-15",
@@ -11991,7 +11911,7 @@
             "notes": [],
             "instanceType": "EligibilityCriterion",
             "category": {
-              "id": "Code_529",
+              "id": "Code_527",
               "code": "C25370",
               "codeSystem": "http://www.cdisc.org",
               "codeSystemVersion": "2023-12-15",
@@ -12012,7 +11932,7 @@
             "notes": [],
             "instanceType": "EligibilityCriterion",
             "category": {
-              "id": "Code_530",
+              "id": "Code_528",
               "code": "C25370",
               "codeSystem": "http://www.cdisc.org",
               "codeSystemVersion": "2023-12-15",
@@ -12033,7 +11953,7 @@
             "notes": [],
             "instanceType": "EligibilityCriterion",
             "category": {
-              "id": "Code_531",
+              "id": "Code_529",
               "code": "C25370",
               "codeSystem": "http://www.cdisc.org",
               "codeSystemVersion": "2023-12-15",
@@ -12054,7 +11974,7 @@
             "notes": [],
             "instanceType": "EligibilityCriterion",
             "category": {
-              "id": "Code_532",
+              "id": "Code_530",
               "code": "C25370",
               "codeSystem": "http://www.cdisc.org",
               "codeSystemVersion": "2023-12-15",
@@ -12075,7 +11995,7 @@
             "notes": [],
             "instanceType": "EligibilityCriterion",
             "category": {
-              "id": "Code_533",
+              "id": "Code_531",
               "code": "C25370",
               "codeSystem": "http://www.cdisc.org",
               "codeSystemVersion": "2023-12-15",
@@ -12096,7 +12016,7 @@
             "notes": [],
             "instanceType": "EligibilityCriterion",
             "category": {
-              "id": "Code_534",
+              "id": "Code_532",
               "code": "C25370",
               "codeSystem": "http://www.cdisc.org",
               "codeSystemVersion": "2023-12-15",
@@ -12117,7 +12037,7 @@
             "notes": [],
             "instanceType": "EligibilityCriterion",
             "category": {
-              "id": "Code_535",
+              "id": "Code_533",
               "code": "C25370",
               "codeSystem": "http://www.cdisc.org",
               "codeSystemVersion": "2023-12-15",
@@ -12138,7 +12058,7 @@
             "notes": [],
             "instanceType": "EligibilityCriterion",
             "category": {
-              "id": "Code_536",
+              "id": "Code_534",
               "code": "C25370",
               "codeSystem": "http://www.cdisc.org",
               "codeSystemVersion": "2023-12-15",
@@ -12159,7 +12079,7 @@
             "notes": [],
             "instanceType": "EligibilityCriterion",
             "category": {
-              "id": "Code_537",
+              "id": "Code_535",
               "code": "C25370",
               "codeSystem": "http://www.cdisc.org",
               "codeSystemVersion": "2023-12-15",
@@ -12180,7 +12100,7 @@
             "notes": [],
             "instanceType": "EligibilityCriterion",
             "category": {
-              "id": "Code_538",
+              "id": "Code_536",
               "code": "C25370",
               "codeSystem": "http://www.cdisc.org",
               "codeSystemVersion": "2023-12-15",
@@ -12201,7 +12121,7 @@
             "notes": [],
             "instanceType": "EligibilityCriterion",
             "category": {
-              "id": "Code_539",
+              "id": "Code_537",
               "code": "C25370",
               "codeSystem": "http://www.cdisc.org",
               "codeSystemVersion": "2023-12-15",
@@ -12222,7 +12142,7 @@
             "notes": [],
             "instanceType": "EligibilityCriterion",
             "category": {
-              "id": "Code_540",
+              "id": "Code_538",
               "code": "C25370",
               "codeSystem": "http://www.cdisc.org",
               "codeSystemVersion": "2023-12-15",
@@ -12243,7 +12163,7 @@
             "notes": [],
             "instanceType": "EligibilityCriterion",
             "category": {
-              "id": "Code_541",
+              "id": "Code_539",
               "code": "C25370",
               "codeSystem": "http://www.cdisc.org",
               "codeSystemVersion": "2023-12-15",
@@ -12264,7 +12184,7 @@
             "notes": [],
             "instanceType": "EligibilityCriterion",
             "category": {
-              "id": "Code_542",
+              "id": "Code_540",
               "code": "C25370",
               "codeSystem": "http://www.cdisc.org",
               "codeSystemVersion": "2023-12-15",
@@ -12280,7 +12200,7 @@
           {
             "id": "NarrativeContentItem_1",
             "name": "NCI_1",
-            "text": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><div class=\"container\">\n<div class=\"row\">\n<div class=\"col-md-8 offset-md-2 text-center\">\n<p><strong><usdm:ref attribute=\"studyIdentifier\" id=\"StudyIdentifier_1\" klass=\"StudyIdentifier\"></usdm:ref></strong></p>\n</div>\n</div>\n<div class=\"row mt-3\">\n<div class=\"col-md-8 offset-md-2 text-center\">\n<p><strong><usdm:ref attribute=\"text\" id=\"StudyTitle_2\" klass=\"StudyTitle\"></usdm:ref></strong></p>\n</div>\n</div>\n<div class=\"row mt-3\">\n<div class=\"col-md-10 offset-md-1 text-center border\">\n<p><strong>Confidential Information</strong></p>\n<p>\n<small>\n          The information contained in this protocol is confidential and is intended for the use of clinical\n          investigators. It is the property of Eli Lilly and Company or its subsidiaries and should not be copied by\n          or distributed to persons not involved in the clinical investigation of glucagon (LY900018), unless such\n          persons are bound by a confidentiality agreement with Eli Lilly and Company or its subsidiaries.\n        </small>\n</p>\n<p>\n<small>\n<b>Note to Regulatory Authorities:</b> This document may contain protected personal data and/or commercially\n          confidential information exempt from public disclosure. Eli Lilly and Company requests consultation\n          regarding release/redaction prior to any public release. In the United States, this document is subject to Freedom of\n          Information Act (FOIA) Exemption 4 and may not be reproduced or otherwise disseminated without the written\n          approval of Eli Lilly and Company or its subsidiaries.\n        </small>\n</p>\n</div>\n</div>\n<div class=\"row mt-5\">\n<div class=\"col-md-8 offset-md-2 text-center\">\n<p>Glucagon (LY900018)</p>\n<p>Eli Lilly Japan K.K Japan</p>\n<p>Clinical Pharmacology Protocol Electronically Signed and Approved by Lilly:</p>\n<p>26 October 2017</p>\n<p>Amendment (<usdm:ref attribute=\"number\" id=\"StudyAmendment_1\" klass=\"StudyAmendment\"></usdm:ref>) Electronically Signed and Approved by Lilly on date provided below.</p>\n\n</div>\n</div>\n<div class=\"row\">\n<div class=\"col-md-3 offset-md-9 text-right\">\n<p>Approval Date: <usdm:ref attribute=\"dateValue\" id=\"GovernanceDate_1\" klass=\"GovernanceDate\"></usdm:ref></p>\n</div>\n</div>\n</div></div>",
+            "text": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><div class=\"container\">\n<div class=\"row\">\n<div class=\"col-md-8 offset-md-2 text-center\">\n<p><strong><usdm:ref attribute=\"text\" id=\"StudyIdentifier_1\" klass=\"StudyIdentifier\"></usdm:ref></strong></p>\n</div>\n</div>\n<div class=\"row mt-3\">\n<div class=\"col-md-8 offset-md-2 text-center\">\n<p><strong><usdm:ref attribute=\"text\" id=\"StudyTitle_2\" klass=\"StudyTitle\"></usdm:ref></strong></p>\n</div>\n</div>\n<div class=\"row mt-3\">\n<div class=\"col-md-10 offset-md-1 text-center border\">\n<p><strong>Confidential Information</strong></p>\n<p>\n<small>\n          The information contained in this protocol is confidential and is intended for the use of clinical\n          investigators. It is the property of Eli Lilly and Company or its subsidiaries and should not be copied by\n          or distributed to persons not involved in the clinical investigation of glucagon (LY900018), unless such\n          persons are bound by a confidentiality agreement with Eli Lilly and Company or its subsidiaries.\n        </small>\n</p>\n<p>\n<small>\n<b>Note to Regulatory Authorities:</b> This document may contain protected personal data and/or commercially\n          confidential information exempt from public disclosure. Eli Lilly and Company requests consultation\n          regarding release/redaction prior to any public release. In the United States, this document is subject to Freedom of\n          Information Act (FOIA) Exemption 4 and may not be reproduced or otherwise disseminated without the written\n          approval of Eli Lilly and Company or its subsidiaries.\n        </small>\n</p>\n</div>\n</div>\n<div class=\"row mt-5\">\n<div class=\"col-md-8 offset-md-2 text-center\">\n<p>Glucagon (LY900018)</p>\n<p>Eli Lilly Japan K.K Japan</p>\n<p>Clinical Pharmacology Protocol Electronically Signed and Approved by Lilly:</p>\n<p>26 October 2017</p>\n<p>Amendment (<usdm:ref attribute=\"number\" id=\"StudyAmendment_1\" klass=\"StudyAmendment\"></usdm:ref>) Electronically Signed and Approved by Lilly on date provided below.</p>\n\n</div>\n</div>\n<div class=\"row\">\n<div class=\"col-md-3 offset-md-9 text-right\">\n<p>Approval Date: <usdm:ref attribute=\"dateValue\" id=\"GovernanceDate_1\" klass=\"GovernanceDate\"></usdm:ref></p>\n</div>\n</div>\n</div></div>",
             "instanceType": "NarrativeContentItem"
           },
           {
@@ -12424,7 +12344,7 @@
           {
             "id": "NarrativeContentItem_25",
             "name": "NCI_25",
-            "text": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p>This study involves a comparison of 3 mg of LY900018 administered once nasally to 1 mg glucagon administered IM (comparator). Table IGBJ.2 shows the study treatment information.</p>\n<p><b>Table IGBJ.2. Study Treatments</b></p>\n<table class=\"table\">\n<tr>\n<th><p>Treatment Name</p></th>\n<td><p><usdm:ref attribute=\"label\" id=\"StudyIntervention_1\" klass=\"StudyIntervention\"></usdm:ref></p></td>\n<td><p><usdm:ref attribute=\"label\" id=\"StudyIntervention_2\" klass=\"StudyIntervention\"></usdm:ref></p></td>\n</tr>\n<tr>\n<th><p>Dosage Formulation</p></th>\n<td><p>Dry powder</p></td>\n<td><p>Dry powder</p></td>\n</tr>\n<tr>\n<th><p>Dosage Levels  </p></th>\n<td><p><usdm:ref attribute=\"value\" id=\"Quantity_3\" klass=\"Quantity\"></usdm:ref> <usdm:ref attribute=\"decode\" id=\"Code_474\" klass=\"Code\"></usdm:ref> glucagon</p></td>\n<td><p><usdm:ref attribute=\"value\" id=\"Quantity_6\" klass=\"Quantity\"></usdm:ref> <usdm:ref attribute=\"decode\" id=\"Code_484\" klass=\"Code\"></usdm:ref> glucagon</p></td>\n</tr>\n<tr>\n<th><p>Route of Administration</p></th>\n<td><p><usdm:ref attribute=\"decode\" id=\"Code_473\" klass=\"Code\"></usdm:ref></p></td>\n<td><p><usdm:ref attribute=\"decode\" id=\"Code_483\" klass=\"Code\"></usdm:ref></p></td>\n</tr>\n<tr>\n<th>Dosing Instructions</th>\n<td><usdm:ref attribute=\"description\" id=\"AgentAdministration_1\" klass=\"AgentAdministration\"></usdm:ref></td>\n<td><usdm:ref attribute=\"description\" id=\"AgentAdministration_2\" klass=\"AgentAdministration\"></usdm:ref></td>\n</tr>\n</table>\n<p>The procedure for insulin-induced hypoglycemia will require an IV infusion of diluted human regular insulin (0.3 U/mL by diluting 15 U human regular insulin [100 U/mL] into 50 mL saline). Details regarding hypoglycemia induction and glucagon administration procedures are included in Sections 9.2.1 and 9.2.2, respectively.</p>\n<p>The investigator or designee is responsible for:</p>\n<ul>\n<li><p>explaining the correct use of the investigational products to the site personnel</p></li>\n<li><p>verifying that instructions are followed properly</p></li>\n<li><p>maintaining accurate records of investigational product dispensing and collection</p></li>\n<li><p>and returning all unused medication to Lilly or its designee at the end of the study</p></li>\n</ul></div>",
+            "text": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p>This study involves a comparison of 3 mg of LY900018 administered once nasally to 1 mg glucagon administered IM (comparator). Table IGBJ.2 shows the study treatment information.</p>\n<p><b>Table IGBJ.2. Study Treatments</b></p>\n<table class=\"table\">\n<tr>\n<th><p>Treatment Name</p></th>\n<td><p><usdm:ref attribute=\"label\" id=\"StudyIntervention_1\" klass=\"StudyIntervention\"></usdm:ref></p></td>\n<td><p><usdm:ref attribute=\"label\" id=\"StudyIntervention_2\" klass=\"StudyIntervention\"></usdm:ref></p></td>\n</tr>\n<tr>\n<th><p>Dosage Formulation</p></th>\n<td><p>Dry powder</p></td>\n<td><p>Dry powder</p></td>\n</tr>\n<tr>\n<th><p>Dosage Levels  </p></th>\n<td><p><usdm:ref attribute=\"value\" id=\"Quantity_3\" klass=\"Quantity\"></usdm:ref> <usdm:ref attribute=\"decode\" id=\"Code_473\" klass=\"Code\"></usdm:ref> glucagon</p></td>\n<td><p><usdm:ref attribute=\"value\" id=\"Quantity_6\" klass=\"Quantity\"></usdm:ref> <usdm:ref attribute=\"decode\" id=\"Code_482\" klass=\"Code\"></usdm:ref> glucagon</p></td>\n</tr>\n<tr>\n<th><p>Route of Administration</p></th>\n<td><p><usdm:ref attribute=\"decode\" id=\"Code_474\" klass=\"Code\"></usdm:ref></p></td>\n<td><p><usdm:ref attribute=\"decode\" id=\"Code_483\" klass=\"Code\"></usdm:ref></p></td>\n</tr>\n<tr>\n<th>Dosing Instructions</th>\n<td><usdm:ref attribute=\"description\" id=\"Administration_1\" klass=\"Administration\"></usdm:ref></td>\n<td><usdm:ref attribute=\"description\" id=\"Administration_2\" klass=\"Administration\"></usdm:ref></td>\n</tr>\n</table>\n<p>The procedure for insulin-induced hypoglycemia will require an IV infusion of diluted human regular insulin (0.3 U/mL by diluting 15 U human regular insulin [100 U/mL] into 50 mL saline). Details regarding hypoglycemia induction and glucagon administration procedures are included in Sections 9.2.1 and 9.2.2, respectively.</p>\n<p>The investigator or designee is responsible for:</p>\n<ul>\n<li><p>explaining the correct use of the investigational products to the site personnel</p></li>\n<li><p>verifying that instructions are followed properly</p></li>\n<li><p>maintaining accurate records of investigational product dispensing and collection</p></li>\n<li><p>and returning all unused medication to Lilly or its designee at the end of the study</p></li>\n</ul></div>",
             "instanceType": "NarrativeContentItem"
           },
           {
@@ -12951,6 +12871,80 @@
           }
         ],
         "abbreviations": [],
+        "roles": [],
+        "organizations": [
+          {
+            "id": "Organization_1",
+            "name": "Eli Lilly Japan K.K",
+            "label": "",
+            "type": {
+              "id": "Code_84",
+              "code": "C70793",
+              "codeSystem": "http://www.cdisc.org",
+              "codeSystemVersion": "2023-12-15",
+              "decode": "Clinical Study Sponsor",
+              "instanceType": "Code"
+            },
+            "identifierScheme": "DUNS",
+            "identifier": "006421325",
+            "legalAddress": {
+              "id": "Address_1",
+              "text": "5-1-28, ISOGAMIDORI, CHUO-KU LILLY PLAZA ONE BLDG, KOBE, HYOGO, 651-0086, Japan",
+              "line": "5-1-28, ISOGAMIDORI, CHUO-KU LILLY PLAZA ONE BLDG",
+              "city": "KOBE",
+              "district": "HYOGO",
+              "state": "",
+              "postalCode": "651-0086",
+              "country": {
+                "id": "Code_85",
+                "code": "JPN",
+                "codeSystem": "ISO 3166 1 alpha3",
+                "codeSystemVersion": "2020-08",
+                "decode": "Japan",
+                "instanceType": "Code"
+              },
+              "instanceType": "Address"
+            },
+            "managedSites": [],
+            "instanceType": "Organization"
+          },
+          {
+            "id": "Organization_2",
+            "name": "ClinicalTrials.gov",
+            "label": "",
+            "type": {
+              "id": "Code_86",
+              "code": "C93453",
+              "codeSystem": "http://www.cdisc.org",
+              "codeSystemVersion": "2023-12-15",
+              "decode": "Study Registry",
+              "instanceType": "Code"
+            },
+            "identifierScheme": "USGOV",
+            "identifier": "CT-GOV",
+            "legalAddress": {
+              "id": "Address_2",
+              "text": "Clinical trials, Washington, Washington DC, 12345, United States of America",
+              "line": "Clinical trials",
+              "city": "Washington",
+              "district": "",
+              "state": "Washington DC",
+              "postalCode": "12345",
+              "country": {
+                "id": "Code_87",
+                "code": "USA",
+                "codeSystem": "ISO 3166 1 alpha3",
+                "codeSystemVersion": "2020-08",
+                "decode": "United States of America",
+                "instanceType": "Code"
+              },
+              "instanceType": "Address"
+            },
+            "managedSites": [],
+            "instanceType": "Organization"
+          }
+        ],
+        "administrableProducts": [],
         "notes": [],
         "instanceType": "StudyVersion"
       }
@@ -12962,7 +12956,7 @@
         "label": null,
         "description": null,
         "language": {
-          "id": "Code_543",
+          "id": "Code_541",
           "code": "en",
           "codeSystem": "ISO",
           "codeSystemVersion": "1",
@@ -12970,7 +12964,7 @@
           "instanceType": "Code"
         },
         "type": {
-          "id": "Code_544",
+          "id": "Code_542",
           "code": "C12345",
           "codeSystem": "http://www.cdisc.org",
           "codeSystemVersion": "2023-12-15",
@@ -14579,7 +14573,7 @@
     ],
     "instanceType": "Study"
   },
-  "usdmVersion": "3.5.0",
+  "usdmVersion": "3.6.0",
   "systemName": "CDISC USDM E2J",
-  "systemVersion": "0.52.0"
+  "systemVersion": "0.53.0"
 }
