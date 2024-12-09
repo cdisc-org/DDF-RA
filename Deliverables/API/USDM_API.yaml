@@ -2886,11 +2886,11 @@ components:
           type: array
           title: Scheduletimelines
           default: []
-        biospecimenRetention:
+        biospecimenRetentions:
           items:
             $ref: '#/components/schemas/BiospecimenRetention'
           type: array
-          title: Biospecimenretention
+          title: Biospecimenretentions
           default: []
         documentVersionIds:
           items:
@@ -3085,11 +3085,11 @@ components:
           type: array
           title: Scheduletimelines
           default: []
-        biospecimenRetention:
+        biospecimenRetentions:
           items:
             $ref: '#/components/schemas/BiospecimenRetention'
           type: array
-          title: Biospecimenretention
+          title: Biospecimenretentions
           default: []
         documentVersionIds:
           items:
@@ -3658,11 +3658,11 @@ components:
           type: array
           title: Scheduletimelines
           default: []
-        biospecimenRetention:
+        biospecimenRetentions:
           items:
             $ref: '#/components/schemas/BiospecimenRetention'
           type: array
-          title: Biospecimenretention
+          title: Biospecimenretentions
           default: []
         documentVersionIds:
           items:
@@ -3854,11 +3854,11 @@ components:
           type: array
           title: Scheduletimelines
           default: []
-        biospecimenRetention:
+        biospecimenRetentions:
           items:
             $ref: '#/components/schemas/BiospecimenRetention'
           type: array
-          title: Biospecimenretention
+          title: Biospecimenretentions
           default: []
         documentVersionIds:
           items:
