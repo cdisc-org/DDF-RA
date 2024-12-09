@@ -1091,32 +1091,43 @@ BiomedicalConceptSurrogate:
       Cardinality: 0..1
       Relationship Type: Value
 BiospecimenRetention:
-  Modifier: Abstract
+  Modifier: Concrete
   Attributes:
     id:
       Type:
       - $ref: '#/string'
+      Relationship Type: Value
       Model Name: id
     name:
       Type:
       - $ref: '#/string'
+      Relationship Type: Value
       Model Name: name
     description:
       Type:
       - $ref: '#/string'
+      Relationship Type: Value
       Model Name: description
     label:
       Type:
       - $ref: '#/string'
+      Relationship Type: Value
       Model Name: label
     isRetained:
       Type:
       - $ref: '#/Boolean'
+      Relationship Type: Value
       Model Name: isRetained
     includesDNA:
       Type:
       - $ref: '#/Boolean'
+      Relationship Type: Value
       Model Name: includesDNA
+    instanceType:
+      Type:
+      - $ref: '#/string'
+      Cardinality: 0..1
+      Relationship Type: Value
 Characteristic:
   NCI C-Code: C25447
   Preferred Term: Characteristic
@@ -2253,35 +2264,40 @@ IntercurrentEvent:
 InterventionalStudyDesign:
   Super Classes:
   - $ref: '#/StudyDesign'
-  Modifier: Abstract
+  Modifier: Concrete
   Attributes:
     id:
       Type:
       - $ref: '#/string'
+      Relationship Type: Value
       Model Name: id
       Inherited From:
         $ref: '#/StudyDesign'
     name:
       Type:
       - $ref: '#/string'
+      Relationship Type: Value
       Model Name: name
       Inherited From:
         $ref: '#/StudyDesign'
     description:
       Type:
       - $ref: '#/string'
+      Relationship Type: Value
       Model Name: description
       Inherited From:
         $ref: '#/StudyDesign'
     label:
       Type:
       - $ref: '#/string'
+      Relationship Type: Value
       Model Name: label
       Inherited From:
         $ref: '#/StudyDesign'
     rationale:
       Type:
       - $ref: '#/string'
+      Relationship Type: Value
       Model Name: rationale
       Inherited From:
         $ref: '#/StudyDesign'
@@ -2289,6 +2305,7 @@ InterventionalStudyDesign:
       Type:
       - $ref: '#/Activity'
       Cardinality: 0..*
+      Relationship Type: Value
       Model Name: activities
       Inherited From:
         $ref: '#/StudyDesign'
@@ -2296,13 +2313,15 @@ InterventionalStudyDesign:
       Type:
       - $ref: '#/AliasCode'
       Cardinality: 0..1
+      Relationship Type: Value
       Model Name: studyPhase
       Inherited From:
         $ref: '#/StudyDesign'
-    biospecimenRetentions:
+    biospecimenRetentions*:
       Type:
       - $ref: '#/BiospecimenRetention'
       Cardinality: 0..*
+      Relationship Type: UNKNOWN
       Model Name: biospecimenRetentions
       Inherited From:
         $ref: '#/StudyDesign'
@@ -2310,6 +2329,7 @@ InterventionalStudyDesign:
       Type:
       - $ref: '#/Code'
       Cardinality: 0..1
+      Relationship Type: Value
       Model Name: studyType
       Inherited From:
         $ref: '#/StudyDesign'
@@ -2317,6 +2337,7 @@ InterventionalStudyDesign:
       Type:
       - $ref: '#/Code'
       Cardinality: 0..*
+      Relationship Type: Value
       Model Name: therapeuticAreas
       Inherited From:
         $ref: '#/StudyDesign'
@@ -2324,6 +2345,7 @@ InterventionalStudyDesign:
       Type:
       - $ref: '#/Code'
       Cardinality: 0..*
+      Relationship Type: Value
       Model Name: characteristics
       Inherited From:
         $ref: '#/StudyDesign'
@@ -2331,6 +2353,7 @@ InterventionalStudyDesign:
       Type:
       - $ref: '#/CommentAnnotation'
       Cardinality: 0..*
+      Relationship Type: Value
       Model Name: notes
       Inherited From:
         $ref: '#/StudyDesign'
@@ -2338,6 +2361,7 @@ InterventionalStudyDesign:
       Type:
       - $ref: '#/Encounter'
       Cardinality: 0..*
+      Relationship Type: Value
       Model Name: encounters
       Inherited From:
         $ref: '#/StudyDesign'
@@ -2345,6 +2369,7 @@ InterventionalStudyDesign:
       Type:
       - $ref: '#/Estimand'
       Cardinality: 0..*
+      Relationship Type: Value
       Model Name: estimands
       Inherited From:
         $ref: '#/StudyDesign'
@@ -2352,6 +2377,7 @@ InterventionalStudyDesign:
       Type:
       - $ref: '#/Indication'
       Cardinality: 0..*
+      Relationship Type: Value
       Model Name: indications
       Inherited From:
         $ref: '#/StudyDesign'
@@ -2359,6 +2385,7 @@ InterventionalStudyDesign:
       Type:
       - $ref: '#/Objective'
       Cardinality: 0..*
+      Relationship Type: Value
       Model Name: objectives
       Inherited From:
         $ref: '#/StudyDesign'
@@ -2366,6 +2393,7 @@ InterventionalStudyDesign:
       Type:
       - $ref: '#/ScheduleTimeline'
       Cardinality: 0..*
+      Relationship Type: Value
       Model Name: scheduleTimelines
       Inherited From:
         $ref: '#/StudyDesign'
@@ -2373,6 +2401,7 @@ InterventionalStudyDesign:
       Type:
       - $ref: '#/StudyArm'
       Cardinality: 1..*
+      Relationship Type: Value
       Model Name: arms
       Inherited From:
         $ref: '#/StudyDesign'
@@ -2380,13 +2409,15 @@ InterventionalStudyDesign:
       Type:
       - $ref: '#/StudyCell'
       Cardinality: 1..*
+      Relationship Type: Value
       Model Name: studyCells
       Inherited From:
         $ref: '#/StudyDesign'
-    documentVersions:
+    documentVersionIds:
       Type:
       - $ref: '#/StudyDefinitionDocumentVersion'
       Cardinality: 0..*
+      Relationship Type: Ref
       Model Name: documentVersions
       Inherited From:
         $ref: '#/StudyDesign'
@@ -2394,6 +2425,7 @@ InterventionalStudyDesign:
       Type:
       - $ref: '#/StudyElement'
       Cardinality: 0..*
+      Relationship Type: Value
       Model Name: elements
       Inherited From:
         $ref: '#/StudyDesign'
@@ -2401,6 +2433,7 @@ InterventionalStudyDesign:
       Type:
       - $ref: '#/StudyIntervention'
       Cardinality: 0..*
+      Relationship Type: Value
       Model Name: studyInterventions
       Inherited From:
         $ref: '#/StudyDesign'
@@ -2408,6 +2441,7 @@ InterventionalStudyDesign:
       Type:
       - $ref: '#/StudyEpoch'
       Cardinality: 1..*
+      Relationship Type: Value
       Model Name: epochs
       Inherited From:
         $ref: '#/StudyDesign'
@@ -2415,6 +2449,7 @@ InterventionalStudyDesign:
       Type:
       - $ref: '#/StudyDesignPopulation'
       Cardinality: 0..1
+      Relationship Type: Value
       Model Name: population
       Inherited From:
         $ref: '#/StudyDesign'
@@ -2422,22 +2457,66 @@ InterventionalStudyDesign:
       Type:
       - $ref: '#/Code'
       Cardinality: 0..*
+      Relationship Type: Value
       Model Name: subTypes
     intentTypes:
       Type:
       - $ref: '#/Code'
       Cardinality: 0..*
+      Relationship Type: Value
       Model Name: intentTypes
     model:
       Type:
       - $ref: '#/Code'
       Cardinality: '1'
+      Relationship Type: Value
       Model Name: model
     blindingSchema:
       Type:
       - $ref: '#/Code'
       Cardinality: 0..1
+      Relationship Type: Value
       Model Name: blindingSchema
+    biomedicalConcepts:
+      Type:
+      - $ref: '#/BiomedicalConcept'
+      Cardinality: 0..*
+      Relationship Type: Value
+    bcCategories:
+      Type:
+      - $ref: '#/BiomedicalConceptCategory'
+      Cardinality: 0..*
+      Relationship Type: Value
+    bcSurrogates:
+      Type:
+      - $ref: '#/BiomedicalConceptSurrogate'
+      Cardinality: 0..*
+      Relationship Type: Value
+    analysisPopulations:
+      Type:
+      - $ref: '#/AnalysisPopulation'
+      Cardinality: 0..*
+      Relationship Type: Value
+    biospecimenRetention:
+      Type:
+      - $ref: '#/BiospecimenRetention'
+      Cardinality: 0..*
+      Relationship Type: Value
+    dictionaries:
+      Type:
+      - $ref: '#/SyntaxTemplateDictionary'
+      Cardinality: 0..*
+      Relationship Type: Value
+    conditions:
+      Type:
+      - $ref: '#/Condition'
+      Cardinality: 0..*
+      Relationship Type: Value
+    instanceType:
+      Type:
+      - $ref: '#/string'
+      Cardinality: 0..1
+      Relationship Type: Value
 Masking:
   NCI C-Code: C191278
   Preferred Term: Masking
@@ -2852,35 +2931,40 @@ Objective:
 ObservationalStudyDesign:
   Super Classes:
   - $ref: '#/StudyDesign'
-  Modifier: Abstract
+  Modifier: Concrete
   Attributes:
     id:
       Type:
       - $ref: '#/string'
+      Relationship Type: Value
       Model Name: id
       Inherited From:
         $ref: '#/StudyDesign'
     name:
       Type:
       - $ref: '#/string'
+      Relationship Type: Value
       Model Name: name
       Inherited From:
         $ref: '#/StudyDesign'
     description:
       Type:
       - $ref: '#/string'
+      Relationship Type: Value
       Model Name: description
       Inherited From:
         $ref: '#/StudyDesign'
     label:
       Type:
       - $ref: '#/string'
+      Relationship Type: Value
       Model Name: label
       Inherited From:
         $ref: '#/StudyDesign'
     rationale:
       Type:
       - $ref: '#/string'
+      Relationship Type: Value
       Model Name: rationale
       Inherited From:
         $ref: '#/StudyDesign'
@@ -2888,6 +2972,7 @@ ObservationalStudyDesign:
       Type:
       - $ref: '#/Activity'
       Cardinality: 0..*
+      Relationship Type: Value
       Model Name: activities
       Inherited From:
         $ref: '#/StudyDesign'
@@ -2895,13 +2980,15 @@ ObservationalStudyDesign:
       Type:
       - $ref: '#/AliasCode'
       Cardinality: 0..1
+      Relationship Type: Value
       Model Name: studyPhase
       Inherited From:
         $ref: '#/StudyDesign'
-    biospecimenRetentions:
+    biospecimenRetentions*:
       Type:
       - $ref: '#/BiospecimenRetention'
       Cardinality: 0..*
+      Relationship Type: UNKNOWN
       Model Name: biospecimenRetentions
       Inherited From:
         $ref: '#/StudyDesign'
@@ -2909,6 +2996,7 @@ ObservationalStudyDesign:
       Type:
       - $ref: '#/Code'
       Cardinality: 0..1
+      Relationship Type: Value
       Model Name: studyType
       Inherited From:
         $ref: '#/StudyDesign'
@@ -2916,6 +3004,7 @@ ObservationalStudyDesign:
       Type:
       - $ref: '#/Code'
       Cardinality: 0..*
+      Relationship Type: Value
       Model Name: therapeuticAreas
       Inherited From:
         $ref: '#/StudyDesign'
@@ -2923,6 +3012,7 @@ ObservationalStudyDesign:
       Type:
       - $ref: '#/Code'
       Cardinality: 0..*
+      Relationship Type: Value
       Model Name: characteristics
       Inherited From:
         $ref: '#/StudyDesign'
@@ -2930,6 +3020,7 @@ ObservationalStudyDesign:
       Type:
       - $ref: '#/CommentAnnotation'
       Cardinality: 0..*
+      Relationship Type: Value
       Model Name: notes
       Inherited From:
         $ref: '#/StudyDesign'
@@ -2937,6 +3028,7 @@ ObservationalStudyDesign:
       Type:
       - $ref: '#/Encounter'
       Cardinality: 0..*
+      Relationship Type: Value
       Model Name: encounters
       Inherited From:
         $ref: '#/StudyDesign'
@@ -2944,6 +3036,7 @@ ObservationalStudyDesign:
       Type:
       - $ref: '#/Estimand'
       Cardinality: 0..*
+      Relationship Type: Value
       Model Name: estimands
       Inherited From:
         $ref: '#/StudyDesign'
@@ -2951,6 +3044,7 @@ ObservationalStudyDesign:
       Type:
       - $ref: '#/Indication'
       Cardinality: 0..*
+      Relationship Type: Value
       Model Name: indications
       Inherited From:
         $ref: '#/StudyDesign'
@@ -2958,6 +3052,7 @@ ObservationalStudyDesign:
       Type:
       - $ref: '#/Objective'
       Cardinality: 0..*
+      Relationship Type: Value
       Model Name: objectives
       Inherited From:
         $ref: '#/StudyDesign'
@@ -2965,6 +3060,7 @@ ObservationalStudyDesign:
       Type:
       - $ref: '#/ScheduleTimeline'
       Cardinality: 0..*
+      Relationship Type: Value
       Model Name: scheduleTimelines
       Inherited From:
         $ref: '#/StudyDesign'
@@ -2972,6 +3068,7 @@ ObservationalStudyDesign:
       Type:
       - $ref: '#/StudyArm'
       Cardinality: 1..*
+      Relationship Type: Value
       Model Name: arms
       Inherited From:
         $ref: '#/StudyDesign'
@@ -2979,13 +3076,15 @@ ObservationalStudyDesign:
       Type:
       - $ref: '#/StudyCell'
       Cardinality: 1..*
+      Relationship Type: Value
       Model Name: studyCells
       Inherited From:
         $ref: '#/StudyDesign'
-    documentVersions:
+    documentVersionIds:
       Type:
       - $ref: '#/StudyDefinitionDocumentVersion'
       Cardinality: 0..*
+      Relationship Type: Ref
       Model Name: documentVersions
       Inherited From:
         $ref: '#/StudyDesign'
@@ -2993,6 +3092,7 @@ ObservationalStudyDesign:
       Type:
       - $ref: '#/StudyElement'
       Cardinality: 0..*
+      Relationship Type: Value
       Model Name: elements
       Inherited From:
         $ref: '#/StudyDesign'
@@ -3000,6 +3100,7 @@ ObservationalStudyDesign:
       Type:
       - $ref: '#/StudyIntervention'
       Cardinality: 0..*
+      Relationship Type: Value
       Model Name: studyInterventions
       Inherited From:
         $ref: '#/StudyDesign'
@@ -3007,6 +3108,7 @@ ObservationalStudyDesign:
       Type:
       - $ref: '#/StudyEpoch'
       Cardinality: 1..*
+      Relationship Type: Value
       Model Name: epochs
       Inherited From:
         $ref: '#/StudyDesign'
@@ -3014,6 +3116,7 @@ ObservationalStudyDesign:
       Type:
       - $ref: '#/StudyDesignPopulation'
       Cardinality: 0..1
+      Relationship Type: Value
       Model Name: population
       Inherited From:
         $ref: '#/StudyDesign'
@@ -3021,22 +3124,66 @@ ObservationalStudyDesign:
       Type:
       - $ref: '#/Code'
       Cardinality: '1'
+      Relationship Type: Value
       Model Name: timePerspective
     subTypes:
       Type:
       - $ref: '#/Code'
       Cardinality: 0..*
+      Relationship Type: Value
       Model Name: subTypes
     model:
       Type:
       - $ref: '#/Code'
       Cardinality: '1'
+      Relationship Type: Value
       Model Name: model
     samplingMethod:
       Type:
       - $ref: '#/Code'
       Cardinality: 0..1
+      Relationship Type: Value
       Model Name: samplingMethod
+    biomedicalConcepts:
+      Type:
+      - $ref: '#/BiomedicalConcept'
+      Cardinality: 0..*
+      Relationship Type: Value
+    bcCategories:
+      Type:
+      - $ref: '#/BiomedicalConceptCategory'
+      Cardinality: 0..*
+      Relationship Type: Value
+    bcSurrogates:
+      Type:
+      - $ref: '#/BiomedicalConceptSurrogate'
+      Cardinality: 0..*
+      Relationship Type: Value
+    analysisPopulations:
+      Type:
+      - $ref: '#/AnalysisPopulation'
+      Cardinality: 0..*
+      Relationship Type: Value
+    biospecimenRetention:
+      Type:
+      - $ref: '#/BiospecimenRetention'
+      Cardinality: 0..*
+      Relationship Type: Value
+    dictionaries:
+      Type:
+      - $ref: '#/SyntaxTemplateDictionary'
+      Cardinality: 0..*
+      Relationship Type: Value
+    conditions:
+      Type:
+      - $ref: '#/Condition'
+      Cardinality: 0..*
+      Relationship Type: Value
+    instanceType:
+      Type:
+      - $ref: '#/string'
+      Cardinality: 0..1
+      Relationship Type: Value
 Organization:
   NCI C-Code: C19711
   Preferred Term: Organization
@@ -4746,12 +4893,11 @@ StudyDesign:
   Sub Classes:
   - $ref: '#/InterventionalStudyDesign'
   - $ref: '#/ObservationalStudyDesign'
-  Modifier: Concrete
+  Modifier: Abstract
   Attributes:
     id:
       Type:
       - $ref: '#/string'
-      Relationship Type: Value
       Model Name: id
     name:
       Type:
@@ -4760,7 +4906,6 @@ StudyDesign:
       Preferred Term: Study Design Name
       Definition: The literal identifier (i.e., distinctive designation) of the study
         design.
-      Relationship Type: Value
       Model Name: name
     description:
       Type:
@@ -4768,7 +4913,6 @@ StudyDesign:
       NCI C-Code: C147139
       Preferred Term: Study Design Description
       Definition: A narrative representation of the study design.
-      Relationship Type: Value
       Model Name: description
     label:
       Type:
@@ -4776,7 +4920,6 @@ StudyDesign:
       NCI C-Code: C207548
       Preferred Term: Study Design Label
       Definition: The short descriptive designation for the study design.
-      Relationship Type: Value
       Model Name: label
     rationale:
       Type:
@@ -4786,7 +4929,6 @@ StudyDesign:
       Definition: Reason(s) for choosing the study design. This may include reasons
         for the choice of control or comparator, as well as the scientific rationale
         for the study design.
-      Relationship Type: Value
       Model Name: rationale
     activities:
       Type:
@@ -4794,25 +4936,21 @@ StudyDesign:
       Cardinality: 0..*
       Definition: A USDM relationship between the StudyDesign and Activity classes
         which identifies the set of activities associated with the study design.
-      Relationship Type: Value
       Model Name: activities
-    studyPhase*:
+    studyPhase:
       Type:
       - $ref: '#/AliasCode'
       Cardinality: 0..1
-      Relationship Type: UNKNOWN
       Model Name: studyPhase
-    biospecimenRetentions*:
+    biospecimenRetentions:
       Type:
       - $ref: '#/BiospecimenRetention'
       Cardinality: 0..*
-      Relationship Type: UNKNOWN
       Model Name: biospecimenRetentions
-    studyType*:
+    studyType:
       Type:
       - $ref: '#/Code'
       Cardinality: 0..1
-      Relationship Type: UNKNOWN
       Model Name: studyType
     therapeuticAreas:
       Type:
@@ -4825,7 +4963,6 @@ StudyDesign:
         on research and development of specific therapeutic interventions for the
         purpose of treatment and prevention.
       Codelist Ref: (Point out to external dictionaries)
-      Relationship Type: Value
       Model Name: therapeuticAreas
     characteristics:
       Type:
@@ -4835,7 +4972,6 @@ StudyDesign:
       Preferred Term: Study Design Characteristic
       Definition: The distinguishing qualities or prominent aspect of a study design.
       Codelist Ref: C207416
-      Relationship Type: Value
       Model Name: characteristics
     notes:
       Type:
@@ -4843,7 +4979,6 @@ StudyDesign:
       Cardinality: 0..*
       Definition: A USDM relationship between the StudyDesign and CommentAnnotation
         classes which provides the set of notes related to the study design.
-      Relationship Type: Value
       Model Name: notes
     encounters:
       Type:
@@ -4851,7 +4986,6 @@ StudyDesign:
       Cardinality: 0..*
       Definition: A USDM relationship between the StudyDesign and Encounter classes
         which identifies the set of encounters associated with the study design.
-      Relationship Type: Value
       Model Name: encounters
     estimands:
       Type:
@@ -4859,7 +4993,6 @@ StudyDesign:
       Cardinality: 0..*
       Definition: A USDM relationship between the StudyDesign and Estimand classes
         which identifies the set of estimands associated with the study design.
-      Relationship Type: Value
       Model Name: estimands
     indications:
       Type:
@@ -4867,7 +5000,6 @@ StudyDesign:
       Cardinality: 0..*
       Definition: A USDM relationship between the StudyDesign and Indication classes
         which identifies the set of indications associated with the study design.
-      Relationship Type: Value
       Model Name: indications
     objectives:
       Type:
@@ -4875,7 +5007,6 @@ StudyDesign:
       Cardinality: 0..*
       Definition: A USDM relationship between the StudyDesign and Objective classes
         which identifies the set of objectives associated with the study design.
-      Relationship Type: Value
       Model Name: objectives
     scheduleTimelines:
       Type:
@@ -4884,7 +5015,6 @@ StudyDesign:
       Definition: A USDM relationship between the StudyDesign and ScheduleTimeline
         classes which identifies the set of scheduled timelines associated with the
         study design.
-      Relationship Type: Value
       Model Name: scheduleTimelines
     arms:
       Type:
@@ -4892,7 +5022,6 @@ StudyDesign:
       Cardinality: 1..*
       Definition: A USDM relationship between the StudyDesign and StudyArm classes
         which identifies the set of study arms associated with the study design.
-      Relationship Type: Value
       Model Name: arms
     studyCells:
       Type:
@@ -4900,16 +5029,14 @@ StudyDesign:
       Cardinality: 1..*
       Definition: 'A USDM relationship between the StudyDesign and StudyCell classes
         which identifies the set of study cells associated with the study design. '
-      Relationship Type: Value
       Model Name: studyCells
-    documentVersionIds:
+    documentVersions:
       Type:
       - $ref: '#/StudyDefinitionDocumentVersion'
       Cardinality: 0..*
       Definition: A USDM relationship between the StudyDesign and StudyDefinitionDocumentVersion
         classes which identifies the version of the study definition documents associated
         with the study design.
-      Relationship Type: Ref
       Model Name: documentVersions
     elements:
       Type:
@@ -4917,7 +5044,6 @@ StudyDesign:
       Cardinality: 0..*
       Definition: A USDM relationship between the StudyDesign and StudyElement classes
         which identifies the set of study elements associated with the study design.
-      Relationship Type: Value
       Model Name: elements
     studyInterventions:
       Type:
@@ -4926,7 +5052,6 @@ StudyDesign:
       Definition: A USDM relationship between the StudyDesign and StudyIntervention
         classes which identifies the set of study interventions associated with study
         design.
-      Relationship Type: Value
       Model Name: studyInterventions
     epochs:
       Type:
@@ -4934,7 +5059,6 @@ StudyDesign:
       Cardinality: 1..*
       Definition: A USDM relationship between the StudyDesign and StudyEpoch classes
         which identifies the set of study epochs associated with the study design.
-      Relationship Type: Value
       Model Name: epochs
     population:
       Type:
@@ -4942,61 +5066,7 @@ StudyDesign:
       Cardinality: 0..1
       Definition: A USDM relationship between the StudyDesign and StudyDesignPopulation
         classes which identifies the population associated with the study design.
-      Relationship Type: Value
       Model Name: population
-    trialIntentTypes:
-      Type:
-      - $ref: '#/Code'
-      Cardinality: 0..*
-      Relationship Type: Value
-    trialTypes:
-      Type:
-      - $ref: '#/Code'
-      Cardinality: 0..*
-      Relationship Type: Value
-    interventionModel:
-      Type:
-      - $ref: UNKNOWN
-      Relationship Type: Value
-    biomedicalConcepts:
-      Type:
-      - $ref: '#/BiomedicalConcept'
-      Cardinality: 0..*
-      Relationship Type: Value
-    bcCategories:
-      Type:
-      - $ref: '#/BiomedicalConceptCategory'
-      Cardinality: 0..*
-      Relationship Type: Value
-    bcSurrogates:
-      Type:
-      - $ref: '#/BiomedicalConceptSurrogate'
-      Cardinality: 0..*
-      Relationship Type: Value
-    blindingSchema:
-      Type:
-      - $ref: UNKNOWN
-      Relationship Type: Value
-    analysisPopulations:
-      Type:
-      - $ref: '#/AnalysisPopulation'
-      Cardinality: 0..*
-      Relationship Type: Value
-    dictionaries:
-      Type:
-      - $ref: '#/SyntaxTemplateDictionary'
-      Cardinality: 0..*
-      Relationship Type: Value
-    conditions:
-      Type:
-      - $ref: '#/Condition'
-      Cardinality: 0..*
-      Relationship Type: Value
-    instanceType:
-      Type:
-      - $ref: '#/string'
-      Cardinality: 0..1
-      Relationship Type: Value
 StudyDesignPopulation:
   NCI C-Code: C142728
   Preferred Term: Study Design Population
@@ -5733,14 +5803,6 @@ StudyVersion:
         which identifies the set of study titles associated with the study version.
       Relationship Type: Value
       Model Name: titles
-    studyType:
-      Type:
-      - $ref: UNKNOWN
-      Relationship Type: Value
-    studyPhase:
-      Type:
-      - $ref: UNKNOWN
-      Relationship Type: Value
     criteria:
       Type:
       - $ref: '#/EligibilityCriterion'
