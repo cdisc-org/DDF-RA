@@ -1090,6 +1090,33 @@ BiomedicalConceptSurrogate:
       - $ref: '#/string'
       Cardinality: 0..1
       Relationship Type: Value
+BiospecimenRetention:
+  Modifier: Abstract
+  Attributes:
+    id:
+      Type:
+      - $ref: '#/string'
+      Model Name: id
+    name:
+      Type:
+      - $ref: '#/string'
+      Model Name: name
+    description:
+      Type:
+      - $ref: '#/string'
+      Model Name: description
+    label:
+      Type:
+      - $ref: '#/string'
+      Model Name: label
+    includesDNA:
+      Type:
+      - $ref: '#/Boolean'
+      Model Name: includesDNA
+    isRetained:
+      Type:
+      - $ref: '#/Boolean'
+      Model Name: isRetained
 Characteristic:
   NCI C-Code: C25447
   Preferred Term: Characteristic
@@ -2223,6 +2250,192 @@ IntercurrentEvent:
       - $ref: '#/string'
       Cardinality: 0..1
       Relationship Type: Value
+InterventionalStudyDesign:
+  Super Classes:
+  - $ref: '#/StudyDesign'
+  Modifier: Abstract
+  Attributes:
+    id:
+      Type:
+      - $ref: '#/string'
+      Model Name: id
+      Inherited From:
+        $ref: '#/StudyDesign'
+    name:
+      Type:
+      - $ref: '#/string'
+      Model Name: name
+      Inherited From:
+        $ref: '#/StudyDesign'
+    description:
+      Type:
+      - $ref: '#/string'
+      Model Name: description
+      Inherited From:
+        $ref: '#/StudyDesign'
+    label:
+      Type:
+      - $ref: '#/string'
+      Model Name: label
+      Inherited From:
+        $ref: '#/StudyDesign'
+    rationale:
+      Type:
+      - $ref: '#/string'
+      Model Name: rationale
+      Inherited From:
+        $ref: '#/StudyDesign'
+    activities:
+      Type:
+      - $ref: '#/Activity'
+      Cardinality: 0..*
+      Model Name: activities
+      Inherited From:
+        $ref: '#/StudyDesign'
+    studyPhase:
+      Type:
+      - $ref: '#/AliasCode'
+      Cardinality: 0..1
+      Model Name: studyPhase
+      Inherited From:
+        $ref: '#/StudyDesign'
+    biospecimenRetention:
+      Type:
+      - $ref: '#/BiospecimenRetention'
+      Cardinality: 0..*
+      Model Name: biospecimenRetention
+      Inherited From:
+        $ref: '#/StudyDesign'
+    studyType:
+      Type:
+      - $ref: '#/Code'
+      Cardinality: 0..1
+      Model Name: studyType
+      Inherited From:
+        $ref: '#/StudyDesign'
+    therapeuticAreas:
+      Type:
+      - $ref: '#/Code'
+      Cardinality: 0..*
+      Model Name: therapeuticAreas
+      Inherited From:
+        $ref: '#/StudyDesign'
+    characteristics:
+      Type:
+      - $ref: '#/Code'
+      Cardinality: 0..*
+      Model Name: characteristics
+      Inherited From:
+        $ref: '#/StudyDesign'
+    notes:
+      Type:
+      - $ref: '#/CommentAnnotation'
+      Cardinality: 0..*
+      Model Name: notes
+      Inherited From:
+        $ref: '#/StudyDesign'
+    encounters:
+      Type:
+      - $ref: '#/Encounter'
+      Cardinality: 0..*
+      Model Name: encounters
+      Inherited From:
+        $ref: '#/StudyDesign'
+    estimands:
+      Type:
+      - $ref: '#/Estimand'
+      Cardinality: 0..*
+      Model Name: estimands
+      Inherited From:
+        $ref: '#/StudyDesign'
+    indications:
+      Type:
+      - $ref: '#/Indication'
+      Cardinality: 0..*
+      Model Name: indications
+      Inherited From:
+        $ref: '#/StudyDesign'
+    objectives:
+      Type:
+      - $ref: '#/Objective'
+      Cardinality: 0..*
+      Model Name: objectives
+      Inherited From:
+        $ref: '#/StudyDesign'
+    scheduleTimelines:
+      Type:
+      - $ref: '#/ScheduleTimeline'
+      Cardinality: 0..*
+      Model Name: scheduleTimelines
+      Inherited From:
+        $ref: '#/StudyDesign'
+    arms:
+      Type:
+      - $ref: '#/StudyArm'
+      Cardinality: 1..*
+      Model Name: arms
+      Inherited From:
+        $ref: '#/StudyDesign'
+    studyCells:
+      Type:
+      - $ref: '#/StudyCell'
+      Cardinality: 1..*
+      Model Name: studyCells
+      Inherited From:
+        $ref: '#/StudyDesign'
+    documentVersions:
+      Type:
+      - $ref: '#/StudyDefinitionDocumentVersion'
+      Cardinality: 0..*
+      Model Name: documentVersions
+      Inherited From:
+        $ref: '#/StudyDesign'
+    elements:
+      Type:
+      - $ref: '#/StudyElement'
+      Cardinality: 0..*
+      Model Name: elements
+      Inherited From:
+        $ref: '#/StudyDesign'
+    epochs:
+      Type:
+      - $ref: '#/StudyEpoch'
+      Cardinality: 1..*
+      Model Name: epochs
+      Inherited From:
+        $ref: '#/StudyDesign'
+    population:
+      Type:
+      - $ref: '#/StudyDesignPopulation'
+      Cardinality: 0..1
+      Model Name: population
+      Inherited From:
+        $ref: '#/StudyDesign'
+    objectiveTypes:
+      Type:
+      - $ref: '#/Code'
+      Cardinality: 0..*
+      Model Name: objectiveTypes
+    intentTypes:
+      Type:
+      - $ref: '#/Code'
+      Cardinality: 0..*
+      Model Name: intentTypes
+    interventionModel:
+      Type:
+      - $ref: '#/Code'
+      Cardinality: '1'
+      Model Name: interventionModel
+    blindingSchema:
+      Type:
+      - $ref: '#/Code'
+      Cardinality: 0..1
+      Model Name: blindingSchema
+    studyInterventions:
+      Type:
+      - $ref: '#/StudyIntervention'
+      Cardinality: 0..*
+      Model Name: studyInterventions
 Masking:
   NCI C-Code: C191278
   Preferred Term: Masking
@@ -2634,6 +2847,187 @@ Objective:
       - $ref: '#/string'
       Cardinality: 0..1
       Relationship Type: Value
+ObservationalStudyDesign:
+  Super Classes:
+  - $ref: '#/StudyDesign'
+  Modifier: Abstract
+  Attributes:
+    id:
+      Type:
+      - $ref: '#/string'
+      Model Name: id
+      Inherited From:
+        $ref: '#/StudyDesign'
+    name:
+      Type:
+      - $ref: '#/string'
+      Model Name: name
+      Inherited From:
+        $ref: '#/StudyDesign'
+    description:
+      Type:
+      - $ref: '#/string'
+      Model Name: description
+      Inherited From:
+        $ref: '#/StudyDesign'
+    label:
+      Type:
+      - $ref: '#/string'
+      Model Name: label
+      Inherited From:
+        $ref: '#/StudyDesign'
+    rationale:
+      Type:
+      - $ref: '#/string'
+      Model Name: rationale
+      Inherited From:
+        $ref: '#/StudyDesign'
+    activities:
+      Type:
+      - $ref: '#/Activity'
+      Cardinality: 0..*
+      Model Name: activities
+      Inherited From:
+        $ref: '#/StudyDesign'
+    studyPhase:
+      Type:
+      - $ref: '#/AliasCode'
+      Cardinality: 0..1
+      Model Name: studyPhase
+      Inherited From:
+        $ref: '#/StudyDesign'
+    biospecimenRetention:
+      Type:
+      - $ref: '#/BiospecimenRetention'
+      Cardinality: 0..*
+      Model Name: biospecimenRetention
+      Inherited From:
+        $ref: '#/StudyDesign'
+    studyType:
+      Type:
+      - $ref: '#/Code'
+      Cardinality: 0..1
+      Model Name: studyType
+      Inherited From:
+        $ref: '#/StudyDesign'
+    therapeuticAreas:
+      Type:
+      - $ref: '#/Code'
+      Cardinality: 0..*
+      Model Name: therapeuticAreas
+      Inherited From:
+        $ref: '#/StudyDesign'
+    characteristics:
+      Type:
+      - $ref: '#/Code'
+      Cardinality: 0..*
+      Model Name: characteristics
+      Inherited From:
+        $ref: '#/StudyDesign'
+    notes:
+      Type:
+      - $ref: '#/CommentAnnotation'
+      Cardinality: 0..*
+      Model Name: notes
+      Inherited From:
+        $ref: '#/StudyDesign'
+    encounters:
+      Type:
+      - $ref: '#/Encounter'
+      Cardinality: 0..*
+      Model Name: encounters
+      Inherited From:
+        $ref: '#/StudyDesign'
+    estimands:
+      Type:
+      - $ref: '#/Estimand'
+      Cardinality: 0..*
+      Model Name: estimands
+      Inherited From:
+        $ref: '#/StudyDesign'
+    indications:
+      Type:
+      - $ref: '#/Indication'
+      Cardinality: 0..*
+      Model Name: indications
+      Inherited From:
+        $ref: '#/StudyDesign'
+    objectives:
+      Type:
+      - $ref: '#/Objective'
+      Cardinality: 0..*
+      Model Name: objectives
+      Inherited From:
+        $ref: '#/StudyDesign'
+    scheduleTimelines:
+      Type:
+      - $ref: '#/ScheduleTimeline'
+      Cardinality: 0..*
+      Model Name: scheduleTimelines
+      Inherited From:
+        $ref: '#/StudyDesign'
+    arms:
+      Type:
+      - $ref: '#/StudyArm'
+      Cardinality: 1..*
+      Model Name: arms
+      Inherited From:
+        $ref: '#/StudyDesign'
+    studyCells:
+      Type:
+      - $ref: '#/StudyCell'
+      Cardinality: 1..*
+      Model Name: studyCells
+      Inherited From:
+        $ref: '#/StudyDesign'
+    documentVersions:
+      Type:
+      - $ref: '#/StudyDefinitionDocumentVersion'
+      Cardinality: 0..*
+      Model Name: documentVersions
+      Inherited From:
+        $ref: '#/StudyDesign'
+    elements:
+      Type:
+      - $ref: '#/StudyElement'
+      Cardinality: 0..*
+      Model Name: elements
+      Inherited From:
+        $ref: '#/StudyDesign'
+    epochs:
+      Type:
+      - $ref: '#/StudyEpoch'
+      Cardinality: 1..*
+      Model Name: epochs
+      Inherited From:
+        $ref: '#/StudyDesign'
+    population:
+      Type:
+      - $ref: '#/StudyDesignPopulation'
+      Cardinality: 0..1
+      Model Name: population
+      Inherited From:
+        $ref: '#/StudyDesign'
+    timePerspective:
+      Type:
+      - $ref: '#/Code'
+      Cardinality: '1'
+      Model Name: timePerspective
+    objectiveTypes:
+      Type:
+      - $ref: '#/Code'
+      Cardinality: 0..*
+      Model Name: objectiveTypes
+    observationModel:
+      Type:
+      - $ref: '#/Code'
+      Cardinality: '1'
+      Model Name: observationModel
+    samplingMethod:
+      Type:
+      - $ref: '#/Code'
+      Cardinality: 0..1
+      Model Name: samplingMethod
 Organization:
   NCI C-Code: C19711
   Preferred Term: Organization
@@ -4340,6 +4734,9 @@ StudyDesign:
   Definition: A plan detailing how a study will be performed in order to represent
     the phenomenon under examination, to answer the research questions that have been
     asked, and informing the statistical approach.
+  Sub Classes:
+  - $ref: '#/InterventionalStudyDesign'
+  - $ref: '#/ObservationalStudyDesign'
   Modifier: Concrete
   Attributes:
     id:
@@ -4390,29 +4787,24 @@ StudyDesign:
         which identifies the set of activities associated with the study design.
       Relationship Type: Value
       Model Name: activities
-    trialIntentTypes:
+    studyPhase*:
       Type:
-      - $ref: '#/Code'
-      NCI C-Code: C49652
-      Cardinality: 0..*
-      Preferred Term: Trial Intent Type
-      Definition: The planned purpose of the therapy, device, or agent under study
-        in the clinical trial.
-      Codelist Ref: SDTM Terminology Codelist C66736
-      Relationship Type: Value
-      Model Name: trialIntentTypes
-    blindingSchema:
-      Type:
-      - $ref: '#/Code'
-      NCI C-Code: C49658
+      - $ref: '#/AliasCode'
       Cardinality: 0..1
-      Preferred Term: Trial Blinding Schema
-      Definition: The type of experimental design used to describe the level of awareness
-        of the study subjects and/ or study personnel as it relates to the respective
-        intervention(s) or assessments being observed, received or administered.
-      Codelist Ref: SDTM Terminology Codelist C66735
-      Relationship Type: Value
-      Model Name: blindingSchema
+      Relationship Type: UNKNOWN
+      Model Name: studyPhase
+    biospecimenRetention*:
+      Type:
+      - $ref: '#/BiospecimenRetention'
+      Cardinality: 0..*
+      Relationship Type: UNKNOWN
+      Model Name: biospecimenRetention
+    studyType*:
+      Type:
+      - $ref: '#/Code'
+      Cardinality: 0..1
+      Relationship Type: UNKNOWN
+      Model Name: studyType
     therapeuticAreas:
       Type:
       - $ref: '#/Code'
@@ -4436,28 +4828,6 @@ StudyDesign:
       Codelist Ref: C207416
       Relationship Type: Value
       Model Name: characteristics
-    trialTypes:
-      Type:
-      - $ref: '#/Code'
-      NCI C-Code: C49660
-      Cardinality: 0..*
-      Preferred Term: Trial Type
-      Definition: The nature of the interventional study for which information is
-        being collected.
-      Codelist Ref: SDTM Terminology Codelist C66739
-      Relationship Type: Value
-      Model Name: trialTypes
-    interventionModel:
-      Type:
-      - $ref: '#/Code'
-      NCI C-Code: C98746
-      Cardinality: '1'
-      Preferred Term: Intervention Model Type
-      Definition: The general design of the strategy for assigning interventions to
-        subjects in a clinical study. (clinicaltrials.gov)
-      Codelist Ref: SDTM Terminology Codelist C99076
-      Relationship Type: Value
-      Model Name: interventionModel
     notes:
       Type:
       - $ref: '#/CommentAnnotation'
@@ -4540,15 +4910,6 @@ StudyDesign:
         which identifies the set of study elements associated with the study design.
       Relationship Type: Value
       Model Name: elements
-    studyInterventions:
-      Type:
-      - $ref: '#/StudyIntervention'
-      Cardinality: 0..*
-      Definition: A USDM relationship between the StudyDesign and StudyIntervention
-        classes which identifies the set of study interventions associated with study
-        design.
-      Relationship Type: Value
-      Model Name: studyInterventions
     epochs:
       Type:
       - $ref: '#/StudyEpoch'
@@ -4565,6 +4926,20 @@ StudyDesign:
         classes which identifies the population associated with the study design.
       Relationship Type: Value
       Model Name: population
+    trialIntentTypes:
+      Type:
+      - $ref: '#/Code'
+      Cardinality: 0..*
+      Relationship Type: Value
+    trialTypes:
+      Type:
+      - $ref: '#/Code'
+      Cardinality: 0..*
+      Relationship Type: Value
+    interventionModel:
+      Type:
+      - $ref: UNKNOWN
+      Relationship Type: Value
     biomedicalConcepts:
       Type:
       - $ref: '#/BiomedicalConcept'
@@ -4578,6 +4953,15 @@ StudyDesign:
     bcSurrogates:
       Type:
       - $ref: '#/BiomedicalConceptSurrogate'
+      Cardinality: 0..*
+      Relationship Type: Value
+    blindingSchema:
+      Type:
+      - $ref: UNKNOWN
+      Relationship Type: Value
+    studyInterventions:
+      Type:
+      - $ref: '#/StudyIntervention'
       Cardinality: 0..*
       Relationship Type: Value
     analysisPopulations:
@@ -5256,22 +5640,6 @@ StudyVersion:
         which provides the set of abbreviations associated with the study version.
       Relationship Type: Value
       Model Name: abbreviations
-    studyPhase:
-      Type:
-      - $ref: '#/AliasCode'
-      NCI C-Code: C48281
-      Cardinality: 0..1
-      Preferred Term: Trial Phase
-      Definition: 'A step in the clinical research and development of a therapy from
-        initial clinical trials to post-approval studies. NOTE: Clinical trials are
-        generally categorized into four (sometimes five) phases. A therapeutic intervention
-        may be evaluated in two or more phases simultaneously in different trials,
-        and some trials may overlap two different phases. [21 CFR section 312.21;
-        After ICH Topic E8 NOTE FOR GUIDANCE ON GENERAL CONSIDERATIONS FOR CLINICAL
-        TRIALS, CPMP/ICH/291/95 March 1998]'
-      Codelist Ref: SDTM Terminology Codelist C66737
-      Relationship Type: Value
-      Model Name: studyPhase
     businessTherapeuticAreas:
       Type:
       - $ref: '#/Code'
@@ -5283,17 +5651,6 @@ StudyVersion:
       Codelist Ref: (Point out to external dictionaries)
       Relationship Type: Value
       Model Name: businessTherapeuticAreas
-    studyType:
-      Type:
-      - $ref: '#/Code'
-      NCI C-Code: C142175
-      Cardinality: 0..1
-      Preferred Term: Study Type Classification
-      Definition: The nature of the investigation for which study information is being
-        collected. (After clinicaltrials.gov)
-      Codelist Ref: SDTM Terminology Codelist C99077
-      Relationship Type: Value
-      Model Name: studyType
     notes:
       Type:
       - $ref: '#/CommentAnnotation'
@@ -5363,6 +5720,14 @@ StudyVersion:
         which identifies the set of study titles associated with the study version.
       Relationship Type: Value
       Model Name: titles
+    studyType:
+      Type:
+      - $ref: UNKNOWN
+      Relationship Type: Value
+    studyPhase:
+      Type:
+      - $ref: UNKNOWN
+      Relationship Type: Value
     criteria:
       Type:
       - $ref: '#/EligibilityCriterion'

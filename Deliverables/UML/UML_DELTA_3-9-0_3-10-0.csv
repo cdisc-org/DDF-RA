@@ -1,0 +1,76 @@
+status,class_name,property_name,data_type
+Class - NEW,BiospecimenRetention,,
+,,id,string
+,,name,string
+,,description,string
+,,label,string
+,,includesDNA,Boolean
+,,isRetained,Boolean
+Class - NEW,InterventionalStudyDesign,,
+,,id,string
+,,name,string
+,,description,string
+,,label,string
+,,rationale,string
+,,activities,Activity
+,,studyPhase,AliasCode
+,,biospecimenRetention,BiospecimenRetention
+,,studyType,Code
+,,therapeuticAreas,Code
+,,characteristics,Code
+,,notes,CommentAnnotation
+,,encounters,Encounter
+,,estimands,Estimand
+,,indications,Indication
+,,objectives,Objective
+,,scheduleTimelines,ScheduleTimeline
+,,arms,StudyArm
+,,studyCells,StudyCell
+,,documentVersions,StudyDefinitionDocumentVersion
+,,elements,StudyElement
+,,epochs,StudyEpoch
+,,population,StudyDesignPopulation
+,,objectiveTypes,Code
+,,intentTypes,Code
+,,interventionModel,Code
+,,blindingSchema,Code
+,,studyInterventions,StudyIntervention
+Class - NEW,ObservationalStudyDesign,,
+,,id,string
+,,name,string
+,,description,string
+,,label,string
+,,rationale,string
+,,activities,Activity
+,,studyPhase,AliasCode
+,,biospecimenRetention,BiospecimenRetention
+,,studyType,Code
+,,therapeuticAreas,Code
+,,characteristics,Code
+,,notes,CommentAnnotation
+,,encounters,Encounter
+,,estimands,Estimand
+,,indications,Indication
+,,objectives,Objective
+,,scheduleTimelines,ScheduleTimeline
+,,arms,StudyArm
+,,studyCells,StudyCell
+,,documentVersions,StudyDefinitionDocumentVersion
+,,elements,StudyElement
+,,epochs,StudyEpoch
+,,population,StudyDesignPopulation
+,,timePerspective,Code
+,,objectiveTypes,Code
+,,observationModel,Code
+,,samplingMethod,Code
+,,,
+Property - NEW,StudyDesign,biospecimenRetention,BiospecimenRetention
+Property - NEW,StudyDesign,studyPhase,AliasCode
+Property - NEW,StudyDesign,studyType,Code
+Property - DELETED,StudyDesign,blindingSchema,Code
+Property - DELETED,StudyDesign,interventionModel,Code
+Property - DELETED,StudyDesign,studyInterventions,StudyIntervention
+Property - DELETED,StudyDesign,trialIntentTypes,Code
+Property - DELETED,StudyDesign,trialTypes,Code
+Property - DELETED,StudyVersion,studyPhase,AliasCode
+Property - DELETED,StudyVersion,studyType,Code
