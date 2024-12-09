@@ -4,8 +4,8 @@ Class - NEW,BiospecimenRetention,,
 ,,name,string
 ,,description,string
 ,,label,string
-,,includesDNA,Boolean
 ,,isRetained,Boolean
+,,includesDNA,Boolean
 Class - NEW,InterventionalStudyDesign,,
 ,,id,string
 ,,name,string
@@ -14,7 +14,7 @@ Class - NEW,InterventionalStudyDesign,,
 ,,rationale,string
 ,,activities,Activity
 ,,studyPhase,AliasCode
-,,biospecimenRetention,BiospecimenRetention
+,,biospecimenRetentions,BiospecimenRetention
 ,,studyType,Code
 ,,therapeuticAreas,Code
 ,,characteristics,Code
@@ -28,13 +28,13 @@ Class - NEW,InterventionalStudyDesign,,
 ,,studyCells,StudyCell
 ,,documentVersions,StudyDefinitionDocumentVersion
 ,,elements,StudyElement
+,,studyInterventions,StudyIntervention
 ,,epochs,StudyEpoch
 ,,population,StudyDesignPopulation
-,,objectiveTypes,Code
+,,subTypes,Code
 ,,intentTypes,Code
-,,interventionModel,Code
+,,model,Code
 ,,blindingSchema,Code
-,,studyInterventions,StudyIntervention
 Class - NEW,ObservationalStudyDesign,,
 ,,id,string
 ,,name,string
@@ -43,7 +43,7 @@ Class - NEW,ObservationalStudyDesign,,
 ,,rationale,string
 ,,activities,Activity
 ,,studyPhase,AliasCode
-,,biospecimenRetention,BiospecimenRetention
+,,biospecimenRetentions,BiospecimenRetention
 ,,studyType,Code
 ,,therapeuticAreas,Code
 ,,characteristics,Code
@@ -57,19 +57,19 @@ Class - NEW,ObservationalStudyDesign,,
 ,,studyCells,StudyCell
 ,,documentVersions,StudyDefinitionDocumentVersion
 ,,elements,StudyElement
+,,studyInterventions,StudyIntervention
 ,,epochs,StudyEpoch
 ,,population,StudyDesignPopulation
 ,,timePerspective,Code
-,,objectiveTypes,Code
-,,observationModel,Code
+,,subTypes,Code
+,,model,Code
 ,,samplingMethod,Code
 ,,,
-Property - NEW,StudyDesign,biospecimenRetention,BiospecimenRetention
+Property - NEW,StudyDesign,biospecimenRetentions,BiospecimenRetention
 Property - NEW,StudyDesign,studyPhase,AliasCode
 Property - NEW,StudyDesign,studyType,Code
 Property - DELETED,StudyDesign,blindingSchema,Code
 Property - DELETED,StudyDesign,interventionModel,Code
-Property - DELETED,StudyDesign,studyInterventions,StudyIntervention
 Property - DELETED,StudyDesign,trialIntentTypes,Code
 Property - DELETED,StudyDesign,trialTypes,Code
 Property - DELETED,StudyVersion,studyPhase,AliasCode

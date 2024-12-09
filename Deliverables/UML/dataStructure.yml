@@ -1109,14 +1109,14 @@ BiospecimenRetention:
       Type:
       - $ref: '#/string'
       Model Name: label
-    includesDNA:
-      Type:
-      - $ref: '#/Boolean'
-      Model Name: includesDNA
     isRetained:
       Type:
       - $ref: '#/Boolean'
       Model Name: isRetained
+    includesDNA:
+      Type:
+      - $ref: '#/Boolean'
+      Model Name: includesDNA
 Characteristic:
   NCI C-Code: C25447
   Preferred Term: Characteristic
@@ -2299,11 +2299,11 @@ InterventionalStudyDesign:
       Model Name: studyPhase
       Inherited From:
         $ref: '#/StudyDesign'
-    biospecimenRetention:
+    biospecimenRetentions:
       Type:
       - $ref: '#/BiospecimenRetention'
       Cardinality: 0..*
-      Model Name: biospecimenRetention
+      Model Name: biospecimenRetentions
       Inherited From:
         $ref: '#/StudyDesign'
     studyType:
@@ -2397,6 +2397,13 @@ InterventionalStudyDesign:
       Model Name: elements
       Inherited From:
         $ref: '#/StudyDesign'
+    studyInterventions:
+      Type:
+      - $ref: '#/StudyIntervention'
+      Cardinality: 0..*
+      Model Name: studyInterventions
+      Inherited From:
+        $ref: '#/StudyDesign'
     epochs:
       Type:
       - $ref: '#/StudyEpoch'
@@ -2411,31 +2418,26 @@ InterventionalStudyDesign:
       Model Name: population
       Inherited From:
         $ref: '#/StudyDesign'
-    objectiveTypes:
+    subTypes:
       Type:
       - $ref: '#/Code'
       Cardinality: 0..*
-      Model Name: objectiveTypes
+      Model Name: subTypes
     intentTypes:
       Type:
       - $ref: '#/Code'
       Cardinality: 0..*
       Model Name: intentTypes
-    interventionModel:
+    model:
       Type:
       - $ref: '#/Code'
       Cardinality: '1'
-      Model Name: interventionModel
+      Model Name: model
     blindingSchema:
       Type:
       - $ref: '#/Code'
       Cardinality: 0..1
       Model Name: blindingSchema
-    studyInterventions:
-      Type:
-      - $ref: '#/StudyIntervention'
-      Cardinality: 0..*
-      Model Name: studyInterventions
 Masking:
   NCI C-Code: C191278
   Preferred Term: Masking
@@ -2896,11 +2898,11 @@ ObservationalStudyDesign:
       Model Name: studyPhase
       Inherited From:
         $ref: '#/StudyDesign'
-    biospecimenRetention:
+    biospecimenRetentions:
       Type:
       - $ref: '#/BiospecimenRetention'
       Cardinality: 0..*
-      Model Name: biospecimenRetention
+      Model Name: biospecimenRetentions
       Inherited From:
         $ref: '#/StudyDesign'
     studyType:
@@ -2994,6 +2996,13 @@ ObservationalStudyDesign:
       Model Name: elements
       Inherited From:
         $ref: '#/StudyDesign'
+    studyInterventions:
+      Type:
+      - $ref: '#/StudyIntervention'
+      Cardinality: 0..*
+      Model Name: studyInterventions
+      Inherited From:
+        $ref: '#/StudyDesign'
     epochs:
       Type:
       - $ref: '#/StudyEpoch'
@@ -3013,16 +3022,16 @@ ObservationalStudyDesign:
       - $ref: '#/Code'
       Cardinality: '1'
       Model Name: timePerspective
-    objectiveTypes:
+    subTypes:
       Type:
       - $ref: '#/Code'
       Cardinality: 0..*
-      Model Name: objectiveTypes
-    observationModel:
+      Model Name: subTypes
+    model:
       Type:
       - $ref: '#/Code'
       Cardinality: '1'
-      Model Name: observationModel
+      Model Name: model
     samplingMethod:
       Type:
       - $ref: '#/Code'
@@ -4793,12 +4802,12 @@ StudyDesign:
       Cardinality: 0..1
       Relationship Type: UNKNOWN
       Model Name: studyPhase
-    biospecimenRetention*:
+    biospecimenRetentions*:
       Type:
       - $ref: '#/BiospecimenRetention'
       Cardinality: 0..*
       Relationship Type: UNKNOWN
-      Model Name: biospecimenRetention
+      Model Name: biospecimenRetentions
     studyType*:
       Type:
       - $ref: '#/Code'
@@ -4910,6 +4919,15 @@ StudyDesign:
         which identifies the set of study elements associated with the study design.
       Relationship Type: Value
       Model Name: elements
+    studyInterventions:
+      Type:
+      - $ref: '#/StudyIntervention'
+      Cardinality: 0..*
+      Definition: A USDM relationship between the StudyDesign and StudyIntervention
+        classes which identifies the set of study interventions associated with study
+        design.
+      Relationship Type: Value
+      Model Name: studyInterventions
     epochs:
       Type:
       - $ref: '#/StudyEpoch'
@@ -4958,11 +4976,6 @@ StudyDesign:
     blindingSchema:
       Type:
       - $ref: UNKNOWN
-      Relationship Type: Value
-    studyInterventions:
-      Type:
-      - $ref: '#/StudyIntervention'
-      Cardinality: 0..*
       Relationship Type: Value
     analysisPopulations:
       Type:
