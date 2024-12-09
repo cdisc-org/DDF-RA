@@ -269,7 +269,14 @@
                 "schema": {
                   "type": "array",
                   "items": {
-                    "$ref": "#/components/schemas/StudyDesign-Output"
+                    "anyOf": [
+                      {
+                        "$ref": "#/components/schemas/InterventionalStudyDesign-Output"
+                      },
+                      {
+                        "$ref": "#/components/schemas/ObservationalStudyDesign-Output"
+                      }
+                    ]
                   },
                   "title": "Response Search Study Design V3 Studydesigns Get"
                 }
@@ -2231,6 +2238,73 @@
         ],
         "title": "BiomedicalConceptSurrogate"
       },
+      "BiospecimenRetention": {
+        "properties": {
+          "id": {
+            "type": "string",
+            "minLength": 1,
+            "title": "Id"
+          },
+          "name": {
+            "type": "string",
+            "minLength": 1,
+            "title": "Name"
+          },
+          "label": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Label"
+          },
+          "description": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Description"
+          },
+          "isRetained": {
+            "type": "boolean",
+            "title": "Isretained"
+          },
+          "includesDNA": {
+            "anyOf": [
+              {
+                "type": "boolean"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Includesdna"
+          },
+          "instanceType": {
+            "type": "string",
+            "enum": [
+              "BiospecimenRetention"
+            ],
+            "const": "BiospecimenRetention",
+            "title": "Instancetype"
+          }
+        },
+        "type": "object",
+        "required": [
+          "id",
+          "name",
+          "isRetained",
+          "instanceType"
+        ],
+        "title": "BiospecimenRetention"
+      },
       "Characteristic-Input": {
         "properties": {
           "id": {
@@ -4128,6 +4202,590 @@
         ],
         "title": "IntercurrentEvent"
       },
+      "InterventionalStudyDesign-Input": {
+        "properties": {
+          "id": {
+            "type": "string",
+            "minLength": 1,
+            "title": "Id"
+          },
+          "name": {
+            "type": "string",
+            "minLength": 1,
+            "title": "Name"
+          },
+          "label": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Label"
+          },
+          "description": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Description"
+          },
+          "studyType": {
+            "anyOf": [
+              {
+                "$ref": "#/components/schemas/Code"
+              },
+              {
+                "type": "null"
+              }
+            ]
+          },
+          "studyPhase": {
+            "anyOf": [
+              {
+                "$ref": "#/components/schemas/AliasCode"
+              },
+              {
+                "type": "null"
+              }
+            ]
+          },
+          "therapeuticAreas": {
+            "items": {
+              "$ref": "#/components/schemas/Code"
+            },
+            "type": "array",
+            "title": "Therapeuticareas",
+            "default": []
+          },
+          "characteristics": {
+            "items": {
+              "$ref": "#/components/schemas/Code"
+            },
+            "type": "array",
+            "title": "Characteristics",
+            "default": []
+          },
+          "encounters": {
+            "items": {
+              "$ref": "#/components/schemas/Encounter-Input"
+            },
+            "type": "array",
+            "title": "Encounters",
+            "default": []
+          },
+          "activities": {
+            "items": {
+              "$ref": "#/components/schemas/Activity-Input"
+            },
+            "type": "array",
+            "title": "Activities",
+            "default": []
+          },
+          "biomedicalConcepts": {
+            "items": {
+              "$ref": "#/components/schemas/BiomedicalConcept-Input"
+            },
+            "type": "array",
+            "title": "Biomedicalconcepts",
+            "default": []
+          },
+          "bcCategories": {
+            "items": {
+              "$ref": "#/components/schemas/BiomedicalConceptCategory-Input"
+            },
+            "type": "array",
+            "title": "Bccategories",
+            "default": []
+          },
+          "bcSurrogates": {
+            "items": {
+              "$ref": "#/components/schemas/BiomedicalConceptSurrogate-Input"
+            },
+            "type": "array",
+            "title": "Bcsurrogates",
+            "default": []
+          },
+          "arms": {
+            "items": {
+              "$ref": "#/components/schemas/StudyArm-Input"
+            },
+            "type": "array",
+            "title": "Arms"
+          },
+          "studyCells": {
+            "items": {
+              "$ref": "#/components/schemas/StudyCell"
+            },
+            "type": "array",
+            "title": "Studycells"
+          },
+          "rationale": {
+            "type": "string",
+            "title": "Rationale"
+          },
+          "epochs": {
+            "items": {
+              "$ref": "#/components/schemas/StudyEpoch-Input"
+            },
+            "type": "array",
+            "title": "Epochs"
+          },
+          "elements": {
+            "items": {
+              "$ref": "#/components/schemas/StudyElement-Input"
+            },
+            "type": "array",
+            "title": "Elements",
+            "default": []
+          },
+          "estimands": {
+            "items": {
+              "$ref": "#/components/schemas/Estimand-Input"
+            },
+            "type": "array",
+            "title": "Estimands",
+            "default": []
+          },
+          "indications": {
+            "items": {
+              "$ref": "#/components/schemas/Indication-Input"
+            },
+            "type": "array",
+            "title": "Indications",
+            "default": []
+          },
+          "studyInterventions": {
+            "items": {
+              "$ref": "#/components/schemas/StudyIntervention-Input"
+            },
+            "type": "array",
+            "title": "Studyinterventions",
+            "default": []
+          },
+          "objectives": {
+            "items": {
+              "$ref": "#/components/schemas/Objective-Input"
+            },
+            "type": "array",
+            "title": "Objectives",
+            "default": []
+          },
+          "population": {
+            "anyOf": [
+              {
+                "$ref": "#/components/schemas/StudyDesignPopulation-Input"
+              },
+              {
+                "type": "null"
+              }
+            ]
+          },
+          "analysisPopulations": {
+            "items": {
+              "$ref": "#/components/schemas/AnalysisPopulation-Input"
+            },
+            "type": "array",
+            "title": "Analysispopulations",
+            "default": []
+          },
+          "scheduleTimelines": {
+            "items": {
+              "$ref": "#/components/schemas/ScheduleTimeline-Input"
+            },
+            "type": "array",
+            "title": "Scheduletimelines",
+            "default": []
+          },
+          "biospecimenRetention": {
+            "items": {
+              "$ref": "#/components/schemas/BiospecimenRetention"
+            },
+            "type": "array",
+            "title": "Biospecimenretention",
+            "default": []
+          },
+          "documentVersionIds": {
+            "items": {
+              "type": "string"
+            },
+            "type": "array",
+            "title": "Documentversionids",
+            "default": []
+          },
+          "dictionaries": {
+            "items": {
+              "$ref": "#/components/schemas/SyntaxTemplateDictionary"
+            },
+            "type": "array",
+            "title": "Dictionaries",
+            "default": []
+          },
+          "conditions": {
+            "items": {
+              "$ref": "#/components/schemas/Condition-Input"
+            },
+            "type": "array",
+            "title": "Conditions",
+            "default": []
+          },
+          "notes": {
+            "items": {
+              "$ref": "#/components/schemas/CommentAnnotation"
+            },
+            "type": "array",
+            "title": "Notes",
+            "default": []
+          },
+          "instanceType": {
+            "type": "string",
+            "enum": [
+              "InterventionalStudyDesign"
+            ],
+            "const": "InterventionalStudyDesign",
+            "title": "Instancetype"
+          },
+          "subTypes": {
+            "items": {
+              "$ref": "#/components/schemas/Code"
+            },
+            "type": "array",
+            "title": "Subtypes",
+            "default": []
+          },
+          "model": {
+            "$ref": "#/components/schemas/Code"
+          },
+          "intentTypes": {
+            "items": {
+              "$ref": "#/components/schemas/Code"
+            },
+            "type": "array",
+            "title": "Intenttypes",
+            "default": []
+          },
+          "blindingSchema": {
+            "anyOf": [
+              {
+                "$ref": "#/components/schemas/AliasCode"
+              },
+              {
+                "type": "null"
+              }
+            ]
+          }
+        },
+        "type": "object",
+        "required": [
+          "id",
+          "name",
+          "arms",
+          "studyCells",
+          "rationale",
+          "epochs",
+          "instanceType",
+          "model"
+        ],
+        "title": "InterventionalStudyDesign"
+      },
+      "InterventionalStudyDesign-Output": {
+        "properties": {
+          "id": {
+            "type": "string",
+            "minLength": 1,
+            "title": "Id"
+          },
+          "name": {
+            "type": "string",
+            "minLength": 1,
+            "title": "Name"
+          },
+          "label": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Label"
+          },
+          "description": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Description"
+          },
+          "studyType": {
+            "anyOf": [
+              {
+                "$ref": "#/components/schemas/Code"
+              },
+              {
+                "type": "null"
+              }
+            ]
+          },
+          "studyPhase": {
+            "anyOf": [
+              {
+                "$ref": "#/components/schemas/AliasCode"
+              },
+              {
+                "type": "null"
+              }
+            ]
+          },
+          "therapeuticAreas": {
+            "items": {
+              "$ref": "#/components/schemas/Code"
+            },
+            "type": "array",
+            "title": "Therapeuticareas",
+            "default": []
+          },
+          "characteristics": {
+            "items": {
+              "$ref": "#/components/schemas/Code"
+            },
+            "type": "array",
+            "title": "Characteristics",
+            "default": []
+          },
+          "encounters": {
+            "items": {
+              "$ref": "#/components/schemas/Encounter-Output"
+            },
+            "type": "array",
+            "title": "Encounters",
+            "default": []
+          },
+          "activities": {
+            "items": {
+              "$ref": "#/components/schemas/Activity-Output"
+            },
+            "type": "array",
+            "title": "Activities",
+            "default": []
+          },
+          "biomedicalConcepts": {
+            "items": {
+              "$ref": "#/components/schemas/BiomedicalConcept-Output"
+            },
+            "type": "array",
+            "title": "Biomedicalconcepts",
+            "default": []
+          },
+          "bcCategories": {
+            "items": {
+              "$ref": "#/components/schemas/BiomedicalConceptCategory-Output"
+            },
+            "type": "array",
+            "title": "Bccategories",
+            "default": []
+          },
+          "bcSurrogates": {
+            "items": {
+              "$ref": "#/components/schemas/BiomedicalConceptSurrogate-Output"
+            },
+            "type": "array",
+            "title": "Bcsurrogates",
+            "default": []
+          },
+          "arms": {
+            "items": {
+              "$ref": "#/components/schemas/StudyArm-Output"
+            },
+            "type": "array",
+            "title": "Arms"
+          },
+          "studyCells": {
+            "items": {
+              "$ref": "#/components/schemas/StudyCell"
+            },
+            "type": "array",
+            "title": "Studycells"
+          },
+          "rationale": {
+            "type": "string",
+            "title": "Rationale"
+          },
+          "epochs": {
+            "items": {
+              "$ref": "#/components/schemas/StudyEpoch-Output"
+            },
+            "type": "array",
+            "title": "Epochs"
+          },
+          "elements": {
+            "items": {
+              "$ref": "#/components/schemas/StudyElement-Output"
+            },
+            "type": "array",
+            "title": "Elements",
+            "default": []
+          },
+          "estimands": {
+            "items": {
+              "$ref": "#/components/schemas/Estimand-Output"
+            },
+            "type": "array",
+            "title": "Estimands",
+            "default": []
+          },
+          "indications": {
+            "items": {
+              "$ref": "#/components/schemas/Indication-Output"
+            },
+            "type": "array",
+            "title": "Indications",
+            "default": []
+          },
+          "studyInterventions": {
+            "items": {
+              "$ref": "#/components/schemas/StudyIntervention-Output"
+            },
+            "type": "array",
+            "title": "Studyinterventions",
+            "default": []
+          },
+          "objectives": {
+            "items": {
+              "$ref": "#/components/schemas/Objective-Output"
+            },
+            "type": "array",
+            "title": "Objectives",
+            "default": []
+          },
+          "population": {
+            "anyOf": [
+              {
+                "$ref": "#/components/schemas/StudyDesignPopulation-Output"
+              },
+              {
+                "type": "null"
+              }
+            ]
+          },
+          "analysisPopulations": {
+            "items": {
+              "$ref": "#/components/schemas/AnalysisPopulation-Output"
+            },
+            "type": "array",
+            "title": "Analysispopulations",
+            "default": []
+          },
+          "scheduleTimelines": {
+            "items": {
+              "$ref": "#/components/schemas/ScheduleTimeline-Output"
+            },
+            "type": "array",
+            "title": "Scheduletimelines",
+            "default": []
+          },
+          "biospecimenRetention": {
+            "items": {
+              "$ref": "#/components/schemas/BiospecimenRetention"
+            },
+            "type": "array",
+            "title": "Biospecimenretention",
+            "default": []
+          },
+          "documentVersionIds": {
+            "items": {
+              "type": "string"
+            },
+            "type": "array",
+            "title": "Documentversionids",
+            "default": []
+          },
+          "dictionaries": {
+            "items": {
+              "$ref": "#/components/schemas/SyntaxTemplateDictionary"
+            },
+            "type": "array",
+            "title": "Dictionaries",
+            "default": []
+          },
+          "conditions": {
+            "items": {
+              "$ref": "#/components/schemas/Condition-Output"
+            },
+            "type": "array",
+            "title": "Conditions",
+            "default": []
+          },
+          "notes": {
+            "items": {
+              "$ref": "#/components/schemas/CommentAnnotation"
+            },
+            "type": "array",
+            "title": "Notes",
+            "default": []
+          },
+          "instanceType": {
+            "type": "string",
+            "enum": [
+              "InterventionalStudyDesign"
+            ],
+            "const": "InterventionalStudyDesign",
+            "title": "Instancetype"
+          },
+          "subTypes": {
+            "items": {
+              "$ref": "#/components/schemas/Code"
+            },
+            "type": "array",
+            "title": "Subtypes",
+            "default": []
+          },
+          "model": {
+            "$ref": "#/components/schemas/Code"
+          },
+          "intentTypes": {
+            "items": {
+              "$ref": "#/components/schemas/Code"
+            },
+            "type": "array",
+            "title": "Intenttypes",
+            "default": []
+          },
+          "blindingSchema": {
+            "anyOf": [
+              {
+                "$ref": "#/components/schemas/AliasCode"
+              },
+              {
+                "type": "null"
+              }
+            ]
+          }
+        },
+        "type": "object",
+        "required": [
+          "id",
+          "name",
+          "arms",
+          "studyCells",
+          "rationale",
+          "epochs",
+          "instanceType",
+          "model"
+        ],
+        "title": "InterventionalStudyDesign"
+      },
       "Masking": {
         "properties": {
           "id": {
@@ -4722,6 +5380,582 @@
           "level"
         ],
         "title": "Objective"
+      },
+      "ObservationalStudyDesign-Input": {
+        "properties": {
+          "id": {
+            "type": "string",
+            "minLength": 1,
+            "title": "Id"
+          },
+          "name": {
+            "type": "string",
+            "minLength": 1,
+            "title": "Name"
+          },
+          "label": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Label"
+          },
+          "description": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Description"
+          },
+          "studyType": {
+            "anyOf": [
+              {
+                "$ref": "#/components/schemas/Code"
+              },
+              {
+                "type": "null"
+              }
+            ]
+          },
+          "studyPhase": {
+            "anyOf": [
+              {
+                "$ref": "#/components/schemas/AliasCode"
+              },
+              {
+                "type": "null"
+              }
+            ]
+          },
+          "therapeuticAreas": {
+            "items": {
+              "$ref": "#/components/schemas/Code"
+            },
+            "type": "array",
+            "title": "Therapeuticareas",
+            "default": []
+          },
+          "characteristics": {
+            "items": {
+              "$ref": "#/components/schemas/Code"
+            },
+            "type": "array",
+            "title": "Characteristics",
+            "default": []
+          },
+          "encounters": {
+            "items": {
+              "$ref": "#/components/schemas/Encounter-Input"
+            },
+            "type": "array",
+            "title": "Encounters",
+            "default": []
+          },
+          "activities": {
+            "items": {
+              "$ref": "#/components/schemas/Activity-Input"
+            },
+            "type": "array",
+            "title": "Activities",
+            "default": []
+          },
+          "biomedicalConcepts": {
+            "items": {
+              "$ref": "#/components/schemas/BiomedicalConcept-Input"
+            },
+            "type": "array",
+            "title": "Biomedicalconcepts",
+            "default": []
+          },
+          "bcCategories": {
+            "items": {
+              "$ref": "#/components/schemas/BiomedicalConceptCategory-Input"
+            },
+            "type": "array",
+            "title": "Bccategories",
+            "default": []
+          },
+          "bcSurrogates": {
+            "items": {
+              "$ref": "#/components/schemas/BiomedicalConceptSurrogate-Input"
+            },
+            "type": "array",
+            "title": "Bcsurrogates",
+            "default": []
+          },
+          "arms": {
+            "items": {
+              "$ref": "#/components/schemas/StudyArm-Input"
+            },
+            "type": "array",
+            "title": "Arms"
+          },
+          "studyCells": {
+            "items": {
+              "$ref": "#/components/schemas/StudyCell"
+            },
+            "type": "array",
+            "title": "Studycells"
+          },
+          "rationale": {
+            "type": "string",
+            "title": "Rationale"
+          },
+          "epochs": {
+            "items": {
+              "$ref": "#/components/schemas/StudyEpoch-Input"
+            },
+            "type": "array",
+            "title": "Epochs"
+          },
+          "elements": {
+            "items": {
+              "$ref": "#/components/schemas/StudyElement-Input"
+            },
+            "type": "array",
+            "title": "Elements",
+            "default": []
+          },
+          "estimands": {
+            "items": {
+              "$ref": "#/components/schemas/Estimand-Input"
+            },
+            "type": "array",
+            "title": "Estimands",
+            "default": []
+          },
+          "indications": {
+            "items": {
+              "$ref": "#/components/schemas/Indication-Input"
+            },
+            "type": "array",
+            "title": "Indications",
+            "default": []
+          },
+          "studyInterventions": {
+            "items": {
+              "$ref": "#/components/schemas/StudyIntervention-Input"
+            },
+            "type": "array",
+            "title": "Studyinterventions",
+            "default": []
+          },
+          "objectives": {
+            "items": {
+              "$ref": "#/components/schemas/Objective-Input"
+            },
+            "type": "array",
+            "title": "Objectives",
+            "default": []
+          },
+          "population": {
+            "anyOf": [
+              {
+                "$ref": "#/components/schemas/StudyDesignPopulation-Input"
+              },
+              {
+                "type": "null"
+              }
+            ]
+          },
+          "analysisPopulations": {
+            "items": {
+              "$ref": "#/components/schemas/AnalysisPopulation-Input"
+            },
+            "type": "array",
+            "title": "Analysispopulations",
+            "default": []
+          },
+          "scheduleTimelines": {
+            "items": {
+              "$ref": "#/components/schemas/ScheduleTimeline-Input"
+            },
+            "type": "array",
+            "title": "Scheduletimelines",
+            "default": []
+          },
+          "biospecimenRetention": {
+            "items": {
+              "$ref": "#/components/schemas/BiospecimenRetention"
+            },
+            "type": "array",
+            "title": "Biospecimenretention",
+            "default": []
+          },
+          "documentVersionIds": {
+            "items": {
+              "type": "string"
+            },
+            "type": "array",
+            "title": "Documentversionids",
+            "default": []
+          },
+          "dictionaries": {
+            "items": {
+              "$ref": "#/components/schemas/SyntaxTemplateDictionary"
+            },
+            "type": "array",
+            "title": "Dictionaries",
+            "default": []
+          },
+          "conditions": {
+            "items": {
+              "$ref": "#/components/schemas/Condition-Input"
+            },
+            "type": "array",
+            "title": "Conditions",
+            "default": []
+          },
+          "notes": {
+            "items": {
+              "$ref": "#/components/schemas/CommentAnnotation"
+            },
+            "type": "array",
+            "title": "Notes",
+            "default": []
+          },
+          "instanceType": {
+            "type": "string",
+            "enum": [
+              "ObservationalStudyDesign"
+            ],
+            "const": "ObservationalStudyDesign",
+            "title": "Instancetype"
+          },
+          "subTypes": {
+            "items": {
+              "$ref": "#/components/schemas/Code"
+            },
+            "type": "array",
+            "title": "Subtypes",
+            "default": []
+          },
+          "model": {
+            "$ref": "#/components/schemas/Code"
+          },
+          "timePerspective": {
+            "$ref": "#/components/schemas/Code"
+          },
+          "samplingMethod": {
+            "anyOf": [
+              {
+                "$ref": "#/components/schemas/Code"
+              },
+              {
+                "type": "null"
+              }
+            ]
+          }
+        },
+        "type": "object",
+        "required": [
+          "id",
+          "name",
+          "arms",
+          "studyCells",
+          "rationale",
+          "epochs",
+          "instanceType",
+          "model",
+          "timePerspective"
+        ],
+        "title": "ObservationalStudyDesign"
+      },
+      "ObservationalStudyDesign-Output": {
+        "properties": {
+          "id": {
+            "type": "string",
+            "minLength": 1,
+            "title": "Id"
+          },
+          "name": {
+            "type": "string",
+            "minLength": 1,
+            "title": "Name"
+          },
+          "label": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Label"
+          },
+          "description": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Description"
+          },
+          "studyType": {
+            "anyOf": [
+              {
+                "$ref": "#/components/schemas/Code"
+              },
+              {
+                "type": "null"
+              }
+            ]
+          },
+          "studyPhase": {
+            "anyOf": [
+              {
+                "$ref": "#/components/schemas/AliasCode"
+              },
+              {
+                "type": "null"
+              }
+            ]
+          },
+          "therapeuticAreas": {
+            "items": {
+              "$ref": "#/components/schemas/Code"
+            },
+            "type": "array",
+            "title": "Therapeuticareas",
+            "default": []
+          },
+          "characteristics": {
+            "items": {
+              "$ref": "#/components/schemas/Code"
+            },
+            "type": "array",
+            "title": "Characteristics",
+            "default": []
+          },
+          "encounters": {
+            "items": {
+              "$ref": "#/components/schemas/Encounter-Output"
+            },
+            "type": "array",
+            "title": "Encounters",
+            "default": []
+          },
+          "activities": {
+            "items": {
+              "$ref": "#/components/schemas/Activity-Output"
+            },
+            "type": "array",
+            "title": "Activities",
+            "default": []
+          },
+          "biomedicalConcepts": {
+            "items": {
+              "$ref": "#/components/schemas/BiomedicalConcept-Output"
+            },
+            "type": "array",
+            "title": "Biomedicalconcepts",
+            "default": []
+          },
+          "bcCategories": {
+            "items": {
+              "$ref": "#/components/schemas/BiomedicalConceptCategory-Output"
+            },
+            "type": "array",
+            "title": "Bccategories",
+            "default": []
+          },
+          "bcSurrogates": {
+            "items": {
+              "$ref": "#/components/schemas/BiomedicalConceptSurrogate-Output"
+            },
+            "type": "array",
+            "title": "Bcsurrogates",
+            "default": []
+          },
+          "arms": {
+            "items": {
+              "$ref": "#/components/schemas/StudyArm-Output"
+            },
+            "type": "array",
+            "title": "Arms"
+          },
+          "studyCells": {
+            "items": {
+              "$ref": "#/components/schemas/StudyCell"
+            },
+            "type": "array",
+            "title": "Studycells"
+          },
+          "rationale": {
+            "type": "string",
+            "title": "Rationale"
+          },
+          "epochs": {
+            "items": {
+              "$ref": "#/components/schemas/StudyEpoch-Output"
+            },
+            "type": "array",
+            "title": "Epochs"
+          },
+          "elements": {
+            "items": {
+              "$ref": "#/components/schemas/StudyElement-Output"
+            },
+            "type": "array",
+            "title": "Elements",
+            "default": []
+          },
+          "estimands": {
+            "items": {
+              "$ref": "#/components/schemas/Estimand-Output"
+            },
+            "type": "array",
+            "title": "Estimands",
+            "default": []
+          },
+          "indications": {
+            "items": {
+              "$ref": "#/components/schemas/Indication-Output"
+            },
+            "type": "array",
+            "title": "Indications",
+            "default": []
+          },
+          "studyInterventions": {
+            "items": {
+              "$ref": "#/components/schemas/StudyIntervention-Output"
+            },
+            "type": "array",
+            "title": "Studyinterventions",
+            "default": []
+          },
+          "objectives": {
+            "items": {
+              "$ref": "#/components/schemas/Objective-Output"
+            },
+            "type": "array",
+            "title": "Objectives",
+            "default": []
+          },
+          "population": {
+            "anyOf": [
+              {
+                "$ref": "#/components/schemas/StudyDesignPopulation-Output"
+              },
+              {
+                "type": "null"
+              }
+            ]
+          },
+          "analysisPopulations": {
+            "items": {
+              "$ref": "#/components/schemas/AnalysisPopulation-Output"
+            },
+            "type": "array",
+            "title": "Analysispopulations",
+            "default": []
+          },
+          "scheduleTimelines": {
+            "items": {
+              "$ref": "#/components/schemas/ScheduleTimeline-Output"
+            },
+            "type": "array",
+            "title": "Scheduletimelines",
+            "default": []
+          },
+          "biospecimenRetention": {
+            "items": {
+              "$ref": "#/components/schemas/BiospecimenRetention"
+            },
+            "type": "array",
+            "title": "Biospecimenretention",
+            "default": []
+          },
+          "documentVersionIds": {
+            "items": {
+              "type": "string"
+            },
+            "type": "array",
+            "title": "Documentversionids",
+            "default": []
+          },
+          "dictionaries": {
+            "items": {
+              "$ref": "#/components/schemas/SyntaxTemplateDictionary"
+            },
+            "type": "array",
+            "title": "Dictionaries",
+            "default": []
+          },
+          "conditions": {
+            "items": {
+              "$ref": "#/components/schemas/Condition-Output"
+            },
+            "type": "array",
+            "title": "Conditions",
+            "default": []
+          },
+          "notes": {
+            "items": {
+              "$ref": "#/components/schemas/CommentAnnotation"
+            },
+            "type": "array",
+            "title": "Notes",
+            "default": []
+          },
+          "instanceType": {
+            "type": "string",
+            "enum": [
+              "ObservationalStudyDesign"
+            ],
+            "const": "ObservationalStudyDesign",
+            "title": "Instancetype"
+          },
+          "subTypes": {
+            "items": {
+              "$ref": "#/components/schemas/Code"
+            },
+            "type": "array",
+            "title": "Subtypes",
+            "default": []
+          },
+          "model": {
+            "$ref": "#/components/schemas/Code"
+          },
+          "timePerspective": {
+            "$ref": "#/components/schemas/Code"
+          },
+          "samplingMethod": {
+            "anyOf": [
+              {
+                "$ref": "#/components/schemas/Code"
+              },
+              {
+                "type": "null"
+              }
+            ]
+          }
+        },
+        "type": "object",
+        "required": [
+          "id",
+          "name",
+          "arms",
+          "studyCells",
+          "rationale",
+          "epochs",
+          "instanceType",
+          "model",
+          "timePerspective"
+        ],
+        "title": "ObservationalStudyDesign"
       },
       "Organization-Input": {
         "properties": {
@@ -7207,534 +8441,6 @@
         ],
         "title": "StudyDefinitionDocumentVersion"
       },
-      "StudyDesign-Input": {
-        "properties": {
-          "id": {
-            "type": "string",
-            "minLength": 1,
-            "title": "Id"
-          },
-          "name": {
-            "type": "string",
-            "minLength": 1,
-            "title": "Name"
-          },
-          "label": {
-            "anyOf": [
-              {
-                "type": "string"
-              },
-              {
-                "type": "null"
-              }
-            ],
-            "title": "Label"
-          },
-          "description": {
-            "anyOf": [
-              {
-                "type": "string"
-              },
-              {
-                "type": "null"
-              }
-            ],
-            "title": "Description"
-          },
-          "trialIntentTypes": {
-            "items": {
-              "$ref": "#/components/schemas/Code"
-            },
-            "type": "array",
-            "title": "Trialintenttypes",
-            "default": []
-          },
-          "trialTypes": {
-            "items": {
-              "$ref": "#/components/schemas/Code"
-            },
-            "type": "array",
-            "title": "Trialtypes",
-            "default": []
-          },
-          "therapeuticAreas": {
-            "items": {
-              "$ref": "#/components/schemas/Code"
-            },
-            "type": "array",
-            "title": "Therapeuticareas",
-            "default": []
-          },
-          "characteristics": {
-            "items": {
-              "$ref": "#/components/schemas/Code"
-            },
-            "type": "array",
-            "title": "Characteristics",
-            "default": []
-          },
-          "interventionModel": {
-            "$ref": "#/components/schemas/Code"
-          },
-          "encounters": {
-            "items": {
-              "$ref": "#/components/schemas/Encounter-Input"
-            },
-            "type": "array",
-            "title": "Encounters",
-            "default": []
-          },
-          "activities": {
-            "items": {
-              "$ref": "#/components/schemas/Activity-Input"
-            },
-            "type": "array",
-            "title": "Activities",
-            "default": []
-          },
-          "biomedicalConcepts": {
-            "items": {
-              "$ref": "#/components/schemas/BiomedicalConcept-Input"
-            },
-            "type": "array",
-            "title": "Biomedicalconcepts",
-            "default": []
-          },
-          "bcCategories": {
-            "items": {
-              "$ref": "#/components/schemas/BiomedicalConceptCategory-Input"
-            },
-            "type": "array",
-            "title": "Bccategories",
-            "default": []
-          },
-          "bcSurrogates": {
-            "items": {
-              "$ref": "#/components/schemas/BiomedicalConceptSurrogate-Input"
-            },
-            "type": "array",
-            "title": "Bcsurrogates",
-            "default": []
-          },
-          "arms": {
-            "items": {
-              "$ref": "#/components/schemas/StudyArm-Input"
-            },
-            "type": "array",
-            "title": "Arms"
-          },
-          "studyCells": {
-            "items": {
-              "$ref": "#/components/schemas/StudyCell"
-            },
-            "type": "array",
-            "title": "Studycells"
-          },
-          "blindingSchema": {
-            "anyOf": [
-              {
-                "$ref": "#/components/schemas/AliasCode"
-              },
-              {
-                "type": "null"
-              }
-            ]
-          },
-          "rationale": {
-            "type": "string",
-            "title": "Rationale"
-          },
-          "epochs": {
-            "items": {
-              "$ref": "#/components/schemas/StudyEpoch-Input"
-            },
-            "type": "array",
-            "title": "Epochs"
-          },
-          "elements": {
-            "items": {
-              "$ref": "#/components/schemas/StudyElement-Input"
-            },
-            "type": "array",
-            "title": "Elements",
-            "default": []
-          },
-          "estimands": {
-            "items": {
-              "$ref": "#/components/schemas/Estimand-Input"
-            },
-            "type": "array",
-            "title": "Estimands",
-            "default": []
-          },
-          "indications": {
-            "items": {
-              "$ref": "#/components/schemas/Indication-Input"
-            },
-            "type": "array",
-            "title": "Indications",
-            "default": []
-          },
-          "studyInterventions": {
-            "items": {
-              "$ref": "#/components/schemas/StudyIntervention-Input"
-            },
-            "type": "array",
-            "title": "Studyinterventions",
-            "default": []
-          },
-          "objectives": {
-            "items": {
-              "$ref": "#/components/schemas/Objective-Input"
-            },
-            "type": "array",
-            "title": "Objectives",
-            "default": []
-          },
-          "population": {
-            "anyOf": [
-              {
-                "$ref": "#/components/schemas/StudyDesignPopulation-Input"
-              },
-              {
-                "type": "null"
-              }
-            ]
-          },
-          "analysisPopulations": {
-            "items": {
-              "$ref": "#/components/schemas/AnalysisPopulation-Input"
-            },
-            "type": "array",
-            "title": "Analysispopulations",
-            "default": []
-          },
-          "scheduleTimelines": {
-            "items": {
-              "$ref": "#/components/schemas/ScheduleTimeline-Input"
-            },
-            "type": "array",
-            "title": "Scheduletimelines",
-            "default": []
-          },
-          "documentVersionIds": {
-            "items": {
-              "type": "string"
-            },
-            "type": "array",
-            "title": "Documentversionids",
-            "default": []
-          },
-          "dictionaries": {
-            "items": {
-              "$ref": "#/components/schemas/SyntaxTemplateDictionary"
-            },
-            "type": "array",
-            "title": "Dictionaries",
-            "default": []
-          },
-          "conditions": {
-            "items": {
-              "$ref": "#/components/schemas/Condition-Input"
-            },
-            "type": "array",
-            "title": "Conditions",
-            "default": []
-          },
-          "notes": {
-            "items": {
-              "$ref": "#/components/schemas/CommentAnnotation"
-            },
-            "type": "array",
-            "title": "Notes",
-            "default": []
-          },
-          "instanceType": {
-            "type": "string",
-            "enum": [
-              "StudyDesign"
-            ],
-            "const": "StudyDesign",
-            "title": "Instancetype"
-          }
-        },
-        "type": "object",
-        "required": [
-          "id",
-          "name",
-          "interventionModel",
-          "arms",
-          "studyCells",
-          "rationale",
-          "epochs",
-          "instanceType"
-        ],
-        "title": "StudyDesign"
-      },
-      "StudyDesign-Output": {
-        "properties": {
-          "id": {
-            "type": "string",
-            "minLength": 1,
-            "title": "Id"
-          },
-          "name": {
-            "type": "string",
-            "minLength": 1,
-            "title": "Name"
-          },
-          "label": {
-            "anyOf": [
-              {
-                "type": "string"
-              },
-              {
-                "type": "null"
-              }
-            ],
-            "title": "Label"
-          },
-          "description": {
-            "anyOf": [
-              {
-                "type": "string"
-              },
-              {
-                "type": "null"
-              }
-            ],
-            "title": "Description"
-          },
-          "trialIntentTypes": {
-            "items": {
-              "$ref": "#/components/schemas/Code"
-            },
-            "type": "array",
-            "title": "Trialintenttypes",
-            "default": []
-          },
-          "trialTypes": {
-            "items": {
-              "$ref": "#/components/schemas/Code"
-            },
-            "type": "array",
-            "title": "Trialtypes",
-            "default": []
-          },
-          "therapeuticAreas": {
-            "items": {
-              "$ref": "#/components/schemas/Code"
-            },
-            "type": "array",
-            "title": "Therapeuticareas",
-            "default": []
-          },
-          "characteristics": {
-            "items": {
-              "$ref": "#/components/schemas/Code"
-            },
-            "type": "array",
-            "title": "Characteristics",
-            "default": []
-          },
-          "interventionModel": {
-            "$ref": "#/components/schemas/Code"
-          },
-          "encounters": {
-            "items": {
-              "$ref": "#/components/schemas/Encounter-Output"
-            },
-            "type": "array",
-            "title": "Encounters",
-            "default": []
-          },
-          "activities": {
-            "items": {
-              "$ref": "#/components/schemas/Activity-Output"
-            },
-            "type": "array",
-            "title": "Activities",
-            "default": []
-          },
-          "biomedicalConcepts": {
-            "items": {
-              "$ref": "#/components/schemas/BiomedicalConcept-Output"
-            },
-            "type": "array",
-            "title": "Biomedicalconcepts",
-            "default": []
-          },
-          "bcCategories": {
-            "items": {
-              "$ref": "#/components/schemas/BiomedicalConceptCategory-Output"
-            },
-            "type": "array",
-            "title": "Bccategories",
-            "default": []
-          },
-          "bcSurrogates": {
-            "items": {
-              "$ref": "#/components/schemas/BiomedicalConceptSurrogate-Output"
-            },
-            "type": "array",
-            "title": "Bcsurrogates",
-            "default": []
-          },
-          "arms": {
-            "items": {
-              "$ref": "#/components/schemas/StudyArm-Output"
-            },
-            "type": "array",
-            "title": "Arms"
-          },
-          "studyCells": {
-            "items": {
-              "$ref": "#/components/schemas/StudyCell"
-            },
-            "type": "array",
-            "title": "Studycells"
-          },
-          "blindingSchema": {
-            "anyOf": [
-              {
-                "$ref": "#/components/schemas/AliasCode"
-              },
-              {
-                "type": "null"
-              }
-            ]
-          },
-          "rationale": {
-            "type": "string",
-            "title": "Rationale"
-          },
-          "epochs": {
-            "items": {
-              "$ref": "#/components/schemas/StudyEpoch-Output"
-            },
-            "type": "array",
-            "title": "Epochs"
-          },
-          "elements": {
-            "items": {
-              "$ref": "#/components/schemas/StudyElement-Output"
-            },
-            "type": "array",
-            "title": "Elements",
-            "default": []
-          },
-          "estimands": {
-            "items": {
-              "$ref": "#/components/schemas/Estimand-Output"
-            },
-            "type": "array",
-            "title": "Estimands",
-            "default": []
-          },
-          "indications": {
-            "items": {
-              "$ref": "#/components/schemas/Indication-Output"
-            },
-            "type": "array",
-            "title": "Indications",
-            "default": []
-          },
-          "studyInterventions": {
-            "items": {
-              "$ref": "#/components/schemas/StudyIntervention-Output"
-            },
-            "type": "array",
-            "title": "Studyinterventions",
-            "default": []
-          },
-          "objectives": {
-            "items": {
-              "$ref": "#/components/schemas/Objective-Output"
-            },
-            "type": "array",
-            "title": "Objectives",
-            "default": []
-          },
-          "population": {
-            "anyOf": [
-              {
-                "$ref": "#/components/schemas/StudyDesignPopulation-Output"
-              },
-              {
-                "type": "null"
-              }
-            ]
-          },
-          "analysisPopulations": {
-            "items": {
-              "$ref": "#/components/schemas/AnalysisPopulation-Output"
-            },
-            "type": "array",
-            "title": "Analysispopulations",
-            "default": []
-          },
-          "scheduleTimelines": {
-            "items": {
-              "$ref": "#/components/schemas/ScheduleTimeline-Output"
-            },
-            "type": "array",
-            "title": "Scheduletimelines",
-            "default": []
-          },
-          "documentVersionIds": {
-            "items": {
-              "type": "string"
-            },
-            "type": "array",
-            "title": "Documentversionids",
-            "default": []
-          },
-          "dictionaries": {
-            "items": {
-              "$ref": "#/components/schemas/SyntaxTemplateDictionary"
-            },
-            "type": "array",
-            "title": "Dictionaries",
-            "default": []
-          },
-          "conditions": {
-            "items": {
-              "$ref": "#/components/schemas/Condition-Output"
-            },
-            "type": "array",
-            "title": "Conditions",
-            "default": []
-          },
-          "notes": {
-            "items": {
-              "$ref": "#/components/schemas/CommentAnnotation"
-            },
-            "type": "array",
-            "title": "Notes",
-            "default": []
-          },
-          "instanceType": {
-            "type": "string",
-            "enum": [
-              "StudyDesign"
-            ],
-            "const": "StudyDesign",
-            "title": "Instancetype"
-          }
-        },
-        "type": "object",
-        "required": [
-          "id",
-          "name",
-          "interventionModel",
-          "arms",
-          "studyCells",
-          "rationale",
-          "epochs",
-          "instanceType"
-        ],
-        "title": "StudyDesign"
-      },
       "StudyDesignPopulation-Input": {
         "properties": {
           "id": {
@@ -8727,26 +9433,6 @@
             "type": "string",
             "title": "Rationale"
           },
-          "studyType": {
-            "anyOf": [
-              {
-                "$ref": "#/components/schemas/Code"
-              },
-              {
-                "type": "null"
-              }
-            ]
-          },
-          "studyPhase": {
-            "anyOf": [
-              {
-                "$ref": "#/components/schemas/AliasCode"
-              },
-              {
-                "type": "null"
-              }
-            ]
-          },
           "documentVersionIds": {
             "items": {
               "type": "string"
@@ -8796,7 +9482,14 @@
           },
           "studyDesigns": {
             "items": {
-              "$ref": "#/components/schemas/StudyDesign-Input"
+              "anyOf": [
+                {
+                  "$ref": "#/components/schemas/InterventionalStudyDesign-Input"
+                },
+                {
+                  "$ref": "#/components/schemas/ObservationalStudyDesign-Input"
+                }
+              ]
             },
             "type": "array",
             "title": "Studydesigns",
@@ -8916,26 +9609,6 @@
             "type": "string",
             "title": "Rationale"
           },
-          "studyType": {
-            "anyOf": [
-              {
-                "$ref": "#/components/schemas/Code"
-              },
-              {
-                "type": "null"
-              }
-            ]
-          },
-          "studyPhase": {
-            "anyOf": [
-              {
-                "$ref": "#/components/schemas/AliasCode"
-              },
-              {
-                "type": "null"
-              }
-            ]
-          },
           "documentVersionIds": {
             "items": {
               "type": "string"
@@ -8985,7 +9658,14 @@
           },
           "studyDesigns": {
             "items": {
-              "$ref": "#/components/schemas/StudyDesign-Output"
+              "anyOf": [
+                {
+                  "$ref": "#/components/schemas/InterventionalStudyDesign-Output"
+                },
+                {
+                  "$ref": "#/components/schemas/ObservationalStudyDesign-Output"
+                }
+              ]
             },
             "type": "array",
             "title": "Studydesigns",
