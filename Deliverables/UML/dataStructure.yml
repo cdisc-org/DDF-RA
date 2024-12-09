@@ -2317,11 +2317,11 @@ InterventionalStudyDesign:
       Model Name: studyPhase
       Inherited From:
         $ref: '#/StudyDesign'
-    biospecimenRetentions*:
+    biospecimenRetentions:
       Type:
       - $ref: '#/BiospecimenRetention'
       Cardinality: 0..*
-      Relationship Type: UNKNOWN
+      Relationship Type: Value
       Model Name: biospecimenRetentions
       Inherited From:
         $ref: '#/StudyDesign'
@@ -2495,11 +2495,6 @@ InterventionalStudyDesign:
     analysisPopulations:
       Type:
       - $ref: '#/AnalysisPopulation'
-      Cardinality: 0..*
-      Relationship Type: Value
-    biospecimenRetention:
-      Type:
-      - $ref: '#/BiospecimenRetention'
       Cardinality: 0..*
       Relationship Type: Value
     dictionaries:
@@ -2984,11 +2979,11 @@ ObservationalStudyDesign:
       Model Name: studyPhase
       Inherited From:
         $ref: '#/StudyDesign'
-    biospecimenRetentions*:
+    biospecimenRetentions:
       Type:
       - $ref: '#/BiospecimenRetention'
       Cardinality: 0..*
-      Relationship Type: UNKNOWN
+      Relationship Type: Value
       Model Name: biospecimenRetentions
       Inherited From:
         $ref: '#/StudyDesign'
@@ -3162,11 +3157,6 @@ ObservationalStudyDesign:
     analysisPopulations:
       Type:
       - $ref: '#/AnalysisPopulation'
-      Cardinality: 0..*
-      Relationship Type: Value
-    biospecimenRetention:
-      Type:
-      - $ref: '#/BiospecimenRetention'
       Cardinality: 0..*
       Relationship Type: Value
     dictionaries:
