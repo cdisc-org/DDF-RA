@@ -8765,9 +8765,9 @@
                         },
                         "instanceType": "Quantity"
                       },
-                      "description": "",
+                      "description": "Not set",
                       "durationWillVary": false,
-                      "reasonDurationWillVary": "",
+                      "reasonDurationWillVary": "Not applicable",
                       "instanceType": "AdministrationDuration"
                     },
                     "dose": {
@@ -8905,9 +8905,9 @@
                         },
                         "instanceType": "Quantity"
                       },
-                      "description": "",
+                      "description": "Not set",
                       "durationWillVary": false,
-                      "reasonDurationWillVary": "",
+                      "reasonDurationWillVary": "Not applicable",
                       "instanceType": "AdministrationDuration"
                     },
                     "dose": {
@@ -9355,6 +9355,7 @@
                 }
               ]
             },
+            "analysisPopulations": [],
             "scheduleTimelines": [
               {
                 "id": "ScheduleTimeline_3",
@@ -11076,7 +11077,7 @@
                 "instanceType": "ScheduleTimeline"
               }
             ],
-            "documentVersionId": null,
+            "documentVersionIds": [],
             "dictionaries": [],
             "conditions": [
               {
@@ -14602,7 +14603,7 @@
     ],
     "instanceType": "Study"
   },
-  "usdmVersion": "3.7.0",
+  "usdmVersion": "3.8.0",
   "systemName": "CDISC USDM E2J",
-  "systemVersion": "0.54.0"
+  "systemVersion": "0.55.0"
 }

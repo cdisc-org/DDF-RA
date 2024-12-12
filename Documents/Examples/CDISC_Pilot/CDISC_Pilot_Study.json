@@ -113,6 +113,7 @@
                     "id": "DocumentContentReference_1",
                     "sectionNumber": "1.5",
                     "sectionTitle": "Header 1.5",
+                    "appliesToId": "StudyDefinitionDocument_1",
                     "instanceType": "DocumentContentReference"
                   }
                 ],
@@ -9630,7 +9631,35 @@
                 "instanceType": "StudyElement"
               }
             ],
-            "estimands": [],
+            "estimands": [
+              {
+                "id": "Estimand_1",
+                "name": "EST1",
+                "label": "EST1",
+                "description": "",
+                "populationSummary": "Group mean changes from baseline in the primary efficacy parameters",
+                "analysisPopulationId": "AnalysisPopulation_1",
+                "interventionIds": [
+                  "StudyIntervention_1"
+                ],
+                "variableOfInterestId": "Endpoint_1",
+                "intercurrentEvents": [
+                  {
+                    "id": "IntercurrentEvent_1",
+                    "name": "DISTRUPTION",
+                    "label": "",
+                    "description": "The disruption of treatment to the subject",
+                    "text": "Temporary Treatment Interruption",
+                    "dictionaryId": null,
+                    "notes": [],
+                    "instanceType": "IntercurrentEvent",
+                    "strategy": "Treatment Policy \u2013 Continue to measure effect of treatment assignment regardless of interruption."
+                  }
+                ],
+                "notes": [],
+                "instanceType": "Estimand"
+              }
+            ],
             "indications": [
               {
                 "id": "Indication_1",
@@ -9671,7 +9700,226 @@
                 "instanceType": "Indication"
               }
             ],
-            "studyInterventions": [],
+            "studyInterventions": [
+              {
+                "id": "StudyIntervention_1",
+                "name": "XINONILINE",
+                "label": "Xinomiline",
+                "description": "Xinomiline",
+                "role": {
+                  "id": "Code_560",
+                  "code": "C41161",
+                  "codeSystem": "http://www.cdisc.org",
+                  "codeSystemVersion": "2023-12-15",
+                  "decode": "Experimental Intervention",
+                  "instanceType": "Code"
+                },
+                "type": {
+                  "id": "Code_561",
+                  "code": "C1909",
+                  "codeSystem": "http://www.cdisc.org",
+                  "codeSystemVersion": "2023-12-15",
+                  "decode": "Pharmacologic Substance",
+                  "instanceType": "Code"
+                },
+                "minimumResponseDuration": {
+                  "id": "Quantity_4",
+                  "value": 1.0,
+                  "unit": {
+                    "id": "AliasCode_207",
+                    "standardCode": {
+                      "id": "Code_563",
+                      "code": "C25301",
+                      "codeSystem": "http://www.cdisc.org",
+                      "codeSystemVersion": "2023-12-15",
+                      "decode": "Day",
+                      "instanceType": "Code"
+                    },
+                    "standardCodeAliases": [],
+                    "instanceType": "AliasCode"
+                  },
+                  "instanceType": "Quantity"
+                },
+                "codes": [
+                  {
+                    "id": "Code_559",
+                    "code": "XIN",
+                    "codeSystem": "SPONSOR",
+                    "codeSystemVersion": "12",
+                    "decode": "XIN",
+                    "instanceType": "Code"
+                  }
+                ],
+                "administrations": [
+                  {
+                    "id": "Administration_1",
+                    "name": "PATCH_50",
+                    "label": "",
+                    "description": "50 cm2 Patch",
+                    "duration": {
+                      "id": "AdministrationDuration_1",
+                      "quantity": {
+                        "id": "Quantity_2",
+                        "value": 24.0,
+                        "unit": {
+                          "id": "AliasCode_203",
+                          "standardCode": {
+                            "id": "Code_555",
+                            "code": "C29844",
+                            "codeSystem": "http://www.cdisc.org",
+                            "codeSystemVersion": "2023-12-15",
+                            "decode": "Week",
+                            "instanceType": "Code"
+                          },
+                          "standardCodeAliases": [],
+                          "instanceType": "AliasCode"
+                        },
+                        "instanceType": "Quantity"
+                      },
+                      "description": "",
+                      "durationWillVary": false,
+                      "reasonDurationWillVary": "Need reason",
+                      "instanceType": "AdministrationDuration"
+                    },
+                    "dose": {
+                      "id": "Quantity_3",
+                      "value": 54.0,
+                      "unit": {
+                        "id": "AliasCode_204",
+                        "standardCode": {
+                          "id": "Code_556",
+                          "code": "C28253",
+                          "codeSystem": "http://www.cdisc.org",
+                          "codeSystemVersion": "2023-12-15",
+                          "decode": "Milligram",
+                          "instanceType": "Code"
+                        },
+                        "standardCodeAliases": [],
+                        "instanceType": "AliasCode"
+                      },
+                      "instanceType": "Quantity"
+                    },
+                    "route": {
+                      "id": "AliasCode_205",
+                      "standardCode": {
+                        "id": "Code_557",
+                        "code": "C38288",
+                        "codeSystem": "http://www.cdisc.org",
+                        "codeSystemVersion": "2023-12-15",
+                        "decode": "Oral Route of Administration",
+                        "instanceType": "Code"
+                      },
+                      "standardCodeAliases": [],
+                      "instanceType": "AliasCode"
+                    },
+                    "frequency": {
+                      "id": "AliasCode_206",
+                      "standardCode": {
+                        "id": "Code_558",
+                        "code": "C25473",
+                        "codeSystem": "http://www.cdisc.org",
+                        "codeSystemVersion": "2023-12-15",
+                        "decode": "Daily",
+                        "instanceType": "Code"
+                      },
+                      "standardCodeAliases": [],
+                      "instanceType": "AliasCode"
+                    },
+                    "administrableProductId": null,
+                    "notes": [],
+                    "instanceType": "Administration"
+                  },
+                  {
+                    "id": "Administration_2",
+                    "name": "PATCH_75",
+                    "label": "",
+                    "description": "75 cm2 Patch",
+                    "duration": {
+                      "id": "AdministrationDuration_2",
+                      "quantity": {
+                        "id": "Quantity_5",
+                        "value": 24.0,
+                        "unit": {
+                          "id": "AliasCode_208",
+                          "standardCode": {
+                            "id": "Code_564",
+                            "code": "C29844",
+                            "codeSystem": "http://www.cdisc.org",
+                            "codeSystemVersion": "2023-12-15",
+                            "decode": "Week",
+                            "instanceType": "Code"
+                          },
+                          "standardCodeAliases": [],
+                          "instanceType": "AliasCode"
+                        },
+                        "instanceType": "Quantity"
+                      },
+                      "description": "",
+                      "durationWillVary": false,
+                      "reasonDurationWillVary": "Need reason",
+                      "instanceType": "AdministrationDuration"
+                    },
+                    "dose": {
+                      "id": "Quantity_6",
+                      "value": 81.0,
+                      "unit": {
+                        "id": "AliasCode_209",
+                        "standardCode": {
+                          "id": "Code_565",
+                          "code": "C28253",
+                          "codeSystem": "http://www.cdisc.org",
+                          "codeSystemVersion": "2023-12-15",
+                          "decode": "Milligram",
+                          "instanceType": "Code"
+                        },
+                        "standardCodeAliases": [],
+                        "instanceType": "AliasCode"
+                      },
+                      "instanceType": "Quantity"
+                    },
+                    "route": {
+                      "id": "AliasCode_210",
+                      "standardCode": {
+                        "id": "Code_566",
+                        "code": "C38288",
+                        "codeSystem": "http://www.cdisc.org",
+                        "codeSystemVersion": "2023-12-15",
+                        "decode": "Oral Route of Administration",
+                        "instanceType": "Code"
+                      },
+                      "standardCodeAliases": [],
+                      "instanceType": "AliasCode"
+                    },
+                    "frequency": {
+                      "id": "AliasCode_211",
+                      "standardCode": {
+                        "id": "Code_567",
+                        "code": "C25473",
+                        "codeSystem": "http://www.cdisc.org",
+                        "codeSystemVersion": "2023-12-15",
+                        "decode": "Daily",
+                        "instanceType": "Code"
+                      },
+                      "standardCodeAliases": [],
+                      "instanceType": "AliasCode"
+                    },
+                    "administrableProductId": null,
+                    "notes": [],
+                    "instanceType": "Administration"
+                  }
+                ],
+                "productDesignation": {
+                  "id": "Code_562",
+                  "code": "C99909x1",
+                  "codeSystem": "http://www.cdisc.org",
+                  "codeSystemVersion": "2023-12-15",
+                  "decode": "IMP",
+                  "instanceType": "Code"
+                },
+                "notes": [],
+                "instanceType": "StudyIntervention"
+              }
+            ],
             "objectives": [
               {
                 "id": "Objective_1",
@@ -9683,7 +9931,7 @@
                 "notes": [],
                 "instanceType": "Objective",
                 "level": {
-                  "id": "Code_558",
+                  "id": "Code_571",
                   "code": "C85826",
                   "codeSystem": "http://www.cdisc.org",
                   "codeSystemVersion": "2023-12-15",
@@ -9702,7 +9950,7 @@
                     "instanceType": "Endpoint",
                     "purpose": "",
                     "level": {
-                      "id": "Code_557",
+                      "id": "Code_570",
                       "code": "C94496",
                       "codeSystem": "http://www.cdisc.org",
                       "codeSystemVersion": "2023-12-15",
@@ -9721,7 +9969,7 @@
                     "instanceType": "Endpoint",
                     "purpose": "",
                     "level": {
-                      "id": "Code_559",
+                      "id": "Code_572",
                       "code": "C94496",
                       "codeSystem": "http://www.cdisc.org",
                       "codeSystemVersion": "2023-12-15",
@@ -9741,7 +9989,7 @@
                 "notes": [],
                 "instanceType": "Objective",
                 "level": {
-                  "id": "Code_561",
+                  "id": "Code_574",
                   "code": "C85826",
                   "codeSystem": "http://www.cdisc.org",
                   "codeSystemVersion": "2023-12-15",
@@ -9760,7 +10008,7 @@
                     "instanceType": "Endpoint",
                     "purpose": "",
                     "level": {
-                      "id": "Code_560",
+                      "id": "Code_573",
                       "code": "C94496",
                       "codeSystem": "http://www.cdisc.org",
                       "codeSystemVersion": "2023-12-15",
@@ -9779,7 +10027,7 @@
                     "instanceType": "Endpoint",
                     "purpose": "",
                     "level": {
-                      "id": "Code_562",
+                      "id": "Code_575",
                       "code": "C94496",
                       "codeSystem": "http://www.cdisc.org",
                       "codeSystemVersion": "2023-12-15",
@@ -9798,7 +10046,7 @@
                     "instanceType": "Endpoint",
                     "purpose": "",
                     "level": {
-                      "id": "Code_563",
+                      "id": "Code_576",
                       "code": "C94496",
                       "codeSystem": "http://www.cdisc.org",
                       "codeSystemVersion": "2023-12-15",
@@ -9818,7 +10066,7 @@
                 "notes": [],
                 "instanceType": "Objective",
                 "level": {
-                  "id": "Code_565",
+                  "id": "Code_578",
                   "code": "C85827",
                   "codeSystem": "http://www.cdisc.org",
                   "codeSystemVersion": "2023-12-15",
@@ -9837,7 +10085,7 @@
                     "instanceType": "Endpoint",
                     "purpose": "",
                     "level": {
-                      "id": "Code_564",
+                      "id": "Code_577",
                       "code": "C139173",
                       "codeSystem": "http://www.cdisc.org",
                       "codeSystemVersion": "2023-12-15",
@@ -9856,7 +10104,7 @@
                     "instanceType": "Endpoint",
                     "purpose": "",
                     "level": {
-                      "id": "Code_566",
+                      "id": "Code_579",
                       "code": "C139173",
                       "codeSystem": "http://www.cdisc.org",
                       "codeSystemVersion": "2023-12-15",
@@ -9875,7 +10123,7 @@
                     "instanceType": "Endpoint",
                     "purpose": "",
                     "level": {
-                      "id": "Code_567",
+                      "id": "Code_580",
                       "code": "C139173",
                       "codeSystem": "http://www.cdisc.org",
                       "codeSystemVersion": "2023-12-15",
@@ -9895,7 +10143,7 @@
                 "notes": [],
                 "instanceType": "Objective",
                 "level": {
-                  "id": "Code_569",
+                  "id": "Code_582",
                   "code": "C85827",
                   "codeSystem": "http://www.cdisc.org",
                   "codeSystemVersion": "2023-12-15",
@@ -9914,7 +10162,7 @@
                     "instanceType": "Endpoint",
                     "purpose": "",
                     "level": {
-                      "id": "Code_568",
+                      "id": "Code_581",
                       "code": "C139173",
                       "codeSystem": "http://www.cdisc.org",
                       "codeSystemVersion": "2023-12-15",
@@ -9934,7 +10182,7 @@
                 "notes": [],
                 "instanceType": "Objective",
                 "level": {
-                  "id": "Code_571",
+                  "id": "Code_584",
                   "code": "C85827",
                   "codeSystem": "http://www.cdisc.org",
                   "codeSystemVersion": "2023-12-15",
@@ -9953,7 +10201,7 @@
                     "instanceType": "Endpoint",
                     "purpose": "",
                     "level": {
-                      "id": "Code_570",
+                      "id": "Code_583",
                       "code": "C139173",
                       "codeSystem": "http://www.cdisc.org",
                       "codeSystemVersion": "2023-12-15",
@@ -9973,7 +10221,7 @@
                 "notes": [],
                 "instanceType": "Objective",
                 "level": {
-                  "id": "Code_573",
+                  "id": "Code_586",
                   "code": "C85827",
                   "codeSystem": "http://www.cdisc.org",
                   "codeSystemVersion": "2023-12-15",
@@ -9992,7 +10240,7 @@
                     "instanceType": "Endpoint",
                     "purpose": "",
                     "level": {
-                      "id": "Code_572",
+                      "id": "Code_585",
                       "code": "C139173",
                       "codeSystem": "http://www.cdisc.org",
                       "codeSystemVersion": "2023-12-15",
@@ -10027,7 +10275,7 @@
               },
               "plannedSex": [
                 {
-                  "id": "Code_556",
+                  "id": "Code_569",
                   "code": "C49636",
                   "codeSystem": "http://www.cdisc.org",
                   "codeSystemVersion": "2023-12-15",
@@ -10073,7 +10321,7 @@
                 "minValue": 50.0,
                 "maxValue": 100.0,
                 "unit": {
-                  "id": "Code_555",
+                  "id": "Code_568",
                   "code": "C29848",
                   "codeSystem": "http://www.cdisc.org",
                   "codeSystemVersion": "2023-12-15",
@@ -10087,6 +10335,20 @@
               "instanceType": "StudyDesignPopulation",
               "cohorts": []
             },
+            "analysisPopulations": [
+              {
+                "id": "AnalysisPopulation_1",
+                "name": "AP_1",
+                "label": null,
+                "description": null,
+                "text": "Patients with Mild to Moderate Alzheimer\u2019s Disease.",
+                "subsetOfIds": [
+                  "StudyDesignPopulation_1"
+                ],
+                "notes": [],
+                "instanceType": "AnalysisPopulation"
+              }
+            ],
             "scheduleTimelines": [
               {
                 "id": "ScheduleTimeline_4",
@@ -11369,7 +11631,7 @@
                 "instanceType": "ScheduleTimeline"
               }
             ],
-            "documentVersionId": null,
+            "documentVersionIds": [],
             "dictionaries": [
               {
                 "id": "SyntaxTemplateDictionary_1",
@@ -11526,7 +11788,7 @@
             "notes": [],
             "instanceType": "EligibilityCriterion",
             "category": {
-              "id": "Code_574",
+              "id": "Code_587",
               "code": "C25532",
               "codeSystem": "http://www.cdisc.org",
               "codeSystemVersion": "2023-12-15",
@@ -11547,7 +11809,7 @@
             "notes": [],
             "instanceType": "EligibilityCriterion",
             "category": {
-              "id": "Code_575",
+              "id": "Code_588",
               "code": "C25532",
               "codeSystem": "http://www.cdisc.org",
               "codeSystemVersion": "2023-12-15",
@@ -11568,7 +11830,7 @@
             "notes": [],
             "instanceType": "EligibilityCriterion",
             "category": {
-              "id": "Code_576",
+              "id": "Code_589",
               "code": "C25532",
               "codeSystem": "http://www.cdisc.org",
               "codeSystemVersion": "2023-12-15",
@@ -11589,7 +11851,7 @@
             "notes": [],
             "instanceType": "EligibilityCriterion",
             "category": {
-              "id": "Code_577",
+              "id": "Code_590",
               "code": "C25532",
               "codeSystem": "http://www.cdisc.org",
               "codeSystemVersion": "2023-12-15",
@@ -11610,7 +11872,7 @@
             "notes": [],
             "instanceType": "EligibilityCriterion",
             "category": {
-              "id": "Code_578",
+              "id": "Code_591",
               "code": "C25532",
               "codeSystem": "http://www.cdisc.org",
               "codeSystemVersion": "2023-12-15",
@@ -11631,7 +11893,7 @@
             "notes": [],
             "instanceType": "EligibilityCriterion",
             "category": {
-              "id": "Code_579",
+              "id": "Code_592",
               "code": "C25532",
               "codeSystem": "http://www.cdisc.org",
               "codeSystemVersion": "2023-12-15",
@@ -11652,7 +11914,7 @@
             "notes": [],
             "instanceType": "EligibilityCriterion",
             "category": {
-              "id": "Code_580",
+              "id": "Code_593",
               "code": "C25532",
               "codeSystem": "http://www.cdisc.org",
               "codeSystemVersion": "2023-12-15",
@@ -11673,7 +11935,7 @@
             "notes": [],
             "instanceType": "EligibilityCriterion",
             "category": {
-              "id": "Code_581",
+              "id": "Code_594",
               "code": "C25532",
               "codeSystem": "http://www.cdisc.org",
               "codeSystemVersion": "2023-12-15",
@@ -11694,7 +11956,7 @@
             "notes": [],
             "instanceType": "EligibilityCriterion",
             "category": {
-              "id": "Code_582",
+              "id": "Code_595",
               "code": "C25370",
               "codeSystem": "http://www.cdisc.org",
               "codeSystemVersion": "2023-12-15",
@@ -11715,7 +11977,7 @@
             "notes": [],
             "instanceType": "EligibilityCriterion",
             "category": {
-              "id": "Code_583",
+              "id": "Code_596",
               "code": "C25370",
               "codeSystem": "http://www.cdisc.org",
               "codeSystemVersion": "2023-12-15",
@@ -11736,7 +11998,7 @@
             "notes": [],
             "instanceType": "EligibilityCriterion",
             "category": {
-              "id": "Code_584",
+              "id": "Code_597",
               "code": "C25370",
               "codeSystem": "http://www.cdisc.org",
               "codeSystemVersion": "2023-12-15",
@@ -11757,7 +12019,7 @@
             "notes": [],
             "instanceType": "EligibilityCriterion",
             "category": {
-              "id": "Code_585",
+              "id": "Code_598",
               "code": "C25370",
               "codeSystem": "http://www.cdisc.org",
               "codeSystemVersion": "2023-12-15",
@@ -11778,7 +12040,7 @@
             "notes": [],
             "instanceType": "EligibilityCriterion",
             "category": {
-              "id": "Code_586",
+              "id": "Code_599",
               "code": "C25370",
               "codeSystem": "http://www.cdisc.org",
               "codeSystemVersion": "2023-12-15",
@@ -11799,7 +12061,7 @@
             "notes": [],
             "instanceType": "EligibilityCriterion",
             "category": {
-              "id": "Code_587",
+              "id": "Code_600",
               "code": "C25370",
               "codeSystem": "http://www.cdisc.org",
               "codeSystemVersion": "2023-12-15",
@@ -11820,7 +12082,7 @@
             "notes": [],
             "instanceType": "EligibilityCriterion",
             "category": {
-              "id": "Code_588",
+              "id": "Code_601",
               "code": "C25370",
               "codeSystem": "http://www.cdisc.org",
               "codeSystemVersion": "2023-12-15",
@@ -11841,7 +12103,7 @@
             "notes": [],
             "instanceType": "EligibilityCriterion",
             "category": {
-              "id": "Code_589",
+              "id": "Code_602",
               "code": "C25370",
               "codeSystem": "http://www.cdisc.org",
               "codeSystemVersion": "2023-12-15",
@@ -11862,7 +12124,7 @@
             "notes": [],
             "instanceType": "EligibilityCriterion",
             "category": {
-              "id": "Code_590",
+              "id": "Code_603",
               "code": "C25370",
               "codeSystem": "http://www.cdisc.org",
               "codeSystemVersion": "2023-12-15",
@@ -11883,7 +12145,7 @@
             "notes": [],
             "instanceType": "EligibilityCriterion",
             "category": {
-              "id": "Code_591",
+              "id": "Code_604",
               "code": "C25370",
               "codeSystem": "http://www.cdisc.org",
               "codeSystemVersion": "2023-12-15",
@@ -11904,7 +12166,7 @@
             "notes": [],
             "instanceType": "EligibilityCriterion",
             "category": {
-              "id": "Code_592",
+              "id": "Code_605",
               "code": "C25370",
               "codeSystem": "http://www.cdisc.org",
               "codeSystemVersion": "2023-12-15",
@@ -11925,7 +12187,7 @@
             "notes": [],
             "instanceType": "EligibilityCriterion",
             "category": {
-              "id": "Code_593",
+              "id": "Code_606",
               "code": "C25370",
               "codeSystem": "http://www.cdisc.org",
               "codeSystemVersion": "2023-12-15",
@@ -11946,7 +12208,7 @@
             "notes": [],
             "instanceType": "EligibilityCriterion",
             "category": {
-              "id": "Code_594",
+              "id": "Code_607",
               "code": "C25370",
               "codeSystem": "http://www.cdisc.org",
               "codeSystemVersion": "2023-12-15",
@@ -11967,7 +12229,7 @@
             "notes": [],
             "instanceType": "EligibilityCriterion",
             "category": {
-              "id": "Code_595",
+              "id": "Code_608",
               "code": "C25370",
               "codeSystem": "http://www.cdisc.org",
               "codeSystemVersion": "2023-12-15",
@@ -11988,7 +12250,7 @@
             "notes": [],
             "instanceType": "EligibilityCriterion",
             "category": {
-              "id": "Code_596",
+              "id": "Code_609",
               "code": "C25370",
               "codeSystem": "http://www.cdisc.org",
               "codeSystemVersion": "2023-12-15",
@@ -12009,7 +12271,7 @@
             "notes": [],
             "instanceType": "EligibilityCriterion",
             "category": {
-              "id": "Code_597",
+              "id": "Code_610",
               "code": "C25370",
               "codeSystem": "http://www.cdisc.org",
               "codeSystemVersion": "2023-12-15",
@@ -12030,7 +12292,7 @@
             "notes": [],
             "instanceType": "EligibilityCriterion",
             "category": {
-              "id": "Code_598",
+              "id": "Code_611",
               "code": "C25370",
               "codeSystem": "http://www.cdisc.org",
               "codeSystemVersion": "2023-12-15",
@@ -12051,7 +12313,7 @@
             "notes": [],
             "instanceType": "EligibilityCriterion",
             "category": {
-              "id": "Code_599",
+              "id": "Code_612",
               "code": "C25370",
               "codeSystem": "http://www.cdisc.org",
               "codeSystemVersion": "2023-12-15",
@@ -12072,7 +12334,7 @@
             "notes": [],
             "instanceType": "EligibilityCriterion",
             "category": {
-              "id": "Code_600",
+              "id": "Code_613",
               "code": "C25370",
               "codeSystem": "http://www.cdisc.org",
               "codeSystemVersion": "2023-12-15",
@@ -12093,7 +12355,7 @@
             "notes": [],
             "instanceType": "EligibilityCriterion",
             "category": {
-              "id": "Code_601",
+              "id": "Code_614",
               "code": "C25370",
               "codeSystem": "http://www.cdisc.org",
               "codeSystemVersion": "2023-12-15",
@@ -12114,7 +12376,7 @@
             "notes": [],
             "instanceType": "EligibilityCriterion",
             "category": {
-              "id": "Code_602",
+              "id": "Code_615",
               "code": "C25370",
               "codeSystem": "http://www.cdisc.org",
               "codeSystemVersion": "2023-12-15",
@@ -12135,7 +12397,7 @@
             "notes": [],
             "instanceType": "EligibilityCriterion",
             "category": {
-              "id": "Code_603",
+              "id": "Code_616",
               "code": "C25370",
               "codeSystem": "http://www.cdisc.org",
               "codeSystemVersion": "2023-12-15",
@@ -12156,7 +12418,7 @@
             "notes": [],
             "instanceType": "EligibilityCriterion",
             "category": {
-              "id": "Code_604",
+              "id": "Code_617",
               "code": "C25370",
               "codeSystem": "http://www.cdisc.org",
               "codeSystemVersion": "2023-12-15",
@@ -12688,7 +12950,7 @@
             "label": "Sponsor",
             "description": "Sponsor role",
             "code": {
-              "id": "Code_608",
+              "id": "Code_621",
               "code": "C70793",
               "codeSystem": "http://www.cdisc.org",
               "codeSystemVersion": "2023-12-15",
@@ -12825,7 +13087,7 @@
             "name": "SITE_ORG_1",
             "label": "Site Org",
             "type": {
-              "id": "Code_606",
+              "id": "Code_619",
               "code": "C70793",
               "codeSystem": "http://www.cdisc.org",
               "codeSystemVersion": "2023-12-15",
@@ -12845,7 +13107,7 @@
               "state": "state",
               "postalCode": "postal_code",
               "country": {
-                "id": "Code_607",
+                "id": "Code_620",
                 "code": "GBR",
                 "codeSystem": "ISO 3166 1 alpha3",
                 "codeSystemVersion": "2020-08",
@@ -12861,7 +13123,7 @@
                 "label": "Site One",
                 "description": "Main Site",
                 "country": {
-                  "id": "Code_605",
+                  "id": "Code_618",
                   "code": "GBR",
                   "codeSystem": "ISO 3166 1 alpha3",
                   "codeSystemVersion": "2020-08",
@@ -12886,7 +13148,7 @@
         "label": null,
         "description": null,
         "language": {
-          "id": "Code_609",
+          "id": "Code_622",
           "code": "en",
           "codeSystem": "ISO",
           "codeSystemVersion": "1",
@@ -12894,7 +13156,7 @@
           "instanceType": "Code"
         },
         "type": {
-          "id": "Code_610",
+          "id": "Code_623",
           "code": "C12345",
           "codeSystem": "http://www.cdisc.org",
           "codeSystemVersion": "2023-12-15",
@@ -14039,7 +14301,7 @@
         "label": null,
         "description": null,
         "language": {
-          "id": "Code_611",
+          "id": "Code_624",
           "code": "en",
           "codeSystem": "ISO",
           "codeSystemVersion": "1",
@@ -14047,7 +14309,7 @@
           "instanceType": "Code"
         },
         "type": {
-          "id": "Code_612",
+          "id": "Code_625",
           "code": "C12345",
           "codeSystem": "http://www.cdisc.org",
           "codeSystemVersion": "2023-12-15",
@@ -16314,7 +16576,7 @@
     ],
     "instanceType": "Study"
   },
-  "usdmVersion": "3.7.0",
+  "usdmVersion": "3.8.0",
   "systemName": "CDISC USDM E2J",
-  "systemVersion": "0.54.0"
+  "systemVersion": "0.55.0"
 }
