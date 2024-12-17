@@ -1091,6 +1091,10 @@ BiomedicalConceptSurrogate:
       Cardinality: 0..1
       Relationship Type: Value
 BiospecimenRetention:
+  NCI C-Code: CNEW
+  Preferred Term: Biospecimen Retention
+  Definition: The continued possession, cataloging, and storage of collected biological
+    specimens beyond their initial use.
   Modifier: Concrete
   Attributes:
     id:
@@ -1101,26 +1105,42 @@ BiospecimenRetention:
     name:
       Type:
       - $ref: '#/string'
+      NCI C-Code: CNEW
+      Preferred Term: Biospecimen Retention Name
+      Definition: The literal identifier (i.e., distinctive designation) of the biospecimen
+        retention.
       Relationship Type: Value
       Model Name: name
     description:
       Type:
       - $ref: '#/string'
+      NCI C-Code: C181231
+      Preferred Term: Biospecimen Retention Description
+      Definition: A narrative representation of the biospecimen retention.
       Relationship Type: Value
       Model Name: description
     label:
       Type:
       - $ref: '#/string'
+      NCI C-Code: CNEW
+      Preferred Term: Biospecimen Retention Label
+      Definition: The short descriptive designation for the biospecimen retention.
       Relationship Type: Value
       Model Name: label
     isRetained:
       Type:
       - $ref: '#/Boolean'
+      NCI C-Code: C164620
+      Preferred Term: Biospecimen Retention Indicator
+      Definition: An indication as to whether biospecimens were retained.
       Relationship Type: Value
       Model Name: isRetained
     includesDNA:
       Type:
       - $ref: '#/Boolean'
+      NCI C-Code: C127777
+      Preferred Term: Biospecimen Retention Includes DNA Indicator
+      Definition: An indication as to whether retained biospecimens contain DNA.
       Relationship Type: Value
       Model Name: includesDNA
     instanceType:
@@ -2262,6 +2282,11 @@ IntercurrentEvent:
       Cardinality: 0..1
       Relationship Type: Value
 InterventionalStudyDesign:
+  NCI C-Code: CNEW
+  Preferred Term: Interventional Study Design
+  Definition: The strategy that specifies the structure of an interventional trial
+    in terms of the planned activities (including timing) and statistical analysis
+    approach intended to meet the objectives of the study.
   Super Classes:
   - $ref: '#/StudyDesign'
   Modifier: Concrete
@@ -2276,6 +2301,10 @@ InterventionalStudyDesign:
     name:
       Type:
       - $ref: '#/string'
+      NCI C-Code: CNEW
+      Preferred Term: Interventional Study Design Name
+      Definition: The literal identifier (i.e., distinctive designation) of the interventional
+        study design.
       Relationship Type: Value
       Model Name: name
       Inherited From:
@@ -2283,6 +2312,9 @@ InterventionalStudyDesign:
     description:
       Type:
       - $ref: '#/string'
+      NCI C-Code: CNEW
+      Preferred Term: Interventional Study Design Description
+      Definition: A narrative representation of the interventional study design.
       Relationship Type: Value
       Model Name: description
       Inherited From:
@@ -2290,6 +2322,9 @@ InterventionalStudyDesign:
     label:
       Type:
       - $ref: '#/string'
+      NCI C-Code: CNEW
+      Preferred Term: Interventional Study Design Label
+      Definition: The short descriptive designation for the interventional study design.
       Relationship Type: Value
       Model Name: label
       Inherited From:
@@ -2297,6 +2332,11 @@ InterventionalStudyDesign:
     rationale:
       Type:
       - $ref: '#/string'
+      NCI C-Code: CNEW
+      Preferred Term: Interventional Study Design Rationale
+      Definition: Reason(s) for choosing the interventional study design. This may
+        include reasons for the choice of control or comparator, as well as the scientific
+        rationale for the study design.
       Relationship Type: Value
       Model Name: rationale
       Inherited From:
@@ -2305,6 +2345,9 @@ InterventionalStudyDesign:
       Type:
       - $ref: '#/Activity'
       Cardinality: 0..*
+      Definition: A USDM relationship between the InterventionalStudyDesign and Activity
+        classes which identifies the set of activities associated with the interventional
+        study design.
       Relationship Type: Value
       Model Name: activities
       Inherited From:
@@ -2312,7 +2355,11 @@ InterventionalStudyDesign:
     studyPhase:
       Type:
       - $ref: '#/AliasCode'
+      NCI C-Code: CNEW
       Cardinality: 0..1
+      Preferred Term: Interventional Study Design Study Phase
+      Definition: The study phase associated with the interventional study design.
+      Codelist Ref: SDTM Terminology Codelist C66737
       Relationship Type: Value
       Model Name: studyPhase
       Inherited From:
@@ -2321,6 +2368,9 @@ InterventionalStudyDesign:
       Type:
       - $ref: '#/BiospecimenRetention'
       Cardinality: 0..*
+      Definition: A USDM relationship between the InterventionalStudyDesign and BiospecimenRetention
+        classes which identifies the status of biospecimen retentions related to the
+        interventional study design.
       Relationship Type: Value
       Model Name: biospecimenRetentions
       Inherited From:
@@ -2328,7 +2378,11 @@ InterventionalStudyDesign:
     studyType:
       Type:
       - $ref: '#/Code'
+      NCI C-Code: CNEW
       Cardinality: 0..1
+      Preferred Term: Interventional Study Design Study Type
+      Definition: The study type associated with the interventional study design.
+      Codelist Ref: SDTM Terminology Codelist C99077
       Relationship Type: Value
       Model Name: studyType
       Inherited From:
@@ -2336,7 +2390,15 @@ InterventionalStudyDesign:
     therapeuticAreas:
       Type:
       - $ref: '#/Code'
+      NCI C-Code: CNEW
       Cardinality: 0..*
+      Preferred Term: Interventional Study Design Therapeutic Areas
+      Definition: A categorization of a disease, disorder, or other condition based
+        on common characteristics and often associated with a medical specialty focusing
+        on research and development of specific therapeutic interventions for the
+        purpose of treatment and prevention, which is associated with the interventional
+        study design.
+      Codelist Ref: (Point out to external dictionaries)
       Relationship Type: Value
       Model Name: therapeuticAreas
       Inherited From:
@@ -2344,7 +2406,12 @@ InterventionalStudyDesign:
     characteristics:
       Type:
       - $ref: '#/Code'
+      NCI C-Code: CNEW
       Cardinality: 0..*
+      Preferred Term: Interventional Study Design Characteristics
+      Definition: The distinguishing qualities or prominent aspects of an interventional
+        study design.
+      Codelist Ref: C207416
       Relationship Type: Value
       Model Name: characteristics
       Inherited From:
@@ -2353,6 +2420,9 @@ InterventionalStudyDesign:
       Type:
       - $ref: '#/CommentAnnotation'
       Cardinality: 0..*
+      Definition: A USDM relationship between the InterventionalStudyDesign and CommentAnnotation
+        classes which provides the set of notes related to the interventional study
+        design.
       Relationship Type: Value
       Model Name: notes
       Inherited From:
@@ -2361,6 +2431,9 @@ InterventionalStudyDesign:
       Type:
       - $ref: '#/Encounter'
       Cardinality: 0..*
+      Definition: A USDM relationship between the InterventionalStudyDesign and Encounter
+        classes which identifies the set of encounters associated with the interventional
+        study design.
       Relationship Type: Value
       Model Name: encounters
       Inherited From:
@@ -2369,6 +2442,9 @@ InterventionalStudyDesign:
       Type:
       - $ref: '#/Estimand'
       Cardinality: 0..*
+      Definition: A USDM relationship between the InterventionalStudyDesign and Estimand
+        classes which identifies the set of estimands associated with the interventional
+        study design.
       Relationship Type: Value
       Model Name: estimands
       Inherited From:
@@ -2377,6 +2453,9 @@ InterventionalStudyDesign:
       Type:
       - $ref: '#/Indication'
       Cardinality: 0..*
+      Definition: A USDM relationship between the InterventionalStudyDesign and Indication
+        classes which identifies the set of indications associated with the interventional
+        study design.
       Relationship Type: Value
       Model Name: indications
       Inherited From:
@@ -2385,6 +2464,9 @@ InterventionalStudyDesign:
       Type:
       - $ref: '#/Objective'
       Cardinality: 0..*
+      Definition: A USDM relationship between the InterventionalStudyDesign and Objective
+        classes which identifies the set of objectives associated with the interventional
+        study design.
       Relationship Type: Value
       Model Name: objectives
       Inherited From:
@@ -2393,6 +2475,9 @@ InterventionalStudyDesign:
       Type:
       - $ref: '#/ScheduleTimeline'
       Cardinality: 0..*
+      Definition: A USDM relationship between the InterventionalStudyDesign and ScheduleTimeline
+        classes which identifies the set of scheduled timelines associated with the
+        interventional study design.
       Relationship Type: Value
       Model Name: scheduleTimelines
       Inherited From:
@@ -2401,6 +2486,9 @@ InterventionalStudyDesign:
       Type:
       - $ref: '#/StudyArm'
       Cardinality: 1..*
+      Definition: A USDM relationship between the InterventionalStudyDesign and StudyArm
+        classes which identifies the set of study arms associated with the interventional
+        study design.
       Relationship Type: Value
       Model Name: arms
       Inherited From:
@@ -2409,6 +2497,9 @@ InterventionalStudyDesign:
       Type:
       - $ref: '#/StudyCell'
       Cardinality: 1..*
+      Definition: 'A USDM relationship between the InterventionalStudyDesign and StudyCell
+        classes which identifies the set of study cells associated with the interventional
+        study design. '
       Relationship Type: Value
       Model Name: studyCells
       Inherited From:
@@ -2417,6 +2508,9 @@ InterventionalStudyDesign:
       Type:
       - $ref: '#/StudyDefinitionDocumentVersion'
       Cardinality: 0..*
+      Definition: A USDM relationship between the InterventionalStudyDesign and StudyDefinitionDocumentVersion
+        classes which identifies the version of the study definition documents associated
+        with the interventional study design.
       Relationship Type: Ref
       Model Name: documentVersions
       Inherited From:
@@ -2425,6 +2519,9 @@ InterventionalStudyDesign:
       Type:
       - $ref: '#/StudyElement'
       Cardinality: 0..*
+      Definition: A USDM relationship between the InterventionalStudyDesign and StudyElement
+        classes which identifies the set of study elements associated with the interventional
+        study design.
       Relationship Type: Value
       Model Name: elements
       Inherited From:
@@ -2433,6 +2530,9 @@ InterventionalStudyDesign:
       Type:
       - $ref: '#/StudyIntervention'
       Cardinality: 0..*
+      Definition: A USDM relationship between the InterventionalStudyDesign and StudyIntervention
+        classes which identifies the set of study interventions associated with interventional
+        study design.
       Relationship Type: Value
       Model Name: studyInterventions
       Inherited From:
@@ -2441,6 +2541,9 @@ InterventionalStudyDesign:
       Type:
       - $ref: '#/StudyEpoch'
       Cardinality: 1..*
+      Definition: A USDM relationship between the InterventionalStudyDesign and StudyEpoch
+        classes which identifies the set of study epochs associated with the interventional
+        study design.
       Relationship Type: Value
       Model Name: epochs
       Inherited From:
@@ -2449,6 +2552,9 @@ InterventionalStudyDesign:
       Type:
       - $ref: '#/StudyDesignPopulation'
       Cardinality: 0..1
+      Definition: A USDM relationship between the InterventionalStudyDesign and StudyDesignPopulation
+        classes which identifies the population associated with the interventional
+        study design.
       Relationship Type: Value
       Model Name: population
       Inherited From:
@@ -2456,25 +2562,46 @@ InterventionalStudyDesign:
     subTypes:
       Type:
       - $ref: '#/Code'
+      NCI C-Code: C49660
       Cardinality: 0..*
+      Preferred Term: Trial Type
+      Definition: The nature of the interventional study for which information is
+        being collected.
+      Codelist Ref: SDTM Terminology Codelist C66739
       Relationship Type: Value
       Model Name: subTypes
     intentTypes:
       Type:
       - $ref: '#/Code'
+      NCI C-Code: C49652
       Cardinality: 0..*
+      Preferred Term: Trial Intent Type
+      Definition: The planned purpose of the therapy, device, or agent under study
+        in the clinical trial.
+      Codelist Ref: SDTM Terminology Codelist C66736
       Relationship Type: Value
       Model Name: intentTypes
     model:
       Type:
       - $ref: '#/Code'
+      NCI C-Code: C98746
       Cardinality: '1'
+      Preferred Term: Intervention Model Type
+      Definition: The general design of the strategy for assigning interventions to
+        subjects in a clinical study. (clinicaltrials.gov)
+      Codelist Ref: SDTM Terminology Codelist C99076
       Relationship Type: Value
       Model Name: model
     blindingSchema:
       Type:
       - $ref: '#/Code'
+      NCI C-Code: C49658
       Cardinality: 0..1
+      Preferred Term: Trial Blinding Schema
+      Definition: The type of experimental design used to describe the level of awareness
+        of the study subjects and/ or study personnel as it relates to the respective
+        intervention(s) or assessments being observed, received or administered.
+      Codelist Ref: SDTM Terminology Codelist C66735
       Relationship Type: Value
       Model Name: blindingSchema
     biomedicalConcepts:
@@ -2924,6 +3051,11 @@ Objective:
       Cardinality: 0..1
       Relationship Type: Value
 ObservationalStudyDesign:
+  NCI C-Code: CNEW
+  Preferred Term: Observational Study Design
+  Definition: The strategy that specifies the structure of an observational study
+    in terms of the planned activities (including timing) and statistical analysis
+    approach intended to meet the objectives of the study.
   Super Classes:
   - $ref: '#/StudyDesign'
   Modifier: Concrete
@@ -2938,6 +3070,10 @@ ObservationalStudyDesign:
     name:
       Type:
       - $ref: '#/string'
+      NCI C-Code: CNEW
+      Preferred Term: Observational Study Design Name
+      Definition: The literal identifier (i.e., distinctive designation) of the observational
+        study design.
       Relationship Type: Value
       Model Name: name
       Inherited From:
@@ -2945,6 +3081,9 @@ ObservationalStudyDesign:
     description:
       Type:
       - $ref: '#/string'
+      NCI C-Code: CNEW
+      Preferred Term: Observational Study Design Description
+      Definition: A narrative representation of the observational study design.
       Relationship Type: Value
       Model Name: description
       Inherited From:
@@ -2952,6 +3091,9 @@ ObservationalStudyDesign:
     label:
       Type:
       - $ref: '#/string'
+      NCI C-Code: CNEW
+      Preferred Term: Observational Study Design Label
+      Definition: The short descriptive designation for the observational study design.
       Relationship Type: Value
       Model Name: label
       Inherited From:
@@ -2959,6 +3101,11 @@ ObservationalStudyDesign:
     rationale:
       Type:
       - $ref: '#/string'
+      NCI C-Code: CNEW
+      Preferred Term: Observational Study Design Rationale
+      Definition: Reason(s) for choosing the observational study design. This may
+        include reasons for the choice of control or comparator, as well as the scientific
+        rationale for the study design.
       Relationship Type: Value
       Model Name: rationale
       Inherited From:
@@ -2967,6 +3114,9 @@ ObservationalStudyDesign:
       Type:
       - $ref: '#/Activity'
       Cardinality: 0..*
+      Definition: A USDM relationship between the ObservationalStudyDesign and Activity
+        classes which identifies the set of activities associated with the observational
+        study design.
       Relationship Type: Value
       Model Name: activities
       Inherited From:
@@ -2974,7 +3124,11 @@ ObservationalStudyDesign:
     studyPhase:
       Type:
       - $ref: '#/AliasCode'
+      NCI C-Code: CNEW
       Cardinality: 0..1
+      Preferred Term: Observational Study Design Study Phase
+      Definition: The study phase associated with the observational study design.
+      Codelist Ref: SDTM Terminology Codelist C66737
       Relationship Type: Value
       Model Name: studyPhase
       Inherited From:
@@ -2983,6 +3137,9 @@ ObservationalStudyDesign:
       Type:
       - $ref: '#/BiospecimenRetention'
       Cardinality: 0..*
+      Definition: A USDM relationship between the ObservationalStudyDesign and BiospecimenRetention
+        classes which identifies the status of biospecimen retentions related to the
+        observational study design.
       Relationship Type: Value
       Model Name: biospecimenRetentions
       Inherited From:
@@ -2990,7 +3147,11 @@ ObservationalStudyDesign:
     studyType:
       Type:
       - $ref: '#/Code'
+      NCI C-Code: CNEW
       Cardinality: 0..1
+      Preferred Term: Observational Study Design Study Type
+      Definition: The study type associated with the observational study design.
+      Codelist Ref: SDTM Terminology Codelist C99077
       Relationship Type: Value
       Model Name: studyType
       Inherited From:
@@ -2998,7 +3159,15 @@ ObservationalStudyDesign:
     therapeuticAreas:
       Type:
       - $ref: '#/Code'
+      NCI C-Code: CNEW
       Cardinality: 0..*
+      Preferred Term: Observational Study Design Therapeutic Areas
+      Definition: A categorization of a disease, disorder, or other condition based
+        on common characteristics and often associated with a medical specialty focusing
+        on research and development of specific therapeutic interventions for the
+        purpose of treatment and prevention, which is associated with the observational
+        study design.
+      Codelist Ref: (Point out to external dictionaries)
       Relationship Type: Value
       Model Name: therapeuticAreas
       Inherited From:
@@ -3006,7 +3175,12 @@ ObservationalStudyDesign:
     characteristics:
       Type:
       - $ref: '#/Code'
+      NCI C-Code: CNEW
       Cardinality: 0..*
+      Preferred Term: Observational Study Design Characteristics
+      Definition: The distinguishing qualities or prominent aspects of an observational
+        study design.
+      Codelist Ref: C207416
       Relationship Type: Value
       Model Name: characteristics
       Inherited From:
@@ -3015,6 +3189,9 @@ ObservationalStudyDesign:
       Type:
       - $ref: '#/CommentAnnotation'
       Cardinality: 0..*
+      Definition: A USDM relationship between the ObservationalStudyDesign and CommentAnnotation
+        classes which provides the set of notes related to the observational study
+        design.
       Relationship Type: Value
       Model Name: notes
       Inherited From:
@@ -3023,6 +3200,9 @@ ObservationalStudyDesign:
       Type:
       - $ref: '#/Encounter'
       Cardinality: 0..*
+      Definition: A USDM relationship between the ObservationalStudyDesign and Encounter
+        classes which identifies the set of encounters associated with the observational
+        study design.
       Relationship Type: Value
       Model Name: encounters
       Inherited From:
@@ -3031,6 +3211,9 @@ ObservationalStudyDesign:
       Type:
       - $ref: '#/Estimand'
       Cardinality: 0..*
+      Definition: A USDM relationship between the ObservationalStudyDesign and Estimand
+        classes which identifies the set of estimands associated with the observational
+        study design.
       Relationship Type: Value
       Model Name: estimands
       Inherited From:
@@ -3039,6 +3222,9 @@ ObservationalStudyDesign:
       Type:
       - $ref: '#/Indication'
       Cardinality: 0..*
+      Definition: A USDM relationship between the ObservationalStudyDesign and Indication
+        classes which identifies the set of indications associated with the observational
+        study design.
       Relationship Type: Value
       Model Name: indications
       Inherited From:
@@ -3047,6 +3233,9 @@ ObservationalStudyDesign:
       Type:
       - $ref: '#/Objective'
       Cardinality: 0..*
+      Definition: A USDM relationship between the ObservationalStudyDesign and Objective
+        classes which identifies the set of objectives associated with the observational
+        study design.
       Relationship Type: Value
       Model Name: objectives
       Inherited From:
@@ -3055,6 +3244,9 @@ ObservationalStudyDesign:
       Type:
       - $ref: '#/ScheduleTimeline'
       Cardinality: 0..*
+      Definition: A USDM relationship between the ObservationalStudyDesign and ScheduleTimeline
+        classes which identifies the set of scheduled timelines associated with the
+        observational study design.
       Relationship Type: Value
       Model Name: scheduleTimelines
       Inherited From:
@@ -3063,6 +3255,9 @@ ObservationalStudyDesign:
       Type:
       - $ref: '#/StudyArm'
       Cardinality: 1..*
+      Definition: A USDM relationship between the ObservationalStudyDesign and StudyArm
+        classes which identifies the set of study arms associated with the observational
+        study design.
       Relationship Type: Value
       Model Name: arms
       Inherited From:
@@ -3071,6 +3266,9 @@ ObservationalStudyDesign:
       Type:
       - $ref: '#/StudyCell'
       Cardinality: 1..*
+      Definition: 'A USDM relationship between the ObservationalStudyDesign and StudyCell
+        classes which identifies the set of study cells associated with the observational
+        study design. '
       Relationship Type: Value
       Model Name: studyCells
       Inherited From:
@@ -3079,6 +3277,9 @@ ObservationalStudyDesign:
       Type:
       - $ref: '#/StudyDefinitionDocumentVersion'
       Cardinality: 0..*
+      Definition: A USDM relationship between the ObservationalStudyDesign and StudyDefinitionDocumentVersion
+        classes which identifies the version of the study definition documents associated
+        with the observational study design.
       Relationship Type: Ref
       Model Name: documentVersions
       Inherited From:
@@ -3087,6 +3288,9 @@ ObservationalStudyDesign:
       Type:
       - $ref: '#/StudyElement'
       Cardinality: 0..*
+      Definition: A USDM relationship between the ObservationalStudyDesign and StudyElement
+        classes which identifies the set of study elements associated with the observational
+        study design.
       Relationship Type: Value
       Model Name: elements
       Inherited From:
@@ -3095,6 +3299,9 @@ ObservationalStudyDesign:
       Type:
       - $ref: '#/StudyIntervention'
       Cardinality: 0..*
+      Definition: A USDM relationship between the ObservationalStudyDesign and StudyIntervention
+        classes which identifies the set of study interventions associated with observational
+        study design.
       Relationship Type: Value
       Model Name: studyInterventions
       Inherited From:
@@ -3103,6 +3310,9 @@ ObservationalStudyDesign:
       Type:
       - $ref: '#/StudyEpoch'
       Cardinality: 1..*
+      Definition: A USDM relationship between the ObservationalStudyDesign and StudyEpoch
+        classes which identifies the set of study epochs associated with the observational
+        study design.
       Relationship Type: Value
       Model Name: epochs
       Inherited From:
@@ -3111,6 +3321,9 @@ ObservationalStudyDesign:
       Type:
       - $ref: '#/StudyDesignPopulation'
       Cardinality: 0..1
+      Definition: A USDM relationship between the ObservationalStudyDesign and StudyDesignPopulation
+        classes which identifies the population associated with the observational
+        study design.
       Relationship Type: Value
       Model Name: population
       Inherited From:
@@ -3118,25 +3331,45 @@ ObservationalStudyDesign:
     timePerspective:
       Type:
       - $ref: '#/Code'
+      NCI C-Code: C126065
       Cardinality: '1'
+      Preferred Term: Observational Time Perspective
+      Definition: The temporal relationship between the observation period and time
+        of subject enrollment. (ClinicalTrials.gov)
+      Codelist Ref: SDTM Terminology Codelist C127261
       Relationship Type: Value
       Model Name: timePerspective
     subTypes:
       Type:
       - $ref: '#/Code'
+      NCI C-Code: CNEW
       Cardinality: 0..*
+      Preferred Term: Observational Study Type
+      Definition: The nature of the observational study for which information is being
+        collected.
+      Codelist Ref: CNEW - Observational Study Type Response
       Relationship Type: Value
       Model Name: subTypes
     model:
       Type:
       - $ref: '#/Code'
+      NCI C-Code: C147138
       Cardinality: '1'
+      Preferred Term: Observation Study Design Model Type
+      Definition: The general design of the strategy for identifying and following
+        up with participants during observational studies. (clinicaltrials.gov)
+      Codelist Ref: SDTM Terminology Codelist C127259
       Relationship Type: Value
       Model Name: model
     samplingMethod:
       Type:
       - $ref: '#/Code'
+      NCI C-Code: C126067
       Cardinality: 0..1
+      Preferred Term: Observational Study Sampling Method
+      Definition: The sampling method used to assign study participants into groups
+        or cohorts within an observational study.
+      Codelist Ref: SDTM Terminology Codelist C127260
       Relationship Type: Value
       Model Name: samplingMethod
     biomedicalConcepts:
@@ -4930,17 +5163,35 @@ StudyDesign:
     studyPhase:
       Type:
       - $ref: '#/AliasCode'
+      NCI C-Code: C48281
       Cardinality: 0..1
+      Preferred Term: Trial Phase
+      Definition: 'A step in the clinical research and development of a therapy from
+        initial clinical trials to post-approval studies. NOTE: Clinical trials are
+        generally categorized into four (sometimes five) phases. A therapeutic intervention
+        may be evaluated in two or more phases simultaneously in different trials,
+        and some trials may overlap two different phases. [21 CFR section 312.21;
+        After ICH Topic E8 NOTE FOR GUIDANCE ON GENERAL CONSIDERATIONS FOR CLINICAL
+        TRIALS, CPMP/ICH/291/95 March 1998]'
+      Codelist Ref: SDTM Terminology Codelist C66737
       Model Name: studyPhase
     biospecimenRetentions:
       Type:
       - $ref: '#/BiospecimenRetention'
       Cardinality: 0..*
+      Definition: A USDM relationship between the StudyDesign and BiospecimenRetention
+        classes which identifies the status of biospecimen retentions related to the
+        study design.
       Model Name: biospecimenRetentions
     studyType:
       Type:
       - $ref: '#/Code'
+      NCI C-Code: C142175
       Cardinality: 0..1
+      Preferred Term: Study Type
+      Definition: The nature of the investigation for which study information is being
+        collected. (After clinicaltrials.gov)
+      Codelist Ref: SDTM Terminology Codelist C99077
       Model Name: studyType
     therapeuticAreas:
       Type:
