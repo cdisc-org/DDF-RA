@@ -12,6 +12,9 @@ Property - NEW,StudyCohort,plannedCompletionNumberQuantity,Quantity
 Property - NEW,StudyCohort,plannedCompletionNumberRange,Range
 Property - NEW,StudyCohort,plannedEnrollmentNumberQuantity,Quantity
 Property - NEW,StudyCohort,plannedEnrollmentNumberRange,Range
+Property - NEW,SubjectEnrollment,forGeographicScope,GeographicScope
+Property - NEW,SubjectEnrollment,forStudyCohort,StudyCohort
+Property - NEW,SubjectEnrollment,forStudySite,StudySite
 Property - NEW,Strength,numeratorQuantity,Quantity
 Property - NEW,Strength,numeratorRange,Range
 Property - DELETED,Range,unit,AliasCode
@@ -21,4 +24,5 @@ Property - DELETED,PopulationDefinition,plannedCompletionNumber,Range
 Property - DELETED,PopulationDefinition,plannedEnrollmentNumber,Range
 Property - DELETED,StudyCohort,plannedCompletionNumber,Range
 Property - DELETED,StudyCohort,plannedEnrollmentNumber,Range
+Property - DELETED,SubjectEnrollment,appliesTo,"GeographicScope, StudyCohort, StudySite"
 Property - DELETED,Strength,numerator,"Quantity, Range"

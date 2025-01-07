@@ -6154,17 +6154,12 @@ SubjectEnrollment:
       Definition: The short descriptive designation for the subject enrollment..
       Relationship Type: Value
       Model Name: label
-    appliesTo:
+    forGeographicScope*:
       Type:
       - $ref: '#/GeographicScope'
-      - $ref: '#/StudyCohort'
-      - $ref: '#/StudySite'
       Cardinality: 0..1
-      Definition: A USDM relationship between the SubjectEnrollment and StudySite,
-        StudyCohort, or GeographicScope classes which identifies the study site, study
-        cohort, or geographic scope to which the subject enrollment applies.
-      Relationship Type: Value
-      Model Name: appliesTo
+      Relationship Type: UNKNOWN
+      Model Name: forGeographicScope
     quantity:
       Type:
       - $ref: '#/Quantity'
@@ -6174,6 +6169,22 @@ SubjectEnrollment:
       Definition: The value representing the number of individuals enrolled in a study.
       Relationship Type: Value
       Model Name: quantity
+    forStudyCohort*:
+      Type:
+      - $ref: '#/StudyCohort'
+      Cardinality: 0..1
+      Relationship Type: UNKNOWN
+      Model Name: forStudyCohort
+    forStudySite*:
+      Type:
+      - $ref: '#/StudySite'
+      Cardinality: 0..1
+      Relationship Type: UNKNOWN
+      Model Name: forStudySite
+    appliesTo:
+      Type:
+      - $ref: UNKNOWN
+      Relationship Type: Value
     appliesToId:
       Type:
       - $ref: UNKNOWN
