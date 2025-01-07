@@ -1454,6 +1454,55 @@ ConditionAssignment:
       - $ref: '#/string'
       Cardinality: 0..1
       Relationship Type: Value
+CriterionItem:
+  Super Classes:
+  - $ref: '#/SyntaxTemplate'
+  Modifier: Abstract
+  Attributes:
+    id:
+      Type:
+      - $ref: '#/string'
+      Model Name: id
+      Inherited From:
+        $ref: '#/SyntaxTemplate'
+    name:
+      Type:
+      - $ref: '#/string'
+      Model Name: name
+      Inherited From:
+        $ref: '#/SyntaxTemplate'
+    description:
+      Type:
+      - $ref: '#/string'
+      Model Name: description
+      Inherited From:
+        $ref: '#/SyntaxTemplate'
+    label:
+      Type:
+      - $ref: '#/string'
+      Model Name: label
+      Inherited From:
+        $ref: '#/SyntaxTemplate'
+    text:
+      Type:
+      - $ref: '#/string'
+      Model Name: text
+      Inherited From:
+        $ref: '#/SyntaxTemplate'
+    notes:
+      Type:
+      - $ref: '#/CommentAnnotation'
+      Cardinality: 0..*
+      Model Name: notes
+      Inherited From:
+        $ref: '#/SyntaxTemplate'
+    dictionary:
+      Type:
+      - $ref: '#/SyntaxTemplateDictionary'
+      Cardinality: 0..1
+      Model Name: dictionary
+      Inherited From:
+        $ref: '#/SyntaxTemplate'
 DocumentContentReference:
   NCI C-Code: CNEW
   Preferred Term: Document Content Reference
@@ -1503,8 +1552,6 @@ EligibilityCriterion:
   Definition: Characteristics which are necessary to allow a subject to participate
     in a clinical study, as outlined in the study protocol. The concept covers inclusion
     and exclusion criteria.
-  Super Classes:
-  - $ref: '#/SyntaxTemplate'
   Modifier: Concrete
   Attributes:
     id:
@@ -1512,71 +1559,6 @@ EligibilityCriterion:
       - $ref: '#/string'
       Relationship Type: Value
       Model Name: id
-      Inherited From:
-        $ref: '#/SyntaxTemplate'
-    name:
-      Type:
-      - $ref: '#/string'
-      NCI C-Code: C207488
-      Preferred Term: Study Eligibility Criterion Name
-      Definition: The literal identifier (i.e., distinctive designation) of the study
-        eligibility criterion.
-      Relationship Type: Value
-      Model Name: name
-      Inherited From:
-        $ref: '#/SyntaxTemplate'
-    description:
-      Type:
-      - $ref: '#/string'
-      NCI C-Code: C207486
-      Preferred Term: Study Eligibility Criterion Description
-      Definition: A narrative representation of the study eligibility criterion.
-      Relationship Type: Value
-      Model Name: description
-      Inherited From:
-        $ref: '#/SyntaxTemplate'
-    label:
-      Type:
-      - $ref: '#/string'
-      NCI C-Code: C207487
-      Preferred Term: Study Eligibility Criterion Label
-      Definition: The short descriptive designation for the study eligibility criterion.
-      Relationship Type: Value
-      Model Name: label
-      Inherited From:
-        $ref: '#/SyntaxTemplate'
-    text:
-      Type:
-      - $ref: '#/string'
-      NCI C-Code: C207485
-      Preferred Term: Study Eligibility Criterion Text
-      Definition: An instance of structured text that represents the study eligibility
-        criterion.
-      Relationship Type: Value
-      Model Name: text
-      Inherited From:
-        $ref: '#/SyntaxTemplate'
-    notes:
-      Type:
-      - $ref: '#/CommentAnnotation'
-      Cardinality: 0..*
-      Definition: A USDM relationship between the EligibilityCriterion and CommentAnnotation
-        classes which provides the set of notes related to the eligibility criterion.
-      Relationship Type: Value
-      Model Name: notes
-      Inherited From:
-        $ref: '#/SyntaxTemplate'
-    dictionaryId:
-      Type:
-      - $ref: '#/SyntaxTemplateDictionary'
-      Cardinality: 0..1
-      Definition: A USDM relationship between the EligibilityCriterion and SyntxTemplateDictionary
-        classes which provides the set of dictionary entries related to eligibility
-        criteria.
-      Relationship Type: Ref
-      Model Name: dictionary
-      Inherited From:
-        $ref: '#/SyntaxTemplate'
     identifier:
       Type:
       - $ref: '#/string'
@@ -1596,6 +1578,12 @@ EligibilityCriterion:
       Codelist Ref: SDTM Terminology Codelist C66797
       Relationship Type: Value
       Model Name: category
+    CriterionItem*:
+      Type:
+      - $ref: '#/CriterionItem'
+      Cardinality: '1'
+      Relationship Type: UNKNOWN
+      Model Name: CriterionItem
     nextId:
       Type:
       - $ref: '#/EligibilityCriterion'
@@ -1614,6 +1602,33 @@ EligibilityCriterion:
         criterion in the display order.
       Relationship Type: Ref
       Model Name: previous
+    name:
+      Type:
+      - $ref: '#/string'
+      Cardinality: 0..1
+      Relationship Type: Value
+    label:
+      Type:
+      - $ref: UNKNOWN
+      Relationship Type: Value
+    description:
+      Type:
+      - $ref: UNKNOWN
+      Relationship Type: Value
+    text:
+      Type:
+      - $ref: '#/string'
+      Cardinality: 0..1
+      Relationship Type: Value
+    dictionaryId:
+      Type:
+      - $ref: UNKNOWN
+      Relationship Type: Value
+    notes:
+      Type:
+      - $ref: '#/CommentAnnotation'
+      Cardinality: 0..*
+      Relationship Type: Value
     instanceType:
       Type:
       - $ref: '#/string'
@@ -2551,7 +2566,7 @@ InterventionalStudyDesign:
     population:
       Type:
       - $ref: '#/StudyDesignPopulation'
-      Cardinality: 0..1
+      Cardinality: '1'
       Definition: A USDM relationship between the InterventionalStudyDesign and StudyDesignPopulation
         classes which identifies the population associated with the interventional
         study design.
@@ -3320,7 +3335,7 @@ ObservationalStudyDesign:
     population:
       Type:
       - $ref: '#/StudyDesignPopulation'
-      Cardinality: 0..1
+      Cardinality: '1'
       Definition: A USDM relationship between the ObservationalStudyDesign and StudyDesignPopulation
         classes which identifies the population associated with the observational
         study design.
@@ -5321,7 +5336,7 @@ StudyDesign:
     population:
       Type:
       - $ref: '#/StudyDesignPopulation'
-      Cardinality: 0..1
+      Cardinality: '1'
       Definition: A USDM relationship between the StudyDesign and StudyDesignPopulation
         classes which identifies the population associated with the study design.
       Model Name: population
@@ -6271,7 +6286,7 @@ SyntaxTemplate:
   Sub Classes:
   - $ref: '#/Characteristic'
   - $ref: '#/Condition'
-  - $ref: '#/EligibilityCriterion'
+  - $ref: '#/CriterionItem'
   - $ref: '#/Endpoint'
   - $ref: '#/IntercurrentEvent'
   - $ref: '#/Objective'

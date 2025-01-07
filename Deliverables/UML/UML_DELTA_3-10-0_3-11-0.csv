@@ -1,4 +1,12 @@
 status,class_name,property_name,data_type
+Class - NEW,CriterionItem,,
+,,id,string
+,,name,string
+,,description,string
+,,label,string
+,,text,string
+,,notes,CommentAnnotation
+,,dictionary,SyntaxTemplateDictionary
 ,,,
 Property - NEW,StudyDesignPopulation,plannedCompletionNumberQuantity,Quantity
 Property - NEW,StudyDesignPopulation,plannedCompletionNumberRange,Range
@@ -15,6 +23,7 @@ Property - NEW,StudyCohort,plannedEnrollmentNumberRange,Range
 Property - NEW,SubjectEnrollment,forGeographicScope,GeographicScope
 Property - NEW,SubjectEnrollment,forStudyCohort,StudyCohort
 Property - NEW,SubjectEnrollment,forStudySite,StudySite
+Property - NEW,EligibilityCriterion,CriterionItem,CriterionItem
 Property - NEW,Strength,numeratorQuantity,Quantity
 Property - NEW,Strength,numeratorRange,Range
 Property - DELETED,Range,unit,AliasCode
@@ -25,4 +34,10 @@ Property - DELETED,PopulationDefinition,plannedEnrollmentNumber,Range
 Property - DELETED,StudyCohort,plannedCompletionNumber,Range
 Property - DELETED,StudyCohort,plannedEnrollmentNumber,Range
 Property - DELETED,SubjectEnrollment,appliesTo,"GeographicScope, StudyCohort, StudySite"
+Property - DELETED,EligibilityCriterion,description,string
+Property - DELETED,EligibilityCriterion,dictionary,SyntaxTemplateDictionary
+Property - DELETED,EligibilityCriterion,label,string
+Property - DELETED,EligibilityCriterion,name,string
+Property - DELETED,EligibilityCriterion,notes,CommentAnnotation
+Property - DELETED,EligibilityCriterion,text,string
 Property - DELETED,Strength,numerator,"Quantity, Range"
