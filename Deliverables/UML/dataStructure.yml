@@ -4729,7 +4729,7 @@ StudyCell:
     elementIds:
       Type:
       - $ref: '#/StudyElement'
-      Cardinality: 0..*
+      Cardinality: 1..*
       Definition: A USDM relationship between the StudyCell and StudyElement classes
         which identifies the set of study elements associated with the study cell.
       Relationship Type: Ref
