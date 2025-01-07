@@ -3588,6 +3588,11 @@ PopulationDefinition:
         classes which identifies the set of eligibility criteria associated with the
         population definition.
       Model Name: criteria
+    plannedCompletionNumberQuantity:
+      Type:
+      - $ref: '#/Quantity'
+      Cardinality: 0..1
+      Model Name: plannedCompletionNumberQuantity
     plannedAge:
       Type:
       - $ref: '#/Range'
@@ -3596,25 +3601,21 @@ PopulationDefinition:
       Preferred Term: Population Definition Planned Age
       Definition: The anticipated age of subjects within the population definition.
       Model Name: plannedAge
-    plannedEnrollmentNumber:
+    plannedEnrollmentNumberRange:
       Type:
       - $ref: '#/Range'
-      NCI C-Code: C207522
       Cardinality: 0..1
-      Preferred Term: Population Definition Planned Enrollment Number
-      Definition: The value representing the planned number of subjects to be entered
-        in a clinical trial, within the population definition.
-      Model Name: plannedEnrollmentNumber
-    plannedCompletionNumber:
+      Model Name: plannedEnrollmentNumberRange
+    plannedCompletionNumberRange:
       Type:
       - $ref: '#/Range'
-      NCI C-Code: C207521
       Cardinality: 0..1
-      Preferred Term: Population Definition Planned Completion Number
-      Definition: The value representing the planned number of subjects that must
-        complete the study in order to meet the objectives and endpoints of the study,
-        within the population definition.
-      Model Name: plannedCompletionNumber
+      Model Name: plannedCompletionNumberRange
+    plannedEnrollmentNumberQuantity:
+      Type:
+      - $ref: '#/Quantity'
+      Cardinality: 0..1
+      Model Name: plannedEnrollmentNumberQuantity
 Procedure:
   NCI C-Code: C98769
   Preferred Term: Procedure
@@ -3812,22 +3813,6 @@ Range:
       - $ref: '#/string'
       Relationship Type: Value
       Model Name: id
-    minValue:
-      Type:
-      - $ref: '#/Float'
-      NCI C-Code: C25570
-      Preferred Term: Minimum Value
-      Definition: The smallest value in quantity or degree in a set of values.
-      Relationship Type: Value
-      Model Name: minValue
-    maxValue:
-      Type:
-      - $ref: '#/Float'
-      NCI C-Code: C25564
-      Preferred Term: Maximum Value
-      Definition: The largest value in quantity or degree in a set of values.
-      Relationship Type: Value
-      Model Name: maxValue
     isApproximate:
       Type:
       - $ref: '#/Boolean'
@@ -3837,17 +3822,28 @@ Range:
         exact.
       Relationship Type: Value
       Model Name: isApproximate
+    minValue:
+      Type:
+      - $ref: '#/Quantity'
+      NCI C-Code: C25570
+      Cardinality: '1'
+      Preferred Term: Minimum Value
+      Definition: The smallest value in quantity or degree in a set of values.
+      Relationship Type: Value
+      Model Name: minValue
+    maxValue:
+      Type:
+      - $ref: '#/Quantity'
+      NCI C-Code: C25564
+      Cardinality: '1'
+      Preferred Term: Maximum Value
+      Definition: The largest value in quantity or degree in a set of values.
+      Relationship Type: Value
+      Model Name: maxValue
     unit:
       Type:
-      - $ref: '#/AliasCode'
-      NCI C-Code: C25709
-      Cardinality: 0..1
-      Preferred Term: Unit of Measure
-      Definition: A named quantity in terms of which other quantities are measured
-        or specified, used as a standard measurement of like kinds.
-      Codelist Ref: SDTM Terminology Codelist C71620
+      - $ref: UNKNOWN
       Relationship Type: Value
-      Model Name: unit
     instanceType:
       Type:
       - $ref: '#/string'
@@ -4325,16 +4321,12 @@ Strength:
       Definition: The short descriptive designation for the substance strength.
       Relationship Type: Value
       Model Name: label
-    numerator:
+    numeratorQuantity*:
       Type:
       - $ref: '#/Quantity'
-      - $ref: '#/Range'
       Cardinality: 0..1
-      Definition: A USDM relationship between the Strength and the Quantity and Range
-        classes that identifies the numerator's value or range of values associated
-        with the substance strength.
-      Relationship Type: Value
-      Model Name: numerator
+      Relationship Type: UNKNOWN
+      Model Name: numeratorQuantity
     denominator:
       Type:
       - $ref: '#/Quantity'
@@ -4343,6 +4335,16 @@ Strength:
         identifies the denominator associated with the substance strength.
       Relationship Type: Value
       Model Name: denominator
+    numeratorRange*:
+      Type:
+      - $ref: '#/Range'
+      Cardinality: 0..1
+      Relationship Type: UNKNOWN
+      Model Name: numeratorRange
+    numerator:
+      Type:
+      - $ref: UNKNOWN
+      Relationship Type: Value
     instanceType:
       Type:
       - $ref: '#/string'
@@ -4896,6 +4898,14 @@ StudyCohort:
       Model Name: criteria
       Inherited From:
         $ref: '#/PopulationDefinition'
+    plannedCompletionNumberQuantity*:
+      Type:
+      - $ref: '#/Quantity'
+      Cardinality: 0..1
+      Relationship Type: UNKNOWN
+      Model Name: plannedCompletionNumberQuantity
+      Inherited From:
+        $ref: '#/PopulationDefinition'
     plannedAge:
       Type:
       - $ref: '#/Range'
@@ -4907,29 +4917,28 @@ StudyCohort:
       Model Name: plannedAge
       Inherited From:
         $ref: '#/PopulationDefinition'
-    plannedEnrollmentNumber:
+    plannedEnrollmentNumberRange*:
       Type:
       - $ref: '#/Range'
-      NCI C-Code: C207702
       Cardinality: 0..1
-      Preferred Term: Study Cohort Planned Enrollment Number
-      Definition: The value representing the planned number of subjects to be entered
-        in a clinical trial, within the study cohort.
-      Relationship Type: Value
-      Model Name: plannedEnrollmentNumber
+      Relationship Type: UNKNOWN
+      Model Name: plannedEnrollmentNumberRange
       Inherited From:
         $ref: '#/PopulationDefinition'
-    plannedCompletionNumber:
+    plannedCompletionNumberRange*:
       Type:
       - $ref: '#/Range'
-      NCI C-Code: C207546
       Cardinality: 0..1
-      Preferred Term: Study Cohort Planned Completion Number
-      Definition: The value representing the planned number of subjects that must
-        complete the study in order to meet the objectives and endpoints of the study,
-        within the study cohort.
-      Relationship Type: Value
-      Model Name: plannedCompletionNumber
+      Relationship Type: UNKNOWN
+      Model Name: plannedCompletionNumberRange
+      Inherited From:
+        $ref: '#/PopulationDefinition'
+    plannedEnrollmentNumberQuantity*:
+      Type:
+      - $ref: '#/Quantity'
+      Cardinality: 0..1
+      Relationship Type: UNKNOWN
+      Model Name: plannedEnrollmentNumberQuantity
       Inherited From:
         $ref: '#/PopulationDefinition'
     characteristics:
@@ -4941,6 +4950,14 @@ StudyCohort:
         cohort.
       Relationship Type: Value
       Model Name: characteristics
+    plannedEnrollmentNumber:
+      Type:
+      - $ref: UNKNOWN
+      Relationship Type: Value
+    plannedCompletionNumber:
+      Type:
+      - $ref: UNKNOWN
+      Relationship Type: Value
     instanceType:
       Type:
       - $ref: '#/string'
@@ -5400,6 +5417,14 @@ StudyDesignPopulation:
       Model Name: criteria
       Inherited From:
         $ref: '#/PopulationDefinition'
+    plannedCompletionNumberQuantity*:
+      Type:
+      - $ref: '#/Quantity'
+      Cardinality: 0..1
+      Relationship Type: UNKNOWN
+      Model Name: plannedCompletionNumberQuantity
+      Inherited From:
+        $ref: '#/PopulationDefinition'
     plannedAge:
       Type:
       - $ref: '#/Range'
@@ -5411,29 +5436,28 @@ StudyDesignPopulation:
       Model Name: plannedAge
       Inherited From:
         $ref: '#/PopulationDefinition'
-    plannedEnrollmentNumber:
+    plannedEnrollmentNumberRange*:
       Type:
       - $ref: '#/Range'
-      NCI C-Code: C207452
       Cardinality: 0..1
-      Preferred Term: Study Design Population Planned Enrollment Number
-      Definition: The value representing the planned number of subjects to be entered
-        in a clinical trial, within the study design population.
-      Relationship Type: Value
-      Model Name: plannedEnrollmentNumber
+      Relationship Type: UNKNOWN
+      Model Name: plannedEnrollmentNumberRange
       Inherited From:
         $ref: '#/PopulationDefinition'
-    plannedCompletionNumber:
+    plannedCompletionNumberRange*:
       Type:
       - $ref: '#/Range'
-      NCI C-Code: C207451
       Cardinality: 0..1
-      Preferred Term: Study Design Population Planned Completion Number
-      Definition: The value representing the planned number of subjects that must
-        complete the study in order to meet the objectives and endpoints of the study,
-        within the study design population.
-      Relationship Type: Value
-      Model Name: plannedCompletionNumber
+      Relationship Type: UNKNOWN
+      Model Name: plannedCompletionNumberRange
+      Inherited From:
+        $ref: '#/PopulationDefinition'
+    plannedEnrollmentNumberQuantity*:
+      Type:
+      - $ref: '#/Quantity'
+      Cardinality: 0..1
+      Relationship Type: UNKNOWN
+      Model Name: plannedEnrollmentNumberQuantity
       Inherited From:
         $ref: '#/PopulationDefinition'
     cohorts:
@@ -5445,6 +5469,14 @@ StudyDesignPopulation:
         design population.
       Relationship Type: Value
       Model Name: cohorts
+    plannedEnrollmentNumber:
+      Type:
+      - $ref: UNKNOWN
+      Relationship Type: Value
+    plannedCompletionNumber:
+      Type:
+      - $ref: UNKNOWN
+      Relationship Type: Value
     instanceType:
       Type:
       - $ref: '#/string'
