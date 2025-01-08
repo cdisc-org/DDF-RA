@@ -1847,7 +1847,45 @@ components:
       - appliesToId
       - instanceType
       title: DocumentContentReference
-    EligibilityCriterion-Input:
+    EligibilityCriterion:
+      properties:
+        id:
+          type: string
+          minLength: 1
+          title: Id
+        category:
+          $ref: '#/components/schemas/Code'
+        identifier:
+          type: string
+          title: Identifier
+        criterionItemId:
+          type: string
+          title: Criterionitemid
+        nextId:
+          anyOf:
+          - type: string
+          - type: 'null'
+          title: Nextid
+        previousId:
+          anyOf:
+          - type: string
+          - type: 'null'
+          title: Previousid
+        instanceType:
+          type: string
+          enum:
+          - EligibilityCriterion
+          const: EligibilityCriterion
+          title: Instancetype
+      type: object
+      required:
+      - id
+      - category
+      - identifier
+      - criterionItemId
+      - instanceType
+      title: EligibilityCriterion
+    EligibilityCriterionItem-Input:
       properties:
         id:
           type: string
@@ -1884,34 +1922,17 @@ components:
         instanceType:
           type: string
           enum:
-          - EligibilityCriterion
-          const: EligibilityCriterion
+          - EligibilityCriterionItem
+          const: EligibilityCriterionItem
           title: Instancetype
-        category:
-          $ref: '#/components/schemas/Code'
-        identifier:
-          type: string
-          title: Identifier
-        nextId:
-          anyOf:
-          - type: string
-          - type: 'null'
-          title: Nextid
-        previousId:
-          anyOf:
-          - type: string
-          - type: 'null'
-          title: Previousid
       type: object
       required:
       - id
       - name
       - text
       - instanceType
-      - category
-      - identifier
-      title: EligibilityCriterion
-    EligibilityCriterion-Output:
+      title: EligibilityCriterionItem
+    EligibilityCriterionItem-Output:
       properties:
         id:
           type: string
@@ -1948,33 +1969,16 @@ components:
         instanceType:
           type: string
           enum:
-          - EligibilityCriterion
-          const: EligibilityCriterion
+          - EligibilityCriterionItem
+          const: EligibilityCriterionItem
           title: Instancetype
-        category:
-          $ref: '#/components/schemas/Code'
-        identifier:
-          type: string
-          title: Identifier
-        nextId:
-          anyOf:
-          - type: string
-          - type: 'null'
-          title: Nextid
-        previousId:
-          anyOf:
-          - type: string
-          - type: 'null'
-          title: Previousid
       type: object
       required:
       - id
       - name
       - text
       - instanceType
-      - category
-      - identifier
-      title: EligibilityCriterion
+      title: EligibilityCriterionItem
     Encounter-Input:
       properties:
         id:
@@ -2804,24 +2808,6 @@ components:
           type: array
           title: Activities
           default: []
-        biomedicalConcepts:
-          items:
-            $ref: '#/components/schemas/BiomedicalConcept-Input'
-          type: array
-          title: Biomedicalconcepts
-          default: []
-        bcCategories:
-          items:
-            $ref: '#/components/schemas/BiomedicalConceptCategory-Input'
-          type: array
-          title: Bccategories
-          default: []
-        bcSurrogates:
-          items:
-            $ref: '#/components/schemas/BiomedicalConceptSurrogate-Input'
-          type: array
-          title: Bcsurrogates
-          default: []
         arms:
           items:
             $ref: '#/components/schemas/StudyArm-Input'
@@ -2871,15 +2857,7 @@ components:
           title: Objectives
           default: []
         population:
-          anyOf:
-          - $ref: '#/components/schemas/StudyDesignPopulation-Input'
-          - type: 'null'
-        analysisPopulations:
-          items:
-            $ref: '#/components/schemas/AnalysisPopulation-Input'
-          type: array
-          title: Analysispopulations
-          default: []
+          $ref: '#/components/schemas/StudyDesignPopulation-Input'
         scheduleTimelines:
           items:
             $ref: '#/components/schemas/ScheduleTimeline-Input'
@@ -2898,17 +2876,17 @@ components:
           type: array
           title: Documentversionids
           default: []
-        dictionaries:
+        eligibilityCriteria:
           items:
-            $ref: '#/components/schemas/SyntaxTemplateDictionary'
+            $ref: '#/components/schemas/EligibilityCriterion'
           type: array
-          title: Dictionaries
+          title: Eligibilitycriteria
           default: []
-        conditions:
+        analysisPopulations:
           items:
-            $ref: '#/components/schemas/Condition-Input'
+            $ref: '#/components/schemas/AnalysisPopulation-Input'
           type: array
-          title: Conditions
+          title: Analysispopulations
           default: []
         notes:
           items:
@@ -2948,6 +2926,7 @@ components:
       - studyCells
       - rationale
       - epochs
+      - population
       - instanceType
       - model
       title: InterventionalStudyDesign
@@ -3003,24 +2982,6 @@ components:
           type: array
           title: Activities
           default: []
-        biomedicalConcepts:
-          items:
-            $ref: '#/components/schemas/BiomedicalConcept-Output'
-          type: array
-          title: Biomedicalconcepts
-          default: []
-        bcCategories:
-          items:
-            $ref: '#/components/schemas/BiomedicalConceptCategory-Output'
-          type: array
-          title: Bccategories
-          default: []
-        bcSurrogates:
-          items:
-            $ref: '#/components/schemas/BiomedicalConceptSurrogate-Output'
-          type: array
-          title: Bcsurrogates
-          default: []
         arms:
           items:
             $ref: '#/components/schemas/StudyArm-Output'
@@ -3070,15 +3031,7 @@ components:
           title: Objectives
           default: []
         population:
-          anyOf:
-          - $ref: '#/components/schemas/StudyDesignPopulation-Output'
-          - type: 'null'
-        analysisPopulations:
-          items:
-            $ref: '#/components/schemas/AnalysisPopulation-Output'
-          type: array
-          title: Analysispopulations
-          default: []
+          $ref: '#/components/schemas/StudyDesignPopulation-Output'
         scheduleTimelines:
           items:
             $ref: '#/components/schemas/ScheduleTimeline-Output'
@@ -3097,17 +3050,17 @@ components:
           type: array
           title: Documentversionids
           default: []
-        dictionaries:
+        eligibilityCriteria:
           items:
-            $ref: '#/components/schemas/SyntaxTemplateDictionary'
+            $ref: '#/components/schemas/EligibilityCriterion'
           type: array
-          title: Dictionaries
+          title: Eligibilitycriteria
           default: []
-        conditions:
+        analysisPopulations:
           items:
-            $ref: '#/components/schemas/Condition-Output'
+            $ref: '#/components/schemas/AnalysisPopulation-Output'
           type: array
-          title: Conditions
+          title: Analysispopulations
           default: []
         notes:
           items:
@@ -3147,6 +3100,7 @@ components:
       - studyCells
       - rationale
       - epochs
+      - population
       - instanceType
       - model
       title: InterventionalStudyDesign
@@ -3576,24 +3530,6 @@ components:
           type: array
           title: Activities
           default: []
-        biomedicalConcepts:
-          items:
-            $ref: '#/components/schemas/BiomedicalConcept-Input'
-          type: array
-          title: Biomedicalconcepts
-          default: []
-        bcCategories:
-          items:
-            $ref: '#/components/schemas/BiomedicalConceptCategory-Input'
-          type: array
-          title: Bccategories
-          default: []
-        bcSurrogates:
-          items:
-            $ref: '#/components/schemas/BiomedicalConceptSurrogate-Input'
-          type: array
-          title: Bcsurrogates
-          default: []
         arms:
           items:
             $ref: '#/components/schemas/StudyArm-Input'
@@ -3643,15 +3579,7 @@ components:
           title: Objectives
           default: []
         population:
-          anyOf:
-          - $ref: '#/components/schemas/StudyDesignPopulation-Input'
-          - type: 'null'
-        analysisPopulations:
-          items:
-            $ref: '#/components/schemas/AnalysisPopulation-Input'
-          type: array
-          title: Analysispopulations
-          default: []
+          $ref: '#/components/schemas/StudyDesignPopulation-Input'
         scheduleTimelines:
           items:
             $ref: '#/components/schemas/ScheduleTimeline-Input'
@@ -3670,17 +3598,17 @@ components:
           type: array
           title: Documentversionids
           default: []
-        dictionaries:
+        eligibilityCriteria:
           items:
-            $ref: '#/components/schemas/SyntaxTemplateDictionary'
+            $ref: '#/components/schemas/EligibilityCriterion'
           type: array
-          title: Dictionaries
+          title: Eligibilitycriteria
           default: []
-        conditions:
+        analysisPopulations:
           items:
-            $ref: '#/components/schemas/Condition-Input'
+            $ref: '#/components/schemas/AnalysisPopulation-Input'
           type: array
-          title: Conditions
+          title: Analysispopulations
           default: []
         notes:
           items:
@@ -3716,6 +3644,7 @@ components:
       - studyCells
       - rationale
       - epochs
+      - population
       - instanceType
       - model
       - timePerspective
@@ -3772,24 +3701,6 @@ components:
           type: array
           title: Activities
           default: []
-        biomedicalConcepts:
-          items:
-            $ref: '#/components/schemas/BiomedicalConcept-Output'
-          type: array
-          title: Biomedicalconcepts
-          default: []
-        bcCategories:
-          items:
-            $ref: '#/components/schemas/BiomedicalConceptCategory-Output'
-          type: array
-          title: Bccategories
-          default: []
-        bcSurrogates:
-          items:
-            $ref: '#/components/schemas/BiomedicalConceptSurrogate-Output'
-          type: array
-          title: Bcsurrogates
-          default: []
         arms:
           items:
             $ref: '#/components/schemas/StudyArm-Output'
@@ -3839,15 +3750,7 @@ components:
           title: Objectives
           default: []
         population:
-          anyOf:
-          - $ref: '#/components/schemas/StudyDesignPopulation-Output'
-          - type: 'null'
-        analysisPopulations:
-          items:
-            $ref: '#/components/schemas/AnalysisPopulation-Output'
-          type: array
-          title: Analysispopulations
-          default: []
+          $ref: '#/components/schemas/StudyDesignPopulation-Output'
         scheduleTimelines:
           items:
             $ref: '#/components/schemas/ScheduleTimeline-Output'
@@ -3866,17 +3769,17 @@ components:
           type: array
           title: Documentversionids
           default: []
-        dictionaries:
+        eligibilityCriteria:
           items:
-            $ref: '#/components/schemas/SyntaxTemplateDictionary'
+            $ref: '#/components/schemas/EligibilityCriterion'
           type: array
-          title: Dictionaries
+          title: Eligibilitycriteria
           default: []
-        conditions:
+        analysisPopulations:
           items:
-            $ref: '#/components/schemas/Condition-Output'
+            $ref: '#/components/schemas/AnalysisPopulation-Output'
           type: array
-          title: Conditions
+          title: Analysispopulations
           default: []
         notes:
           items:
@@ -3912,6 +3815,7 @@ components:
       - studyCells
       - rationale
       - epochs
+      - population
       - instanceType
       - model
       - timePerspective
@@ -4239,15 +4143,9 @@ components:
           minLength: 1
           title: Id
         minValue:
-          type: number
-          title: Minvalue
+          $ref: '#/components/schemas/Quantity-Input'
         maxValue:
-          type: number
-          title: Maxvalue
-        unit:
-          anyOf:
-          - $ref: '#/components/schemas/AliasCode'
-          - type: 'null'
+          $ref: '#/components/schemas/Quantity-Input'
         isApproximate:
           type: boolean
           title: Isapproximate
@@ -4272,15 +4170,9 @@ components:
           minLength: 1
           title: Id
         minValue:
-          type: number
-          title: Minvalue
+          $ref: '#/components/schemas/Quantity-Output'
         maxValue:
-          type: number
-          title: Maxvalue
-        unit:
-          anyOf:
-          - $ref: '#/components/schemas/AliasCode'
-          - type: 'null'
+          $ref: '#/components/schemas/Quantity-Output'
         isApproximate:
           type: boolean
           title: Isapproximate
@@ -4630,12 +4522,14 @@ components:
           anyOf:
           - $ref: '#/components/schemas/Quantity-Input'
           - type: 'null'
-        numerator:
+        numeratorQuantity:
           anyOf:
           - $ref: '#/components/schemas/Quantity-Input'
+          - type: 'null'
+        numeratorRange:
+          anyOf:
           - $ref: '#/components/schemas/Range-Input'
           - type: 'null'
-          title: Numerator
         instanceType:
           type: string
           enum:
@@ -4672,12 +4566,14 @@ components:
           anyOf:
           - $ref: '#/components/schemas/Quantity-Output'
           - type: 'null'
-        numerator:
+        numeratorQuantity:
           anyOf:
           - $ref: '#/components/schemas/Quantity-Output'
+          - type: 'null'
+        numeratorRange:
+          anyOf:
           - $ref: '#/components/schemas/Range-Output'
           - type: 'null'
-          title: Numerator
         instanceType:
           type: string
           enum:
@@ -5148,7 +5044,6 @@ components:
             type: string
           type: array
           title: Elementids
-          default: []
         instanceType:
           type: string
           enum:
@@ -5160,6 +5055,7 @@ components:
       - id
       - armId
       - epochId
+      - elementIds
       - instanceType
       title: StudyCell
     StudyChange:
@@ -5231,13 +5127,21 @@ components:
         includesHealthySubjects:
           type: boolean
           title: Includeshealthysubjects
-        plannedEnrollmentNumber:
+        plannedEnrollmentNumberRange:
           anyOf:
           - $ref: '#/components/schemas/Range-Input'
           - type: 'null'
-        plannedCompletionNumber:
+        plannedEnrollmentNumberQuantity:
+          anyOf:
+          - $ref: '#/components/schemas/Quantity-Input'
+          - type: 'null'
+        plannedCompletionNumberRange:
           anyOf:
           - $ref: '#/components/schemas/Range-Input'
+          - type: 'null'
+        plannedCompletionNumberQuantity:
+          anyOf:
+          - $ref: '#/components/schemas/Quantity-Input'
           - type: 'null'
         plannedSex:
           items:
@@ -5304,13 +5208,21 @@ components:
         includesHealthySubjects:
           type: boolean
           title: Includeshealthysubjects
-        plannedEnrollmentNumber:
+        plannedEnrollmentNumberRange:
           anyOf:
           - $ref: '#/components/schemas/Range-Output'
           - type: 'null'
-        plannedCompletionNumber:
+        plannedEnrollmentNumberQuantity:
+          anyOf:
+          - $ref: '#/components/schemas/Quantity-Output'
+          - type: 'null'
+        plannedCompletionNumberRange:
           anyOf:
           - $ref: '#/components/schemas/Range-Output'
+          - type: 'null'
+        plannedCompletionNumberQuantity:
+          anyOf:
+          - $ref: '#/components/schemas/Quantity-Output'
           - type: 'null'
         plannedSex:
           items:
@@ -5581,13 +5493,21 @@ components:
         includesHealthySubjects:
           type: boolean
           title: Includeshealthysubjects
-        plannedEnrollmentNumber:
+        plannedEnrollmentNumberRange:
           anyOf:
           - $ref: '#/components/schemas/Range-Input'
           - type: 'null'
-        plannedCompletionNumber:
+        plannedEnrollmentNumberQuantity:
+          anyOf:
+          - $ref: '#/components/schemas/Quantity-Input'
+          - type: 'null'
+        plannedCompletionNumberRange:
           anyOf:
           - $ref: '#/components/schemas/Range-Input'
+          - type: 'null'
+        plannedCompletionNumberQuantity:
+          anyOf:
+          - $ref: '#/components/schemas/Quantity-Input'
           - type: 'null'
         plannedSex:
           items:
@@ -5654,13 +5574,21 @@ components:
         includesHealthySubjects:
           type: boolean
           title: Includeshealthysubjects
-        plannedEnrollmentNumber:
+        plannedEnrollmentNumberRange:
           anyOf:
           - $ref: '#/components/schemas/Range-Output'
           - type: 'null'
-        plannedCompletionNumber:
+        plannedEnrollmentNumberQuantity:
+          anyOf:
+          - $ref: '#/components/schemas/Quantity-Output'
+          - type: 'null'
+        plannedCompletionNumberRange:
           anyOf:
           - $ref: '#/components/schemas/Range-Output'
+          - type: 'null'
+        plannedCompletionNumberQuantity:
+          anyOf:
+          - $ref: '#/components/schemas/Quantity-Output'
           - type: 'null'
         plannedSex:
           items:
@@ -6231,11 +6159,12 @@ components:
             $ref: '#/components/schemas/StudyTitle'
           type: array
           title: Titles
-        criteria:
+        eligibilityCriterionItems:
           items:
-            $ref: '#/components/schemas/EligibilityCriterion-Input'
+            $ref: '#/components/schemas/EligibilityCriterionItem-Input'
           type: array
-          title: Criteria
+          title: Eligibilitycriterionitems
+          default: []
         narrativeContentItems:
           items:
             $ref: '#/components/schemas/NarrativeContentItem'
@@ -6278,6 +6207,36 @@ components:
           type: array
           title: Productorganizationroles
           default: []
+        biomedicalConcepts:
+          items:
+            $ref: '#/components/schemas/BiomedicalConcept-Input'
+          type: array
+          title: Biomedicalconcepts
+          default: []
+        bcCategories:
+          items:
+            $ref: '#/components/schemas/BiomedicalConceptCategory-Input'
+          type: array
+          title: Bccategories
+          default: []
+        bcSurrogates:
+          items:
+            $ref: '#/components/schemas/BiomedicalConceptSurrogate-Input'
+          type: array
+          title: Bcsurrogates
+          default: []
+        dictionaries:
+          items:
+            $ref: '#/components/schemas/SyntaxTemplateDictionary'
+          type: array
+          title: Dictionaries
+          default: []
+        conditions:
+          items:
+            $ref: '#/components/schemas/Condition-Input'
+          type: array
+          title: Conditions
+          default: []
         notes:
           items:
             $ref: '#/components/schemas/CommentAnnotation'
@@ -6297,7 +6256,6 @@ components:
       - rationale
       - studyIdentifiers
       - titles
-      - criteria
       - instanceType
       title: StudyVersion
     StudyVersion-Output:
@@ -6360,11 +6318,12 @@ components:
             $ref: '#/components/schemas/StudyTitle'
           type: array
           title: Titles
-        criteria:
+        eligibilityCriterionItems:
           items:
-            $ref: '#/components/schemas/EligibilityCriterion-Output'
+            $ref: '#/components/schemas/EligibilityCriterionItem-Output'
           type: array
-          title: Criteria
+          title: Eligibilitycriterionitems
+          default: []
         narrativeContentItems:
           items:
             $ref: '#/components/schemas/NarrativeContentItem'
@@ -6407,6 +6366,36 @@ components:
           type: array
           title: Productorganizationroles
           default: []
+        biomedicalConcepts:
+          items:
+            $ref: '#/components/schemas/BiomedicalConcept-Output'
+          type: array
+          title: Biomedicalconcepts
+          default: []
+        bcCategories:
+          items:
+            $ref: '#/components/schemas/BiomedicalConceptCategory-Output'
+          type: array
+          title: Bccategories
+          default: []
+        bcSurrogates:
+          items:
+            $ref: '#/components/schemas/BiomedicalConceptSurrogate-Output'
+          type: array
+          title: Bcsurrogates
+          default: []
+        dictionaries:
+          items:
+            $ref: '#/components/schemas/SyntaxTemplateDictionary'
+          type: array
+          title: Dictionaries
+          default: []
+        conditions:
+          items:
+            $ref: '#/components/schemas/Condition-Output'
+          type: array
+          title: Conditions
+          default: []
         notes:
           items:
             $ref: '#/components/schemas/CommentAnnotation'
@@ -6426,7 +6415,6 @@ components:
       - rationale
       - studyIdentifiers
       - titles
-      - criteria
       - instanceType
       title: StudyVersion
     SubjectEnrollment-Input:
@@ -6451,15 +6439,20 @@ components:
           title: Description
         quantity:
           $ref: '#/components/schemas/Quantity-Input'
-        appliesTo:
+        forGeographicScope:
           anyOf:
           - $ref: '#/components/schemas/GeographicScope-Input'
           - type: 'null'
-        appliesToId:
+        forStudyCohortId:
           anyOf:
           - type: string
           - type: 'null'
-          title: Appliestoid
+          title: Forstudycohortid
+        forStudySiteId:
+          anyOf:
+          - type: string
+          - type: 'null'
+          title: Forstudysiteid
         instanceType:
           type: string
           enum:
@@ -6495,15 +6488,20 @@ components:
           title: Description
         quantity:
           $ref: '#/components/schemas/Quantity-Output'
-        appliesTo:
+        forGeographicScope:
           anyOf:
           - $ref: '#/components/schemas/GeographicScope-Output'
           - type: 'null'
-        appliesToId:
+        forStudyCohortId:
           anyOf:
           - type: string
           - type: 'null'
-          title: Appliestoid
+          title: Forstudycohortid
+        forStudySiteId:
+          anyOf:
+          - type: string
+          - type: 'null'
+          title: Forstudysiteid
         instanceType:
           type: string
           enum:
