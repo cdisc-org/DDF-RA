@@ -1,5 +1,5 @@
 status,class_name,property_name,data_type
-Class - NEW,CriterionItem,,
+Class - NEW,EligibilityCriterionItem,,
 ,,id,string
 ,,name,string
 ,,description,string
@@ -23,7 +23,7 @@ Property - NEW,StudyCohort,plannedEnrollmentNumberRange,Range
 Property - NEW,SubjectEnrollment,forGeographicScope,GeographicScope
 Property - NEW,SubjectEnrollment,forStudyCohort,StudyCohort
 Property - NEW,SubjectEnrollment,forStudySite,StudySite
-Property - NEW,EligibilityCriterion,CriterionItem,CriterionItem
+Property - NEW,EligibilityCriterion,CriterionItem,EligibilityCriterionItem
 Property - NEW,Strength,numeratorQuantity,Quantity
 Property - NEW,Strength,numeratorRange,Range
 Property - DELETED,Range,unit,AliasCode

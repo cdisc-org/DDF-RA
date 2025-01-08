@@ -1454,55 +1454,6 @@ ConditionAssignment:
       - $ref: '#/string'
       Cardinality: 0..1
       Relationship Type: Value
-CriterionItem:
-  Super Classes:
-  - $ref: '#/SyntaxTemplate'
-  Modifier: Abstract
-  Attributes:
-    id:
-      Type:
-      - $ref: '#/string'
-      Model Name: id
-      Inherited From:
-        $ref: '#/SyntaxTemplate'
-    name:
-      Type:
-      - $ref: '#/string'
-      Model Name: name
-      Inherited From:
-        $ref: '#/SyntaxTemplate'
-    description:
-      Type:
-      - $ref: '#/string'
-      Model Name: description
-      Inherited From:
-        $ref: '#/SyntaxTemplate'
-    label:
-      Type:
-      - $ref: '#/string'
-      Model Name: label
-      Inherited From:
-        $ref: '#/SyntaxTemplate'
-    text:
-      Type:
-      - $ref: '#/string'
-      Model Name: text
-      Inherited From:
-        $ref: '#/SyntaxTemplate'
-    notes:
-      Type:
-      - $ref: '#/CommentAnnotation'
-      Cardinality: 0..*
-      Model Name: notes
-      Inherited From:
-        $ref: '#/SyntaxTemplate'
-    dictionary:
-      Type:
-      - $ref: '#/SyntaxTemplateDictionary'
-      Cardinality: 0..1
-      Model Name: dictionary
-      Inherited From:
-        $ref: '#/SyntaxTemplate'
 DocumentContentReference:
   NCI C-Code: CNEW
   Preferred Term: Document Content Reference
@@ -1580,7 +1531,7 @@ EligibilityCriterion:
       Model Name: category
     CriterionItem*:
       Type:
-      - $ref: '#/CriterionItem'
+      - $ref: '#/EligibilityCriterionItem'
       Cardinality: '1'
       Relationship Type: UNKNOWN
       Model Name: CriterionItem
@@ -1634,6 +1585,55 @@ EligibilityCriterion:
       - $ref: '#/string'
       Cardinality: 0..1
       Relationship Type: Value
+EligibilityCriterionItem:
+  Super Classes:
+  - $ref: '#/SyntaxTemplate'
+  Modifier: Abstract
+  Attributes:
+    id:
+      Type:
+      - $ref: '#/string'
+      Model Name: id
+      Inherited From:
+        $ref: '#/SyntaxTemplate'
+    name:
+      Type:
+      - $ref: '#/string'
+      Model Name: name
+      Inherited From:
+        $ref: '#/SyntaxTemplate'
+    description:
+      Type:
+      - $ref: '#/string'
+      Model Name: description
+      Inherited From:
+        $ref: '#/SyntaxTemplate'
+    label:
+      Type:
+      - $ref: '#/string'
+      Model Name: label
+      Inherited From:
+        $ref: '#/SyntaxTemplate'
+    text:
+      Type:
+      - $ref: '#/string'
+      Model Name: text
+      Inherited From:
+        $ref: '#/SyntaxTemplate'
+    notes:
+      Type:
+      - $ref: '#/CommentAnnotation'
+      Cardinality: 0..*
+      Model Name: notes
+      Inherited From:
+        $ref: '#/SyntaxTemplate'
+    dictionary:
+      Type:
+      - $ref: '#/SyntaxTemplateDictionary'
+      Cardinality: 0..1
+      Model Name: dictionary
+      Inherited From:
+        $ref: '#/SyntaxTemplate'
 Encounter:
   NCI C-Code: CNEW
   Preferred Term: Study Encounter
@@ -6286,7 +6286,7 @@ SyntaxTemplate:
   Sub Classes:
   - $ref: '#/Characteristic'
   - $ref: '#/Condition'
-  - $ref: '#/CriterionItem'
+  - $ref: '#/EligibilityCriterionItem'
   - $ref: '#/Endpoint'
   - $ref: '#/IntercurrentEvent'
   - $ref: '#/Objective'
