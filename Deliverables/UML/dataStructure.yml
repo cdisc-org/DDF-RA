@@ -1553,32 +1553,10 @@ EligibilityCriterion:
         criterion in the display order.
       Relationship Type: Ref
       Model Name: previous
-    name:
+    criterionItemId:
       Type:
       - $ref: '#/string'
       Cardinality: 0..1
-      Relationship Type: Value
-    label:
-      Type:
-      - $ref: UNKNOWN
-      Relationship Type: Value
-    description:
-      Type:
-      - $ref: UNKNOWN
-      Relationship Type: Value
-    text:
-      Type:
-      - $ref: '#/string'
-      Cardinality: 0..1
-      Relationship Type: Value
-    dictionaryId:
-      Type:
-      - $ref: UNKNOWN
-      Relationship Type: Value
-    notes:
-      Type:
-      - $ref: '#/CommentAnnotation'
-      Cardinality: 0..*
       Relationship Type: Value
     instanceType:
       Type:
@@ -1588,35 +1566,40 @@ EligibilityCriterion:
 EligibilityCriterionItem:
   Super Classes:
   - $ref: '#/SyntaxTemplate'
-  Modifier: Abstract
+  Modifier: Concrete
   Attributes:
     id:
       Type:
       - $ref: '#/string'
+      Relationship Type: Value
       Model Name: id
       Inherited From:
         $ref: '#/SyntaxTemplate'
     name:
       Type:
       - $ref: '#/string'
+      Relationship Type: Value
       Model Name: name
       Inherited From:
         $ref: '#/SyntaxTemplate'
     description:
       Type:
       - $ref: '#/string'
+      Relationship Type: Value
       Model Name: description
       Inherited From:
         $ref: '#/SyntaxTemplate'
     label:
       Type:
       - $ref: '#/string'
+      Relationship Type: Value
       Model Name: label
       Inherited From:
         $ref: '#/SyntaxTemplate'
     text:
       Type:
       - $ref: '#/string'
+      Relationship Type: Value
       Model Name: text
       Inherited From:
         $ref: '#/SyntaxTemplate'
@@ -1624,16 +1607,23 @@ EligibilityCriterionItem:
       Type:
       - $ref: '#/CommentAnnotation'
       Cardinality: 0..*
+      Relationship Type: Value
       Model Name: notes
       Inherited From:
         $ref: '#/SyntaxTemplate'
-    dictionary:
+    dictionaryId:
       Type:
       - $ref: '#/SyntaxTemplateDictionary'
       Cardinality: 0..1
+      Relationship Type: Ref
       Model Name: dictionary
       Inherited From:
         $ref: '#/SyntaxTemplate'
+    instanceType:
+      Type:
+      - $ref: '#/string'
+      Cardinality: 0..1
+      Relationship Type: Value
 Encounter:
   NCI C-Code: CNEW
   Preferred Term: Study Encounter
@@ -2619,34 +2609,14 @@ InterventionalStudyDesign:
       Codelist Ref: SDTM Terminology Codelist C66735
       Relationship Type: Value
       Model Name: blindingSchema
-    biomedicalConcepts:
+    eligibilityCriteria:
       Type:
-      - $ref: '#/BiomedicalConcept'
-      Cardinality: 0..*
-      Relationship Type: Value
-    bcCategories:
-      Type:
-      - $ref: '#/BiomedicalConceptCategory'
-      Cardinality: 0..*
-      Relationship Type: Value
-    bcSurrogates:
-      Type:
-      - $ref: '#/BiomedicalConceptSurrogate'
+      - $ref: '#/EligibilityCriterion'
       Cardinality: 0..*
       Relationship Type: Value
     analysisPopulations:
       Type:
       - $ref: '#/AnalysisPopulation'
-      Cardinality: 0..*
-      Relationship Type: Value
-    dictionaries:
-      Type:
-      - $ref: '#/SyntaxTemplateDictionary'
-      Cardinality: 0..*
-      Relationship Type: Value
-    conditions:
-      Type:
-      - $ref: '#/Condition'
       Cardinality: 0..*
       Relationship Type: Value
     instanceType:
@@ -3387,34 +3357,14 @@ ObservationalStudyDesign:
       Codelist Ref: SDTM Terminology Codelist C127260
       Relationship Type: Value
       Model Name: samplingMethod
-    biomedicalConcepts:
+    eligibilityCriteria:
       Type:
-      - $ref: '#/BiomedicalConcept'
-      Cardinality: 0..*
-      Relationship Type: Value
-    bcCategories:
-      Type:
-      - $ref: '#/BiomedicalConceptCategory'
-      Cardinality: 0..*
-      Relationship Type: Value
-    bcSurrogates:
-      Type:
-      - $ref: '#/BiomedicalConceptSurrogate'
+      - $ref: '#/EligibilityCriterion'
       Cardinality: 0..*
       Relationship Type: Value
     analysisPopulations:
       Type:
       - $ref: '#/AnalysisPopulation'
-      Cardinality: 0..*
-      Relationship Type: Value
-    dictionaries:
-      Type:
-      - $ref: '#/SyntaxTemplateDictionary'
-      Cardinality: 0..*
-      Relationship Type: Value
-    conditions:
-      Type:
-      - $ref: '#/Condition'
       Cardinality: 0..*
       Relationship Type: Value
     instanceType:
@@ -3855,10 +3805,6 @@ Range:
       Definition: The largest value in quantity or degree in a set of values.
       Relationship Type: Value
       Model Name: maxValue
-    unit:
-      Type:
-      - $ref: UNKNOWN
-      Relationship Type: Value
     instanceType:
       Type:
       - $ref: '#/string'
@@ -4336,11 +4282,11 @@ Strength:
       Definition: The short descriptive designation for the substance strength.
       Relationship Type: Value
       Model Name: label
-    numeratorQuantity*:
+    numeratorQuantity:
       Type:
       - $ref: '#/Quantity'
       Cardinality: 0..1
-      Relationship Type: UNKNOWN
+      Relationship Type: Value
       Model Name: numeratorQuantity
     denominator:
       Type:
@@ -4350,16 +4296,12 @@ Strength:
         identifies the denominator associated with the substance strength.
       Relationship Type: Value
       Model Name: denominator
-    numeratorRange*:
+    numeratorRange:
       Type:
       - $ref: '#/Range'
       Cardinality: 0..1
-      Relationship Type: UNKNOWN
-      Model Name: numeratorRange
-    numerator:
-      Type:
-      - $ref: UNKNOWN
       Relationship Type: Value
+      Model Name: numeratorRange
     instanceType:
       Type:
       - $ref: '#/string'
@@ -4913,11 +4855,11 @@ StudyCohort:
       Model Name: criteria
       Inherited From:
         $ref: '#/PopulationDefinition'
-    plannedCompletionNumberQuantity*:
+    plannedCompletionNumberQuantity:
       Type:
       - $ref: '#/Quantity'
       Cardinality: 0..1
-      Relationship Type: UNKNOWN
+      Relationship Type: Value
       Model Name: plannedCompletionNumberQuantity
       Inherited From:
         $ref: '#/PopulationDefinition'
@@ -4932,27 +4874,27 @@ StudyCohort:
       Model Name: plannedAge
       Inherited From:
         $ref: '#/PopulationDefinition'
-    plannedEnrollmentNumberRange*:
+    plannedEnrollmentNumberRange:
       Type:
       - $ref: '#/Range'
       Cardinality: 0..1
-      Relationship Type: UNKNOWN
+      Relationship Type: Value
       Model Name: plannedEnrollmentNumberRange
       Inherited From:
         $ref: '#/PopulationDefinition'
-    plannedCompletionNumberRange*:
+    plannedCompletionNumberRange:
       Type:
       - $ref: '#/Range'
       Cardinality: 0..1
-      Relationship Type: UNKNOWN
+      Relationship Type: Value
       Model Name: plannedCompletionNumberRange
       Inherited From:
         $ref: '#/PopulationDefinition'
-    plannedEnrollmentNumberQuantity*:
+    plannedEnrollmentNumberQuantity:
       Type:
       - $ref: '#/Quantity'
       Cardinality: 0..1
-      Relationship Type: UNKNOWN
+      Relationship Type: Value
       Model Name: plannedEnrollmentNumberQuantity
       Inherited From:
         $ref: '#/PopulationDefinition'
@@ -4965,14 +4907,6 @@ StudyCohort:
         cohort.
       Relationship Type: Value
       Model Name: characteristics
-    plannedEnrollmentNumber:
-      Type:
-      - $ref: UNKNOWN
-      Relationship Type: Value
-    plannedCompletionNumber:
-      Type:
-      - $ref: UNKNOWN
-      Relationship Type: Value
     instanceType:
       Type:
       - $ref: '#/string'
@@ -5432,11 +5366,11 @@ StudyDesignPopulation:
       Model Name: criteria
       Inherited From:
         $ref: '#/PopulationDefinition'
-    plannedCompletionNumberQuantity*:
+    plannedCompletionNumberQuantity:
       Type:
       - $ref: '#/Quantity'
       Cardinality: 0..1
-      Relationship Type: UNKNOWN
+      Relationship Type: Value
       Model Name: plannedCompletionNumberQuantity
       Inherited From:
         $ref: '#/PopulationDefinition'
@@ -5451,27 +5385,27 @@ StudyDesignPopulation:
       Model Name: plannedAge
       Inherited From:
         $ref: '#/PopulationDefinition'
-    plannedEnrollmentNumberRange*:
+    plannedEnrollmentNumberRange:
       Type:
       - $ref: '#/Range'
       Cardinality: 0..1
-      Relationship Type: UNKNOWN
+      Relationship Type: Value
       Model Name: plannedEnrollmentNumberRange
       Inherited From:
         $ref: '#/PopulationDefinition'
-    plannedCompletionNumberRange*:
+    plannedCompletionNumberRange:
       Type:
       - $ref: '#/Range'
       Cardinality: 0..1
-      Relationship Type: UNKNOWN
+      Relationship Type: Value
       Model Name: plannedCompletionNumberRange
       Inherited From:
         $ref: '#/PopulationDefinition'
-    plannedEnrollmentNumberQuantity*:
+    plannedEnrollmentNumberQuantity:
       Type:
       - $ref: '#/Quantity'
       Cardinality: 0..1
-      Relationship Type: UNKNOWN
+      Relationship Type: Value
       Model Name: plannedEnrollmentNumberQuantity
       Inherited From:
         $ref: '#/PopulationDefinition'
@@ -5484,14 +5418,6 @@ StudyDesignPopulation:
         design population.
       Relationship Type: Value
       Model Name: cohorts
-    plannedEnrollmentNumber:
-      Type:
-      - $ref: UNKNOWN
-      Relationship Type: Value
-    plannedCompletionNumber:
-      Type:
-      - $ref: UNKNOWN
-      Relationship Type: Value
     instanceType:
       Type:
       - $ref: '#/string'
@@ -6091,9 +6017,9 @@ StudyVersion:
         which identifies the set of study titles associated with the study version.
       Relationship Type: Value
       Model Name: titles
-    criteria:
+    eligibilityCriterionItems:
       Type:
-      - $ref: '#/EligibilityCriterion'
+      - $ref: '#/EligibilityCriterionItem'
       Cardinality: 0..*
       Relationship Type: Value
     narrativeContentItems:
@@ -6124,6 +6050,31 @@ StudyVersion:
     productOrganizationRoles:
       Type:
       - $ref: '#/ProductOrganizationRole'
+      Cardinality: 0..*
+      Relationship Type: Value
+    biomedicalConcepts:
+      Type:
+      - $ref: '#/BiomedicalConcept'
+      Cardinality: 0..*
+      Relationship Type: Value
+    bcCategories:
+      Type:
+      - $ref: '#/BiomedicalConceptCategory'
+      Cardinality: 0..*
+      Relationship Type: Value
+    bcSurrogates:
+      Type:
+      - $ref: '#/BiomedicalConceptSurrogate'
+      Cardinality: 0..*
+      Relationship Type: Value
+    dictionaries:
+      Type:
+      - $ref: '#/SyntaxTemplateDictionary'
+      Cardinality: 0..*
+      Relationship Type: Value
+    conditions:
+      Type:
+      - $ref: '#/Condition'
       Cardinality: 0..*
       Relationship Type: Value
     instanceType:
@@ -6169,11 +6120,11 @@ SubjectEnrollment:
       Definition: The short descriptive designation for the subject enrollment..
       Relationship Type: Value
       Model Name: label
-    forGeographicScope*:
+    forGeographicScope:
       Type:
       - $ref: '#/GeographicScope'
       Cardinality: 0..1
-      Relationship Type: UNKNOWN
+      Relationship Type: Value
       Model Name: forGeographicScope
     quantity:
       Type:
@@ -6184,26 +6135,18 @@ SubjectEnrollment:
       Definition: The value representing the number of individuals enrolled in a study.
       Relationship Type: Value
       Model Name: quantity
-    forStudyCohort*:
+    forStudyCohortId:
       Type:
       - $ref: '#/StudyCohort'
       Cardinality: 0..1
-      Relationship Type: UNKNOWN
+      Relationship Type: Ref
       Model Name: forStudyCohort
-    forStudySite*:
+    forStudySiteId:
       Type:
       - $ref: '#/StudySite'
       Cardinality: 0..1
-      Relationship Type: UNKNOWN
+      Relationship Type: Ref
       Model Name: forStudySite
-    appliesTo:
-      Type:
-      - $ref: UNKNOWN
-      Relationship Type: Value
-    appliesToId:
-      Type:
-      - $ref: UNKNOWN
-      Relationship Type: Value
     instanceType:
       Type:
       - $ref: '#/string'
