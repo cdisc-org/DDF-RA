@@ -1529,12 +1529,12 @@ EligibilityCriterion:
       Codelist Ref: SDTM Terminology Codelist C66797
       Relationship Type: Value
       Model Name: category
-    CriterionItem*:
+    criterionItemId:
       Type:
       - $ref: '#/EligibilityCriterionItem'
       Cardinality: '1'
-      Relationship Type: UNKNOWN
-      Model Name: CriterionItem
+      Relationship Type: Ref
+      Model Name: criterionItem
     nextId:
       Type:
       - $ref: '#/EligibilityCriterion'
@@ -1553,11 +1553,6 @@ EligibilityCriterion:
         criterion in the display order.
       Relationship Type: Ref
       Model Name: previous
-    criterionItemId:
-      Type:
-      - $ref: '#/string'
-      Cardinality: 0..1
-      Relationship Type: Value
     instanceType:
       Type:
       - $ref: '#/string'
@@ -2733,6 +2728,7 @@ MedicalDevice:
     notes:
       Type:
       - $ref: '#/CommentAnnotation'
+      Cardinality: 0..*
       Definition: A USDM relationship between the MedicalDevice and CommentAnnotation
         classes which provides the set of notes related to the medical device
       Relationship Type: Value
