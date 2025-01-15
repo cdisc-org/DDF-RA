@@ -1566,6 +1566,8 @@ EligibilityCriterion:
       Type:
       - $ref: '#/EligibilityCriterionItem'
       Cardinality: '1'
+      Definition: A USDM relationship between the EligibilityCriterion and EligibilityCriterionItem
+        classes which identifies the item belonging to the eligibility criterion.
       Relationship Type: Ref
       Model Name: criterionItem
     nextId:
@@ -1592,6 +1594,10 @@ EligibilityCriterion:
       Cardinality: 0..1
       Relationship Type: Value
 EligibilityCriterionItem:
+  NCI C-Code: CNEW
+  Preferred Term: Eligibility Criterion Item
+  Definition: An individual item within the container that holds an instance of an
+    eligibility criterion.
   Super Classes:
   - $ref: '#/SyntaxTemplate'
   Modifier: Concrete
@@ -1606,6 +1612,10 @@ EligibilityCriterionItem:
     name:
       Type:
       - $ref: '#/string'
+      NCI C-Code: CNEW
+      Preferred Term: Eligibility Criterion Item Name
+      Definition: The literal identifier (i.e., distinctive designation) of the eligibility
+        criterion item.
       Relationship Type: Value
       Model Name: name
       Inherited From:
@@ -1613,6 +1623,9 @@ EligibilityCriterionItem:
     description:
       Type:
       - $ref: '#/string'
+      NCI C-Code: CNEW
+      Preferred Term: Eligibility Criterion Item Description
+      Definition: A narrative representation of the eligibility criterion item.
       Relationship Type: Value
       Model Name: description
       Inherited From:
@@ -1620,6 +1633,10 @@ EligibilityCriterionItem:
     label:
       Type:
       - $ref: '#/string'
+      NCI C-Code: CNEW
+      Preferred Term: Eligibility Criterion Item Label
+      Definition: The short descriptive designation for the eligibility criterion
+        item.
       Relationship Type: Value
       Model Name: label
       Inherited From:
@@ -1627,6 +1644,10 @@ EligibilityCriterionItem:
     text:
       Type:
       - $ref: '#/string'
+      NCI C-Code: CNEW
+      Preferred Term: Eligibility Criterion Item Text
+      Definition: An instance of structured text that represents the eligibility criterion
+        item.
       Relationship Type: Value
       Model Name: text
       Inherited From:
@@ -1635,6 +1656,9 @@ EligibilityCriterionItem:
       Type:
       - $ref: '#/CommentAnnotation'
       Cardinality: 0..*
+      Definition: A USDM relationship between the EligibilityCriterionItem and CommentAnnotation
+        classes which provides the set of notes related to the eligibility criterion
+        item.
       Relationship Type: Value
       Model Name: notes
       Inherited From:
@@ -1643,6 +1667,9 @@ EligibilityCriterionItem:
       Type:
       - $ref: '#/SyntaxTemplateDictionary'
       Cardinality: 0..1
+      Definition: 'A USDM relationship between the EligibilityCriterionItem and SyntaxTemplateDictionary
+        classes which provides the dictionary entry associated with a eligibility
+        criterion item. '
       Relationship Type: Ref
       Model Name: dictionary
       Inherited From:
@@ -3585,7 +3612,12 @@ PopulationDefinition:
     plannedCompletionNumberQuantity:
       Type:
       - $ref: '#/Quantity'
+      NCI C-Code: CNEW
       Cardinality: 0..1
+      Preferred Term: Population Definition Planned Completion Number Quantity
+      Definition: The value representing the planned number of subjects that must
+        complete the study in order to meet the objectives and endpoints of the study,
+        within the population definition.
       Model Name: plannedCompletionNumberQuantity
     plannedAge:
       Type:
@@ -3598,17 +3630,30 @@ PopulationDefinition:
     plannedEnrollmentNumberRange:
       Type:
       - $ref: '#/Range'
+      NCI C-Code: CNEW
       Cardinality: 0..1
+      Preferred Term: Population Definition Planned Enrollment Number Range
+      Definition: The range of values representing the planned number of subjects
+        to be entered in a clinical trial, within the population definition.
       Model Name: plannedEnrollmentNumberRange
     plannedCompletionNumberRange:
       Type:
       - $ref: '#/Range'
+      NCI C-Code: CNEW
       Cardinality: 0..1
+      Preferred Term: Population Definition Planned Completion Number Range
+      Definition: The range of values representing the planned number of subjects
+        that must complete the study in order to meet the objectives and endpoints
+        of the study, within the population definition.
       Model Name: plannedCompletionNumberRange
     plannedEnrollmentNumberQuantity:
       Type:
       - $ref: '#/Quantity'
+      NCI C-Code: CNEW
       Cardinality: 0..1
+      Preferred Term: Population Definition Planned Enrollment Number Quantity
+      Definition: The value representing the planned number of subjects to be entered
+        in a clinical trial, within the population definition.
       Model Name: plannedEnrollmentNumberQuantity
 Procedure:
   NCI C-Code: C98769
@@ -4314,7 +4359,10 @@ Strength:
     numeratorQuantity:
       Type:
       - $ref: '#/Quantity'
+      NCI C-Code: CNEW
       Cardinality: 0..1
+      Preferred Term: Substance Strength Numerator Quantity
+      Definition: The value representing the numerator for the substance strength.
       Relationship Type: Value
       Model Name: numeratorQuantity
     denominator:
@@ -4328,7 +4376,11 @@ Strength:
     numeratorRange:
       Type:
       - $ref: '#/Range'
+      NCI C-Code: CNEW
       Cardinality: 0..1
+      Preferred Term: Substance Strength Numerator Range
+      Definition: The lowest and highest numerical values that define a range for
+        the substance strength.
       Relationship Type: Value
       Model Name: numeratorRange
     instanceType:
@@ -4887,7 +4939,12 @@ StudyCohort:
     plannedCompletionNumberQuantity:
       Type:
       - $ref: '#/Quantity'
+      NCI C-Code: CNEW
       Cardinality: 0..1
+      Preferred Term: Study Cohort Planned Completion Number Quantity
+      Definition: The value representing the planned number of subjects that must
+        complete the study in order to meet the objectives and endpoints of the study,
+        within the study cohort.
       Relationship Type: Value
       Model Name: plannedCompletionNumberQuantity
       Inherited From:
@@ -4906,7 +4963,11 @@ StudyCohort:
     plannedEnrollmentNumberRange:
       Type:
       - $ref: '#/Range'
+      NCI C-Code: CNEW
       Cardinality: 0..1
+      Preferred Term: Study Cohort Planned Enrollment Number Range
+      Definition: The range of values representing the planned number of subjects
+        to be entered in a clinical trial, within the study cohort.
       Relationship Type: Value
       Model Name: plannedEnrollmentNumberRange
       Inherited From:
@@ -4914,7 +4975,12 @@ StudyCohort:
     plannedCompletionNumberRange:
       Type:
       - $ref: '#/Range'
+      NCI C-Code: CNEW
       Cardinality: 0..1
+      Preferred Term: Study Cohort Planned Completion Number Range
+      Definition: The range of values representing the planned number of subjects
+        that must complete the study in order to meet the objectives and endpoints
+        of the study, within the study cohort.
       Relationship Type: Value
       Model Name: plannedCompletionNumberRange
       Inherited From:
@@ -4922,7 +4988,11 @@ StudyCohort:
     plannedEnrollmentNumberQuantity:
       Type:
       - $ref: '#/Quantity'
+      NCI C-Code: CNEW
       Cardinality: 0..1
+      Preferred Term: Study Cohort Planned Enrollment Number Quantity
+      Definition: The value representing the planned number of subjects to be entered
+        in a clinical trial, within the study cohort.
       Relationship Type: Value
       Model Name: plannedEnrollmentNumberQuantity
       Inherited From:
@@ -5398,7 +5468,12 @@ StudyDesignPopulation:
     plannedCompletionNumberQuantity:
       Type:
       - $ref: '#/Quantity'
+      NCI C-Code: CNEW
       Cardinality: 0..1
+      Preferred Term: Study Design Population Planned Completion Number Quantity
+      Definition: The value representing the planned number of subjects that must
+        complete the study in order to meet the objectives and endpoints of the study,
+        within the study design population.
       Relationship Type: Value
       Model Name: plannedCompletionNumberQuantity
       Inherited From:
@@ -5417,7 +5492,11 @@ StudyDesignPopulation:
     plannedEnrollmentNumberRange:
       Type:
       - $ref: '#/Range'
+      NCI C-Code: CNEW
       Cardinality: 0..1
+      Preferred Term: Study Design Population Planned Enrollment Number Range
+      Definition: The range of values representing the planned number of subjects
+        to be entered in a clinical trial, within the study design population.
       Relationship Type: Value
       Model Name: plannedEnrollmentNumberRange
       Inherited From:
@@ -5425,7 +5504,12 @@ StudyDesignPopulation:
     plannedCompletionNumberRange:
       Type:
       - $ref: '#/Range'
+      NCI C-Code: CNEW
       Cardinality: 0..1
+      Preferred Term: Study Design Population Planned Completion Number Range
+      Definition: The range of values representing the planned number of subjects
+        that must complete the study in order to meet the objectives and endpoints
+        of the study, within the study design population.
       Relationship Type: Value
       Model Name: plannedCompletionNumberRange
       Inherited From:
@@ -5433,7 +5517,11 @@ StudyDesignPopulation:
     plannedEnrollmentNumberQuantity:
       Type:
       - $ref: '#/Quantity'
+      NCI C-Code: CNEW
       Cardinality: 0..1
+      Preferred Term: Study Design Population Planned Enrollment Number Quantity
+      Definition: The value representing the planned number of subjects to be entered
+        in a clinical trial, within the study design population.
       Relationship Type: Value
       Model Name: plannedEnrollmentNumberQuantity
       Inherited From:
@@ -6153,6 +6241,9 @@ SubjectEnrollment:
       Type:
       - $ref: '#/GeographicScope'
       Cardinality: 0..1
+      Definition: A USDM relationship between the SubjectEnrollment and GeographicScope
+        classes which identifies the geographic scope to which the subject enrollment
+        applies.
       Relationship Type: Value
       Model Name: forGeographicScope
     quantity:
@@ -6168,12 +6259,17 @@ SubjectEnrollment:
       Type:
       - $ref: '#/StudyCohort'
       Cardinality: 0..1
+      Definition: A USDM relationship between the SubjectEnrollment and StudyCohort
+        classes which identifies the study cohort to which the subject enrollment
+        applies.
       Relationship Type: Ref
       Model Name: forStudyCohort
     forStudySiteId:
       Type:
       - $ref: '#/StudySite'
       Cardinality: 0..1
+      Definition: A USDM relationship between the SubjectEnrollment and StudySite
+        classes which identifies the study site to which the subject enrollment applies.
       Relationship Type: Ref
       Model Name: forStudySite
     instanceType:
