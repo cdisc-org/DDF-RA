@@ -1847,12 +1847,26 @@ components:
       - appliesToId
       - instanceType
       title: DocumentContentReference
-    EligibilityCriterion:
+    EligibilityCriterion-Input:
       properties:
         id:
           type: string
           minLength: 1
           title: Id
+        name:
+          type: string
+          minLength: 1
+          title: Name
+        label:
+          anyOf:
+          - type: string
+          - type: 'null'
+          title: Label
+        description:
+          anyOf:
+          - type: string
+          - type: 'null'
+          title: Description
         category:
           $ref: '#/components/schemas/Code'
         identifier:
@@ -1871,6 +1885,12 @@ components:
           - type: string
           - type: 'null'
           title: Previousid
+        notes:
+          items:
+            $ref: '#/components/schemas/CommentAnnotation'
+          type: array
+          title: Notes
+          default: []
         instanceType:
           type: string
           enum:
@@ -1880,6 +1900,66 @@ components:
       type: object
       required:
       - id
+      - name
+      - category
+      - identifier
+      - criterionItemId
+      - instanceType
+      title: EligibilityCriterion
+    EligibilityCriterion-Output:
+      properties:
+        id:
+          type: string
+          minLength: 1
+          title: Id
+        name:
+          type: string
+          minLength: 1
+          title: Name
+        label:
+          anyOf:
+          - type: string
+          - type: 'null'
+          title: Label
+        description:
+          anyOf:
+          - type: string
+          - type: 'null'
+          title: Description
+        category:
+          $ref: '#/components/schemas/Code'
+        identifier:
+          type: string
+          title: Identifier
+        criterionItemId:
+          type: string
+          title: Criterionitemid
+        nextId:
+          anyOf:
+          - type: string
+          - type: 'null'
+          title: Nextid
+        previousId:
+          anyOf:
+          - type: string
+          - type: 'null'
+          title: Previousid
+        notes:
+          items:
+            $ref: '#/components/schemas/CommentAnnotation'
+          type: array
+          title: Notes
+          default: []
+        instanceType:
+          type: string
+          enum:
+          - EligibilityCriterion
+          const: EligibilityCriterion
+          title: Instancetype
+      type: object
+      required:
+      - id
+      - name
       - category
       - identifier
       - criterionItemId
@@ -2878,7 +2958,7 @@ components:
           default: []
         eligibilityCriteria:
           items:
-            $ref: '#/components/schemas/EligibilityCriterion'
+            $ref: '#/components/schemas/EligibilityCriterion-Input'
           type: array
           title: Eligibilitycriteria
           default: []
@@ -3052,7 +3132,7 @@ components:
           default: []
         eligibilityCriteria:
           items:
-            $ref: '#/components/schemas/EligibilityCriterion'
+            $ref: '#/components/schemas/EligibilityCriterion-Output'
           type: array
           title: Eligibilitycriteria
           default: []
@@ -3600,7 +3680,7 @@ components:
           default: []
         eligibilityCriteria:
           items:
-            $ref: '#/components/schemas/EligibilityCriterion'
+            $ref: '#/components/schemas/EligibilityCriterion-Input'
           type: array
           title: Eligibilitycriteria
           default: []
@@ -3771,7 +3851,7 @@ components:
           default: []
         eligibilityCriteria:
           items:
-            $ref: '#/components/schemas/EligibilityCriterion'
+            $ref: '#/components/schemas/EligibilityCriterion-Output'
           type: array
           title: Eligibilitycriteria
           default: []
