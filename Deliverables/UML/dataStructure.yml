@@ -1510,6 +1510,31 @@ EligibilityCriterion:
       - $ref: '#/string'
       Relationship Type: Value
       Model Name: id
+    name:
+      Type:
+      - $ref: '#/string'
+      NCI C-Code: C207488
+      Preferred Term: Study Eligibility Criterion Name
+      Definition: The literal identifier (i.e., distinctive designation) of the study
+        eligibility criterion.
+      Relationship Type: Value
+      Model Name: name
+    description:
+      Type:
+      - $ref: '#/string'
+      NCI C-Code: C207486
+      Preferred Term: Study Eligibility Criterion Description
+      Definition: A narrative representation of the study eligibility criterion.
+      Relationship Type: Value
+      Model Name: description
+    label:
+      Type:
+      - $ref: '#/string'
+      NCI C-Code: C207487
+      Preferred Term: Study Eligibility Criterion Label
+      Definition: The short descriptive designation for the study eligibility criterion.
+      Relationship Type: Value
+      Model Name: label
     identifier:
       Type:
       - $ref: '#/string'
@@ -1529,6 +1554,14 @@ EligibilityCriterion:
       Codelist Ref: SDTM Terminology Codelist C66797
       Relationship Type: Value
       Model Name: category
+    notes:
+      Type:
+      - $ref: '#/CommentAnnotation'
+      Cardinality: 0..*
+      Definition: A USDM relationship between the EligibilityCriterion and CommentAnnotation
+        classes which provides the set of notes related to the eligibility criterion.
+      Relationship Type: Value
+      Model Name: notes
     criterionItemId:
       Type:
       - $ref: '#/EligibilityCriterionItem'
@@ -1553,24 +1586,6 @@ EligibilityCriterion:
         criterion in the display order.
       Relationship Type: Ref
       Model Name: previous
-    name:
-      Type:
-      - $ref: '#/string'
-      Cardinality: 0..1
-      Relationship Type: Value
-    label:
-      Type:
-      - $ref: UNKNOWN
-      Relationship Type: Value
-    description:
-      Type:
-      - $ref: UNKNOWN
-      Relationship Type: Value
-    notes:
-      Type:
-      - $ref: '#/CommentAnnotation'
-      Cardinality: 0..*
-      Relationship Type: Value
     instanceType:
       Type:
       - $ref: '#/string'
