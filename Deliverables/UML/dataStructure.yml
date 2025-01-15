@@ -1553,6 +1553,24 @@ EligibilityCriterion:
         criterion in the display order.
       Relationship Type: Ref
       Model Name: previous
+    name:
+      Type:
+      - $ref: '#/string'
+      Cardinality: 0..1
+      Relationship Type: Value
+    label:
+      Type:
+      - $ref: UNKNOWN
+      Relationship Type: Value
+    description:
+      Type:
+      - $ref: UNKNOWN
+      Relationship Type: Value
+    notes:
+      Type:
+      - $ref: '#/CommentAnnotation'
+      Cardinality: 0..*
+      Relationship Type: Value
     instanceType:
       Type:
       - $ref: '#/string'
