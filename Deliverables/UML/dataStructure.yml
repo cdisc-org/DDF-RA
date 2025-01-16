@@ -4368,9 +4368,10 @@ Strength:
     denominator:
       Type:
       - $ref: '#/Quantity'
+      NCI C-Code: C80489
       Cardinality: 0..1
-      Definition: A USDM relationship between the Strength and Quantity classes that
-        identifies the denominator associated with the substance strength.
+      Preferred Term: Denominator
+      Definition: The divisor of a fraction.
       Relationship Type: Value
       Model Name: denominator
     numeratorRange:
