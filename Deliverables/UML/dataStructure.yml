@@ -31,8 +31,9 @@ Abbreviation:
     notes:
       Type:
       - $ref: '#/CommentAnnotation'
-      Definition: A USDM relationship between the Abbreviation and Comment Annotation
-        classes which provides the set of notes related to the abbreviation.
+      NCI C-Code: CNEW
+      Preferred Term: Abbreviation Notes
+      Definition: A brief written record relevant to the abbreviation.
       Relationship Type: Value
       Model Name: notes
     instanceType:
@@ -81,8 +82,9 @@ Activity:
     notes:
       Type:
       - $ref: '#/CommentAnnotation'
-      Definition: A USDM relationship between the Activity and CommentAnnotation classes
-        which provides the set of notes related to the activity.
+      NCI C-Code: CNEW
+      Preferred Term: Activity Notes
+      Definition: A brief written record relevant to the activity.
       Relationship Type: Value
       Model Name: notes
     definedProcedures:
@@ -318,8 +320,9 @@ AdministrableProduct:
     notes:
       Type:
       - $ref: '#/CommentAnnotation'
-      Definition: A USDM relationship between the AdministrableProductn and CommentAnnotation
-        classes which provides the set of notes related to the administrable product.
+      NCI C-Code: CNEW
+      Preferred Term: Administrable Product Notes
+      Definition: A brief written record relevant to the administrable product.
       Relationship Type: Value
       Model Name: notes
     identifiers:
@@ -520,9 +523,10 @@ Administration:
     notes:
       Type:
       - $ref: '#/CommentAnnotation'
-      Definition: A USDM relationship between the Administration and CommentAnnotation
-        classes which provides the set of notes related to the administration of the
-        product, agent, or therapy.
+      NCI C-Code: CNEW
+      Preferred Term: Administration Notes
+      Definition: A brief written record relevant to the administration of the product,
+        agent, or therapy.
       Relationship Type: Value
       Model Name: notes
     administrableProductId:
@@ -690,8 +694,9 @@ AnalysisPopulation:
     notes:
       Type:
       - $ref: '#/CommentAnnotation'
-      Definition: A USDM relationship between the AnalysisPopulation and CommentAnnotation
-        classes which provides the set of notes related to the analysis population.
+      NCI C-Code: CNEW
+      Preferred Term: Analysis Population Notes
+      Definition: A brief written record relevant to the analysis population.
       Relationship Type: Value
       Model Name: notes
     subsetOfIds:
@@ -826,8 +831,9 @@ BiomedicalConcept:
     notes:
       Type:
       - $ref: '#/CommentAnnotation'
-      Definition: A USDM relationship between the BiomedicalConcept and CommentAnnotation
-        classes which provides the set of notes related to the biomedical concept.
+      NCI C-Code: CNEW
+      Preferred Term: Biomedical Concept Notes
+      Definition: A brief written record relevant to the biomedical concept.
       Relationship Type: Value
       Model Name: notes
     properties:
@@ -893,9 +899,9 @@ BiomedicalConceptCategory:
     notes:
       Type:
       - $ref: '#/CommentAnnotation'
-      Definition: A USDM relationship between the BiomedicalConcept and CommentAnnotation
-        classes which provides the set of notes related to the biomedical concept
-        category.
+      NCI C-Code: CNEW
+      Preferred Term: Biomedical Concept Category Notes
+      Definition: A brief written record relevant to the biomedical concept category.
       Relationship Type: Value
       Model Name: notes
     memberIds:
@@ -988,9 +994,9 @@ BiomedicalConceptProperty:
     notes:
       Type:
       - $ref: '#/CommentAnnotation'
-      Definition: A USDM relationship between the BiomedicalConcept and CommentAnnotation
-        classes which provides the set of notes related to the biomedical concept
-        property.
+      NCI C-Code: CNEW
+      Preferred Term: Biomedical Concept Property Notes
+      Definition: A brief written record relevant to the biomedical concept property.
       Relationship Type: Value
       Model Name: notes
     responseCodes:
@@ -1055,9 +1061,9 @@ BiomedicalConceptSurrogate:
     notes:
       Type:
       - $ref: '#/CommentAnnotation'
-      Definition: A USDM relationship between the BiomedicalConcept and CommentAnnotation
-        classes which provides the set of notes related to the biomedical concept
-        surrogate.
+      NCI C-Code: CNEW
+      Preferred Term: Biomedical Concept Surrogate Notes
+      Definition: A brief written record relevant to the biomedical concept surrogate.
       Relationship Type: Value
       Model Name: notes
     instanceType:
@@ -1181,8 +1187,9 @@ Characteristic:
     notes:
       Type:
       - $ref: '#/CommentAnnotation'
-      Definition: A USDM relationship between the Characteristic and CommentAnnotation
-        classes which provides the set of notes related to the characteristic.
+      NCI C-Code: CNEW
+      Preferred Term: Characteristic Notes
+      Definition: A brief written record relevant to the characteristic.
       Relationship Type: Value
       Model Name: notes
       Inherited From:
@@ -1346,8 +1353,9 @@ Condition:
     notes:
       Type:
       - $ref: '#/CommentAnnotation'
-      Definition: A USDM relationship between the Condition and CommentAnnotation
-        classes which provides the set of notes related to the condition.
+      NCI C-Code: CNEW
+      Preferred Term: Condition Notes
+      Definition: A brief written record relevant to the condition.
       Relationship Type: Value
       Model Name: notes
       Inherited From:
@@ -1528,8 +1536,9 @@ EligibilityCriterion:
     notes:
       Type:
       - $ref: '#/CommentAnnotation'
-      Definition: A USDM relationship between the EligibilityCriterion and CommentAnnotation
-        classes which provides the set of notes related to the eligibility criterion.
+      NCI C-Code: CNEW
+      Preferred Term: Eligibility Criterion Notes
+      Definition: A brief written record relevant to the eligibility criterion.
       Relationship Type: Value
       Model Name: notes
     criterionItemId:
@@ -1625,9 +1634,9 @@ EligibilityCriterionItem:
     notes:
       Type:
       - $ref: '#/CommentAnnotation'
-      Definition: A USDM relationship between the EligibilityCriterionItem and CommentAnnotation
-        classes which provides the set of notes related to the eligibility criterion
-        item.
+      NCI C-Code: CNEW
+      Preferred Term: Eligibility Criterion Item Notes
+      Definition: A brief written record relevant to the eligibility criterion item.
       Relationship Type: Value
       Model Name: notes
       Inherited From:
@@ -1717,8 +1726,9 @@ Encounter:
     notes:
       Type:
       - $ref: '#/CommentAnnotation'
-      Definition: A USDM relationship between the Encounter and CommentAnnotation
-        classes which provides the set of notes related to an encounter.
+      NCI C-Code: CNEW
+      Preferred Term: Encounter Notes
+      Definition: A brief written record relevant to the study encounter.
       Relationship Type: Value
       Model Name: notes
     transitionEndRule:
@@ -1832,8 +1842,9 @@ Endpoint:
     notes:
       Type:
       - $ref: '#/CommentAnnotation'
-      Definition: A USDM relationship between the Endpoint and CommentAnnotation classes
-        which provides the set of notes related to the study endpoint.
+      NCI C-Code: CNEW
+      Preferred Term: Endpoint Notes
+      Definition: A brief written record relevant to the study endpoint.
       Relationship Type: Value
       Model Name: notes
       Inherited From:
@@ -1921,8 +1932,9 @@ Estimand:
     notes:
       Type:
       - $ref: '#/CommentAnnotation'
-      Definition: A USDM relationship between the Estimand and CommentAnnotation classes
-        which provides the set of notes related to a study estimand.
+      NCI C-Code: CNEW
+      Preferred Term: Estimand Notes
+      Definition: A brief written record relevant to the study estimand.
       Relationship Type: Value
       Model Name: notes
     analysisPopulationId:
@@ -2160,8 +2172,9 @@ Indication:
     notes:
       Type:
       - $ref: '#/CommentAnnotation'
-      Definition: A USDM relationship between the Indication and CommentAnnotation
-        classes which provides the set of notes related to the disease/condition indication.
+      NCI C-Code: CNEW
+      Preferred Term: Indication Notes
+      Definition: A brief written record relevant to the disease/condition indication.
       Relationship Type: Value
       Model Name: notes
     instanceType:
@@ -2265,8 +2278,9 @@ IntercurrentEvent:
     notes:
       Type:
       - $ref: '#/CommentAnnotation'
-      Definition: A USDM relationship between the IntercurrentEvent and CommentAnnotation
-        classes which provides the set of notes related to the intercurrent event.
+      NCI C-Code: CNEW
+      Preferred Term: Intercurrent Event Notes
+      Definition: A brief written record relevant to the intercurrent event.
       Relationship Type: Value
       Model Name: notes
       Inherited From:
@@ -2408,9 +2422,9 @@ InterventionalStudyDesign:
     notes:
       Type:
       - $ref: '#/CommentAnnotation'
-      Definition: A USDM relationship between the InterventionalStudyDesign and CommentAnnotation
-        classes which provides the set of notes related to the interventional study
-        design.
+      NCI C-Code: CNEW
+      Preferred Term: Interventional Study Design Notes
+      Definition: A brief written record relevant to the interventional study design.
       Relationship Type: Value
       Model Name: notes
       Inherited From:
@@ -2724,8 +2738,9 @@ MedicalDevice:
     notes:
       Type:
       - $ref: '#/CommentAnnotation'
-      Definition: A USDM relationship between the MedicalDevice and CommentAnnotation
-        classes which provides the set of notes related to the medical device
+      NCI C-Code: CNEW
+      Preferred Term: Medical Device Notes
+      Definition: A brief written record relevant to the medical device.
       Relationship Type: Value
       Model Name: notes
     embeddedProductId:
@@ -2993,8 +3008,9 @@ Objective:
     notes:
       Type:
       - $ref: '#/CommentAnnotation'
-      Definition: A USDM relationship between the Objective and CommentAnnotation
-        classes which provides the set of notes related to the study objective.
+      NCI C-Code: CNEW
+      Preferred Term: Objective Notes
+      Definition: A brief written record relevant to the study objective.
       Relationship Type: Value
       Model Name: notes
       Inherited From:
@@ -3144,9 +3160,9 @@ ObservationalStudyDesign:
     notes:
       Type:
       - $ref: '#/CommentAnnotation'
-      Definition: A USDM relationship between the ObservationalStudyDesign and CommentAnnotation
-        classes which provides the set of notes related to the observational study
-        design.
+      NCI C-Code: CNEW
+      Preferred Term: Observational Study Design Notes
+      Definition: A brief written record relevant to the observational study design.
       Relationship Type: Value
       Model Name: notes
       Inherited From:
@@ -3568,8 +3584,9 @@ PopulationDefinition:
     notes:
       Type:
       - $ref: '#/CommentAnnotation'
-      Definition: A USDM relationship between the PopulationDefinition and CommentAnnotation
-        classes which provides the set of notes related to the population definition.
+      NCI C-Code: CNEW
+      Preferred Term: Population Definition Notes
+      Definition: A brief written record relevant to the population definition.
       Model Name: notes
     criteria:
       Type:
@@ -3637,8 +3654,9 @@ Procedure:
     notes:
       Type:
       - $ref: '#/CommentAnnotation'
-      Definition: A USDM relationship between the Procedure and CommentAnnotation
-        classes which provides the set of notes related to a procedure.
+      NCI C-Code: CNEW
+      Preferred Term: Procedure Notes
+      Definition: A brief written record relevant to the procedure.
       Relationship Type: Value
       Model Name: notes
     studyInterventionId:
@@ -4385,8 +4403,9 @@ StudyAmendment:
     notes:
       Type:
       - $ref: '#/CommentAnnotation'
-      Definition: A USDM relationship between the StudyAmendment and CommentAnnotation
-        classes which provides the set of notes related to the study amendment.
+      NCI C-Code: CNEW
+      Preferred Term: Study Amendment Notes
+      Definition: A brief written record relevant to the study amendment.
       Relationship Type: Value
       Model Name: notes
     summary:
@@ -4513,8 +4532,9 @@ StudyAmendmentImpact:
     notes:
       Type:
       - $ref: '#/CommentAnnotation'
-      Definition: A USDM relationship between the StudyAmendmentImpact and CommentAnnotation
-        classes which provides the set of notes related to the study amendment impact.
+      NCI C-Code: CNEW
+      Preferred Term: Study Amendment Impact Notes
+      Definition: A brief written record relevant to the study amendment impact.
       Relationship Type: Value
       Model Name: notes
     instanceType:
@@ -4625,8 +4645,9 @@ StudyArm:
     notes:
       Type:
       - $ref: '#/CommentAnnotation'
-      Definition: A USDM relationship between the StudyArm and CommentAnnotation classes
-        which provides the set of notes related to the study arm.
+      NCI C-Code: CNEW
+      Preferred Term: Study Arm Notes
+      Definition: A brief written record relevant to the study arm.
       Relationship Type: Value
       Model Name: notes
     populationIds:
@@ -4880,8 +4901,9 @@ StudyCohort:
     notes:
       Type:
       - $ref: '#/CommentAnnotation'
-      Definition: A USDM relationship between the StudyCohort and CommentAnnotation
-        classes which provides the set of notes related to the study cohort.
+      NCI C-Code: CNEW
+      Preferred Term: Study Cohort Notes
+      Definition: A brief written record relevant to the study cohort.
       Relationship Type: Value
       Model Name: notes
       Inherited From:
@@ -4978,8 +5000,9 @@ StudyDefinitionDocument:
     notes:
       Type:
       - $ref: '#/CommentAnnotation'
-      Definition: A USDM relationship between the StudyDefinitionDocument and CommentAnnotation
-        classes which provides the set of notes related to the study definition document.
+      NCI C-Code: CNEW
+      Preferred Term: Study Definition Document Notes
+      Definition: A brief written record relevant to the study definition document.
       Relationship Type: Value
       Model Name: notes
     versions:
@@ -5030,9 +5053,10 @@ StudyDefinitionDocumentVersion:
     notes:
       Type:
       - $ref: '#/CommentAnnotation'
-      Definition: A USDM relationship between the StudyDefinitionDocumentVersion and
-        CommentAnnotation classes which provides the set of notes related to the study
-        definition document version.
+      NCI C-Code: CNEW
+      Preferred Term: Study Definition Document Version Notes
+      Definition: A brief written record relevant to the study definition document
+        version.
       Relationship Type: Value
       Model Name: notes
     dateValues:
@@ -5158,15 +5182,14 @@ StudyDesign:
     notes:
       Type:
       - $ref: '#/CommentAnnotation'
-      Definition: A USDM relationship between the StudyDesign and CommentAnnotation
-        classes which provides the set of notes related to the study design.
+      NCI C-Code: CNEW
+      Preferred Term: Study Design Notes
+      Definition: A brief written record relevant to the study design.
       Model Name: notes
     activities:
       Type:
       - $ref: '#/Activity'
       Cardinality: 0..*
-      Definition: A USDM relationship between the StudyDesign and Activity classes
-        which identifies the set of activities associated with the study design.
       Model Name: activities
     biospecimenRetentions:
       Type:
@@ -5392,8 +5415,9 @@ StudyDesignPopulation:
     notes:
       Type:
       - $ref: '#/CommentAnnotation'
-      Definition: A USDM relationship between the StudyDesignPopulation and CommentAnnotation
-        classes which provides the set of notes related to the study design population.
+      NCI C-Code: CNEW
+      Preferred Term: Study Design Population Notes
+      Definition: A brief written record relevant to the study design population.
       Relationship Type: Value
       Model Name: notes
       Inherited From:
@@ -5464,8 +5488,9 @@ StudyElement:
     notes:
       Type:
       - $ref: '#/CommentAnnotation'
-      Definition: A USDM relationship between the StudyElement and CommentAnnotation
-        classes which provides the set of notes related to the study element.
+      NCI C-Code: CNEW
+      Preferred Term: Study Element Notes
+      Definition: A brief written record relevant to the study element.
       Relationship Type: Value
       Model Name: notes
     transitionEndRule:
@@ -5554,8 +5579,9 @@ StudyEpoch:
     notes:
       Type:
       - $ref: '#/CommentAnnotation'
-      Definition: A USDM relationship between the StudyEpoch and CommentAnnotation
-        classes which provides the set of notes related to the study epoch.
+      NCI C-Code: CNEW
+      Preferred Term: Study Epoch Notes
+      Definition: A brief written record relevant to the study epoch.
       Relationship Type: Value
       Model Name: notes
     previousId:
@@ -5700,8 +5726,9 @@ StudyIntervention:
     notes:
       Type:
       - $ref: '#/CommentAnnotation'
-      Definition: A USDM relationship between the StudyIntervention and CommentAnnotation
-        classes which provides the set of notes related to the study intervention.
+      NCI C-Code: CNEW
+      Preferred Term: Study Intervention Notes
+      Definition: A brief written record relevant to the study intervention.
       Relationship Type: Value
       Model Name: notes
     administrations:
@@ -5931,8 +5958,9 @@ StudyVersion:
     notes:
       Type:
       - $ref: '#/CommentAnnotation'
-      Definition: A USDM relationship between the StudyVersion and CommentAnnotation
-        classes which provides the set of notes related to the study version.
+      NCI C-Code: CNEW
+      Preferred Term: Study Version Notes
+      Definition: A brief written record relevant to the study version.
       Relationship Type: Value
       Model Name: notes
     abbreviations:
@@ -6265,8 +6293,9 @@ SyntaxTemplate:
     notes:
       Type:
       - $ref: '#/CommentAnnotation'
-      Definition: A USDM relationship between the SyntaxTemplate and CommentAnnotation
-        classes which provides the set of notes related to the syntax template.
+      NCI C-Code: CNEW
+      Preferred Term: Syntax Template Notes
+      Definition: A brief written record relevant to the syntax template.
       Model Name: notes
     dictionary:
       Type:
