@@ -16,6 +16,7 @@ Property - NEW,PopulationDefinition,plannedCompletionNumberQuantity,Quantity
 Property - NEW,PopulationDefinition,plannedCompletionNumberRange,Range
 Property - NEW,PopulationDefinition,plannedEnrollmentNumberQuantity,Quantity
 Property - NEW,PopulationDefinition,plannedEnrollmentNumberRange,Range
+Property - NEW,StudyCohort,indications,Indication
 Property - NEW,StudyCohort,plannedCompletionNumberQuantity,Quantity
 Property - NEW,StudyCohort,plannedCompletionNumberRange,Range
 Property - NEW,StudyCohort,plannedEnrollmentNumberQuantity,Quantity
@@ -26,9 +27,12 @@ Property - NEW,SubjectEnrollment,forStudySite,StudySite
 Property - NEW,EligibilityCriterion,criterionItem,EligibilityCriterionItem
 Property - NEW,Strength,numeratorQuantity,Quantity
 Property - NEW,Strength,numeratorRange,Range
+Property - DELETED,StudyDesign,activities,Activity
 Property - DELETED,Range,unit,AliasCode
 Property - DELETED,StudyDesignPopulation,plannedCompletionNumber,Range
 Property - DELETED,StudyDesignPopulation,plannedEnrollmentNumber,Range
+Property - DELETED,InterventionalStudyDesign,activities,Activity
+Property - DELETED,ObservationalStudyDesign,activities,Activity
 Property - DELETED,PopulationDefinition,plannedCompletionNumber,Range
 Property - DELETED,PopulationDefinition,plannedEnrollmentNumber,Range
 Property - DELETED,StudyCohort,plannedCompletionNumber,Range

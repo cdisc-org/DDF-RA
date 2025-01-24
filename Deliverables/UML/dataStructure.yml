@@ -2429,17 +2429,6 @@ InterventionalStudyDesign:
       Model Name: notes
       Inherited From:
         $ref: '#/StudyDesign'
-    activities:
-      Type:
-      - $ref: '#/Activity'
-      Cardinality: 0..*
-      Definition: A USDM relationship between the InterventionalStudyDesign and Activity
-        classes which identifies the set of activities associated with the interventional
-        study design.
-      Relationship Type: Value
-      Model Name: activities
-      Inherited From:
-        $ref: '#/StudyDesign'
     biospecimenRetentions:
       Type:
       - $ref: '#/BiospecimenRetention'
@@ -2624,6 +2613,11 @@ InterventionalStudyDesign:
       Codelist Ref: SDTM Terminology Codelist C66739
       Relationship Type: Value
       Model Name: subTypes
+    activities:
+      Type:
+      - $ref: '#/Activity'
+      Cardinality: 0..*
+      Relationship Type: Value
     eligibilityCriteria:
       Type:
       - $ref: '#/EligibilityCriterion'
@@ -3167,17 +3161,6 @@ ObservationalStudyDesign:
       Model Name: notes
       Inherited From:
         $ref: '#/StudyDesign'
-    activities:
-      Type:
-      - $ref: '#/Activity'
-      Cardinality: 0..*
-      Definition: A USDM relationship between the ObservationalStudyDesign and Activity
-        classes which identifies the set of activities associated with the observational
-        study design.
-      Relationship Type: Value
-      Model Name: activities
-      Inherited From:
-        $ref: '#/StudyDesign'
     biospecimenRetentions:
       Type:
       - $ref: '#/BiospecimenRetention'
@@ -3361,6 +3344,11 @@ ObservationalStudyDesign:
       Codelist Ref: SDTM Terminology Codelist C127260
       Relationship Type: Value
       Model Name: samplingMethod
+    activities:
+      Type:
+      - $ref: '#/Activity'
+      Cardinality: 0..*
+      Relationship Type: Value
     eligibilityCriteria:
       Type:
       - $ref: '#/EligibilityCriterion'
@@ -4928,6 +4916,14 @@ StudyCohort:
         cohort.
       Relationship Type: Value
       Model Name: characteristics
+    indications*:
+      Type:
+      - $ref: '#/Indication'
+      Cardinality: 0..*
+      Definition: A USDM relationship between the StudyCohort and Indication classes
+        which identifies the set of indications associated with the study cohort.
+      Relationship Type: UNKNOWN
+      Model Name: indications
     instanceType:
       Type:
       - $ref: '#/string'
@@ -5186,11 +5182,6 @@ StudyDesign:
       Preferred Term: Study Design Notes
       Definition: A brief written record relevant to the study design.
       Model Name: notes
-    activities:
-      Type:
-      - $ref: '#/Activity'
-      Cardinality: 0..*
-      Model Name: activities
     biospecimenRetentions:
       Type:
       - $ref: '#/BiospecimenRetention'
