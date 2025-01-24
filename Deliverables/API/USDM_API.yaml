@@ -2882,12 +2882,6 @@ components:
           type: array
           title: Encounters
           default: []
-        activities:
-          items:
-            $ref: '#/components/schemas/Activity-Input'
-          type: array
-          title: Activities
-          default: []
         arms:
           items:
             $ref: '#/components/schemas/StudyArm-Input'
@@ -2924,11 +2918,11 @@ components:
           type: array
           title: Indications
           default: []
-        studyInterventions:
+        studyInterventionIds:
           items:
-            $ref: '#/components/schemas/StudyIntervention-Input'
+            type: string
           type: array
-          title: Studyinterventions
+          title: Studyinterventionids
           default: []
         objectives:
           items:
@@ -3056,12 +3050,6 @@ components:
           type: array
           title: Encounters
           default: []
-        activities:
-          items:
-            $ref: '#/components/schemas/Activity-Output'
-          type: array
-          title: Activities
-          default: []
         arms:
           items:
             $ref: '#/components/schemas/StudyArm-Output'
@@ -3098,11 +3086,11 @@ components:
           type: array
           title: Indications
           default: []
-        studyInterventions:
+        studyInterventionIds:
           items:
-            $ref: '#/components/schemas/StudyIntervention-Output'
+            type: string
           type: array
-          title: Studyinterventions
+          title: Studyinterventionids
           default: []
         objectives:
           items:
@@ -3604,12 +3592,6 @@ components:
           type: array
           title: Encounters
           default: []
-        activities:
-          items:
-            $ref: '#/components/schemas/Activity-Input'
-          type: array
-          title: Activities
-          default: []
         arms:
           items:
             $ref: '#/components/schemas/StudyArm-Input'
@@ -3646,11 +3628,11 @@ components:
           type: array
           title: Indications
           default: []
-        studyInterventions:
+        studyInterventionIds:
           items:
-            $ref: '#/components/schemas/StudyIntervention-Input'
+            type: string
           type: array
-          title: Studyinterventions
+          title: Studyinterventionids
           default: []
         objectives:
           items:
@@ -3775,12 +3757,6 @@ components:
           type: array
           title: Encounters
           default: []
-        activities:
-          items:
-            $ref: '#/components/schemas/Activity-Output'
-          type: array
-          title: Activities
-          default: []
         arms:
           items:
             $ref: '#/components/schemas/StudyArm-Output'
@@ -3817,11 +3793,11 @@ components:
           type: array
           title: Indications
           default: []
-        studyInterventions:
+        studyInterventionIds:
           items:
-            $ref: '#/components/schemas/StudyIntervention-Output'
+            type: string
           type: array
-          title: Studyinterventions
+          title: Studyinterventionids
           default: []
         objectives:
           items:
@@ -5258,6 +5234,12 @@ components:
           type: array
           title: Characteristics
           default: []
+        indicationIds:
+          items:
+            type: string
+          type: array
+          title: Indicationids
+          default: []
       type: object
       required:
       - id
@@ -5338,6 +5320,12 @@ components:
             $ref: '#/components/schemas/Characteristic-Output'
           type: array
           title: Characteristics
+          default: []
+        indicationIds:
+          items:
+            type: string
+          type: array
+          title: Indicationids
           default: []
       type: object
       required:
@@ -6269,6 +6257,12 @@ components:
           type: array
           title: Organizations
           default: []
+        studyInterventions:
+          items:
+            $ref: '#/components/schemas/StudyIntervention-Input'
+          type: array
+          title: Studyinterventions
+          default: []
         administrableProducts:
           items:
             $ref: '#/components/schemas/AdministrableProduct-Input'
@@ -6286,6 +6280,12 @@ components:
             $ref: '#/components/schemas/ProductOrganizationRole'
           type: array
           title: Productorganizationroles
+          default: []
+        activities:
+          items:
+            $ref: '#/components/schemas/Activity-Input'
+          type: array
+          title: Activities
           default: []
         biomedicalConcepts:
           items:
@@ -6428,6 +6428,12 @@ components:
           type: array
           title: Organizations
           default: []
+        studyInterventions:
+          items:
+            $ref: '#/components/schemas/StudyIntervention-Output'
+          type: array
+          title: Studyinterventions
+          default: []
         administrableProducts:
           items:
             $ref: '#/components/schemas/AdministrableProduct-Output'
@@ -6445,6 +6451,12 @@ components:
             $ref: '#/components/schemas/ProductOrganizationRole'
           type: array
           title: Productorganizationroles
+          default: []
+        activities:
+          items:
+            $ref: '#/components/schemas/Activity-Output'
+          type: array
+          title: Activities
           default: []
         biomedicalConcepts:
           items:

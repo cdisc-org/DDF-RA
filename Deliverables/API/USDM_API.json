@@ -4408,14 +4408,6 @@
             "title": "Encounters",
             "default": []
           },
-          "activities": {
-            "items": {
-              "$ref": "#/components/schemas/Activity-Input"
-            },
-            "type": "array",
-            "title": "Activities",
-            "default": []
-          },
           "arms": {
             "items": {
               "$ref": "#/components/schemas/StudyArm-Input"
@@ -4465,12 +4457,12 @@
             "title": "Indications",
             "default": []
           },
-          "studyInterventions": {
+          "studyInterventionIds": {
             "items": {
-              "$ref": "#/components/schemas/StudyIntervention-Input"
+              "type": "string"
             },
             "type": "array",
-            "title": "Studyinterventions",
+            "title": "Studyinterventionids",
             "default": []
           },
           "objectives": {
@@ -4662,14 +4654,6 @@
             "title": "Encounters",
             "default": []
           },
-          "activities": {
-            "items": {
-              "$ref": "#/components/schemas/Activity-Output"
-            },
-            "type": "array",
-            "title": "Activities",
-            "default": []
-          },
           "arms": {
             "items": {
               "$ref": "#/components/schemas/StudyArm-Output"
@@ -4719,12 +4703,12 @@
             "title": "Indications",
             "default": []
           },
-          "studyInterventions": {
+          "studyInterventionIds": {
             "items": {
-              "$ref": "#/components/schemas/StudyIntervention-Output"
+              "type": "string"
             },
             "type": "array",
-            "title": "Studyinterventions",
+            "title": "Studyinterventionids",
             "default": []
           },
           "objectives": {
@@ -5511,14 +5495,6 @@
             "title": "Encounters",
             "default": []
           },
-          "activities": {
-            "items": {
-              "$ref": "#/components/schemas/Activity-Input"
-            },
-            "type": "array",
-            "title": "Activities",
-            "default": []
-          },
           "arms": {
             "items": {
               "$ref": "#/components/schemas/StudyArm-Input"
@@ -5568,12 +5544,12 @@
             "title": "Indications",
             "default": []
           },
-          "studyInterventions": {
+          "studyInterventionIds": {
             "items": {
-              "$ref": "#/components/schemas/StudyIntervention-Input"
+              "type": "string"
             },
             "type": "array",
-            "title": "Studyinterventions",
+            "title": "Studyinterventionids",
             "default": []
           },
           "objectives": {
@@ -5761,14 +5737,6 @@
             "title": "Encounters",
             "default": []
           },
-          "activities": {
-            "items": {
-              "$ref": "#/components/schemas/Activity-Output"
-            },
-            "type": "array",
-            "title": "Activities",
-            "default": []
-          },
           "arms": {
             "items": {
               "$ref": "#/components/schemas/StudyArm-Output"
@@ -5818,12 +5786,12 @@
             "title": "Indications",
             "default": []
           },
-          "studyInterventions": {
+          "studyInterventionIds": {
             "items": {
-              "$ref": "#/components/schemas/StudyIntervention-Output"
+              "type": "string"
             },
             "type": "array",
-            "title": "Studyinterventions",
+            "title": "Studyinterventionids",
             "default": []
           },
           "objectives": {
@@ -8007,6 +7975,14 @@
             "type": "array",
             "title": "Characteristics",
             "default": []
+          },
+          "indicationIds": {
+            "items": {
+              "type": "string"
+            },
+            "type": "array",
+            "title": "Indicationids",
+            "default": []
           }
         },
         "type": "object",
@@ -8145,6 +8121,14 @@
             },
             "type": "array",
             "title": "Characteristics",
+            "default": []
+          },
+          "indicationIds": {
+            "items": {
+              "type": "string"
+            },
+            "type": "array",
+            "title": "Indicationids",
             "default": []
           }
         },
@@ -9586,6 +9570,14 @@
             "title": "Organizations",
             "default": []
           },
+          "studyInterventions": {
+            "items": {
+              "$ref": "#/components/schemas/StudyIntervention-Input"
+            },
+            "type": "array",
+            "title": "Studyinterventions",
+            "default": []
+          },
           "administrableProducts": {
             "items": {
               "$ref": "#/components/schemas/AdministrableProduct-Input"
@@ -9608,6 +9600,14 @@
             },
             "type": "array",
             "title": "Productorganizationroles",
+            "default": []
+          },
+          "activities": {
+            "items": {
+              "$ref": "#/components/schemas/Activity-Input"
+            },
+            "type": "array",
+            "title": "Activities",
             "default": []
           },
           "biomedicalConcepts": {
@@ -9802,6 +9802,14 @@
             "title": "Organizations",
             "default": []
           },
+          "studyInterventions": {
+            "items": {
+              "$ref": "#/components/schemas/StudyIntervention-Output"
+            },
+            "type": "array",
+            "title": "Studyinterventions",
+            "default": []
+          },
           "administrableProducts": {
             "items": {
               "$ref": "#/components/schemas/AdministrableProduct-Output"
@@ -9824,6 +9832,14 @@
             },
             "type": "array",
             "title": "Productorganizationroles",
+            "default": []
+          },
+          "activities": {
+            "items": {
+              "$ref": "#/components/schemas/Activity-Output"
+            },
+            "type": "array",
+            "title": "Activities",
             "default": []
           },
           "biomedicalConcepts": {
