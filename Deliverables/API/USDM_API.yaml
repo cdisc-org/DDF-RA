@@ -2882,6 +2882,12 @@ components:
           type: array
           title: Encounters
           default: []
+        activities:
+          items:
+            $ref: '#/components/schemas/Activity-Input'
+          type: array
+          title: Activities
+          default: []
         arms:
           items:
             $ref: '#/components/schemas/StudyArm-Input'
@@ -3049,6 +3055,12 @@ components:
             $ref: '#/components/schemas/Encounter-Output'
           type: array
           title: Encounters
+          default: []
+        activities:
+          items:
+            $ref: '#/components/schemas/Activity-Output'
+          type: array
+          title: Activities
           default: []
         arms:
           items:
@@ -3592,6 +3604,12 @@ components:
           type: array
           title: Encounters
           default: []
+        activities:
+          items:
+            $ref: '#/components/schemas/Activity-Input'
+          type: array
+          title: Activities
+          default: []
         arms:
           items:
             $ref: '#/components/schemas/StudyArm-Input'
@@ -3756,6 +3774,12 @@ components:
             $ref: '#/components/schemas/Encounter-Output'
           type: array
           title: Encounters
+          default: []
+        activities:
+          items:
+            $ref: '#/components/schemas/Activity-Output'
+          type: array
+          title: Activities
           default: []
         arms:
           items:
@@ -6281,12 +6305,6 @@ components:
           type: array
           title: Productorganizationroles
           default: []
-        activities:
-          items:
-            $ref: '#/components/schemas/Activity-Input'
-          type: array
-          title: Activities
-          default: []
         biomedicalConcepts:
           items:
             $ref: '#/components/schemas/BiomedicalConcept-Input'
@@ -6451,12 +6469,6 @@ components:
             $ref: '#/components/schemas/ProductOrganizationRole'
           type: array
           title: Productorganizationroles
-          default: []
-        activities:
-          items:
-            $ref: '#/components/schemas/Activity-Output'
-          type: array
-          title: Activities
           default: []
         biomedicalConcepts:
           items:

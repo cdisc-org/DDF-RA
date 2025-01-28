@@ -4408,6 +4408,14 @@
             "title": "Encounters",
             "default": []
           },
+          "activities": {
+            "items": {
+              "$ref": "#/components/schemas/Activity-Input"
+            },
+            "type": "array",
+            "title": "Activities",
+            "default": []
+          },
           "arms": {
             "items": {
               "$ref": "#/components/schemas/StudyArm-Input"
@@ -4652,6 +4660,14 @@
             },
             "type": "array",
             "title": "Encounters",
+            "default": []
+          },
+          "activities": {
+            "items": {
+              "$ref": "#/components/schemas/Activity-Output"
+            },
+            "type": "array",
+            "title": "Activities",
             "default": []
           },
           "arms": {
@@ -5495,6 +5511,14 @@
             "title": "Encounters",
             "default": []
           },
+          "activities": {
+            "items": {
+              "$ref": "#/components/schemas/Activity-Input"
+            },
+            "type": "array",
+            "title": "Activities",
+            "default": []
+          },
           "arms": {
             "items": {
               "$ref": "#/components/schemas/StudyArm-Input"
@@ -5735,6 +5759,14 @@
             },
             "type": "array",
             "title": "Encounters",
+            "default": []
+          },
+          "activities": {
+            "items": {
+              "$ref": "#/components/schemas/Activity-Output"
+            },
+            "type": "array",
+            "title": "Activities",
             "default": []
           },
           "arms": {
@@ -9602,14 +9634,6 @@
             "title": "Productorganizationroles",
             "default": []
           },
-          "activities": {
-            "items": {
-              "$ref": "#/components/schemas/Activity-Input"
-            },
-            "type": "array",
-            "title": "Activities",
-            "default": []
-          },
           "biomedicalConcepts": {
             "items": {
               "$ref": "#/components/schemas/BiomedicalConcept-Input"
@@ -9832,14 +9856,6 @@
             },
             "type": "array",
             "title": "Productorganizationroles",
-            "default": []
-          },
-          "activities": {
-            "items": {
-              "$ref": "#/components/schemas/Activity-Output"
-            },
-            "type": "array",
-            "title": "Activities",
             "default": []
           },
           "biomedicalConcepts": {
