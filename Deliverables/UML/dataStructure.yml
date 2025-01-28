@@ -2613,6 +2613,11 @@ InterventionalStudyDesign:
       Codelist Ref: SDTM Terminology Codelist C66739
       Relationship Type: Value
       Model Name: subTypes
+    activities:
+      Type:
+      - $ref: '#/Activity'
+      Cardinality: 0..*
+      Relationship Type: Value
     eligibilityCriteria:
       Type:
       - $ref: '#/EligibilityCriterion'
@@ -3339,6 +3344,11 @@ ObservationalStudyDesign:
       Codelist Ref: SDTM Terminology Codelist C127260
       Relationship Type: Value
       Model Name: samplingMethod
+    activities:
+      Type:
+      - $ref: '#/Activity'
+      Cardinality: 0..*
+      Relationship Type: Value
     eligibilityCriteria:
       Type:
       - $ref: '#/EligibilityCriterion'
@@ -6051,11 +6061,6 @@ StudyVersion:
     productOrganizationRoles:
       Type:
       - $ref: '#/ProductOrganizationRole'
-      Cardinality: 0..*
-      Relationship Type: Value
-    activities:
-      Type:
-      - $ref: '#/Activity'
       Cardinality: 0..*
       Relationship Type: Value
     biomedicalConcepts:
