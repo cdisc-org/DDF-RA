@@ -2646,15 +2646,24 @@ Masking:
       - $ref: '#/string'
       Relationship Type: Value
       Model Name: id
-    description:
+    description*:
       Type:
       - $ref: '#/string'
       NCI C-Code: C207505
       Preferred Term: Masking Description
       Definition: A narrative representation of the study masking strategy, based
         on a person's role within the study.
-      Relationship Type: Value
+      Relationship Type: UNKNOWN
       Model Name: description
+    text:
+      Type:
+      - $ref: '#/string'
+      Cardinality: 0..1
+      Relationship Type: Value
+    isMasked:
+      Type:
+      - $ref: UNKNOWN
+      Relationship Type: Value
     instanceType:
       Type:
       - $ref: '#/string'
