@@ -3200,9 +3200,12 @@ components:
           type: string
           minLength: 1
           title: Id
-        description:
+        text:
           type: string
-          title: Description
+          title: Text
+        isMasked:
+          type: boolean
+          title: Ismasked
         instanceType:
           type: string
           enum:
@@ -3212,7 +3215,8 @@ components:
       type: object
       required:
       - id
-      - description
+      - text
+      - isMasked
       - instanceType
       title: Masking
     MedicalDevice-Input:
