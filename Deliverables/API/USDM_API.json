@@ -1032,7 +1032,14 @@
             "$ref": "#/components/schemas/Code"
           },
           "quantity": {
-            "$ref": "#/components/schemas/Quantity-Input"
+            "anyOf": [
+              {
+                "$ref": "#/components/schemas/Quantity-Input"
+              },
+              {
+                "type": "null"
+              }
+            ]
           },
           "instanceType": {
             "type": "string",
@@ -1049,7 +1056,6 @@
           "name",
           "text",
           "type",
-          "quantity",
           "instanceType"
         ],
         "title": "AdministrableProductProperty"
@@ -1074,7 +1080,14 @@
             "$ref": "#/components/schemas/Code"
           },
           "quantity": {
-            "$ref": "#/components/schemas/Quantity-Output"
+            "anyOf": [
+              {
+                "$ref": "#/components/schemas/Quantity-Output"
+              },
+              {
+                "type": "null"
+              }
+            ]
           },
           "instanceType": {
             "type": "string",
@@ -1091,7 +1104,6 @@
           "name",
           "text",
           "type",
-          "quantity",
           "instanceType"
         ],
         "title": "AdministrableProductProperty"
@@ -1134,13 +1146,34 @@
             "$ref": "#/components/schemas/AdministrationDuration-Input"
           },
           "dose": {
-            "$ref": "#/components/schemas/Quantity-Input"
+            "anyOf": [
+              {
+                "$ref": "#/components/schemas/Quantity-Input"
+              },
+              {
+                "type": "null"
+              }
+            ]
           },
           "route": {
-            "$ref": "#/components/schemas/AliasCode"
+            "anyOf": [
+              {
+                "$ref": "#/components/schemas/AliasCode"
+              },
+              {
+                "type": "null"
+              }
+            ]
           },
           "frequency": {
-            "$ref": "#/components/schemas/AliasCode"
+            "anyOf": [
+              {
+                "$ref": "#/components/schemas/AliasCode"
+              },
+              {
+                "type": "null"
+              }
+            ]
           },
           "administrableProductId": {
             "anyOf": [
@@ -1186,9 +1219,6 @@
           "id",
           "name",
           "duration",
-          "dose",
-          "route",
-          "frequency",
           "instanceType"
         ],
         "title": "Administration"
@@ -1231,13 +1261,34 @@
             "$ref": "#/components/schemas/AdministrationDuration-Output"
           },
           "dose": {
-            "$ref": "#/components/schemas/Quantity-Output"
+            "anyOf": [
+              {
+                "$ref": "#/components/schemas/Quantity-Output"
+              },
+              {
+                "type": "null"
+              }
+            ]
           },
           "route": {
-            "$ref": "#/components/schemas/AliasCode"
+            "anyOf": [
+              {
+                "$ref": "#/components/schemas/AliasCode"
+              },
+              {
+                "type": "null"
+              }
+            ]
           },
           "frequency": {
-            "$ref": "#/components/schemas/AliasCode"
+            "anyOf": [
+              {
+                "$ref": "#/components/schemas/AliasCode"
+              },
+              {
+                "type": "null"
+              }
+            ]
           },
           "administrableProductId": {
             "anyOf": [
@@ -1283,9 +1334,6 @@
           "id",
           "name",
           "duration",
-          "dose",
-          "route",
-          "frequency",
           "instanceType"
         ],
         "title": "Administration"
@@ -1297,6 +1345,17 @@
             "minLength": 1,
             "title": "Id"
           },
+          "description": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Description"
+          },
           "quantity": {
             "anyOf": [
               {
@@ -1306,10 +1365,6 @@
                 "type": "null"
               }
             ]
-          },
-          "description": {
-            "type": "string",
-            "title": "Description"
           },
           "durationWillVary": {
             "type": "boolean",
@@ -1331,7 +1386,6 @@
         "type": "object",
         "required": [
           "id",
-          "description",
           "durationWillVary",
           "reasonDurationWillVary",
           "instanceType"
@@ -1345,6 +1399,17 @@
             "minLength": 1,
             "title": "Id"
           },
+          "description": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Description"
+          },
           "quantity": {
             "anyOf": [
               {
@@ -1354,10 +1419,6 @@
                 "type": "null"
               }
             ]
-          },
-          "description": {
-            "type": "string",
-            "title": "Description"
           },
           "durationWillVary": {
             "type": "boolean",
@@ -1379,7 +1440,6 @@
         "type": "object",
         "required": [
           "id",
-          "description",
           "durationWillVary",
           "reasonDurationWillVary",
           "instanceType"

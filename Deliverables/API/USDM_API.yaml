@@ -677,7 +677,9 @@ components:
         type:
           $ref: '#/components/schemas/Code'
         quantity:
-          $ref: '#/components/schemas/Quantity-Input'
+          anyOf:
+          - $ref: '#/components/schemas/Quantity-Input'
+          - type: 'null'
         instanceType:
           type: string
           enum:
@@ -690,7 +692,6 @@ components:
       - name
       - text
       - type
-      - quantity
       - instanceType
       title: AdministrableProductProperty
     AdministrableProductProperty-Output:
@@ -709,7 +710,9 @@ components:
         type:
           $ref: '#/components/schemas/Code'
         quantity:
-          $ref: '#/components/schemas/Quantity-Output'
+          anyOf:
+          - $ref: '#/components/schemas/Quantity-Output'
+          - type: 'null'
         instanceType:
           type: string
           enum:
@@ -722,7 +725,6 @@ components:
       - name
       - text
       - type
-      - quantity
       - instanceType
       title: AdministrableProductProperty
     Administration-Input:
@@ -748,11 +750,17 @@ components:
         duration:
           $ref: '#/components/schemas/AdministrationDuration-Input'
         dose:
-          $ref: '#/components/schemas/Quantity-Input'
+          anyOf:
+          - $ref: '#/components/schemas/Quantity-Input'
+          - type: 'null'
         route:
-          $ref: '#/components/schemas/AliasCode'
+          anyOf:
+          - $ref: '#/components/schemas/AliasCode'
+          - type: 'null'
         frequency:
-          $ref: '#/components/schemas/AliasCode'
+          anyOf:
+          - $ref: '#/components/schemas/AliasCode'
+          - type: 'null'
         administrableProductId:
           anyOf:
           - type: string
@@ -780,9 +788,6 @@ components:
       - id
       - name
       - duration
-      - dose
-      - route
-      - frequency
       - instanceType
       title: Administration
     Administration-Output:
@@ -808,11 +813,17 @@ components:
         duration:
           $ref: '#/components/schemas/AdministrationDuration-Output'
         dose:
-          $ref: '#/components/schemas/Quantity-Output'
+          anyOf:
+          - $ref: '#/components/schemas/Quantity-Output'
+          - type: 'null'
         route:
-          $ref: '#/components/schemas/AliasCode'
+          anyOf:
+          - $ref: '#/components/schemas/AliasCode'
+          - type: 'null'
         frequency:
-          $ref: '#/components/schemas/AliasCode'
+          anyOf:
+          - $ref: '#/components/schemas/AliasCode'
+          - type: 'null'
         administrableProductId:
           anyOf:
           - type: string
@@ -840,9 +851,6 @@ components:
       - id
       - name
       - duration
-      - dose
-      - route
-      - frequency
       - instanceType
       title: Administration
     AdministrationDuration-Input:
@@ -851,13 +859,15 @@ components:
           type: string
           minLength: 1
           title: Id
+        description:
+          anyOf:
+          - type: string
+          - type: 'null'
+          title: Description
         quantity:
           anyOf:
           - $ref: '#/components/schemas/Quantity-Input'
           - type: 'null'
-        description:
-          type: string
-          title: Description
         durationWillVary:
           type: boolean
           title: Durationwillvary
@@ -873,7 +883,6 @@ components:
       type: object
       required:
       - id
-      - description
       - durationWillVary
       - reasonDurationWillVary
       - instanceType
@@ -884,13 +893,15 @@ components:
           type: string
           minLength: 1
           title: Id
+        description:
+          anyOf:
+          - type: string
+          - type: 'null'
+          title: Description
         quantity:
           anyOf:
           - $ref: '#/components/schemas/Quantity-Output'
           - type: 'null'
-        description:
-          type: string
-          title: Description
         durationWillVary:
           type: boolean
           title: Durationwillvary
@@ -906,7 +917,6 @@ components:
       type: object
       required:
       - id
-      - description
       - durationWillVary
       - reasonDurationWillVary
       - instanceType
