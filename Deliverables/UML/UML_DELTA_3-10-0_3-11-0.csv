@@ -8,6 +8,8 @@ Class - NEW,EligibilityCriterionItem,,
 ,,notes,CommentAnnotation
 ,,dictionary,SyntaxTemplateDictionary
 ,,,
+Property - NEW,Masking,isMasked,Boolean
+Property - NEW,Masking,text,string
 Property - NEW,StudyDesignPopulation,plannedCompletionNumberQuantity,Quantity
 Property - NEW,StudyDesignPopulation,plannedCompletionNumberRange,Range
 Property - NEW,StudyDesignPopulation,plannedEnrollmentNumberQuantity,Quantity
@@ -27,12 +29,10 @@ Property - NEW,SubjectEnrollment,forStudySite,StudySite
 Property - NEW,EligibilityCriterion,criterionItem,EligibilityCriterionItem
 Property - NEW,Strength,numeratorQuantity,Quantity
 Property - NEW,Strength,numeratorRange,Range
-Property - DELETED,StudyDesign,activities,Activity
+Property - DELETED,Masking,description,string
 Property - DELETED,Range,unit,AliasCode
 Property - DELETED,StudyDesignPopulation,plannedCompletionNumber,Range
 Property - DELETED,StudyDesignPopulation,plannedEnrollmentNumber,Range
-Property - DELETED,InterventionalStudyDesign,activities,Activity
-Property - DELETED,ObservationalStudyDesign,activities,Activity
 Property - DELETED,PopulationDefinition,plannedCompletionNumber,Range
 Property - DELETED,PopulationDefinition,plannedEnrollmentNumber,Range
 Property - DELETED,StudyCohort,plannedCompletionNumber,Range
