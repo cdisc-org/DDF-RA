@@ -2429,6 +2429,17 @@ InterventionalStudyDesign:
       Model Name: notes
       Inherited From:
         $ref: '#/StudyDesign'
+    activities:
+      Type:
+      - $ref: '#/Activity'
+      Cardinality: 0..*
+      Definition: A USDM relationship between the InterventionalStudyDesign and Activity
+        classes which identifies the set of activities associated with the interventional
+        study design.
+      Relationship Type: Value
+      Model Name: activities
+      Inherited From:
+        $ref: '#/StudyDesign'
     biospecimenRetentions:
       Type:
       - $ref: '#/BiospecimenRetention'
@@ -2613,11 +2624,6 @@ InterventionalStudyDesign:
       Codelist Ref: SDTM Terminology Codelist C66739
       Relationship Type: Value
       Model Name: subTypes
-    activities:
-      Type:
-      - $ref: '#/Activity'
-      Cardinality: 0..*
-      Relationship Type: Value
     eligibilityCriteria:
       Type:
       - $ref: '#/EligibilityCriterion'
@@ -2646,24 +2652,16 @@ Masking:
       - $ref: '#/string'
       Relationship Type: Value
       Model Name: id
-    description*:
-      Type:
-      - $ref: '#/string'
-      NCI C-Code: C207505
-      Preferred Term: Masking Description
-      Definition: A narrative representation of the study masking strategy, based
-        on a person's role within the study.
-      Relationship Type: UNKNOWN
-      Model Name: description
     text:
       Type:
       - $ref: '#/string'
-      Cardinality: 0..1
       Relationship Type: Value
+      Model Name: text
     isMasked:
       Type:
-      - $ref: UNKNOWN
+      - $ref: '#/Boolean'
       Relationship Type: Value
+      Model Name: isMasked
     instanceType:
       Type:
       - $ref: '#/string'
@@ -3170,6 +3168,17 @@ ObservationalStudyDesign:
       Model Name: notes
       Inherited From:
         $ref: '#/StudyDesign'
+    activities:
+      Type:
+      - $ref: '#/Activity'
+      Cardinality: 0..*
+      Definition: A USDM relationship between the ObservationalStudyDesign and Activity
+        classes which identifies the set of activities associated with the observational
+        study design.
+      Relationship Type: Value
+      Model Name: activities
+      Inherited From:
+        $ref: '#/StudyDesign'
     biospecimenRetentions:
       Type:
       - $ref: '#/BiospecimenRetention'
@@ -3353,11 +3362,6 @@ ObservationalStudyDesign:
       Codelist Ref: SDTM Terminology Codelist C127260
       Relationship Type: Value
       Model Name: samplingMethod
-    activities:
-      Type:
-      - $ref: '#/Activity'
-      Cardinality: 0..*
-      Relationship Type: Value
     eligibilityCriteria:
       Type:
       - $ref: '#/EligibilityCriterion'
@@ -5191,6 +5195,11 @@ StudyDesign:
       Preferred Term: Study Design Notes
       Definition: A brief written record relevant to the study design.
       Model Name: notes
+    activities:
+      Type:
+      - $ref: '#/Activity'
+      Cardinality: 0..*
+      Model Name: activities
     biospecimenRetentions:
       Type:
       - $ref: '#/BiospecimenRetention'
