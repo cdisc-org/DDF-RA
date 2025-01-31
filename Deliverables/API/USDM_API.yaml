@@ -872,7 +872,9 @@ components:
           type: boolean
           title: Durationwillvary
         reasonDurationWillVary:
-          type: string
+          anyOf:
+          - type: string
+          - type: 'null'
           title: Reasondurationwillvary
         instanceType:
           type: string
@@ -884,7 +886,6 @@ components:
       required:
       - id
       - durationWillVary
-      - reasonDurationWillVary
       - instanceType
       title: AdministrationDuration
     AdministrationDuration-Output:
@@ -906,7 +907,9 @@ components:
           type: boolean
           title: Durationwillvary
         reasonDurationWillVary:
-          type: string
+          anyOf:
+          - type: string
+          - type: 'null'
           title: Reasondurationwillvary
         instanceType:
           type: string
@@ -918,7 +921,6 @@ components:
       required:
       - id
       - durationWillVary
-      - reasonDurationWillVary
       - instanceType
       title: AdministrationDuration
     AliasCode:

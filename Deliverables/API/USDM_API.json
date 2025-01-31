@@ -1371,7 +1371,14 @@
             "title": "Durationwillvary"
           },
           "reasonDurationWillVary": {
-            "type": "string",
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
             "title": "Reasondurationwillvary"
           },
           "instanceType": {
@@ -1387,7 +1394,6 @@
         "required": [
           "id",
           "durationWillVary",
-          "reasonDurationWillVary",
           "instanceType"
         ],
         "title": "AdministrationDuration"
@@ -1425,7 +1431,14 @@
             "title": "Durationwillvary"
           },
           "reasonDurationWillVary": {
-            "type": "string",
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
             "title": "Reasondurationwillvary"
           },
           "instanceType": {
@@ -1441,7 +1454,6 @@
         "required": [
           "id",
           "durationWillVary",
-          "reasonDurationWillVary",
           "instanceType"
         ],
         "title": "AdministrationDuration"
