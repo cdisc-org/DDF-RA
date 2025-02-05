@@ -2593,9 +2593,19 @@ InterventionalStudyDesign:
       Codelist Ref: SDTM Terminology Codelist C99076
       Relationship Type: Value
       Model Name: model
-    blindingSchema:
+    subTypes:
       Type:
       - $ref: '#/Code'
+      NCI C-Code: C49660
+      Preferred Term: Trial Type
+      Definition: The nature of the interventional study for which information is
+        being collected.
+      Codelist Ref: SDTM Terminology Codelist C66739
+      Relationship Type: Value
+      Model Name: subTypes
+    blindingSchema:
+      Type:
+      - $ref: '#/AliasCode'
       NCI C-Code: C49658
       Preferred Term: Trial Blinding Schema
       Definition: The type of experimental design used to describe the level of awareness
@@ -2614,16 +2624,6 @@ InterventionalStudyDesign:
       Codelist Ref: SDTM Terminology Codelist C66736
       Relationship Type: Value
       Model Name: intentTypes
-    subTypes:
-      Type:
-      - $ref: '#/Code'
-      NCI C-Code: C49660
-      Preferred Term: Trial Type
-      Definition: The nature of the interventional study for which information is
-        being collected.
-      Codelist Ref: SDTM Terminology Codelist C66739
-      Relationship Type: Value
-      Model Name: subTypes
     eligibilityCriteria:
       Type:
       - $ref: '#/EligibilityCriterion'
@@ -3322,16 +3322,6 @@ ObservationalStudyDesign:
       Model Name: population
       Inherited From:
         $ref: '#/StudyDesign'
-    subTypes:
-      Type:
-      - $ref: '#/Code'
-      NCI C-Code: CNEW
-      Preferred Term: Observational Study Type
-      Definition: The nature of the observational study for which information is being
-        collected.
-      Codelist Ref: CNEW - Observational Study Type Response
-      Relationship Type: Value
-      Model Name: subTypes
     model:
       Type:
       - $ref: '#/Code'
@@ -3342,6 +3332,16 @@ ObservationalStudyDesign:
       Codelist Ref: SDTM Terminology Codelist C127259
       Relationship Type: Value
       Model Name: model
+    subTypes:
+      Type:
+      - $ref: '#/Code'
+      NCI C-Code: CNEW
+      Preferred Term: Observational Study Type
+      Definition: The nature of the observational study for which information is being
+        collected.
+      Codelist Ref: CNEW - Observational Study Type Response
+      Relationship Type: Value
+      Model Name: subTypes
     timePerspective:
       Type:
       - $ref: '#/Code'
