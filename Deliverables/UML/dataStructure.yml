@@ -667,15 +667,19 @@ AliasCode:
     standardCode:
       Type:
       - $ref: '#/Code'
-      Definition: A USDM relationship between the AliasCode and Code classes which
-        provides the details of the standard code.
+      NCI C-Code: CNEW
+      Preferred Term: Standard Code
+      Definition: A combination of symbols that is used to represent the standard
+        code.
       Relationship Type: Value
       Model Name: standardCode
     standardCodeAliases:
       Type:
       - $ref: '#/Code'
-      Definition: A USDM relationship between the AliasCode and Code classes which
-        identifies the set of standard code aliases associated with the alias code.
+      NCI C-Code: CNEW
+      Preferred Term: Standard Code Aliases
+      Definition: Alternative combinations of symbols used to represent aliases or
+        alternatives to the standard code.
       Relationship Type: Value
       Model Name: standardCodeAliases
     extensionAttributes:
@@ -2820,11 +2824,18 @@ Masking:
     text:
       Type:
       - $ref: '#/string'
+      NCI C-Code: CNEW
+      Preferred Term: Masking Text
+      Definition: An instance of unstructured text that represents how the masking
+        is performed and maintained.
       Relationship Type: Value
       Model Name: text
     isMasked:
       Type:
       - $ref: '#/Boolean'
+      NCI C-Code: CNEW
+      Preferred Term: Masked Indicator
+      Definition: An indication as to whether the study role is masked.
       Relationship Type: Value
       Model Name: isMasked
     extensionAttributes:
@@ -5509,6 +5520,8 @@ StudyDesign:
       Type:
       - $ref: '#/Activity'
       Cardinality: 0..*
+      Definition: A USDM relationship between the StudyDesign and Activity classes
+        which identifies the set of activities associated with the study design.
       Model Name: activities
     biospecimenRetentions:
       Type:
