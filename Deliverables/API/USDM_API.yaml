@@ -218,6 +218,12 @@ components:
           type: string
           minLength: 1
           title: Id
+        extensionAttributes:
+          items:
+            $ref: '#/components/schemas/ExtensionAttribute-Input'
+          type: array
+          title: Extensionattributes
+          default: []
         abbreviatedText:
           type: string
           minLength: 1
@@ -228,7 +234,7 @@ components:
           title: Expandedtext
         notes:
           items:
-            $ref: '#/components/schemas/CommentAnnotation'
+            $ref: '#/components/schemas/CommentAnnotation-Input'
           type: array
           title: Notes
           default: []
@@ -251,6 +257,12 @@ components:
           type: string
           minLength: 1
           title: Id
+        extensionAttributes:
+          items:
+            $ref: '#/components/schemas/ExtensionAttribute-Output'
+          type: array
+          title: Extensionattributes
+          default: []
         abbreviatedText:
           type: string
           minLength: 1
@@ -261,7 +273,7 @@ components:
           title: Expandedtext
         notes:
           items:
-            $ref: '#/components/schemas/CommentAnnotation'
+            $ref: '#/components/schemas/CommentAnnotation-Output'
           type: array
           title: Notes
           default: []
@@ -284,6 +296,12 @@ components:
           type: string
           minLength: 1
           title: Id
+        extensionAttributes:
+          items:
+            $ref: '#/components/schemas/ExtensionAttribute-Input'
+          type: array
+          title: Extensionattributes
+          default: []
         name:
           type: string
           minLength: 1
@@ -345,7 +363,7 @@ components:
           title: Timelineid
         notes:
           items:
-            $ref: '#/components/schemas/CommentAnnotation'
+            $ref: '#/components/schemas/CommentAnnotation-Input'
           type: array
           title: Notes
           default: []
@@ -367,6 +385,12 @@ components:
           type: string
           minLength: 1
           title: Id
+        extensionAttributes:
+          items:
+            $ref: '#/components/schemas/ExtensionAttribute-Output'
+          type: array
+          title: Extensionattributes
+          default: []
         name:
           type: string
           minLength: 1
@@ -428,7 +452,7 @@ components:
           title: Timelineid
         notes:
           items:
-            $ref: '#/components/schemas/CommentAnnotation'
+            $ref: '#/components/schemas/CommentAnnotation-Output'
           type: array
           title: Notes
           default: []
@@ -444,12 +468,18 @@ components:
       - name
       - instanceType
       title: Activity
-    Address:
+    Address-Input:
       properties:
         id:
           type: string
           minLength: 1
           title: Id
+        extensionAttributes:
+          items:
+            $ref: '#/components/schemas/ExtensionAttribute-Input'
+          type: array
+          title: Extensionattributes
+          default: []
         text:
           anyOf:
           - type: string
@@ -483,7 +513,65 @@ components:
           title: Postalcode
         country:
           anyOf:
-          - $ref: '#/components/schemas/Code'
+          - $ref: '#/components/schemas/Code-Input'
+          - type: 'null'
+        instanceType:
+          type: string
+          enum:
+          - Address
+          const: Address
+          title: Instancetype
+      type: object
+      required:
+      - id
+      - instanceType
+      title: Address
+    Address-Output:
+      properties:
+        id:
+          type: string
+          minLength: 1
+          title: Id
+        extensionAttributes:
+          items:
+            $ref: '#/components/schemas/ExtensionAttribute-Output'
+          type: array
+          title: Extensionattributes
+          default: []
+        text:
+          anyOf:
+          - type: string
+          - type: 'null'
+          title: Text
+        lines:
+          items:
+            type: string
+          type: array
+          title: Lines
+          default: []
+        city:
+          anyOf:
+          - type: string
+          - type: 'null'
+          title: City
+        district:
+          anyOf:
+          - type: string
+          - type: 'null'
+          title: District
+        state:
+          anyOf:
+          - type: string
+          - type: 'null'
+          title: State
+        postalCode:
+          anyOf:
+          - type: string
+          - type: 'null'
+          title: Postalcode
+        country:
+          anyOf:
+          - $ref: '#/components/schemas/Code-Output'
           - type: 'null'
         instanceType:
           type: string
@@ -502,6 +590,12 @@ components:
           type: string
           minLength: 1
           title: Id
+        extensionAttributes:
+          items:
+            $ref: '#/components/schemas/ExtensionAttribute-Input'
+          type: array
+          title: Extensionattributes
+          default: []
         name:
           type: string
           minLength: 1
@@ -518,15 +612,15 @@ components:
           title: Description
         pharmacologicClass:
           anyOf:
-          - $ref: '#/components/schemas/Code'
+          - $ref: '#/components/schemas/Code-Input'
           - type: 'null'
         administrableDoseForm:
-          $ref: '#/components/schemas/AliasCode'
+          $ref: '#/components/schemas/AliasCode-Input'
         productDesignation:
-          $ref: '#/components/schemas/Code'
+          $ref: '#/components/schemas/Code-Input'
         sourcing:
           anyOf:
-          - $ref: '#/components/schemas/Code'
+          - $ref: '#/components/schemas/Code-Input'
           - type: 'null'
         properties:
           items:
@@ -536,7 +630,7 @@ components:
           default: []
         identifiers:
           items:
-            $ref: '#/components/schemas/AdministrableProductIdentifier'
+            $ref: '#/components/schemas/AdministrableProductIdentifier-Input'
           type: array
           title: Identifiers
           default: []
@@ -548,7 +642,7 @@ components:
           default: []
         notes:
           items:
-            $ref: '#/components/schemas/CommentAnnotation'
+            $ref: '#/components/schemas/CommentAnnotation-Input'
           type: array
           title: Notes
           default: []
@@ -572,6 +666,12 @@ components:
           type: string
           minLength: 1
           title: Id
+        extensionAttributes:
+          items:
+            $ref: '#/components/schemas/ExtensionAttribute-Output'
+          type: array
+          title: Extensionattributes
+          default: []
         name:
           type: string
           minLength: 1
@@ -588,15 +688,15 @@ components:
           title: Description
         pharmacologicClass:
           anyOf:
-          - $ref: '#/components/schemas/Code'
+          - $ref: '#/components/schemas/Code-Output'
           - type: 'null'
         administrableDoseForm:
-          $ref: '#/components/schemas/AliasCode'
+          $ref: '#/components/schemas/AliasCode-Output'
         productDesignation:
-          $ref: '#/components/schemas/Code'
+          $ref: '#/components/schemas/Code-Output'
         sourcing:
           anyOf:
-          - $ref: '#/components/schemas/Code'
+          - $ref: '#/components/schemas/Code-Output'
           - type: 'null'
         properties:
           items:
@@ -606,7 +706,7 @@ components:
           default: []
         identifiers:
           items:
-            $ref: '#/components/schemas/AdministrableProductIdentifier'
+            $ref: '#/components/schemas/AdministrableProductIdentifier-Output'
           type: array
           title: Identifiers
           default: []
@@ -618,7 +718,7 @@ components:
           default: []
         notes:
           items:
-            $ref: '#/components/schemas/CommentAnnotation'
+            $ref: '#/components/schemas/CommentAnnotation-Output'
           type: array
           title: Notes
           default: []
@@ -636,12 +736,49 @@ components:
       - productDesignation
       - instanceType
       title: AdministrableProduct
-    AdministrableProductIdentifier:
+    AdministrableProductIdentifier-Input:
       properties:
         id:
           type: string
           minLength: 1
           title: Id
+        extensionAttributes:
+          items:
+            $ref: '#/components/schemas/ExtensionAttribute-Input'
+          type: array
+          title: Extensionattributes
+          default: []
+        text:
+          type: string
+          title: Text
+        scopeId:
+          type: string
+          title: Scopeid
+        instanceType:
+          type: string
+          enum:
+          - AdministrableProductIdentifier
+          const: AdministrableProductIdentifier
+          title: Instancetype
+      type: object
+      required:
+      - id
+      - text
+      - scopeId
+      - instanceType
+      title: AdministrableProductIdentifier
+    AdministrableProductIdentifier-Output:
+      properties:
+        id:
+          type: string
+          minLength: 1
+          title: Id
+        extensionAttributes:
+          items:
+            $ref: '#/components/schemas/ExtensionAttribute-Output'
+          type: array
+          title: Extensionattributes
+          default: []
         text:
           type: string
           title: Text
@@ -667,6 +804,12 @@ components:
           type: string
           minLength: 1
           title: Id
+        extensionAttributes:
+          items:
+            $ref: '#/components/schemas/ExtensionAttribute-Input'
+          type: array
+          title: Extensionattributes
+          default: []
         name:
           type: string
           minLength: 1
@@ -675,7 +818,7 @@ components:
           type: string
           title: Text
         type:
-          $ref: '#/components/schemas/Code'
+          $ref: '#/components/schemas/Code-Input'
         quantity:
           anyOf:
           - $ref: '#/components/schemas/Quantity-Input'
@@ -700,6 +843,12 @@ components:
           type: string
           minLength: 1
           title: Id
+        extensionAttributes:
+          items:
+            $ref: '#/components/schemas/ExtensionAttribute-Output'
+          type: array
+          title: Extensionattributes
+          default: []
         name:
           type: string
           minLength: 1
@@ -708,7 +857,7 @@ components:
           type: string
           title: Text
         type:
-          $ref: '#/components/schemas/Code'
+          $ref: '#/components/schemas/Code-Output'
         quantity:
           anyOf:
           - $ref: '#/components/schemas/Quantity-Output'
@@ -733,6 +882,12 @@ components:
           type: string
           minLength: 1
           title: Id
+        extensionAttributes:
+          items:
+            $ref: '#/components/schemas/ExtensionAttribute-Input'
+          type: array
+          title: Extensionattributes
+          default: []
         name:
           type: string
           minLength: 1
@@ -755,11 +910,11 @@ components:
           - type: 'null'
         route:
           anyOf:
-          - $ref: '#/components/schemas/AliasCode'
+          - $ref: '#/components/schemas/AliasCode-Input'
           - type: 'null'
         frequency:
           anyOf:
-          - $ref: '#/components/schemas/AliasCode'
+          - $ref: '#/components/schemas/AliasCode-Input'
           - type: 'null'
         administrableProductId:
           anyOf:
@@ -773,7 +928,7 @@ components:
           title: Medicaldeviceid
         notes:
           items:
-            $ref: '#/components/schemas/CommentAnnotation'
+            $ref: '#/components/schemas/CommentAnnotation-Input'
           type: array
           title: Notes
           default: []
@@ -796,6 +951,12 @@ components:
           type: string
           minLength: 1
           title: Id
+        extensionAttributes:
+          items:
+            $ref: '#/components/schemas/ExtensionAttribute-Output'
+          type: array
+          title: Extensionattributes
+          default: []
         name:
           type: string
           minLength: 1
@@ -818,11 +979,11 @@ components:
           - type: 'null'
         route:
           anyOf:
-          - $ref: '#/components/schemas/AliasCode'
+          - $ref: '#/components/schemas/AliasCode-Output'
           - type: 'null'
         frequency:
           anyOf:
-          - $ref: '#/components/schemas/AliasCode'
+          - $ref: '#/components/schemas/AliasCode-Output'
           - type: 'null'
         administrableProductId:
           anyOf:
@@ -836,7 +997,7 @@ components:
           title: Medicaldeviceid
         notes:
           items:
-            $ref: '#/components/schemas/CommentAnnotation'
+            $ref: '#/components/schemas/CommentAnnotation-Output'
           type: array
           title: Notes
           default: []
@@ -859,6 +1020,12 @@ components:
           type: string
           minLength: 1
           title: Id
+        extensionAttributes:
+          items:
+            $ref: '#/components/schemas/ExtensionAttribute-Input'
+          type: array
+          title: Extensionattributes
+          default: []
         description:
           anyOf:
           - type: string
@@ -894,6 +1061,12 @@ components:
           type: string
           minLength: 1
           title: Id
+        extensionAttributes:
+          items:
+            $ref: '#/components/schemas/ExtensionAttribute-Output'
+          type: array
+          title: Extensionattributes
+          default: []
         description:
           anyOf:
           - type: string
@@ -923,17 +1096,55 @@ components:
       - durationWillVary
       - instanceType
       title: AdministrationDuration
-    AliasCode:
+    AliasCode-Input:
       properties:
         id:
           type: string
           minLength: 1
           title: Id
+        extensionAttributes:
+          items:
+            $ref: '#/components/schemas/ExtensionAttribute-Input'
+          type: array
+          title: Extensionattributes
+          default: []
         standardCode:
-          $ref: '#/components/schemas/Code'
+          $ref: '#/components/schemas/Code-Input'
         standardCodeAliases:
           items:
-            $ref: '#/components/schemas/Code'
+            $ref: '#/components/schemas/Code-Input'
+          type: array
+          title: Standardcodealiases
+          default: []
+        instanceType:
+          type: string
+          enum:
+          - AliasCode
+          const: AliasCode
+          title: Instancetype
+      type: object
+      required:
+      - id
+      - standardCode
+      - instanceType
+      title: AliasCode
+    AliasCode-Output:
+      properties:
+        id:
+          type: string
+          minLength: 1
+          title: Id
+        extensionAttributes:
+          items:
+            $ref: '#/components/schemas/ExtensionAttribute-Output'
+          type: array
+          title: Extensionattributes
+          default: []
+        standardCode:
+          $ref: '#/components/schemas/Code-Output'
+        standardCodeAliases:
+          items:
+            $ref: '#/components/schemas/Code-Output'
           type: array
           title: Standardcodealiases
           default: []
@@ -955,6 +1166,12 @@ components:
           type: string
           minLength: 1
           title: Id
+        extensionAttributes:
+          items:
+            $ref: '#/components/schemas/ExtensionAttribute-Input'
+          type: array
+          title: Extensionattributes
+          default: []
         name:
           type: string
           minLength: 1
@@ -980,7 +1197,7 @@ components:
           default: []
         notes:
           items:
-            $ref: '#/components/schemas/CommentAnnotation'
+            $ref: '#/components/schemas/CommentAnnotation-Input'
           type: array
           title: Notes
           default: []
@@ -1003,6 +1220,12 @@ components:
           type: string
           minLength: 1
           title: Id
+        extensionAttributes:
+          items:
+            $ref: '#/components/schemas/ExtensionAttribute-Output'
+          type: array
+          title: Extensionattributes
+          default: []
         name:
           type: string
           minLength: 1
@@ -1028,7 +1251,7 @@ components:
           default: []
         notes:
           items:
-            $ref: '#/components/schemas/CommentAnnotation'
+            $ref: '#/components/schemas/CommentAnnotation-Output'
           type: array
           title: Notes
           default: []
@@ -1045,12 +1268,65 @@ components:
       - text
       - instanceType
       title: AnalysisPopulation
-    AssignedPerson:
+    AssignedPerson-Input:
       properties:
         id:
           type: string
           minLength: 1
           title: Id
+        extensionAttributes:
+          items:
+            $ref: '#/components/schemas/ExtensionAttribute-Input'
+          type: array
+          title: Extensionattributes
+          default: []
+        name:
+          type: string
+          minLength: 1
+          title: Name
+        label:
+          anyOf:
+          - type: string
+          - type: 'null'
+          title: Label
+        description:
+          anyOf:
+          - type: string
+          - type: 'null'
+          title: Description
+        jobTitle:
+          type: string
+          title: Jobtitle
+        organizationId:
+          anyOf:
+          - type: string
+          - type: 'null'
+          title: Organizationid
+        instanceType:
+          type: string
+          enum:
+          - AssignedPerson
+          const: AssignedPerson
+          title: Instancetype
+      type: object
+      required:
+      - id
+      - name
+      - jobTitle
+      - instanceType
+      title: AssignedPerson
+    AssignedPerson-Output:
+      properties:
+        id:
+          type: string
+          minLength: 1
+          title: Id
+        extensionAttributes:
+          items:
+            $ref: '#/components/schemas/ExtensionAttribute-Output'
+          type: array
+          title: Extensionattributes
+          default: []
         name:
           type: string
           minLength: 1
@@ -1092,6 +1368,12 @@ components:
           type: string
           minLength: 1
           title: Id
+        extensionAttributes:
+          items:
+            $ref: '#/components/schemas/ExtensionAttribute-Input'
+          type: array
+          title: Extensionattributes
+          default: []
         name:
           type: string
           minLength: 1
@@ -1117,10 +1399,10 @@ components:
           title: Properties
           default: []
         code:
-          $ref: '#/components/schemas/AliasCode'
+          $ref: '#/components/schemas/AliasCode-Input'
         notes:
           items:
-            $ref: '#/components/schemas/CommentAnnotation'
+            $ref: '#/components/schemas/CommentAnnotation-Input'
           type: array
           title: Notes
           default: []
@@ -1144,6 +1426,12 @@ components:
           type: string
           minLength: 1
           title: Id
+        extensionAttributes:
+          items:
+            $ref: '#/components/schemas/ExtensionAttribute-Output'
+          type: array
+          title: Extensionattributes
+          default: []
         name:
           type: string
           minLength: 1
@@ -1169,10 +1457,10 @@ components:
           title: Properties
           default: []
         code:
-          $ref: '#/components/schemas/AliasCode'
+          $ref: '#/components/schemas/AliasCode-Output'
         notes:
           items:
-            $ref: '#/components/schemas/CommentAnnotation'
+            $ref: '#/components/schemas/CommentAnnotation-Output'
           type: array
           title: Notes
           default: []
@@ -1196,6 +1484,12 @@ components:
           type: string
           minLength: 1
           title: Id
+        extensionAttributes:
+          items:
+            $ref: '#/components/schemas/ExtensionAttribute-Input'
+          type: array
+          title: Extensionattributes
+          default: []
         name:
           type: string
           minLength: 1
@@ -1224,11 +1518,11 @@ components:
           default: []
         code:
           anyOf:
-          - $ref: '#/components/schemas/AliasCode'
+          - $ref: '#/components/schemas/AliasCode-Input'
           - type: 'null'
         notes:
           items:
-            $ref: '#/components/schemas/CommentAnnotation'
+            $ref: '#/components/schemas/CommentAnnotation-Input'
           type: array
           title: Notes
           default: []
@@ -1250,6 +1544,12 @@ components:
           type: string
           minLength: 1
           title: Id
+        extensionAttributes:
+          items:
+            $ref: '#/components/schemas/ExtensionAttribute-Output'
+          type: array
+          title: Extensionattributes
+          default: []
         name:
           type: string
           minLength: 1
@@ -1278,11 +1578,11 @@ components:
           default: []
         code:
           anyOf:
-          - $ref: '#/components/schemas/AliasCode'
+          - $ref: '#/components/schemas/AliasCode-Output'
           - type: 'null'
         notes:
           items:
-            $ref: '#/components/schemas/CommentAnnotation'
+            $ref: '#/components/schemas/CommentAnnotation-Output'
           type: array
           title: Notes
           default: []
@@ -1304,6 +1604,12 @@ components:
           type: string
           minLength: 1
           title: Id
+        extensionAttributes:
+          items:
+            $ref: '#/components/schemas/ExtensionAttribute-Input'
+          type: array
+          title: Extensionattributes
+          default: []
         name:
           type: string
           minLength: 1
@@ -1324,15 +1630,15 @@ components:
           title: Datatype
         responseCodes:
           items:
-            $ref: '#/components/schemas/ResponseCode'
+            $ref: '#/components/schemas/ResponseCode-Input'
           type: array
           title: Responsecodes
           default: []
         code:
-          $ref: '#/components/schemas/AliasCode'
+          $ref: '#/components/schemas/AliasCode-Input'
         notes:
           items:
-            $ref: '#/components/schemas/CommentAnnotation'
+            $ref: '#/components/schemas/CommentAnnotation-Input'
           type: array
           title: Notes
           default: []
@@ -1358,6 +1664,12 @@ components:
           type: string
           minLength: 1
           title: Id
+        extensionAttributes:
+          items:
+            $ref: '#/components/schemas/ExtensionAttribute-Output'
+          type: array
+          title: Extensionattributes
+          default: []
         name:
           type: string
           minLength: 1
@@ -1378,15 +1690,15 @@ components:
           title: Datatype
         responseCodes:
           items:
-            $ref: '#/components/schemas/ResponseCode'
+            $ref: '#/components/schemas/ResponseCode-Output'
           type: array
           title: Responsecodes
           default: []
         code:
-          $ref: '#/components/schemas/AliasCode'
+          $ref: '#/components/schemas/AliasCode-Output'
         notes:
           items:
-            $ref: '#/components/schemas/CommentAnnotation'
+            $ref: '#/components/schemas/CommentAnnotation-Output'
           type: array
           title: Notes
           default: []
@@ -1412,6 +1724,12 @@ components:
           type: string
           minLength: 1
           title: Id
+        extensionAttributes:
+          items:
+            $ref: '#/components/schemas/ExtensionAttribute-Input'
+          type: array
+          title: Extensionattributes
+          default: []
         name:
           type: string
           minLength: 1
@@ -1433,7 +1751,7 @@ components:
           title: Reference
         notes:
           items:
-            $ref: '#/components/schemas/CommentAnnotation'
+            $ref: '#/components/schemas/CommentAnnotation-Input'
           type: array
           title: Notes
           default: []
@@ -1455,6 +1773,12 @@ components:
           type: string
           minLength: 1
           title: Id
+        extensionAttributes:
+          items:
+            $ref: '#/components/schemas/ExtensionAttribute-Output'
+          type: array
+          title: Extensionattributes
+          default: []
         name:
           type: string
           minLength: 1
@@ -1476,7 +1800,7 @@ components:
           title: Reference
         notes:
           items:
-            $ref: '#/components/schemas/CommentAnnotation'
+            $ref: '#/components/schemas/CommentAnnotation-Output'
           type: array
           title: Notes
           default: []
@@ -1492,12 +1816,65 @@ components:
       - name
       - instanceType
       title: BiomedicalConceptSurrogate
-    BiospecimenRetention:
+    BiospecimenRetention-Input:
       properties:
         id:
           type: string
           minLength: 1
           title: Id
+        extensionAttributes:
+          items:
+            $ref: '#/components/schemas/ExtensionAttribute-Input'
+          type: array
+          title: Extensionattributes
+          default: []
+        name:
+          type: string
+          minLength: 1
+          title: Name
+        label:
+          anyOf:
+          - type: string
+          - type: 'null'
+          title: Label
+        description:
+          anyOf:
+          - type: string
+          - type: 'null'
+          title: Description
+        isRetained:
+          type: boolean
+          title: Isretained
+        includesDNA:
+          anyOf:
+          - type: boolean
+          - type: 'null'
+          title: Includesdna
+        instanceType:
+          type: string
+          enum:
+          - BiospecimenRetention
+          const: BiospecimenRetention
+          title: Instancetype
+      type: object
+      required:
+      - id
+      - name
+      - isRetained
+      - instanceType
+      title: BiospecimenRetention
+    BiospecimenRetention-Output:
+      properties:
+        id:
+          type: string
+          minLength: 1
+          title: Id
+        extensionAttributes:
+          items:
+            $ref: '#/components/schemas/ExtensionAttribute-Output'
+          type: array
+          title: Extensionattributes
+          default: []
         name:
           type: string
           minLength: 1
@@ -1539,6 +1916,12 @@ components:
           type: string
           minLength: 1
           title: Id
+        extensionAttributes:
+          items:
+            $ref: '#/components/schemas/ExtensionAttribute-Input'
+          type: array
+          title: Extensionattributes
+          default: []
         name:
           type: string
           minLength: 1
@@ -1563,7 +1946,7 @@ components:
           title: Dictionaryid
         notes:
           items:
-            $ref: '#/components/schemas/CommentAnnotation'
+            $ref: '#/components/schemas/CommentAnnotation-Input'
           type: array
           title: Notes
           default: []
@@ -1586,6 +1969,12 @@ components:
           type: string
           minLength: 1
           title: Id
+        extensionAttributes:
+          items:
+            $ref: '#/components/schemas/ExtensionAttribute-Output'
+          type: array
+          title: Extensionattributes
+          default: []
         name:
           type: string
           minLength: 1
@@ -1610,7 +1999,7 @@ components:
           title: Dictionaryid
         notes:
           items:
-            $ref: '#/components/schemas/CommentAnnotation'
+            $ref: '#/components/schemas/CommentAnnotation-Output'
           type: array
           title: Notes
           default: []
@@ -1627,12 +2016,18 @@ components:
       - text
       - instanceType
       title: Characteristic
-    Code:
+    Code-Input:
       properties:
         id:
           type: string
           minLength: 1
           title: Id
+        extensionAttributes:
+          items:
+            $ref: '#/components/schemas/ExtensionAttribute-Input'
+          type: array
+          title: Extensionattributes
+          default: []
         code:
           type: string
           title: Code
@@ -1660,18 +2055,96 @@ components:
       - decode
       - instanceType
       title: Code
-    CommentAnnotation:
+    Code-Output:
       properties:
         id:
           type: string
           minLength: 1
           title: Id
+        extensionAttributes:
+          items:
+            $ref: '#/components/schemas/ExtensionAttribute-Output'
+          type: array
+          title: Extensionattributes
+          default: []
+        code:
+          type: string
+          title: Code
+        codeSystem:
+          type: string
+          title: Codesystem
+        codeSystemVersion:
+          type: string
+          title: Codesystemversion
+        decode:
+          type: string
+          title: Decode
+        instanceType:
+          type: string
+          enum:
+          - Code
+          const: Code
+          title: Instancetype
+      type: object
+      required:
+      - id
+      - code
+      - codeSystem
+      - codeSystemVersion
+      - decode
+      - instanceType
+      title: Code
+    CommentAnnotation-Input:
+      properties:
+        id:
+          type: string
+          minLength: 1
+          title: Id
+        extensionAttributes:
+          items:
+            $ref: '#/components/schemas/ExtensionAttribute-Input'
+          type: array
+          title: Extensionattributes
+          default: []
         text:
           type: string
           title: Text
         codes:
           items:
-            $ref: '#/components/schemas/Code'
+            $ref: '#/components/schemas/Code-Input'
+          type: array
+          title: Codes
+          default: []
+        instanceType:
+          type: string
+          enum:
+          - CommentAnnotation
+          const: CommentAnnotation
+          title: Instancetype
+      type: object
+      required:
+      - id
+      - text
+      - instanceType
+      title: CommentAnnotation
+    CommentAnnotation-Output:
+      properties:
+        id:
+          type: string
+          minLength: 1
+          title: Id
+        extensionAttributes:
+          items:
+            $ref: '#/components/schemas/ExtensionAttribute-Output'
+          type: array
+          title: Extensionattributes
+          default: []
+        text:
+          type: string
+          title: Text
+        codes:
+          items:
+            $ref: '#/components/schemas/Code-Output'
           type: array
           title: Codes
           default: []
@@ -1693,6 +2166,12 @@ components:
           type: string
           minLength: 1
           title: Id
+        extensionAttributes:
+          items:
+            $ref: '#/components/schemas/ExtensionAttribute-Input'
+          type: array
+          title: Extensionattributes
+          default: []
         name:
           type: string
           minLength: 1
@@ -1717,7 +2196,7 @@ components:
           title: Dictionaryid
         notes:
           items:
-            $ref: '#/components/schemas/CommentAnnotation'
+            $ref: '#/components/schemas/CommentAnnotation-Input'
           type: array
           title: Notes
           default: []
@@ -1752,6 +2231,12 @@ components:
           type: string
           minLength: 1
           title: Id
+        extensionAttributes:
+          items:
+            $ref: '#/components/schemas/ExtensionAttribute-Output'
+          type: array
+          title: Extensionattributes
+          default: []
         name:
           type: string
           minLength: 1
@@ -1776,7 +2261,7 @@ components:
           title: Dictionaryid
         notes:
           items:
-            $ref: '#/components/schemas/CommentAnnotation'
+            $ref: '#/components/schemas/CommentAnnotation-Output'
           type: array
           title: Notes
           default: []
@@ -1805,12 +2290,18 @@ components:
       - text
       - instanceType
       title: Condition
-    ConditionAssignment:
+    ConditionAssignment-Input:
       properties:
         id:
           type: string
           minLength: 1
           title: Id
+        extensionAttributes:
+          items:
+            $ref: '#/components/schemas/ExtensionAttribute-Input'
+          type: array
+          title: Extensionattributes
+          default: []
         condition:
           type: string
           title: Condition
@@ -1830,12 +2321,84 @@ components:
       - conditionTargetId
       - instanceType
       title: ConditionAssignment
-    DocumentContentReference:
+    ConditionAssignment-Output:
       properties:
         id:
           type: string
           minLength: 1
           title: Id
+        extensionAttributes:
+          items:
+            $ref: '#/components/schemas/ExtensionAttribute-Output'
+          type: array
+          title: Extensionattributes
+          default: []
+        condition:
+          type: string
+          title: Condition
+        conditionTargetId:
+          type: string
+          title: Conditiontargetid
+        instanceType:
+          type: string
+          enum:
+          - ConditionAssignment
+          const: ConditionAssignment
+          title: Instancetype
+      type: object
+      required:
+      - id
+      - condition
+      - conditionTargetId
+      - instanceType
+      title: ConditionAssignment
+    DocumentContentReference-Input:
+      properties:
+        id:
+          type: string
+          minLength: 1
+          title: Id
+        extensionAttributes:
+          items:
+            $ref: '#/components/schemas/ExtensionAttribute-Input'
+          type: array
+          title: Extensionattributes
+          default: []
+        sectionNumber:
+          type: string
+          title: Sectionnumber
+        sectionTitle:
+          type: string
+          title: Sectiontitle
+        appliesToId:
+          type: string
+          title: Appliestoid
+        instanceType:
+          type: string
+          enum:
+          - DocumentContentReference
+          const: DocumentContentReference
+          title: Instancetype
+      type: object
+      required:
+      - id
+      - sectionNumber
+      - sectionTitle
+      - appliesToId
+      - instanceType
+      title: DocumentContentReference
+    DocumentContentReference-Output:
+      properties:
+        id:
+          type: string
+          minLength: 1
+          title: Id
+        extensionAttributes:
+          items:
+            $ref: '#/components/schemas/ExtensionAttribute-Output'
+          type: array
+          title: Extensionattributes
+          default: []
         sectionNumber:
           type: string
           title: Sectionnumber
@@ -1865,6 +2428,12 @@ components:
           type: string
           minLength: 1
           title: Id
+        extensionAttributes:
+          items:
+            $ref: '#/components/schemas/ExtensionAttribute-Input'
+          type: array
+          title: Extensionattributes
+          default: []
         name:
           type: string
           minLength: 1
@@ -1880,7 +2449,7 @@ components:
           - type: 'null'
           title: Description
         category:
-          $ref: '#/components/schemas/Code'
+          $ref: '#/components/schemas/Code-Input'
         identifier:
           type: string
           title: Identifier
@@ -1899,7 +2468,7 @@ components:
           title: Previousid
         notes:
           items:
-            $ref: '#/components/schemas/CommentAnnotation'
+            $ref: '#/components/schemas/CommentAnnotation-Input'
           type: array
           title: Notes
           default: []
@@ -1924,6 +2493,12 @@ components:
           type: string
           minLength: 1
           title: Id
+        extensionAttributes:
+          items:
+            $ref: '#/components/schemas/ExtensionAttribute-Output'
+          type: array
+          title: Extensionattributes
+          default: []
         name:
           type: string
           minLength: 1
@@ -1939,7 +2514,7 @@ components:
           - type: 'null'
           title: Description
         category:
-          $ref: '#/components/schemas/Code'
+          $ref: '#/components/schemas/Code-Output'
         identifier:
           type: string
           title: Identifier
@@ -1958,7 +2533,7 @@ components:
           title: Previousid
         notes:
           items:
-            $ref: '#/components/schemas/CommentAnnotation'
+            $ref: '#/components/schemas/CommentAnnotation-Output'
           type: array
           title: Notes
           default: []
@@ -1983,6 +2558,12 @@ components:
           type: string
           minLength: 1
           title: Id
+        extensionAttributes:
+          items:
+            $ref: '#/components/schemas/ExtensionAttribute-Input'
+          type: array
+          title: Extensionattributes
+          default: []
         name:
           type: string
           minLength: 1
@@ -2007,7 +2588,7 @@ components:
           title: Dictionaryid
         notes:
           items:
-            $ref: '#/components/schemas/CommentAnnotation'
+            $ref: '#/components/schemas/CommentAnnotation-Input'
           type: array
           title: Notes
           default: []
@@ -2030,6 +2611,12 @@ components:
           type: string
           minLength: 1
           title: Id
+        extensionAttributes:
+          items:
+            $ref: '#/components/schemas/ExtensionAttribute-Output'
+          type: array
+          title: Extensionattributes
+          default: []
         name:
           type: string
           minLength: 1
@@ -2054,7 +2641,7 @@ components:
           title: Dictionaryid
         notes:
           items:
-            $ref: '#/components/schemas/CommentAnnotation'
+            $ref: '#/components/schemas/CommentAnnotation-Output'
           type: array
           title: Notes
           default: []
@@ -2077,6 +2664,12 @@ components:
           type: string
           minLength: 1
           title: Id
+        extensionAttributes:
+          items:
+            $ref: '#/components/schemas/ExtensionAttribute-Input'
+          type: array
+          title: Extensionattributes
+          default: []
         name:
           type: string
           minLength: 1
@@ -2092,7 +2685,7 @@ components:
           - type: 'null'
           title: Description
         type:
-          $ref: '#/components/schemas/Code'
+          $ref: '#/components/schemas/Code-Input'
         previousId:
           anyOf:
           - type: string
@@ -2110,27 +2703,27 @@ components:
           title: Scheduledatid
         environmentalSettings:
           items:
-            $ref: '#/components/schemas/Code'
+            $ref: '#/components/schemas/Code-Input'
           type: array
           title: Environmentalsettings
           default: []
         contactModes:
           items:
-            $ref: '#/components/schemas/Code'
+            $ref: '#/components/schemas/Code-Input'
           type: array
           title: Contactmodes
           default: []
         transitionStartRule:
           anyOf:
-          - $ref: '#/components/schemas/TransitionRule'
+          - $ref: '#/components/schemas/TransitionRule-Input'
           - type: 'null'
         transitionEndRule:
           anyOf:
-          - $ref: '#/components/schemas/TransitionRule'
+          - $ref: '#/components/schemas/TransitionRule-Input'
           - type: 'null'
         notes:
           items:
-            $ref: '#/components/schemas/CommentAnnotation'
+            $ref: '#/components/schemas/CommentAnnotation-Input'
           type: array
           title: Notes
           default: []
@@ -2153,6 +2746,12 @@ components:
           type: string
           minLength: 1
           title: Id
+        extensionAttributes:
+          items:
+            $ref: '#/components/schemas/ExtensionAttribute-Output'
+          type: array
+          title: Extensionattributes
+          default: []
         name:
           type: string
           minLength: 1
@@ -2168,7 +2767,7 @@ components:
           - type: 'null'
           title: Description
         type:
-          $ref: '#/components/schemas/Code'
+          $ref: '#/components/schemas/Code-Output'
         previousId:
           anyOf:
           - type: string
@@ -2186,27 +2785,27 @@ components:
           title: Scheduledatid
         environmentalSettings:
           items:
-            $ref: '#/components/schemas/Code'
+            $ref: '#/components/schemas/Code-Output'
           type: array
           title: Environmentalsettings
           default: []
         contactModes:
           items:
-            $ref: '#/components/schemas/Code'
+            $ref: '#/components/schemas/Code-Output'
           type: array
           title: Contactmodes
           default: []
         transitionStartRule:
           anyOf:
-          - $ref: '#/components/schemas/TransitionRule'
+          - $ref: '#/components/schemas/TransitionRule-Output'
           - type: 'null'
         transitionEndRule:
           anyOf:
-          - $ref: '#/components/schemas/TransitionRule'
+          - $ref: '#/components/schemas/TransitionRule-Output'
           - type: 'null'
         notes:
           items:
-            $ref: '#/components/schemas/CommentAnnotation'
+            $ref: '#/components/schemas/CommentAnnotation-Output'
           type: array
           title: Notes
           default: []
@@ -2229,6 +2828,12 @@ components:
           type: string
           minLength: 1
           title: Id
+        extensionAttributes:
+          items:
+            $ref: '#/components/schemas/ExtensionAttribute-Input'
+          type: array
+          title: Extensionattributes
+          default: []
         name:
           type: string
           minLength: 1
@@ -2253,7 +2858,7 @@ components:
           title: Dictionaryid
         notes:
           items:
-            $ref: '#/components/schemas/CommentAnnotation'
+            $ref: '#/components/schemas/CommentAnnotation-Input'
           type: array
           title: Notes
           default: []
@@ -2267,7 +2872,7 @@ components:
           type: string
           title: Purpose
         level:
-          $ref: '#/components/schemas/Code'
+          $ref: '#/components/schemas/Code-Input'
       type: object
       required:
       - id
@@ -2283,6 +2888,12 @@ components:
           type: string
           minLength: 1
           title: Id
+        extensionAttributes:
+          items:
+            $ref: '#/components/schemas/ExtensionAttribute-Output'
+          type: array
+          title: Extensionattributes
+          default: []
         name:
           type: string
           minLength: 1
@@ -2307,7 +2918,7 @@ components:
           title: Dictionaryid
         notes:
           items:
-            $ref: '#/components/schemas/CommentAnnotation'
+            $ref: '#/components/schemas/CommentAnnotation-Output'
           type: array
           title: Notes
           default: []
@@ -2321,7 +2932,7 @@ components:
           type: string
           title: Purpose
         level:
-          $ref: '#/components/schemas/Code'
+          $ref: '#/components/schemas/Code-Output'
       type: object
       required:
       - id
@@ -2337,6 +2948,12 @@ components:
           type: string
           minLength: 1
           title: Id
+        extensionAttributes:
+          items:
+            $ref: '#/components/schemas/ExtensionAttribute-Input'
+          type: array
+          title: Extensionattributes
+          default: []
         name:
           type: string
           minLength: 1
@@ -2372,7 +2989,7 @@ components:
           title: Intercurrentevents
         notes:
           items:
-            $ref: '#/components/schemas/CommentAnnotation'
+            $ref: '#/components/schemas/CommentAnnotation-Input'
           type: array
           title: Notes
           default: []
@@ -2399,6 +3016,12 @@ components:
           type: string
           minLength: 1
           title: Id
+        extensionAttributes:
+          items:
+            $ref: '#/components/schemas/ExtensionAttribute-Output'
+          type: array
+          title: Extensionattributes
+          default: []
         name:
           type: string
           minLength: 1
@@ -2434,7 +3057,7 @@ components:
           title: Intercurrentevents
         notes:
           items:
-            $ref: '#/components/schemas/CommentAnnotation'
+            $ref: '#/components/schemas/CommentAnnotation-Output'
           type: array
           title: Notes
           default: []
@@ -2455,17 +3078,185 @@ components:
       - intercurrentEvents
       - instanceType
       title: Estimand
+    ExtensionAttribute-Input:
+      properties:
+        id:
+          type: string
+          minLength: 1
+          title: Id
+        url:
+          type: string
+          title: Url
+        valueString:
+          type: string
+          title: Valuestring
+        valueBoolean:
+          type: boolean
+          title: Valueboolean
+        valueInteger:
+          type: integer
+          title: Valueinteger
+        valueId:
+          type: string
+          title: Valueid
+        valueQuantity:
+          allOf:
+          - $ref: '#/components/schemas/Quantity-Input'
+        valueRange:
+          allOf:
+          - $ref: '#/components/schemas/Range-Input'
+        valueCode:
+          allOf:
+          - $ref: '#/components/schemas/Code-Input'
+        valueAliasCode:
+          allOf:
+          - $ref: '#/components/schemas/AliasCode-Input'
+        valueExtensionClass:
+          allOf:
+          - $ref: '#/components/schemas/ExtensionClass-Input'
+        extensionAttributes:
+          items:
+            $ref: '#/components/schemas/ExtensionAttribute-Input'
+          type: array
+          title: Extensionattributes
+          default: []
+        instanceType:
+          type: string
+          enum:
+          - ExtensionAttribute
+          const: ExtensionAttribute
+          title: Instancetype
+      type: object
+      required:
+      - id
+      - url
+      - instanceType
+      title: ExtensionAttribute
+    ExtensionAttribute-Output:
+      properties:
+        id:
+          type: string
+          minLength: 1
+          title: Id
+        url:
+          type: string
+          title: Url
+        valueString:
+          type: string
+          title: Valuestring
+        valueBoolean:
+          type: boolean
+          title: Valueboolean
+        valueInteger:
+          type: integer
+          title: Valueinteger
+        valueId:
+          type: string
+          title: Valueid
+        valueQuantity:
+          allOf:
+          - $ref: '#/components/schemas/Quantity-Output'
+        valueRange:
+          allOf:
+          - $ref: '#/components/schemas/Range-Output'
+        valueCode:
+          allOf:
+          - $ref: '#/components/schemas/Code-Output'
+        valueAliasCode:
+          allOf:
+          - $ref: '#/components/schemas/AliasCode-Output'
+        valueExtensionClass:
+          allOf:
+          - $ref: '#/components/schemas/ExtensionClass-Output'
+        extensionAttributes:
+          items:
+            $ref: '#/components/schemas/ExtensionAttribute-Output'
+          type: array
+          title: Extensionattributes
+          default: []
+        instanceType:
+          type: string
+          enum:
+          - ExtensionAttribute
+          const: ExtensionAttribute
+          title: Instancetype
+      type: object
+      required:
+      - id
+      - url
+      - instanceType
+      title: ExtensionAttribute
+    ExtensionClass-Input:
+      properties:
+        id:
+          type: string
+          minLength: 1
+          title: Id
+        url:
+          type: string
+          title: Url
+        extensionAttributes:
+          items:
+            $ref: '#/components/schemas/ExtensionAttribute-Input'
+          type: array
+          title: Extensionattributes
+          default: []
+        instanceType:
+          type: string
+          enum:
+          - ExtensionClass
+          const: ExtensionClass
+          title: Instancetype
+      type: object
+      required:
+      - id
+      - url
+      - instanceType
+      title: ExtensionClass
+    ExtensionClass-Output:
+      properties:
+        id:
+          type: string
+          minLength: 1
+          title: Id
+        url:
+          type: string
+          title: Url
+        extensionAttributes:
+          items:
+            $ref: '#/components/schemas/ExtensionAttribute-Output'
+          type: array
+          title: Extensionattributes
+          default: []
+        instanceType:
+          type: string
+          enum:
+          - ExtensionClass
+          const: ExtensionClass
+          title: Instancetype
+      type: object
+      required:
+      - id
+      - url
+      - instanceType
+      title: ExtensionClass
     GeographicScope-Input:
       properties:
         id:
           type: string
           minLength: 1
           title: Id
+        extensionAttributes:
+          items:
+            $ref: '#/components/schemas/ExtensionAttribute-Input'
+          type: array
+          title: Extensionattributes
+          default: []
         type:
-          $ref: '#/components/schemas/Code'
+          $ref: '#/components/schemas/Code-Input'
         code:
           anyOf:
-          - $ref: '#/components/schemas/AliasCode'
+          - $ref: '#/components/schemas/AliasCode-Input'
           - type: 'null'
         instanceType:
           type: string
@@ -2485,11 +3276,17 @@ components:
           type: string
           minLength: 1
           title: Id
+        extensionAttributes:
+          items:
+            $ref: '#/components/schemas/ExtensionAttribute-Output'
+          type: array
+          title: Extensionattributes
+          default: []
         type:
-          $ref: '#/components/schemas/Code'
+          $ref: '#/components/schemas/Code-Output'
         code:
           anyOf:
-          - $ref: '#/components/schemas/AliasCode'
+          - $ref: '#/components/schemas/AliasCode-Output'
           - type: 'null'
         instanceType:
           type: string
@@ -2509,6 +3306,12 @@ components:
           type: string
           minLength: 1
           title: Id
+        extensionAttributes:
+          items:
+            $ref: '#/components/schemas/ExtensionAttribute-Input'
+          type: array
+          title: Extensionattributes
+          default: []
         name:
           type: string
           minLength: 1
@@ -2524,7 +3327,7 @@ components:
           - type: 'null'
           title: Description
         type:
-          $ref: '#/components/schemas/Code'
+          $ref: '#/components/schemas/Code-Input'
         dateValue:
           type: string
           format: date
@@ -2555,6 +3358,12 @@ components:
           type: string
           minLength: 1
           title: Id
+        extensionAttributes:
+          items:
+            $ref: '#/components/schemas/ExtensionAttribute-Output'
+          type: array
+          title: Extensionattributes
+          default: []
         name:
           type: string
           minLength: 1
@@ -2570,7 +3379,7 @@ components:
           - type: 'null'
           title: Description
         type:
-          $ref: '#/components/schemas/Code'
+          $ref: '#/components/schemas/Code-Output'
         dateValue:
           type: string
           format: date
@@ -2610,6 +3419,12 @@ components:
           type: string
           minLength: 1
           title: Id
+        extensionAttributes:
+          items:
+            $ref: '#/components/schemas/ExtensionAttribute-Input'
+          type: array
+          title: Extensionattributes
+          default: []
         name:
           type: string
           minLength: 1
@@ -2626,7 +3441,7 @@ components:
           title: Description
         codes:
           items:
-            $ref: '#/components/schemas/Code'
+            $ref: '#/components/schemas/Code-Input'
           type: array
           title: Codes
           default: []
@@ -2635,7 +3450,7 @@ components:
           title: Israredisease
         notes:
           items:
-            $ref: '#/components/schemas/CommentAnnotation'
+            $ref: '#/components/schemas/CommentAnnotation-Input'
           type: array
           title: Notes
           default: []
@@ -2658,6 +3473,12 @@ components:
           type: string
           minLength: 1
           title: Id
+        extensionAttributes:
+          items:
+            $ref: '#/components/schemas/ExtensionAttribute-Output'
+          type: array
+          title: Extensionattributes
+          default: []
         name:
           type: string
           minLength: 1
@@ -2674,7 +3495,7 @@ components:
           title: Description
         codes:
           items:
-            $ref: '#/components/schemas/Code'
+            $ref: '#/components/schemas/Code-Output'
           type: array
           title: Codes
           default: []
@@ -2683,7 +3504,7 @@ components:
           title: Israredisease
         notes:
           items:
-            $ref: '#/components/schemas/CommentAnnotation'
+            $ref: '#/components/schemas/CommentAnnotation-Output'
           type: array
           title: Notes
           default: []
@@ -2706,8 +3527,14 @@ components:
           type: string
           minLength: 1
           title: Id
+        extensionAttributes:
+          items:
+            $ref: '#/components/schemas/ExtensionAttribute-Input'
+          type: array
+          title: Extensionattributes
+          default: []
         role:
-          $ref: '#/components/schemas/Code'
+          $ref: '#/components/schemas/Code-Input'
         substance:
           $ref: '#/components/schemas/Substance-Input'
         instanceType:
@@ -2729,8 +3556,14 @@ components:
           type: string
           minLength: 1
           title: Id
+        extensionAttributes:
+          items:
+            $ref: '#/components/schemas/ExtensionAttribute-Output'
+          type: array
+          title: Extensionattributes
+          default: []
         role:
-          $ref: '#/components/schemas/Code'
+          $ref: '#/components/schemas/Code-Output'
         substance:
           $ref: '#/components/schemas/Substance-Output'
         instanceType:
@@ -2752,6 +3585,12 @@ components:
           type: string
           minLength: 1
           title: Id
+        extensionAttributes:
+          items:
+            $ref: '#/components/schemas/ExtensionAttribute-Input'
+          type: array
+          title: Extensionattributes
+          default: []
         name:
           type: string
           minLength: 1
@@ -2776,7 +3615,7 @@ components:
           title: Dictionaryid
         notes:
           items:
-            $ref: '#/components/schemas/CommentAnnotation'
+            $ref: '#/components/schemas/CommentAnnotation-Input'
           type: array
           title: Notes
           default: []
@@ -2803,6 +3642,12 @@ components:
           type: string
           minLength: 1
           title: Id
+        extensionAttributes:
+          items:
+            $ref: '#/components/schemas/ExtensionAttribute-Output'
+          type: array
+          title: Extensionattributes
+          default: []
         name:
           type: string
           minLength: 1
@@ -2827,7 +3672,7 @@ components:
           title: Dictionaryid
         notes:
           items:
-            $ref: '#/components/schemas/CommentAnnotation'
+            $ref: '#/components/schemas/CommentAnnotation-Output'
           type: array
           title: Notes
           default: []
@@ -2854,6 +3699,12 @@ components:
           type: string
           minLength: 1
           title: Id
+        extensionAttributes:
+          items:
+            $ref: '#/components/schemas/ExtensionAttribute-Input'
+          type: array
+          title: Extensionattributes
+          default: []
         name:
           type: string
           minLength: 1
@@ -2870,21 +3721,21 @@ components:
           title: Description
         studyType:
           anyOf:
-          - $ref: '#/components/schemas/Code'
+          - $ref: '#/components/schemas/Code-Input'
           - type: 'null'
         studyPhase:
           anyOf:
-          - $ref: '#/components/schemas/AliasCode'
+          - $ref: '#/components/schemas/AliasCode-Input'
           - type: 'null'
         therapeuticAreas:
           items:
-            $ref: '#/components/schemas/Code'
+            $ref: '#/components/schemas/Code-Input'
           type: array
           title: Therapeuticareas
           default: []
         characteristics:
           items:
-            $ref: '#/components/schemas/Code'
+            $ref: '#/components/schemas/Code-Input'
           type: array
           title: Characteristics
           default: []
@@ -2907,7 +3758,7 @@ components:
           title: Arms
         studyCells:
           items:
-            $ref: '#/components/schemas/StudyCell'
+            $ref: '#/components/schemas/StudyCell-Input'
           type: array
           title: Studycells
         rationale:
@@ -2958,7 +3809,7 @@ components:
           default: []
         biospecimenRetentions:
           items:
-            $ref: '#/components/schemas/BiospecimenRetention'
+            $ref: '#/components/schemas/BiospecimenRetention-Input'
           type: array
           title: Biospecimenretentions
           default: []
@@ -2982,7 +3833,7 @@ components:
           default: []
         notes:
           items:
-            $ref: '#/components/schemas/CommentAnnotation'
+            $ref: '#/components/schemas/CommentAnnotation-Input'
           type: array
           title: Notes
           default: []
@@ -2994,21 +3845,21 @@ components:
           title: Instancetype
         subTypes:
           items:
-            $ref: '#/components/schemas/Code'
+            $ref: '#/components/schemas/Code-Input'
           type: array
           title: Subtypes
           default: []
         model:
-          $ref: '#/components/schemas/Code'
+          $ref: '#/components/schemas/Code-Input'
         intentTypes:
           items:
-            $ref: '#/components/schemas/Code'
+            $ref: '#/components/schemas/Code-Input'
           type: array
           title: Intenttypes
           default: []
         blindingSchema:
           anyOf:
-          - $ref: '#/components/schemas/AliasCode'
+          - $ref: '#/components/schemas/AliasCode-Input'
           - type: 'null'
       type: object
       required:
@@ -3028,6 +3879,12 @@ components:
           type: string
           minLength: 1
           title: Id
+        extensionAttributes:
+          items:
+            $ref: '#/components/schemas/ExtensionAttribute-Output'
+          type: array
+          title: Extensionattributes
+          default: []
         name:
           type: string
           minLength: 1
@@ -3044,21 +3901,21 @@ components:
           title: Description
         studyType:
           anyOf:
-          - $ref: '#/components/schemas/Code'
+          - $ref: '#/components/schemas/Code-Output'
           - type: 'null'
         studyPhase:
           anyOf:
-          - $ref: '#/components/schemas/AliasCode'
+          - $ref: '#/components/schemas/AliasCode-Output'
           - type: 'null'
         therapeuticAreas:
           items:
-            $ref: '#/components/schemas/Code'
+            $ref: '#/components/schemas/Code-Output'
           type: array
           title: Therapeuticareas
           default: []
         characteristics:
           items:
-            $ref: '#/components/schemas/Code'
+            $ref: '#/components/schemas/Code-Output'
           type: array
           title: Characteristics
           default: []
@@ -3081,7 +3938,7 @@ components:
           title: Arms
         studyCells:
           items:
-            $ref: '#/components/schemas/StudyCell'
+            $ref: '#/components/schemas/StudyCell-Output'
           type: array
           title: Studycells
         rationale:
@@ -3132,7 +3989,7 @@ components:
           default: []
         biospecimenRetentions:
           items:
-            $ref: '#/components/schemas/BiospecimenRetention'
+            $ref: '#/components/schemas/BiospecimenRetention-Output'
           type: array
           title: Biospecimenretentions
           default: []
@@ -3156,7 +4013,7 @@ components:
           default: []
         notes:
           items:
-            $ref: '#/components/schemas/CommentAnnotation'
+            $ref: '#/components/schemas/CommentAnnotation-Output'
           type: array
           title: Notes
           default: []
@@ -3168,21 +4025,21 @@ components:
           title: Instancetype
         subTypes:
           items:
-            $ref: '#/components/schemas/Code'
+            $ref: '#/components/schemas/Code-Output'
           type: array
           title: Subtypes
           default: []
         model:
-          $ref: '#/components/schemas/Code'
+          $ref: '#/components/schemas/Code-Output'
         intentTypes:
           items:
-            $ref: '#/components/schemas/Code'
+            $ref: '#/components/schemas/Code-Output'
           type: array
           title: Intenttypes
           default: []
         blindingSchema:
           anyOf:
-          - $ref: '#/components/schemas/AliasCode'
+          - $ref: '#/components/schemas/AliasCode-Output'
           - type: 'null'
       type: object
       required:
@@ -3196,12 +4053,49 @@ components:
       - instanceType
       - model
       title: InterventionalStudyDesign
-    Masking:
+    Masking-Input:
       properties:
         id:
           type: string
           minLength: 1
           title: Id
+        extensionAttributes:
+          items:
+            $ref: '#/components/schemas/ExtensionAttribute-Input'
+          type: array
+          title: Extensionattributes
+          default: []
+        text:
+          type: string
+          title: Text
+        isMasked:
+          type: boolean
+          title: Ismasked
+        instanceType:
+          type: string
+          enum:
+          - Masking
+          const: Masking
+          title: Instancetype
+      type: object
+      required:
+      - id
+      - text
+      - isMasked
+      - instanceType
+      title: Masking
+    Masking-Output:
+      properties:
+        id:
+          type: string
+          minLength: 1
+          title: Id
+        extensionAttributes:
+          items:
+            $ref: '#/components/schemas/ExtensionAttribute-Output'
+          type: array
+          title: Extensionattributes
+          default: []
         text:
           type: string
           title: Text
@@ -3227,6 +4121,12 @@ components:
           type: string
           minLength: 1
           title: Id
+        extensionAttributes:
+          items:
+            $ref: '#/components/schemas/ExtensionAttribute-Input'
+          type: array
+          title: Extensionattributes
+          default: []
         name:
           type: string
           minLength: 1
@@ -3258,17 +4158,17 @@ components:
           title: Embeddedproductid
         sourcing:
           anyOf:
-          - $ref: '#/components/schemas/Code'
+          - $ref: '#/components/schemas/Code-Input'
           - type: 'null'
         identifiers:
           items:
-            $ref: '#/components/schemas/MedicalDeviceIdentifier'
+            $ref: '#/components/schemas/MedicalDeviceIdentifier-Input'
           type: array
           title: Identifiers
           default: []
         notes:
           items:
-            $ref: '#/components/schemas/CommentAnnotation'
+            $ref: '#/components/schemas/CommentAnnotation-Input'
           type: array
           title: Notes
           default: []
@@ -3290,6 +4190,12 @@ components:
           type: string
           minLength: 1
           title: Id
+        extensionAttributes:
+          items:
+            $ref: '#/components/schemas/ExtensionAttribute-Output'
+          type: array
+          title: Extensionattributes
+          default: []
         name:
           type: string
           minLength: 1
@@ -3321,17 +4227,17 @@ components:
           title: Embeddedproductid
         sourcing:
           anyOf:
-          - $ref: '#/components/schemas/Code'
+          - $ref: '#/components/schemas/Code-Output'
           - type: 'null'
         identifiers:
           items:
-            $ref: '#/components/schemas/MedicalDeviceIdentifier'
+            $ref: '#/components/schemas/MedicalDeviceIdentifier-Output'
           type: array
           title: Identifiers
           default: []
         notes:
           items:
-            $ref: '#/components/schemas/CommentAnnotation'
+            $ref: '#/components/schemas/CommentAnnotation-Output'
           type: array
           title: Notes
           default: []
@@ -3347,12 +4253,18 @@ components:
       - name
       - instanceType
       title: MedicalDevice
-    MedicalDeviceIdentifier:
+    MedicalDeviceIdentifier-Input:
       properties:
         id:
           type: string
           minLength: 1
           title: Id
+        extensionAttributes:
+          items:
+            $ref: '#/components/schemas/ExtensionAttribute-Input'
+          type: array
+          title: Extensionattributes
+          default: []
         text:
           type: string
           title: Text
@@ -3366,7 +4278,7 @@ components:
           const: MedicalDeviceIdentifier
           title: Instancetype
         type:
-          $ref: '#/components/schemas/Code'
+          $ref: '#/components/schemas/Code-Input'
       type: object
       required:
       - id
@@ -3375,12 +4287,52 @@ components:
       - instanceType
       - type
       title: MedicalDeviceIdentifier
-    NarrativeContent:
+    MedicalDeviceIdentifier-Output:
       properties:
         id:
           type: string
           minLength: 1
           title: Id
+        extensionAttributes:
+          items:
+            $ref: '#/components/schemas/ExtensionAttribute-Output'
+          type: array
+          title: Extensionattributes
+          default: []
+        text:
+          type: string
+          title: Text
+        scopeId:
+          type: string
+          title: Scopeid
+        instanceType:
+          type: string
+          enum:
+          - MedicalDeviceIdentifier
+          const: MedicalDeviceIdentifier
+          title: Instancetype
+        type:
+          $ref: '#/components/schemas/Code-Output'
+      type: object
+      required:
+      - id
+      - text
+      - scopeId
+      - instanceType
+      - type
+      title: MedicalDeviceIdentifier
+    NarrativeContent-Input:
+      properties:
+        id:
+          type: string
+          minLength: 1
+          title: Id
+        extensionAttributes:
+          items:
+            $ref: '#/components/schemas/ExtensionAttribute-Input'
+          type: array
+          title: Extensionattributes
+          default: []
         name:
           type: string
           minLength: 1
@@ -3436,12 +4388,117 @@ components:
       - displaySectionTitle
       - instanceType
       title: NarrativeContent
-    NarrativeContentItem:
+    NarrativeContent-Output:
       properties:
         id:
           type: string
           minLength: 1
           title: Id
+        extensionAttributes:
+          items:
+            $ref: '#/components/schemas/ExtensionAttribute-Output'
+          type: array
+          title: Extensionattributes
+          default: []
+        name:
+          type: string
+          minLength: 1
+          title: Name
+        sectionNumber:
+          anyOf:
+          - type: string
+          - type: 'null'
+          title: Sectionnumber
+        sectionTitle:
+          anyOf:
+          - type: string
+          - type: 'null'
+          title: Sectiontitle
+        displaySectionNumber:
+          type: boolean
+          title: Displaysectionnumber
+        displaySectionTitle:
+          type: boolean
+          title: Displaysectiontitle
+        childIds:
+          items:
+            type: string
+          type: array
+          title: Childids
+          default: []
+        previousId:
+          anyOf:
+          - type: string
+          - type: 'null'
+          title: Previousid
+        nextId:
+          anyOf:
+          - type: string
+          - type: 'null'
+          title: Nextid
+        contentItemId:
+          anyOf:
+          - type: string
+          - type: 'null'
+          title: Contentitemid
+        instanceType:
+          type: string
+          enum:
+          - NarrativeContent
+          const: NarrativeContent
+          title: Instancetype
+      type: object
+      required:
+      - id
+      - name
+      - displaySectionNumber
+      - displaySectionTitle
+      - instanceType
+      title: NarrativeContent
+    NarrativeContentItem-Input:
+      properties:
+        id:
+          type: string
+          minLength: 1
+          title: Id
+        extensionAttributes:
+          items:
+            $ref: '#/components/schemas/ExtensionAttribute-Input'
+          type: array
+          title: Extensionattributes
+          default: []
+        name:
+          type: string
+          minLength: 1
+          title: Name
+        text:
+          type: string
+          title: Text
+        instanceType:
+          type: string
+          enum:
+          - NarrativeContentItem
+          const: NarrativeContentItem
+          title: Instancetype
+      type: object
+      required:
+      - id
+      - name
+      - text
+      - instanceType
+      title: NarrativeContentItem
+    NarrativeContentItem-Output:
+      properties:
+        id:
+          type: string
+          minLength: 1
+          title: Id
+        extensionAttributes:
+          items:
+            $ref: '#/components/schemas/ExtensionAttribute-Output'
+          type: array
+          title: Extensionattributes
+          default: []
         name:
           type: string
           minLength: 1
@@ -3468,6 +4525,12 @@ components:
           type: string
           minLength: 1
           title: Id
+        extensionAttributes:
+          items:
+            $ref: '#/components/schemas/ExtensionAttribute-Input'
+          type: array
+          title: Extensionattributes
+          default: []
         name:
           type: string
           minLength: 1
@@ -3492,7 +4555,7 @@ components:
           title: Dictionaryid
         notes:
           items:
-            $ref: '#/components/schemas/CommentAnnotation'
+            $ref: '#/components/schemas/CommentAnnotation-Input'
           type: array
           title: Notes
           default: []
@@ -3503,7 +4566,7 @@ components:
           const: Objective
           title: Instancetype
         level:
-          $ref: '#/components/schemas/Code'
+          $ref: '#/components/schemas/Code-Input'
         endpoints:
           items:
             $ref: '#/components/schemas/Endpoint-Input'
@@ -3524,6 +4587,12 @@ components:
           type: string
           minLength: 1
           title: Id
+        extensionAttributes:
+          items:
+            $ref: '#/components/schemas/ExtensionAttribute-Output'
+          type: array
+          title: Extensionattributes
+          default: []
         name:
           type: string
           minLength: 1
@@ -3548,7 +4617,7 @@ components:
           title: Dictionaryid
         notes:
           items:
-            $ref: '#/components/schemas/CommentAnnotation'
+            $ref: '#/components/schemas/CommentAnnotation-Output'
           type: array
           title: Notes
           default: []
@@ -3559,7 +4628,7 @@ components:
           const: Objective
           title: Instancetype
         level:
-          $ref: '#/components/schemas/Code'
+          $ref: '#/components/schemas/Code-Output'
         endpoints:
           items:
             $ref: '#/components/schemas/Endpoint-Output'
@@ -3580,6 +4649,12 @@ components:
           type: string
           minLength: 1
           title: Id
+        extensionAttributes:
+          items:
+            $ref: '#/components/schemas/ExtensionAttribute-Input'
+          type: array
+          title: Extensionattributes
+          default: []
         name:
           type: string
           minLength: 1
@@ -3596,21 +4671,21 @@ components:
           title: Description
         studyType:
           anyOf:
-          - $ref: '#/components/schemas/Code'
+          - $ref: '#/components/schemas/Code-Input'
           - type: 'null'
         studyPhase:
           anyOf:
-          - $ref: '#/components/schemas/AliasCode'
+          - $ref: '#/components/schemas/AliasCode-Input'
           - type: 'null'
         therapeuticAreas:
           items:
-            $ref: '#/components/schemas/Code'
+            $ref: '#/components/schemas/Code-Input'
           type: array
           title: Therapeuticareas
           default: []
         characteristics:
           items:
-            $ref: '#/components/schemas/Code'
+            $ref: '#/components/schemas/Code-Input'
           type: array
           title: Characteristics
           default: []
@@ -3633,7 +4708,7 @@ components:
           title: Arms
         studyCells:
           items:
-            $ref: '#/components/schemas/StudyCell'
+            $ref: '#/components/schemas/StudyCell-Input'
           type: array
           title: Studycells
         rationale:
@@ -3684,7 +4759,7 @@ components:
           default: []
         biospecimenRetentions:
           items:
-            $ref: '#/components/schemas/BiospecimenRetention'
+            $ref: '#/components/schemas/BiospecimenRetention-Input'
           type: array
           title: Biospecimenretentions
           default: []
@@ -3708,7 +4783,7 @@ components:
           default: []
         notes:
           items:
-            $ref: '#/components/schemas/CommentAnnotation'
+            $ref: '#/components/schemas/CommentAnnotation-Input'
           type: array
           title: Notes
           default: []
@@ -3720,17 +4795,17 @@ components:
           title: Instancetype
         subTypes:
           items:
-            $ref: '#/components/schemas/Code'
+            $ref: '#/components/schemas/Code-Input'
           type: array
           title: Subtypes
           default: []
         model:
-          $ref: '#/components/schemas/Code'
+          $ref: '#/components/schemas/Code-Input'
         timePerspective:
-          $ref: '#/components/schemas/Code'
+          $ref: '#/components/schemas/Code-Input'
         samplingMethod:
           anyOf:
-          - $ref: '#/components/schemas/Code'
+          - $ref: '#/components/schemas/Code-Input'
           - type: 'null'
       type: object
       required:
@@ -3751,6 +4826,12 @@ components:
           type: string
           minLength: 1
           title: Id
+        extensionAttributes:
+          items:
+            $ref: '#/components/schemas/ExtensionAttribute-Output'
+          type: array
+          title: Extensionattributes
+          default: []
         name:
           type: string
           minLength: 1
@@ -3767,21 +4848,21 @@ components:
           title: Description
         studyType:
           anyOf:
-          - $ref: '#/components/schemas/Code'
+          - $ref: '#/components/schemas/Code-Output'
           - type: 'null'
         studyPhase:
           anyOf:
-          - $ref: '#/components/schemas/AliasCode'
+          - $ref: '#/components/schemas/AliasCode-Output'
           - type: 'null'
         therapeuticAreas:
           items:
-            $ref: '#/components/schemas/Code'
+            $ref: '#/components/schemas/Code-Output'
           type: array
           title: Therapeuticareas
           default: []
         characteristics:
           items:
-            $ref: '#/components/schemas/Code'
+            $ref: '#/components/schemas/Code-Output'
           type: array
           title: Characteristics
           default: []
@@ -3804,7 +4885,7 @@ components:
           title: Arms
         studyCells:
           items:
-            $ref: '#/components/schemas/StudyCell'
+            $ref: '#/components/schemas/StudyCell-Output'
           type: array
           title: Studycells
         rationale:
@@ -3855,7 +4936,7 @@ components:
           default: []
         biospecimenRetentions:
           items:
-            $ref: '#/components/schemas/BiospecimenRetention'
+            $ref: '#/components/schemas/BiospecimenRetention-Output'
           type: array
           title: Biospecimenretentions
           default: []
@@ -3879,7 +4960,7 @@ components:
           default: []
         notes:
           items:
-            $ref: '#/components/schemas/CommentAnnotation'
+            $ref: '#/components/schemas/CommentAnnotation-Output'
           type: array
           title: Notes
           default: []
@@ -3891,17 +4972,17 @@ components:
           title: Instancetype
         subTypes:
           items:
-            $ref: '#/components/schemas/Code'
+            $ref: '#/components/schemas/Code-Output'
           type: array
           title: Subtypes
           default: []
         model:
-          $ref: '#/components/schemas/Code'
+          $ref: '#/components/schemas/Code-Output'
         timePerspective:
-          $ref: '#/components/schemas/Code'
+          $ref: '#/components/schemas/Code-Output'
         samplingMethod:
           anyOf:
-          - $ref: '#/components/schemas/Code'
+          - $ref: '#/components/schemas/Code-Output'
           - type: 'null'
       type: object
       required:
@@ -3922,6 +5003,12 @@ components:
           type: string
           minLength: 1
           title: Id
+        extensionAttributes:
+          items:
+            $ref: '#/components/schemas/ExtensionAttribute-Input'
+          type: array
+          title: Extensionattributes
+          default: []
         name:
           type: string
           minLength: 1
@@ -3932,7 +5019,7 @@ components:
           - type: 'null'
           title: Label
         type:
-          $ref: '#/components/schemas/Code'
+          $ref: '#/components/schemas/Code-Input'
         identifierScheme:
           type: string
           title: Identifierscheme
@@ -3941,11 +5028,11 @@ components:
           title: Identifier
         legalAddress:
           anyOf:
-          - $ref: '#/components/schemas/Address'
+          - $ref: '#/components/schemas/Address-Input'
           - type: 'null'
         managedSites:
           items:
-            $ref: '#/components/schemas/StudySite'
+            $ref: '#/components/schemas/StudySite-Input'
           type: array
           title: Managedsites
           default: []
@@ -3970,6 +5057,12 @@ components:
           type: string
           minLength: 1
           title: Id
+        extensionAttributes:
+          items:
+            $ref: '#/components/schemas/ExtensionAttribute-Output'
+          type: array
+          title: Extensionattributes
+          default: []
         name:
           type: string
           minLength: 1
@@ -3980,7 +5073,7 @@ components:
           - type: 'null'
           title: Label
         type:
-          $ref: '#/components/schemas/Code'
+          $ref: '#/components/schemas/Code-Output'
         identifierScheme:
           type: string
           title: Identifierscheme
@@ -3989,11 +5082,11 @@ components:
           title: Identifier
         legalAddress:
           anyOf:
-          - $ref: '#/components/schemas/Address'
+          - $ref: '#/components/schemas/Address-Output'
           - type: 'null'
         managedSites:
           items:
-            $ref: '#/components/schemas/StudySite'
+            $ref: '#/components/schemas/StudySite-Output'
           type: array
           title: Managedsites
           default: []
@@ -4012,12 +5105,49 @@ components:
       - identifier
       - instanceType
       title: Organization
-    ParameterMap:
+    ParameterMap-Input:
       properties:
         id:
           type: string
           minLength: 1
           title: Id
+        extensionAttributes:
+          items:
+            $ref: '#/components/schemas/ExtensionAttribute-Input'
+          type: array
+          title: Extensionattributes
+          default: []
+        tag:
+          type: string
+          title: Tag
+        reference:
+          type: string
+          title: Reference
+        instanceType:
+          type: string
+          enum:
+          - ParameterMap
+          const: ParameterMap
+          title: Instancetype
+      type: object
+      required:
+      - id
+      - tag
+      - reference
+      - instanceType
+      title: ParameterMap
+    ParameterMap-Output:
+      properties:
+        id:
+          type: string
+          minLength: 1
+          title: Id
+        extensionAttributes:
+          items:
+            $ref: '#/components/schemas/ExtensionAttribute-Output'
+          type: array
+          title: Extensionattributes
+          default: []
         tag:
           type: string
           title: Tag
@@ -4043,6 +5173,12 @@ components:
           type: string
           minLength: 1
           title: Id
+        extensionAttributes:
+          items:
+            $ref: '#/components/schemas/ExtensionAttribute-Input'
+          type: array
+          title: Extensionattributes
+          default: []
         name:
           type: string
           minLength: 1
@@ -4061,7 +5197,7 @@ components:
           type: string
           title: Proceduretype
         code:
-          $ref: '#/components/schemas/Code'
+          $ref: '#/components/schemas/Code-Input'
         studyInterventionId:
           anyOf:
           - type: string
@@ -4069,7 +5205,7 @@ components:
           title: Studyinterventionid
         notes:
           items:
-            $ref: '#/components/schemas/CommentAnnotation'
+            $ref: '#/components/schemas/CommentAnnotation-Input'
           type: array
           title: Notes
           default: []
@@ -4093,6 +5229,12 @@ components:
           type: string
           minLength: 1
           title: Id
+        extensionAttributes:
+          items:
+            $ref: '#/components/schemas/ExtensionAttribute-Output'
+          type: array
+          title: Extensionattributes
+          default: []
         name:
           type: string
           minLength: 1
@@ -4111,7 +5253,7 @@ components:
           type: string
           title: Proceduretype
         code:
-          $ref: '#/components/schemas/Code'
+          $ref: '#/components/schemas/Code-Output'
         studyInterventionId:
           anyOf:
           - type: string
@@ -4119,7 +5261,7 @@ components:
           title: Studyinterventionid
         notes:
           items:
-            $ref: '#/components/schemas/CommentAnnotation'
+            $ref: '#/components/schemas/CommentAnnotation-Output'
           type: array
           title: Notes
           default: []
@@ -4137,12 +5279,18 @@ components:
       - code
       - instanceType
       title: Procedure
-    ProductOrganizationRole:
+    ProductOrganizationRole-Input:
       properties:
         id:
           type: string
           minLength: 1
           title: Id
+        extensionAttributes:
+          items:
+            $ref: '#/components/schemas/ExtensionAttribute-Input'
+          type: array
+          title: Extensionattributes
+          default: []
         name:
           type: string
           minLength: 1
@@ -4158,7 +5306,58 @@ components:
           - type: 'null'
           title: Description
         code:
-          $ref: '#/components/schemas/Code'
+          $ref: '#/components/schemas/Code-Input'
+        appliesToIds:
+          items:
+            type: string
+          type: array
+          title: Appliestoids
+          default: []
+        organizationId:
+          type: string
+          title: Organizationid
+        instanceType:
+          type: string
+          enum:
+          - ProductOrganizationRole
+          const: ProductOrganizationRole
+          title: Instancetype
+      type: object
+      required:
+      - id
+      - name
+      - code
+      - organizationId
+      - instanceType
+      title: ProductOrganizationRole
+    ProductOrganizationRole-Output:
+      properties:
+        id:
+          type: string
+          minLength: 1
+          title: Id
+        extensionAttributes:
+          items:
+            $ref: '#/components/schemas/ExtensionAttribute-Output'
+          type: array
+          title: Extensionattributes
+          default: []
+        name:
+          type: string
+          minLength: 1
+          title: Name
+        label:
+          anyOf:
+          - type: string
+          - type: 'null'
+          title: Label
+        description:
+          anyOf:
+          - type: string
+          - type: 'null'
+          title: Description
+        code:
+          $ref: '#/components/schemas/Code-Output'
         appliesToIds:
           items:
             type: string
@@ -4188,12 +5387,18 @@ components:
           type: string
           minLength: 1
           title: Id
+        extensionAttributes:
+          items:
+            $ref: '#/components/schemas/ExtensionAttribute-Input'
+          type: array
+          title: Extensionattributes
+          default: []
         value:
           type: number
           title: Value
         unit:
           anyOf:
-          - $ref: '#/components/schemas/AliasCode'
+          - $ref: '#/components/schemas/AliasCode-Input'
           - type: 'null'
         instanceType:
           type: string
@@ -4213,12 +5418,18 @@ components:
           type: string
           minLength: 1
           title: Id
+        extensionAttributes:
+          items:
+            $ref: '#/components/schemas/ExtensionAttribute-Output'
+          type: array
+          title: Extensionattributes
+          default: []
         value:
           type: number
           title: Value
         unit:
           anyOf:
-          - $ref: '#/components/schemas/AliasCode'
+          - $ref: '#/components/schemas/AliasCode-Output'
           - type: 'null'
         instanceType:
           type: string
@@ -4238,6 +5449,12 @@ components:
           type: string
           minLength: 1
           title: Id
+        extensionAttributes:
+          items:
+            $ref: '#/components/schemas/ExtensionAttribute-Input'
+          type: array
+          title: Extensionattributes
+          default: []
         minValue:
           $ref: '#/components/schemas/Quantity-Input'
         maxValue:
@@ -4265,6 +5482,12 @@ components:
           type: string
           minLength: 1
           title: Id
+        extensionAttributes:
+          items:
+            $ref: '#/components/schemas/ExtensionAttribute-Output'
+          type: array
+          title: Extensionattributes
+          default: []
         minValue:
           $ref: '#/components/schemas/Quantity-Output'
         maxValue:
@@ -4286,12 +5509,18 @@ components:
       - isApproximate
       - instanceType
       title: Range
-    ReferenceIdentifier:
+    ReferenceIdentifier-Input:
       properties:
         id:
           type: string
           minLength: 1
           title: Id
+        extensionAttributes:
+          items:
+            $ref: '#/components/schemas/ExtensionAttribute-Input'
+          type: array
+          title: Extensionattributes
+          default: []
         text:
           type: string
           title: Text
@@ -4305,7 +5534,7 @@ components:
           const: ReferenceIdentifier
           title: Instancetype
         type:
-          $ref: '#/components/schemas/Code'
+          $ref: '#/components/schemas/Code-Input'
       type: object
       required:
       - id
@@ -4314,17 +5543,87 @@ components:
       - instanceType
       - type
       title: ReferenceIdentifier
-    ResponseCode:
+    ReferenceIdentifier-Output:
       properties:
         id:
           type: string
           minLength: 1
           title: Id
+        extensionAttributes:
+          items:
+            $ref: '#/components/schemas/ExtensionAttribute-Output'
+          type: array
+          title: Extensionattributes
+          default: []
+        text:
+          type: string
+          title: Text
+        scopeId:
+          type: string
+          title: Scopeid
+        instanceType:
+          type: string
+          enum:
+          - ReferenceIdentifier
+          const: ReferenceIdentifier
+          title: Instancetype
+        type:
+          $ref: '#/components/schemas/Code-Output'
+      type: object
+      required:
+      - id
+      - text
+      - scopeId
+      - instanceType
+      - type
+      title: ReferenceIdentifier
+    ResponseCode-Input:
+      properties:
+        id:
+          type: string
+          minLength: 1
+          title: Id
+        extensionAttributes:
+          items:
+            $ref: '#/components/schemas/ExtensionAttribute-Input'
+          type: array
+          title: Extensionattributes
+          default: []
         isEnabled:
           type: boolean
           title: Isenabled
         code:
-          $ref: '#/components/schemas/Code'
+          $ref: '#/components/schemas/Code-Input'
+        instanceType:
+          type: string
+          enum:
+          - ResponseCode
+          const: ResponseCode
+          title: Instancetype
+      type: object
+      required:
+      - id
+      - isEnabled
+      - code
+      - instanceType
+      title: ResponseCode
+    ResponseCode-Output:
+      properties:
+        id:
+          type: string
+          minLength: 1
+          title: Id
+        extensionAttributes:
+          items:
+            $ref: '#/components/schemas/ExtensionAttribute-Output'
+          type: array
+          title: Extensionattributes
+          default: []
+        isEnabled:
+          type: boolean
+          title: Isenabled
+        code:
+          $ref: '#/components/schemas/Code-Output'
         instanceType:
           type: string
           enum:
@@ -4344,6 +5643,12 @@ components:
           type: string
           minLength: 1
           title: Id
+        extensionAttributes:
+          items:
+            $ref: '#/components/schemas/ExtensionAttribute-Input'
+          type: array
+          title: Extensionattributes
+          default: []
         name:
           type: string
           minLength: 1
@@ -4369,21 +5674,21 @@ components:
           title: Entryid
         exits:
           items:
-            $ref: '#/components/schemas/ScheduleTimelineExit'
+            $ref: '#/components/schemas/ScheduleTimelineExit-Input'
           type: array
           title: Exits
           default: []
         timings:
           items:
-            $ref: '#/components/schemas/Timing'
+            $ref: '#/components/schemas/Timing-Input'
           type: array
           title: Timings
           default: []
         instances:
           items:
             anyOf:
-            - $ref: '#/components/schemas/ScheduledActivityInstance'
-            - $ref: '#/components/schemas/ScheduledDecisionInstance'
+            - $ref: '#/components/schemas/ScheduledActivityInstance-Input'
+            - $ref: '#/components/schemas/ScheduledDecisionInstance-Input'
           type: array
           title: Instances
           default: []
@@ -4408,6 +5713,12 @@ components:
           type: string
           minLength: 1
           title: Id
+        extensionAttributes:
+          items:
+            $ref: '#/components/schemas/ExtensionAttribute-Output'
+          type: array
+          title: Extensionattributes
+          default: []
         name:
           type: string
           minLength: 1
@@ -4433,21 +5744,21 @@ components:
           title: Entryid
         exits:
           items:
-            $ref: '#/components/schemas/ScheduleTimelineExit'
+            $ref: '#/components/schemas/ScheduleTimelineExit-Output'
           type: array
           title: Exits
           default: []
         timings:
           items:
-            $ref: '#/components/schemas/Timing'
+            $ref: '#/components/schemas/Timing-Output'
           type: array
           title: Timings
           default: []
         instances:
           items:
             anyOf:
-            - $ref: '#/components/schemas/ScheduledActivityInstance'
-            - $ref: '#/components/schemas/ScheduledDecisionInstance'
+            - $ref: '#/components/schemas/ScheduledActivityInstance-Output'
+            - $ref: '#/components/schemas/ScheduledDecisionInstance-Output'
           type: array
           title: Instances
           default: []
@@ -4466,12 +5777,18 @@ components:
       - entryId
       - instanceType
       title: ScheduleTimeline
-    ScheduleTimelineExit:
+    ScheduleTimelineExit-Input:
       properties:
         id:
           type: string
           minLength: 1
           title: Id
+        extensionAttributes:
+          items:
+            $ref: '#/components/schemas/ExtensionAttribute-Input'
+          type: array
+          title: Extensionattributes
+          default: []
         instanceType:
           type: string
           enum:
@@ -4483,12 +5800,41 @@ components:
       - id
       - instanceType
       title: ScheduleTimelineExit
-    ScheduledActivityInstance:
+    ScheduleTimelineExit-Output:
       properties:
         id:
           type: string
           minLength: 1
           title: Id
+        extensionAttributes:
+          items:
+            $ref: '#/components/schemas/ExtensionAttribute-Output'
+          type: array
+          title: Extensionattributes
+          default: []
+        instanceType:
+          type: string
+          enum:
+          - ScheduleTimelineExit
+          const: ScheduleTimelineExit
+          title: Instancetype
+      type: object
+      required:
+      - id
+      - instanceType
+      title: ScheduleTimelineExit
+    ScheduledActivityInstance-Input:
+      properties:
+        id:
+          type: string
+          minLength: 1
+          title: Id
+        extensionAttributes:
+          items:
+            $ref: '#/components/schemas/ExtensionAttribute-Input'
+          type: array
+          title: Extensionattributes
+          default: []
         name:
           type: string
           minLength: 1
@@ -4546,12 +5892,87 @@ components:
       - name
       - instanceType
       title: ScheduledActivityInstance
-    ScheduledDecisionInstance:
+    ScheduledActivityInstance-Output:
       properties:
         id:
           type: string
           minLength: 1
           title: Id
+        extensionAttributes:
+          items:
+            $ref: '#/components/schemas/ExtensionAttribute-Output'
+          type: array
+          title: Extensionattributes
+          default: []
+        name:
+          type: string
+          minLength: 1
+          title: Name
+        label:
+          anyOf:
+          - type: string
+          - type: 'null'
+          title: Label
+        description:
+          anyOf:
+          - type: string
+          - type: 'null'
+          title: Description
+        defaultConditionId:
+          anyOf:
+          - type: string
+          - type: 'null'
+          title: Defaultconditionid
+        epochId:
+          anyOf:
+          - type: string
+          - type: 'null'
+          title: Epochid
+        instanceType:
+          type: string
+          enum:
+          - ScheduledActivityInstance
+          const: ScheduledActivityInstance
+          title: Instancetype
+        timelineId:
+          anyOf:
+          - type: string
+          - type: 'null'
+          title: Timelineid
+        timelineExitId:
+          anyOf:
+          - type: string
+          - type: 'null'
+          title: Timelineexitid
+        activityIds:
+          items:
+            type: string
+          type: array
+          title: Activityids
+          default: []
+        encounterId:
+          anyOf:
+          - type: string
+          - type: 'null'
+          title: Encounterid
+      type: object
+      required:
+      - id
+      - name
+      - instanceType
+      title: ScheduledActivityInstance
+    ScheduledDecisionInstance-Input:
+      properties:
+        id:
+          type: string
+          minLength: 1
+          title: Id
+        extensionAttributes:
+          items:
+            $ref: '#/components/schemas/ExtensionAttribute-Input'
+          type: array
+          title: Extensionattributes
+          default: []
         name:
           type: string
           minLength: 1
@@ -4584,7 +6005,61 @@ components:
           title: Instancetype
         conditionAssignments:
           items:
-            $ref: '#/components/schemas/ConditionAssignment'
+            $ref: '#/components/schemas/ConditionAssignment-Input'
+          type: array
+          title: Conditionassignments
+      type: object
+      required:
+      - id
+      - name
+      - instanceType
+      - conditionAssignments
+      title: ScheduledDecisionInstance
+    ScheduledDecisionInstance-Output:
+      properties:
+        id:
+          type: string
+          minLength: 1
+          title: Id
+        extensionAttributes:
+          items:
+            $ref: '#/components/schemas/ExtensionAttribute-Output'
+          type: array
+          title: Extensionattributes
+          default: []
+        name:
+          type: string
+          minLength: 1
+          title: Name
+        label:
+          anyOf:
+          - type: string
+          - type: 'null'
+          title: Label
+        description:
+          anyOf:
+          - type: string
+          - type: 'null'
+          title: Description
+        defaultConditionId:
+          anyOf:
+          - type: string
+          - type: 'null'
+          title: Defaultconditionid
+        epochId:
+          anyOf:
+          - type: string
+          - type: 'null'
+          title: Epochid
+        instanceType:
+          type: string
+          enum:
+          - ScheduledDecisionInstance
+          const: ScheduledDecisionInstance
+          title: Instancetype
+        conditionAssignments:
+          items:
+            $ref: '#/components/schemas/ConditionAssignment-Output'
           type: array
           title: Conditionassignments
       type: object
@@ -4600,6 +6075,12 @@ components:
           type: string
           minLength: 1
           title: Id
+        extensionAttributes:
+          items:
+            $ref: '#/components/schemas/ExtensionAttribute-Input'
+          type: array
+          title: Extensionattributes
+          default: []
         name:
           type: string
           minLength: 1
@@ -4644,6 +6125,12 @@ components:
           type: string
           minLength: 1
           title: Id
+        extensionAttributes:
+          items:
+            $ref: '#/components/schemas/ExtensionAttribute-Output'
+          type: array
+          title: Extensionattributes
+          default: []
         name:
           type: string
           minLength: 1
@@ -4778,6 +6265,12 @@ components:
           type: string
           minLength: 1
           title: Id
+        extensionAttributes:
+          items:
+            $ref: '#/components/schemas/ExtensionAttribute-Input'
+          type: array
+          title: Extensionattributes
+          default: []
         number:
           type: string
           title: Number
@@ -4785,16 +6278,16 @@ components:
           type: string
           title: Summary
         primaryReason:
-          $ref: '#/components/schemas/StudyAmendmentReason'
+          $ref: '#/components/schemas/StudyAmendmentReason-Input'
         secondaryReasons:
           items:
-            $ref: '#/components/schemas/StudyAmendmentReason'
+            $ref: '#/components/schemas/StudyAmendmentReason-Input'
           type: array
           title: Secondaryreasons
           default: []
         changes:
           items:
-            $ref: '#/components/schemas/StudyChange'
+            $ref: '#/components/schemas/StudyChange-Input'
           type: array
           title: Changes
         impacts:
@@ -4827,7 +6320,7 @@ components:
           title: Previousid
         notes:
           items:
-            $ref: '#/components/schemas/CommentAnnotation'
+            $ref: '#/components/schemas/CommentAnnotation-Input'
           type: array
           title: Notes
           default: []
@@ -4853,6 +6346,12 @@ components:
           type: string
           minLength: 1
           title: Id
+        extensionAttributes:
+          items:
+            $ref: '#/components/schemas/ExtensionAttribute-Output'
+          type: array
+          title: Extensionattributes
+          default: []
         number:
           type: string
           title: Number
@@ -4860,16 +6359,16 @@ components:
           type: string
           title: Summary
         primaryReason:
-          $ref: '#/components/schemas/StudyAmendmentReason'
+          $ref: '#/components/schemas/StudyAmendmentReason-Output'
         secondaryReasons:
           items:
-            $ref: '#/components/schemas/StudyAmendmentReason'
+            $ref: '#/components/schemas/StudyAmendmentReason-Output'
           type: array
           title: Secondaryreasons
           default: []
         changes:
           items:
-            $ref: '#/components/schemas/StudyChange'
+            $ref: '#/components/schemas/StudyChange-Output'
           type: array
           title: Changes
         impacts:
@@ -4902,7 +6401,7 @@ components:
           title: Previousid
         notes:
           items:
-            $ref: '#/components/schemas/CommentAnnotation'
+            $ref: '#/components/schemas/CommentAnnotation-Output'
           type: array
           title: Notes
           default: []
@@ -4928,8 +6427,14 @@ components:
           type: string
           minLength: 1
           title: Id
+        extensionAttributes:
+          items:
+            $ref: '#/components/schemas/ExtensionAttribute-Input'
+          type: array
+          title: Extensionattributes
+          default: []
         type:
-          $ref: '#/components/schemas/Code'
+          $ref: '#/components/schemas/Code-Input'
         text:
           type: string
           title: Text
@@ -4938,7 +6443,7 @@ components:
           title: Issubstantial
         notes:
           items:
-            $ref: '#/components/schemas/CommentAnnotation'
+            $ref: '#/components/schemas/CommentAnnotation-Input'
           type: array
           title: Notes
           default: []
@@ -4962,8 +6467,14 @@ components:
           type: string
           minLength: 1
           title: Id
+        extensionAttributes:
+          items:
+            $ref: '#/components/schemas/ExtensionAttribute-Output'
+          type: array
+          title: Extensionattributes
+          default: []
         type:
-          $ref: '#/components/schemas/Code'
+          $ref: '#/components/schemas/Code-Output'
         text:
           type: string
           title: Text
@@ -4972,7 +6483,7 @@ components:
           title: Issubstantial
         notes:
           items:
-            $ref: '#/components/schemas/CommentAnnotation'
+            $ref: '#/components/schemas/CommentAnnotation-Output'
           type: array
           title: Notes
           default: []
@@ -4990,14 +6501,51 @@ components:
       - isSubstantial
       - instanceType
       title: StudyAmendmentImpact
-    StudyAmendmentReason:
+    StudyAmendmentReason-Input:
       properties:
         id:
           type: string
           minLength: 1
           title: Id
+        extensionAttributes:
+          items:
+            $ref: '#/components/schemas/ExtensionAttribute-Input'
+          type: array
+          title: Extensionattributes
+          default: []
         code:
-          $ref: '#/components/schemas/Code'
+          $ref: '#/components/schemas/Code-Input'
+        otherReason:
+          anyOf:
+          - type: string
+          - type: 'null'
+          title: Otherreason
+        instanceType:
+          type: string
+          enum:
+          - StudyAmendmentReason
+          const: StudyAmendmentReason
+          title: Instancetype
+      type: object
+      required:
+      - id
+      - code
+      - instanceType
+      title: StudyAmendmentReason
+    StudyAmendmentReason-Output:
+      properties:
+        id:
+          type: string
+          minLength: 1
+          title: Id
+        extensionAttributes:
+          items:
+            $ref: '#/components/schemas/ExtensionAttribute-Output'
+          type: array
+          title: Extensionattributes
+          default: []
+        code:
+          $ref: '#/components/schemas/Code-Output'
         otherReason:
           anyOf:
           - type: string
@@ -5021,6 +6569,12 @@ components:
           type: string
           minLength: 1
           title: Id
+        extensionAttributes:
+          items:
+            $ref: '#/components/schemas/ExtensionAttribute-Input'
+          type: array
+          title: Extensionattributes
+          default: []
         name:
           type: string
           minLength: 1
@@ -5036,12 +6590,12 @@ components:
           - type: 'null'
           title: Description
         type:
-          $ref: '#/components/schemas/Code'
+          $ref: '#/components/schemas/Code-Input'
         dataOriginDescription:
           type: string
           title: Dataorigindescription
         dataOriginType:
-          $ref: '#/components/schemas/Code'
+          $ref: '#/components/schemas/Code-Input'
         populationIds:
           items:
             type: string
@@ -5050,7 +6604,7 @@ components:
           default: []
         notes:
           items:
-            $ref: '#/components/schemas/CommentAnnotation'
+            $ref: '#/components/schemas/CommentAnnotation-Input'
           type: array
           title: Notes
           default: []
@@ -5075,6 +6629,12 @@ components:
           type: string
           minLength: 1
           title: Id
+        extensionAttributes:
+          items:
+            $ref: '#/components/schemas/ExtensionAttribute-Output'
+          type: array
+          title: Extensionattributes
+          default: []
         name:
           type: string
           minLength: 1
@@ -5090,12 +6650,12 @@ components:
           - type: 'null'
           title: Description
         type:
-          $ref: '#/components/schemas/Code'
+          $ref: '#/components/schemas/Code-Output'
         dataOriginDescription:
           type: string
           title: Dataorigindescription
         dataOriginType:
-          $ref: '#/components/schemas/Code'
+          $ref: '#/components/schemas/Code-Output'
         populationIds:
           items:
             type: string
@@ -5104,7 +6664,7 @@ components:
           default: []
         notes:
           items:
-            $ref: '#/components/schemas/CommentAnnotation'
+            $ref: '#/components/schemas/CommentAnnotation-Output'
           type: array
           title: Notes
           default: []
@@ -5123,12 +6683,18 @@ components:
       - dataOriginType
       - instanceType
       title: StudyArm
-    StudyCell:
+    StudyCell-Input:
       properties:
         id:
           type: string
           minLength: 1
           title: Id
+        extensionAttributes:
+          items:
+            $ref: '#/components/schemas/ExtensionAttribute-Input'
+          type: array
+          title: Extensionattributes
+          default: []
         armId:
           type: string
           title: Armid
@@ -5154,12 +6720,55 @@ components:
       - elementIds
       - instanceType
       title: StudyCell
-    StudyChange:
+    StudyCell-Output:
       properties:
         id:
           type: string
           minLength: 1
           title: Id
+        extensionAttributes:
+          items:
+            $ref: '#/components/schemas/ExtensionAttribute-Output'
+          type: array
+          title: Extensionattributes
+          default: []
+        armId:
+          type: string
+          title: Armid
+        epochId:
+          type: string
+          title: Epochid
+        elementIds:
+          items:
+            type: string
+          type: array
+          title: Elementids
+        instanceType:
+          type: string
+          enum:
+          - StudyCell
+          const: StudyCell
+          title: Instancetype
+      type: object
+      required:
+      - id
+      - armId
+      - epochId
+      - elementIds
+      - instanceType
+      title: StudyCell
+    StudyChange-Input:
+      properties:
+        id:
+          type: string
+          minLength: 1
+          title: Id
+        extensionAttributes:
+          items:
+            $ref: '#/components/schemas/ExtensionAttribute-Input'
+          type: array
+          title: Extensionattributes
+          default: []
         name:
           type: string
           minLength: 1
@@ -5182,7 +6791,59 @@ components:
           title: Rationale
         changedSections:
           items:
-            $ref: '#/components/schemas/DocumentContentReference'
+            $ref: '#/components/schemas/DocumentContentReference-Input'
+          type: array
+          title: Changedsections
+        instanceType:
+          type: string
+          enum:
+          - StudyChange
+          const: StudyChange
+          title: Instancetype
+      type: object
+      required:
+      - id
+      - name
+      - summary
+      - rationale
+      - changedSections
+      - instanceType
+      title: StudyChange
+    StudyChange-Output:
+      properties:
+        id:
+          type: string
+          minLength: 1
+          title: Id
+        extensionAttributes:
+          items:
+            $ref: '#/components/schemas/ExtensionAttribute-Output'
+          type: array
+          title: Extensionattributes
+          default: []
+        name:
+          type: string
+          minLength: 1
+          title: Name
+        label:
+          anyOf:
+          - type: string
+          - type: 'null'
+          title: Label
+        description:
+          anyOf:
+          - type: string
+          - type: 'null'
+          title: Description
+        summary:
+          type: string
+          title: Summary
+        rationale:
+          type: string
+          title: Rationale
+        changedSections:
+          items:
+            $ref: '#/components/schemas/DocumentContentReference-Output'
           type: array
           title: Changedsections
         instanceType:
@@ -5206,6 +6867,12 @@ components:
           type: string
           minLength: 1
           title: Id
+        extensionAttributes:
+          items:
+            $ref: '#/components/schemas/ExtensionAttribute-Input'
+          type: array
+          title: Extensionattributes
+          default: []
         name:
           type: string
           minLength: 1
@@ -5241,7 +6908,7 @@ components:
           - type: 'null'
         plannedSex:
           items:
-            $ref: '#/components/schemas/Code'
+            $ref: '#/components/schemas/Code-Input'
           type: array
           maxItems: 2
           title: Plannedsex
@@ -5258,7 +6925,7 @@ components:
           - type: 'null'
         notes:
           items:
-            $ref: '#/components/schemas/CommentAnnotation'
+            $ref: '#/components/schemas/CommentAnnotation-Input'
           type: array
           title: Notes
           default: []
@@ -5293,6 +6960,12 @@ components:
           type: string
           minLength: 1
           title: Id
+        extensionAttributes:
+          items:
+            $ref: '#/components/schemas/ExtensionAttribute-Output'
+          type: array
+          title: Extensionattributes
+          default: []
         name:
           type: string
           minLength: 1
@@ -5328,7 +7001,7 @@ components:
           - type: 'null'
         plannedSex:
           items:
-            $ref: '#/components/schemas/Code'
+            $ref: '#/components/schemas/Code-Output'
           type: array
           maxItems: 2
           title: Plannedsex
@@ -5345,7 +7018,7 @@ components:
           - type: 'null'
         notes:
           items:
-            $ref: '#/components/schemas/CommentAnnotation'
+            $ref: '#/components/schemas/CommentAnnotation-Output'
           type: array
           title: Notes
           default: []
@@ -5380,6 +7053,12 @@ components:
           type: string
           minLength: 1
           title: Id
+        extensionAttributes:
+          items:
+            $ref: '#/components/schemas/ExtensionAttribute-Input'
+          type: array
+          title: Extensionattributes
+          default: []
         name:
           type: string
           minLength: 1
@@ -5395,9 +7074,9 @@ components:
           - type: 'null'
           title: Description
         language:
-          $ref: '#/components/schemas/Code'
+          $ref: '#/components/schemas/Code-Input'
         type:
-          $ref: '#/components/schemas/Code'
+          $ref: '#/components/schemas/Code-Input'
         templateName:
           type: string
           title: Templatename
@@ -5409,7 +7088,7 @@ components:
           default: []
         notes:
           items:
-            $ref: '#/components/schemas/CommentAnnotation'
+            $ref: '#/components/schemas/CommentAnnotation-Input'
           type: array
           title: Notes
           default: []
@@ -5434,6 +7113,12 @@ components:
           type: string
           minLength: 1
           title: Id
+        extensionAttributes:
+          items:
+            $ref: '#/components/schemas/ExtensionAttribute-Output'
+          type: array
+          title: Extensionattributes
+          default: []
         name:
           type: string
           minLength: 1
@@ -5449,9 +7134,9 @@ components:
           - type: 'null'
           title: Description
         language:
-          $ref: '#/components/schemas/Code'
+          $ref: '#/components/schemas/Code-Output'
         type:
-          $ref: '#/components/schemas/Code'
+          $ref: '#/components/schemas/Code-Output'
         templateName:
           type: string
           title: Templatename
@@ -5463,7 +7148,7 @@ components:
           default: []
         notes:
           items:
-            $ref: '#/components/schemas/CommentAnnotation'
+            $ref: '#/components/schemas/CommentAnnotation-Output'
           type: array
           title: Notes
           default: []
@@ -5488,11 +7173,17 @@ components:
           type: string
           minLength: 1
           title: Id
+        extensionAttributes:
+          items:
+            $ref: '#/components/schemas/ExtensionAttribute-Input'
+          type: array
+          title: Extensionattributes
+          default: []
         version:
           type: string
           title: Version
         status:
-          $ref: '#/components/schemas/Code'
+          $ref: '#/components/schemas/Code-Input'
         dateValues:
           items:
             $ref: '#/components/schemas/GovernanceDate-Input'
@@ -5501,7 +7192,7 @@ components:
           default: []
         contents:
           items:
-            $ref: '#/components/schemas/NarrativeContent'
+            $ref: '#/components/schemas/NarrativeContent-Input'
           type: array
           title: Contents
           default: []
@@ -5513,7 +7204,7 @@ components:
           default: []
         notes:
           items:
-            $ref: '#/components/schemas/CommentAnnotation'
+            $ref: '#/components/schemas/CommentAnnotation-Input'
           type: array
           title: Notes
           default: []
@@ -5536,11 +7227,17 @@ components:
           type: string
           minLength: 1
           title: Id
+        extensionAttributes:
+          items:
+            $ref: '#/components/schemas/ExtensionAttribute-Output'
+          type: array
+          title: Extensionattributes
+          default: []
         version:
           type: string
           title: Version
         status:
-          $ref: '#/components/schemas/Code'
+          $ref: '#/components/schemas/Code-Output'
         dateValues:
           items:
             $ref: '#/components/schemas/GovernanceDate-Output'
@@ -5549,7 +7246,7 @@ components:
           default: []
         contents:
           items:
-            $ref: '#/components/schemas/NarrativeContent'
+            $ref: '#/components/schemas/NarrativeContent-Output'
           type: array
           title: Contents
           default: []
@@ -5561,7 +7258,7 @@ components:
           default: []
         notes:
           items:
-            $ref: '#/components/schemas/CommentAnnotation'
+            $ref: '#/components/schemas/CommentAnnotation-Output'
           type: array
           title: Notes
           default: []
@@ -5584,6 +7281,12 @@ components:
           type: string
           minLength: 1
           title: Id
+        extensionAttributes:
+          items:
+            $ref: '#/components/schemas/ExtensionAttribute-Input'
+          type: array
+          title: Extensionattributes
+          default: []
         name:
           type: string
           minLength: 1
@@ -5619,7 +7322,7 @@ components:
           - type: 'null'
         plannedSex:
           items:
-            $ref: '#/components/schemas/Code'
+            $ref: '#/components/schemas/Code-Input'
           type: array
           maxItems: 2
           title: Plannedsex
@@ -5636,7 +7339,7 @@ components:
           - type: 'null'
         notes:
           items:
-            $ref: '#/components/schemas/CommentAnnotation'
+            $ref: '#/components/schemas/CommentAnnotation-Input'
           type: array
           title: Notes
           default: []
@@ -5665,6 +7368,12 @@ components:
           type: string
           minLength: 1
           title: Id
+        extensionAttributes:
+          items:
+            $ref: '#/components/schemas/ExtensionAttribute-Output'
+          type: array
+          title: Extensionattributes
+          default: []
         name:
           type: string
           minLength: 1
@@ -5700,7 +7409,7 @@ components:
           - type: 'null'
         plannedSex:
           items:
-            $ref: '#/components/schemas/Code'
+            $ref: '#/components/schemas/Code-Output'
           type: array
           maxItems: 2
           title: Plannedsex
@@ -5717,7 +7426,7 @@ components:
           - type: 'null'
         notes:
           items:
-            $ref: '#/components/schemas/CommentAnnotation'
+            $ref: '#/components/schemas/CommentAnnotation-Output'
           type: array
           title: Notes
           default: []
@@ -5746,6 +7455,12 @@ components:
           type: string
           minLength: 1
           title: Id
+        extensionAttributes:
+          items:
+            $ref: '#/components/schemas/ExtensionAttribute-Input'
+          type: array
+          title: Extensionattributes
+          default: []
         name:
           type: string
           minLength: 1
@@ -5762,11 +7477,11 @@ components:
           title: Description
         transitionStartRule:
           anyOf:
-          - $ref: '#/components/schemas/TransitionRule'
+          - $ref: '#/components/schemas/TransitionRule-Input'
           - type: 'null'
         transitionEndRule:
           anyOf:
-          - $ref: '#/components/schemas/TransitionRule'
+          - $ref: '#/components/schemas/TransitionRule-Input'
           - type: 'null'
         studyInterventionIds:
           items:
@@ -5776,7 +7491,7 @@ components:
           default: []
         notes:
           items:
-            $ref: '#/components/schemas/CommentAnnotation'
+            $ref: '#/components/schemas/CommentAnnotation-Input'
           type: array
           title: Notes
           default: []
@@ -5798,6 +7513,12 @@ components:
           type: string
           minLength: 1
           title: Id
+        extensionAttributes:
+          items:
+            $ref: '#/components/schemas/ExtensionAttribute-Output'
+          type: array
+          title: Extensionattributes
+          default: []
         name:
           type: string
           minLength: 1
@@ -5814,11 +7535,11 @@ components:
           title: Description
         transitionStartRule:
           anyOf:
-          - $ref: '#/components/schemas/TransitionRule'
+          - $ref: '#/components/schemas/TransitionRule-Output'
           - type: 'null'
         transitionEndRule:
           anyOf:
-          - $ref: '#/components/schemas/TransitionRule'
+          - $ref: '#/components/schemas/TransitionRule-Output'
           - type: 'null'
         studyInterventionIds:
           items:
@@ -5828,7 +7549,7 @@ components:
           default: []
         notes:
           items:
-            $ref: '#/components/schemas/CommentAnnotation'
+            $ref: '#/components/schemas/CommentAnnotation-Output'
           type: array
           title: Notes
           default: []
@@ -5850,6 +7571,12 @@ components:
           type: string
           minLength: 1
           title: Id
+        extensionAttributes:
+          items:
+            $ref: '#/components/schemas/ExtensionAttribute-Input'
+          type: array
+          title: Extensionattributes
+          default: []
         name:
           type: string
           minLength: 1
@@ -5865,7 +7592,7 @@ components:
           - type: 'null'
           title: Description
         type:
-          $ref: '#/components/schemas/Code'
+          $ref: '#/components/schemas/Code-Input'
         previousId:
           anyOf:
           - type: string
@@ -5878,7 +7605,7 @@ components:
           title: Nextid
         notes:
           items:
-            $ref: '#/components/schemas/CommentAnnotation'
+            $ref: '#/components/schemas/CommentAnnotation-Input'
           type: array
           title: Notes
           default: []
@@ -5901,6 +7628,12 @@ components:
           type: string
           minLength: 1
           title: Id
+        extensionAttributes:
+          items:
+            $ref: '#/components/schemas/ExtensionAttribute-Output'
+          type: array
+          title: Extensionattributes
+          default: []
         name:
           type: string
           minLength: 1
@@ -5916,7 +7649,7 @@ components:
           - type: 'null'
           title: Description
         type:
-          $ref: '#/components/schemas/Code'
+          $ref: '#/components/schemas/Code-Output'
         previousId:
           anyOf:
           - type: string
@@ -5929,7 +7662,7 @@ components:
           title: Nextid
         notes:
           items:
-            $ref: '#/components/schemas/CommentAnnotation'
+            $ref: '#/components/schemas/CommentAnnotation-Output'
           type: array
           title: Notes
           default: []
@@ -5946,12 +7679,49 @@ components:
       - type
       - instanceType
       title: StudyEpoch
-    StudyIdentifier:
+    StudyIdentifier-Input:
       properties:
         id:
           type: string
           minLength: 1
           title: Id
+        extensionAttributes:
+          items:
+            $ref: '#/components/schemas/ExtensionAttribute-Input'
+          type: array
+          title: Extensionattributes
+          default: []
+        text:
+          type: string
+          title: Text
+        scopeId:
+          type: string
+          title: Scopeid
+        instanceType:
+          type: string
+          enum:
+          - StudyIdentifier
+          const: StudyIdentifier
+          title: Instancetype
+      type: object
+      required:
+      - id
+      - text
+      - scopeId
+      - instanceType
+      title: StudyIdentifier
+    StudyIdentifier-Output:
+      properties:
+        id:
+          type: string
+          minLength: 1
+          title: Id
+        extensionAttributes:
+          items:
+            $ref: '#/components/schemas/ExtensionAttribute-Output'
+          type: array
+          title: Extensionattributes
+          default: []
         text:
           type: string
           title: Text
@@ -5977,6 +7747,12 @@ components:
           type: string
           minLength: 1
           title: Id
+        extensionAttributes:
+          items:
+            $ref: '#/components/schemas/ExtensionAttribute-Input'
+          type: array
+          title: Extensionattributes
+          default: []
         name:
           type: string
           minLength: 1
@@ -5992,16 +7768,16 @@ components:
           - type: 'null'
           title: Description
         role:
-          $ref: '#/components/schemas/Code'
+          $ref: '#/components/schemas/Code-Input'
         type:
-          $ref: '#/components/schemas/Code'
+          $ref: '#/components/schemas/Code-Input'
         minimumResponseDuration:
           anyOf:
           - $ref: '#/components/schemas/Quantity-Input'
           - type: 'null'
         codes:
           items:
-            $ref: '#/components/schemas/Code'
+            $ref: '#/components/schemas/Code-Input'
           type: array
           title: Codes
           default: []
@@ -6013,7 +7789,7 @@ components:
           default: []
         notes:
           items:
-            $ref: '#/components/schemas/CommentAnnotation'
+            $ref: '#/components/schemas/CommentAnnotation-Input'
           type: array
           title: Notes
           default: []
@@ -6037,6 +7813,12 @@ components:
           type: string
           minLength: 1
           title: Id
+        extensionAttributes:
+          items:
+            $ref: '#/components/schemas/ExtensionAttribute-Output'
+          type: array
+          title: Extensionattributes
+          default: []
         name:
           type: string
           minLength: 1
@@ -6052,16 +7834,16 @@ components:
           - type: 'null'
           title: Description
         role:
-          $ref: '#/components/schemas/Code'
+          $ref: '#/components/schemas/Code-Output'
         type:
-          $ref: '#/components/schemas/Code'
+          $ref: '#/components/schemas/Code-Output'
         minimumResponseDuration:
           anyOf:
           - $ref: '#/components/schemas/Quantity-Output'
           - type: 'null'
         codes:
           items:
-            $ref: '#/components/schemas/Code'
+            $ref: '#/components/schemas/Code-Output'
           type: array
           title: Codes
           default: []
@@ -6073,7 +7855,7 @@ components:
           default: []
         notes:
           items:
-            $ref: '#/components/schemas/CommentAnnotation'
+            $ref: '#/components/schemas/CommentAnnotation-Output'
           type: array
           title: Notes
           default: []
@@ -6091,12 +7873,18 @@ components:
       - type
       - instanceType
       title: StudyIntervention
-    StudyRole:
+    StudyRole-Input:
       properties:
         id:
           type: string
           minLength: 1
           title: Id
+        extensionAttributes:
+          items:
+            $ref: '#/components/schemas/ExtensionAttribute-Input'
+          type: array
+          title: Extensionattributes
+          default: []
         name:
           type: string
           minLength: 1
@@ -6112,7 +7900,7 @@ components:
           - type: 'null'
           title: Description
         code:
-          $ref: '#/components/schemas/Code'
+          $ref: '#/components/schemas/Code-Input'
         appliesToIds:
           items:
             type: string
@@ -6121,7 +7909,7 @@ components:
           default: []
         assignedPersons:
           items:
-            $ref: '#/components/schemas/AssignedPerson'
+            $ref: '#/components/schemas/AssignedPerson-Input'
           type: array
           title: Assignedpersons
           default: []
@@ -6133,7 +7921,7 @@ components:
           default: []
         masking:
           anyOf:
-          - $ref: '#/components/schemas/Masking'
+          - $ref: '#/components/schemas/Masking-Input'
           - type: 'null'
         instanceType:
           type: string
@@ -6148,12 +7936,81 @@ components:
       - code
       - instanceType
       title: StudyRole
-    StudySite:
+    StudyRole-Output:
       properties:
         id:
           type: string
           minLength: 1
           title: Id
+        extensionAttributes:
+          items:
+            $ref: '#/components/schemas/ExtensionAttribute-Output'
+          type: array
+          title: Extensionattributes
+          default: []
+        name:
+          type: string
+          minLength: 1
+          title: Name
+        label:
+          anyOf:
+          - type: string
+          - type: 'null'
+          title: Label
+        description:
+          anyOf:
+          - type: string
+          - type: 'null'
+          title: Description
+        code:
+          $ref: '#/components/schemas/Code-Output'
+        appliesToIds:
+          items:
+            type: string
+          type: array
+          title: Appliestoids
+          default: []
+        assignedPersons:
+          items:
+            $ref: '#/components/schemas/AssignedPerson-Output'
+          type: array
+          title: Assignedpersons
+          default: []
+        organizationIds:
+          items:
+            type: string
+          type: array
+          title: Organizationids
+          default: []
+        masking:
+          anyOf:
+          - $ref: '#/components/schemas/Masking-Output'
+          - type: 'null'
+        instanceType:
+          type: string
+          enum:
+          - StudyRole
+          const: StudyRole
+          title: Instancetype
+      type: object
+      required:
+      - id
+      - name
+      - code
+      - instanceType
+      title: StudyRole
+    StudySite-Input:
+      properties:
+        id:
+          type: string
+          minLength: 1
+          title: Id
+        extensionAttributes:
+          items:
+            $ref: '#/components/schemas/ExtensionAttribute-Input'
+          type: array
+          title: Extensionattributes
+          default: []
         name:
           type: string
           minLength: 1
@@ -6169,7 +8026,7 @@ components:
           - type: 'null'
           title: Description
         country:
-          $ref: '#/components/schemas/Code'
+          $ref: '#/components/schemas/Code-Input'
         instanceType:
           type: string
           enum:
@@ -6183,17 +8040,94 @@ components:
       - country
       - instanceType
       title: StudySite
-    StudyTitle:
+    StudySite-Output:
       properties:
         id:
           type: string
           minLength: 1
           title: Id
+        extensionAttributes:
+          items:
+            $ref: '#/components/schemas/ExtensionAttribute-Output'
+          type: array
+          title: Extensionattributes
+          default: []
+        name:
+          type: string
+          minLength: 1
+          title: Name
+        label:
+          anyOf:
+          - type: string
+          - type: 'null'
+          title: Label
+        description:
+          anyOf:
+          - type: string
+          - type: 'null'
+          title: Description
+        country:
+          $ref: '#/components/schemas/Code-Output'
+        instanceType:
+          type: string
+          enum:
+          - StudySite
+          const: StudySite
+          title: Instancetype
+      type: object
+      required:
+      - id
+      - name
+      - country
+      - instanceType
+      title: StudySite
+    StudyTitle-Input:
+      properties:
+        id:
+          type: string
+          minLength: 1
+          title: Id
+        extensionAttributes:
+          items:
+            $ref: '#/components/schemas/ExtensionAttribute-Input'
+          type: array
+          title: Extensionattributes
+          default: []
         text:
           type: string
           title: Text
         type:
-          $ref: '#/components/schemas/Code'
+          $ref: '#/components/schemas/Code-Input'
+        instanceType:
+          type: string
+          enum:
+          - StudyTitle
+          const: StudyTitle
+          title: Instancetype
+      type: object
+      required:
+      - id
+      - text
+      - type
+      - instanceType
+      title: StudyTitle
+    StudyTitle-Output:
+      properties:
+        id:
+          type: string
+          minLength: 1
+          title: Id
+        extensionAttributes:
+          items:
+            $ref: '#/components/schemas/ExtensionAttribute-Output'
+          type: array
+          title: Extensionattributes
+          default: []
+        text:
+          type: string
+          title: Text
+        type:
+          $ref: '#/components/schemas/Code-Output'
         instanceType:
           type: string
           enum:
@@ -6213,6 +8147,12 @@ components:
           type: string
           minLength: 1
           title: Id
+        extensionAttributes:
+          items:
+            $ref: '#/components/schemas/ExtensionAttribute-Input'
+          type: array
+          title: Extensionattributes
+          default: []
         versionIdentifier:
           type: string
           title: Versionidentifier
@@ -6239,18 +8179,18 @@ components:
           default: []
         businessTherapeuticAreas:
           items:
-            $ref: '#/components/schemas/Code'
+            $ref: '#/components/schemas/Code-Input'
           type: array
           title: Businesstherapeuticareas
           default: []
         studyIdentifiers:
           items:
-            $ref: '#/components/schemas/StudyIdentifier'
+            $ref: '#/components/schemas/StudyIdentifier-Input'
           type: array
           title: Studyidentifiers
         referenceIdentifiers:
           items:
-            $ref: '#/components/schemas/ReferenceIdentifier'
+            $ref: '#/components/schemas/ReferenceIdentifier-Input'
           type: array
           title: Referenceidentifiers
           default: []
@@ -6264,7 +8204,7 @@ components:
           default: []
         titles:
           items:
-            $ref: '#/components/schemas/StudyTitle'
+            $ref: '#/components/schemas/StudyTitle-Input'
           type: array
           title: Titles
         eligibilityCriterionItems:
@@ -6275,7 +8215,7 @@ components:
           default: []
         narrativeContentItems:
           items:
-            $ref: '#/components/schemas/NarrativeContentItem'
+            $ref: '#/components/schemas/NarrativeContentItem-Input'
           type: array
           title: Narrativecontentitems
           default: []
@@ -6287,7 +8227,7 @@ components:
           default: []
         roles:
           items:
-            $ref: '#/components/schemas/StudyRole'
+            $ref: '#/components/schemas/StudyRole-Input'
           type: array
           title: Roles
           default: []
@@ -6317,7 +8257,7 @@ components:
           default: []
         productOrganizationRoles:
           items:
-            $ref: '#/components/schemas/ProductOrganizationRole'
+            $ref: '#/components/schemas/ProductOrganizationRole-Input'
           type: array
           title: Productorganizationroles
           default: []
@@ -6341,7 +8281,7 @@ components:
           default: []
         dictionaries:
           items:
-            $ref: '#/components/schemas/SyntaxTemplateDictionary'
+            $ref: '#/components/schemas/SyntaxTemplateDictionary-Input'
           type: array
           title: Dictionaries
           default: []
@@ -6353,7 +8293,7 @@ components:
           default: []
         notes:
           items:
-            $ref: '#/components/schemas/CommentAnnotation'
+            $ref: '#/components/schemas/CommentAnnotation-Input'
           type: array
           title: Notes
           default: []
@@ -6378,6 +8318,12 @@ components:
           type: string
           minLength: 1
           title: Id
+        extensionAttributes:
+          items:
+            $ref: '#/components/schemas/ExtensionAttribute-Output'
+          type: array
+          title: Extensionattributes
+          default: []
         versionIdentifier:
           type: string
           title: Versionidentifier
@@ -6404,18 +8350,18 @@ components:
           default: []
         businessTherapeuticAreas:
           items:
-            $ref: '#/components/schemas/Code'
+            $ref: '#/components/schemas/Code-Output'
           type: array
           title: Businesstherapeuticareas
           default: []
         studyIdentifiers:
           items:
-            $ref: '#/components/schemas/StudyIdentifier'
+            $ref: '#/components/schemas/StudyIdentifier-Output'
           type: array
           title: Studyidentifiers
         referenceIdentifiers:
           items:
-            $ref: '#/components/schemas/ReferenceIdentifier'
+            $ref: '#/components/schemas/ReferenceIdentifier-Output'
           type: array
           title: Referenceidentifiers
           default: []
@@ -6429,7 +8375,7 @@ components:
           default: []
         titles:
           items:
-            $ref: '#/components/schemas/StudyTitle'
+            $ref: '#/components/schemas/StudyTitle-Output'
           type: array
           title: Titles
         eligibilityCriterionItems:
@@ -6440,7 +8386,7 @@ components:
           default: []
         narrativeContentItems:
           items:
-            $ref: '#/components/schemas/NarrativeContentItem'
+            $ref: '#/components/schemas/NarrativeContentItem-Output'
           type: array
           title: Narrativecontentitems
           default: []
@@ -6452,7 +8398,7 @@ components:
           default: []
         roles:
           items:
-            $ref: '#/components/schemas/StudyRole'
+            $ref: '#/components/schemas/StudyRole-Output'
           type: array
           title: Roles
           default: []
@@ -6482,7 +8428,7 @@ components:
           default: []
         productOrganizationRoles:
           items:
-            $ref: '#/components/schemas/ProductOrganizationRole'
+            $ref: '#/components/schemas/ProductOrganizationRole-Output'
           type: array
           title: Productorganizationroles
           default: []
@@ -6506,7 +8452,7 @@ components:
           default: []
         dictionaries:
           items:
-            $ref: '#/components/schemas/SyntaxTemplateDictionary'
+            $ref: '#/components/schemas/SyntaxTemplateDictionary-Output'
           type: array
           title: Dictionaries
           default: []
@@ -6518,7 +8464,7 @@ components:
           default: []
         notes:
           items:
-            $ref: '#/components/schemas/CommentAnnotation'
+            $ref: '#/components/schemas/CommentAnnotation-Output'
           type: array
           title: Notes
           default: []
@@ -6543,6 +8489,12 @@ components:
           type: string
           minLength: 1
           title: Id
+        extensionAttributes:
+          items:
+            $ref: '#/components/schemas/ExtensionAttribute-Input'
+          type: array
+          title: Extensionattributes
+          default: []
         name:
           type: string
           minLength: 1
@@ -6592,6 +8544,12 @@ components:
           type: string
           minLength: 1
           title: Id
+        extensionAttributes:
+          items:
+            $ref: '#/components/schemas/ExtensionAttribute-Output'
+          type: array
+          title: Extensionattributes
+          default: []
         name:
           type: string
           minLength: 1
@@ -6641,6 +8599,12 @@ components:
           type: string
           minLength: 1
           title: Id
+        extensionAttributes:
+          items:
+            $ref: '#/components/schemas/ExtensionAttribute-Input'
+          type: array
+          title: Extensionattributes
+          default: []
         name:
           type: string
           minLength: 1
@@ -6657,7 +8621,7 @@ components:
           title: Description
         codes:
           items:
-            $ref: '#/components/schemas/Code'
+            $ref: '#/components/schemas/Code-Input'
           type: array
           title: Codes
           default: []
@@ -6689,6 +8653,12 @@ components:
           type: string
           minLength: 1
           title: Id
+        extensionAttributes:
+          items:
+            $ref: '#/components/schemas/ExtensionAttribute-Output'
+          type: array
+          title: Extensionattributes
+          default: []
         name:
           type: string
           minLength: 1
@@ -6705,7 +8675,7 @@ components:
           title: Description
         codes:
           items:
-            $ref: '#/components/schemas/Code'
+            $ref: '#/components/schemas/Code-Output'
           type: array
           title: Codes
           default: []
@@ -6731,12 +8701,18 @@ components:
       - strengths
       - instanceType
       title: Substance
-    SyntaxTemplateDictionary:
+    SyntaxTemplateDictionary-Input:
       properties:
         id:
           type: string
           minLength: 1
           title: Id
+        extensionAttributes:
+          items:
+            $ref: '#/components/schemas/ExtensionAttribute-Input'
+          type: array
+          title: Extensionattributes
+          default: []
         name:
           type: string
           minLength: 1
@@ -6753,7 +8729,7 @@ components:
           title: Description
         parameterMaps:
           items:
-            $ref: '#/components/schemas/ParameterMap'
+            $ref: '#/components/schemas/ParameterMap-Input'
           type: array
           title: Parametermaps
         instanceType:
@@ -6769,12 +8745,62 @@ components:
       - parameterMaps
       - instanceType
       title: SyntaxTemplateDictionary
-    Timing:
+    SyntaxTemplateDictionary-Output:
       properties:
         id:
           type: string
           minLength: 1
           title: Id
+        extensionAttributes:
+          items:
+            $ref: '#/components/schemas/ExtensionAttribute-Output'
+          type: array
+          title: Extensionattributes
+          default: []
+        name:
+          type: string
+          minLength: 1
+          title: Name
+        label:
+          anyOf:
+          - type: string
+          - type: 'null'
+          title: Label
+        description:
+          anyOf:
+          - type: string
+          - type: 'null'
+          title: Description
+        parameterMaps:
+          items:
+            $ref: '#/components/schemas/ParameterMap-Output'
+          type: array
+          title: Parametermaps
+        instanceType:
+          type: string
+          enum:
+          - SyntaxTemplateDictionary
+          const: SyntaxTemplateDictionary
+          title: Instancetype
+      type: object
+      required:
+      - id
+      - name
+      - parameterMaps
+      - instanceType
+      title: SyntaxTemplateDictionary
+    Timing-Input:
+      properties:
+        id:
+          type: string
+          minLength: 1
+          title: Id
+        extensionAttributes:
+          items:
+            $ref: '#/components/schemas/ExtensionAttribute-Input'
+          type: array
+          title: Extensionattributes
+          default: []
         name:
           type: string
           minLength: 1
@@ -6790,7 +8816,7 @@ components:
           - type: 'null'
           title: Description
         type:
-          $ref: '#/components/schemas/Code'
+          $ref: '#/components/schemas/Code-Input'
         value:
           type: string
           title: Value
@@ -6798,7 +8824,7 @@ components:
           type: string
           title: Valuelabel
         relativeToFrom:
-          $ref: '#/components/schemas/Code'
+          $ref: '#/components/schemas/Code-Input'
         relativeFromScheduledInstanceId:
           type: string
           title: Relativefromscheduledinstanceid
@@ -6839,12 +8865,136 @@ components:
       - relativeFromScheduledInstanceId
       - instanceType
       title: Timing
-    TransitionRule:
+    Timing-Output:
       properties:
         id:
           type: string
           minLength: 1
           title: Id
+        extensionAttributes:
+          items:
+            $ref: '#/components/schemas/ExtensionAttribute-Output'
+          type: array
+          title: Extensionattributes
+          default: []
+        name:
+          type: string
+          minLength: 1
+          title: Name
+        label:
+          anyOf:
+          - type: string
+          - type: 'null'
+          title: Label
+        description:
+          anyOf:
+          - type: string
+          - type: 'null'
+          title: Description
+        type:
+          $ref: '#/components/schemas/Code-Output'
+        value:
+          type: string
+          title: Value
+        valueLabel:
+          type: string
+          title: Valuelabel
+        relativeToFrom:
+          $ref: '#/components/schemas/Code-Output'
+        relativeFromScheduledInstanceId:
+          type: string
+          title: Relativefromscheduledinstanceid
+        relativeToScheduledInstanceId:
+          anyOf:
+          - type: string
+          - type: 'null'
+          title: Relativetoscheduledinstanceid
+        windowLower:
+          anyOf:
+          - type: string
+          - type: 'null'
+          title: Windowlower
+        windowUpper:
+          anyOf:
+          - type: string
+          - type: 'null'
+          title: Windowupper
+        windowLabel:
+          anyOf:
+          - type: string
+          - type: 'null'
+          title: Windowlabel
+        instanceType:
+          type: string
+          enum:
+          - Timing
+          const: Timing
+          title: Instancetype
+      type: object
+      required:
+      - id
+      - name
+      - type
+      - value
+      - valueLabel
+      - relativeToFrom
+      - relativeFromScheduledInstanceId
+      - instanceType
+      title: Timing
+    TransitionRule-Input:
+      properties:
+        id:
+          type: string
+          minLength: 1
+          title: Id
+        extensionAttributes:
+          items:
+            $ref: '#/components/schemas/ExtensionAttribute-Input'
+          type: array
+          title: Extensionattributes
+          default: []
+        name:
+          type: string
+          minLength: 1
+          title: Name
+        label:
+          anyOf:
+          - type: string
+          - type: 'null'
+          title: Label
+        description:
+          anyOf:
+          - type: string
+          - type: 'null'
+          title: Description
+        text:
+          type: string
+          title: Text
+        instanceType:
+          type: string
+          enum:
+          - TransitionRule
+          const: TransitionRule
+          title: Instancetype
+      type: object
+      required:
+      - id
+      - name
+      - text
+      - instanceType
+      title: TransitionRule
+    TransitionRule-Output:
+      properties:
+        id:
+          type: string
+          minLength: 1
+          title: Id
+        extensionAttributes:
+          items:
+            $ref: '#/components/schemas/ExtensionAttribute-Output'
+          type: array
+          title: Extensionattributes
+          default: []
         name:
           type: string
           minLength: 1
