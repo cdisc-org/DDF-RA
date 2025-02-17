@@ -36,6 +36,11 @@ Abbreviation:
       Definition: A brief written record relevant to the abbreviation.
       Relationship Type: Value
       Model Name: notes
+    extensionAttributes:
+      Type:
+      - $ref: '#/ExtensionAttribute'
+      Cardinality: 0..*
+      Relationship Type: Value
     instanceType:
       Type:
       - $ref: '#/string'
@@ -154,6 +159,11 @@ Activity:
         with the activity.
       Relationship Type: Ref
       Model Name: bcCategories
+    extensionAttributes:
+      Type:
+      - $ref: '#/ExtensionAttribute'
+      Cardinality: 0..*
+      Relationship Type: Value
     instanceType:
       Type:
       - $ref: '#/string'
@@ -236,6 +246,11 @@ Address:
       Codelist Ref: (Point out to ISO 3166-1 Alpha-3 Country code)
       Relationship Type: Value
       Model Name: country
+    extensionAttributes:
+      Type:
+      - $ref: '#/ExtensionAttribute'
+      Cardinality: 0..*
+      Relationship Type: Value
     instanceType:
       Type:
       - $ref: '#/string'
@@ -352,6 +367,11 @@ AdministrableProduct:
         product.
       Relationship Type: Value
       Model Name: ingredients
+    extensionAttributes:
+      Type:
+      - $ref: '#/ExtensionAttribute'
+      Cardinality: 0..*
+      Relationship Type: Value
     instanceType:
       Type:
       - $ref: '#/string'
@@ -396,6 +416,11 @@ AdministrableProductIdentifier:
       Model Name: scope
       Inherited From:
         $ref: '#/Identifier'
+    extensionAttributes:
+      Type:
+      - $ref: '#/ExtensionAttribute'
+      Cardinality: 0..*
+      Relationship Type: Value
     instanceType:
       Type:
       - $ref: '#/string'
@@ -449,6 +474,11 @@ AdministrableProductProperty:
       Definition: The numeric value associated with an administrable product property.
       Relationship Type: Value
       Model Name: quantity
+    extensionAttributes:
+      Type:
+      - $ref: '#/ExtensionAttribute'
+      Cardinality: 0..*
+      Relationship Type: Value
     instanceType:
       Type:
       - $ref: '#/string'
@@ -556,6 +586,11 @@ Administration:
         product, agent, or therapy administration.
       Relationship Type: Ref
       Model Name: medicalDevice
+    extensionAttributes:
+      Type:
+      - $ref: '#/ExtensionAttribute'
+      Cardinality: 0..*
+      Relationship Type: Value
     instanceType:
       Type:
       - $ref: '#/string'
@@ -607,6 +642,11 @@ AdministrationDuration:
         within and/or across subjects.
       Relationship Type: Value
       Model Name: reasonDurationWillVary
+    extensionAttributes:
+      Type:
+      - $ref: '#/ExtensionAttribute'
+      Cardinality: 0..*
+      Relationship Type: Value
     instanceType:
       Type:
       - $ref: '#/string'
@@ -638,6 +678,11 @@ AliasCode:
         identifies the set of standard code aliases associated with the alias code.
       Relationship Type: Value
       Model Name: standardCodeAliases
+    extensionAttributes:
+      Type:
+      - $ref: '#/ExtensionAttribute'
+      Cardinality: 0..*
+      Relationship Type: Value
     instanceType:
       Type:
       - $ref: '#/string'
@@ -708,6 +753,11 @@ AnalysisPopulation:
         is a subset.
       Relationship Type: Ref
       Model Name: subsetOf
+    extensionAttributes:
+      Type:
+      - $ref: '#/ExtensionAttribute'
+      Cardinality: 0..*
+      Relationship Type: Value
     instanceType:
       Type:
       - $ref: '#/string'
@@ -766,6 +816,11 @@ AssignedPerson:
         classes that identifies that organization to which the assigned person belongs.
       Relationship Type: Ref
       Model Name: organization
+    extensionAttributes:
+      Type:
+      - $ref: '#/ExtensionAttribute'
+      Cardinality: 0..*
+      Relationship Type: Value
     instanceType:
       Type:
       - $ref: '#/string'
@@ -845,6 +900,11 @@ BiomedicalConcept:
         concept.
       Relationship Type: Value
       Model Name: properties
+    extensionAttributes:
+      Type:
+      - $ref: '#/ExtensionAttribute'
+      Cardinality: 0..*
+      Relationship Type: Value
     instanceType:
       Type:
       - $ref: '#/string'
@@ -921,6 +981,11 @@ BiomedicalConceptCategory:
         identifies the set of child categories of a biomedical concept.
       Relationship Type: Ref
       Model Name: children
+    extensionAttributes:
+      Type:
+      - $ref: '#/ExtensionAttribute'
+      Cardinality: 0..*
+      Relationship Type: Value
     instanceType:
       Type:
       - $ref: '#/string'
@@ -1008,6 +1073,11 @@ BiomedicalConceptProperty:
         concept property.
       Relationship Type: Value
       Model Name: responseCodes
+    extensionAttributes:
+      Type:
+      - $ref: '#/ExtensionAttribute'
+      Cardinality: 0..*
+      Relationship Type: Value
     instanceType:
       Type:
       - $ref: '#/string'
@@ -1066,6 +1136,11 @@ BiomedicalConceptSurrogate:
       Definition: A brief written record relevant to the biomedical concept surrogate.
       Relationship Type: Value
       Model Name: notes
+    extensionAttributes:
+      Type:
+      - $ref: '#/ExtensionAttribute'
+      Cardinality: 0..*
+      Relationship Type: Value
     instanceType:
       Type:
       - $ref: '#/string'
@@ -1124,6 +1199,11 @@ BiospecimenRetention:
       Definition: An indication as to whether retained biospecimens contain DNA.
       Relationship Type: Value
       Model Name: includesDNA
+    extensionAttributes:
+      Type:
+      - $ref: '#/ExtensionAttribute'
+      Cardinality: 0..*
+      Relationship Type: Value
     instanceType:
       Type:
       - $ref: '#/string'
@@ -1204,6 +1284,11 @@ Characteristic:
       Model Name: dictionary
       Inherited From:
         $ref: '#/SyntaxTemplate'
+    extensionAttributes:
+      Type:
+      - $ref: '#/ExtensionAttribute'
+      Cardinality: 0..*
+      Relationship Type: Value
     instanceType:
       Type:
       - $ref: '#/string'
@@ -1255,6 +1340,11 @@ Code:
         with a code.
       Relationship Type: Value
       Model Name: decode
+    extensionAttributes:
+      Type:
+      - $ref: '#/ExtensionAttribute'
+      Cardinality: 0..*
+      Relationship Type: Value
     instanceType:
       Type:
       - $ref: '#/string'
@@ -1290,6 +1380,11 @@ CommentAnnotation:
         annotation.
       Relationship Type: Value
       Model Name: codes
+    extensionAttributes:
+      Type:
+      - $ref: '#/ExtensionAttribute'
+      Cardinality: 0..*
+      Relationship Type: Value
     instanceType:
       Type:
       - $ref: '#/string'
@@ -1394,6 +1489,11 @@ Condition:
         concept surrogate, or biomedical concept category that applies to the condition.
       Relationship Type: Ref
       Model Name: appliesTo
+    extensionAttributes:
+      Type:
+      - $ref: '#/ExtensionAttribute'
+      Cardinality: 0..*
+      Relationship Type: Value
     instanceType:
       Type:
       - $ref: '#/string'
@@ -1429,6 +1529,11 @@ ConditionAssignment:
         assignment.
       Relationship Type: Ref
       Model Name: conditionTarget
+    extensionAttributes:
+      Type:
+      - $ref: '#/ExtensionAttribute'
+      Cardinality: 0..*
+      Relationship Type: Value
     instanceType:
       Type:
       - $ref: '#/string'
@@ -1472,6 +1577,11 @@ DocumentContentReference:
         content reference applies.
       Relationship Type: Ref
       Model Name: appliesTo
+    extensionAttributes:
+      Type:
+      - $ref: '#/ExtensionAttribute'
+      Cardinality: 0..*
+      Relationship Type: Value
     instanceType:
       Type:
       - $ref: '#/string'
@@ -1567,6 +1677,11 @@ EligibilityCriterion:
         criterion in the display order.
       Relationship Type: Ref
       Model Name: previous
+    extensionAttributes:
+      Type:
+      - $ref: '#/ExtensionAttribute'
+      Cardinality: 0..*
+      Relationship Type: Value
     instanceType:
       Type:
       - $ref: '#/string'
@@ -1652,6 +1767,11 @@ EligibilityCriterionItem:
       Model Name: dictionary
       Inherited From:
         $ref: '#/SyntaxTemplate'
+    extensionAttributes:
+      Type:
+      - $ref: '#/ExtensionAttribute'
+      Cardinality: 0..*
+      Relationship Type: Value
     instanceType:
       Type:
       - $ref: '#/string'
@@ -1773,6 +1893,11 @@ Encounter:
         the encounter that chronologically precedes the current encounter.
       Relationship Type: Ref
       Model Name: previous
+    extensionAttributes:
+      Type:
+      - $ref: '#/ExtensionAttribute'
+      Cardinality: 0..*
+      Relationship Type: Value
     instanceType:
       Type:
       - $ref: '#/string'
@@ -1877,6 +2002,11 @@ Endpoint:
       Definition: The textual representation of the study endpoint purpose.
       Relationship Type: Value
       Model Name: purpose
+    extensionAttributes:
+      Type:
+      - $ref: '#/ExtensionAttribute'
+      Cardinality: 0..*
+      Relationship Type: Value
     instanceType:
       Type:
       - $ref: '#/string'
@@ -1971,6 +2101,11 @@ Estimand:
         which identifies the set of study interventions associated with the Estimand.
       Relationship Type: Ref
       Model Name: interventions
+    extensionAttributes:
+      Type:
+      - $ref: '#/ExtensionAttribute'
+      Cardinality: 0..*
+      Relationship Type: Value
     instanceType:
       Type:
       - $ref: '#/string'
@@ -2007,6 +2142,11 @@ GeographicScope:
         Alias codes drawn from GENC, UN Region Codes, etc.)'
       Relationship Type: Value
       Model Name: code
+    extensionAttributes:
+      Type:
+      - $ref: '#/ExtensionAttribute'
+      Cardinality: 0..*
+      Relationship Type: Value
     instanceType:
       Type:
       - $ref: '#/string'
@@ -2075,6 +2215,11 @@ GovernanceDate:
         governance date.
       Relationship Type: Value
       Model Name: geographicScopes
+    extensionAttributes:
+      Type:
+      - $ref: '#/ExtensionAttribute'
+      Cardinality: 0..*
+      Relationship Type: Value
     instanceType:
       Type:
       - $ref: '#/string'
@@ -2177,6 +2322,11 @@ Indication:
       Definition: A brief written record relevant to the disease/condition indication.
       Relationship Type: Value
       Model Name: notes
+    extensionAttributes:
+      Type:
+      - $ref: '#/ExtensionAttribute'
+      Cardinality: 0..*
+      Relationship Type: Value
     instanceType:
       Type:
       - $ref: '#/string'
@@ -2211,6 +2361,11 @@ Ingredient:
         that identifies the substance associated with the ingredient.
       Relationship Type: Value
       Model Name: substance
+    extensionAttributes:
+      Type:
+      - $ref: '#/ExtensionAttribute'
+      Cardinality: 0..*
+      Relationship Type: Value
     instanceType:
       Type:
       - $ref: '#/string'
@@ -2305,6 +2460,11 @@ IntercurrentEvent:
         intercurrent events.
       Relationship Type: Value
       Model Name: strategy
+    extensionAttributes:
+      Type:
+      - $ref: '#/ExtensionAttribute'
+      Cardinality: 0..*
+      Relationship Type: Value
     instanceType:
       Type:
       - $ref: '#/string'
@@ -2624,6 +2784,11 @@ InterventionalStudyDesign:
       Codelist Ref: SDTM Terminology Codelist C66736
       Relationship Type: Value
       Model Name: intentTypes
+    extensionAttributes:
+      Type:
+      - $ref: '#/ExtensionAttribute'
+      Cardinality: 0..*
+      Relationship Type: Value
     eligibilityCriteria:
       Type:
       - $ref: '#/EligibilityCriterion'
@@ -2662,6 +2827,11 @@ Masking:
       - $ref: '#/Boolean'
       Relationship Type: Value
       Model Name: isMasked
+    extensionAttributes:
+      Type:
+      - $ref: '#/ExtensionAttribute'
+      Cardinality: 0..*
+      Relationship Type: Value
     instanceType:
       Type:
       - $ref: '#/string'
@@ -2761,6 +2931,11 @@ MedicalDevice:
         classes which provides the set of identifiers related to the medical device.
       Relationship Type: Value
       Model Name: identifiers
+    extensionAttributes:
+      Type:
+      - $ref: '#/ExtensionAttribute'
+      Cardinality: 0..*
+      Relationship Type: Value
     instanceType:
       Type:
       - $ref: '#/string'
@@ -2813,6 +2988,11 @@ MedicalDeviceIdentifier:
       Codelist Ref: CNEW - Medical Device Identifier Type Value Set
       Relationship Type: Value
       Model Name: type
+    extensionAttributes:
+      Type:
+      - $ref: '#/ExtensionAttribute'
+      Cardinality: 0..*
+      Relationship Type: Value
     instanceType:
       Type:
       - $ref: '#/string'
@@ -2909,6 +3089,11 @@ NarrativeContent:
         the set of child content associated with an instance of narrative content.
       Relationship Type: Ref
       Model Name: children
+    extensionAttributes:
+      Type:
+      - $ref: '#/ExtensionAttribute'
+      Cardinality: 0..*
+      Relationship Type: Value
     instanceType:
       Type:
       - $ref: '#/string'
@@ -2944,6 +3129,11 @@ NarrativeContentItem:
         item.
       Relationship Type: Value
       Model Name: text
+    extensionAttributes:
+      Type:
+      - $ref: '#/ExtensionAttribute'
+      Cardinality: 0..*
+      Relationship Type: Value
     instanceType:
       Type:
       - $ref: '#/string'
@@ -3044,6 +3234,11 @@ Objective:
         identifies the set of endpoints associated with the study objective.
       Relationship Type: Value
       Model Name: endpoints
+    extensionAttributes:
+      Type:
+      - $ref: '#/ExtensionAttribute'
+      Cardinality: 0..*
+      Relationship Type: Value
     instanceType:
       Type:
       - $ref: '#/string'
@@ -3362,6 +3557,11 @@ ObservationalStudyDesign:
       Codelist Ref: SDTM Terminology Codelist C127260
       Relationship Type: Value
       Model Name: samplingMethod
+    extensionAttributes:
+      Type:
+      - $ref: '#/ExtensionAttribute'
+      Cardinality: 0..*
+      Relationship Type: Value
     eligibilityCriteria:
       Type:
       - $ref: '#/EligibilityCriterion'
@@ -3451,6 +3651,11 @@ Organization:
         which identifies the set of study sites managed by the organization.
       Relationship Type: Value
       Model Name: managedSites
+    extensionAttributes:
+      Type:
+      - $ref: '#/ExtensionAttribute'
+      Cardinality: 0..*
+      Relationship Type: Value
     instanceType:
       Type:
       - $ref: '#/string'
@@ -3485,6 +3690,11 @@ ParameterMap:
         markup language (e.g., HTML, XML), to store attributes and elements.
       Relationship Type: Value
       Model Name: reference
+    extensionAttributes:
+      Type:
+      - $ref: '#/ExtensionAttribute'
+      Cardinality: 0..*
+      Relationship Type: Value
     instanceType:
       Type:
       - $ref: '#/string'
@@ -3669,6 +3879,11 @@ Procedure:
         performed during the conduct of a procedure.
       Relationship Type: Ref
       Model Name: studyIntervention
+    extensionAttributes:
+      Type:
+      - $ref: '#/ExtensionAttribute'
+      Cardinality: 0..*
+      Relationship Type: Value
     instanceType:
       Type:
       - $ref: '#/string'
@@ -3740,6 +3955,11 @@ ProductOrganizationRole:
         role.
       Relationship Type: Ref
       Model Name: organization
+    extensionAttributes:
+      Type:
+      - $ref: '#/ExtensionAttribute'
+      Cardinality: 0..*
+      Relationship Type: Value
     instanceType:
       Type:
       - $ref: '#/string'
@@ -3774,6 +3994,11 @@ Quantity:
       Codelist Ref: SDTM Terminology Codelist C71620
       Relationship Type: Value
       Model Name: unit
+    extensionAttributes:
+      Type:
+      - $ref: '#/ExtensionAttribute'
+      Cardinality: 0..*
+      Relationship Type: Value
     instanceType:
       Type:
       - $ref: '#/string'
@@ -3816,6 +4041,11 @@ Range:
         exact.
       Relationship Type: Value
       Model Name: isApproximate
+    extensionAttributes:
+      Type:
+      - $ref: '#/ExtensionAttribute'
+      Cardinality: 0..*
+      Relationship Type: Value
     instanceType:
       Type:
       - $ref: '#/string'
@@ -3867,6 +4097,11 @@ ReferenceIdentifier:
       Codelist Ref: CNEW Reference Identifier Type
       Relationship Type: Value
       Model Name: type
+    extensionAttributes:
+      Type:
+      - $ref: '#/ExtensionAttribute'
+      Cardinality: 0..*
+      Relationship Type: Value
     instanceType:
       Type:
       - $ref: '#/string'
@@ -3902,6 +4137,11 @@ ResponseCode:
         of a collection.
       Relationship Type: Value
       Model Name: code
+    extensionAttributes:
+      Type:
+      - $ref: '#/ExtensionAttribute'
+      Cardinality: 0..*
+      Relationship Type: Value
     instanceType:
       Type:
       - $ref: '#/string'
@@ -3995,6 +4235,11 @@ ScheduleTimeline:
         which identifies the set of timings associated with the scheduled timeline.
       Relationship Type: Value
       Model Name: timings
+    extensionAttributes:
+      Type:
+      - $ref: '#/ExtensionAttribute'
+      Cardinality: 0..*
+      Relationship Type: Value
     instanceType:
       Type:
       - $ref: '#/string'
@@ -4011,6 +4256,11 @@ ScheduleTimelineExit:
       - $ref: '#/string'
       Relationship Type: Value
       Model Name: id
+    extensionAttributes:
+      Type:
+      - $ref: '#/ExtensionAttribute'
+      Cardinality: 0..*
+      Relationship Type: Value
     instanceType:
       Type:
       - $ref: '#/string'
@@ -4118,6 +4368,11 @@ ScheduledActivityInstance:
         related to a scheduled activity instance.
       Relationship Type: Ref
       Model Name: timelineExit
+    extensionAttributes:
+      Type:
+      - $ref: '#/ExtensionAttribute'
+      Cardinality: 0..*
+      Relationship Type: Value
     instanceType:
       Type:
       - $ref: '#/string'
@@ -4199,6 +4454,11 @@ ScheduledDecisionInstance:
         a scheduled decision instance.
       Relationship Type: Value
       Model Name: conditionAssignments
+    extensionAttributes:
+      Type:
+      - $ref: '#/ExtensionAttribute'
+      Cardinality: 0..*
+      Relationship Type: Value
     instanceType:
       Type:
       - $ref: '#/string'
@@ -4316,6 +4576,11 @@ Strength:
       Definition: The divisor of a fraction.
       Relationship Type: Value
       Model Name: denominator
+    extensionAttributes:
+      Type:
+      - $ref: '#/ExtensionAttribute'
+      Cardinality: 0..*
+      Relationship Type: Value
     instanceType:
       Type:
       - $ref: '#/string'
@@ -4487,6 +4752,11 @@ StudyAmendment:
         classes which identifies the primary reason for issuing the study amendment.
       Relationship Type: Value
       Model Name: primaryReason
+    extensionAttributes:
+      Type:
+      - $ref: '#/ExtensionAttribute'
+      Cardinality: 0..*
+      Relationship Type: Value
     instanceType:
       Type:
       - $ref: '#/string'
@@ -4538,6 +4808,11 @@ StudyAmendmentImpact:
       Definition: A brief written record relevant to the study amendment impact.
       Relationship Type: Value
       Model Name: notes
+    extensionAttributes:
+      Type:
+      - $ref: '#/ExtensionAttribute'
+      Cardinality: 0..*
+      Relationship Type: Value
     instanceType:
       Type:
       - $ref: '#/string'
@@ -4573,6 +4848,11 @@ StudyAmendmentReason:
       Codelist Ref: C207415
       Relationship Type: Value
       Model Name: code
+    extensionAttributes:
+      Type:
+      - $ref: '#/ExtensionAttribute'
+      Cardinality: 0..*
+      Relationship Type: Value
     instanceType:
       Type:
       - $ref: '#/string'
@@ -4660,6 +4940,11 @@ StudyArm:
         arm.
       Relationship Type: Ref
       Model Name: populations
+    extensionAttributes:
+      Type:
+      - $ref: '#/ExtensionAttribute'
+      Cardinality: 0..*
+      Relationship Type: Value
     instanceType:
       Type:
       - $ref: '#/string'
@@ -4701,6 +4986,11 @@ StudyCell:
         which identifies the set of study elements associated with the study cell.
       Relationship Type: Ref
       Model Name: elements
+    extensionAttributes:
+      Type:
+      - $ref: '#/ExtensionAttribute'
+      Cardinality: 0..*
+      Relationship Type: Value
     instanceType:
       Type:
       - $ref: '#/string'
@@ -4769,6 +5059,11 @@ StudyChange:
         change.
       Relationship Type: Value
       Model Name: changedSections
+    extensionAttributes:
+      Type:
+      - $ref: '#/ExtensionAttribute'
+      Cardinality: 0..*
+      Relationship Type: Value
     instanceType:
       Type:
       - $ref: '#/string'
@@ -4937,6 +5232,11 @@ StudyCohort:
         which identifies the set of indications associated with the study cohort.
       Relationship Type: Ref
       Model Name: indications
+    extensionAttributes:
+      Type:
+      - $ref: '#/ExtensionAttribute'
+      Cardinality: 0..*
+      Relationship Type: Value
     instanceType:
       Type:
       - $ref: '#/string'
@@ -5023,6 +5323,11 @@ StudyDefinitionDocument:
         document.
       Relationship Type: Value
       Model Name: versions
+    extensionAttributes:
+      Type:
+      - $ref: '#/ExtensionAttribute'
+      Cardinality: 0..*
+      Relationship Type: Value
     instanceType:
       Type:
       - $ref: '#/string'
@@ -5095,6 +5400,11 @@ StudyDefinitionDocumentVersion:
         version.
       Relationship Type: Ref
       Model Name: children
+    extensionAttributes:
+      Type:
+      - $ref: '#/ExtensionAttribute'
+      Cardinality: 0..*
+      Relationship Type: Value
     instanceType:
       Type:
       - $ref: '#/string'
@@ -5451,6 +5761,11 @@ StudyDesignPopulation:
         design population.
       Relationship Type: Value
       Model Name: cohorts
+    extensionAttributes:
+      Type:
+      - $ref: '#/ExtensionAttribute'
+      Cardinality: 0..*
+      Relationship Type: Value
     instanceType:
       Type:
       - $ref: '#/string'
@@ -5529,6 +5844,11 @@ StudyElement:
         to trigger the start of a study element.
       Relationship Type: Value
       Model Name: transitionStartRule
+    extensionAttributes:
+      Type:
+      - $ref: '#/ExtensionAttribute'
+      Cardinality: 0..*
+      Relationship Type: Value
     instanceType:
       Type:
       - $ref: '#/string'
@@ -5609,6 +5929,11 @@ StudyEpoch:
         the study epoch that chronologically follows the current study epoch.
       Relationship Type: Ref
       Model Name: next
+    extensionAttributes:
+      Type:
+      - $ref: '#/ExtensionAttribute'
+      Cardinality: 0..*
+      Relationship Type: Value
     instanceType:
       Type:
       - $ref: '#/string'
@@ -5651,6 +5976,11 @@ StudyIdentifier:
       Model Name: scope
       Inherited From:
         $ref: '#/Identifier'
+    extensionAttributes:
+      Type:
+      - $ref: '#/ExtensionAttribute'
+      Cardinality: 0..*
+      Relationship Type: Value
     instanceType:
       Type:
       - $ref: '#/string'
@@ -5749,6 +6079,11 @@ StudyIntervention:
         the study intervention.
       Relationship Type: Value
       Model Name: administrations
+    extensionAttributes:
+      Type:
+      - $ref: '#/ExtensionAttribute'
+      Cardinality: 0..*
+      Relationship Type: Value
     instanceType:
       Type:
       - $ref: '#/string'
@@ -5836,6 +6171,11 @@ StudyRole:
         which the study role applies.
       Relationship Type: Ref
       Model Name: appliesTo
+    extensionAttributes:
+      Type:
+      - $ref: '#/ExtensionAttribute'
+      Cardinality: 0..*
+      Relationship Type: Value
     instanceType:
       Type:
       - $ref: '#/string'
@@ -5886,6 +6226,11 @@ StudySite:
       Codelist Ref: (Point out to ISO 3166-1 Alpha-3 Country code)
       Relationship Type: Value
       Model Name: country
+    extensionAttributes:
+      Type:
+      - $ref: '#/ExtensionAttribute'
+      Cardinality: 0..*
+      Relationship Type: Value
     instanceType:
       Type:
       - $ref: '#/string'
@@ -5919,6 +6264,11 @@ StudyTitle:
       Definition: An instance of unstructured text that represents the study title.
       Relationship Type: Value
       Model Name: text
+    extensionAttributes:
+      Type:
+      - $ref: '#/ExtensionAttribute'
+      Cardinality: 0..*
+      Relationship Type: Value
     instanceType:
       Type:
       - $ref: '#/string'
@@ -6041,6 +6391,11 @@ StudyVersion:
         which identifies the set of study titles associated with the study version.
       Relationship Type: Value
       Model Name: titles
+    extensionAttributes:
+      Type:
+      - $ref: '#/ExtensionAttribute'
+      Cardinality: 0..*
+      Relationship Type: Value
     eligibilityCriterionItems:
       Type:
       - $ref: '#/EligibilityCriterionItem'
@@ -6183,6 +6538,11 @@ SubjectEnrollment:
         classes which identifies the study site to which the subject enrollment applies.
       Relationship Type: Ref
       Model Name: forStudySite
+    extensionAttributes:
+      Type:
+      - $ref: '#/ExtensionAttribute'
+      Cardinality: 0..*
+      Relationship Type: Value
     instanceType:
       Type:
       - $ref: '#/string'
@@ -6251,6 +6611,11 @@ Substance:
         the other.
       Relationship Type: Value
       Model Name: referenceSubstance
+    extensionAttributes:
+      Type:
+      - $ref: '#/ExtensionAttribute'
+      Cardinality: 0..*
+      Relationship Type: Value
     instanceType:
       Type:
       - $ref: '#/string'
@@ -6364,6 +6729,11 @@ SyntaxTemplateDictionary:
         associated with a syntax template dictionary.
       Relationship Type: Value
       Model Name: parameterMaps
+    extensionAttributes:
+      Type:
+      - $ref: '#/ExtensionAttribute'
+      Cardinality: 0..*
+      Relationship Type: Value
     instanceType:
       Type:
       - $ref: '#/string'
@@ -6487,6 +6857,11 @@ Timing:
         or scheduled decision instances) to which the timing applies.
       Relationship Type: Ref
       Model Name: relativeFromScheduledInstance
+    extensionAttributes:
+      Type:
+      - $ref: '#/ExtensionAttribute'
+      Cardinality: 0..*
+      Relationship Type: Value
     instanceType:
       Type:
       - $ref: '#/string'
@@ -6539,6 +6914,11 @@ TransitionRule:
         rule.
       Relationship Type: Value
       Model Name: text
+    extensionAttributes:
+      Type:
+      - $ref: '#/ExtensionAttribute'
+      Cardinality: 0..*
+      Relationship Type: Value
     instanceType:
       Type:
       - $ref: '#/string'
