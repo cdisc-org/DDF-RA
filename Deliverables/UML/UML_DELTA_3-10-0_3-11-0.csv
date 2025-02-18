@@ -1,4 +1,5 @@
 status,class_name,property_name,data_type
+Class - NEW,Class1,,
 Class - NEW,EligibilityCriterionItem,,
 ,,id,string
 ,,name,string
@@ -7,6 +8,23 @@ Class - NEW,EligibilityCriterionItem,,
 ,,text,string
 ,,notes,CommentAnnotation
 ,,dictionary,SyntaxTemplateDictionary
+Class - NEW,ExtensionAttribute,,
+,,id,string
+,,url,string
+,,valueString,string
+,,valueBoolean,Boolean
+,,valueInteger,Integer
+,,valueId,string
+,,valueRange,Range
+,,valueCode,Code
+,,valueQuantity,Quantity
+,,valueAliasCode,AliasCode
+,,extensionAttributes,ExtensionAttribute
+,,valueExtensionClass,ExtensionClass
+Class - NEW,ExtensionClass,,
+,,id,string
+,,url,string
+,,extensionAttributes,ExtensionAttribute
 ,,,
 Property - NEW,Masking,isMasked,Boolean
 Property - NEW,Masking,text,string
