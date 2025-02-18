@@ -3088,32 +3088,45 @@ components:
           type: string
           title: Url
         valueString:
-          type: string
+          anyOf:
+          - type: string
+          - type: 'null'
           title: Valuestring
         valueBoolean:
-          type: boolean
+          anyOf:
+          - type: boolean
+          - type: 'null'
           title: Valueboolean
         valueInteger:
-          type: integer
+          anyOf:
+          - type: integer
+          - type: 'null'
           title: Valueinteger
         valueId:
-          type: string
+          anyOf:
+          - type: string
+          - type: 'null'
           title: Valueid
         valueQuantity:
-          allOf:
+          anyOf:
           - $ref: '#/components/schemas/Quantity-Input'
+          - type: 'null'
         valueRange:
-          allOf:
+          anyOf:
           - $ref: '#/components/schemas/Range-Input'
+          - type: 'null'
         valueCode:
-          allOf:
+          anyOf:
           - $ref: '#/components/schemas/Code-Input'
+          - type: 'null'
         valueAliasCode:
-          allOf:
+          anyOf:
           - $ref: '#/components/schemas/AliasCode-Input'
+          - type: 'null'
         valueExtensionClass:
-          allOf:
+          anyOf:
           - $ref: '#/components/schemas/ExtensionClass-Input'
+          - type: 'null'
         extensionAttributes:
           items:
             $ref: '#/components/schemas/ExtensionAttribute-Input'
@@ -3142,32 +3155,45 @@ components:
           type: string
           title: Url
         valueString:
-          type: string
+          anyOf:
+          - type: string
+          - type: 'null'
           title: Valuestring
         valueBoolean:
-          type: boolean
+          anyOf:
+          - type: boolean
+          - type: 'null'
           title: Valueboolean
         valueInteger:
-          type: integer
+          anyOf:
+          - type: integer
+          - type: 'null'
           title: Valueinteger
         valueId:
-          type: string
+          anyOf:
+          - type: string
+          - type: 'null'
           title: Valueid
         valueQuantity:
-          allOf:
+          anyOf:
           - $ref: '#/components/schemas/Quantity-Output'
+          - type: 'null'
         valueRange:
-          allOf:
+          anyOf:
           - $ref: '#/components/schemas/Range-Output'
+          - type: 'null'
         valueCode:
-          allOf:
+          anyOf:
           - $ref: '#/components/schemas/Code-Output'
+          - type: 'null'
         valueAliasCode:
-          allOf:
+          anyOf:
           - $ref: '#/components/schemas/AliasCode-Output'
+          - type: 'null'
         valueExtensionClass:
-          allOf:
+          anyOf:
           - $ref: '#/components/schemas/ExtensionClass-Output'
+          - type: 'null'
         extensionAttributes:
           items:
             $ref: '#/components/schemas/ExtensionAttribute-Output'
