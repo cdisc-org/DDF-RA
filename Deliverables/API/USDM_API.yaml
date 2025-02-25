@@ -3226,7 +3226,6 @@ components:
             $ref: '#/components/schemas/ExtensionAttribute-Input'
           type: array
           title: Extensionattributes
-          default: []
         instanceType:
           type: string
           enum:
@@ -3237,6 +3236,7 @@ components:
       required:
       - id
       - url
+      - extensionAttributes
       - instanceType
       title: ExtensionClass
     ExtensionClass-Output:
@@ -3253,7 +3253,6 @@ components:
             $ref: '#/components/schemas/ExtensionAttribute-Output'
           type: array
           title: Extensionattributes
-          default: []
         instanceType:
           type: string
           enum:
@@ -3264,6 +3263,7 @@ components:
       required:
       - id
       - url
+      - extensionAttributes
       - instanceType
       title: ExtensionClass
     GeographicScope-Input:

@@ -4967,8 +4967,7 @@
               "$ref": "#/components/schemas/ExtensionAttribute-Input"
             },
             "type": "array",
-            "title": "Extensionattributes",
-            "default": []
+            "title": "Extensionattributes"
           },
           "instanceType": {
             "type": "string",
@@ -4983,6 +4982,7 @@
         "required": [
           "id",
           "url",
+          "extensionAttributes",
           "instanceType"
         ],
         "title": "ExtensionClass"
@@ -5003,8 +5003,7 @@
               "$ref": "#/components/schemas/ExtensionAttribute-Output"
             },
             "type": "array",
-            "title": "Extensionattributes",
-            "default": []
+            "title": "Extensionattributes"
           },
           "instanceType": {
             "type": "string",
@@ -5019,6 +5018,7 @@
         "required": [
           "id",
           "url",
+          "extensionAttributes",
           "instanceType"
         ],
         "title": "ExtensionClass"
