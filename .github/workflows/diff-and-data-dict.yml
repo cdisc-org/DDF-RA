@@ -25,38 +25,36 @@ jobs:
         run: |
           USER_INPUT=${{ inputs.prev-branch }}
           echo "value=${USER_INPUT:-"main"}" >> "$GITHUB_OUTPUT"
-      - name: Checkout selected or current branch to currentRelease dir
+      - name: Checkout selected or current branch to currRelease dir
         uses: actions/checkout@v4
         with:
-          path: currentRelease
+          path: currRelease
       - name: Checkout specified or main branch to prevRelease dir
         uses: actions/checkout@v4
         with:
           path: prevRelease
           ref: ${{ steps.prev-branch.outputs.value }}
-      - name: Checkout the usdm dictionary generator to usdm-dictionary-generator dir
+      - name: Checkout the usdm dictionary generator to DDF-RA-Tools dir
         uses: actions/checkout@v4
         with:
-          repository: cdisc-org/usdm-dictionary-generator
-          path: usdm-dictionary-generator
-      - name: Install Java
-        uses: actions/setup-java@v3
+          repository: cdisc-org/DDF-RA-Tools
+          path: DDF-RA-Tools
+      - name: Set up Python
+        uses: actions/setup-python@v4
         with:
-          distribution: "temurin"
-          java-version: "17"
-          cache: "maven"
-      - name: Install Maven
-        uses: stCarolas/setup-maven@v4.5
-        with:
-          maven-version: 3.9.5
+          python-version: "3.12"
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install -r DDF-RA-Tools/requirements.txt
       - name: Install XML Starlet
         run: sudo apt-get install -y xmlstarlet
       - name: Get the previous and current version numbers
         run: |
           echo "PREVIOUS_VERSION=$(jq -r '.info.version' prevRelease/Deliverables/API/USDM_API.json | cut -d ' ' -f1 | tr . -)" >> $GITHUB_ENV
           echo "CURRENT_VERSION=${GITHUB_REF_NAME//release-/}" >> $GITHUB_ENV
-          echo "CURRENT_API_VERSION=$(jq -r '.info.version' currentRelease/Deliverables/API/USDM_API.json | cut -d ' ' -f1 | tr . -)" >> $GITHUB_ENV
-          echo "CURRENT_UML_VERSION=$(xmlstarlet sel -t -v '//diagram/properties[@name="USDM" and @type="Logical"]/../project/@version' currentRelease/Deliverables/UML/USDM_UML.xmi | cut -d ' ' -f1 | tr . -)" >> $GITHUB_ENV
+          echo "CURRENT_API_VERSION=$(jq -r '.info.version' currRelease/Deliverables/API/USDM_API.json | cut -d ' ' -f1 | tr . -)" >> $GITHUB_ENV
+          echo "CURRENT_UML_VERSION=$(xmlstarlet sel -t -v '//diagram/properties[@name="USDM" and @type="Logical"]/../project/@version' currRelease/Deliverables/UML/USDM_UML.xmi | cut -d ' ' -f1 | tr . -)" >> $GITHUB_ENV
       - name: Fail due to unexpected version numbers
         if: ${{ !(contains(env.PREVIOUS_VERSION,'-') && contains(env.CURRENT_VERSION,'-') && contains(env.CURRENT_API_VERSION,'-') && contains(env.CURRENT_UML_VERSION,'-') && env.PREVIOUS_VERSION != env.CURRENT_VERSION && env.CURRENT_API_VERSION == env.CURRENT_VERSION && startsWith(env.CURRENT_VERSION, env.CURRENT_UML_VERSION))}}
         run: |
@@ -73,30 +71,31 @@ jobs:
           exit 1
       - name: Copy the files needed by the usdm dictionary generator
         run: |
-          cp prevRelease/Deliverables/UML/USDM_UML.xmi usdm-dictionary-generator/src/main/resources/prevRelease/.
-          cp currentRelease/Deliverables/UML/USDM_UML.xmi usdm-dictionary-generator/src/main/resources/currentRelease/.
-          cp currentRelease/Deliverables/CT/USDM_CT.xlsx usdm-dictionary-generator/src/main/resources/.
-          cp currentRelease/Deliverables/API/USDM_API.json usdm-dictionary-generator/src/main/resources/.
+          cp prevRelease/Deliverables/UML/USDM_UML.xmi DDF-RA-Tools/resources/prevRelease/.
+          cp currRelease/Deliverables/UML/USDM_UML.xmi DDF-RA-Tools/resources/currRelease/.
+          cp prevRelease/Deliverables/CT/USDM_CT.xlsx DDF-RA-Tools/resources/prevRelease/.
+          cp currRelease/Deliverables/CT/USDM_CT.xlsx DDF-RA-Tools/resources/currRelease/.
+          cp prevRelease/Deliverables/API/USDM_API.json DDF-RA-Tools/resources/prevRelease/.
+          cp currRelease/Deliverables/API/USDM_API.json DDF-RA-Tools/resources/currRelease/.
       - name: Compile and run the usdm dictionary generator
         run: |
-          cd usdm-dictionary-generator
-          mvn compile
-          mvn exec:java -Dexec.mainClass="org.cdisc.tools.GeneratorApp" -Dexec.args="--compare-releases"
-          mvn exec:java -Dexec.mainClass="org.cdisc.tools.GeneratorApp" -Dexec.args="--gen-table"
-          mvn exec:java -Dexec.mainClass="org.cdisc.tools.GeneratorApp" -Dexec.args="--gen-structure"
-          mvn exec:java -Dexec.mainClass="org.cdisc.tools.GeneratorApp" -Dexec.args="--gen-alignment"
+          cd DDF-RA-Tools
+          python3 ./main.py
           cd ../
       - name: Copy and rename the generated dataDictionary to the current branch
-        run: cp usdm-dictionary-generator/dataDictionary.MD "currentRelease/Deliverables/UML/."
+        run: cp DDF-RA-Tools/dataDictionary.MD "currRelease/Deliverables/UML/."
       - name: Copy and rename the generated diff to the current branch
-        run: cp usdm-dictionary-generator/UML_DELTA.csv "currentRelease/Deliverables/UML/UML_DELTA_${{ env.PREVIOUS_VERSION}}_${{ env.CURRENT_VERSION}}.csv"
+        run: |
+          cp DDF-RA-Tools/UML_DELTA.csv "currRelease/Deliverables/UML/UML_DELTA_${{ env.PREVIOUS_VERSION}}_${{ env.CURRENT_VERSION}}.csv"
+          cp DDF-RA-Tools/CT_DELTA.csv "currRelease/Deliverables/CT/CT_DELTA_${{ env.PREVIOUS_VERSION}}_${{ env.CURRENT_VERSION}}.csv"
+          cp DDF-RA-Tools/API_DELTA.csv "currRelease/Deliverables/API/API_DELTA_${{ env.PREVIOUS_VERSION}}_${{ env.CURRENT_VERSION}}.csv"
       - name: Copy and rename the generated dataStructure to the current branch
-        run: cp usdm-dictionary-generator/dataStructure.yml "currentRelease/Deliverables/UML/."
+        run: cp DDF-RA-Tools/dataStructure.yml "currRelease/Deliverables/UML/."
       - name: Copy and rename the generated alignments to the current branch
-        run: cp usdm-dictionary-generator/alignment.csv "currentRelease/Deliverables/UML/."
+        run: cp DDF-RA-Tools/alignment.csv "currRelease/Deliverables/UML/."
       - name: Commit and push the new files to the current branch
         run: |
-          cd currentRelease
+          cd currRelease
           git config user.name github-actions
           git config user.email github-actions@cdisc.org
           git add .
