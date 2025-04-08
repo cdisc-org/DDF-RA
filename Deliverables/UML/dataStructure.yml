@@ -1713,8 +1713,8 @@ Condition:
       - $ref: '#/SyntaxTemplate'
     contextIds:
       Type:
-      - $ref: '#/ScheduledActivityInstance'
       - $ref: '#/Activity'
+      - $ref: '#/ScheduledActivityInstance'
       Definition: A USDM relationship between the Condition and the ScheduledActivityInstance
         or Activity classes which identifies the scheduled activity instance or activity
         to which the condition belongs.
@@ -1725,8 +1725,8 @@ Condition:
     appliesToIds:
       Type:
       - $ref: '#/BiomedicalConceptSurrogate'
-      - $ref: '#/BiomedicalConcept'
       - $ref: '#/Activity'
+      - $ref: '#/BiomedicalConcept'
       - $ref: '#/Procedure'
       - $ref: '#/BiomedicalConceptCategory'
       Definition: A USDM relationship between the Condition and the Activity, Procedure,
@@ -5764,8 +5764,8 @@ StudyArm:
       - $ref: '#/Code'
       NCI C-Code: C188829
       Preferred Term: Study Arm Data Origin Type
-      Definition: "A characterization or classification of the study arm with respect\
-        \ to where the study arm data originates.\_"
+      Definition: A characterization or classification of the study arm with respect
+        to where the study arm data originates.
       Cardinality: '1'
       Relationship Type: Value
       Model Name: dataOriginType
@@ -6895,9 +6895,9 @@ StudyElement:
 StudyEpoch:
   NCI C-Code: C71738
   Preferred Term: Study Epoch
-  Definition: "A named time period defined in the protocol,\_wherein a study activity\
-    \ is specified and unchanging throughout the interval, to support a study-specific\
-    \ purpose."
+  Definition: A named time period defined in the protocol, wherein a study activity
+    is specified and unchanging throughout the interval, to support a study-specific
+    purpose.
   Modifier: Concrete
   Attributes:
     id:
@@ -6913,7 +6913,7 @@ StudyEpoch:
       NCI C-Code: C93825
       Preferred Term: Study Epoch Name
       Definition: "The literal identifier (i.e., distinctive designation) of the\_\
-        study epoch, i.e., the named time period defined in the protocol,\_wherein\
+        study epoch, i.e., the named time period defined in the protocol, wherein\
         \ a study activity is specified and unchanging throughout the interval, to\
         \ support a study-specific purpose."
       Cardinality: '1'
@@ -6945,10 +6945,9 @@ StudyEpoch:
       - $ref: '#/Code'
       NCI C-Code: C188830
       Preferred Term: Study Epoch Type
-      Definition: "A characterization or classification of the study epoch, i.e.,\
-        \ the named time period defined in the protocol,\_wherein a study activity\
-        \ is specified and unchanging throughout the interval, to support a study-specific\
-        \ purpose."
+      Definition: A characterization or classification of the study epoch, i.e., the
+        named time period defined in the protocol, wherein a study activity is specified
+        and unchanging throughout the interval, to support a study-specific purpose.
       Cardinality: '1'
       Relationship Type: Value
       Model Name: type

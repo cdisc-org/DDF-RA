@@ -157,8 +157,8 @@
 ||text|String|C207484|1|Condition Text|An instance of structured text that represents the condition.||SyntaxTemplate|
 ||notes|CommentAnnotation|CNEW|0..*|Condition Notes|A brief written record relevant to the condition.||SyntaxTemplate|
 ||dictionary|SyntaxTemplateDictionary||0..1||A USDM relationship between the Condition and SyntaxTemplateDictionary classes which provides the set of dictionary entries related to conditions.||SyntaxTemplate|
-||context|ScheduledActivityInstance, Activity||0..*||A USDM relationship between the Condition and the ScheduledActivityInstance or Activity classes which identifies the scheduled activity instance or activity to which the condition belongs.|||
-||appliesTo|BiomedicalConceptSurrogate, BiomedicalConcept, Activity, Procedure, BiomedicalConceptCategory||0..*||A USDM relationship between the Condition and the Activity, Procedure, BiomedicalConcept, BiomedicalConceptSurrogate, or BiomedicalConceptCategory classes which identifies the procedure, activity, biomedical concept, biomedical concept surrogate, or biomedical concept category that applies to the condition.|||
+||context|Activity, ScheduledActivityInstance||0..*||A USDM relationship between the Condition and the ScheduledActivityInstance or Activity classes which identifies the scheduled activity instance or activity to which the condition belongs.|||
+||appliesTo|BiomedicalConceptSurrogate, Activity, BiomedicalConcept, Procedure, BiomedicalConceptCategory||0..*||A USDM relationship between the Condition and the Activity, Procedure, BiomedicalConcept, BiomedicalConceptSurrogate, or BiomedicalConceptCategory classes which identifies the procedure, activity, biomedical concept, biomedical concept surrogate, or biomedical concept category that applies to the condition.|||
 |ConditionAssignment|||C201335||Condition Assignment|An allotting or appointment to a condition or set of conditions that are to be met in order to make a logical decision.|||
 ||id|string||1|||||
 ||condition|String|C47953|1|Logical Condition|An assumption on which rests the validity or effect of something else.|||
@@ -507,7 +507,7 @@
 ||description|String|C93728|0..1|Study Arm Description|A narrative representation of the study arm.|||
 ||label|String|C172456|0..1|Study Arm Label|The short descriptive designation for the study arm.|||
 ||type|Code|C172457|1|Study Arm Type|A characterization or classification of the study arm.|Protocol Terminology Codelist C174222||
-||dataOriginType|Code|C188829|1|Study Arm Data Origin Type|A characterization or classification of the study arm with respect to where the study arm data originates. |C188727||
+||dataOriginType|Code|C188829|1|Study Arm Data Origin Type|A characterization or classification of the study arm with respect to where the study arm data originates.|C188727||
 ||dataOriginDescription|String|C188828|1|Study Arm Data Origin Description|The textual representation of the study arm data origin.|||
 ||notes|CommentAnnotation|CNEW|0..*|Study Arm Notes|A brief written record relevant to the study arm.|||
 ||populations|PopulationDefinition||0..*||A USDM relationship between the StudyArm and PopulationDefinition classes which identifies the set of populations associated with the study arm.|||
@@ -565,7 +565,7 @@
 ||label|String|C207548|0..1|Study Design Label|The short descriptive designation for the study design.|||
 ||rationale|String|C142705|1|Study Design Rationale|Reason(s) for choosing the study design. This may include reasons for the choice of control or comparator, as well as the scientific rationale for the study design.|||
 ||therapeuticAreas|Code|C101302|0..*|Therapeutic Areas|A categorization of a disease, disorder, or other condition based on common characteristics and often associated with a medical specialty focusing on research and development of specific therapeutic interventions for the purpose of treatment and prevention.|Point out to external dictionaries||
-||studyType|Code|C142175|0..1|Study Type|The nature of the investigation for which study information is being collected. (After clinicaltrials.gov)|SDTM Terminology Codelist C99077||
+||studyType|Code|C142175|0..1|Study Type|The nature of the investigation for which study information is being collected. (After clinicaltrials.gov)|SDTM Terminology Codelist C99077||
 ||characteristics|Code|C207547|0..*|Study Design Characteristic|The distinguishing qualities or prominent aspect of a study design.|C207416||
 ||studyPhase|AliasCode|C48281|0..1|Trial Phase|A step in the clinical research and development of a therapy from initial clinical trials to post-approval studies. NOTE: Clinical trials are generally categorized into four (sometimes five) phases. A therapeutic intervention may be evaluated in two or more phases simultaneously in different trials, and some trials may overlap two different phases. [21 CFR section 312.21; After ICH Topic E8 NOTE FOR GUIDANCE ON GENERAL CONSIDERATIONS FOR CLINICAL TRIALS, CPMP/ICH/291/95 March 1998]|SDTM Terminology Codelist C66737||
 ||notes|CommentAnnotation|CNEW|0..*|Study Design Notes|A brief written record relevant to the study design.|||
@@ -607,12 +607,12 @@
 ||transitionEndRule|TransitionRule||0..1||A USDM relationship between the StudyElement and TransitionRule classes which provides the details associated with a transition rule used to trigger the end of a study element.|||
 ||studyInterventions|StudyIntervention||0..*||A USDM relationship between the StudyElement and StudyIntervention classes which identifies the set of study interventions associated with the study element.|||
 ||transitionStartRule|TransitionRule||0..1||A USDM relationship between the StudyElement and TransitionRule classes which provides the details associated with a transition rule used to trigger the start of a study element.|||
-|StudyEpoch|||C71738||Study Epoch|A named time period defined in the protocol, wherein a study activity is specified and unchanging throughout the interval, to support a study-specific purpose.|||
+|StudyEpoch|||C71738||Study Epoch|A named time period defined in the protocol, wherein a study activity is specified and unchanging throughout the interval, to support a study-specific purpose.|||
 ||id|String||1|||||
-||name|String|C93825|1|Study Epoch Name|The literal identifier (i.e., distinctive designation) of the study epoch, i.e., the named time period defined in the protocol, wherein a study activity is specified and unchanging throughout the interval, to support a study-specific purpose.|||
+||name|String|C93825|1|Study Epoch Name|The literal identifier (i.e., distinctive designation) of the study epoch, i.e., the named time period defined in the protocol, wherein a study activity is specified and unchanging throughout the interval, to support a study-specific purpose.|||
 ||description|String|C93824|0..1|Study Epoch Description|A narrative representation of the study epoch.|||
 ||label|String|C207555|0..1|Study Epoch Label|The short descriptive designation for the study epoch.|||
-||type|Code|C188830|1|Study Epoch Type|A characterization or classification of the study epoch, i.e., the named time period defined in the protocol, wherein a study activity is specified and unchanging throughout the interval, to support a study-specific purpose.|SDTM Terminology Codelist C99079||
+||type|Code|C188830|1|Study Epoch Type|A characterization or classification of the study epoch, i.e., the named time period defined in the protocol, wherein a study activity is specified and unchanging throughout the interval, to support a study-specific purpose.|SDTM Terminology Codelist C99079||
 ||notes|CommentAnnotation|CNEW|0..*|Study Epoch Notes|A brief written record relevant to the study epoch.|||
 ||previous|StudyEpoch||0..1||A USDM relationship within the StudyEpoch class which identifies the study epoch that chronologically precedes the current study epoch.|||
 ||next|StudyEpoch||0..1||A USDM relationship within the StudyEpoch class which identifies the study epoch that chronologically follows the current study epoch.|||
