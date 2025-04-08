@@ -2,7 +2,8 @@
 |---|---|---|---|---|---|---|---|---|
 |Abbreviation|||C42610||Abbreviation|A set of letters that are drawn from a word or from a sequence of words and that are used for brevity in place of the full word or phrase. (CDISC Glossary)|||
 ||id|String||1|||||
-||abbreviatedText|String|C42610|1|Abbreviation|A set of letters that are drawn from a word or from a sequence of words and that are used for brevity in place of the full word or phrase. (CDISC Glossary)|||
+||abbreviatedText|String|CNEW|1|Text Abbreviation Value|The literal value of an instance of unstructured text that is used as the abbreviation.
+|||
 ||expandedText|String|CNEW|1|Abbreviation Long Name|The full literal representation of the abbreviation.|||
 ||notes|CommentAnnotation|CNEW|0..*|Abbreviation Notes|A brief written record relevant to the abbreviation.|||
 |Activity|||C71473||Study Activity|An action, undertaking, or event, which is anticipated to be performed or observed, or was performed or observed, according to the study protocol during the execution of the study.|||
@@ -156,8 +157,8 @@
 ||text|String|C207484|1|Condition Text|An instance of structured text that represents the condition.||SyntaxTemplate|
 ||notes|CommentAnnotation|CNEW|0..*|Condition Notes|A brief written record relevant to the condition.||SyntaxTemplate|
 ||dictionary|SyntaxTemplateDictionary||0..1||A USDM relationship between the Condition and SyntaxTemplateDictionary classes which provides the set of dictionary entries related to conditions.||SyntaxTemplate|
-||context|Activity, ScheduledActivityInstance||0..*||A USDM relationship between the Condition and the ScheduledActivityInstance or Activity classes which identifies the scheduled activity instance or activity to which the condition belongs.|||
-||appliesTo|BiomedicalConcept, BiomedicalConceptSurrogate, BiomedicalConceptCategory, Procedure, Activity||0..*||A USDM relationship between the Condition and the Activity, Procedure, BiomedicalConcept, BiomedicalConceptSurrogate, or BiomedicalConceptCategory classes which identifies the procedure, activity, biomedical concept, biomedical concept surrogate, or biomedical concept category that applies to the condition.|||
+||context|ScheduledActivityInstance, Activity||0..*||A USDM relationship between the Condition and the ScheduledActivityInstance or Activity classes which identifies the scheduled activity instance or activity to which the condition belongs.|||
+||appliesTo|BiomedicalConceptSurrogate, BiomedicalConcept, Activity, Procedure, BiomedicalConceptCategory||0..*||A USDM relationship between the Condition and the Activity, Procedure, BiomedicalConcept, BiomedicalConceptSurrogate, or BiomedicalConceptCategory classes which identifies the procedure, activity, biomedical concept, biomedical concept surrogate, or biomedical concept category that applies to the condition.|||
 |ConditionAssignment|||C201335||Condition Assignment|An allotting or appointment to a condition or set of conditions that are to be met in order to make a logical decision.|||
 ||id|string||1|||||
 ||condition|String|C47953|1|Logical Condition|An assumption on which rests the validity or effect of something else.|||
@@ -422,7 +423,7 @@
 |ResponseCode|||C201347||Response Code|A symbol or combination of symbols representing the response to the question.|||
 ||id|String||1|||||
 ||isEnabled|Boolean|C201330|1|Response Code Enabled Indicator|An indication as to whether the response code is activated for use within a given usage context.|||
-||code|Code|C25162|1|Code|A symbol or combination of symbols which is assigned to the members of a collection.|||
+||code|Code|CNEW|1|Response Code Value|The literal value of a response code.|||
 |ScheduleTimeline|||C201348||Schedule Timeline|A chronological schedule of planned temporal events.|||
 ||id|String||1|||||
 ||name|String|C201334|1|Schedule Timeline Name|The literal identifier (i.e., distinctive designation) of the schedule timeline.|||
@@ -505,7 +506,7 @@
 ||name|String|C170984|1|Study Arm Name|The literal identifier (i.e., distinctive designation) of the study arm.|||
 ||description|String|C93728|0..1|Study Arm Description|A narrative representation of the study arm.|||
 ||label|String|C172456|0..1|Study Arm Label|The short descriptive designation for the study arm.|||
-||type|Code|C188827|1|Study Arm Type|A characterization or classification of the study arm.|Protocol Terminology Codelist C174222||
+||type|Code|C172457|1|Study Arm Type|A characterization or classification of the study arm.|Protocol Terminology Codelist C174222||
 ||dataOriginType|Code|C188829|1|Study Arm Data Origin Type|A characterization or classification of the study arm with respect to where the study arm data originates. |C188727||
 ||dataOriginDescription|String|C188828|1|Study Arm Data Origin Description|The textual representation of the study arm data origin.|||
 ||notes|CommentAnnotation|CNEW|0..*|Study Arm Notes|A brief written record relevant to the study arm.|||
@@ -552,7 +553,7 @@
 |StudyDefinitionDocumentVersion|||CNEW||Study Definition Document Version|A representation of a particular edition or snapshot of the study definition document as it exists at a particular point in time.|||
 ||id|String||1|||||
 ||status|Code|CNEW|1|Study Definition Document Status|A condition of the study definition document at a point in time with respect to its state of readiness for implementation.|C188723||
-||version|String|CNEW|1|Study Definition Document Version|A representation of a particular edition or snapshot of the study definition document as it exists at a particular point in time.|||
+||version|String|CNEW|1|Study Definition Document Version Identifier|A sequence of characters used to identify the version of the study definition document.|||
 ||notes|CommentAnnotation|CNEW|0..*|Study Definition Document Version Notes|A brief written record relevant to the study definition document version.|||
 ||dateValues|GovernanceDate||0..*||A USDM relationship between the StudyDefinitionDocumentVersion and GovernanceDate classes which provides the set of governance dates associated with the study definition document version.|||
 ||contents|NarrativeContent||0..*||A USDM relationship between the StudyDefinitionDocumentVersion and NarrativeContent classes which identifies the set of narrative content associated with the version of the study definition document.|||

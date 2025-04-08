@@ -15,11 +15,12 @@ Abbreviation:
     abbreviatedText:
       Type:
       - $ref: '#/string'
-      NCI C-Code: C42610
-      Preferred Term: Abbreviation
-      Definition: A set of letters that are drawn from a word or from a sequence of
-        words and that are used for brevity in place of the full word or phrase. (CDISC
-        Glossary)
+      NCI C-Code: CNEW
+      Preferred Term: Text Abbreviation Value
+      Definition: 'The literal value of an instance of unstructured text that is used
+        as the abbreviation.
+
+        '
       Cardinality: '1'
       Relationship Type: Value
       Model Name: abbreviatedText
@@ -1712,8 +1713,8 @@ Condition:
       - $ref: '#/SyntaxTemplate'
     contextIds:
       Type:
-      - $ref: '#/Activity'
       - $ref: '#/ScheduledActivityInstance'
+      - $ref: '#/Activity'
       Definition: A USDM relationship between the Condition and the ScheduledActivityInstance
         or Activity classes which identifies the scheduled activity instance or activity
         to which the condition belongs.
@@ -1723,11 +1724,11 @@ Condition:
       Model Representation: Relationship
     appliesToIds:
       Type:
-      - $ref: '#/BiomedicalConcept'
       - $ref: '#/BiomedicalConceptSurrogate'
-      - $ref: '#/BiomedicalConceptCategory'
-      - $ref: '#/Procedure'
+      - $ref: '#/BiomedicalConcept'
       - $ref: '#/Activity'
+      - $ref: '#/Procedure'
+      - $ref: '#/BiomedicalConceptCategory'
       Definition: A USDM relationship between the Condition and the Activity, Procedure,
         BiomedicalConcept, BiomedicalConceptSurrogate, or BiomedicalConceptCategory
         classes which identifies the procedure, activity, biomedical concept, biomedical
@@ -4860,10 +4861,9 @@ ResponseCode:
     code:
       Type:
       - $ref: '#/Code'
-      NCI C-Code: C25162
-      Preferred Term: Code
-      Definition: A symbol or combination of symbols which is assigned to the members
-        of a collection.
+      NCI C-Code: CNEW
+      Preferred Term: Response Code Value
+      Definition: The literal value of a response code.
       Cardinality: '1'
       Relationship Type: Value
       Model Name: code
@@ -5752,7 +5752,7 @@ StudyArm:
     type:
       Type:
       - $ref: '#/Code'
-      NCI C-Code: C188827
+      NCI C-Code: C172457
       Preferred Term: Study Arm Type
       Definition: A characterization or classification of the study arm.
       Cardinality: '1'
@@ -6281,9 +6281,9 @@ StudyDefinitionDocumentVersion:
       Type:
       - $ref: '#/string'
       NCI C-Code: CNEW
-      Preferred Term: Study Definition Document Version
-      Definition: A representation of a particular edition or snapshot of the study
-        definition document as it exists at a particular point in time.
+      Preferred Term: Study Definition Document Version Identifier
+      Definition: A sequence of characters used to identify the version of the study
+        definition document.
       Cardinality: '1'
       Relationship Type: Value
       Model Name: version
