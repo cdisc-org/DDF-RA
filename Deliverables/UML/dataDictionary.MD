@@ -158,7 +158,7 @@
 ||notes|CommentAnnotation|CNEW|0..*|Condition Notes|A brief written record relevant to the condition.||SyntaxTemplate|
 ||dictionary|SyntaxTemplateDictionary||0..1||A USDM relationship between the Condition and SyntaxTemplateDictionary classes which provides the set of dictionary entries related to conditions.||SyntaxTemplate|
 ||context|Activity, ScheduledActivityInstance||0..*||A USDM relationship between the Condition and the ScheduledActivityInstance or Activity classes which identifies the scheduled activity instance or activity to which the condition belongs.|||
-||appliesTo|BiomedicalConceptCategory, Activity, Procedure, BiomedicalConceptSurrogate, BiomedicalConcept||0..*||A USDM relationship between the Condition and the Activity, Procedure, BiomedicalConcept, BiomedicalConceptSurrogate, or BiomedicalConceptCategory classes which identifies the procedure, activity, biomedical concept, biomedical concept surrogate, or biomedical concept category that applies to the condition.|||
+||appliesTo|BiomedicalConcept, Procedure, BiomedicalConceptCategory, Activity, BiomedicalConceptSurrogate||0..*||A USDM relationship between the Condition and the Activity, Procedure, BiomedicalConcept, BiomedicalConceptSurrogate, or BiomedicalConceptCategory classes which identifies the procedure, activity, biomedical concept, biomedical concept surrogate, or biomedical concept category that applies to the condition.|||
 |ConditionAssignment|||C201335||Condition Assignment|An allotting or appointment to a condition or set of conditions that are to be met in order to make a logical decision.|||
 ||id|string||1|||||
 ||condition|String|C47953|1|Logical Condition|An assumption on which rests the validity or effect of something else.|||
@@ -402,7 +402,7 @@
 ||label|String|CNEW|0..1|Product Organization Role Label|The short descriptive designation for the product organization role.|||
 ||description|String|CNEW|0..1|Product Organization Role Description|A narrative representation of the product organization role.|||
 ||code|Code|CNEW|1|Product Organization Role Code|A symbol or combination of symbols which is assigned to the product organization role.|||
-||appliesTo|AdministrableProduct, MedicalDevice||0..*||A USDM relationship between the ProductOrganizationRole and either the AdministrableProduct or MedicalDevice class that identifies the administrable product or medical device to which the product organization role applies.|||
+||appliesTo|MedicalDevice, AdministrableProduct||0..*||A USDM relationship between the ProductOrganizationRole and either the AdministrableProduct or MedicalDevice class that identifies the administrable product or medical device to which the product organization role applies.|||
 ||organization|Organization||1||A USDM relationship between the ProductOrganizationRole and Organization classes which identifies the organization associated with the product organization role.|||
 |Quantity|||C25256||Quantity|How much there is of something that can be measured; the total amount or number.|||
 ||id|String||1|||||
@@ -611,7 +611,7 @@
 ||transitionStartRule|TransitionRule||0..1||A USDM relationship between the StudyElement and TransitionRule classes which provides the details associated with a transition rule used to trigger the start of a study element.|||
 |StudyEpoch|||C71738||Study Epoch|A named time period defined in the protocol, wherein a study activity is specified and unchanging throughout the interval, to support a study-specific purpose.|||
 ||id|String||1|||||
-||name|String|C93825|1|Study Epoch Name|The literal identifier (i.e., distinctive designation) of the study epoch, i.e., the named time period defined in the protocol, wherein a study activity is specified and unchanging throughout the interval, to support a study-specific purpose.|||
+||name|String|C93825|1|Study Epoch Name|The literal identifier (i.e., distinctive designation) of the study epoch, i.e., the named time period defined in the protocol, wherein a study activity is specified and unchanging throughout the interval, to support a study-specific purpose.|||
 ||label|String|C207555|0..1|Study Epoch Label|The short descriptive designation for the study epoch.|||
 ||description|String|C93824|0..1|Study Epoch Description|A narrative representation of the study epoch.|||
 ||type|Code|C188830|1|Study Epoch Type|A characterization or classification of the study epoch, i.e., the named time period defined in the protocol, wherein a study activity is specified and unchanging throughout the interval, to support a study-specific purpose.|SDTM Terminology Codelist C99079||
