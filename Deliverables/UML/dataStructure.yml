@@ -81,16 +81,6 @@ Activity:
       Relationship Type: Value
       Model Name: name
       Model Representation: Attribute
-    description:
-      Type:
-      - $ref: '#/string'
-      NCI C-Code: C70960
-      Preferred Term: Study Activity Description
-      Definition: A narrative representation of the study activity.
-      Cardinality: 0..1
-      Relationship Type: Value
-      Model Name: description
-      Model Representation: Attribute
     label:
       Type:
       - $ref: '#/string'
@@ -100,6 +90,16 @@ Activity:
       Cardinality: 0..1
       Relationship Type: Value
       Model Name: label
+      Model Representation: Attribute
+    description:
+      Type:
+      - $ref: '#/string'
+      NCI C-Code: C70960
+      Preferred Term: Study Activity Description
+      Definition: A narrative representation of the study activity.
+      Cardinality: 0..1
+      Relationship Type: Value
+      Model Name: description
       Model Representation: Attribute
     notes:
       Type:
@@ -323,16 +323,6 @@ AdministrableProduct:
       Relationship Type: Value
       Model Name: name
       Model Representation: Attribute
-    description:
-      Type:
-      - $ref: '#/string'
-      NCI C-Code: CNEW
-      Preferred Term: Administrable Product Definition Description
-      Definition: A narrative representation of the administrable product.
-      Cardinality: 0..1
-      Relationship Type: Value
-      Model Name: description
-      Model Representation: Attribute
     label:
       Type:
       - $ref: '#/string'
@@ -342,6 +332,16 @@ AdministrableProduct:
       Cardinality: 0..1
       Relationship Type: Value
       Model Name: label
+      Model Representation: Attribute
+    description:
+      Type:
+      - $ref: '#/string'
+      NCI C-Code: CNEW
+      Preferred Term: Administrable Product Definition Description
+      Definition: A narrative representation of the administrable product.
+      Cardinality: 0..1
+      Relationship Type: Value
+      Model Name: description
       Model Representation: Attribute
     administrableDoseForm:
       Type:
@@ -581,17 +581,6 @@ Administration:
       Relationship Type: Value
       Model Name: name
       Model Representation: Attribute
-    description:
-      Type:
-      - $ref: '#/string'
-      NCI C-Code: C207463
-      Preferred Term: Administration Description
-      Definition: A narrative representation for the administration of a product,
-        agent, or therapy.
-      Cardinality: 0..1
-      Relationship Type: Value
-      Model Name: description
-      Model Representation: Attribute
     label:
       Type:
       - $ref: '#/string'
@@ -602,6 +591,17 @@ Administration:
       Cardinality: 0..1
       Relationship Type: Value
       Model Name: label
+      Model Representation: Attribute
+    description:
+      Type:
+      - $ref: '#/string'
+      NCI C-Code: C207463
+      Preferred Term: Administration Description
+      Definition: A narrative representation for the administration of a product,
+        agent, or therapy.
+      Cardinality: 0..1
+      Relationship Type: Value
+      Model Name: description
       Model Representation: Attribute
     dose:
       Type:
@@ -836,16 +836,6 @@ AnalysisPopulation:
       Relationship Type: Value
       Model Name: name
       Model Representation: Attribute
-    description:
-      Type:
-      - $ref: '#/string'
-      NCI C-Code: C188854
-      Preferred Term: Analysis Population Description
-      Definition: A narrative representation of the analysis population.
-      Cardinality: 0..1
-      Relationship Type: Value
-      Model Name: description
-      Model Representation: Attribute
     label:
       Type:
       - $ref: '#/string'
@@ -855,6 +845,16 @@ AnalysisPopulation:
       Cardinality: 0..1
       Relationship Type: Value
       Model Name: label
+      Model Representation: Attribute
+    description:
+      Type:
+      - $ref: '#/string'
+      NCI C-Code: C188854
+      Preferred Term: Analysis Population Description
+      Definition: A narrative representation of the analysis population.
+      Cardinality: 0..1
+      Relationship Type: Value
+      Model Name: description
       Model Representation: Attribute
     notes:
       Type:
@@ -1363,16 +1363,6 @@ BiospecimenRetention:
       Relationship Type: Value
       Model Name: name
       Model Representation: Attribute
-    description:
-      Type:
-      - $ref: '#/string'
-      NCI C-Code: C181231
-      Preferred Term: Biospecimen Retention Description
-      Definition: A narrative representation of the biospecimen retention.
-      Cardinality: 0..1
-      Relationship Type: Value
-      Model Name: description
-      Model Representation: Attribute
     label:
       Type:
       - $ref: '#/string'
@@ -1382,6 +1372,16 @@ BiospecimenRetention:
       Cardinality: 0..1
       Relationship Type: Value
       Model Name: label
+      Model Representation: Attribute
+    description:
+      Type:
+      - $ref: '#/string'
+      NCI C-Code: C181231
+      Preferred Term: Biospecimen Retention Description
+      Definition: A narrative representation of the biospecimen retention.
+      Cardinality: 0..1
+      Relationship Type: Value
+      Model Name: description
       Model Representation: Attribute
     isRetained:
       Type:
@@ -1442,18 +1442,6 @@ Characteristic:
       Model Representation: Attribute
       inheritedFrom:
       - $ref: '#/SyntaxTemplate'
-    description:
-      Type:
-      - $ref: '#/string'
-      NCI C-Code: C207475
-      Preferred Term: Characteristic Description
-      Definition: A narrative representation of the characteristic.
-      Cardinality: 0..1
-      Relationship Type: Value
-      Model Name: description
-      Model Representation: Attribute
-      inheritedFrom:
-      - $ref: '#/SyntaxTemplate'
     label:
       Type:
       - $ref: '#/string'
@@ -1463,6 +1451,18 @@ Characteristic:
       Cardinality: 0..1
       Relationship Type: Value
       Model Name: label
+      Model Representation: Attribute
+      inheritedFrom:
+      - $ref: '#/SyntaxTemplate'
+    description:
+      Type:
+      - $ref: '#/string'
+      NCI C-Code: C207475
+      Preferred Term: Characteristic Description
+      Definition: A narrative representation of the characteristic.
+      Cardinality: 0..1
+      Relationship Type: Value
+      Model Name: description
       Model Representation: Attribute
       inheritedFrom:
       - $ref: '#/SyntaxTemplate'
@@ -1652,18 +1652,6 @@ Condition:
       Model Representation: Attribute
       inheritedFrom:
       - $ref: '#/SyntaxTemplate'
-    description:
-      Type:
-      - $ref: '#/string'
-      NCI C-Code: C207481
-      Preferred Term: Condition Description
-      Definition: A narrative representation of the condition.
-      Cardinality: 0..1
-      Relationship Type: Value
-      Model Name: description
-      Model Representation: Attribute
-      inheritedFrom:
-      - $ref: '#/SyntaxTemplate'
     label:
       Type:
       - $ref: '#/string'
@@ -1673,6 +1661,18 @@ Condition:
       Cardinality: 0..1
       Relationship Type: Value
       Model Name: label
+      Model Representation: Attribute
+      inheritedFrom:
+      - $ref: '#/SyntaxTemplate'
+    description:
+      Type:
+      - $ref: '#/string'
+      NCI C-Code: C207481
+      Preferred Term: Condition Description
+      Definition: A narrative representation of the condition.
+      Cardinality: 0..1
+      Relationship Type: Value
+      Model Name: description
       Model Representation: Attribute
       inheritedFrom:
       - $ref: '#/SyntaxTemplate'
@@ -1724,11 +1724,11 @@ Condition:
       Model Representation: Relationship
     appliesToIds:
       Type:
-      - $ref: '#/BiomedicalConceptSurrogate'
-      - $ref: '#/Activity'
-      - $ref: '#/BiomedicalConcept'
-      - $ref: '#/Procedure'
       - $ref: '#/BiomedicalConceptCategory'
+      - $ref: '#/Activity'
+      - $ref: '#/Procedure'
+      - $ref: '#/BiomedicalConceptSurrogate'
+      - $ref: '#/BiomedicalConcept'
       Definition: A USDM relationship between the Condition and the Activity, Procedure,
         BiomedicalConcept, BiomedicalConceptSurrogate, or BiomedicalConceptCategory
         classes which identifies the procedure, activity, biomedical concept, biomedical
@@ -1873,16 +1873,6 @@ EligibilityCriterion:
       Relationship Type: Value
       Model Name: name
       Model Representation: Attribute
-    description:
-      Type:
-      - $ref: '#/string'
-      NCI C-Code: C207486
-      Preferred Term: Study Eligibility Criterion Description
-      Definition: A narrative representation of the study eligibility criterion.
-      Cardinality: 0..1
-      Relationship Type: Value
-      Model Name: description
-      Model Representation: Attribute
     label:
       Type:
       - $ref: '#/string'
@@ -1892,6 +1882,16 @@ EligibilityCriterion:
       Cardinality: 0..1
       Relationship Type: Value
       Model Name: label
+      Model Representation: Attribute
+    description:
+      Type:
+      - $ref: '#/string'
+      NCI C-Code: C207486
+      Preferred Term: Study Eligibility Criterion Description
+      Definition: A narrative representation of the study eligibility criterion.
+      Cardinality: 0..1
+      Relationship Type: Value
+      Model Name: description
       Model Representation: Attribute
     identifier:
       Type:
@@ -1994,18 +1994,6 @@ EligibilityCriterionItem:
       Model Representation: Attribute
       inheritedFrom:
       - $ref: '#/SyntaxTemplate'
-    description:
-      Type:
-      - $ref: '#/string'
-      NCI C-Code: CNEW
-      Preferred Term: Eligibility Criterion Item Description
-      Definition: A narrative representation of the eligibility criterion item.
-      Cardinality: 0..1
-      Relationship Type: Value
-      Model Name: description
-      Model Representation: Attribute
-      inheritedFrom:
-      - $ref: '#/SyntaxTemplate'
     label:
       Type:
       - $ref: '#/string'
@@ -2016,6 +2004,18 @@ EligibilityCriterionItem:
       Cardinality: 0..1
       Relationship Type: Value
       Model Name: label
+      Model Representation: Attribute
+      inheritedFrom:
+      - $ref: '#/SyntaxTemplate'
+    description:
+      Type:
+      - $ref: '#/string'
+      NCI C-Code: CNEW
+      Preferred Term: Eligibility Criterion Item Description
+      Definition: A narrative representation of the eligibility criterion item.
+      Cardinality: 0..1
+      Relationship Type: Value
+      Model Name: description
       Model Representation: Attribute
       inheritedFrom:
       - $ref: '#/SyntaxTemplate'
@@ -2091,16 +2091,6 @@ Encounter:
       Relationship Type: Value
       Model Name: name
       Model Representation: Attribute
-    description:
-      Type:
-      - $ref: '#/string'
-      NCI C-Code: C188836
-      Preferred Term: Study Encounter Description
-      Definition: A narrative representation of the protocol-defined study encounter.
-      Cardinality: 0..1
-      Relationship Type: Value
-      Model Name: description
-      Model Representation: Attribute
     label:
       Type:
       - $ref: '#/string'
@@ -2110,6 +2100,16 @@ Encounter:
       Cardinality: 0..1
       Relationship Type: Value
       Model Name: label
+      Model Representation: Attribute
+    description:
+      Type:
+      - $ref: '#/string'
+      NCI C-Code: C188836
+      Preferred Term: Study Encounter Description
+      Definition: A narrative representation of the protocol-defined study encounter.
+      Cardinality: 0..1
+      Relationship Type: Value
+      Model Name: description
       Model Representation: Attribute
     type:
       Type:
@@ -2245,18 +2245,6 @@ Endpoint:
       Model Representation: Attribute
       inheritedFrom:
       - $ref: '#/SyntaxTemplate'
-    description:
-      Type:
-      - $ref: '#/string'
-      NCI C-Code: C188824
-      Preferred Term: Study Endpoint Description
-      Definition: A narrative representation of the study endpoint.
-      Cardinality: 0..1
-      Relationship Type: Value
-      Model Name: description
-      Model Representation: Attribute
-      inheritedFrom:
-      - $ref: '#/SyntaxTemplate'
     label:
       Type:
       - $ref: '#/string'
@@ -2266,6 +2254,18 @@ Endpoint:
       Cardinality: 0..1
       Relationship Type: Value
       Model Name: label
+      Model Representation: Attribute
+      inheritedFrom:
+      - $ref: '#/SyntaxTemplate'
+    description:
+      Type:
+      - $ref: '#/string'
+      NCI C-Code: C188824
+      Preferred Term: Study Endpoint Description
+      Definition: A narrative representation of the study endpoint.
+      Cardinality: 0..1
+      Relationship Type: Value
+      Model Name: description
       Model Representation: Attribute
       inheritedFrom:
       - $ref: '#/SyntaxTemplate'
@@ -2372,16 +2372,6 @@ Estimand:
       Relationship Type: Value
       Model Name: name
       Model Representation: Attribute
-    description:
-      Type:
-      - $ref: '#/string'
-      NCI C-Code: CNEW
-      Preferred Term: Estimand Description
-      Definition: A narrative representation of the estimand.
-      Cardinality: 0..1
-      Relationship Type: Value
-      Model Name: description
-      Model Representation: Attribute
     label:
       Type:
       - $ref: '#/string'
@@ -2391,6 +2381,16 @@ Estimand:
       Cardinality: 0..1
       Relationship Type: Value
       Model Name: label
+      Model Representation: Attribute
+    description:
+      Type:
+      - $ref: '#/string'
+      NCI C-Code: CNEW
+      Preferred Term: Estimand Description
+      Definition: A narrative representation of the estimand.
+      Cardinality: 0..1
+      Relationship Type: Value
+      Model Name: description
       Model Representation: Attribute
     notes:
       Type:
@@ -2610,16 +2610,6 @@ GovernanceDate:
       Relationship Type: Value
       Model Name: name
       Model Representation: Attribute
-    description:
-      Type:
-      - $ref: '#/string'
-      NCI C-Code: C207497
-      Preferred Term: Study Governance Date Description
-      Definition: A narrative representation of the study governance date.
-      Cardinality: 0..1
-      Relationship Type: Value
-      Model Name: description
-      Model Representation: Attribute
     label:
       Type:
       - $ref: '#/string'
@@ -2629,6 +2619,16 @@ GovernanceDate:
       Cardinality: 0..1
       Relationship Type: Value
       Model Name: label
+      Model Representation: Attribute
+    description:
+      Type:
+      - $ref: '#/string'
+      NCI C-Code: C207497
+      Preferred Term: Study Governance Date Description
+      Definition: A narrative representation of the study governance date.
+      Cardinality: 0..1
+      Relationship Type: Value
+      Model Name: description
       Model Representation: Attribute
     type:
       Type:
@@ -2736,6 +2736,16 @@ Indication:
       Relationship Type: Value
       Model Name: name
       Model Representation: Attribute
+    label:
+      Type:
+      - $ref: '#/string'
+      NCI C-Code: C207502
+      Preferred Term: Disease/Condition Indication Label
+      Definition: The short descriptive designation for the disease/condition indication.
+      Cardinality: 0..1
+      Relationship Type: Value
+      Model Name: label
+      Model Representation: Attribute
     description:
       Type:
       - $ref: '#/string'
@@ -2746,16 +2756,6 @@ Indication:
       Cardinality: 0..1
       Relationship Type: Value
       Model Name: description
-      Model Representation: Attribute
-    label:
-      Type:
-      - $ref: '#/string'
-      NCI C-Code: C207502
-      Preferred Term: Disease/Condition Indication Label
-      Definition: The short descriptive designation for the disease/condition indication.
-      Cardinality: 0..1
-      Relationship Type: Value
-      Model Name: label
       Model Representation: Attribute
     isRareDisease:
       Type:
@@ -2874,18 +2874,6 @@ IntercurrentEvent:
       Model Representation: Attribute
       inheritedFrom:
       - $ref: '#/SyntaxTemplate'
-    description:
-      Type:
-      - $ref: '#/string'
-      NCI C-Code: C188856
-      Preferred Term: Intercurrent Event Description
-      Definition: A narrative representation of the intercurrent event.
-      Cardinality: 0..1
-      Relationship Type: Value
-      Model Name: description
-      Model Representation: Attribute
-      inheritedFrom:
-      - $ref: '#/SyntaxTemplate'
     label:
       Type:
       - $ref: '#/string'
@@ -2895,6 +2883,18 @@ IntercurrentEvent:
       Cardinality: 0..1
       Relationship Type: Value
       Model Name: label
+      Model Representation: Attribute
+      inheritedFrom:
+      - $ref: '#/SyntaxTemplate'
+    description:
+      Type:
+      - $ref: '#/string'
+      NCI C-Code: C188856
+      Preferred Term: Intercurrent Event Description
+      Definition: A narrative representation of the intercurrent event.
+      Cardinality: 0..1
+      Relationship Type: Value
+      Model Name: description
       Model Representation: Attribute
       inheritedFrom:
       - $ref: '#/SyntaxTemplate'
@@ -2988,18 +2988,6 @@ InterventionalStudyDesign:
       Model Representation: Attribute
       inheritedFrom:
       - $ref: '#/StudyDesign'
-    description:
-      Type:
-      - $ref: '#/string'
-      NCI C-Code: CNEW
-      Preferred Term: Interventional Study Design Description
-      Definition: A narrative representation of the interventional study design.
-      Cardinality: 0..1
-      Relationship Type: Value
-      Model Name: description
-      Model Representation: Attribute
-      inheritedFrom:
-      - $ref: '#/StudyDesign'
     label:
       Type:
       - $ref: '#/string'
@@ -3009,6 +2997,18 @@ InterventionalStudyDesign:
       Cardinality: 0..1
       Relationship Type: Value
       Model Name: label
+      Model Representation: Attribute
+      inheritedFrom:
+      - $ref: '#/StudyDesign'
+    description:
+      Type:
+      - $ref: '#/string'
+      NCI C-Code: CNEW
+      Preferred Term: Interventional Study Design Description
+      Definition: A narrative representation of the interventional study design.
+      Cardinality: 0..1
+      Relationship Type: Value
+      Model Name: description
       Model Representation: Attribute
       inheritedFrom:
       - $ref: '#/StudyDesign'
@@ -3398,16 +3398,6 @@ MedicalDevice:
       Relationship Type: Value
       Model Name: name
       Model Representation: Attribute
-    description:
-      Type:
-      - $ref: '#/string'
-      NCI C-Code: CNEW
-      Preferred Term: Medical Device Description
-      Definition: A narrative representation of the medical device.
-      Cardinality: 0..1
-      Relationship Type: Value
-      Model Name: description
-      Model Representation: Attribute
     label:
       Type:
       - $ref: '#/string'
@@ -3417,6 +3407,16 @@ MedicalDevice:
       Cardinality: 0..1
       Relationship Type: Value
       Model Name: label
+      Model Representation: Attribute
+    description:
+      Type:
+      - $ref: '#/string'
+      NCI C-Code: CNEW
+      Preferred Term: Medical Device Description
+      Definition: A narrative representation of the medical device.
+      Cardinality: 0..1
+      Relationship Type: Value
+      Model Name: description
       Model Representation: Attribute
     hardwareVersion:
       Type:
@@ -3748,18 +3748,6 @@ Objective:
       Model Representation: Attribute
       inheritedFrom:
       - $ref: '#/SyntaxTemplate'
-    description:
-      Type:
-      - $ref: '#/string'
-      NCI C-Code: C94090
-      Preferred Term: Study Objective Description
-      Definition: A narrative representation of the study objective. (BRIDG)
-      Cardinality: 0..1
-      Relationship Type: Value
-      Model Name: description
-      Model Representation: Attribute
-      inheritedFrom:
-      - $ref: '#/SyntaxTemplate'
     label:
       Type:
       - $ref: '#/string'
@@ -3769,6 +3757,18 @@ Objective:
       Cardinality: 0..1
       Relationship Type: Value
       Model Name: label
+      Model Representation: Attribute
+      inheritedFrom:
+      - $ref: '#/SyntaxTemplate'
+    description:
+      Type:
+      - $ref: '#/string'
+      NCI C-Code: C94090
+      Preferred Term: Study Objective Description
+      Definition: A narrative representation of the study objective. (BRIDG)
+      Cardinality: 0..1
+      Relationship Type: Value
+      Model Name: description
       Model Representation: Attribute
       inheritedFrom:
       - $ref: '#/SyntaxTemplate'
@@ -3869,18 +3869,6 @@ ObservationalStudyDesign:
       Model Representation: Attribute
       inheritedFrom:
       - $ref: '#/StudyDesign'
-    description:
-      Type:
-      - $ref: '#/string'
-      NCI C-Code: CNEW
-      Preferred Term: Observational Study Design Description
-      Definition: A narrative representation of the observational study design.
-      Cardinality: 0..1
-      Relationship Type: Value
-      Model Name: description
-      Model Representation: Attribute
-      inheritedFrom:
-      - $ref: '#/StudyDesign'
     label:
       Type:
       - $ref: '#/string'
@@ -3890,6 +3878,18 @@ ObservationalStudyDesign:
       Cardinality: 0..1
       Relationship Type: Value
       Model Name: label
+      Model Representation: Attribute
+      inheritedFrom:
+      - $ref: '#/StudyDesign'
+    description:
+      Type:
+      - $ref: '#/string'
+      NCI C-Code: CNEW
+      Preferred Term: Observational Study Design Description
+      Definition: A narrative representation of the observational study design.
+      Cardinality: 0..1
+      Relationship Type: Value
+      Model Name: description
       Model Representation: Attribute
       inheritedFrom:
       - $ref: '#/StudyDesign'
@@ -4373,16 +4373,6 @@ PopulationDefinition:
       Relationship Type: Value
       Model Name: name
       Model Representation: Attribute
-    description:
-      Type:
-      - $ref: '#/string'
-      NCI C-Code: C207542
-      Preferred Term: Study Cohort Description
-      Definition: A narrative representation of the study cohort.
-      Cardinality: 0..1
-      Relationship Type: Value
-      Model Name: description
-      Model Representation: Attribute
     label:
       Type:
       - $ref: '#/string'
@@ -4392,6 +4382,16 @@ PopulationDefinition:
       Cardinality: 0..1
       Relationship Type: Value
       Model Name: label
+      Model Representation: Attribute
+    description:
+      Type:
+      - $ref: '#/string'
+      NCI C-Code: C207542
+      Preferred Term: Study Cohort Description
+      Definition: A narrative representation of the study cohort.
+      Cardinality: 0..1
+      Relationship Type: Value
+      Model Name: description
       Model Representation: Attribute
     plannedSex:
       Type:
@@ -4424,52 +4424,6 @@ PopulationDefinition:
       Relationship Type: Value
       Model Name: plannedAge
       Model Representation: Attribute
-    plannedCompletionNumberRange:
-      Type:
-      - $ref: '#/Range'
-      NCI C-Code: CNEW
-      Preferred Term: Study Cohort Planned Completion Number Range
-      Definition: The range of values representing the planned number of subjects
-        that must complete the study in order to meet the objectives and endpoints
-        of the study, within the study cohort.
-      Cardinality: 0..1
-      Relationship Type: Value
-      Model Name: plannedCompletionNumberRange
-      Model Representation: Attribute
-    plannedCompletionNumberQuantity:
-      Type:
-      - $ref: '#/Quantity'
-      NCI C-Code: CNEW
-      Preferred Term: Study Cohort Planned Completion Number Quantity
-      Definition: The value representing the planned number of subjects that must
-        complete the study in order to meet the objectives and endpoints of the study,
-        within the study cohort.
-      Cardinality: 0..1
-      Relationship Type: Value
-      Model Name: plannedCompletionNumberQuantity
-      Model Representation: Attribute
-    plannedEnrollmentNumberRange:
-      Type:
-      - $ref: '#/Range'
-      NCI C-Code: CNEW
-      Preferred Term: Study Cohort Planned Enrollment Number Range
-      Definition: The range of values representing the planned number of subjects
-        to be entered in a clinical trial, within the study cohort.
-      Cardinality: 0..1
-      Relationship Type: Value
-      Model Name: plannedEnrollmentNumberRange
-      Model Representation: Attribute
-    plannedEnrollmentNumberQuantity:
-      Type:
-      - $ref: '#/Quantity'
-      NCI C-Code: CNEW
-      Preferred Term: Study Cohort Planned Enrollment Number Quantity
-      Definition: The value representing the planned number of subjects to be entered
-        in a clinical trial, within the study cohort.
-      Cardinality: 0..1
-      Relationship Type: Value
-      Model Name: plannedEnrollmentNumberQuantity
-      Model Representation: Attribute
     notes:
       Type:
       - $ref: '#/CommentAnnotation'
@@ -4490,6 +4444,48 @@ PopulationDefinition:
       Relationship Type: Ref
       Model Name: criteria
       Model Representation: Relationship
+    plannedEnrollmentNumberRange:
+      Type:
+      - $ref: '#/Range'
+      NCI C-Code: CNEW
+      Preferred Term: Study Cohort Planned Enrollment Number Range
+      Definition: The range of values representing the planned number of subjects
+        to be entered in a clinical trial, within the study cohort.
+      Cardinality: 0..1
+      Relationship Type: Value
+      Model Representation: Attribute
+    plannedEnrollmentNumberQuantity:
+      Type:
+      - $ref: '#/Quantity'
+      NCI C-Code: CNEW
+      Preferred Term: Study Cohort Planned Enrollment Number Quantity
+      Definition: The value representing the planned number of subjects to be entered
+        in a clinical trial, within the study cohort.
+      Cardinality: 0..1
+      Relationship Type: Value
+      Model Representation: Attribute
+    plannedCompletionNumberRange:
+      Type:
+      - $ref: '#/Range'
+      NCI C-Code: CNEW
+      Preferred Term: Study Cohort Planned Completion Number Range
+      Definition: The range of values representing the planned number of subjects
+        that must complete the study in order to meet the objectives and endpoints
+        of the study, within the study cohort.
+      Cardinality: 0..1
+      Relationship Type: Value
+      Model Representation: Attribute
+    plannedCompletionNumberQuantity:
+      Type:
+      - $ref: '#/Quantity'
+      NCI C-Code: CNEW
+      Preferred Term: Study Cohort Planned Completion Number Quantity
+      Definition: The value representing the planned number of subjects that must
+        complete the study in order to meet the objectives and endpoints of the study,
+        within the study cohort.
+      Cardinality: 0..1
+      Relationship Type: Value
+      Model Representation: Attribute
 Procedure:
   NCI C-Code: C98769
   Preferred Term: Procedure
@@ -4514,16 +4510,6 @@ Procedure:
       Relationship Type: Value
       Model Name: name
       Model Representation: Attribute
-    description:
-      Type:
-      - $ref: '#/string'
-      NCI C-Code: C201324
-      Preferred Term: Procedure Description
-      Definition: A narrative representation of the procedure.
-      Cardinality: 0..1
-      Relationship Type: Value
-      Model Name: description
-      Model Representation: Attribute
     label:
       Type:
       - $ref: '#/string'
@@ -4533,6 +4519,16 @@ Procedure:
       Cardinality: 0..1
       Relationship Type: Value
       Model Name: label
+      Model Representation: Attribute
+    description:
+      Type:
+      - $ref: '#/string'
+      NCI C-Code: C201324
+      Preferred Term: Procedure Description
+      Definition: A narrative representation of the procedure.
+      Cardinality: 0..1
+      Relationship Type: Value
+      Model Name: description
       Model Representation: Attribute
     procedureType:
       Type:
@@ -4610,16 +4606,6 @@ ProductOrganizationRole:
       Relationship Type: Value
       Model Name: name
       Model Representation: Attribute
-    description:
-      Type:
-      - $ref: '#/string'
-      NCI C-Code: CNEW
-      Preferred Term: Product Organization Role Description
-      Definition: A narrative representation of the product organization role.
-      Cardinality: 0..1
-      Relationship Type: Value
-      Model Name: description
-      Model Representation: Attribute
     label:
       Type:
       - $ref: '#/string'
@@ -4629,6 +4615,16 @@ ProductOrganizationRole:
       Cardinality: 0..1
       Relationship Type: Value
       Model Name: label
+      Model Representation: Attribute
+    description:
+      Type:
+      - $ref: '#/string'
+      NCI C-Code: CNEW
+      Preferred Term: Product Organization Role Description
+      Definition: A narrative representation of the product organization role.
+      Cardinality: 0..1
+      Relationship Type: Value
+      Model Name: description
       Model Representation: Attribute
     code:
       Type:
@@ -4643,8 +4639,8 @@ ProductOrganizationRole:
       Model Representation: Attribute
     appliesToIds:
       Type:
-      - $ref: '#/MedicalDevice'
       - $ref: '#/AdministrableProduct'
+      - $ref: '#/MedicalDevice'
       Definition: A USDM relationship between the ProductOrganizationRole and either
         the AdministrableProduct or MedicalDevice class that identifies the administrable
         product or medical device to which the product organization role applies.
@@ -4716,6 +4712,8 @@ Quantity:
       - $ref: '#/string'
       Cardinality: '1'
       Relationship Type: Value
+QuantityRange:
+  Modifier: Concrete
 Range:
   NCI C-Code: C38013
   Preferred Term: Range
@@ -4902,16 +4900,6 @@ ScheduleTimeline:
       Relationship Type: Value
       Model Name: name
       Model Representation: Attribute
-    description:
-      Type:
-      - $ref: '#/string'
-      NCI C-Code: C201332
-      Preferred Term: Schedule Timeline Description
-      Definition: A narrative representation of the schedule timeline.
-      Cardinality: 0..1
-      Relationship Type: Value
-      Model Name: description
-      Model Representation: Attribute
     label:
       Type:
       - $ref: '#/string'
@@ -4921,6 +4909,16 @@ ScheduleTimeline:
       Cardinality: 0..1
       Relationship Type: Value
       Model Name: label
+      Model Representation: Attribute
+    description:
+      Type:
+      - $ref: '#/string'
+      NCI C-Code: C201332
+      Preferred Term: Schedule Timeline Description
+      Definition: A narrative representation of the schedule timeline.
+      Cardinality: 0..1
+      Relationship Type: Value
+      Model Name: description
       Model Representation: Attribute
     entryCondition:
       Type:
@@ -5045,18 +5043,6 @@ ScheduledActivityInstance:
       Model Representation: Attribute
       inheritedFrom:
       - $ref: '#/ScheduledInstance'
-    description:
-      Type:
-      - $ref: '#/string'
-      NCI C-Code: C207531
-      Preferred Term: Scheduled Activity Instance Description
-      Definition: A narrative representation of the scheduled activity instance.
-      Cardinality: 0..1
-      Relationship Type: Value
-      Model Name: description
-      Model Representation: Attribute
-      inheritedFrom:
-      - $ref: '#/ScheduledInstance'
     label:
       Type:
       - $ref: '#/string'
@@ -5066,6 +5052,18 @@ ScheduledActivityInstance:
       Cardinality: 0..1
       Relationship Type: Value
       Model Name: label
+      Model Representation: Attribute
+      inheritedFrom:
+      - $ref: '#/ScheduledInstance'
+    description:
+      Type:
+      - $ref: '#/string'
+      NCI C-Code: C207531
+      Preferred Term: Scheduled Activity Instance Description
+      Definition: A narrative representation of the scheduled activity instance.
+      Cardinality: 0..1
+      Relationship Type: Value
+      Model Name: description
       Model Representation: Attribute
       inheritedFrom:
       - $ref: '#/ScheduledInstance'
@@ -5171,18 +5169,6 @@ ScheduledDecisionInstance:
       Model Representation: Attribute
       inheritedFrom:
       - $ref: '#/ScheduledInstance'
-    description:
-      Type:
-      - $ref: '#/string'
-      NCI C-Code: C207534
-      Preferred Term: Scheduled Decision Instance Description
-      Definition: A narrative representation of the scheduled Decision instance.
-      Cardinality: 0..1
-      Relationship Type: Value
-      Model Name: description
-      Model Representation: Attribute
-      inheritedFrom:
-      - $ref: '#/ScheduledInstance'
     label:
       Type:
       - $ref: '#/string'
@@ -5192,6 +5178,18 @@ ScheduledDecisionInstance:
       Cardinality: 0..1
       Relationship Type: Value
       Model Name: label
+      Model Representation: Attribute
+      inheritedFrom:
+      - $ref: '#/ScheduledInstance'
+    description:
+      Type:
+      - $ref: '#/string'
+      NCI C-Code: C207534
+      Preferred Term: Scheduled Decision Instance Description
+      Definition: A narrative representation of the scheduled Decision instance.
+      Cardinality: 0..1
+      Relationship Type: Value
+      Model Name: description
       Model Representation: Attribute
       inheritedFrom:
       - $ref: '#/ScheduledInstance'
@@ -5265,16 +5263,6 @@ ScheduledInstance:
       Relationship Type: Value
       Model Name: name
       Model Representation: Attribute
-    description:
-      Type:
-      - $ref: '#/string'
-      NCI C-Code: C207531
-      Preferred Term: Scheduled Activity Instance Description
-      Definition: A narrative representation of the scheduled activity instance.
-      Cardinality: 0..1
-      Relationship Type: Value
-      Model Name: description
-      Model Representation: Attribute
     label:
       Type:
       - $ref: '#/string'
@@ -5284,6 +5272,16 @@ ScheduledInstance:
       Cardinality: 0..1
       Relationship Type: Value
       Model Name: label
+      Model Representation: Attribute
+    description:
+      Type:
+      - $ref: '#/string'
+      NCI C-Code: C207531
+      Preferred Term: Scheduled Activity Instance Description
+      Definition: A narrative representation of the scheduled activity instance.
+      Cardinality: 0..1
+      Relationship Type: Value
+      Model Name: description
       Model Representation: Attribute
     defaultConditionId:
       Type:
@@ -5330,16 +5328,6 @@ Strength:
       Relationship Type: Value
       Model Name: name
       Model Representation: Attribute
-    description:
-      Type:
-      - $ref: '#/string'
-      NCI C-Code: CNEW
-      Preferred Term: Substance Strength Description
-      Definition: A narrative representation of the substance strength.
-      Cardinality: 0..1
-      Relationship Type: Value
-      Model Name: description
-      Model Representation: Attribute
     label:
       Type:
       - $ref: '#/string'
@@ -5350,26 +5338,15 @@ Strength:
       Relationship Type: Value
       Model Name: label
       Model Representation: Attribute
-    numeratorRange:
+    description:
       Type:
-      - $ref: '#/Range'
+      - $ref: '#/string'
       NCI C-Code: CNEW
-      Preferred Term: Substance Strength Numerator Range
-      Definition: The lowest and highest numerical values that define a range for
-        the substance strength.
+      Preferred Term: Substance Strength Description
+      Definition: A narrative representation of the substance strength.
       Cardinality: 0..1
       Relationship Type: Value
-      Model Name: numeratorRange
-      Model Representation: Attribute
-    numeratorQuantity:
-      Type:
-      - $ref: '#/Quantity'
-      NCI C-Code: CNEW
-      Preferred Term: Substance Strength Numerator Quantity
-      Definition: The value representing the numerator for the substance strength.
-      Cardinality: 0..1
-      Relationship Type: Value
-      Model Name: numeratorQuantity
+      Model Name: description
       Model Representation: Attribute
     denominator:
       Type:
@@ -5386,6 +5363,25 @@ Strength:
       - $ref: '#/ExtensionAttribute'
       Cardinality: 0..*
       Relationship Type: Value
+    numeratorQuantity:
+      Type:
+      - $ref: '#/Quantity'
+      NCI C-Code: CNEW
+      Preferred Term: Substance Strength Numerator Quantity
+      Definition: The value representing the numerator for the substance strength.
+      Cardinality: 0..1
+      Relationship Type: Value
+      Model Representation: Attribute
+    numeratorRange:
+      Type:
+      - $ref: '#/Range'
+      NCI C-Code: CNEW
+      Preferred Term: Substance Strength Numerator Range
+      Definition: The lowest and highest numerical values that define a range for
+        the substance strength.
+      Cardinality: 0..1
+      Relationship Type: Value
+      Model Representation: Attribute
     instanceType:
       Type:
       - $ref: '#/string'
@@ -5418,16 +5414,6 @@ Study:
       Relationship Type: Value
       Model Name: name
       Model Representation: Attribute
-    description:
-      Type:
-      - $ref: '#/string'
-      NCI C-Code: C142704
-      Preferred Term: Clinical Study Description
-      Definition: A narrative representation of the clinical study.
-      Cardinality: 0..1
-      Relationship Type: Value
-      Model Name: description
-      Model Representation: Attribute
     label:
       Type:
       - $ref: '#/string'
@@ -5437,6 +5423,16 @@ Study:
       Cardinality: 0..1
       Relationship Type: Value
       Model Name: label
+      Model Representation: Attribute
+    description:
+      Type:
+      - $ref: '#/string'
+      NCI C-Code: C142704
+      Preferred Term: Clinical Study Description
+      Definition: A narrative representation of the clinical study.
+      Cardinality: 0..1
+      Relationship Type: Value
+      Model Name: description
       Model Representation: Attribute
     versions:
       Type:
@@ -5729,16 +5725,6 @@ StudyArm:
       Relationship Type: Value
       Model Name: name
       Model Representation: Attribute
-    description:
-      Type:
-      - $ref: '#/string'
-      NCI C-Code: C93728
-      Preferred Term: Study Arm Description
-      Definition: A narrative representation of the study arm.
-      Cardinality: 0..1
-      Relationship Type: Value
-      Model Name: description
-      Model Representation: Attribute
     label:
       Type:
       - $ref: '#/string'
@@ -5748,6 +5734,16 @@ StudyArm:
       Cardinality: 0..1
       Relationship Type: Value
       Model Name: label
+      Model Representation: Attribute
+    description:
+      Type:
+      - $ref: '#/string'
+      NCI C-Code: C93728
+      Preferred Term: Study Arm Description
+      Definition: A narrative representation of the study arm.
+      Cardinality: 0..1
+      Relationship Type: Value
+      Model Name: description
       Model Representation: Attribute
     type:
       Type:
@@ -5885,16 +5881,6 @@ StudyChange:
       Relationship Type: Value
       Model Name: name
       Model Representation: Attribute
-    description:
-      Type:
-      - $ref: '#/string'
-      NCI C-Code: CNEW
-      Preferred Term: Study Change Description
-      Definition: A narrative representation of the study change.
-      Cardinality: 0..1
-      Relationship Type: Value
-      Model Name: description
-      Model Representation: Attribute
     label:
       Type:
       - $ref: '#/string'
@@ -5904,6 +5890,16 @@ StudyChange:
       Cardinality: 0..1
       Relationship Type: Value
       Model Name: label
+      Model Representation: Attribute
+    description:
+      Type:
+      - $ref: '#/string'
+      NCI C-Code: CNEW
+      Preferred Term: Study Change Description
+      Definition: A narrative representation of the study change.
+      Cardinality: 0..1
+      Relationship Type: Value
+      Model Name: description
       Model Representation: Attribute
     rationale:
       Type:
@@ -5978,18 +5974,6 @@ StudyCohort:
       Model Representation: Attribute
       inheritedFrom:
       - $ref: '#/PopulationDefinition'
-    description:
-      Type:
-      - $ref: '#/string'
-      NCI C-Code: C207542
-      Preferred Term: Study Cohort Description
-      Definition: A narrative representation of the study cohort.
-      Cardinality: 0..1
-      Relationship Type: Value
-      Model Name: description
-      Model Representation: Attribute
-      inheritedFrom:
-      - $ref: '#/PopulationDefinition'
     label:
       Type:
       - $ref: '#/string'
@@ -5999,6 +5983,18 @@ StudyCohort:
       Cardinality: 0..1
       Relationship Type: Value
       Model Name: label
+      Model Representation: Attribute
+      inheritedFrom:
+      - $ref: '#/PopulationDefinition'
+    description:
+      Type:
+      - $ref: '#/string'
+      NCI C-Code: C207542
+      Preferred Term: Study Cohort Description
+      Definition: A narrative representation of the study cohort.
+      Cardinality: 0..1
+      Relationship Type: Value
+      Model Name: description
       Model Representation: Attribute
       inheritedFrom:
       - $ref: '#/PopulationDefinition'
@@ -6036,60 +6032,6 @@ StudyCohort:
       Cardinality: 0..1
       Relationship Type: Value
       Model Name: plannedAge
-      Model Representation: Attribute
-      inheritedFrom:
-      - $ref: '#/PopulationDefinition'
-    plannedCompletionNumberRange:
-      Type:
-      - $ref: '#/Range'
-      NCI C-Code: CNEW
-      Preferred Term: Study Cohort Planned Completion Number Range
-      Definition: The range of values representing the planned number of subjects
-        that must complete the study in order to meet the objectives and endpoints
-        of the study, within the study cohort.
-      Cardinality: 0..1
-      Relationship Type: Value
-      Model Name: plannedCompletionNumberRange
-      Model Representation: Attribute
-      inheritedFrom:
-      - $ref: '#/PopulationDefinition'
-    plannedCompletionNumberQuantity:
-      Type:
-      - $ref: '#/Quantity'
-      NCI C-Code: CNEW
-      Preferred Term: Study Cohort Planned Completion Number Quantity
-      Definition: The value representing the planned number of subjects that must
-        complete the study in order to meet the objectives and endpoints of the study,
-        within the study cohort.
-      Cardinality: 0..1
-      Relationship Type: Value
-      Model Name: plannedCompletionNumberQuantity
-      Model Representation: Attribute
-      inheritedFrom:
-      - $ref: '#/PopulationDefinition'
-    plannedEnrollmentNumberRange:
-      Type:
-      - $ref: '#/Range'
-      NCI C-Code: CNEW
-      Preferred Term: Study Cohort Planned Enrollment Number Range
-      Definition: The range of values representing the planned number of subjects
-        to be entered in a clinical trial, within the study cohort.
-      Cardinality: 0..1
-      Relationship Type: Value
-      Model Name: plannedEnrollmentNumberRange
-      Model Representation: Attribute
-      inheritedFrom:
-      - $ref: '#/PopulationDefinition'
-    plannedEnrollmentNumberQuantity:
-      Type:
-      - $ref: '#/Quantity'
-      NCI C-Code: CNEW
-      Preferred Term: Study Cohort Planned Enrollment Number Quantity
-      Definition: The value representing the planned number of subjects to be entered
-        in a clinical trial, within the study cohort.
-      Cardinality: 0..1
-      Relationship Type: Value
-      Model Name: plannedEnrollmentNumberQuantity
       Model Representation: Attribute
       inheritedFrom:
       - $ref: '#/PopulationDefinition'
@@ -6141,6 +6083,48 @@ StudyCohort:
       - $ref: '#/ExtensionAttribute'
       Cardinality: 0..*
       Relationship Type: Value
+    plannedEnrollmentNumberRange:
+      Type:
+      - $ref: '#/Range'
+      NCI C-Code: CNEW
+      Preferred Term: Study Cohort Planned Enrollment Number Range
+      Definition: The range of values representing the planned number of subjects
+        to be entered in a clinical trial, within the study cohort.
+      Cardinality: 0..1
+      Relationship Type: Value
+      Model Representation: Attribute
+    plannedEnrollmentNumberQuantity:
+      Type:
+      - $ref: '#/Quantity'
+      NCI C-Code: CNEW
+      Preferred Term: Study Cohort Planned Enrollment Number Quantity
+      Definition: The value representing the planned number of subjects to be entered
+        in a clinical trial, within the study cohort.
+      Cardinality: 0..1
+      Relationship Type: Value
+      Model Representation: Attribute
+    plannedCompletionNumberRange:
+      Type:
+      - $ref: '#/Range'
+      NCI C-Code: CNEW
+      Preferred Term: Study Cohort Planned Completion Number Range
+      Definition: The range of values representing the planned number of subjects
+        that must complete the study in order to meet the objectives and endpoints
+        of the study, within the study cohort.
+      Cardinality: 0..1
+      Relationship Type: Value
+      Model Representation: Attribute
+    plannedCompletionNumberQuantity:
+      Type:
+      - $ref: '#/Quantity'
+      NCI C-Code: CNEW
+      Preferred Term: Study Cohort Planned Completion Number Quantity
+      Definition: The value representing the planned number of subjects that must
+        complete the study in order to meet the objectives and endpoints of the study,
+        within the study cohort.
+      Cardinality: 0..1
+      Relationship Type: Value
+      Model Representation: Attribute
     instanceType:
       Type:
       - $ref: '#/string'
@@ -6171,16 +6155,6 @@ StudyDefinitionDocument:
       Relationship Type: Value
       Model Name: name
       Model Representation: Attribute
-    description:
-      Type:
-      - $ref: '#/string'
-      NCI C-Code: CNEW
-      Preferred Term: Study Definition Document Description
-      Definition: A narrative representation of the study definition document.
-      Cardinality: 0..1
-      Relationship Type: Value
-      Model Name: description
-      Model Representation: Attribute
     label:
       Type:
       - $ref: '#/string'
@@ -6190,6 +6164,16 @@ StudyDefinitionDocument:
       Cardinality: 0..1
       Relationship Type: Value
       Model Name: label
+      Model Representation: Attribute
+    description:
+      Type:
+      - $ref: '#/string'
+      NCI C-Code: CNEW
+      Preferred Term: Study Definition Document Description
+      Definition: A narrative representation of the study definition document.
+      Cardinality: 0..1
+      Relationship Type: Value
+      Model Name: description
       Model Representation: Attribute
     type:
       Type:
@@ -6368,16 +6352,6 @@ StudyDesign:
       Relationship Type: Value
       Model Name: name
       Model Representation: Attribute
-    description:
-      Type:
-      - $ref: '#/string'
-      NCI C-Code: CNEW
-      Preferred Term: Interventional Study Design Description
-      Definition: A narrative representation of the interventional study design.
-      Cardinality: 0..1
-      Relationship Type: Value
-      Model Name: description
-      Model Representation: Attribute
     label:
       Type:
       - $ref: '#/string'
@@ -6387,6 +6361,16 @@ StudyDesign:
       Cardinality: 0..1
       Relationship Type: Value
       Model Name: label
+      Model Representation: Attribute
+    description:
+      Type:
+      - $ref: '#/string'
+      NCI C-Code: CNEW
+      Preferred Term: Interventional Study Design Description
+      Definition: A narrative representation of the interventional study design.
+      Cardinality: 0..1
+      Relationship Type: Value
+      Model Name: description
       Model Representation: Attribute
     rationale:
       Type:
@@ -6636,18 +6620,6 @@ StudyDesignPopulation:
       Model Representation: Attribute
       inheritedFrom:
       - $ref: '#/PopulationDefinition'
-    description:
-      Type:
-      - $ref: '#/string'
-      NCI C-Code: C70834
-      Preferred Term: Study Design Population Description
-      Definition: A narrative representation of the study design population.
-      Cardinality: 0..1
-      Relationship Type: Value
-      Model Name: description
-      Model Representation: Attribute
-      inheritedFrom:
-      - $ref: '#/PopulationDefinition'
     label:
       Type:
       - $ref: '#/string'
@@ -6657,6 +6629,18 @@ StudyDesignPopulation:
       Cardinality: 0..1
       Relationship Type: Value
       Model Name: label
+      Model Representation: Attribute
+      inheritedFrom:
+      - $ref: '#/PopulationDefinition'
+    description:
+      Type:
+      - $ref: '#/string'
+      NCI C-Code: C70834
+      Preferred Term: Study Design Population Description
+      Definition: A narrative representation of the study design population.
+      Cardinality: 0..1
+      Relationship Type: Value
+      Model Name: description
       Model Representation: Attribute
       inheritedFrom:
       - $ref: '#/PopulationDefinition'
@@ -6695,60 +6679,6 @@ StudyDesignPopulation:
       Cardinality: 0..1
       Relationship Type: Value
       Model Name: plannedAge
-      Model Representation: Attribute
-      inheritedFrom:
-      - $ref: '#/PopulationDefinition'
-    plannedCompletionNumberRange:
-      Type:
-      - $ref: '#/Range'
-      NCI C-Code: CNEW
-      Preferred Term: Study Design Population Planned Completion Number Range
-      Definition: The range of values representing the planned number of subjects
-        that must complete the study in order to meet the objectives and endpoints
-        of the study, within the study design population.
-      Cardinality: 0..1
-      Relationship Type: Value
-      Model Name: plannedCompletionNumberRange
-      Model Representation: Attribute
-      inheritedFrom:
-      - $ref: '#/PopulationDefinition'
-    plannedCompletionNumberQuantity:
-      Type:
-      - $ref: '#/Quantity'
-      NCI C-Code: CNEW
-      Preferred Term: Study Design Population Planned Completion Number Quantity
-      Definition: The value representing the planned number of subjects that must
-        complete the study in order to meet the objectives and endpoints of the study,
-        within the study design population.
-      Cardinality: 0..1
-      Relationship Type: Value
-      Model Name: plannedCompletionNumberQuantity
-      Model Representation: Attribute
-      inheritedFrom:
-      - $ref: '#/PopulationDefinition'
-    plannedEnrollmentNumberRange:
-      Type:
-      - $ref: '#/Range'
-      NCI C-Code: CNEW
-      Preferred Term: Study Design Population Planned Enrollment Number Range
-      Definition: The range of values representing the planned number of subjects
-        to be entered in a clinical trial, within the study design population.
-      Cardinality: 0..1
-      Relationship Type: Value
-      Model Name: plannedEnrollmentNumberRange
-      Model Representation: Attribute
-      inheritedFrom:
-      - $ref: '#/PopulationDefinition'
-    plannedEnrollmentNumberQuantity:
-      Type:
-      - $ref: '#/Quantity'
-      NCI C-Code: CNEW
-      Preferred Term: Study Design Population Planned Enrollment Number Quantity
-      Definition: The value representing the planned number of subjects to be entered
-        in a clinical trial, within the study design population.
-      Cardinality: 0..1
-      Relationship Type: Value
-      Model Name: plannedEnrollmentNumberQuantity
       Model Representation: Attribute
       inheritedFrom:
       - $ref: '#/PopulationDefinition'
@@ -6791,6 +6721,48 @@ StudyDesignPopulation:
       - $ref: '#/ExtensionAttribute'
       Cardinality: 0..*
       Relationship Type: Value
+    plannedEnrollmentNumberRange:
+      Type:
+      - $ref: '#/Range'
+      NCI C-Code: CNEW
+      Preferred Term: Study Design Population Planned Enrollment Number Range
+      Definition: The range of values representing the planned number of subjects
+        to be entered in a clinical trial, within the study design population.
+      Cardinality: 0..1
+      Relationship Type: Value
+      Model Representation: Attribute
+    plannedEnrollmentNumberQuantity:
+      Type:
+      - $ref: '#/Quantity'
+      NCI C-Code: CNEW
+      Preferred Term: Study Design Population Planned Enrollment Number Quantity
+      Definition: The value representing the planned number of subjects to be entered
+        in a clinical trial, within the study design population.
+      Cardinality: 0..1
+      Relationship Type: Value
+      Model Representation: Attribute
+    plannedCompletionNumberRange:
+      Type:
+      - $ref: '#/Range'
+      NCI C-Code: CNEW
+      Preferred Term: Study Design Population Planned Completion Number Range
+      Definition: The range of values representing the planned number of subjects
+        that must complete the study in order to meet the objectives and endpoints
+        of the study, within the study design population.
+      Cardinality: 0..1
+      Relationship Type: Value
+      Model Representation: Attribute
+    plannedCompletionNumberQuantity:
+      Type:
+      - $ref: '#/Quantity'
+      NCI C-Code: CNEW
+      Preferred Term: Study Design Population Planned Completion Number Quantity
+      Definition: The value representing the planned number of subjects that must
+        complete the study in order to meet the objectives and endpoints of the study,
+        within the study design population.
+      Cardinality: 0..1
+      Relationship Type: Value
+      Model Representation: Attribute
     instanceType:
       Type:
       - $ref: '#/string'
@@ -6822,16 +6794,6 @@ StudyElement:
       Relationship Type: Value
       Model Name: name
       Model Representation: Attribute
-    description:
-      Type:
-      - $ref: '#/string'
-      NCI C-Code: C188834
-      Preferred Term: Study Design Element Description
-      Definition: A narrative representation of the study design element.
-      Cardinality: 0..1
-      Relationship Type: Value
-      Model Name: description
-      Model Representation: Attribute
     label:
       Type:
       - $ref: '#/string'
@@ -6841,6 +6803,16 @@ StudyElement:
       Cardinality: 0..1
       Relationship Type: Value
       Model Name: label
+      Model Representation: Attribute
+    description:
+      Type:
+      - $ref: '#/string'
+      NCI C-Code: C188834
+      Preferred Term: Study Design Element Description
+      Definition: A narrative representation of the study design element.
+      Cardinality: 0..1
+      Relationship Type: Value
+      Model Name: description
       Model Representation: Attribute
     notes:
       Type:
@@ -6920,16 +6892,6 @@ StudyEpoch:
       Relationship Type: Value
       Model Name: name
       Model Representation: Attribute
-    description:
-      Type:
-      - $ref: '#/string'
-      NCI C-Code: C93824
-      Preferred Term: Study Epoch Description
-      Definition: A narrative representation of the study epoch.
-      Cardinality: 0..1
-      Relationship Type: Value
-      Model Name: description
-      Model Representation: Attribute
     label:
       Type:
       - $ref: '#/string'
@@ -6939,6 +6901,16 @@ StudyEpoch:
       Cardinality: 0..1
       Relationship Type: Value
       Model Name: label
+      Model Representation: Attribute
+    description:
+      Type:
+      - $ref: '#/string'
+      NCI C-Code: C93824
+      Preferred Term: Study Epoch Description
+      Definition: A narrative representation of the study epoch.
+      Cardinality: 0..1
+      Relationship Type: Value
+      Model Name: description
       Model Representation: Attribute
     type:
       Type:
@@ -7056,16 +7028,6 @@ StudyIntervention:
       Relationship Type: Value
       Model Name: id
       Model Representation: Attribute
-    description:
-      Type:
-      - $ref: '#/string'
-      NCI C-Code: C207647
-      Preferred Term: Study Intervention Description
-      Definition: A narrative representation of the study intervention.
-      Cardinality: 0..1
-      Relationship Type: Value
-      Model Name: description
-      Model Representation: Attribute
     name:
       Type:
       - $ref: '#/string'
@@ -7086,6 +7048,16 @@ StudyIntervention:
       Cardinality: 0..1
       Relationship Type: Value
       Model Name: label
+      Model Representation: Attribute
+    description:
+      Type:
+      - $ref: '#/string'
+      NCI C-Code: C207647
+      Preferred Term: Study Intervention Description
+      Definition: A narrative representation of the study intervention.
+      Cardinality: 0..1
+      Relationship Type: Value
+      Model Name: description
       Model Representation: Attribute
     role:
       Type:
@@ -7289,16 +7261,6 @@ StudySite:
       Relationship Type: Value
       Model Name: name
       Model Representation: Attribute
-    description:
-      Type:
-      - $ref: '#/string'
-      NCI C-Code: C207564
-      Preferred Term: Study Site Description
-      Definition: A narrative representation of the study site.
-      Cardinality: 0..1
-      Relationship Type: Value
-      Model Name: description
-      Model Representation: Attribute
     label:
       Type:
       - $ref: '#/string'
@@ -7308,6 +7270,16 @@ StudySite:
       Cardinality: 0..1
       Relationship Type: Value
       Model Name: label
+      Model Representation: Attribute
+    description:
+      Type:
+      - $ref: '#/string'
+      NCI C-Code: C207564
+      Preferred Term: Study Site Description
+      Definition: A narrative representation of the study site.
+      Cardinality: 0..1
+      Relationship Type: Value
+      Model Name: description
       Model Representation: Attribute
     country:
       Type:
@@ -7607,16 +7579,6 @@ SubjectEnrollment:
       Relationship Type: Value
       Model Name: name
       Model Representation: Attribute
-    description:
-      Type:
-      - $ref: '#/string'
-      NCI C-Code: CNEW
-      Preferred Term: Subject Enrollment Description
-      Definition: A narrative representation of the subject enrollment.
-      Cardinality: 0..1
-      Relationship Type: Value
-      Model Name: description
-      Model Representation: Attribute
     label:
       Type:
       - $ref: '#/string'
@@ -7626,6 +7588,16 @@ SubjectEnrollment:
       Cardinality: 0..1
       Relationship Type: Value
       Model Name: label
+      Model Representation: Attribute
+    description:
+      Type:
+      - $ref: '#/string'
+      NCI C-Code: CNEW
+      Preferred Term: Subject Enrollment Description
+      Definition: A narrative representation of the subject enrollment.
+      Cardinality: 0..1
+      Relationship Type: Value
+      Model Name: description
       Model Representation: Attribute
     quantity:
       Type:
@@ -7700,16 +7672,6 @@ Substance:
       Relationship Type: Value
       Model Name: name
       Model Representation: Attribute
-    description:
-      Type:
-      - $ref: '#/string'
-      NCI C-Code: CNEW
-      Preferred Term: Substance Description
-      Definition: A narrative representation of the substance.
-      Cardinality: 0..1
-      Relationship Type: Value
-      Model Name: description
-      Model Representation: Attribute
     label:
       Type:
       - $ref: '#/string'
@@ -7719,6 +7681,16 @@ Substance:
       Cardinality: 0..1
       Relationship Type: Value
       Model Name: label
+      Model Representation: Attribute
+    description:
+      Type:
+      - $ref: '#/string'
+      NCI C-Code: CNEW
+      Preferred Term: Substance Description
+      Definition: A narrative representation of the substance.
+      Cardinality: 0..1
+      Relationship Type: Value
+      Model Name: description
       Model Representation: Attribute
     codes:
       Type:
@@ -7790,16 +7762,6 @@ SyntaxTemplate:
       Relationship Type: Value
       Model Name: name
       Model Representation: Attribute
-    description:
-      Type:
-      - $ref: '#/string'
-      NCI C-Code: C207475
-      Preferred Term: Characteristic Description
-      Definition: A narrative representation of the characteristic.
-      Cardinality: 0..1
-      Relationship Type: Value
-      Model Name: description
-      Model Representation: Attribute
     label:
       Type:
       - $ref: '#/string'
@@ -7809,6 +7771,16 @@ SyntaxTemplate:
       Cardinality: 0..1
       Relationship Type: Value
       Model Name: label
+      Model Representation: Attribute
+    description:
+      Type:
+      - $ref: '#/string'
+      NCI C-Code: C207475
+      Preferred Term: Characteristic Description
+      Definition: A narrative representation of the characteristic.
+      Cardinality: 0..1
+      Relationship Type: Value
+      Model Name: description
       Model Representation: Attribute
     text:
       Type:
@@ -7864,16 +7836,6 @@ SyntaxTemplateDictionary:
       Relationship Type: Value
       Model Name: name
       Model Representation: Attribute
-    description:
-      Type:
-      - $ref: '#/string'
-      NCI C-Code: C207579
-      Preferred Term: Syntax Template Dictionary Description
-      Definition: A narrative representation of the syntax template dictionary.
-      Cardinality: 0..1
-      Relationship Type: Value
-      Model Name: description
-      Model Representation: Attribute
     label:
       Type:
       - $ref: '#/string'
@@ -7883,6 +7845,16 @@ SyntaxTemplateDictionary:
       Cardinality: 0..1
       Relationship Type: Value
       Model Name: label
+      Model Representation: Attribute
+    description:
+      Type:
+      - $ref: '#/string'
+      NCI C-Code: C207579
+      Preferred Term: Syntax Template Dictionary Description
+      Definition: A narrative representation of the syntax template dictionary.
+      Cardinality: 0..1
+      Relationship Type: Value
+      Model Name: description
       Model Representation: Attribute
     parameterMaps:
       Type:
@@ -7927,6 +7899,16 @@ Timing:
       Relationship Type: Value
       Model Name: name
       Model Representation: Attribute
+    label:
+      Type:
+      - $ref: '#/string'
+      NCI C-Code: C207583
+      Preferred Term: Timing Label
+      Definition: The short descriptive designation for the timing.
+      Cardinality: 0..1
+      Relationship Type: Value
+      Model Name: label
+      Model Representation: Attribute
     description:
       Type:
       - $ref: '#/string'
@@ -7937,16 +7919,6 @@ Timing:
       Cardinality: 0..1
       Relationship Type: Value
       Model Name: description
-      Model Representation: Attribute
-    label:
-      Type:
-      - $ref: '#/string'
-      NCI C-Code: C207583
-      Preferred Term: Timing Label
-      Definition: The short descriptive designation for the timing.
-      Cardinality: 0..1
-      Relationship Type: Value
-      Model Name: label
       Model Representation: Attribute
     type:
       Type:
@@ -8080,16 +8052,6 @@ TransitionRule:
       Relationship Type: Value
       Model Name: name
       Model Representation: Attribute
-    description:
-      Type:
-      - $ref: '#/string'
-      NCI C-Code: C188835
-      Preferred Term: Transition Rule Description
-      Definition: A narrative representation of the transition rule.
-      Cardinality: 0..1
-      Relationship Type: Value
-      Model Name: description
-      Model Representation: Attribute
     label:
       Type:
       - $ref: '#/string'
@@ -8099,6 +8061,16 @@ TransitionRule:
       Cardinality: 0..1
       Relationship Type: Value
       Model Name: label
+      Model Representation: Attribute
+    description:
+      Type:
+      - $ref: '#/string'
+      NCI C-Code: C188835
+      Preferred Term: Transition Rule Description
+      Definition: A narrative representation of the transition rule.
+      Cardinality: 0..1
+      Relationship Type: Value
+      Model Name: description
       Model Representation: Attribute
     text:
       Type:

@@ -9,8 +9,8 @@
 |Activity|||C71473||Study Activity|An action, undertaking, or event, which is anticipated to be performed or observed, or was performed or observed, according to the study protocol during the execution of the study.|||
 ||id|String||1|||||
 ||name|String|C188842|1|Study Activity Name|The literal identifier (i.e., distinctive designation) of the study activity.|||
-||description|String|C70960|0..1|Study Activity Description|A narrative representation of the study activity.|||
 ||label|String|C207458|0..1|Study Activity Label|The short descriptive designation for the study activity.|||
+||description|String|C70960|0..1|Study Activity Description|A narrative representation of the study activity.|||
 ||notes|CommentAnnotation|CNEW|0..*|Activity Notes|A brief written record relevant to the activity.|||
 ||definedProcedures|Procedure||0..*||A USDM relationship between the Activity and Procedure classes which identifies the set of defined procedures associated with the activity.|||
 ||biomedicalConcepts|BiomedicalConcept||0..*||A USDM relationship between the Activity and BiomedicalConcept classes which identifies the set of biomedical concepts associated with the activity.|||
@@ -32,8 +32,8 @@
 |AdministrableProduct|||CNEW||Administrable Product|Any study product that is formulated and presented in the form that is suitable for administration to a study participant.|||
 ||id|String||1|||||
 ||name|String|CNEW|1|Administrable Product Definition Name|The literal identifier (i.e., distinctive designation) of the administrable product.|||
-||description|String|CNEW|0..1|Administrable Product Definition Description|A narrative representation of the administrable product.|||
 ||label|String|CNEW|0..1|Administrable Product Definition Label|The short descriptive designation for the administrable product.|||
+||description|String|CNEW|0..1|Administrable Product Definition Description|A narrative representation of the administrable product.|||
 ||administrableDoseForm|AliasCode|CNEW|1|Administrable Product Dose Form|The physical form in which formulated ingredient(s) are presented in the administrable product.|SDTM Terminology Codelist C66726||
 ||sourcing|Code|CNEW|0..1|Administrable Product Sourcing|An indication as to whether the administrable product is obtained from a local or central source.|CNEW - Product Sourcing Value Set||
 ||productDesignation|Code|CNEW|1|Administrable Product Product Designation|An indication as to whether the administrable product is an investigational medicinal product or an auxiliary medicinal product.|C207418||
@@ -55,8 +55,8 @@
 |Administration|||C25409||Administration|The act of dispensing, applying, or tendering a product, agent, or therapy.|||
 ||id|String||1|||||
 ||name|String|C207465|1|Administration Name|The literal identifier (i.e., distinctive designation) for the administration of a product, agent, or therapy.|||
-||description|String|C207463|0..1|Administration Description|A narrative representation for the administration of a product, agent, or therapy.|||
 ||label|String|C207464|0..1|Administration Label|The short descriptive designation for the administration of a product, agent, or therapy.|||
+||description|String|C207463|0..1|Administration Description|A narrative representation for the administration of a product, agent, or therapy.|||
 ||dose|Quantity|C167190|0..1|Administration Dose|The value representing the amount of an agent given to an individual at one time.|||
 ||frequency|AliasCode|C89081|0..1|Dosing Frequency|The number of doses administered per a specific interval.|SDTM Terminology Codelist C71113||
 ||route|AliasCode|C38114|0..1|Route of Administration|The pathway by which a substance is administered in order to reach the site of action in the body.|SDTM Terminology Codelist C66729||
@@ -78,8 +78,8 @@
 ||id|String||1|||||
 ||text|String|C207468|1|Analysis Population Text|An instance of unstructured text that represents the analysis population.|||
 ||name|String|C207467|1|Analysis Population Name|The literal identifier (i.e., distinctive designation) of the analysis population.|||
-||description|String|C188854|0..1|Analysis Population Description|A narrative representation of the analysis population.|||
 ||label|String|C207466|0..1|Analysis Population Label|The short descriptive designation for the analysis population.|||
+||description|String|C188854|0..1|Analysis Population Description|A narrative representation of the analysis population.|||
 ||notes|CommentAnnotation|CNEW|0..*|Analysis Population Notes|A brief written record relevant to the analysis population.|||
 ||subsetOf|PopulationDefinition||0..*||A USDM relationship between the AnalysisPopulation and PopulationDefinition classes which identifies the population definition of which the analysis population is a subset.|||
 |AssignedPerson|||CNEW||Assigned Person|An individual person who is allotted or appointed to a particular role, function, or other entity.|||
@@ -127,15 +127,15 @@
 |BiospecimenRetention|||CNEW||Biospecimen Retention|The continued possession, cataloging, and storage of collected biological specimens beyond their initial use.|||
 ||id|String||1|||||
 ||name|String|CNEW|1|Biospecimen Retention Name|The literal identifier (i.e., distinctive designation) of the biospecimen retention.|||
-||description|String|C181231|0..1|Biospecimen Retention Description|A narrative representation of the biospecimen retention.|||
 ||label|String|CNEW|0..1|Biospecimen Retention Label|The short descriptive designation for the biospecimen retention.|||
+||description|String|C181231|0..1|Biospecimen Retention Description|A narrative representation of the biospecimen retention.|||
 ||isRetained|Boolean|C164620|1|Biospecimen Retention Indicator|An indication as to whether biospecimens were retained.|||
 ||includesDNA|Boolean|C127777|0..1|Biospecimen Retention Includes DNA Indicator|An indication as to whether retained biospecimens contain DNA.|||
 |Characteristic|||C25447||Characteristic|The distinguishing qualities or prominent aspects of an entity.|||
 ||id|String||1|||||
 ||name|String|C207477|1|Characteristic Name|The literal identifier (i.e., distinctive designation) of the characteristic.||SyntaxTemplate|
-||description|String|C207475|0..1|Characteristic Description|A narrative representation of the characteristic.||SyntaxTemplate|
 ||label|String|C207476|0..1|Characteristic Label|The short descriptive designation for the characteristic.||SyntaxTemplate|
+||description|String|C207475|0..1|Characteristic Description|A narrative representation of the characteristic.||SyntaxTemplate|
 ||text|String|C207478|1|Characteristic Text|An instance of structured text that represents the characteristic.||SyntaxTemplate|
 ||notes|CommentAnnotation|CNEW|0..*|Characteristic Notes|A brief written record relevant to the characteristic.||SyntaxTemplate|
 ||dictionary|SyntaxTemplateDictionary||0..1||A USDM relationship between the Characteristic and SyntaxTemplateDictionary classes which provides the set of dictionary entries related to characteristics.||SyntaxTemplate|
@@ -152,13 +152,13 @@
 |Condition|||C25457||Condition|A state of being.|||
 ||id|String||1|||||
 ||name|String|C207483|1|Condition Name|The literal identifier (i.e., distinctive designation) of the condition.||SyntaxTemplate|
-||description|String|C207481|0..1|Condition Description|A narrative representation of the condition.||SyntaxTemplate|
 ||label|String|C207482|0..1|Condition Label|The short descriptive designation for the condition.||SyntaxTemplate|
+||description|String|C207481|0..1|Condition Description|A narrative representation of the condition.||SyntaxTemplate|
 ||text|String|C207484|1|Condition Text|An instance of structured text that represents the condition.||SyntaxTemplate|
 ||notes|CommentAnnotation|CNEW|0..*|Condition Notes|A brief written record relevant to the condition.||SyntaxTemplate|
 ||dictionary|SyntaxTemplateDictionary||0..1||A USDM relationship between the Condition and SyntaxTemplateDictionary classes which provides the set of dictionary entries related to conditions.||SyntaxTemplate|
 ||context|Activity, ScheduledActivityInstance||0..*||A USDM relationship between the Condition and the ScheduledActivityInstance or Activity classes which identifies the scheduled activity instance or activity to which the condition belongs.|||
-||appliesTo|BiomedicalConceptSurrogate, Activity, BiomedicalConcept, Procedure, BiomedicalConceptCategory||0..*||A USDM relationship between the Condition and the Activity, Procedure, BiomedicalConcept, BiomedicalConceptSurrogate, or BiomedicalConceptCategory classes which identifies the procedure, activity, biomedical concept, biomedical concept surrogate, or biomedical concept category that applies to the condition.|||
+||appliesTo|BiomedicalConceptCategory, Activity, Procedure, BiomedicalConceptSurrogate, BiomedicalConcept||0..*||A USDM relationship between the Condition and the Activity, Procedure, BiomedicalConcept, BiomedicalConceptSurrogate, or BiomedicalConceptCategory classes which identifies the procedure, activity, biomedical concept, biomedical concept surrogate, or biomedical concept category that applies to the condition.|||
 |ConditionAssignment|||C201335||Condition Assignment|An allotting or appointment to a condition or set of conditions that are to be met in order to make a logical decision.|||
 ||id|string||1|||||
 ||condition|String|C47953|1|Logical Condition|An assumption on which rests the validity or effect of something else.|||
@@ -171,8 +171,8 @@
 |EligibilityCriterion|||C16112||Study Eligibility Criterion|Characteristics which are necessary to allow a subject to participate in a clinical study, as outlined in the study protocol. The concept covers inclusion and exclusion criteria.|||
 ||id|String||1|||||
 ||name|String|C207488|1|Study Eligibility Criterion Name|The literal identifier (i.e., distinctive designation) of the study eligibility criterion.|||
-||description|String|C207486|0..1|Study Eligibility Criterion Description|A narrative representation of the study eligibility criterion.|||
 ||label|String|C207487|0..1|Study Eligibility Criterion Label|The short descriptive designation for the study eligibility criterion.|||
+||description|String|C207486|0..1|Study Eligibility Criterion Description|A narrative representation of the study eligibility criterion.|||
 ||identifier|String|C207489|1|Study Eligibility Criterion Identifier|A sequence of characters used to identify, name, or characterize the inclusion or exclusion criterion.|||
 ||category|Code|C83016|1|Study Eligibility Criterion Category|A classification of the inclusion exclusion criterion.|SDTM Terminology Codelist C66797||
 ||notes|CommentAnnotation|CNEW|0..*|Eligibility Criterion Notes|A brief written record relevant to the eligibility criterion.|||
@@ -182,16 +182,16 @@
 |EligibilityCriterionItem|||CNEW||Eligibility Criterion Item|An individual item within the container that holds an instance of an eligibility criterion.|||
 ||id|String||1|||||
 ||name|String|CNEW|1|Eligibility Criterion Item Name|The literal identifier (i.e., distinctive designation) of the eligibility criterion item.||SyntaxTemplate|
-||description|String|CNEW|0..1|Eligibility Criterion Item Description|A narrative representation of the eligibility criterion item.||SyntaxTemplate|
 ||label|String|CNEW|0..1|Eligibility Criterion Item Label|The short descriptive designation for the eligibility criterion item.||SyntaxTemplate|
+||description|String|CNEW|0..1|Eligibility Criterion Item Description|A narrative representation of the eligibility criterion item.||SyntaxTemplate|
 ||text|String|CNEW|1|Eligibility Criterion Item Text|An instance of structured text that represents the eligibility criterion item.||SyntaxTemplate|
 ||notes|CommentAnnotation|CNEW|0..*|Eligibility Criterion Item Notes|A brief written record relevant to the eligibility criterion item.||SyntaxTemplate|
 ||dictionary|SyntaxTemplateDictionary||0..1||A USDM relationship between the EligibilityCriterionItem and SyntaxTemplateDictionary classes which provides the dictionary entry associated with a eligibility criterion item. ||SyntaxTemplate|
 |Encounter|||CNEW||Study Encounter|Any physical or virtual contact between two or more parties involved in a study, at which an assessment or activity takes place.|||
 ||id|String||1|||||
 ||name|String|C171010|1|Study Encounter Name|The literal identifier (i.e., distinctive designation) for a protocol-defined study encounter.|||
-||description|String|C188836|0..1|Study Encounter Description|A narrative representation of the protocol-defined study encounter.|||
 ||label|String|C207490|0..1|Study Encounter Label|The short descriptive designation for the study encounter.|||
+||description|String|C188836|0..1|Study Encounter Description|A narrative representation of the protocol-defined study encounter.|||
 ||type|Code|C188839|1|Study Encounter Type|A characterization or classification of the study encounter.|C188728||
 ||environmentalSettings|Code|C188840|0..*|Environmental Setting|The environment/setting where the event, intervention, or finding occurred.|SDTM Terminology Codelist C127262||
 ||contactModes|Code|C188841|0..*|Contact Mode|The means by which an interaction occurs between the subject/participant and person or entity (e.g., a device).|SDTM Terminology Codelist C171445||
@@ -204,8 +204,8 @@
 |Endpoint|||C25212||Study Endpoint|A defined variable intended to reflect an outcome of interest that is statistically analyzed to address a particular research question. NOTE: A precise definition of an endpoint typically specifies the type of assessments made, the timing of those assessments, the assessment tools used, and possibly other details, as applicable, such as how multiple assessments within an individual are to be combined. [After BEST Resource] (CDISC Glossary)|||
 ||id|String||1|||||
 ||name|String|C207492|1|Study Endpoint Name|The literal identifier (i.e., distinctive designation) of the study endpoint.||SyntaxTemplate|
-||description|String|C188824|0..1|Study Endpoint Description|A narrative representation of the study endpoint.||SyntaxTemplate|
 ||label|String|C207491|0..1|Study Endpoint Label|The short descriptive designation for the study endpoint.||SyntaxTemplate|
+||description|String|C188824|0..1|Study Endpoint Description|A narrative representation of the study endpoint.||SyntaxTemplate|
 ||text|String|C207493|1|Study Endpoint Text|An instance of structured text that represents the study endpoint.||SyntaxTemplate|
 ||notes|CommentAnnotation|CNEW|0..*|Endpoint Notes|A brief written record relevant to the study endpoint.||SyntaxTemplate|
 ||dictionary|SyntaxTemplateDictionary||0..1||A USDM relationship between the Endpoint and SyntaxTemplateDictionary classes which provides the set of dictionary entries related to study endpoints.||SyntaxTemplate|
@@ -215,8 +215,8 @@
 ||id|String||1|||||
 ||populationSummary|String|C188853|1|Population-Level Summary|A synopsis of the clinical endpoint of interest within the analysis target study population.|||
 ||name|String|CNEW|1|Estimand Name|The literal identifier (i.e., distinctive designation) of the estimand.|||
-||description|String|CNEW|0..1|Estimand Description|A narrative representation of the estimand.|||
 ||label|String|CNEW|0..1|Estimand Label|The short descriptive designation for the estimand.|||
+||description|String|CNEW|0..1|Estimand Description|A narrative representation of the estimand.|||
 ||notes|CommentAnnotation|CNEW|0..*|Estimand Notes|A brief written record relevant to the study estimand.|||
 ||analysisPopulation|AnalysisPopulation||1||A USDM relationship between the Estimand and AnalysisPopulation classes which provides the details associated with an instance of the analysis population used to partially define a study estimand.|||
 ||variableOfInterest|Endpoint||1||A USDM relationship between the Estimand and Endpoint classes which provides the details associated with an instance of the variable of interest within a study endpoint used to partially define a study estimand.|||
@@ -229,8 +229,8 @@
 |GovernanceDate|||C207595||Study Governance Date|Any of the dates associated with event milestones within a clinical study's oversight and management framework.|||
 ||id|String||1|||||
 ||name|String|C207499|1|Study Governance Date Name|The literal identifier (i.e., distinctive designation) of the study governance date|||
-||description|String|C207497|0..1|Study Governance Date Description|A narrative representation of the study governance date.|||
 ||label|String|C207498|0..1|Study Governance Date Label|The short descriptive designation for the study governance date.|||
+||description|String|C207497|0..1|Study Governance Date Description|A narrative representation of the study governance date.|||
 ||type|Code|C207496|1|Study Governance Date Type|A characterization or classification of the study governance date.|C207413||
 ||dateValue|Date|C207500|1|Study Governance Date Value|The information contained in the date field.|||
 ||geographicScopes|GeographicScope||1..*||A USDM relationship between the GovernanceDate and GeographicScope classes which identifies the set of geographic scopes associated with the governance date.|||
@@ -241,8 +241,8 @@
 |Indication|||C41184||Disease/Condition Indication|The disease or condition the intervention will diagnose, treat, prevent, cure, or mitigate.|||
 ||id|String||1|||||
 ||name|String|C207503|1|Disease/Condition Indication Name|The literal identifier (i.e., distinctive designation) of the disease/condition indication.|||
-||description|String|C112038|0..1|Disease/Condition Indication Description|A narrative representation of the condition, disease or disorder that the clinical trial is intended to investigate or address.|||
 ||label|String|C207502|0..1|Disease/Condition Indication Label|The short descriptive designation for the disease/condition indication.|||
+||description|String|C112038|0..1|Disease/Condition Indication Description|A narrative representation of the condition, disease or disorder that the clinical trial is intended to investigate or address.|||
 ||isRareDisease|Boolean|C207501|1|Disease/Condition Indication Is Rare Disease Indicator|An indication as to whether the disease/condition indication under study is considered a rare disease.|||
 ||codes|Code|C188822|0..*|Disease/Condition Indication Code|A short sequence of characters that represents the disease/condition indication.|Point out to multiple Biomedical coding dictionaries such as SNOMEDCT (for FDA), MedDRA, NCIt, ICD's, etc.||
 ||notes|CommentAnnotation|CNEW|0..*|Indication Notes|A brief written record relevant to the disease/condition indication.|||
@@ -253,8 +253,8 @@
 |IntercurrentEvent|||C188815||Intercurrent Event|An event(s) occurring after treatment initiation that affects either the interpretation or the existence of the measurements associated with the clinical question of interest. (ICH E9 Addendum on Estimands)|||
 ||id|String||1|||||
 ||name|String|C188855|1|Intercurrent Event Name|The literal identifier (i.e., distinctive designation) of the intercurrent event.||SyntaxTemplate|
-||description|String|C188856|0..1|Intercurrent Event Description|A narrative representation of the intercurrent event.||SyntaxTemplate|
 ||label|String|C207504|0..1|Intercurrent Event Label|The short descriptive designation for the intercurrent event.||SyntaxTemplate|
+||description|String|C188856|0..1|Intercurrent Event Description|A narrative representation of the intercurrent event.||SyntaxTemplate|
 ||text|String|CNEW|1|Intercurrent Event Text|An instance of structured text that represents the intercurrent event.||SyntaxTemplate|
 ||notes|CommentAnnotation|CNEW|0..*|Intercurrent Event Notes|A brief written record relevant to the intercurrent event.||SyntaxTemplate|
 ||dictionary|SyntaxTemplateDictionary||0..1||A USDM relationship between the IntercurrentEvent and SyntaxTemplateDictionary classes which provides the set of dictionary entries related to the intercurrent event. ||SyntaxTemplate|
@@ -262,8 +262,8 @@
 |InterventionalStudyDesign|||CNEW||Interventional Study Design|The strategy that specifies the structure of an interventional trial in terms of the planned activities (including timing) and statistical analysis approach intended to meet the objectives of the study.|||
 ||id|String||1|||||
 ||name|String|CNEW|1|Interventional Study Design Name|The literal identifier (i.e., distinctive designation) of the interventional study design.||StudyDesign|
-||description|String|CNEW|0..1|Interventional Study Design Description|A narrative representation of the interventional study design.||StudyDesign|
 ||label|String|CNEW|0..1|Interventional Study Design Label|The short descriptive designation for the interventional study design.||StudyDesign|
+||description|String|CNEW|0..1|Interventional Study Design Description|A narrative representation of the interventional study design.||StudyDesign|
 ||rationale|String|CNEW|1|Interventional Study Design Rationale|Reason(s) for choosing the interventional study design. This may include reasons for the choice of control or comparator, as well as the scientific rationale for the study design.||StudyDesign|
 ||therapeuticAreas|Code|CNEW|0..*|Interventional Study Design Therapeutic Areas|A categorization of a disease, disorder, or other condition based on common characteristics and often associated with a medical specialty focusing on research and development of specific therapeutic interventions for the purpose of treatment and prevention, which is associated with the interventional study design.|Point out to external dictionaries|StudyDesign|
 ||studyType|Code|CNEW|0..1|Interventional Study Design Study Type|The study type associated with the interventional study design.|SDTM Terminology Codelist C99077|StudyDesign|
@@ -295,8 +295,8 @@
 |MedicalDevice|||C16830||Medical Device|Any instrument, apparatus, implement, machine, appliance, implant, reagent for in vitro use, software, material or other similar or related article, intended by the manufacturer to be used, alone or in combination for, one or more specific medical purpose(s). [After REGULATION (EU) 2017/745 OF THE EUROPEAN PARLIAMENT AND OF THE COUNCIL of 5 April 2017 on medical devices]|||
 ||id|String||1|||||
 ||name|String|CNEW|1|Medical Device Name|The literal identifier (i.e., distinctive designation) of the medical device.|||
-||description|String|CNEW|0..1|Medical Device Description|A narrative representation of the medical device.|||
 ||label|String|CNEW|0..1|Medical Device Label|The short descriptive designation for the medical device.|||
+||description|String|CNEW|0..1|Medical Device Description|A narrative representation of the medical device.|||
 ||hardwareVersion|String|CNEW|0..1|Hardware Version|A form or variant of hardware; one of a sequence of copies of the physical components from which a computer is constructed, each incorporating new modifications.|||
 ||softwareVersion|String|C111093|0..1|Software Version|A form or variant of software; one of a sequence of copies of a software program, each incorporating new modifications. (NCI)|||
 ||sourcing|Code|CNEW|0..1|Medical Device Sourcing|An indication as to whether the medical device is obtained from a local or central source.|CNEW - Product Sourcing Value Set||
@@ -326,8 +326,8 @@
 |Objective|||C142450||Study Objective|The reason for performing a study in terms of the scientific questions to be answered by the analysis of data collected during the study.|||
 ||id|String||1|||||
 ||name|String|C207512|1|Study Objective Name|The literal identifier (i.e., distinctive designation) of the study objective.||SyntaxTemplate|
-||description|String|C94090|0..1|Study Objective Description|A narrative representation of the study objective. (BRIDG)||SyntaxTemplate|
 ||label|String|C207511|0..1|Study Objective Label|The short descriptive designation for the study objective.||SyntaxTemplate|
+||description|String|C94090|0..1|Study Objective Description|A narrative representation of the study objective. (BRIDG)||SyntaxTemplate|
 ||text|String|C207513|1|Study Objective Text|An instance of structured text that represents the study objective.||SyntaxTemplate|
 ||notes|CommentAnnotation|CNEW|0..*|Objective Notes|A brief written record relevant to the study objective.||SyntaxTemplate|
 ||dictionary|SyntaxTemplateDictionary||0..1||A USDM relationship between the Objective and SyntaxTemplateDictionary classes which provides the set of dictionary entries related to study objectives.||SyntaxTemplate|
@@ -336,8 +336,8 @@
 |ObservationalStudyDesign|||CNEW||Observational Study Design|The strategy that specifies the structure of an observational study in terms of the planned activities (including timing) and statistical analysis approach intended to meet the objectives of the study.|||
 ||id|String||1|||||
 ||name|String|CNEW|1|Observational Study Design Name|The literal identifier (i.e., distinctive designation) of the observational study design.||StudyDesign|
-||description|String|CNEW|0..1|Observational Study Design Description|A narrative representation of the observational study design.||StudyDesign|
 ||label|String|CNEW|0..1|Observational Study Design Label|The short descriptive designation for the observational study design.||StudyDesign|
+||description|String|CNEW|0..1|Observational Study Design Description|A narrative representation of the observational study design.||StudyDesign|
 ||rationale|String|CNEW|1|Observational Study Design Rationale|Reason(s) for choosing the observational study design. This may include reasons for the choice of control or comparator, as well as the scientific rationale for the study design.||StudyDesign|
 ||therapeuticAreas|Code|CNEW|0..*|Observational Study Design Therapeutic Areas|A categorization of a disease, disorder, or other condition based on common characteristics and often associated with a medical specialty focusing on research and development of specific therapeutic interventions for the purpose of treatment and prevention, which is associated with the observational study design.|Point out to external dictionaries|StudyDesign|
 ||studyType|Code|CNEW|0..1|Observational Study Design Study Type|The study type associated with the observational study design.|SDTM Terminology Codelist C99077|StudyDesign|
@@ -378,22 +378,20 @@
 |PopulationDefinition|||C207593||Population Definition|A concise explanation of the meaning of a population.|||
 ||id|String||1|||||
 ||name|String|C207520|1|Population Definition Name|The literal identifier (i.e., distinctive designation) of the population definition.|||
-||description|String|C207517|0..1|Population Definition Description|A narrative representation of the population definition.|||
 ||label|String|C207519|0..1|Population Definition Label|The short descriptive designation for the population definition.|||
+||description|String|C207517|0..1|Population Definition Description|A narrative representation of the population definition.|||
 ||plannedSex|Code|C207523|0..2|Population Definition Planned Sex|The protocol-defined sex within the population definition.|SDTM Terminology Codelist C66732||
 ||includesHealthySubjects|Boolean|C207518|1|Population Definition Includes Healthy Subjects Indicator|An indication as to whether the population definition includes healthy subjects, that is, subjects without the disease or condition under study.|||
 ||plannedAge|Range|C207701|0..1|Population Definition Planned Age|The anticipated age of subjects within the population definition.|||
-||plannedCompletionNumberRange|Range|CNEW|0..1|Population Definition Planned Completion Number Range|The range of values representing the planned number of subjects that must complete the study in order to meet the objectives and endpoints of the study, within the population definition.|||
-||plannedCompletionNumberQuantity|Quantity|CNEW|0..1|Population Definition Planned Completion Number Quantity|The value representing the planned number of subjects that must complete the study in order to meet the objectives and endpoints of the study, within the population definition.|||
-||plannedEnrollmentNumberRange|Range|CNEW|0..1|Population Definition Planned Enrollment Number Range|The range of values representing the planned number of subjects to be entered in a clinical trial, within the population definition.|||
-||plannedEnrollmentNumberQuantity|Quantity|CNEW|0..1|Population Definition Planned Enrollment Number Quantity|The value representing the planned number of subjects to be entered in a clinical trial, within the population definition.|||
+||plannedCompletionNumber|QuantityRange||0..1|||||
+||plannedEnrollmentNumber|QuantityRange||0..1|||||
 ||notes|CommentAnnotation|CNEW|0..*|Population Definition Notes|A brief written record relevant to the population definition.|||
 ||criteria|EligibilityCriterion||0..*||A USDM relationship between the PopulationDefinition and EligibilityCriterion classes which identifies the set of eligibility criteria associated with the population definition.|||
 |Procedure|||C98769||Procedure|Any activity performed by manual and/or instrumental means for the purpose of diagnosis, assessment, therapy, prevention, or palliative care.|||
 ||id|String||1|||||
 ||name|String|C201325|1|Procedure Name|The literal identifier (i.e., distinctive designation) of the procedure.|||
-||description|String|C201324|0..1|Procedure Description|A narrative representation of the procedure.|||
 ||label|String|C207524|0..1|Procedure Label|The short descriptive designation for the procedure.|||
+||description|String|C201324|0..1|Procedure Description|A narrative representation of the procedure.|||
 ||procedureType|String|C188848|1|Procedure Type|A characterization or classification of the study procedure.|||
 ||code|Code|C154626|1|Procedure Code|A symbol or combination of symbols which is assigned to medical procedure.|Point out to external dictionary like CPT, MedDRA, SNOMEDCT, etc.||
 ||notes|CommentAnnotation|CNEW|0..*|Procedure Notes|A brief written record relevant to the procedure.|||
@@ -401,15 +399,19 @@
 |ProductOrganizationRole|||CNEW||Product Organization Role|A designation that identifies the function of an organization within the context of the product.|||
 ||id|String||1|||||
 ||name|String|CNEW|1|Product Organization Role Name|The literal identifier (i.e., distinctive designation) of the product organization role.|||
-||description|String|CNEW|0..1|Product Organization Role Description|A narrative representation of the product organization role.|||
 ||label|String|CNEW|0..1|Product Organization Role Label|The short descriptive designation for the product organization role.|||
+||description|String|CNEW|0..1|Product Organization Role Description|A narrative representation of the product organization role.|||
 ||code|Code|CNEW|1|Product Organization Role Code|A symbol or combination of symbols which is assigned to the product organization role.|||
-||appliesTo|MedicalDevice, AdministrableProduct||0..*||A USDM relationship between the ProductOrganizationRole and either the AdministrableProduct or MedicalDevice class that identifies the administrable product or medical device to which the product organization role applies.|||
+||appliesTo|AdministrableProduct, MedicalDevice||0..*||A USDM relationship between the ProductOrganizationRole and either the AdministrableProduct or MedicalDevice class that identifies the administrable product or medical device to which the product organization role applies.|||
 ||organization|Organization||1||A USDM relationship between the ProductOrganizationRole and Organization classes which identifies the organization associated with the product organization role.|||
 |Quantity|||C25256||Quantity|How much there is of something that can be measured; the total amount or number.|||
 ||id|String||1|||||
 ||value|Float|C25712|1|Quantity Value|A numerical quantity measured or assigned or computed.|||
 ||unit|AliasCode|C44258|0..1|Quantity Unit|The type of unit of measure being used to express a quantity.|SDTM Terminology Codelist C71620||
+|QuantityRange|||||||||
+||id|String||1|||||
+||quantity|Quantity||1|||||
+||range|Range||1|||||
 |Range|||C38013||Range|The difference between the lowest and highest numerical values; the limits or scale of variation.|||
 ||id|String||1|||||
 ||minValue|Quantity|C25570|1|Minimum Value|The smallest value in quantity or degree in a set of values.|||
@@ -422,13 +424,15 @@
 ||type|Code|CNEW|1|Reference Identifier Type|A characterization or classification of the reference identifier.|CNEW Reference Identifier Type||
 |ResponseCode|||C201347||Response Code|A symbol or combination of symbols representing the response to the question.|||
 ||id|String||1|||||
+||name|String||1|||||
+||label|String||1|||||
 ||isEnabled|Boolean|C201330|1|Response Code Enabled Indicator|An indication as to whether the response code is activated for use within a given usage context.|||
 ||code|Code|CNEW|1|Response Code Value|The literal value of a response code.|||
 |ScheduleTimeline|||C201348||Schedule Timeline|A chronological schedule of planned temporal events.|||
 ||id|String||1|||||
 ||name|String|C201334|1|Schedule Timeline Name|The literal identifier (i.e., distinctive designation) of the schedule timeline.|||
-||description|String|C201332|0..1|Schedule Timeline Description|A narrative representation of the schedule timeline.|||
 ||label|String|C207530|0..1|Schedule Timeline Label|The short descriptive designation for the schedule timeline.|||
+||description|String|C201332|0..1|Schedule Timeline Description|A narrative representation of the schedule timeline.|||
 ||entryCondition|String|C201333|1|Schedule Timeline Entry Condition|A logical evaluation on which rests the validity of entry into a schedule timeline.|||
 ||mainTimeline|Boolean|C201331|1|Main Timeline Indicator|An indication as to whether the timeline or timeline component is part of the central or principal timeline.|||
 ||instances|ScheduledInstance||0..*||A USDM relationship between the ScheduleTimeline and ScheduledInstance classes which identifies the set of scheduled instances (e.g., scheduled activity instances or scheduled decision instances) associated with the scheduled timeline.|||
@@ -440,8 +444,8 @@
 |ScheduledActivityInstance|||C201350||Scheduled Activity Instance|A scheduled occurrence of an activity event.|||
 ||id|String||1|||||
 ||name|String|C207533|1|Scheduled Activity Instance Name|The literal identifier (i.e., distinctive designation) of the scheduled activity instance.||ScheduledInstance|
-||description|String|C207531|0..1|Scheduled Activity Instance Description|A narrative representation of the scheduled activity instance.||ScheduledInstance|
 ||label|String|C207532|0..1|Scheduled Activity Instance Label|The short descriptive designation for the scheduled activity instance.||ScheduledInstance|
+||description|String|C207531|0..1|Scheduled Activity Instance Description|A narrative representation of the scheduled activity instance.||ScheduledInstance|
 ||defaultCondition|ScheduledInstance||0..1||A USDM relationship within the ScheduledActivityInstance class which identifies the default condition within a scheduled activity instance.||ScheduledInstance|
 ||epoch|StudyEpoch||0..1||A USDM relationship between the ScheduledActivityInstance and StudyEpoch classes which identifies the study epoch associated with a scheduled activity instance.||ScheduledInstance|
 ||activities|Activity||0..*||A USDM relationship between the ScheduledActivityInstance and Activity classes which identifies the set of activities associated with a scheduled activity instance.|||
@@ -451,35 +455,37 @@
 |ScheduledDecisionInstance|||C201351||Scheduled Decision Instance|A scheduled occurrence of a decision event.|||
 ||id|String||1|||||
 ||name|String|C207536|1|Scheduled Decision Instance Name|The literal identifier (i.e., distinctive designation) of the scheduled Decision instance.||ScheduledInstance|
-||description|String|C207534|0..1|Scheduled Decision Instance Description|A narrative representation of the scheduled Decision instance.||ScheduledInstance|
 ||label|String|C207535|0..1|Scheduled Decision Instance Label|The short descriptive designation for the scheduled Decision instance.||ScheduledInstance|
+||description|String|C207534|0..1|Scheduled Decision Instance Description|A narrative representation of the scheduled Decision instance.||ScheduledInstance|
 ||defaultCondition|ScheduledInstance||0..1||A USDM relationship within the ScheduledDecisionInstance class which identifies the default condition within a scheduled decision instance.||ScheduledInstance|
 ||epoch|StudyEpoch||0..1||A USDM relationship between the ScheduledDecisionInstance and StudyEpoch classes which identifies the study epoch associated with a scheduled decision instance.||ScheduledInstance|
 ||conditionAssignments|ConditionAssignment||1..*||A USDM relationship between the ScheduledDecisionInstance and ConditionAssignment classes which identifies the set of condition assignments associated with a scheduled decision instance.|||
 |ScheduledInstance|||C201299||Scheduled Instance|A scheduled occurrence of a temporal event.|||
 ||id|String||1|||||
 ||name|String|C207455|1|Scheduled Instance Name|The literal identifier (i.e., distinctive designation) of the scheduled instance.|||
-||description|String|C207453|0..1|Scheduled Instance Description|A narrative representation of the scheduled instance.|||
 ||label|String|C207454|0..1|Scheduled Instance Label|The short descriptive designation for the scheduled instance.|||
+||description|String|C207453|0..1|Scheduled Instance Description|A narrative representation of the scheduled instance.|||
 ||defaultCondition|ScheduledInstance||0..1||A USDM relationship within the ScheduledInstance class which identifies the default condition within a scheduled instance.|||
 ||epoch|StudyEpoch||0..1||A USDM relationship between the ScheduledInstance and StudyEpoch classes which identifies the study epoch associated with a scheduled instance.|||
 |Strength|||CNEW||Substance Strength|The content of an substance expressed quantitatively per dosage unit, per unit of volume, or per unit of weight, according to the pharmaceutical dose form of the product.|||
 ||id|String||1|||||
 ||name|String|CNEW|1|Substance Strength Name|The literal identifier (i.e., distinctive designation) of the substance strength.|||
-||description|String|CNEW|0..1|Substance Strength Description|A narrative representation of the substance strength.|||
 ||label|String|CNEW|0..1|Substance Strength Label|The short descriptive designation for the substance strength.|||
-||numeratorRange|Range|CNEW|0..1|Substance Strength Numerator Range|The lowest and highest numerical values that define a range for the substance strength.|||
-||numeratorQuantity|Quantity|CNEW|0..1|Substance Strength Numerator Quantity|The value representing the numerator for the substance strength.|||
+||description|String|CNEW|0..1|Substance Strength Description|A narrative representation of the substance strength.|||
+||numerator|QuantityRange||0..1|||||
 ||denominator|Quantity|C80489|0..1|Denominator|The divisor of a fraction.|||
 |Study|||C15206||Clinical Study|A clinical study involves research using human volunteers (also called participants) that is intended to add to medical knowledge. There are two main types of clinical studies: clinical trials (also called interventional studies) and observational studies. (CDISC Glossary)|||
 ||id|String||1|||||
 ||name|String|C68631|1|Clinical Study Name|The literal identifier (i.e., distinctive designation) of the clinical study.|||
-||description|String|C142704|0..1|Clinical Study Description|A narrative representation of the clinical study.|||
 ||label|String|C207479|0..1|Clinical Study Label|The short descriptive designation for the clinical study.|||
+||description|String|C142704|0..1|Clinical Study Description|A narrative representation of the clinical study.|||
 ||versions|StudyVersion||0..*||A USDM relationship between the Study and StudyVersion classes which identifies the set of versions associated with the study.|||
 ||documentedBy|StudyDefinitionDocument||0..*||A USDM relationship between the Study and StudyDefinitionDocument classes signifying that the study is documented in a study definition document.|||
 |StudyAmendment|||C207594||Study Amendment|A written description of a change(s) to, or formal clarification of, a study.|||
 ||id|String||1|||||
+||name|String||1|||||
+||label|String||1|||||
+||description|String||1|||||
 ||number|String|C207537|1|Study Amendment Number|A string of numerals that uniquely identifies a protocol amendment.|||
 ||notes|CommentAnnotation|CNEW|0..*|Study Amendment Notes|A brief written record relevant to the study amendment.|||
 ||summary|String|C115627|1|Study Amendment Summary|A short narrative representation describing the changes introduced in the current version of the protocol.|||
@@ -504,8 +510,8 @@
 |StudyArm|||C174447||Study Arm|A planned pathway assigned to the subject as they progress through the study, usually referred to by a name that reflects one or more treatments, exposures, and/or controls included in the path.|||
 ||id|String||1|||||
 ||name|String|C170984|1|Study Arm Name|The literal identifier (i.e., distinctive designation) of the study arm.|||
-||description|String|C93728|0..1|Study Arm Description|A narrative representation of the study arm.|||
 ||label|String|C172456|0..1|Study Arm Label|The short descriptive designation for the study arm.|||
+||description|String|C93728|0..1|Study Arm Description|A narrative representation of the study arm.|||
 ||type|Code|C172457|1|Study Arm Type|A characterization or classification of the study arm.|Protocol Terminology Codelist C174222||
 ||dataOriginType|Code|C188829|1|Study Arm Data Origin Type|A characterization or classification of the study arm with respect to where the study arm data originates.|C188727||
 ||dataOriginDescription|String|C188828|1|Study Arm Data Origin Description|The textual representation of the study arm data origin.|||
@@ -519,23 +525,21 @@
 |StudyChange|||CNEW||Study Change|The act of alteration or modification to a study.|||
 ||id|String||1|||||
 ||name|String|CNEW|1|Study Change Name|The literal identifier (i.e., distinctive designation) of the study change.|||
-||description|String|CNEW|0..1|Study Change Description|A narrative representation of the study change.|||
 ||label|String|CNEW|0..1|Study Change Label|The short descriptive designation for the study change.|||
+||description|String|CNEW|0..1|Study Change Description|A narrative representation of the study change.|||
 ||rationale|String|CNEW|1|Study Change Rationale|An explanation as to the logical reasons for why a study change has occurred.|||
 ||summary|String|CNEW|1|Study Change Summary|A short narrative representation describing the changes introduced in the current version of the study.|||
 ||changedSections|DocumentContentReference||1..*||A USDM relationship between the StudyChange and DocumentContentReference class which provides the set of changed document sections related to the study change.|||
 |StudyCohort|||C61512||Study Cohort|A group of individuals who share a set of characteristics (e.g., exposures, experiences, attributes), which logically defines a population under study.|||
 ||id|String||1|||||
 ||name|String|C207544|1|Study Cohort Name|The literal identifier (i.e., distinctive designation) of the study cohort.||PopulationDefinition|
-||description|String|C207542|0..1|Study Cohort Description|A narrative representation of the study cohort.||PopulationDefinition|
 ||label|String|C207543|0..1|Study Cohort Label|The short descriptive designation for the study cohort.||PopulationDefinition|
+||description|String|C207542|0..1|Study Cohort Description|A narrative representation of the study cohort.||PopulationDefinition|
 ||plannedSex|Code|C207541|0..2|Study Cohort Planned Sex|The protocol-defined sex within the study cohort.|SDTM Terminology Codelist C66732|PopulationDefinition|
 ||includesHealthySubjects|Boolean|C207480|1|Study Cohort Includes Healthy Subjects Indicator|An indication as to whether the study cohort includes healthy subjects, that is, subjects without the disease or condition under study.||PopulationDefinition|
 ||plannedAge|Range|C207545|0..1|Study Cohort Planned Age|The anticipated age of subjects within the study cohort.||PopulationDefinition|
-||plannedCompletionNumberRange|Range|CNEW|0..1|Study Cohort Planned Completion Number Range|The range of values representing the planned number of subjects that must complete the study in order to meet the objectives and endpoints of the study, within the study cohort.||PopulationDefinition|
-||plannedCompletionNumberQuantity|Quantity|CNEW|0..1|Study Cohort Planned Completion Number Quantity|The value representing the planned number of subjects that must complete the study in order to meet the objectives and endpoints of the study, within the study cohort.||PopulationDefinition|
-||plannedEnrollmentNumberRange|Range|CNEW|0..1|Study Cohort Planned Enrollment Number Range|The range of values representing the planned number of subjects to be entered in a clinical trial, within the study cohort.||PopulationDefinition|
-||plannedEnrollmentNumberQuantity|Quantity|CNEW|0..1|Study Cohort Planned Enrollment Number Quantity|The value representing the planned number of subjects to be entered in a clinical trial, within the study cohort.||PopulationDefinition|
+||plannedCompletionNumber|QuantityRange||0..1|||||
+||plannedEnrollmentNumber|QuantityRange||0..1|||||
 ||notes|CommentAnnotation|CNEW|0..*|Study Cohort Notes|A brief written record relevant to the study cohort.||PopulationDefinition|
 ||criteria|EligibilityCriterion||0..*||A USDM relationship between the StudyCohort and EligibilityCriterion classes which identifies the set of eligibility criteria associated with the study cohort.||PopulationDefinition|
 ||characteristics|Characteristic||0..*||A USDM relationship between the StudyCohort and Characteristic classes which identifies the set of subject characteristics associated with the study cohort.|||
@@ -543,8 +547,8 @@
 |StudyDefinitionDocument|||CNEW||Study Definition Document|Any physical or electronic document that is related to defining a study or part of a study.|||
 ||id|String||1|||||
 ||name|String|CNEW|1|Study Definition Document Name|The literal identifier (i.e., distinctive designation) of the study definition document.|||
-||description|String|CNEW|0..1|Study Definition Document Description|A narrative representation of the study definition document.|||
 ||label|String|CNEW|0..1|Study Definition Document Label|The short descriptive designation for the study definition document.|||
+||description|String|CNEW|0..1|Study Definition Document Description|A narrative representation of the study definition document.|||
 ||type|Code|CNEW|1|Study Definition Document Type|A characterization or classification of the study definition document.|CNEW Study Definition Document Type||
 ||templateName|String|CNEW|1|Study Definition Document Template Name|The literal identifier (i.e., distinctive designation) of the study definition document template.|||
 ||language|Code|CNEW|1|Study Definition Document Language|The language in which the study definition document is written.|Point out to ISO 639 language value list||
@@ -561,8 +565,8 @@
 |StudyDesign|||C15320||Study Design|A plan detailing how a study will be performed in order to represent the phenomenon under examination, to answer the research questions that have been asked, and informing the statistical approach.|||
 ||id|String||1|||||
 ||name|String|C201338|1|Study Design Name|The literal identifier (i.e., distinctive designation) of the study design.|||
-||description|String|C147139|0..1|Study Design Description|A narrative representation of the study design.|||
 ||label|String|C207548|0..1|Study Design Label|The short descriptive designation for the study design.|||
+||description|String|C147139|0..1|Study Design Description|A narrative representation of the study design.|||
 ||rationale|String|C142705|1|Study Design Rationale|Reason(s) for choosing the study design. This may include reasons for the choice of control or comparator, as well as the scientific rationale for the study design.|||
 ||therapeuticAreas|Code|C101302|0..*|Therapeutic Areas|A categorization of a disease, disorder, or other condition based on common characteristics and often associated with a medical specialty focusing on research and development of specific therapeutic interventions for the purpose of treatment and prevention.|Point out to external dictionaries||
 ||studyType|Code|C142175|0..1|Study Type|The nature of the investigation for which study information is being collected. (After clinicaltrials.gov)|SDTM Terminology Codelist C99077||
@@ -586,23 +590,21 @@
 |StudyDesignPopulation|||C142728||Study Design Population|The population within the general population to which the study results can be generalized.|||
 ||id|String||1|||||
 ||name|String|C207553|1|Study Design Population Name|The literal identifier (i.e., distinctive designation) of the study design population.||PopulationDefinition|
-||description|String|C70834|0..1|Study Design Population Description|A narrative representation of the study design population.||PopulationDefinition|
 ||label|String|C207550|0..1|Study Design Population Label|The short descriptive designation for the study design population.||PopulationDefinition|
+||description|String|C70834|0..1|Study Design Population Description|A narrative representation of the study design population.||PopulationDefinition|
 ||plannedSex|Code|C207551|0..2|Study Design Population Planned Sex|The protocol-defined sex within the study design population.|SDTM Terminology Codelist C66732|PopulationDefinition|
 ||includesHealthySubjects|Boolean|C207549|1|Study Design Population Includes Healthy Subjects Indicator|An indication as to whether the study design population includes healthy subjects, that is, subjects without the disease or condition under study.||PopulationDefinition|
 ||plannedAge|Range|C207450|0..1|Study Design Population Planned Age|The anticipated age of subjects within the study design population.||PopulationDefinition|
-||plannedCompletionNumberRange|Range|CNEW|0..1|Study Design Population Planned Completion Number Range|The range of values representing the planned number of subjects that must complete the study in order to meet the objectives and endpoints of the study, within the study design population.||PopulationDefinition|
-||plannedCompletionNumberQuantity|Quantity|CNEW|0..1|Study Design Population Planned Completion Number Quantity|The value representing the planned number of subjects that must complete the study in order to meet the objectives and endpoints of the study, within the study design population.||PopulationDefinition|
-||plannedEnrollmentNumberRange|Range|CNEW|0..1|Study Design Population Planned Enrollment Number Range|The range of values representing the planned number of subjects to be entered in a clinical trial, within the study design population.||PopulationDefinition|
-||plannedEnrollmentNumberQuantity|Quantity|CNEW|0..1|Study Design Population Planned Enrollment Number Quantity|The value representing the planned number of subjects to be entered in a clinical trial, within the study design population.||PopulationDefinition|
+||plannedCompletionNumber|QuantityRange||0..1|||||
+||plannedEnrollmentNumber|QuantityRange||0..1|||||
 ||notes|CommentAnnotation|CNEW|0..*|Study Design Population Notes|A brief written record relevant to the study design population.||PopulationDefinition|
 ||criteria|EligibilityCriterion||0..*||A USDM relationship between the StudyDesignPopulation and EligibilityCriterion classes which identifies the set of eligibility criteria associated with the study design population.||PopulationDefinition|
 ||cohorts|StudyCohort||0..*||A USDM relationship between the StudyDesignPopulation and StudyCohort classes which identifies the set of study cohorts associated with the study design population.|||
 |StudyElement|||C142735||Study Design Element|A basic building block for time within a clinical study comprising the following characteristics: a description of what happens to the subject during the element; a definition of the start of the element; a rule for ending the element.|||
 ||id|String||1|||||
 ||name|String|C188833|1|Study Design Element Name|The literal identifier (i.e., distinctive designation) of the study design element.|||
-||description|String|C188834|0..1|Study Design Element Description|A narrative representation of the study design element.|||
 ||label|String|C207554|0..1|Study Design Element Label|The short descriptive designation for the study design element.|||
+||description|String|C188834|0..1|Study Design Element Description|A narrative representation of the study design element.|||
 ||notes|CommentAnnotation|CNEW|0..*|Study Element Notes|A brief written record relevant to the study element.|||
 ||transitionEndRule|TransitionRule||0..1||A USDM relationship between the StudyElement and TransitionRule classes which provides the details associated with a transition rule used to trigger the end of a study element.|||
 ||studyInterventions|StudyIntervention||0..*||A USDM relationship between the StudyElement and StudyIntervention classes which identifies the set of study interventions associated with the study element.|||
@@ -610,8 +612,8 @@
 |StudyEpoch|||C71738||Study Epoch|A named time period defined in the protocol, wherein a study activity is specified and unchanging throughout the interval, to support a study-specific purpose.|||
 ||id|String||1|||||
 ||name|String|C93825|1|Study Epoch Name|The literal identifier (i.e., distinctive designation) of the study epoch, i.e., the named time period defined in the protocol, wherein a study activity is specified and unchanging throughout the interval, to support a study-specific purpose.|||
-||description|String|C93824|0..1|Study Epoch Description|A narrative representation of the study epoch.|||
 ||label|String|C207555|0..1|Study Epoch Label|The short descriptive designation for the study epoch.|||
+||description|String|C93824|0..1|Study Epoch Description|A narrative representation of the study epoch.|||
 ||type|Code|C188830|1|Study Epoch Type|A characterization or classification of the study epoch, i.e., the named time period defined in the protocol, wherein a study activity is specified and unchanging throughout the interval, to support a study-specific purpose.|SDTM Terminology Codelist C99079||
 ||notes|CommentAnnotation|CNEW|0..*|Study Epoch Notes|A brief written record relevant to the study epoch.|||
 ||previous|StudyEpoch||0..1||A USDM relationship within the StudyEpoch class which identifies the study epoch that chronologically precedes the current study epoch.|||
@@ -622,9 +624,9 @@
 ||scope|Organization||1||A USDM relationship between the StudyIdentifier and Organization classes which provides the details associated with each organization that has assigned the study identifier.||Identifier|
 |StudyIntervention|||C207649||Study Intervention|Any agent, device, or procedure being tested or used as a reference or comparator in the conduct of a clinical trial.|||
 ||id|String||1|||||
-||description|String|C207647|0..1|Study Intervention Description|A narrative representation of the study intervention.|||
 ||name|String|C207558|1|Study Intervention Name|The literal identifier (i.e., distinctive designation) of the study intervention.|||
 ||label|String|C207556|0..1|Study Intervention Label|The short descriptive designation for the study intervention.|||
+||description|String|C207647|0..1|Study Intervention Description|A narrative representation of the study intervention.|||
 ||role|Code|C207560|1|Study Intervention Role|The intended use of the trial intervention within the context of the study design.|C207417||
 ||type|Code|C98747|1|Study Intervention Type|The kind of product or procedure studied in a trial.|SDTM Terminology Codelist C99078||
 ||codes|Code|C207648|0..*|Study Intervention Code|A symbol or combination of symbols which is assigned to the study intervention.|Point out to multiple Biomedical coding dictionaries such as WHODrug, ATC, UNII, etc.||
@@ -644,8 +646,8 @@
 |StudySite|||C80403||Study Site|The location at which a study investigator conducts study activities.|||
 ||id|String||1|||||
 ||name|String|C207566|1|Study Site Name|The literal identifier (i.e., distinctive designation) of the study site.|||
-||description|String|C207564|0..1|Study Site Description|A narrative representation of the study site.|||
 ||label|String|C207565|0..1|Study Site Label|The short descriptive designation for the study site.|||
+||description|String|C207564|0..1|Study Site Description|A narrative representation of the study site.|||
 ||country|Code|C170990|1|Country of Study Site|The country in which the study site is located.|Point out to ISO 3166-1 Alpha-3 Country code||
 |StudyTitle|||C49802||Study Title|The sponsor-defined name of the clinical study.|||
 ||id|String||1|||||
@@ -668,8 +670,8 @@
 |SubjectEnrollment|||C37948||Subject Enrollment|The act of enrolling subjects into a study. The subject will have met the inclusion/exclusion criteria to participate in the trial and will have signed an informed consent form. (CDISC Glossary)|||
 ||id|String||1|||||
 ||name|String|CNEW|1|Subject Enrollment Name|The literal identifier (i.e., distinctive designation) of the subject enrollment.|||
-||description|String|CNEW|0..1|Subject Enrollment Description|A narrative representation of the subject enrollment.|||
 ||label|String|CNEW|0..1|Subject Enrollment Label|The short descriptive designation for the subject enrollment..|||
+||description|String|CNEW|0..1|Subject Enrollment Description|A narrative representation of the subject enrollment.|||
 ||quantity|Quantity|C207573|1|Subject Enrollment Quantity Value|The value representing the number of individuals enrolled in a study.|||
 ||forGeographicScope|GeographicScope||0..1||A USDM relationship between the SubjectEnrollment and GeographicScope classes which identifies the geographic scope to which the subject enrollment applies.|||
 ||forStudyCohort|StudyCohort||0..1||A USDM relationship between the SubjectEnrollment and StudyCohort classes which identifies the study cohort to which the subject enrollment applies.|||
@@ -677,30 +679,30 @@
 |Substance|||C45306||Substance|Any matter of defined composition that has discrete existence, whose origin may be biological, mineral or chemical.|||
 ||id|String||1|||||
 ||name|String|CNEW|1|Substance Name|The literal identifier (i.e., distinctive designation) of the substance.|||
-||description|String|CNEW|0..1|Substance Description|A narrative representation of the substance.|||
 ||label|String|CNEW|0..1|Substance Label|The short descriptive designation for the substance.|||
+||description|String|CNEW|0..1|Substance Description|A narrative representation of the substance.|||
 ||codes|Code|CNEW|0..*|Substance Code|A symbol or combination of symbols which is assigned to the substance.|Point out to multiple Biomedical coding dictionaries such as WHODrug, ATC, UNII, etc.||
 ||strengths|Strength||1..*||A USDM relationship between the Substance and Strength class which provides the values of the strengths of the substance.|||
 ||referenceSubstance|Substance||0..1||A USDM relationship within the Substance class that identifies the association between two substances, one of which is used as a reference for the other.|||
 |SyntaxTemplate|||C207596||Syntax Template|A standardized pattern used for the arrangement of words and phrases to create well-formed, structured sentences.|||
 ||id|String||1|||||
 ||name|String|C207577|1|Syntax Template Name|The literal identifier (i.e., distinctive designation) of the syntax template.|||
-||description|String|C207575|0..1|Syntax Template Description|A narrative representation of the syntax template.|||
 ||label|String|C207576|0..1|Syntax Template Label|The short descriptive designation for the syntax template.|||
+||description|String|C207575|0..1|Syntax Template Description|A narrative representation of the syntax template.|||
 ||text|String|C207578|1|Syntax Template Text|A structured text string containing prescribed text interspersed with user-defined parameter values.|||
 ||notes|CommentAnnotation|CNEW|0..*|Syntax Template Notes|A brief written record relevant to the syntax template.|||
 ||dictionary|SyntaxTemplateDictionary||0..1||A USDM relationship between the SyntaxTemplate and SyntaxTemplateDictionary classes which provides the dictionary entry associated with a syntax template. |||
 |SyntaxTemplateDictionary|||C207597||Syntax Template Dictionary|A reference source that provides a listing of valid parameter names and values used in syntax template text strings.|||
 ||id|String||1|||||
 ||name|String|C207581|1|Syntax Template Dictionary Name|The literal identifier (i.e., distinctive designation) of the syntax template dictionary.|||
-||description|String|C207579|0..1|Syntax Template Dictionary Description|A narrative representation of the syntax template dictionary.|||
 ||label|String|C207580|0..1|Syntax Template Dictionary Label|The short descriptive designation for the syntax template dictionary.|||
+||description|String|C207579|0..1|Syntax Template Dictionary Description|A narrative representation of the syntax template dictionary.|||
 ||parameterMaps|ParameterMap||1..*||A USDM relationship between the SyntaxTemplateDictionary and ParameterMap classes which identifies the set of parameter maps (parameter map entries) associated with a syntax template dictionary.|||
 |Timing|||C80484||Timing|The chronological relationship between temporal events.|||
 ||id|String||1|||||
 ||name|String|C207584|1|Timing Name|The literal identifier (i.e., distinctive designation) of the timing.|||
-||description|String|C164648|0..1|Timing Description|A narrative representation of the chronological relationship between temporal events.|||
 ||label|String|C207583|0..1|Timing Label|The short descriptive designation for the timing.|||
+||description|String|C164648|0..1|Timing Description|A narrative representation of the chronological relationship between temporal events.|||
 ||type|Code|C201298|1|Timing Type|A characterization or classification of the chronological relationship between temporal events.|C201264||
 ||relativeToFrom|Code|C201297|1|Timing Relative To From|The name of the reference event used to define the temporal relationship with another event.|C201265||
 ||value|String|C201341|1|Timing Value|The temporal value of the chronological relationship between temporal events.|||
@@ -713,6 +715,6 @@
 |TransitionRule|||C82567||Transition Rule|A guide that governs the allocation of subjects to operational options at a discrete decision point or branch (e.g., assignment to a particular arm, discontinuation) within a clinical trial plan.|||
 ||id|String||1|||||
 ||name|String|C207588|1|Transition Rule Name|The literal identifier (i.e., distinctive designation) of the transition rule.|||
-||description|String|C188835|0..1|Transition Rule Description|A narrative representation of the transition rule.|||
 ||label|String|C207587|0..1|Transition Rule Label|The short descriptive designation for the transition rule.|||
+||description|String|C188835|0..1|Transition Rule Description|A narrative representation of the transition rule.|||
 ||text|String|C207589|1|Transition Rule Text|An instance of unstructured text that represents the transition rule.|||
