@@ -911,16 +911,6 @@ AssignedPerson:
       Relationship Type: Value
       Model Name: name
       Model Representation: Attribute
-    description:
-      Type:
-      - $ref: '#/string'
-      NCI C-Code: CNEW
-      Preferred Term: Assigned Person Description
-      Definition: A narrative representation of the assigned person.
-      Cardinality: 0..1
-      Relationship Type: Value
-      Model Name: description
-      Model Representation: Attribute
     label:
       Type:
       - $ref: '#/string'
@@ -930,6 +920,16 @@ AssignedPerson:
       Cardinality: 0..1
       Relationship Type: Value
       Model Name: label
+      Model Representation: Attribute
+    description:
+      Type:
+      - $ref: '#/string'
+      NCI C-Code: CNEW
+      Preferred Term: Assigned Person Description
+      Definition: A narrative representation of the assigned person.
+      Cardinality: 0..1
+      Relationship Type: Value
+      Model Name: description
       Model Representation: Attribute
     jobTitle:
       Type:
@@ -1084,16 +1084,6 @@ BiomedicalConceptCategory:
       Relationship Type: Value
       Model Name: name
       Model Representation: Attribute
-    description:
-      Type:
-      - $ref: '#/string'
-      NCI C-Code: C201316
-      Preferred Term: Biomedical Concept Category Description
-      Definition: A narrative representation of the biomedical concept category.
-      Cardinality: 0..1
-      Relationship Type: Value
-      Model Name: description
-      Model Representation: Attribute
     label:
       Type:
       - $ref: '#/string'
@@ -1103,6 +1093,16 @@ BiomedicalConceptCategory:
       Cardinality: 0..1
       Relationship Type: Value
       Model Name: label
+      Model Representation: Attribute
+    description:
+      Type:
+      - $ref: '#/string'
+      NCI C-Code: C201316
+      Preferred Term: Biomedical Concept Category Description
+      Definition: A narrative representation of the biomedical concept category.
+      Cardinality: 0..1
+      Relationship Type: Value
+      Model Name: description
       Model Representation: Attribute
     code:
       Type:
@@ -1288,16 +1288,6 @@ BiomedicalConceptSurrogate:
       Relationship Type: Value
       Model Name: name
       Model Representation: Attribute
-    description:
-      Type:
-      - $ref: '#/string'
-      NCI C-Code: C201320
-      Preferred Term: Biomedical Concept Surrogate Description
-      Definition: A narrative representation of the biomedical concept surrogate.
-      Cardinality: 0..1
-      Relationship Type: Value
-      Model Name: description
-      Model Representation: Attribute
     label:
       Type:
       - $ref: '#/string'
@@ -1307,6 +1297,16 @@ BiomedicalConceptSurrogate:
       Cardinality: 0..1
       Relationship Type: Value
       Model Name: label
+      Model Representation: Attribute
+    description:
+      Type:
+      - $ref: '#/string'
+      NCI C-Code: C201320
+      Preferred Term: Biomedical Concept Surrogate Description
+      Definition: A narrative representation of the biomedical concept surrogate.
+      Cardinality: 0..1
+      Relationship Type: Value
+      Model Name: description
       Model Representation: Attribute
     reference:
       Type:
@@ -1724,10 +1724,10 @@ Condition:
       Model Representation: Relationship
     appliesToIds:
       Type:
-      - $ref: '#/BiomedicalConcept'
-      - $ref: '#/Procedure'
       - $ref: '#/BiomedicalConceptCategory'
       - $ref: '#/Activity'
+      - $ref: '#/BiomedicalConcept'
+      - $ref: '#/Procedure'
       - $ref: '#/BiomedicalConceptSurrogate'
       Definition: A USDM relationship between the Condition and the Activity, Procedure,
         BiomedicalConcept, BiomedicalConceptSurrogate, or BiomedicalConceptCategory
@@ -2458,61 +2458,85 @@ ExtensionAttribute:
       - $ref: '#/string'
       Cardinality: '1'
       Relationship Type: Value
+      Model Name: id
+      Model Representation: Attribute
     url:
       Type:
       - $ref: '#/string'
       Cardinality: '1'
       Relationship Type: Value
+      Model Name: url
+      Model Representation: Attribute
     valueString:
       Type:
       - $ref: '#/string'
       Cardinality: 0..1
       Relationship Type: Value
+      Model Name: valueString
+      Model Representation: Attribute
     valueBoolean:
       Type:
       - $ref: '#/boolean'
       Cardinality: 0..1
       Relationship Type: Value
+      Model Name: valueBoolean
+      Model Representation: Attribute
     valueInteger:
       Type:
       - $ref: '#/integer'
       Cardinality: 0..1
       Relationship Type: Value
+      Model Name: valueInteger
+      Model Representation: Attribute
     valueId:
       Type:
       - $ref: '#/string'
       Cardinality: 0..1
       Relationship Type: Value
-    valueQuantity:
-      Type:
-      - $ref: '#/Quantity'
-      Cardinality: 0..1
-      Relationship Type: Value
+      Model Name: valueId
+      Model Representation: Attribute
     valueRange:
       Type:
       - $ref: '#/Range'
       Cardinality: 0..1
       Relationship Type: Value
+      Model Name: valueRange
+      Model Representation: Attribute
     valueCode:
       Type:
       - $ref: '#/Code'
       Cardinality: 0..1
       Relationship Type: Value
+      Model Name: valueCode
+      Model Representation: Attribute
+    valueQuantity:
+      Type:
+      - $ref: '#/Quantity'
+      Cardinality: 0..1
+      Relationship Type: Value
+      Model Name: valueQuantity
+      Model Representation: Attribute
     valueAliasCode:
       Type:
       - $ref: '#/AliasCode'
       Cardinality: 0..1
       Relationship Type: Value
-    valueExtensionClass:
-      Type:
-      - $ref: '#/ExtensionClass'
-      Cardinality: 0..1
-      Relationship Type: Value
+      Model Name: valueAliasCode
+      Model Representation: Attribute
     extensionAttributes:
       Type:
       - $ref: '#/ExtensionAttribute'
       Cardinality: 0..*
       Relationship Type: Value
+      Model Name: extensionAttributes
+      Model Representation: Relationship
+    valueExtensionClass:
+      Type:
+      - $ref: '#/ExtensionClass'
+      Cardinality: 0..1
+      Relationship Type: Value
+      Model Name: valueExtensionClass
+      Model Representation: Relationship
     instanceType:
       Type:
       - $ref: '#/string'
@@ -2526,16 +2550,22 @@ ExtensionClass:
       - $ref: '#/string'
       Cardinality: '1'
       Relationship Type: Value
+      Model Name: id
+      Model Representation: Attribute
     url:
       Type:
       - $ref: '#/string'
       Cardinality: '1'
       Relationship Type: Value
+      Model Name: url
+      Model Representation: Attribute
     extensionAttributes:
       Type:
       - $ref: '#/ExtensionAttribute'
       Cardinality: 1..*
       Relationship Type: Value
+      Model Name: extensionAttributes
+      Model Representation: Relationship
     instanceType:
       Type:
       - $ref: '#/string'
@@ -7218,8 +7248,8 @@ StudyRole:
       Model Representation: Relationship
     appliesToIds:
       Type:
-      - $ref: '#/StudyVersion'
       - $ref: '#/StudyDesign'
+      - $ref: '#/StudyVersion'
       Definition: A USDM relationship between the StudyRole and either StudyVersion
         or StudyDesign classes that identifies the study version or study design to
         which the study role applies.
