@@ -160,7 +160,7 @@
 ||notes|CommentAnnotation|CNEW|0..*|Condition Notes|A brief written record relevant to the condition.||SyntaxTemplate|
 ||dictionary|SyntaxTemplateDictionary||0..1||A USDM relationship between the Condition and SyntaxTemplateDictionary classes which provides the set of dictionary entries related to conditions.||SyntaxTemplate|
 ||context|Activity, ScheduledActivityInstance||0..*||A USDM relationship between the Condition and the ScheduledActivityInstance or Activity classes which identifies the scheduled activity instance or activity to which the condition belongs.|||
-||appliesTo|BiomedicalConcept, BiomedicalConceptCategory, BiomedicalConceptSurrogate, Activity, Procedure||0..*||A USDM relationship between the Condition and the Activity, Procedure, BiomedicalConcept, BiomedicalConceptSurrogate, or BiomedicalConceptCategory classes which identifies the procedure, activity, biomedical concept, biomedical concept surrogate, or biomedical concept category that applies to the condition.|||
+||appliesTo|BiomedicalConceptSurrogate, BiomedicalConceptCategory, BiomedicalConcept, Activity, Procedure||0..*||A USDM relationship between the Condition and the Activity, Procedure, BiomedicalConcept, BiomedicalConceptSurrogate, or BiomedicalConceptCategory classes which identifies the procedure, activity, biomedical concept, biomedical concept surrogate, or biomedical concept category that applies to the condition.|||
 |ConditionAssignment|||C201335||Condition Assignment|An allotting or appointment to a condition or set of conditions that are to be met in order to make a logical decision.|||
 ||id|string||1|||||
 ||condition|String|C47953|1|Logical Condition|An assumption on which rests the validity or effect of something else.|||
@@ -474,7 +474,7 @@
 ||name|String|CNEW|1|Substance Strength Name|The literal identifier (i.e., distinctive designation) of the substance strength.|||
 ||label|String|CNEW|0..1|Substance Strength Label|The short descriptive designation for the substance strength.|||
 ||description|String|CNEW|0..1|Substance Strength Description|A narrative representation of the substance strength.|||
-||numerator|QuantityRange||0..1|||||
+||numerator|QuantityRange||1|||||
 ||denominator|Quantity|C80489|0..1|Denominator|The divisor of a fraction.|||
 |Study|||C15206||Clinical Study|A clinical study involves research using human volunteers (also called participants) that is intended to add to medical knowledge. There are two main types of clinical studies: clinical trials (also called interventional studies) and observational studies. (CDISC Glossary)|||
 ||id|String||1|||||
