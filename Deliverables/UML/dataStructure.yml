@@ -1724,11 +1724,11 @@ Condition:
       Model Representation: Relationship
     appliesToIds:
       Type:
-      - $ref: '#/BiomedicalConceptCategory'
-      - $ref: '#/Activity'
       - $ref: '#/BiomedicalConcept'
-      - $ref: '#/Procedure'
+      - $ref: '#/BiomedicalConceptCategory'
       - $ref: '#/BiomedicalConceptSurrogate'
+      - $ref: '#/Activity'
+      - $ref: '#/Procedure'
       Definition: A USDM relationship between the Condition and the Activity, Procedure,
         BiomedicalConcept, BiomedicalConceptSurrogate, or BiomedicalConceptCategory
         classes which identifies the procedure, activity, biomedical concept, biomedical
@@ -2458,85 +2458,61 @@ ExtensionAttribute:
       - $ref: '#/string'
       Cardinality: '1'
       Relationship Type: Value
-      Model Name: id
-      Model Representation: Attribute
     url:
       Type:
       - $ref: '#/string'
       Cardinality: '1'
       Relationship Type: Value
-      Model Name: url
-      Model Representation: Attribute
     valueString:
       Type:
       - $ref: '#/string'
       Cardinality: 0..1
       Relationship Type: Value
-      Model Name: valueString
-      Model Representation: Attribute
     valueBoolean:
       Type:
       - $ref: '#/boolean'
       Cardinality: 0..1
       Relationship Type: Value
-      Model Name: valueBoolean
-      Model Representation: Attribute
     valueInteger:
       Type:
       - $ref: '#/integer'
       Cardinality: 0..1
       Relationship Type: Value
-      Model Name: valueInteger
-      Model Representation: Attribute
     valueId:
       Type:
       - $ref: '#/string'
       Cardinality: 0..1
       Relationship Type: Value
-      Model Name: valueId
-      Model Representation: Attribute
-    valueRange:
-      Type:
-      - $ref: '#/Range'
-      Cardinality: 0..1
-      Relationship Type: Value
-      Model Name: valueRange
-      Model Representation: Attribute
-    valueCode:
-      Type:
-      - $ref: '#/Code'
-      Cardinality: 0..1
-      Relationship Type: Value
-      Model Name: valueCode
-      Model Representation: Attribute
     valueQuantity:
       Type:
       - $ref: '#/Quantity'
       Cardinality: 0..1
       Relationship Type: Value
-      Model Name: valueQuantity
-      Model Representation: Attribute
+    valueRange:
+      Type:
+      - $ref: '#/Range'
+      Cardinality: 0..1
+      Relationship Type: Value
+    valueCode:
+      Type:
+      - $ref: '#/Code'
+      Cardinality: 0..1
+      Relationship Type: Value
     valueAliasCode:
       Type:
       - $ref: '#/AliasCode'
       Cardinality: 0..1
       Relationship Type: Value
-      Model Name: valueAliasCode
-      Model Representation: Attribute
-    extensionAttributes:
-      Type:
-      - $ref: '#/ExtensionAttribute'
-      Cardinality: 0..*
-      Relationship Type: Value
-      Model Name: extensionAttributes
-      Model Representation: Relationship
     valueExtensionClass:
       Type:
       - $ref: '#/ExtensionClass'
       Cardinality: 0..1
       Relationship Type: Value
-      Model Name: valueExtensionClass
-      Model Representation: Relationship
+    extensionAttributes:
+      Type:
+      - $ref: '#/ExtensionAttribute'
+      Cardinality: 0..*
+      Relationship Type: Value
     instanceType:
       Type:
       - $ref: '#/string'
@@ -2550,22 +2526,16 @@ ExtensionClass:
       - $ref: '#/string'
       Cardinality: '1'
       Relationship Type: Value
-      Model Name: id
-      Model Representation: Attribute
     url:
       Type:
       - $ref: '#/string'
       Cardinality: '1'
       Relationship Type: Value
-      Model Name: url
-      Model Representation: Attribute
     extensionAttributes:
       Type:
       - $ref: '#/ExtensionAttribute'
       Cardinality: 1..*
       Relationship Type: Value
-      Model Name: extensionAttributes
-      Model Representation: Relationship
     instanceType:
       Type:
       - $ref: '#/string'
@@ -4669,8 +4639,8 @@ ProductOrganizationRole:
       Model Representation: Attribute
     appliesToIds:
       Type:
-      - $ref: '#/MedicalDevice'
       - $ref: '#/AdministrableProduct'
+      - $ref: '#/MedicalDevice'
       Definition: A USDM relationship between the ProductOrganizationRole and either
         the AdministrableProduct or MedicalDevice class that identifies the administrable
         product or medical device to which the product organization role applies.
@@ -7248,8 +7218,8 @@ StudyRole:
       Model Representation: Relationship
     appliesToIds:
       Type:
-      - $ref: '#/StudyDesign'
       - $ref: '#/StudyVersion'
+      - $ref: '#/StudyDesign'
       Definition: A USDM relationship between the StudyRole and either StudyVersion
         or StudyDesign classes that identifies the study version or study design to
         which the study role applies.

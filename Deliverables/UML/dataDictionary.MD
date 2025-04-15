@@ -87,6 +87,8 @@
 ||name|String|CNEW|1|Assigned Person Name|The literal identifier (i.e., distinctive designation) of the assigned person.|||
 ||label|String|CNEW|0..1|Assigned Person Label|The short descriptive designation for the assigned person.|||
 ||description|String|CNEW|0..1|Assigned Person Description|A narrative representation of the assigned person.|||
+||givenName|String||1|||||
+||familyName|String||1|||||
 ||jobTitle|String|CNEW|1|Assigned Person Job Title|An identifying designation related to the assigned person's occupation.|||
 ||organization|Organization||0..1||A USDM relationship between the AssignedPerson and Organization classes that identifies that organization to which the assigned person belongs.|||
 |BiomedicalConcept|||C201345||Biomedical Concept|A unit of biomedical knowledge created from a unique combination of characteristics that include implementation details like variables and terminologies, used as building blocks for standardized, hierarchically structured clinical research information.|||
@@ -158,7 +160,7 @@
 ||notes|CommentAnnotation|CNEW|0..*|Condition Notes|A brief written record relevant to the condition.||SyntaxTemplate|
 ||dictionary|SyntaxTemplateDictionary||0..1||A USDM relationship between the Condition and SyntaxTemplateDictionary classes which provides the set of dictionary entries related to conditions.||SyntaxTemplate|
 ||context|Activity, ScheduledActivityInstance||0..*||A USDM relationship between the Condition and the ScheduledActivityInstance or Activity classes which identifies the scheduled activity instance or activity to which the condition belongs.|||
-||appliesTo|BiomedicalConceptCategory, Activity, BiomedicalConcept, Procedure, BiomedicalConceptSurrogate||0..*||A USDM relationship between the Condition and the Activity, Procedure, BiomedicalConcept, BiomedicalConceptSurrogate, or BiomedicalConceptCategory classes which identifies the procedure, activity, biomedical concept, biomedical concept surrogate, or biomedical concept category that applies to the condition.|||
+||appliesTo|BiomedicalConcept, BiomedicalConceptCategory, BiomedicalConceptSurrogate, Activity, Procedure||0..*||A USDM relationship between the Condition and the Activity, Procedure, BiomedicalConcept, BiomedicalConceptSurrogate, or BiomedicalConceptCategory classes which identifies the procedure, activity, biomedical concept, biomedical concept surrogate, or biomedical concept category that applies to the condition.|||
 |ConditionAssignment|||C201335||Condition Assignment|An allotting or appointment to a condition or set of conditions that are to be met in order to make a logical decision.|||
 ||id|string||1|||||
 ||condition|String|C47953|1|Logical Condition|An assumption on which rests the validity or effect of something else.|||
@@ -222,23 +224,6 @@
 ||variableOfInterest|Endpoint||1||A USDM relationship between the Estimand and Endpoint classes which provides the details associated with an instance of the variable of interest within a study endpoint used to partially define a study estimand.|||
 ||intercurrentEvents|IntercurrentEvent||1..*||A USDM relationship between the Estimand and IntercurrentEvent classes which identifies the set of intercurrent events associated with a study estimand.|||
 ||interventions|StudyIntervention||1..*||A USDM relationship between the Estimand and StudyIntervention classes which identifies the set of study interventions associated with the Estimand.|||
-|ExtensionAttribute|||||||||
-||id|String||1|||||
-||url|String||1|||||
-||valueString|String||0..1|||||
-||valueBoolean|Boolean||0..1|||||
-||valueInteger|Integer||0..1|||||
-||valueId|String||0..1|||||
-||valueRange|Range||0..1|||||
-||valueCode|Code||0..1|||||
-||valueQuantity|Quantity||0..1|||||
-||valueAliasCode|AliasCode||0..1|||||
-||extensionAttributes|ExtensionAttribute||0..*|||||
-||valueExtensionClass|ExtensionClass||0..1|||||
-|ExtensionClass|||||||||
-||id|String||1|||||
-||url|String||1|||||
-||extensionAttributes|ExtensionAttribute||1..*|||||
 |GeographicScope|||C207591||Geographic Scope|The extent or range related to the physical location of an entity.|||
 ||id|String||1|||||
 ||type|Code|C207495|1|Geographic Scope Type|A characterization or classification of the geographic scope.|C207412||
@@ -419,7 +404,7 @@
 ||label|String|CNEW|0..1|Product Organization Role Label|The short descriptive designation for the product organization role.|||
 ||description|String|CNEW|0..1|Product Organization Role Description|A narrative representation of the product organization role.|||
 ||code|Code|CNEW|1|Product Organization Role Code|A symbol or combination of symbols which is assigned to the product organization role.|||
-||appliesTo|MedicalDevice, AdministrableProduct||0..*||A USDM relationship between the ProductOrganizationRole and either the AdministrableProduct or MedicalDevice class that identifies the administrable product or medical device to which the product organization role applies.|||
+||appliesTo|AdministrableProduct, MedicalDevice||0..*||A USDM relationship between the ProductOrganizationRole and either the AdministrableProduct or MedicalDevice class that identifies the administrable product or medical device to which the product organization role applies.|||
 ||organization|Organization||1||A USDM relationship between the ProductOrganizationRole and Organization classes which identifies the organization associated with the product organization role.|||
 |Quantity|||C25256||Quantity|How much there is of something that can be measured; the total amount or number.|||
 ||id|String||1|||||
@@ -659,7 +644,7 @@
 ||assignedPersons|AssignedPerson||0..*||A USDM relationship between the StudyRole and AssignedPerson classes that identifies the set of individuals that are assigned to fill a particular role within the study.|||
 ||masking|Masking||0..1||A USDM relationship between the StudyRole and Masking classes which describes the masking associated with the study role.|||
 ||organizations|Organization||0..*||A USDM relationship between the StudyRole and Organization classes which identifies the set of organizations associated with the study role.|||
-||appliesTo|StudyDesign, StudyVersion||0..*||A USDM relationship between the StudyRole and either StudyVersion or StudyDesign classes that identifies the study version or study design to which the study role applies.|||
+||appliesTo|StudyVersion, StudyDesign||0..*||A USDM relationship between the StudyRole and either StudyVersion or StudyDesign classes that identifies the study version or study design to which the study role applies.|||
 |StudySite|||C80403||Study Site|The location at which a study investigator conducts study activities.|||
 ||id|String||1|||||
 ||name|String|C207566|1|Study Site Name|The literal identifier (i.e., distinctive designation) of the study site.|||
