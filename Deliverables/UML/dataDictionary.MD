@@ -87,8 +87,7 @@
 ||name|String|CNEW|1|Assigned Person Name|The literal identifier (i.e., distinctive designation) of the assigned person.|||
 ||label|String|CNEW|0..1|Assigned Person Label|The short descriptive designation for the assigned person.|||
 ||description|String|CNEW|0..1|Assigned Person Description|A narrative representation of the assigned person.|||
-||givenName|String||1|||||
-||familyName|String||1|||||
+||personName|HumanName||1|||||
 ||jobTitle|String|CNEW|1|Assigned Person Job Title|An identifying designation related to the assigned person's occupation.|||
 ||organization|Organization||0..1||A USDM relationship between the AssignedPerson and Organization classes that identifies that organization to which the assigned person belongs.|||
 |BiomedicalConcept|||C201345||Biomedical Concept|A unit of biomedical knowledge created from a unique combination of characteristics that include implementation details like variables and terminologies, used as building blocks for standardized, hierarchically structured clinical research information.|||
@@ -160,7 +159,7 @@
 ||notes|CommentAnnotation|CNEW|0..*|Condition Notes|A brief written record relevant to the condition.||SyntaxTemplate|
 ||dictionary|SyntaxTemplateDictionary||0..1||A USDM relationship between the Condition and SyntaxTemplateDictionary classes which provides the set of dictionary entries related to conditions.||SyntaxTemplate|
 ||context|Activity, ScheduledActivityInstance||0..*||A USDM relationship between the Condition and the ScheduledActivityInstance or Activity classes which identifies the scheduled activity instance or activity to which the condition belongs.|||
-||appliesTo|BiomedicalConceptSurrogate, BiomedicalConceptCategory, BiomedicalConcept, Activity, Procedure||0..*||A USDM relationship between the Condition and the Activity, Procedure, BiomedicalConcept, BiomedicalConceptSurrogate, or BiomedicalConceptCategory classes which identifies the procedure, activity, biomedical concept, biomedical concept surrogate, or biomedical concept category that applies to the condition.|||
+||appliesTo|BiomedicalConcept, BiomedicalConceptCategory, Activity, BiomedicalConceptSurrogate, Procedure||0..*||A USDM relationship between the Condition and the Activity, Procedure, BiomedicalConcept, BiomedicalConceptSurrogate, or BiomedicalConceptCategory classes which identifies the procedure, activity, biomedical concept, biomedical concept surrogate, or biomedical concept category that applies to the condition.|||
 |ConditionAssignment|||C201335||Condition Assignment|An allotting or appointment to a condition or set of conditions that are to be met in order to make a logical decision.|||
 ||id|string||1|||||
 ||condition|String|C47953|1|Logical Condition|An assumption on which rests the validity or effect of something else.|||
@@ -236,6 +235,13 @@
 ||type|Code|C207496|1|Study Governance Date Type|A characterization or classification of the study governance date.|C207413||
 ||dateValue|Date|C207500|1|Study Governance Date Value|The information contained in the date field.|||
 ||geographicScopes|GeographicScope||1..*||A USDM relationship between the GovernanceDate and GeographicScope classes which identifies the set of geographic scopes associated with the governance date.|||
+|HumanName|||||||||
+||id|String||1|||||
+||text|String||0..1|||||
+||family|String||0..1|||||
+||given|String||0..*|||||
+||prefix|String||0..*|||||
+||suffix|String||0..*|||||
 |Identifier|||C25364||Identifier|One or more characters used to identify, name, or characterize the nature, properties, or contents of a thing.|||
 ||id|String||1|||||
 ||text|String|CNEW|1|Identifier Text|An instance of structured text that represents the identifier.|||

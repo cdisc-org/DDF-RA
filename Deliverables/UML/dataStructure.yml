@@ -1724,10 +1724,10 @@ Condition:
       Model Representation: Relationship
     appliesToIds:
       Type:
-      - $ref: '#/BiomedicalConceptSurrogate'
-      - $ref: '#/BiomedicalConceptCategory'
       - $ref: '#/BiomedicalConcept'
+      - $ref: '#/BiomedicalConceptCategory'
       - $ref: '#/Activity'
+      - $ref: '#/BiomedicalConceptSurrogate'
       - $ref: '#/Procedure'
       Definition: A USDM relationship between the Condition and the Activity, Procedure,
         BiomedicalConcept, BiomedicalConceptSurrogate, or BiomedicalConceptCategory
@@ -2670,6 +2670,8 @@ GovernanceDate:
       - $ref: '#/string'
       Cardinality: '1'
       Relationship Type: Value
+HumanName:
+  Modifier: Concrete
 Identifier:
   NCI C-Code: C25364
   Preferred Term: Identifier
