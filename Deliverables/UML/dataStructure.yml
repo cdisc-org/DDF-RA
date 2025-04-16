@@ -1724,9 +1724,9 @@ Condition:
       Model Representation: Relationship
     appliesToIds:
       Type:
-      - $ref: '#/BiomedicalConcept'
-      - $ref: '#/BiomedicalConceptCategory'
       - $ref: '#/BiomedicalConceptSurrogate'
+      - $ref: '#/BiomedicalConceptCategory'
+      - $ref: '#/BiomedicalConcept'
       - $ref: '#/Activity'
       - $ref: '#/Procedure'
       Definition: A USDM relationship between the Condition and the Activity, Procedure,
