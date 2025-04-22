@@ -6203,6 +6203,12 @@ components:
             format: uuid
           - type: 'null'
           title: Id
+        extensionAttributes:
+          items:
+            $ref: '#/components/schemas/ExtensionAttribute-Input'
+          type: array
+          title: Extensionattributes
+          default: []
         name:
           type: string
           minLength: 1
@@ -6248,6 +6254,12 @@ components:
             format: uuid
           - type: 'null'
           title: Id
+        extensionAttributes:
+          items:
+            $ref: '#/components/schemas/ExtensionAttribute-Output'
+          type: array
+          title: Extensionattributes
+          default: []
         name:
           type: string
           minLength: 1
