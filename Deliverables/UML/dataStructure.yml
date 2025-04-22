@@ -1724,11 +1724,11 @@ Condition:
       Model Representation: Relationship
     appliesToIds:
       Type:
+      - $ref: '#/Procedure'
+      - $ref: '#/BiomedicalConceptSurrogate'
+      - $ref: '#/Activity'
       - $ref: '#/BiomedicalConcept'
       - $ref: '#/BiomedicalConceptCategory'
-      - $ref: '#/Activity'
-      - $ref: '#/BiomedicalConceptSurrogate'
-      - $ref: '#/Procedure'
       Definition: A USDM relationship between the Condition and the Activity, Procedure,
         BiomedicalConcept, BiomedicalConceptSurrogate, or BiomedicalConceptCategory
         classes which identifies the procedure, activity, biomedical concept, biomedical
@@ -5454,6 +5454,11 @@ Study:
       Relationship Type: Value
       Model Name: documentedBy
       Model Representation: Relationship
+    extensionAttributes:
+      Type:
+      - $ref: '#/ExtensionAttribute'
+      Cardinality: 0..*
+      Relationship Type: Value
     instanceType:
       Type:
       - $ref: '#/string'
