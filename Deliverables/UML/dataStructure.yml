@@ -691,6 +691,8 @@ AdministrationDuration:
   Preferred Term: Administration Duration
   Definition: The amount of time elapsed during the administration of an agent.
   Modifier: Concrete
+  Super Classes:
+  - $ref: '#/Duration'
   Attributes:
     id:
       Type:
@@ -699,6 +701,8 @@ AdministrationDuration:
       Relationship Type: Value
       Model Name: id
       Model Representation: Attribute
+      inheritedFrom:
+      - $ref: '#/Duration'
     description:
       Type:
       - $ref: '#/string'
@@ -709,6 +713,8 @@ AdministrationDuration:
       Relationship Type: Value
       Model Name: description
       Model Representation: Attribute
+      inheritedFrom:
+      - $ref: '#/Duration'
     quantity:
       Type:
       - $ref: '#/Quantity'
@@ -720,6 +726,8 @@ AdministrationDuration:
       Relationship Type: Value
       Model Name: quantity
       Model Representation: Attribute
+      inheritedFrom:
+      - $ref: '#/Duration'
     durationWillVary:
       Type:
       - $ref: '#/boolean'
@@ -731,6 +739,8 @@ AdministrationDuration:
       Relationship Type: Value
       Model Name: durationWillVary
       Model Representation: Attribute
+      inheritedFrom:
+      - $ref: '#/Duration'
     reasonDurationWillVary:
       Type:
       - $ref: '#/string'
@@ -742,6 +752,8 @@ AdministrationDuration:
       Relationship Type: Value
       Model Name: reasonDurationWillVary
       Model Representation: Attribute
+      inheritedFrom:
+      - $ref: '#/Duration'
     extensionAttributes:
       Type:
       - $ref: '#/ExtensionAttribute'
@@ -1731,11 +1743,11 @@ Condition:
       Model Representation: Relationship
     appliesToIds:
       Type:
-      - $ref: '#/Activity'
-      - $ref: '#/Procedure'
-      - $ref: '#/BiomedicalConcept'
-      - $ref: '#/BiomedicalConceptCategory'
       - $ref: '#/BiomedicalConceptSurrogate'
+      - $ref: '#/BiomedicalConceptCategory'
+      - $ref: '#/BiomedicalConcept'
+      - $ref: '#/Procedure'
+      - $ref: '#/Activity'
       Definition: A USDM relationship between the Condition and the Activity, Procedure,
         BiomedicalConcept, BiomedicalConceptSurrogate, or BiomedicalConceptCategory
         classes which identifies the procedure, activity, biomedical concept, biomedical
@@ -1854,6 +1866,62 @@ DocumentContentReference:
       - $ref: '#/string'
       Cardinality: '1'
       Relationship Type: Value
+Duration:
+  Modifier: Abstract
+  Sub Classes:
+  - $ref: '#/AdministrationDuration'
+  - $ref: '#/TimelineDuration'
+  Attributes:
+    id:
+      Type:
+      - $ref: '#/string'
+      Cardinality: '1'
+      Relationship Type: Value
+      Model Name: id
+      Model Representation: Attribute
+    description:
+      Type:
+      - $ref: '#/string'
+      NCI C-Code: C207459
+      Preferred Term: Administration Duration Description
+      Definition: A narrative representation of the agent administration duration.
+      Cardinality: 0..1
+      Relationship Type: Value
+      Model Name: description
+      Model Representation: Attribute
+    quantity:
+      Type:
+      - $ref: '#/Quantity'
+      NCI C-Code: C207460
+      Preferred Term: Administration Duration Quantity Value
+      Definition: The value representing the amount of time over which the administration
+        of an agent occurs.
+      Cardinality: 0..1
+      Relationship Type: Value
+      Model Name: quantity
+      Model Representation: Attribute
+    durationWillVary:
+      Type:
+      - $ref: '#/boolean'
+      NCI C-Code: C207461
+      Preferred Term: Administration Duration Will Vary Indicator
+      Definition: An indication as to whether the agent administration duration is
+        planned to vary within and/or across subjects.
+      Cardinality: '1'
+      Relationship Type: Value
+      Model Name: durationWillVary
+      Model Representation: Attribute
+    reasonDurationWillVary:
+      Type:
+      - $ref: '#/string'
+      NCI C-Code: C207462
+      Preferred Term: Administration Duration Reason Duration Will Vary
+      Definition: The explanation for why the agent administration duration will vary
+        within and/or across subjects.
+      Cardinality: 0..1
+      Relationship Type: Value
+      Model Name: reasonDurationWillVary
+      Model Representation: Attribute
 EligibilityCriterion:
   NCI C-Code: C16112
   Preferred Term: Study Eligibility Criterion
@@ -4669,8 +4737,8 @@ ProductOrganizationRole:
       Model Representation: Attribute
     appliesToIds:
       Type:
-      - $ref: '#/AdministrableProduct'
       - $ref: '#/MedicalDevice'
+      - $ref: '#/AdministrableProduct'
       Definition: A USDM relationship between the ProductOrganizationRole and either
         the AdministrableProduct or MedicalDevice class that identifies the administrable
         product or medical device to which the product organization role applies.
@@ -4704,6 +4772,8 @@ Quantity:
   Definition: How much there is of something that can be measured; the total amount
     or number.
   Modifier: Concrete
+  Super Classes:
+  - $ref: '#/QuantityRange'
   Attributes:
     id:
       Type:
@@ -4712,6 +4782,8 @@ Quantity:
       Relationship Type: Value
       Model Name: id
       Model Representation: Attribute
+      inheritedFrom:
+      - $ref: '#/QuantityRange'
     value:
       Type:
       - $ref: '#/float'
@@ -4743,7 +4815,10 @@ Quantity:
       Cardinality: '1'
       Relationship Type: Value
 QuantityRange:
-  Modifier: Concrete
+  Modifier: Abstract
+  Sub Classes:
+  - $ref: '#/Quantity'
+  - $ref: '#/Range'
   Attributes:
     id:
       Type:
@@ -4752,36 +4827,14 @@ QuantityRange:
       Relationship Type: Value
       Model Name: id
       Model Representation: Attribute
-    quantity:
-      Type:
-      - $ref: '#/Quantity'
-      Cardinality: 0..1
-      Relationship Type: Value
-      Model Name: quantity
-      Model Representation: Attribute
-    range:
-      Type:
-      - $ref: '#/Range'
-      Cardinality: 0..1
-      Relationship Type: Value
-      Model Name: range
-      Model Representation: Attribute
-    extensionAttributes:
-      Type:
-      - $ref: '#/ExtensionAttribute'
-      Cardinality: 0..*
-      Relationship Type: Value
-    instanceType:
-      Type:
-      - $ref: '#/string'
-      Cardinality: '1'
-      Relationship Type: Value
 Range:
   NCI C-Code: C38013
   Preferred Term: Range
   Definition: The difference between the lowest and highest numerical values; the
     limits or scale of variation.
   Modifier: Concrete
+  Super Classes:
+  - $ref: '#/QuantityRange'
   Attributes:
     id:
       Type:
@@ -4790,6 +4843,8 @@ Range:
       Relationship Type: Value
       Model Name: id
       Model Representation: Attribute
+      inheritedFrom:
+      - $ref: '#/QuantityRange'
     minValue:
       Type:
       - $ref: '#/Quantity'
@@ -7260,8 +7315,8 @@ StudyRole:
       Model Representation: Relationship
     appliesToIds:
       Type:
-      - $ref: '#/StudyDesign'
       - $ref: '#/StudyVersion'
+      - $ref: '#/StudyDesign'
       Definition: A USDM relationship between the StudyRole and either StudyVersion
         or StudyDesign classes that identifies the study version or study design to
         which the study role applies.
@@ -7918,6 +7973,10 @@ SyntaxTemplateDictionary:
       - $ref: '#/string'
       Cardinality: '1'
       Relationship Type: Value
+TimelineDuration:
+  Modifier: Concrete
+  Super Classes:
+  - $ref: '#/Duration'
 Timing:
   NCI C-Code: C80484
   Preferred Term: Timing

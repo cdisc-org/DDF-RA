@@ -1,5 +1,10 @@
 Class,Attribute,Characteristic,API,CT,UML / DD
+AdministrationDuration,description,Inherited From,,,Duration
+AdministrationDuration,quantity,Inherited From,,,Duration
+AdministrationDuration,durationWillVary,Inherited From,,,Duration
+AdministrationDuration,reasonDurationWillVary,Inherited From,,,Duration
 AssignedPerson,personName,,personName,,personName
+Duration,,,,,Duration
 PersonName,,,PersonName,,PersonName
 PopulationDefinition,plannedCompletionNumber,,,,plannedCompletionNumber
 PopulationDefinition,plannedEnrollmentNumber,,,,plannedEnrollmentNumber
@@ -10,6 +15,7 @@ PopulationDefinition,plannedEnrollmentNumberQuantity,,,plannedEnrollmentNumberQu
 QuantityRange,,,QuantityRange,,QuantityRange
 ResponseCode,name,,name,,name
 ResponseCode,label,,label,,label
+ScheduleTimeline,plannedDuration,,,,plannedDuration
 Strength,numerator,,numerator,,numerator
 Strength,numeratorQuantity,,,numeratorQuantity,
 Strength,numeratorRange,,,numeratorRange,
@@ -29,3 +35,4 @@ StudyDesignPopulation,plannedCompletionNumberRange,,,plannedCompletionNumberRang
 StudyDesignPopulation,plannedEnrollmentNumberRange,,,plannedEnrollmentNumberRange,
 StudyDesignPopulation,plannedCompletionNumberQuantity,,,plannedCompletionNumberQuantity,
 StudyDesignPopulation,plannedEnrollmentNumberQuantity,,,plannedEnrollmentNumberQuantity,
+TimelineDuration,,,,,TimelineDuration

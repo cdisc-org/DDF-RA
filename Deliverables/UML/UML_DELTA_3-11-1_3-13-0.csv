@@ -1,80 +1,160 @@
 Class Name,Class Status,Class Characteristic,Attribute/Relationship Name,Attribute/Relationship Status,Attribute/Relationship Characteristic,Old Value,New Value
+QuantityRange,Added,Sub Classes,,,,,"Quantity, Range"
+QuantityRange,Added,Abstract,,,,,True
 QuantityRange,Added,Attributes/Relationships,id,Added,Data Type,,String
 QuantityRange,Added,Attributes/Relationships,id,Added,Cardinality,,1
 QuantityRange,Added,Attributes/Relationships,id,Added,Model Representation,,Attribute
-QuantityRange,Added,Attributes/Relationships,range,Added,Data Type,,Range
-QuantityRange,Added,Attributes/Relationships,range,Added,Cardinality,,0..1
-QuantityRange,Added,Attributes/Relationships,range,Added,Model Representation,,Attribute
-QuantityRange,Added,Attributes/Relationships,quantity,Added,Data Type,,Quantity
-QuantityRange,Added,Attributes/Relationships,quantity,Added,Cardinality,,0..1
-QuantityRange,Added,Attributes/Relationships,quantity,Added,Model Representation,,Attribute
-QuantityRange,Added,Abstract,,,,,False
-PersonName,Added,Attributes/Relationships,suffixes,Added,Data Type,,String
-PersonName,Added,Attributes/Relationships,suffixes,Added,Cardinality,,0..*
-PersonName,Added,Attributes/Relationships,suffixes,Added,Model Representation,,Attribute
-PersonName,Added,Attributes/Relationships,text,Added,Data Type,,String
-PersonName,Added,Attributes/Relationships,text,Added,Cardinality,,0..1
-PersonName,Added,Attributes/Relationships,text,Added,Model Representation,,Attribute
-PersonName,Added,Attributes/Relationships,prefixes,Added,Data Type,,String
-PersonName,Added,Attributes/Relationships,prefixes,Added,Cardinality,,0..*
-PersonName,Added,Attributes/Relationships,prefixes,Added,Model Representation,,Attribute
+TimelineDuration,Added,Abstract,,,,,False
+TimelineDuration,Added,Super Classes,,,,,Duration
+TimelineDuration,Added,Attributes/Relationships,id,Added,Data Type,,String
+TimelineDuration,Added,Attributes/Relationships,id,Added,Cardinality,,1
+TimelineDuration,Added,Attributes/Relationships,id,Added,Inherited From,,Duration
+TimelineDuration,Added,Attributes/Relationships,id,Added,Model Representation,,Attribute
+TimelineDuration,Added,Attributes/Relationships,durationWillVary,Added,Data Type,,Boolean
+TimelineDuration,Added,Attributes/Relationships,durationWillVary,Added,Cardinality,,1
+TimelineDuration,Added,Attributes/Relationships,durationWillVary,Added,Inherited From,,Duration
+TimelineDuration,Added,Attributes/Relationships,durationWillVary,Added,Model Representation,,Attribute
+TimelineDuration,Added,Attributes/Relationships,description,Added,Data Type,,String
+TimelineDuration,Added,Attributes/Relationships,description,Added,Cardinality,,0..1
+TimelineDuration,Added,Attributes/Relationships,description,Added,Inherited From,,Duration
+TimelineDuration,Added,Attributes/Relationships,description,Added,Model Representation,,Attribute
+TimelineDuration,Added,Attributes/Relationships,reasonDurationWillVary,Added,Data Type,,String
+TimelineDuration,Added,Attributes/Relationships,reasonDurationWillVary,Added,Cardinality,,0..1
+TimelineDuration,Added,Attributes/Relationships,reasonDurationWillVary,Added,Inherited From,,Duration
+TimelineDuration,Added,Attributes/Relationships,reasonDurationWillVary,Added,Model Representation,,Attribute
+TimelineDuration,Added,Attributes/Relationships,quantity,Added,Data Type,,Quantity
+TimelineDuration,Added,Attributes/Relationships,quantity,Added,Cardinality,,0..1
+TimelineDuration,Added,Attributes/Relationships,quantity,Added,Inherited From,,Duration
+TimelineDuration,Added,Attributes/Relationships,quantity,Added,Model Representation,,Attribute
+Duration,Added,Sub Classes,,,,,"AdministrationDuration, TimelineDuration"
+Duration,Added,Abstract,,,,,True
+Duration,Added,Attributes/Relationships,id,Added,Data Type,,String
+Duration,Added,Attributes/Relationships,id,Added,Cardinality,,1
+Duration,Added,Attributes/Relationships,id,Added,Model Representation,,Attribute
+Duration,Added,Attributes/Relationships,durationWillVary,Added,Data Type,,Boolean
+Duration,Added,Attributes/Relationships,durationWillVary,Added,Cardinality,,1
+Duration,Added,Attributes/Relationships,durationWillVary,Added,Model Representation,,Attribute
+Duration,Added,Attributes/Relationships,description,Added,Data Type,,String
+Duration,Added,Attributes/Relationships,description,Added,Cardinality,,0..1
+Duration,Added,Attributes/Relationships,description,Added,Model Representation,,Attribute
+Duration,Added,Attributes/Relationships,reasonDurationWillVary,Added,Data Type,,String
+Duration,Added,Attributes/Relationships,reasonDurationWillVary,Added,Cardinality,,0..1
+Duration,Added,Attributes/Relationships,reasonDurationWillVary,Added,Model Representation,,Attribute
+Duration,Added,Attributes/Relationships,quantity,Added,Data Type,,Quantity
+Duration,Added,Attributes/Relationships,quantity,Added,Cardinality,,0..1
+Duration,Added,Attributes/Relationships,quantity,Added,Model Representation,,Attribute
+PersonName,Added,Abstract,,,,,False
 PersonName,Added,Attributes/Relationships,givenNames,Added,Data Type,,String
 PersonName,Added,Attributes/Relationships,givenNames,Added,Cardinality,,0..*
 PersonName,Added,Attributes/Relationships,givenNames,Added,Model Representation,,Attribute
 PersonName,Added,Attributes/Relationships,id,Added,Data Type,,String
 PersonName,Added,Attributes/Relationships,id,Added,Cardinality,,1
 PersonName,Added,Attributes/Relationships,id,Added,Model Representation,,Attribute
+PersonName,Added,Attributes/Relationships,suffixes,Added,Data Type,,String
+PersonName,Added,Attributes/Relationships,suffixes,Added,Cardinality,,0..*
+PersonName,Added,Attributes/Relationships,suffixes,Added,Model Representation,,Attribute
 PersonName,Added,Attributes/Relationships,familyName,Added,Data Type,,String
 PersonName,Added,Attributes/Relationships,familyName,Added,Cardinality,,0..1
 PersonName,Added,Attributes/Relationships,familyName,Added,Model Representation,,Attribute
-PersonName,Added,Abstract,,,,,False
-ExtensionAttribute,Deleted,Attributes/Relationships,valueId,Deleted,Data Type,String,
-ExtensionAttribute,Deleted,Attributes/Relationships,valueId,Deleted,Cardinality,0..1,
-ExtensionAttribute,Deleted,Attributes/Relationships,valueId,Deleted,Model Representation,Attribute,
-ExtensionAttribute,Deleted,Attributes/Relationships,valueRange,Deleted,Data Type,Range,
-ExtensionAttribute,Deleted,Attributes/Relationships,valueRange,Deleted,Cardinality,0..1,
-ExtensionAttribute,Deleted,Attributes/Relationships,valueRange,Deleted,Model Representation,Attribute,
-ExtensionAttribute,Deleted,Attributes/Relationships,valueBoolean,Deleted,Data Type,Boolean,
-ExtensionAttribute,Deleted,Attributes/Relationships,valueBoolean,Deleted,Cardinality,0..1,
-ExtensionAttribute,Deleted,Attributes/Relationships,valueBoolean,Deleted,Model Representation,Attribute,
-ExtensionAttribute,Deleted,Attributes/Relationships,url,Deleted,Data Type,String,
-ExtensionAttribute,Deleted,Attributes/Relationships,url,Deleted,Cardinality,1,
-ExtensionAttribute,Deleted,Attributes/Relationships,url,Deleted,Model Representation,Attribute,
-ExtensionAttribute,Deleted,Attributes/Relationships,id,Deleted,Data Type,String,
-ExtensionAttribute,Deleted,Attributes/Relationships,id,Deleted,Cardinality,1,
-ExtensionAttribute,Deleted,Attributes/Relationships,id,Deleted,Model Representation,Attribute,
-ExtensionAttribute,Deleted,Attributes/Relationships,valueString,Deleted,Data Type,String,
-ExtensionAttribute,Deleted,Attributes/Relationships,valueString,Deleted,Cardinality,0..1,
-ExtensionAttribute,Deleted,Attributes/Relationships,valueString,Deleted,Model Representation,Attribute,
-ExtensionAttribute,Deleted,Attributes/Relationships,extensionAttributes,Deleted,Data Type,ExtensionAttribute,
-ExtensionAttribute,Deleted,Attributes/Relationships,extensionAttributes,Deleted,Cardinality,0..*,
-ExtensionAttribute,Deleted,Attributes/Relationships,extensionAttributes,Deleted,Model Representation,Relationship,
-ExtensionAttribute,Deleted,Attributes/Relationships,valueQuantity,Deleted,Data Type,Quantity,
-ExtensionAttribute,Deleted,Attributes/Relationships,valueQuantity,Deleted,Cardinality,0..1,
-ExtensionAttribute,Deleted,Attributes/Relationships,valueQuantity,Deleted,Model Representation,Attribute,
-ExtensionAttribute,Deleted,Attributes/Relationships,valueAliasCode,Deleted,Data Type,AliasCode,
-ExtensionAttribute,Deleted,Attributes/Relationships,valueAliasCode,Deleted,Cardinality,0..1,
-ExtensionAttribute,Deleted,Attributes/Relationships,valueAliasCode,Deleted,Model Representation,Attribute,
-ExtensionAttribute,Deleted,Attributes/Relationships,valueCode,Deleted,Data Type,Code,
-ExtensionAttribute,Deleted,Attributes/Relationships,valueCode,Deleted,Cardinality,0..1,
-ExtensionAttribute,Deleted,Attributes/Relationships,valueCode,Deleted,Model Representation,Attribute,
-ExtensionAttribute,Deleted,Attributes/Relationships,valueInteger,Deleted,Data Type,Integer,
-ExtensionAttribute,Deleted,Attributes/Relationships,valueInteger,Deleted,Cardinality,0..1,
-ExtensionAttribute,Deleted,Attributes/Relationships,valueInteger,Deleted,Model Representation,Attribute,
-ExtensionAttribute,Deleted,Attributes/Relationships,valueExtensionClass,Deleted,Data Type,ExtensionClass,
-ExtensionAttribute,Deleted,Attributes/Relationships,valueExtensionClass,Deleted,Cardinality,0..1,
-ExtensionAttribute,Deleted,Attributes/Relationships,valueExtensionClass,Deleted,Model Representation,Relationship,
-ExtensionAttribute,Deleted,Abstract,,,,False,
+PersonName,Added,Attributes/Relationships,text,Added,Data Type,,String
+PersonName,Added,Attributes/Relationships,text,Added,Cardinality,,0..1
+PersonName,Added,Attributes/Relationships,text,Added,Model Representation,,Attribute
+PersonName,Added,Attributes/Relationships,prefixes,Added,Data Type,,String
+PersonName,Added,Attributes/Relationships,prefixes,Added,Cardinality,,0..*
+PersonName,Added,Attributes/Relationships,prefixes,Added,Model Representation,,Attribute
+ExtensionClass,Deleted,Abstract,,,,False,
 ExtensionClass,Deleted,Attributes/Relationships,id,Deleted,Data Type,String,
 ExtensionClass,Deleted,Attributes/Relationships,id,Deleted,Cardinality,1,
 ExtensionClass,Deleted,Attributes/Relationships,id,Deleted,Model Representation,Attribute,
-ExtensionClass,Deleted,Attributes/Relationships,extensionAttributes,Deleted,Data Type,ExtensionAttribute,
-ExtensionClass,Deleted,Attributes/Relationships,extensionAttributes,Deleted,Cardinality,1..*,
-ExtensionClass,Deleted,Attributes/Relationships,extensionAttributes,Deleted,Model Representation,Relationship,
 ExtensionClass,Deleted,Attributes/Relationships,url,Deleted,Data Type,String,
 ExtensionClass,Deleted,Attributes/Relationships,url,Deleted,Cardinality,1,
 ExtensionClass,Deleted,Attributes/Relationships,url,Deleted,Model Representation,Attribute,
-ExtensionClass,Deleted,Abstract,,,,False,
+ExtensionClass,Deleted,Attributes/Relationships,extensionAttributes,Deleted,Data Type,ExtensionAttribute,
+ExtensionClass,Deleted,Attributes/Relationships,extensionAttributes,Deleted,Cardinality,1..*,
+ExtensionClass,Deleted,Attributes/Relationships,extensionAttributes,Deleted,Model Representation,Relationship,
+ExtensionAttribute,Deleted,Abstract,,,,False,
+ExtensionAttribute,Deleted,Attributes/Relationships,url,Deleted,Data Type,String,
+ExtensionAttribute,Deleted,Attributes/Relationships,url,Deleted,Cardinality,1,
+ExtensionAttribute,Deleted,Attributes/Relationships,url,Deleted,Model Representation,Attribute,
+ExtensionAttribute,Deleted,Attributes/Relationships,valueId,Deleted,Data Type,String,
+ExtensionAttribute,Deleted,Attributes/Relationships,valueId,Deleted,Cardinality,0..1,
+ExtensionAttribute,Deleted,Attributes/Relationships,valueId,Deleted,Model Representation,Attribute,
+ExtensionAttribute,Deleted,Attributes/Relationships,valueQuantity,Deleted,Data Type,Quantity,
+ExtensionAttribute,Deleted,Attributes/Relationships,valueQuantity,Deleted,Cardinality,0..1,
+ExtensionAttribute,Deleted,Attributes/Relationships,valueQuantity,Deleted,Model Representation,Attribute,
+ExtensionAttribute,Deleted,Attributes/Relationships,valueString,Deleted,Data Type,String,
+ExtensionAttribute,Deleted,Attributes/Relationships,valueString,Deleted,Cardinality,0..1,
+ExtensionAttribute,Deleted,Attributes/Relationships,valueString,Deleted,Model Representation,Attribute,
+ExtensionAttribute,Deleted,Attributes/Relationships,valueExtensionClass,Deleted,Data Type,ExtensionClass,
+ExtensionAttribute,Deleted,Attributes/Relationships,valueExtensionClass,Deleted,Cardinality,0..1,
+ExtensionAttribute,Deleted,Attributes/Relationships,valueExtensionClass,Deleted,Model Representation,Relationship,
+ExtensionAttribute,Deleted,Attributes/Relationships,valueInteger,Deleted,Data Type,Integer,
+ExtensionAttribute,Deleted,Attributes/Relationships,valueInteger,Deleted,Cardinality,0..1,
+ExtensionAttribute,Deleted,Attributes/Relationships,valueInteger,Deleted,Model Representation,Attribute,
+ExtensionAttribute,Deleted,Attributes/Relationships,extensionAttributes,Deleted,Data Type,ExtensionAttribute,
+ExtensionAttribute,Deleted,Attributes/Relationships,extensionAttributes,Deleted,Cardinality,0..*,
+ExtensionAttribute,Deleted,Attributes/Relationships,extensionAttributes,Deleted,Model Representation,Relationship,
+ExtensionAttribute,Deleted,Attributes/Relationships,id,Deleted,Data Type,String,
+ExtensionAttribute,Deleted,Attributes/Relationships,id,Deleted,Cardinality,1,
+ExtensionAttribute,Deleted,Attributes/Relationships,id,Deleted,Model Representation,Attribute,
+ExtensionAttribute,Deleted,Attributes/Relationships,valueBoolean,Deleted,Data Type,Boolean,
+ExtensionAttribute,Deleted,Attributes/Relationships,valueBoolean,Deleted,Cardinality,0..1,
+ExtensionAttribute,Deleted,Attributes/Relationships,valueBoolean,Deleted,Model Representation,Attribute,
+ExtensionAttribute,Deleted,Attributes/Relationships,valueCode,Deleted,Data Type,Code,
+ExtensionAttribute,Deleted,Attributes/Relationships,valueCode,Deleted,Cardinality,0..1,
+ExtensionAttribute,Deleted,Attributes/Relationships,valueCode,Deleted,Model Representation,Attribute,
+ExtensionAttribute,Deleted,Attributes/Relationships,valueRange,Deleted,Data Type,Range,
+ExtensionAttribute,Deleted,Attributes/Relationships,valueRange,Deleted,Cardinality,0..1,
+ExtensionAttribute,Deleted,Attributes/Relationships,valueRange,Deleted,Model Representation,Attribute,
+ExtensionAttribute,Deleted,Attributes/Relationships,valueAliasCode,Deleted,Data Type,AliasCode,
+ExtensionAttribute,Deleted,Attributes/Relationships,valueAliasCode,Deleted,Cardinality,0..1,
+ExtensionAttribute,Deleted,Attributes/Relationships,valueAliasCode,Deleted,Model Representation,Attribute,
+ScheduleTimeline,Modified,Attributes/Relationships,plannedDuration,Added,Data Type,,TimelineDuration
+ScheduleTimeline,Modified,Attributes/Relationships,plannedDuration,Added,Cardinality,,0..1
+ScheduleTimeline,Modified,Attributes/Relationships,plannedDuration,Added,Model Representation,,Relationship
+StudyCohort,Modified,Attributes/Relationships,plannedEnrollmentNumber,Added,Data Type,,QuantityRange
+StudyCohort,Modified,Attributes/Relationships,plannedEnrollmentNumber,Added,Cardinality,,0..1
+StudyCohort,Modified,Attributes/Relationships,plannedEnrollmentNumber,Added,Inherited From,,PopulationDefinition
+StudyCohort,Modified,Attributes/Relationships,plannedEnrollmentNumber,Added,Model Representation,,Attribute
+StudyCohort,Modified,Attributes/Relationships,plannedCompletionNumber,Added,Data Type,,QuantityRange
+StudyCohort,Modified,Attributes/Relationships,plannedCompletionNumber,Added,Cardinality,,0..1
+StudyCohort,Modified,Attributes/Relationships,plannedCompletionNumber,Added,Inherited From,,PopulationDefinition
+StudyCohort,Modified,Attributes/Relationships,plannedCompletionNumber,Added,Model Representation,,Attribute
+StudyCohort,Modified,Attributes/Relationships,plannedCompletionNumberRange,Deleted,Data Type,Range,
+StudyCohort,Modified,Attributes/Relationships,plannedCompletionNumberRange,Deleted,Cardinality,0..1,
+StudyCohort,Modified,Attributes/Relationships,plannedCompletionNumberRange,Deleted,Inherited From,PopulationDefinition,
+StudyCohort,Modified,Attributes/Relationships,plannedCompletionNumberRange,Deleted,Model Representation,Attribute,
+StudyCohort,Modified,Attributes/Relationships,plannedEnrollmentNumberRange,Deleted,Data Type,Range,
+StudyCohort,Modified,Attributes/Relationships,plannedEnrollmentNumberRange,Deleted,Cardinality,0..1,
+StudyCohort,Modified,Attributes/Relationships,plannedEnrollmentNumberRange,Deleted,Inherited From,PopulationDefinition,
+StudyCohort,Modified,Attributes/Relationships,plannedEnrollmentNumberRange,Deleted,Model Representation,Attribute,
+StudyCohort,Modified,Attributes/Relationships,plannedCompletionNumberQuantity,Deleted,Data Type,Quantity,
+StudyCohort,Modified,Attributes/Relationships,plannedCompletionNumberQuantity,Deleted,Cardinality,0..1,
+StudyCohort,Modified,Attributes/Relationships,plannedCompletionNumberQuantity,Deleted,Inherited From,PopulationDefinition,
+StudyCohort,Modified,Attributes/Relationships,plannedCompletionNumberQuantity,Deleted,Model Representation,Attribute,
+StudyCohort,Modified,Attributes/Relationships,plannedEnrollmentNumberQuantity,Deleted,Data Type,Quantity,
+StudyCohort,Modified,Attributes/Relationships,plannedEnrollmentNumberQuantity,Deleted,Cardinality,0..1,
+StudyCohort,Modified,Attributes/Relationships,plannedEnrollmentNumberQuantity,Deleted,Inherited From,PopulationDefinition,
+StudyCohort,Modified,Attributes/Relationships,plannedEnrollmentNumberQuantity,Deleted,Model Representation,Attribute,
+Strength,Modified,Attributes/Relationships,numerator,Added,Data Type,,QuantityRange
+Strength,Modified,Attributes/Relationships,numerator,Added,Cardinality,,1
+Strength,Modified,Attributes/Relationships,numerator,Added,Model Representation,,Attribute
+Strength,Modified,Attributes/Relationships,numeratorRange,Deleted,Data Type,Range,
+Strength,Modified,Attributes/Relationships,numeratorRange,Deleted,Cardinality,0..1,
+Strength,Modified,Attributes/Relationships,numeratorRange,Deleted,Model Representation,Attribute,
+Strength,Modified,Attributes/Relationships,numeratorQuantity,Deleted,Data Type,Quantity,
+Strength,Modified,Attributes/Relationships,numeratorQuantity,Deleted,Cardinality,0..1,
+Strength,Modified,Attributes/Relationships,numeratorQuantity,Deleted,Model Representation,Attribute,
+ResponseCode,Modified,Attributes/Relationships,label,Added,Data Type,,String
+ResponseCode,Modified,Attributes/Relationships,label,Added,Cardinality,,0..1
+ResponseCode,Modified,Attributes/Relationships,label,Added,Model Representation,,Attribute
+ResponseCode,Modified,Attributes/Relationships,name,Added,Data Type,,String
+ResponseCode,Modified,Attributes/Relationships,name,Added,Cardinality,,1
+ResponseCode,Modified,Attributes/Relationships,name,Added,Model Representation,,Attribute
+Range,Modified,Super Classes,,,,,QuantityRange
+Range,Modified,Attributes/Relationships,id,Modified,Inherited From,,QuantityRange
+Quantity,Modified,Super Classes,,,,,QuantityRange
+Quantity,Modified,Attributes/Relationships,id,Modified,Inherited From,,QuantityRange
 StudyAmendment,Modified,Attributes/Relationships,description,Added,Data Type,,String
 StudyAmendment,Modified,Attributes/Relationships,description,Added,Cardinality,,0..1
 StudyAmendment,Modified,Attributes/Relationships,description,Added,Model Representation,,Attribute
@@ -84,87 +164,54 @@ StudyAmendment,Modified,Attributes/Relationships,label,Added,Model Representatio
 StudyAmendment,Modified,Attributes/Relationships,name,Added,Data Type,,String
 StudyAmendment,Modified,Attributes/Relationships,name,Added,Cardinality,,1
 StudyAmendment,Modified,Attributes/Relationships,name,Added,Model Representation,,Attribute
-PopulationDefinition,Modified,Attributes/Relationships,plannedCompletionNumber,Added,Data Type,,QuantityRange
-PopulationDefinition,Modified,Attributes/Relationships,plannedCompletionNumber,Added,Cardinality,,0..1
-PopulationDefinition,Modified,Attributes/Relationships,plannedCompletionNumber,Added,Model Representation,,Attribute
+AssignedPerson,Modified,Attributes/Relationships,personName,Added,Data Type,,PersonName
+AssignedPerson,Modified,Attributes/Relationships,personName,Added,Cardinality,,1
+AssignedPerson,Modified,Attributes/Relationships,personName,Added,Model Representation,,Attribute
+StudyDesignPopulation,Modified,Attributes/Relationships,plannedEnrollmentNumber,Added,Data Type,,QuantityRange
+StudyDesignPopulation,Modified,Attributes/Relationships,plannedEnrollmentNumber,Added,Cardinality,,0..1
+StudyDesignPopulation,Modified,Attributes/Relationships,plannedEnrollmentNumber,Added,Inherited From,,PopulationDefinition
+StudyDesignPopulation,Modified,Attributes/Relationships,plannedEnrollmentNumber,Added,Model Representation,,Attribute
+StudyDesignPopulation,Modified,Attributes/Relationships,plannedCompletionNumber,Added,Data Type,,QuantityRange
+StudyDesignPopulation,Modified,Attributes/Relationships,plannedCompletionNumber,Added,Cardinality,,0..1
+StudyDesignPopulation,Modified,Attributes/Relationships,plannedCompletionNumber,Added,Inherited From,,PopulationDefinition
+StudyDesignPopulation,Modified,Attributes/Relationships,plannedCompletionNumber,Added,Model Representation,,Attribute
+StudyDesignPopulation,Modified,Attributes/Relationships,plannedCompletionNumberRange,Deleted,Data Type,Range,
+StudyDesignPopulation,Modified,Attributes/Relationships,plannedCompletionNumberRange,Deleted,Cardinality,0..1,
+StudyDesignPopulation,Modified,Attributes/Relationships,plannedCompletionNumberRange,Deleted,Inherited From,PopulationDefinition,
+StudyDesignPopulation,Modified,Attributes/Relationships,plannedCompletionNumberRange,Deleted,Model Representation,Attribute,
+StudyDesignPopulation,Modified,Attributes/Relationships,plannedEnrollmentNumberRange,Deleted,Data Type,Range,
+StudyDesignPopulation,Modified,Attributes/Relationships,plannedEnrollmentNumberRange,Deleted,Cardinality,0..1,
+StudyDesignPopulation,Modified,Attributes/Relationships,plannedEnrollmentNumberRange,Deleted,Inherited From,PopulationDefinition,
+StudyDesignPopulation,Modified,Attributes/Relationships,plannedEnrollmentNumberRange,Deleted,Model Representation,Attribute,
+StudyDesignPopulation,Modified,Attributes/Relationships,plannedCompletionNumberQuantity,Deleted,Data Type,Quantity,
+StudyDesignPopulation,Modified,Attributes/Relationships,plannedCompletionNumberQuantity,Deleted,Cardinality,0..1,
+StudyDesignPopulation,Modified,Attributes/Relationships,plannedCompletionNumberQuantity,Deleted,Inherited From,PopulationDefinition,
+StudyDesignPopulation,Modified,Attributes/Relationships,plannedCompletionNumberQuantity,Deleted,Model Representation,Attribute,
+StudyDesignPopulation,Modified,Attributes/Relationships,plannedEnrollmentNumberQuantity,Deleted,Data Type,Quantity,
+StudyDesignPopulation,Modified,Attributes/Relationships,plannedEnrollmentNumberQuantity,Deleted,Cardinality,0..1,
+StudyDesignPopulation,Modified,Attributes/Relationships,plannedEnrollmentNumberQuantity,Deleted,Inherited From,PopulationDefinition,
+StudyDesignPopulation,Modified,Attributes/Relationships,plannedEnrollmentNumberQuantity,Deleted,Model Representation,Attribute,
+AdministrationDuration,Modified,Super Classes,,,,,Duration
+AdministrationDuration,Modified,Attributes/Relationships,quantity,Modified,Inherited From,,Duration
+AdministrationDuration,Modified,Attributes/Relationships,id,Modified,Inherited From,,Duration
+AdministrationDuration,Modified,Attributes/Relationships,durationWillVary,Modified,Inherited From,,Duration
+AdministrationDuration,Modified,Attributes/Relationships,description,Modified,Inherited From,,Duration
+AdministrationDuration,Modified,Attributes/Relationships,reasonDurationWillVary,Modified,Inherited From,,Duration
 PopulationDefinition,Modified,Attributes/Relationships,plannedEnrollmentNumber,Added,Data Type,,QuantityRange
 PopulationDefinition,Modified,Attributes/Relationships,plannedEnrollmentNumber,Added,Cardinality,,0..1
 PopulationDefinition,Modified,Attributes/Relationships,plannedEnrollmentNumber,Added,Model Representation,,Attribute
-PopulationDefinition,Modified,Attributes/Relationships,plannedEnrollmentNumberRange,Deleted,Data Type,Range,
-PopulationDefinition,Modified,Attributes/Relationships,plannedEnrollmentNumberRange,Deleted,Cardinality,0..1,
-PopulationDefinition,Modified,Attributes/Relationships,plannedEnrollmentNumberRange,Deleted,Model Representation,Attribute,
+PopulationDefinition,Modified,Attributes/Relationships,plannedCompletionNumber,Added,Data Type,,QuantityRange
+PopulationDefinition,Modified,Attributes/Relationships,plannedCompletionNumber,Added,Cardinality,,0..1
+PopulationDefinition,Modified,Attributes/Relationships,plannedCompletionNumber,Added,Model Representation,,Attribute
 PopulationDefinition,Modified,Attributes/Relationships,plannedCompletionNumberRange,Deleted,Data Type,Range,
 PopulationDefinition,Modified,Attributes/Relationships,plannedCompletionNumberRange,Deleted,Cardinality,0..1,
 PopulationDefinition,Modified,Attributes/Relationships,plannedCompletionNumberRange,Deleted,Model Representation,Attribute,
+PopulationDefinition,Modified,Attributes/Relationships,plannedEnrollmentNumberRange,Deleted,Data Type,Range,
+PopulationDefinition,Modified,Attributes/Relationships,plannedEnrollmentNumberRange,Deleted,Cardinality,0..1,
+PopulationDefinition,Modified,Attributes/Relationships,plannedEnrollmentNumberRange,Deleted,Model Representation,Attribute,
 PopulationDefinition,Modified,Attributes/Relationships,plannedCompletionNumberQuantity,Deleted,Data Type,Quantity,
 PopulationDefinition,Modified,Attributes/Relationships,plannedCompletionNumberQuantity,Deleted,Cardinality,0..1,
 PopulationDefinition,Modified,Attributes/Relationships,plannedCompletionNumberQuantity,Deleted,Model Representation,Attribute,
 PopulationDefinition,Modified,Attributes/Relationships,plannedEnrollmentNumberQuantity,Deleted,Data Type,Quantity,
 PopulationDefinition,Modified,Attributes/Relationships,plannedEnrollmentNumberQuantity,Deleted,Cardinality,0..1,
 PopulationDefinition,Modified,Attributes/Relationships,plannedEnrollmentNumberQuantity,Deleted,Model Representation,Attribute,
-AssignedPerson,Modified,Attributes/Relationships,personName,Added,Data Type,,PersonName
-AssignedPerson,Modified,Attributes/Relationships,personName,Added,Cardinality,,1
-AssignedPerson,Modified,Attributes/Relationships,personName,Added,Model Representation,,Attribute
-ResponseCode,Modified,Attributes/Relationships,name,Added,Data Type,,String
-ResponseCode,Modified,Attributes/Relationships,name,Added,Cardinality,,1
-ResponseCode,Modified,Attributes/Relationships,name,Added,Model Representation,,Attribute
-ResponseCode,Modified,Attributes/Relationships,label,Added,Data Type,,String
-ResponseCode,Modified,Attributes/Relationships,label,Added,Cardinality,,0..1
-ResponseCode,Modified,Attributes/Relationships,label,Added,Model Representation,,Attribute
-StudyCohort,Modified,Attributes/Relationships,plannedCompletionNumber,Added,Inherited From,,PopulationDefinition
-StudyCohort,Modified,Attributes/Relationships,plannedCompletionNumber,Added,Data Type,,QuantityRange
-StudyCohort,Modified,Attributes/Relationships,plannedCompletionNumber,Added,Cardinality,,0..1
-StudyCohort,Modified,Attributes/Relationships,plannedCompletionNumber,Added,Model Representation,,Attribute
-StudyCohort,Modified,Attributes/Relationships,plannedEnrollmentNumber,Added,Inherited From,,PopulationDefinition
-StudyCohort,Modified,Attributes/Relationships,plannedEnrollmentNumber,Added,Data Type,,QuantityRange
-StudyCohort,Modified,Attributes/Relationships,plannedEnrollmentNumber,Added,Cardinality,,0..1
-StudyCohort,Modified,Attributes/Relationships,plannedEnrollmentNumber,Added,Model Representation,,Attribute
-StudyCohort,Modified,Attributes/Relationships,plannedEnrollmentNumberRange,Deleted,Inherited From,PopulationDefinition,
-StudyCohort,Modified,Attributes/Relationships,plannedEnrollmentNumberRange,Deleted,Data Type,Range,
-StudyCohort,Modified,Attributes/Relationships,plannedEnrollmentNumberRange,Deleted,Cardinality,0..1,
-StudyCohort,Modified,Attributes/Relationships,plannedEnrollmentNumberRange,Deleted,Model Representation,Attribute,
-StudyCohort,Modified,Attributes/Relationships,plannedCompletionNumberRange,Deleted,Inherited From,PopulationDefinition,
-StudyCohort,Modified,Attributes/Relationships,plannedCompletionNumberRange,Deleted,Data Type,Range,
-StudyCohort,Modified,Attributes/Relationships,plannedCompletionNumberRange,Deleted,Cardinality,0..1,
-StudyCohort,Modified,Attributes/Relationships,plannedCompletionNumberRange,Deleted,Model Representation,Attribute,
-StudyCohort,Modified,Attributes/Relationships,plannedCompletionNumberQuantity,Deleted,Inherited From,PopulationDefinition,
-StudyCohort,Modified,Attributes/Relationships,plannedCompletionNumberQuantity,Deleted,Data Type,Quantity,
-StudyCohort,Modified,Attributes/Relationships,plannedCompletionNumberQuantity,Deleted,Cardinality,0..1,
-StudyCohort,Modified,Attributes/Relationships,plannedCompletionNumberQuantity,Deleted,Model Representation,Attribute,
-StudyCohort,Modified,Attributes/Relationships,plannedEnrollmentNumberQuantity,Deleted,Inherited From,PopulationDefinition,
-StudyCohort,Modified,Attributes/Relationships,plannedEnrollmentNumberQuantity,Deleted,Data Type,Quantity,
-StudyCohort,Modified,Attributes/Relationships,plannedEnrollmentNumberQuantity,Deleted,Cardinality,0..1,
-StudyCohort,Modified,Attributes/Relationships,plannedEnrollmentNumberQuantity,Deleted,Model Representation,Attribute,
-StudyDesignPopulation,Modified,Attributes/Relationships,plannedCompletionNumber,Added,Inherited From,,PopulationDefinition
-StudyDesignPopulation,Modified,Attributes/Relationships,plannedCompletionNumber,Added,Data Type,,QuantityRange
-StudyDesignPopulation,Modified,Attributes/Relationships,plannedCompletionNumber,Added,Cardinality,,0..1
-StudyDesignPopulation,Modified,Attributes/Relationships,plannedCompletionNumber,Added,Model Representation,,Attribute
-StudyDesignPopulation,Modified,Attributes/Relationships,plannedEnrollmentNumber,Added,Inherited From,,PopulationDefinition
-StudyDesignPopulation,Modified,Attributes/Relationships,plannedEnrollmentNumber,Added,Data Type,,QuantityRange
-StudyDesignPopulation,Modified,Attributes/Relationships,plannedEnrollmentNumber,Added,Cardinality,,0..1
-StudyDesignPopulation,Modified,Attributes/Relationships,plannedEnrollmentNumber,Added,Model Representation,,Attribute
-StudyDesignPopulation,Modified,Attributes/Relationships,plannedEnrollmentNumberRange,Deleted,Inherited From,PopulationDefinition,
-StudyDesignPopulation,Modified,Attributes/Relationships,plannedEnrollmentNumberRange,Deleted,Data Type,Range,
-StudyDesignPopulation,Modified,Attributes/Relationships,plannedEnrollmentNumberRange,Deleted,Cardinality,0..1,
-StudyDesignPopulation,Modified,Attributes/Relationships,plannedEnrollmentNumberRange,Deleted,Model Representation,Attribute,
-StudyDesignPopulation,Modified,Attributes/Relationships,plannedCompletionNumberRange,Deleted,Inherited From,PopulationDefinition,
-StudyDesignPopulation,Modified,Attributes/Relationships,plannedCompletionNumberRange,Deleted,Data Type,Range,
-StudyDesignPopulation,Modified,Attributes/Relationships,plannedCompletionNumberRange,Deleted,Cardinality,0..1,
-StudyDesignPopulation,Modified,Attributes/Relationships,plannedCompletionNumberRange,Deleted,Model Representation,Attribute,
-StudyDesignPopulation,Modified,Attributes/Relationships,plannedCompletionNumberQuantity,Deleted,Inherited From,PopulationDefinition,
-StudyDesignPopulation,Modified,Attributes/Relationships,plannedCompletionNumberQuantity,Deleted,Data Type,Quantity,
-StudyDesignPopulation,Modified,Attributes/Relationships,plannedCompletionNumberQuantity,Deleted,Cardinality,0..1,
-StudyDesignPopulation,Modified,Attributes/Relationships,plannedCompletionNumberQuantity,Deleted,Model Representation,Attribute,
-StudyDesignPopulation,Modified,Attributes/Relationships,plannedEnrollmentNumberQuantity,Deleted,Inherited From,PopulationDefinition,
-StudyDesignPopulation,Modified,Attributes/Relationships,plannedEnrollmentNumberQuantity,Deleted,Data Type,Quantity,
-StudyDesignPopulation,Modified,Attributes/Relationships,plannedEnrollmentNumberQuantity,Deleted,Cardinality,0..1,
-StudyDesignPopulation,Modified,Attributes/Relationships,plannedEnrollmentNumberQuantity,Deleted,Model Representation,Attribute,
-Strength,Modified,Attributes/Relationships,numerator,Added,Data Type,,QuantityRange
-Strength,Modified,Attributes/Relationships,numerator,Added,Cardinality,,1
-Strength,Modified,Attributes/Relationships,numerator,Added,Model Representation,,Attribute
-Strength,Modified,Attributes/Relationships,numeratorQuantity,Deleted,Data Type,Quantity,
-Strength,Modified,Attributes/Relationships,numeratorQuantity,Deleted,Cardinality,0..1,
-Strength,Modified,Attributes/Relationships,numeratorQuantity,Deleted,Model Representation,Attribute,
-Strength,Modified,Attributes/Relationships,numeratorRange,Deleted,Data Type,Range,
-Strength,Modified,Attributes/Relationships,numeratorRange,Deleted,Cardinality,0..1,
-Strength,Modified,Attributes/Relationships,numeratorRange,Deleted,Model Representation,Attribute,

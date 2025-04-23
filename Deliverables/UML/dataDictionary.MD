@@ -66,10 +66,10 @@
 ||medicalDevice|MedicalDevice||0..1||A USDM relationship between the Administration and MedicalDevice classes which identifies the medical device associated with an instance of product, agent, or therapy administration.|||
 |AdministrationDuration|||C69282||Administration Duration|The amount of time elapsed during the administration of an agent.|||
 ||id|String||1|||||
-||description|String|C207459|0..1|Administration Duration Description|A narrative representation of the agent administration duration.|||
-||quantity|Quantity|C207460|0..1|Administration Duration Quantity Value|The value representing the amount of time over which the administration of an agent occurs.|||
-||durationWillVary|Boolean|C207461|1|Administration Duration Will Vary Indicator|An indication as to whether the agent administration duration is planned to vary within and/or across subjects.|||
-||reasonDurationWillVary|String|C207462|0..1|Administration Duration Reason Duration Will Vary|The explanation for why the agent administration duration will vary within and/or across subjects.|||
+||description|String|C207459|0..1|Administration Duration Description|A narrative representation of the agent administration duration.||Duration|
+||quantity|Quantity|C207460|0..1|Administration Duration Quantity Value|The value representing the amount of time over which the administration of an agent occurs.||Duration|
+||durationWillVary|Boolean|C207461|1|Administration Duration Will Vary Indicator|An indication as to whether the agent administration duration is planned to vary within and/or across subjects.||Duration|
+||reasonDurationWillVary|String|C207462|0..1|Administration Duration Reason Duration Will Vary|The explanation for why the agent administration duration will vary within and/or across subjects.||Duration|
 |AliasCode|||C201344||Alias Code|An alternative symbol or combination of symbols which is assigned to the members of a collection.|||
 ||id|String||1|||||
 ||standardCode|Code|C215528|1|Standard Code|A combination of symbols that is used to represent the standard code.|||
@@ -159,7 +159,7 @@
 ||notes|CommentAnnotation|C215552|0..*|Condition Notes|A brief written record relevant to the condition.||SyntaxTemplate|
 ||dictionary|SyntaxTemplateDictionary||0..1||A USDM relationship between the Condition and SyntaxTemplateDictionary classes which provides the set of dictionary entries related to conditions.||SyntaxTemplate|
 ||context|Activity, ScheduledActivityInstance||0..*||A USDM relationship between the Condition and the ScheduledActivityInstance or Activity classes which identifies the scheduled activity instance or activity to which the condition belongs.|||
-||appliesTo|Activity, Procedure, BiomedicalConcept, BiomedicalConceptCategory, BiomedicalConceptSurrogate||0..*||A USDM relationship between the Condition and the Activity, Procedure, BiomedicalConcept, BiomedicalConceptSurrogate, or BiomedicalConceptCategory classes which identifies the procedure, activity, biomedical concept, biomedical concept surrogate, or biomedical concept category that applies to the condition.|||
+||appliesTo|BiomedicalConceptSurrogate, BiomedicalConceptCategory, BiomedicalConcept, Procedure, Activity||0..*||A USDM relationship between the Condition and the Activity, Procedure, BiomedicalConcept, BiomedicalConceptSurrogate, or BiomedicalConceptCategory classes which identifies the procedure, activity, biomedical concept, biomedical concept surrogate, or biomedical concept category that applies to the condition.|||
 |ConditionAssignment|||C201335||Condition Assignment|An allotting or appointment to a condition or set of conditions that are to be met in order to make a logical decision.|||
 ||id|string||1|||||
 ||condition|String|C47953|1|Logical Condition|An assumption on which rests the validity or effect of something else.|||
@@ -169,6 +169,12 @@
 ||sectionNumber|String|C215609|1|Document Content Reference Section Number|The numeric identifier of a particular section for the document content reference.|||
 ||sectionTitle|String|C215610|1|Document Content Reference Section Title|An identifying designation for a particular section for the document content reference.|||
 ||appliesTo|StudyDefinitionDocument||1||A USDM relationship between the DocumentContentReference and StudyDefinitionDocument classes which identifies the study definition document to which the document content reference applies.|||
+|Duration|||||||||
+||id|String||1|||||
+||description|String||0..1|||||
+||quantity|Quantity||0..1|||||
+||durationWillVary|Boolean||1|||||
+||reasonDurationWillVary|String||0..1|||||
 |EligibilityCriterion|||C16112||Study Eligibility Criterion|Characteristics which are necessary to allow a subject to participate in a clinical study, as outlined in the study protocol. The concept covers inclusion and exclusion criteria.|||
 ||id|String||1|||||
 ||name|String|C207488|1|Study Eligibility Criterion Name|The literal identifier (i.e., distinctive designation) of the study eligibility criterion.|||
@@ -410,7 +416,7 @@
 ||label|String|C215624|0..1|Product Organization Role Label|The short descriptive designation for the product organization role.|||
 ||description|String|C215623|0..1|Product Organization Role Description|A narrative representation of the product organization role.|||
 ||code|Code|C215625|1|Product Organization Role Code|A symbol or combination of symbols which is assigned to the product organization role.|||
-||appliesTo|AdministrableProduct, MedicalDevice||0..*||A USDM relationship between the ProductOrganizationRole and either the AdministrableProduct or MedicalDevice class that identifies the administrable product or medical device to which the product organization role applies.|||
+||appliesTo|MedicalDevice, AdministrableProduct||0..*||A USDM relationship between the ProductOrganizationRole and either the AdministrableProduct or MedicalDevice class that identifies the administrable product or medical device to which the product organization role applies.|||
 ||organization|Organization||1||A USDM relationship between the ProductOrganizationRole and Organization classes which identifies the organization associated with the product organization role.|||
 |Quantity|||C25256||Quantity|How much there is of something that can be measured; the total amount or number.|||
 ||id|String||1|||||
@@ -418,8 +424,6 @@
 ||unit|AliasCode|C44258|0..1|Quantity Unit|The type of unit of measure being used to express a quantity.|SDTM Terminology Codelist C71620||
 |QuantityRange|||||||||
 ||id|String||1|||||
-||quantity|Quantity||0..1|||||
-||range|Range||0..1|||||
 |Range|||C38013||Range|The difference between the lowest and highest numerical values; the limits or scale of variation.|||
 ||id|String||1|||||
 ||minValue|Quantity|C25570|1|Minimum Value|The smallest value in quantity or degree in a set of values.|||
@@ -447,6 +451,7 @@
 ||entry|ScheduledInstance||1||A USDM relationship between the ScheduleTimeline and ScheduledInstance classes which defines the entry into a scheduled instance (e.g., scheduled activity instances or scheduled decision instances) for a timeline.|||
 ||exits|ScheduleTimelineExit||0..*||A USDM relationship between the ScheduleTimeline and ScheduleTimelineExit classes which identifies the set of exits from the scheduled timeline.|||
 ||timings|Timing||0..*||A USDM relationship between the ScheduleTimeline and Timing classes which identifies the set of timings associated with the scheduled timeline.|||
+||plannedDuration|TimelineDuration||0..1|||||
 |ScheduleTimelineExit|||C201349||Schedule Timeline Exit|To go out of or leave the schedule timeline.|||
 ||id|String||1|||||
 |ScheduledActivityInstance|||C201350||Scheduled Activity Instance|A scheduled occurrence of an activity event.|||
@@ -650,7 +655,7 @@
 ||assignedPersons|AssignedPerson||0..*||A USDM relationship between the StudyRole and AssignedPerson classes that identifies the set of individuals that are assigned to fill a particular role within the study.|||
 ||masking|Masking||0..1||A USDM relationship between the StudyRole and Masking classes which describes the masking associated with the study role.|||
 ||organizations|Organization||0..*||A USDM relationship between the StudyRole and Organization classes which identifies the set of organizations associated with the study role.|||
-||appliesTo|StudyDesign, StudyVersion||0..*||A USDM relationship between the StudyRole and either StudyVersion or StudyDesign classes that identifies the study version or study design to which the study role applies.|||
+||appliesTo|StudyVersion, StudyDesign||0..*||A USDM relationship between the StudyRole and either StudyVersion or StudyDesign classes that identifies the study version or study design to which the study role applies.|||
 |StudySite|||C80403||Study Site|The location at which a study investigator conducts study activities.|||
 ||id|String||1|||||
 ||name|String|C207566|1|Study Site Name|The literal identifier (i.e., distinctive designation) of the study site.|||
@@ -706,6 +711,12 @@
 ||label|String|C207580|0..1|Syntax Template Dictionary Label|The short descriptive designation for the syntax template dictionary.|||
 ||description|String|C207579|0..1|Syntax Template Dictionary Description|A narrative representation of the syntax template dictionary.|||
 ||parameterMaps|ParameterMap||1..*||A USDM relationship between the SyntaxTemplateDictionary and ParameterMap classes which identifies the set of parameter maps (parameter map entries) associated with a syntax template dictionary.|||
+|TimelineDuration|||||||||
+||id|String||1|||||
+||description|String||0..1|||||
+||quantity|Quantity||0..1|||||
+||durationWillVary|Boolean||1|||||
+||reasonDurationWillVary|String||0..1|||||
 |Timing|||C80484||Timing|The chronological relationship between temporal events.|||
 ||id|String||1|||||
 ||name|String|C207584|1|Timing Name|The literal identifier (i.e., distinctive designation) of the timing.|||
