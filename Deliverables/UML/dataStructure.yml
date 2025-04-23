@@ -931,6 +931,13 @@ AssignedPerson:
       Relationship Type: Value
       Model Name: description
       Model Representation: Attribute
+    personName:
+      Type:
+      - $ref: '#/PersonName'
+      Cardinality: '1'
+      Relationship Type: Value
+      Model Name: personName
+      Model Representation: Attribute
     jobTitle:
       Type:
       - $ref: '#/string'
@@ -1726,9 +1733,9 @@ Condition:
       Type:
       - $ref: '#/Activity'
       - $ref: '#/Procedure'
+      - $ref: '#/BiomedicalConcept'
       - $ref: '#/BiomedicalConceptCategory'
       - $ref: '#/BiomedicalConceptSurrogate'
-      - $ref: '#/BiomedicalConcept'
       Definition: A USDM relationship between the Condition and the Activity, Procedure,
         BiomedicalConcept, BiomedicalConceptSurrogate, or BiomedicalConceptCategory
         classes which identifies the procedure, activity, biomedical concept, biomedical
@@ -2670,8 +2677,6 @@ GovernanceDate:
       - $ref: '#/string'
       Cardinality: '1'
       Relationship Type: Value
-HumanName:
-  Modifier: Concrete
 Identifier:
   NCI C-Code: C25364
   Preferred Term: Identifier
@@ -4348,6 +4353,57 @@ ParameterMap:
       - $ref: '#/string'
       Cardinality: '1'
       Relationship Type: Value
+PersonName:
+  Modifier: Concrete
+  Attributes:
+    id:
+      Type:
+      - $ref: '#/string'
+      Cardinality: '1'
+      Relationship Type: Value
+      Model Name: id
+      Model Representation: Attribute
+    text:
+      Type:
+      - $ref: '#/string'
+      Cardinality: 0..1
+      Relationship Type: Value
+      Model Name: text
+      Model Representation: Attribute
+    familyName:
+      Type:
+      - $ref: '#/string'
+      Cardinality: 0..1
+      Relationship Type: Value
+      Model Name: familyName
+      Model Representation: Attribute
+    givenNames:
+      Type:
+      - $ref: '#/string'
+      Cardinality: 0..*
+      Relationship Type: Value
+      Model Name: givenNames
+      Model Representation: Attribute
+    extensionAttributes:
+      Type:
+      - $ref: '#/ExtensionAttribute'
+      Cardinality: 0..*
+      Relationship Type: Value
+    namePrefixes:
+      Type:
+      - $ref: '#/string'
+      Cardinality: 0..*
+      Relationship Type: Value
+    nameSuffixes:
+      Type:
+      - $ref: '#/string'
+      Cardinality: 0..*
+      Relationship Type: Value
+    instanceType:
+      Type:
+      - $ref: '#/string'
+      Cardinality: '1'
+      Relationship Type: Value
 PopulationDefinition:
   NCI C-Code: C207593
   Preferred Term: Population Definition
@@ -4426,6 +4482,20 @@ PopulationDefinition:
       Relationship Type: Value
       Model Name: plannedAge
       Model Representation: Attribute
+    plannedCompletionNumber:
+      Type:
+      - $ref: '#/QuantityRange'
+      Cardinality: 0..1
+      Relationship Type: Value
+      Model Name: plannedCompletionNumber
+      Model Representation: Attribute
+    plannedEnrollmentNumber:
+      Type:
+      - $ref: '#/QuantityRange'
+      Cardinality: 0..1
+      Relationship Type: Value
+      Model Name: plannedEnrollmentNumber
+      Model Representation: Attribute
     notes:
       Type:
       - $ref: '#/CommentAnnotation'
@@ -4446,48 +4516,6 @@ PopulationDefinition:
       Relationship Type: Ref
       Model Name: criteria
       Model Representation: Relationship
-    plannedEnrollmentNumberRange:
-      Type:
-      - $ref: '#/Range'
-      NCI C-Code: C215546
-      Preferred Term: Study Cohort Planned Enrollment Number Range
-      Definition: The range of values representing the planned number of subjects
-        to be entered in a clinical trial, within the study cohort.
-      Cardinality: 0..1
-      Relationship Type: Value
-      Model Representation: Attribute
-    plannedEnrollmentNumberQuantity:
-      Type:
-      - $ref: '#/Quantity'
-      NCI C-Code: CNEW
-      Preferred Term: Study Cohort Planned Enrollment Number Quantity
-      Definition: The value representing the planned number of subjects to be entered
-        in a clinical trial, within the study cohort.
-      Cardinality: 0..1
-      Relationship Type: Value
-      Model Representation: Attribute
-    plannedCompletionNumberRange:
-      Type:
-      - $ref: '#/Range'
-      NCI C-Code: C215545
-      Preferred Term: Study Cohort Planned Completion Number Range
-      Definition: The range of values representing the planned number of subjects
-        that must complete the study in order to meet the objectives and endpoints
-        of the study, within the study cohort.
-      Cardinality: 0..1
-      Relationship Type: Value
-      Model Representation: Attribute
-    plannedCompletionNumberQuantity:
-      Type:
-      - $ref: '#/Quantity'
-      NCI C-Code: CNEW
-      Preferred Term: Study Cohort Planned Completion Number Quantity
-      Definition: The value representing the planned number of subjects that must
-        complete the study in order to meet the objectives and endpoints of the study,
-        within the study cohort.
-      Cardinality: 0..1
-      Relationship Type: Value
-      Model Representation: Attribute
 Procedure:
   NCI C-Code: C98769
   Preferred Term: Procedure
@@ -4716,6 +4744,38 @@ Quantity:
       Relationship Type: Value
 QuantityRange:
   Modifier: Concrete
+  Attributes:
+    id:
+      Type:
+      - $ref: '#/string'
+      Cardinality: '1'
+      Relationship Type: Value
+      Model Name: id
+      Model Representation: Attribute
+    quantity:
+      Type:
+      - $ref: '#/Quantity'
+      Cardinality: 0..1
+      Relationship Type: Value
+      Model Name: quantity
+      Model Representation: Attribute
+    range:
+      Type:
+      - $ref: '#/Range'
+      Cardinality: 0..1
+      Relationship Type: Value
+      Model Name: range
+      Model Representation: Attribute
+    extensionAttributes:
+      Type:
+      - $ref: '#/ExtensionAttribute'
+      Cardinality: 0..*
+      Relationship Type: Value
+    instanceType:
+      Type:
+      - $ref: '#/string'
+      Cardinality: '1'
+      Relationship Type: Value
 Range:
   NCI C-Code: C38013
   Preferred Term: Range
@@ -4846,6 +4906,20 @@ ResponseCode:
       Cardinality: '1'
       Relationship Type: Value
       Model Name: id
+      Model Representation: Attribute
+    name:
+      Type:
+      - $ref: '#/string'
+      Cardinality: '1'
+      Relationship Type: Value
+      Model Name: name
+      Model Representation: Attribute
+    label:
+      Type:
+      - $ref: '#/string'
+      Cardinality: 0..1
+      Relationship Type: Value
+      Model Name: label
       Model Representation: Attribute
     isEnabled:
       Type:
@@ -5350,6 +5424,13 @@ Strength:
       Relationship Type: Value
       Model Name: description
       Model Representation: Attribute
+    numerator:
+      Type:
+      - $ref: '#/QuantityRange'
+      Cardinality: '1'
+      Relationship Type: Value
+      Model Name: numerator
+      Model Representation: Attribute
     denominator:
       Type:
       - $ref: '#/Quantity'
@@ -5365,25 +5446,6 @@ Strength:
       - $ref: '#/ExtensionAttribute'
       Cardinality: 0..*
       Relationship Type: Value
-    numeratorQuantity:
-      Type:
-      - $ref: '#/Quantity'
-      NCI C-Code: C215593
-      Preferred Term: Substance Strength Numerator Quantity
-      Definition: The value representing the numerator for the substance strength.
-      Cardinality: 0..1
-      Relationship Type: Value
-      Model Representation: Attribute
-    numeratorRange:
-      Type:
-      - $ref: '#/Range'
-      NCI C-Code: C215594
-      Preferred Term: Substance Strength Numerator Range
-      Definition: The lowest and highest numerical values that define a range for
-        the substance strength.
-      Cardinality: 0..1
-      Relationship Type: Value
-      Model Representation: Attribute
     instanceType:
       Type:
       - $ref: '#/string'
@@ -5477,6 +5539,27 @@ StudyAmendment:
       Cardinality: '1'
       Relationship Type: Value
       Model Name: id
+      Model Representation: Attribute
+    name:
+      Type:
+      - $ref: '#/string'
+      Cardinality: '1'
+      Relationship Type: Value
+      Model Name: name
+      Model Representation: Attribute
+    label:
+      Type:
+      - $ref: '#/string'
+      Cardinality: 0..1
+      Relationship Type: Value
+      Model Name: label
+      Model Representation: Attribute
+    description:
+      Type:
+      - $ref: '#/string'
+      Cardinality: 0..1
+      Relationship Type: Value
+      Model Name: description
       Model Representation: Attribute
     number:
       Type:
@@ -6042,6 +6125,24 @@ StudyCohort:
       Model Representation: Attribute
       inheritedFrom:
       - $ref: '#/PopulationDefinition'
+    plannedCompletionNumber:
+      Type:
+      - $ref: '#/QuantityRange'
+      Cardinality: 0..1
+      Relationship Type: Value
+      Model Name: plannedCompletionNumber
+      Model Representation: Attribute
+      inheritedFrom:
+      - $ref: '#/PopulationDefinition'
+    plannedEnrollmentNumber:
+      Type:
+      - $ref: '#/QuantityRange'
+      Cardinality: 0..1
+      Relationship Type: Value
+      Model Name: plannedEnrollmentNumber
+      Model Representation: Attribute
+      inheritedFrom:
+      - $ref: '#/PopulationDefinition'
     notes:
       Type:
       - $ref: '#/CommentAnnotation'
@@ -6090,48 +6191,6 @@ StudyCohort:
       - $ref: '#/ExtensionAttribute'
       Cardinality: 0..*
       Relationship Type: Value
-    plannedEnrollmentNumberRange:
-      Type:
-      - $ref: '#/Range'
-      NCI C-Code: C215546
-      Preferred Term: Study Cohort Planned Enrollment Number Range
-      Definition: The range of values representing the planned number of subjects
-        to be entered in a clinical trial, within the study cohort.
-      Cardinality: 0..1
-      Relationship Type: Value
-      Model Representation: Attribute
-    plannedEnrollmentNumberQuantity:
-      Type:
-      - $ref: '#/Quantity'
-      NCI C-Code: CNEW
-      Preferred Term: Study Cohort Planned Enrollment Number Quantity
-      Definition: The value representing the planned number of subjects to be entered
-        in a clinical trial, within the study cohort.
-      Cardinality: 0..1
-      Relationship Type: Value
-      Model Representation: Attribute
-    plannedCompletionNumberRange:
-      Type:
-      - $ref: '#/Range'
-      NCI C-Code: C215545
-      Preferred Term: Study Cohort Planned Completion Number Range
-      Definition: The range of values representing the planned number of subjects
-        that must complete the study in order to meet the objectives and endpoints
-        of the study, within the study cohort.
-      Cardinality: 0..1
-      Relationship Type: Value
-      Model Representation: Attribute
-    plannedCompletionNumberQuantity:
-      Type:
-      - $ref: '#/Quantity'
-      NCI C-Code: CNEW
-      Preferred Term: Study Cohort Planned Completion Number Quantity
-      Definition: The value representing the planned number of subjects that must
-        complete the study in order to meet the objectives and endpoints of the study,
-        within the study cohort.
-      Cardinality: 0..1
-      Relationship Type: Value
-      Model Representation: Attribute
     instanceType:
       Type:
       - $ref: '#/string'
@@ -6689,6 +6748,24 @@ StudyDesignPopulation:
       Model Representation: Attribute
       inheritedFrom:
       - $ref: '#/PopulationDefinition'
+    plannedCompletionNumber:
+      Type:
+      - $ref: '#/QuantityRange'
+      Cardinality: 0..1
+      Relationship Type: Value
+      Model Name: plannedCompletionNumber
+      Model Representation: Attribute
+      inheritedFrom:
+      - $ref: '#/PopulationDefinition'
+    plannedEnrollmentNumber:
+      Type:
+      - $ref: '#/QuantityRange'
+      Cardinality: 0..1
+      Relationship Type: Value
+      Model Name: plannedEnrollmentNumber
+      Model Representation: Attribute
+      inheritedFrom:
+      - $ref: '#/PopulationDefinition'
     notes:
       Type:
       - $ref: '#/CommentAnnotation'
@@ -6728,48 +6805,6 @@ StudyDesignPopulation:
       - $ref: '#/ExtensionAttribute'
       Cardinality: 0..*
       Relationship Type: Value
-    plannedEnrollmentNumberRange:
-      Type:
-      - $ref: '#/Range'
-      NCI C-Code: C215511
-      Preferred Term: Study Design Population Planned Enrollment Number Range
-      Definition: The range of values representing the planned number of subjects
-        to be entered in a clinical trial, within the study design population.
-      Cardinality: 0..1
-      Relationship Type: Value
-      Model Representation: Attribute
-    plannedEnrollmentNumberQuantity:
-      Type:
-      - $ref: '#/Quantity'
-      NCI C-Code: CNEW
-      Preferred Term: Study Design Population Planned Enrollment Number Quantity
-      Definition: The value representing the planned number of subjects to be entered
-        in a clinical trial, within the study design population.
-      Cardinality: 0..1
-      Relationship Type: Value
-      Model Representation: Attribute
-    plannedCompletionNumberRange:
-      Type:
-      - $ref: '#/Range'
-      NCI C-Code: C215510
-      Preferred Term: Study Design Population Planned Completion Number Range
-      Definition: The range of values representing the planned number of subjects
-        that must complete the study in order to meet the objectives and endpoints
-        of the study, within the study design population.
-      Cardinality: 0..1
-      Relationship Type: Value
-      Model Representation: Attribute
-    plannedCompletionNumberQuantity:
-      Type:
-      - $ref: '#/Quantity'
-      NCI C-Code: CNEW
-      Preferred Term: Study Design Population Planned Completion Number Quantity
-      Definition: The value representing the planned number of subjects that must
-        complete the study in order to meet the objectives and endpoints of the study,
-        within the study design population.
-      Cardinality: 0..1
-      Relationship Type: Value
-      Model Representation: Attribute
     instanceType:
       Type:
       - $ref: '#/string'
@@ -7225,8 +7260,8 @@ StudyRole:
       Model Representation: Relationship
     appliesToIds:
       Type:
-      - $ref: '#/StudyVersion'
       - $ref: '#/StudyDesign'
+      - $ref: '#/StudyVersion'
       Definition: A USDM relationship between the StudyRole and either StudyVersion
         or StudyDesign classes that identifies the study version or study design to
         which the study role applies.

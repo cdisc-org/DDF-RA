@@ -1294,6 +1294,8 @@ components:
           - type: string
           - type: 'null'
           title: Description
+        personName:
+          $ref: '#/components/schemas/PersonName-Input'
         jobTitle:
           type: string
           title: Jobtitle
@@ -1312,6 +1314,7 @@ components:
       required:
       - id
       - name
+      - personName
       - jobTitle
       - instanceType
       title: AssignedPerson
@@ -1341,6 +1344,8 @@ components:
           - type: string
           - type: 'null'
           title: Description
+        personName:
+          $ref: '#/components/schemas/PersonName-Output'
         jobTitle:
           type: string
           title: Jobtitle
@@ -1359,6 +1364,7 @@ components:
       required:
       - id
       - name
+      - personName
       - jobTitle
       - instanceType
       title: AssignedPerson
@@ -5193,6 +5199,108 @@ components:
       - reference
       - instanceType
       title: ParameterMap
+    PersonName-Input:
+      properties:
+        id:
+          type: string
+          minLength: 1
+          title: Id
+        extensionAttributes:
+          items:
+            $ref: '#/components/schemas/ExtensionAttribute-Input'
+          type: array
+          title: Extensionattributes
+          default: []
+        text:
+          anyOf:
+          - type: string
+          - type: 'null'
+          title: Text
+        familyName:
+          anyOf:
+          - type: string
+          - type: 'null'
+          title: Familyname
+        givenNames:
+          items:
+            type: string
+          type: array
+          title: Givennames
+          default: []
+        namePrefixes:
+          items:
+            type: string
+          type: array
+          title: Nameprefixes
+          default: []
+        nameSuffixes:
+          items:
+            type: string
+          type: array
+          title: Namesuffixes
+          default: []
+        instanceType:
+          type: string
+          enum:
+          - PersonName
+          const: PersonName
+          title: Instancetype
+      type: object
+      required:
+      - id
+      - instanceType
+      title: PersonName
+    PersonName-Output:
+      properties:
+        id:
+          type: string
+          minLength: 1
+          title: Id
+        extensionAttributes:
+          items:
+            $ref: '#/components/schemas/ExtensionAttribute-Output'
+          type: array
+          title: Extensionattributes
+          default: []
+        text:
+          anyOf:
+          - type: string
+          - type: 'null'
+          title: Text
+        familyName:
+          anyOf:
+          - type: string
+          - type: 'null'
+          title: Familyname
+        givenNames:
+          items:
+            type: string
+          type: array
+          title: Givennames
+          default: []
+        namePrefixes:
+          items:
+            type: string
+          type: array
+          title: Nameprefixes
+          default: []
+        nameSuffixes:
+          items:
+            type: string
+          type: array
+          title: Namesuffixes
+          default: []
+        instanceType:
+          type: string
+          enum:
+          - PersonName
+          const: PersonName
+          title: Instancetype
+      type: object
+      required:
+      - id
+      - instanceType
+      title: PersonName
     Procedure-Input:
       properties:
         id:
@@ -5469,6 +5577,68 @@ components:
       - value
       - instanceType
       title: Quantity
+    QuantityRange-Input:
+      properties:
+        id:
+          type: string
+          minLength: 1
+          title: Id
+        extensionAttributes:
+          items:
+            $ref: '#/components/schemas/ExtensionAttribute-Input'
+          type: array
+          title: Extensionattributes
+          default: []
+        quantity:
+          anyOf:
+          - $ref: '#/components/schemas/Quantity-Input'
+          - type: 'null'
+        range:
+          anyOf:
+          - $ref: '#/components/schemas/Range-Input'
+          - type: 'null'
+        instanceType:
+          type: string
+          enum:
+          - QuantityRange
+          const: QuantityRange
+          title: Instancetype
+      type: object
+      required:
+      - id
+      - instanceType
+      title: QuantityRange
+    QuantityRange-Output:
+      properties:
+        id:
+          type: string
+          minLength: 1
+          title: Id
+        extensionAttributes:
+          items:
+            $ref: '#/components/schemas/ExtensionAttribute-Output'
+          type: array
+          title: Extensionattributes
+          default: []
+        quantity:
+          anyOf:
+          - $ref: '#/components/schemas/Quantity-Output'
+          - type: 'null'
+        range:
+          anyOf:
+          - $ref: '#/components/schemas/Range-Output'
+          - type: 'null'
+        instanceType:
+          type: string
+          enum:
+          - QuantityRange
+          const: QuantityRange
+          title: Instancetype
+      type: object
+      required:
+      - id
+      - instanceType
+      title: QuantityRange
     Range-Input:
       properties:
         id:
@@ -5615,6 +5785,15 @@ components:
           type: array
           title: Extensionattributes
           default: []
+        name:
+          type: string
+          minLength: 1
+          title: Name
+        label:
+          anyOf:
+          - type: string
+          - type: 'null'
+          title: Label
         isEnabled:
           type: boolean
           title: Isenabled
@@ -5629,6 +5808,7 @@ components:
       type: object
       required:
       - id
+      - name
       - isEnabled
       - code
       - instanceType
@@ -5645,6 +5825,15 @@ components:
           type: array
           title: Extensionattributes
           default: []
+        name:
+          type: string
+          minLength: 1
+          title: Name
+        label:
+          anyOf:
+          - type: string
+          - type: 'null'
+          title: Label
         isEnabled:
           type: boolean
           title: Isenabled
@@ -5659,6 +5848,7 @@ components:
       type: object
       required:
       - id
+      - name
       - isEnabled
       - code
       - instanceType
@@ -6121,17 +6311,11 @@ components:
           - type: string
           - type: 'null'
           title: Description
+        numerator:
+          $ref: '#/components/schemas/QuantityRange-Input'
         denominator:
           anyOf:
           - $ref: '#/components/schemas/Quantity-Input'
-          - type: 'null'
-        numeratorQuantity:
-          anyOf:
-          - $ref: '#/components/schemas/Quantity-Input'
-          - type: 'null'
-        numeratorRange:
-          anyOf:
-          - $ref: '#/components/schemas/Range-Input'
           - type: 'null'
         instanceType:
           type: string
@@ -6143,6 +6327,7 @@ components:
       required:
       - id
       - name
+      - numerator
       - instanceType
       title: Strength
     Strength-Output:
@@ -6171,17 +6356,11 @@ components:
           - type: string
           - type: 'null'
           title: Description
+        numerator:
+          $ref: '#/components/schemas/QuantityRange-Output'
         denominator:
           anyOf:
           - $ref: '#/components/schemas/Quantity-Output'
-          - type: 'null'
-        numeratorQuantity:
-          anyOf:
-          - $ref: '#/components/schemas/Quantity-Output'
-          - type: 'null'
-        numeratorRange:
-          anyOf:
-          - $ref: '#/components/schemas/Range-Output'
           - type: 'null'
         instanceType:
           type: string
@@ -6193,6 +6372,7 @@ components:
       required:
       - id
       - name
+      - numerator
       - instanceType
       title: Strength
     Study-Input:
@@ -6309,6 +6489,20 @@ components:
           type: array
           title: Extensionattributes
           default: []
+        name:
+          type: string
+          minLength: 1
+          title: Name
+        label:
+          anyOf:
+          - type: string
+          - type: 'null'
+          title: Label
+        description:
+          anyOf:
+          - type: string
+          - type: 'null'
+          title: Description
         number:
           type: string
           title: Number
@@ -6371,6 +6565,7 @@ components:
       type: object
       required:
       - id
+      - name
       - number
       - summary
       - primaryReason
@@ -6390,6 +6585,20 @@ components:
           type: array
           title: Extensionattributes
           default: []
+        name:
+          type: string
+          minLength: 1
+          title: Name
+        label:
+          anyOf:
+          - type: string
+          - type: 'null'
+          title: Label
+        description:
+          anyOf:
+          - type: string
+          - type: 'null'
+          title: Description
         number:
           type: string
           title: Number
@@ -6452,6 +6661,7 @@ components:
       type: object
       required:
       - id
+      - name
       - number
       - summary
       - primaryReason
@@ -6928,21 +7138,13 @@ components:
         includesHealthySubjects:
           type: boolean
           title: Includeshealthysubjects
-        plannedEnrollmentNumberRange:
+        plannedEnrollmentNumber:
           anyOf:
-          - $ref: '#/components/schemas/Range-Input'
+          - $ref: '#/components/schemas/QuantityRange-Input'
           - type: 'null'
-        plannedEnrollmentNumberQuantity:
+        plannedCompletionNumber:
           anyOf:
-          - $ref: '#/components/schemas/Quantity-Input'
-          - type: 'null'
-        plannedCompletionNumberRange:
-          anyOf:
-          - $ref: '#/components/schemas/Range-Input'
-          - type: 'null'
-        plannedCompletionNumberQuantity:
-          anyOf:
-          - $ref: '#/components/schemas/Quantity-Input'
+          - $ref: '#/components/schemas/QuantityRange-Input'
           - type: 'null'
         plannedSex:
           items:
@@ -7021,21 +7223,13 @@ components:
         includesHealthySubjects:
           type: boolean
           title: Includeshealthysubjects
-        plannedEnrollmentNumberRange:
+        plannedEnrollmentNumber:
           anyOf:
-          - $ref: '#/components/schemas/Range-Output'
+          - $ref: '#/components/schemas/QuantityRange-Output'
           - type: 'null'
-        plannedEnrollmentNumberQuantity:
+        plannedCompletionNumber:
           anyOf:
-          - $ref: '#/components/schemas/Quantity-Output'
-          - type: 'null'
-        plannedCompletionNumberRange:
-          anyOf:
-          - $ref: '#/components/schemas/Range-Output'
-          - type: 'null'
-        plannedCompletionNumberQuantity:
-          anyOf:
-          - $ref: '#/components/schemas/Quantity-Output'
+          - $ref: '#/components/schemas/QuantityRange-Output'
           - type: 'null'
         plannedSex:
           items:
@@ -7342,21 +7536,13 @@ components:
         includesHealthySubjects:
           type: boolean
           title: Includeshealthysubjects
-        plannedEnrollmentNumberRange:
+        plannedEnrollmentNumber:
           anyOf:
-          - $ref: '#/components/schemas/Range-Input'
+          - $ref: '#/components/schemas/QuantityRange-Input'
           - type: 'null'
-        plannedEnrollmentNumberQuantity:
+        plannedCompletionNumber:
           anyOf:
-          - $ref: '#/components/schemas/Quantity-Input'
-          - type: 'null'
-        plannedCompletionNumberRange:
-          anyOf:
-          - $ref: '#/components/schemas/Range-Input'
-          - type: 'null'
-        plannedCompletionNumberQuantity:
-          anyOf:
-          - $ref: '#/components/schemas/Quantity-Input'
+          - $ref: '#/components/schemas/QuantityRange-Input'
           - type: 'null'
         plannedSex:
           items:
@@ -7429,21 +7615,13 @@ components:
         includesHealthySubjects:
           type: boolean
           title: Includeshealthysubjects
-        plannedEnrollmentNumberRange:
+        plannedEnrollmentNumber:
           anyOf:
-          - $ref: '#/components/schemas/Range-Output'
+          - $ref: '#/components/schemas/QuantityRange-Output'
           - type: 'null'
-        plannedEnrollmentNumberQuantity:
+        plannedCompletionNumber:
           anyOf:
-          - $ref: '#/components/schemas/Quantity-Output'
-          - type: 'null'
-        plannedCompletionNumberRange:
-          anyOf:
-          - $ref: '#/components/schemas/Range-Output'
-          - type: 'null'
-        plannedCompletionNumberQuantity:
-          anyOf:
-          - $ref: '#/components/schemas/Quantity-Output'
+          - $ref: '#/components/schemas/QuantityRange-Output'
           - type: 'null'
         plannedSex:
           items:

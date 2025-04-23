@@ -2003,6 +2003,9 @@
             ],
             "title": "Description"
           },
+          "personName": {
+            "$ref": "#/components/schemas/PersonName-Input"
+          },
           "jobTitle": {
             "type": "string",
             "title": "Jobtitle"
@@ -2031,6 +2034,7 @@
         "required": [
           "id",
           "name",
+          "personName",
           "jobTitle",
           "instanceType"
         ],
@@ -2078,6 +2082,9 @@
             ],
             "title": "Description"
           },
+          "personName": {
+            "$ref": "#/components/schemas/PersonName-Output"
+          },
           "jobTitle": {
             "type": "string",
             "title": "Jobtitle"
@@ -2106,6 +2113,7 @@
         "required": [
           "id",
           "name",
+          "personName",
           "jobTitle",
           "instanceType"
         ],
@@ -7878,6 +7886,160 @@
         ],
         "title": "ParameterMap"
       },
+      "PersonName-Input": {
+        "properties": {
+          "id": {
+            "type": "string",
+            "minLength": 1,
+            "title": "Id"
+          },
+          "extensionAttributes": {
+            "items": {
+              "$ref": "#/components/schemas/ExtensionAttribute-Input"
+            },
+            "type": "array",
+            "title": "Extensionattributes",
+            "default": []
+          },
+          "text": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Text"
+          },
+          "familyName": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Familyname"
+          },
+          "givenNames": {
+            "items": {
+              "type": "string"
+            },
+            "type": "array",
+            "title": "Givennames",
+            "default": []
+          },
+          "namePrefixes": {
+            "items": {
+              "type": "string"
+            },
+            "type": "array",
+            "title": "Nameprefixes",
+            "default": []
+          },
+          "nameSuffixes": {
+            "items": {
+              "type": "string"
+            },
+            "type": "array",
+            "title": "Namesuffixes",
+            "default": []
+          },
+          "instanceType": {
+            "type": "string",
+            "enum": [
+              "PersonName"
+            ],
+            "const": "PersonName",
+            "title": "Instancetype"
+          }
+        },
+        "type": "object",
+        "required": [
+          "id",
+          "instanceType"
+        ],
+        "title": "PersonName"
+      },
+      "PersonName-Output": {
+        "properties": {
+          "id": {
+            "type": "string",
+            "minLength": 1,
+            "title": "Id"
+          },
+          "extensionAttributes": {
+            "items": {
+              "$ref": "#/components/schemas/ExtensionAttribute-Output"
+            },
+            "type": "array",
+            "title": "Extensionattributes",
+            "default": []
+          },
+          "text": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Text"
+          },
+          "familyName": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Familyname"
+          },
+          "givenNames": {
+            "items": {
+              "type": "string"
+            },
+            "type": "array",
+            "title": "Givennames",
+            "default": []
+          },
+          "namePrefixes": {
+            "items": {
+              "type": "string"
+            },
+            "type": "array",
+            "title": "Nameprefixes",
+            "default": []
+          },
+          "nameSuffixes": {
+            "items": {
+              "type": "string"
+            },
+            "type": "array",
+            "title": "Namesuffixes",
+            "default": []
+          },
+          "instanceType": {
+            "type": "string",
+            "enum": [
+              "PersonName"
+            ],
+            "const": "PersonName",
+            "title": "Instancetype"
+          }
+        },
+        "type": "object",
+        "required": [
+          "id",
+          "instanceType"
+        ],
+        "title": "PersonName"
+      },
       "Procedure-Input": {
         "properties": {
           "id": {
@@ -8296,6 +8458,108 @@
         ],
         "title": "Quantity"
       },
+      "QuantityRange-Input": {
+        "properties": {
+          "id": {
+            "type": "string",
+            "minLength": 1,
+            "title": "Id"
+          },
+          "extensionAttributes": {
+            "items": {
+              "$ref": "#/components/schemas/ExtensionAttribute-Input"
+            },
+            "type": "array",
+            "title": "Extensionattributes",
+            "default": []
+          },
+          "quantity": {
+            "anyOf": [
+              {
+                "$ref": "#/components/schemas/Quantity-Input"
+              },
+              {
+                "type": "null"
+              }
+            ]
+          },
+          "range": {
+            "anyOf": [
+              {
+                "$ref": "#/components/schemas/Range-Input"
+              },
+              {
+                "type": "null"
+              }
+            ]
+          },
+          "instanceType": {
+            "type": "string",
+            "enum": [
+              "QuantityRange"
+            ],
+            "const": "QuantityRange",
+            "title": "Instancetype"
+          }
+        },
+        "type": "object",
+        "required": [
+          "id",
+          "instanceType"
+        ],
+        "title": "QuantityRange"
+      },
+      "QuantityRange-Output": {
+        "properties": {
+          "id": {
+            "type": "string",
+            "minLength": 1,
+            "title": "Id"
+          },
+          "extensionAttributes": {
+            "items": {
+              "$ref": "#/components/schemas/ExtensionAttribute-Output"
+            },
+            "type": "array",
+            "title": "Extensionattributes",
+            "default": []
+          },
+          "quantity": {
+            "anyOf": [
+              {
+                "$ref": "#/components/schemas/Quantity-Output"
+              },
+              {
+                "type": "null"
+              }
+            ]
+          },
+          "range": {
+            "anyOf": [
+              {
+                "$ref": "#/components/schemas/Range-Output"
+              },
+              {
+                "type": "null"
+              }
+            ]
+          },
+          "instanceType": {
+            "type": "string",
+            "enum": [
+              "QuantityRange"
+            ],
+            "const": "QuantityRange",
+            "title": "Instancetype"
+          }
+        },
+        "type": "object",
+        "required": [
+          "id",
+          "instanceType"
+        ],
+        "title": "QuantityRange"
+      },
       "Range-Input": {
         "properties": {
           "id": {
@@ -8489,6 +8753,22 @@
             "title": "Extensionattributes",
             "default": []
           },
+          "name": {
+            "type": "string",
+            "minLength": 1,
+            "title": "Name"
+          },
+          "label": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Label"
+          },
           "isEnabled": {
             "type": "boolean",
             "title": "Isenabled"
@@ -8508,6 +8788,7 @@
         "type": "object",
         "required": [
           "id",
+          "name",
           "isEnabled",
           "code",
           "instanceType"
@@ -8529,6 +8810,22 @@
             "title": "Extensionattributes",
             "default": []
           },
+          "name": {
+            "type": "string",
+            "minLength": 1,
+            "title": "Name"
+          },
+          "label": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Label"
+          },
           "isEnabled": {
             "type": "boolean",
             "title": "Isenabled"
@@ -8548,6 +8845,7 @@
         "type": "object",
         "required": [
           "id",
+          "name",
           "isEnabled",
           "code",
           "instanceType"
@@ -9290,30 +9588,13 @@
             ],
             "title": "Description"
           },
+          "numerator": {
+            "$ref": "#/components/schemas/QuantityRange-Input"
+          },
           "denominator": {
             "anyOf": [
               {
                 "$ref": "#/components/schemas/Quantity-Input"
-              },
-              {
-                "type": "null"
-              }
-            ]
-          },
-          "numeratorQuantity": {
-            "anyOf": [
-              {
-                "$ref": "#/components/schemas/Quantity-Input"
-              },
-              {
-                "type": "null"
-              }
-            ]
-          },
-          "numeratorRange": {
-            "anyOf": [
-              {
-                "$ref": "#/components/schemas/Range-Input"
               },
               {
                 "type": "null"
@@ -9333,6 +9614,7 @@
         "required": [
           "id",
           "name",
+          "numerator",
           "instanceType"
         ],
         "title": "Strength"
@@ -9379,30 +9661,13 @@
             ],
             "title": "Description"
           },
+          "numerator": {
+            "$ref": "#/components/schemas/QuantityRange-Output"
+          },
           "denominator": {
             "anyOf": [
               {
                 "$ref": "#/components/schemas/Quantity-Output"
-              },
-              {
-                "type": "null"
-              }
-            ]
-          },
-          "numeratorQuantity": {
-            "anyOf": [
-              {
-                "$ref": "#/components/schemas/Quantity-Output"
-              },
-              {
-                "type": "null"
-              }
-            ]
-          },
-          "numeratorRange": {
-            "anyOf": [
-              {
-                "$ref": "#/components/schemas/Range-Output"
               },
               {
                 "type": "null"
@@ -9422,6 +9687,7 @@
         "required": [
           "id",
           "name",
+          "numerator",
           "instanceType"
         ],
         "title": "Strength"
@@ -9603,6 +9869,33 @@
             "title": "Extensionattributes",
             "default": []
           },
+          "name": {
+            "type": "string",
+            "minLength": 1,
+            "title": "Name"
+          },
+          "label": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Label"
+          },
+          "description": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Description"
+          },
           "number": {
             "type": "string",
             "title": "Number"
@@ -9691,6 +9984,7 @@
         "type": "object",
         "required": [
           "id",
+          "name",
           "number",
           "summary",
           "primaryReason",
@@ -9714,6 +10008,33 @@
             "type": "array",
             "title": "Extensionattributes",
             "default": []
+          },
+          "name": {
+            "type": "string",
+            "minLength": 1,
+            "title": "Name"
+          },
+          "label": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Label"
+          },
+          "description": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Description"
           },
           "number": {
             "type": "string",
@@ -9803,6 +10124,7 @@
         "type": "object",
         "required": [
           "id",
+          "name",
           "number",
           "summary",
           "primaryReason",
@@ -10484,40 +10806,20 @@
             "type": "boolean",
             "title": "Includeshealthysubjects"
           },
-          "plannedEnrollmentNumberRange": {
+          "plannedEnrollmentNumber": {
             "anyOf": [
               {
-                "$ref": "#/components/schemas/Range-Input"
+                "$ref": "#/components/schemas/QuantityRange-Input"
               },
               {
                 "type": "null"
               }
             ]
           },
-          "plannedEnrollmentNumberQuantity": {
+          "plannedCompletionNumber": {
             "anyOf": [
               {
-                "$ref": "#/components/schemas/Quantity-Input"
-              },
-              {
-                "type": "null"
-              }
-            ]
-          },
-          "plannedCompletionNumberRange": {
-            "anyOf": [
-              {
-                "$ref": "#/components/schemas/Range-Input"
-              },
-              {
-                "type": "null"
-              }
-            ]
-          },
-          "plannedCompletionNumberQuantity": {
-            "anyOf": [
-              {
-                "$ref": "#/components/schemas/Quantity-Input"
+                "$ref": "#/components/schemas/QuantityRange-Input"
               },
               {
                 "type": "null"
@@ -10639,40 +10941,20 @@
             "type": "boolean",
             "title": "Includeshealthysubjects"
           },
-          "plannedEnrollmentNumberRange": {
+          "plannedEnrollmentNumber": {
             "anyOf": [
               {
-                "$ref": "#/components/schemas/Range-Output"
+                "$ref": "#/components/schemas/QuantityRange-Output"
               },
               {
                 "type": "null"
               }
             ]
           },
-          "plannedEnrollmentNumberQuantity": {
+          "plannedCompletionNumber": {
             "anyOf": [
               {
-                "$ref": "#/components/schemas/Quantity-Output"
-              },
-              {
-                "type": "null"
-              }
-            ]
-          },
-          "plannedCompletionNumberRange": {
-            "anyOf": [
-              {
-                "$ref": "#/components/schemas/Range-Output"
-              },
-              {
-                "type": "null"
-              }
-            ]
-          },
-          "plannedCompletionNumberQuantity": {
-            "anyOf": [
-              {
-                "$ref": "#/components/schemas/Quantity-Output"
+                "$ref": "#/components/schemas/QuantityRange-Output"
               },
               {
                 "type": "null"
@@ -11114,40 +11396,20 @@
             "type": "boolean",
             "title": "Includeshealthysubjects"
           },
-          "plannedEnrollmentNumberRange": {
+          "plannedEnrollmentNumber": {
             "anyOf": [
               {
-                "$ref": "#/components/schemas/Range-Input"
+                "$ref": "#/components/schemas/QuantityRange-Input"
               },
               {
                 "type": "null"
               }
             ]
           },
-          "plannedEnrollmentNumberQuantity": {
+          "plannedCompletionNumber": {
             "anyOf": [
               {
-                "$ref": "#/components/schemas/Quantity-Input"
-              },
-              {
-                "type": "null"
-              }
-            ]
-          },
-          "plannedCompletionNumberRange": {
-            "anyOf": [
-              {
-                "$ref": "#/components/schemas/Range-Input"
-              },
-              {
-                "type": "null"
-              }
-            ]
-          },
-          "plannedCompletionNumberQuantity": {
-            "anyOf": [
-              {
-                "$ref": "#/components/schemas/Quantity-Input"
+                "$ref": "#/components/schemas/QuantityRange-Input"
               },
               {
                 "type": "null"
@@ -11261,40 +11523,20 @@
             "type": "boolean",
             "title": "Includeshealthysubjects"
           },
-          "plannedEnrollmentNumberRange": {
+          "plannedEnrollmentNumber": {
             "anyOf": [
               {
-                "$ref": "#/components/schemas/Range-Output"
+                "$ref": "#/components/schemas/QuantityRange-Output"
               },
               {
                 "type": "null"
               }
             ]
           },
-          "plannedEnrollmentNumberQuantity": {
+          "plannedCompletionNumber": {
             "anyOf": [
               {
-                "$ref": "#/components/schemas/Quantity-Output"
-              },
-              {
-                "type": "null"
-              }
-            ]
-          },
-          "plannedCompletionNumberRange": {
-            "anyOf": [
-              {
-                "$ref": "#/components/schemas/Range-Output"
-              },
-              {
-                "type": "null"
-              }
-            ]
-          },
-          "plannedCompletionNumberQuantity": {
-            "anyOf": [
-              {
-                "$ref": "#/components/schemas/Quantity-Output"
+                "$ref": "#/components/schemas/QuantityRange-Output"
               },
               {
                 "type": "null"
