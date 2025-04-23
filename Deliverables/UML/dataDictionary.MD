@@ -159,7 +159,7 @@
 ||notes|CommentAnnotation|C215552|0..*|Condition Notes|A brief written record relevant to the condition.||SyntaxTemplate|
 ||dictionary|SyntaxTemplateDictionary||0..1||A USDM relationship between the Condition and SyntaxTemplateDictionary classes which provides the set of dictionary entries related to conditions.||SyntaxTemplate|
 ||context|Activity, ScheduledActivityInstance||0..*||A USDM relationship between the Condition and the ScheduledActivityInstance or Activity classes which identifies the scheduled activity instance or activity to which the condition belongs.|||
-||appliesTo|BiomedicalConceptSurrogate, BiomedicalConceptCategory, BiomedicalConcept, Procedure, Activity||0..*||A USDM relationship between the Condition and the Activity, Procedure, BiomedicalConcept, BiomedicalConceptSurrogate, or BiomedicalConceptCategory classes which identifies the procedure, activity, biomedical concept, biomedical concept surrogate, or biomedical concept category that applies to the condition.|||
+||appliesTo|BiomedicalConceptCategory, Procedure, BiomedicalConceptSurrogate, Activity, BiomedicalConcept||0..*||A USDM relationship between the Condition and the Activity, Procedure, BiomedicalConcept, BiomedicalConceptSurrogate, or BiomedicalConceptCategory classes which identifies the procedure, activity, biomedical concept, biomedical concept surrogate, or biomedical concept category that applies to the condition.|||
 |ConditionAssignment|||C201335||Condition Assignment|An allotting or appointment to a condition or set of conditions that are to be met in order to make a logical decision.|||
 ||id|string||1|||||
 ||condition|String|C47953|1|Logical Condition|An assumption on which rests the validity or effect of something else.|||
@@ -655,7 +655,7 @@
 ||assignedPersons|AssignedPerson||0..*||A USDM relationship between the StudyRole and AssignedPerson classes that identifies the set of individuals that are assigned to fill a particular role within the study.|||
 ||masking|Masking||0..1||A USDM relationship between the StudyRole and Masking classes which describes the masking associated with the study role.|||
 ||organizations|Organization||0..*||A USDM relationship between the StudyRole and Organization classes which identifies the set of organizations associated with the study role.|||
-||appliesTo|StudyVersion, StudyDesign||0..*||A USDM relationship between the StudyRole and either StudyVersion or StudyDesign classes that identifies the study version or study design to which the study role applies.|||
+||appliesTo|StudyDesign, StudyVersion||0..*||A USDM relationship between the StudyRole and either StudyVersion or StudyDesign classes that identifies the study version or study design to which the study role applies.|||
 |StudySite|||C80403||Study Site|The location at which a study investigator conducts study activities.|||
 ||id|String||1|||||
 ||name|String|C207566|1|Study Site Name|The literal identifier (i.e., distinctive designation) of the study site.|||

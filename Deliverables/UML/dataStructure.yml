@@ -1743,11 +1743,11 @@ Condition:
       Model Representation: Relationship
     appliesToIds:
       Type:
-      - $ref: '#/BiomedicalConceptSurrogate'
       - $ref: '#/BiomedicalConceptCategory'
-      - $ref: '#/BiomedicalConcept'
       - $ref: '#/Procedure'
+      - $ref: '#/BiomedicalConceptSurrogate'
       - $ref: '#/Activity'
+      - $ref: '#/BiomedicalConcept'
       Definition: A USDM relationship between the Condition and the Activity, Procedure,
         BiomedicalConcept, BiomedicalConceptSurrogate, or BiomedicalConceptCategory
         classes which identifies the procedure, activity, biomedical concept, biomedical
@@ -4452,19 +4452,23 @@ PersonName:
       Relationship Type: Value
       Model Name: givenNames
       Model Representation: Attribute
+    prefixes:
+      Type:
+      - $ref: '#/string'
+      Cardinality: 0..*
+      Relationship Type: Value
+      Model Name: prefixes
+      Model Representation: Attribute
+    suffixes:
+      Type:
+      - $ref: '#/string'
+      Cardinality: 0..*
+      Relationship Type: Value
+      Model Name: suffixes
+      Model Representation: Attribute
     extensionAttributes:
       Type:
       - $ref: '#/ExtensionAttribute'
-      Cardinality: 0..*
-      Relationship Type: Value
-    namePrefixes:
-      Type:
-      - $ref: '#/string'
-      Cardinality: 0..*
-      Relationship Type: Value
-    nameSuffixes:
-      Type:
-      - $ref: '#/string'
       Cardinality: 0..*
       Relationship Type: Value
     instanceType:
@@ -7315,8 +7319,8 @@ StudyRole:
       Model Representation: Relationship
     appliesToIds:
       Type:
-      - $ref: '#/StudyVersion'
       - $ref: '#/StudyDesign'
+      - $ref: '#/StudyVersion'
       Definition: A USDM relationship between the StudyRole and either StudyVersion
         or StudyDesign classes that identifies the study version or study design to
         which the study role applies.
