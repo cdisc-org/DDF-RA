@@ -3360,14 +3360,6 @@
             "title": "Notes",
             "default": []
           },
-          "instanceType": {
-            "type": "string",
-            "enum": [
-              "Condition"
-            ],
-            "const": "Condition",
-            "title": "Instancetype"
-          },
           "contextIds": {
             "items": {
               "type": "string"
@@ -3383,6 +3375,14 @@
             "type": "array",
             "title": "Appliestoids",
             "default": []
+          },
+          "instanceType": {
+            "type": "string",
+            "enum": [
+              "Condition"
+            ],
+            "const": "Condition",
+            "title": "Instancetype"
           }
         },
         "type": "object",
@@ -3459,14 +3459,6 @@
             "title": "Notes",
             "default": []
           },
-          "instanceType": {
-            "type": "string",
-            "enum": [
-              "Condition"
-            ],
-            "const": "Condition",
-            "title": "Instancetype"
-          },
           "contextIds": {
             "items": {
               "type": "string"
@@ -3482,6 +3474,14 @@
             "type": "array",
             "title": "Appliestoids",
             "default": []
+          },
+          "instanceType": {
+            "type": "string",
+            "enum": [
+              "Condition"
+            ],
+            "const": "Condition",
+            "title": "Instancetype"
           }
         },
         "type": "object",
@@ -4384,6 +4384,13 @@
             "title": "Notes",
             "default": []
           },
+          "purpose": {
+            "type": "string",
+            "title": "Purpose"
+          },
+          "level": {
+            "$ref": "#/components/schemas/Code-Input"
+          },
           "instanceType": {
             "type": "string",
             "enum": [
@@ -4391,13 +4398,6 @@
             ],
             "const": "Endpoint",
             "title": "Instancetype"
-          },
-          "purpose": {
-            "type": "string",
-            "title": "Purpose"
-          },
-          "level": {
-            "$ref": "#/components/schemas/Code-Input"
           }
         },
         "type": "object",
@@ -4405,9 +4405,9 @@
           "id",
           "name",
           "text",
-          "instanceType",
           "purpose",
-          "level"
+          "level",
+          "instanceType"
         ],
         "title": "Endpoint"
       },
@@ -4476,6 +4476,13 @@
             "title": "Notes",
             "default": []
           },
+          "purpose": {
+            "type": "string",
+            "title": "Purpose"
+          },
+          "level": {
+            "$ref": "#/components/schemas/Code-Output"
+          },
           "instanceType": {
             "type": "string",
             "enum": [
@@ -4483,13 +4490,6 @@
             ],
             "const": "Endpoint",
             "title": "Instancetype"
-          },
-          "purpose": {
-            "type": "string",
-            "title": "Purpose"
-          },
-          "level": {
-            "$ref": "#/components/schemas/Code-Output"
           }
         },
         "type": "object",
@@ -4497,9 +4497,9 @@
           "id",
           "name",
           "text",
-          "instanceType",
           "purpose",
-          "level"
+          "level",
+          "instanceType"
         ],
         "title": "Endpoint"
       },
@@ -5591,6 +5591,10 @@
             "title": "Notes",
             "default": []
           },
+          "strategy": {
+            "type": "string",
+            "title": "Strategy"
+          },
           "instanceType": {
             "type": "string",
             "enum": [
@@ -5598,10 +5602,6 @@
             ],
             "const": "IntercurrentEvent",
             "title": "Instancetype"
-          },
-          "strategy": {
-            "type": "string",
-            "title": "Strategy"
           }
         },
         "type": "object",
@@ -5609,8 +5609,8 @@
           "id",
           "name",
           "text",
-          "instanceType",
-          "strategy"
+          "strategy",
+          "instanceType"
         ],
         "title": "IntercurrentEvent"
       },
@@ -5679,6 +5679,10 @@
             "title": "Notes",
             "default": []
           },
+          "strategy": {
+            "type": "string",
+            "title": "Strategy"
+          },
           "instanceType": {
             "type": "string",
             "enum": [
@@ -5686,10 +5690,6 @@
             ],
             "const": "IntercurrentEvent",
             "title": "Instancetype"
-          },
-          "strategy": {
-            "type": "string",
-            "title": "Strategy"
           }
         },
         "type": "object",
@@ -5697,8 +5697,8 @@
           "id",
           "name",
           "text",
-          "instanceType",
-          "strategy"
+          "strategy",
+          "instanceType"
         ],
         "title": "IntercurrentEvent"
       },
@@ -5912,14 +5912,6 @@
             "title": "Notes",
             "default": []
           },
-          "instanceType": {
-            "type": "string",
-            "enum": [
-              "InterventionalStudyDesign"
-            ],
-            "const": "InterventionalStudyDesign",
-            "title": "Instancetype"
-          },
           "subTypes": {
             "items": {
               "$ref": "#/components/schemas/Code-Input"
@@ -5948,6 +5940,14 @@
                 "type": "null"
               }
             ]
+          },
+          "instanceType": {
+            "type": "string",
+            "enum": [
+              "InterventionalStudyDesign"
+            ],
+            "const": "InterventionalStudyDesign",
+            "title": "Instancetype"
           }
         },
         "type": "object",
@@ -5959,8 +5959,8 @@
           "rationale",
           "epochs",
           "population",
-          "instanceType",
-          "model"
+          "model",
+          "instanceType"
         ],
         "title": "InterventionalStudyDesign"
       },
@@ -6174,14 +6174,6 @@
             "title": "Notes",
             "default": []
           },
-          "instanceType": {
-            "type": "string",
-            "enum": [
-              "InterventionalStudyDesign"
-            ],
-            "const": "InterventionalStudyDesign",
-            "title": "Instancetype"
-          },
           "subTypes": {
             "items": {
               "$ref": "#/components/schemas/Code-Output"
@@ -6210,6 +6202,14 @@
                 "type": "null"
               }
             ]
+          },
+          "instanceType": {
+            "type": "string",
+            "enum": [
+              "InterventionalStudyDesign"
+            ],
+            "const": "InterventionalStudyDesign",
+            "title": "Instancetype"
           }
         },
         "type": "object",
@@ -6221,8 +6221,8 @@
           "rationale",
           "epochs",
           "population",
-          "instanceType",
-          "model"
+          "model",
+          "instanceType"
         ],
         "title": "InterventionalStudyDesign"
       },
@@ -6567,6 +6567,9 @@
             "type": "string",
             "title": "Scopeid"
           },
+          "type": {
+            "$ref": "#/components/schemas/Code-Input"
+          },
           "instanceType": {
             "type": "string",
             "enum": [
@@ -6574,9 +6577,6 @@
             ],
             "const": "MedicalDeviceIdentifier",
             "title": "Instancetype"
-          },
-          "type": {
-            "$ref": "#/components/schemas/Code-Input"
           }
         },
         "type": "object",
@@ -6584,8 +6584,8 @@
           "id",
           "text",
           "scopeId",
-          "instanceType",
-          "type"
+          "type",
+          "instanceType"
         ],
         "title": "MedicalDeviceIdentifier"
       },
@@ -6612,6 +6612,9 @@
             "type": "string",
             "title": "Scopeid"
           },
+          "type": {
+            "$ref": "#/components/schemas/Code-Output"
+          },
           "instanceType": {
             "type": "string",
             "enum": [
@@ -6619,9 +6622,6 @@
             ],
             "const": "MedicalDeviceIdentifier",
             "title": "Instancetype"
-          },
-          "type": {
-            "$ref": "#/components/schemas/Code-Output"
           }
         },
         "type": "object",
@@ -6629,8 +6629,8 @@
           "id",
           "text",
           "scopeId",
-          "instanceType",
-          "type"
+          "type",
+          "instanceType"
         ],
         "title": "MedicalDeviceIdentifier"
       },
@@ -7003,14 +7003,6 @@
             "title": "Notes",
             "default": []
           },
-          "instanceType": {
-            "type": "string",
-            "enum": [
-              "Objective"
-            ],
-            "const": "Objective",
-            "title": "Instancetype"
-          },
           "level": {
             "$ref": "#/components/schemas/Code-Input"
           },
@@ -7021,6 +7013,14 @@
             "type": "array",
             "title": "Endpoints",
             "default": []
+          },
+          "instanceType": {
+            "type": "string",
+            "enum": [
+              "Objective"
+            ],
+            "const": "Objective",
+            "title": "Instancetype"
           }
         },
         "type": "object",
@@ -7028,8 +7028,8 @@
           "id",
           "name",
           "text",
-          "instanceType",
-          "level"
+          "level",
+          "instanceType"
         ],
         "title": "Objective"
       },
@@ -7098,14 +7098,6 @@
             "title": "Notes",
             "default": []
           },
-          "instanceType": {
-            "type": "string",
-            "enum": [
-              "Objective"
-            ],
-            "const": "Objective",
-            "title": "Instancetype"
-          },
           "level": {
             "$ref": "#/components/schemas/Code-Output"
           },
@@ -7116,6 +7108,14 @@
             "type": "array",
             "title": "Endpoints",
             "default": []
+          },
+          "instanceType": {
+            "type": "string",
+            "enum": [
+              "Objective"
+            ],
+            "const": "Objective",
+            "title": "Instancetype"
           }
         },
         "type": "object",
@@ -7123,8 +7123,8 @@
           "id",
           "name",
           "text",
-          "instanceType",
-          "level"
+          "level",
+          "instanceType"
         ],
         "title": "Objective"
       },
@@ -7338,14 +7338,6 @@
             "title": "Notes",
             "default": []
           },
-          "instanceType": {
-            "type": "string",
-            "enum": [
-              "ObservationalStudyDesign"
-            ],
-            "const": "ObservationalStudyDesign",
-            "title": "Instancetype"
-          },
           "subTypes": {
             "items": {
               "$ref": "#/components/schemas/Code-Input"
@@ -7369,6 +7361,14 @@
                 "type": "null"
               }
             ]
+          },
+          "instanceType": {
+            "type": "string",
+            "enum": [
+              "ObservationalStudyDesign"
+            ],
+            "const": "ObservationalStudyDesign",
+            "title": "Instancetype"
           }
         },
         "type": "object",
@@ -7380,9 +7380,9 @@
           "rationale",
           "epochs",
           "population",
-          "instanceType",
           "model",
-          "timePerspective"
+          "timePerspective",
+          "instanceType"
         ],
         "title": "ObservationalStudyDesign"
       },
@@ -7596,14 +7596,6 @@
             "title": "Notes",
             "default": []
           },
-          "instanceType": {
-            "type": "string",
-            "enum": [
-              "ObservationalStudyDesign"
-            ],
-            "const": "ObservationalStudyDesign",
-            "title": "Instancetype"
-          },
           "subTypes": {
             "items": {
               "$ref": "#/components/schemas/Code-Output"
@@ -7627,6 +7619,14 @@
                 "type": "null"
               }
             ]
+          },
+          "instanceType": {
+            "type": "string",
+            "enum": [
+              "ObservationalStudyDesign"
+            ],
+            "const": "ObservationalStudyDesign",
+            "title": "Instancetype"
           }
         },
         "type": "object",
@@ -7638,9 +7638,9 @@
           "rationale",
           "epochs",
           "population",
-          "instanceType",
           "model",
-          "timePerspective"
+          "timePerspective",
+          "instanceType"
         ],
         "title": "ObservationalStudyDesign"
       },
@@ -7931,20 +7931,20 @@
             "title": "Givennames",
             "default": []
           },
-          "namePrefixes": {
+          "prefixes": {
             "items": {
               "type": "string"
             },
             "type": "array",
-            "title": "Nameprefixes",
+            "title": "Prefixes",
             "default": []
           },
-          "nameSuffixes": {
+          "suffixes": {
             "items": {
               "type": "string"
             },
             "type": "array",
-            "title": "Namesuffixes",
+            "title": "Suffixes",
             "default": []
           },
           "instanceType": {
@@ -8008,20 +8008,20 @@
             "title": "Givennames",
             "default": []
           },
-          "namePrefixes": {
+          "prefixes": {
             "items": {
               "type": "string"
             },
             "type": "array",
-            "title": "Nameprefixes",
+            "title": "Prefixes",
             "default": []
           },
-          "nameSuffixes": {
+          "suffixes": {
             "items": {
               "type": "string"
             },
             "type": "array",
-            "title": "Namesuffixes",
+            "title": "Suffixes",
             "default": []
           },
           "instanceType": {
@@ -8458,108 +8458,6 @@
         ],
         "title": "Quantity"
       },
-      "QuantityRange-Input": {
-        "properties": {
-          "id": {
-            "type": "string",
-            "minLength": 1,
-            "title": "Id"
-          },
-          "extensionAttributes": {
-            "items": {
-              "$ref": "#/components/schemas/ExtensionAttribute-Input"
-            },
-            "type": "array",
-            "title": "Extensionattributes",
-            "default": []
-          },
-          "quantity": {
-            "anyOf": [
-              {
-                "$ref": "#/components/schemas/Quantity-Input"
-              },
-              {
-                "type": "null"
-              }
-            ]
-          },
-          "range": {
-            "anyOf": [
-              {
-                "$ref": "#/components/schemas/Range-Input"
-              },
-              {
-                "type": "null"
-              }
-            ]
-          },
-          "instanceType": {
-            "type": "string",
-            "enum": [
-              "QuantityRange"
-            ],
-            "const": "QuantityRange",
-            "title": "Instancetype"
-          }
-        },
-        "type": "object",
-        "required": [
-          "id",
-          "instanceType"
-        ],
-        "title": "QuantityRange"
-      },
-      "QuantityRange-Output": {
-        "properties": {
-          "id": {
-            "type": "string",
-            "minLength": 1,
-            "title": "Id"
-          },
-          "extensionAttributes": {
-            "items": {
-              "$ref": "#/components/schemas/ExtensionAttribute-Output"
-            },
-            "type": "array",
-            "title": "Extensionattributes",
-            "default": []
-          },
-          "quantity": {
-            "anyOf": [
-              {
-                "$ref": "#/components/schemas/Quantity-Output"
-              },
-              {
-                "type": "null"
-              }
-            ]
-          },
-          "range": {
-            "anyOf": [
-              {
-                "$ref": "#/components/schemas/Range-Output"
-              },
-              {
-                "type": "null"
-              }
-            ]
-          },
-          "instanceType": {
-            "type": "string",
-            "enum": [
-              "QuantityRange"
-            ],
-            "const": "QuantityRange",
-            "title": "Instancetype"
-          }
-        },
-        "type": "object",
-        "required": [
-          "id",
-          "instanceType"
-        ],
-        "title": "QuantityRange"
-      },
       "Range-Input": {
         "properties": {
           "id": {
@@ -8671,6 +8569,9 @@
             "type": "string",
             "title": "Scopeid"
           },
+          "type": {
+            "$ref": "#/components/schemas/Code-Input"
+          },
           "instanceType": {
             "type": "string",
             "enum": [
@@ -8678,9 +8579,6 @@
             ],
             "const": "ReferenceIdentifier",
             "title": "Instancetype"
-          },
-          "type": {
-            "$ref": "#/components/schemas/Code-Input"
           }
         },
         "type": "object",
@@ -8688,8 +8586,8 @@
           "id",
           "text",
           "scopeId",
-          "instanceType",
-          "type"
+          "type",
+          "instanceType"
         ],
         "title": "ReferenceIdentifier"
       },
@@ -8716,6 +8614,9 @@
             "type": "string",
             "title": "Scopeid"
           },
+          "type": {
+            "$ref": "#/components/schemas/Code-Output"
+          },
           "instanceType": {
             "type": "string",
             "enum": [
@@ -8723,9 +8624,6 @@
             ],
             "const": "ReferenceIdentifier",
             "title": "Instancetype"
-          },
-          "type": {
-            "$ref": "#/components/schemas/Code-Output"
           }
         },
         "type": "object",
@@ -8733,8 +8631,8 @@
           "id",
           "text",
           "scopeId",
-          "instanceType",
-          "type"
+          "type",
+          "instanceType"
         ],
         "title": "ReferenceIdentifier"
       },
@@ -9188,14 +9086,6 @@
             ],
             "title": "Epochid"
           },
-          "instanceType": {
-            "type": "string",
-            "enum": [
-              "ScheduledActivityInstance"
-            ],
-            "const": "ScheduledActivityInstance",
-            "title": "Instancetype"
-          },
           "timelineId": {
             "anyOf": [
               {
@@ -9236,6 +9126,14 @@
               }
             ],
             "title": "Encounterid"
+          },
+          "instanceType": {
+            "type": "string",
+            "enum": [
+              "ScheduledActivityInstance"
+            ],
+            "const": "ScheduledActivityInstance",
+            "title": "Instancetype"
           }
         },
         "type": "object",
@@ -9310,14 +9208,6 @@
             ],
             "title": "Epochid"
           },
-          "instanceType": {
-            "type": "string",
-            "enum": [
-              "ScheduledActivityInstance"
-            ],
-            "const": "ScheduledActivityInstance",
-            "title": "Instancetype"
-          },
           "timelineId": {
             "anyOf": [
               {
@@ -9358,6 +9248,14 @@
               }
             ],
             "title": "Encounterid"
+          },
+          "instanceType": {
+            "type": "string",
+            "enum": [
+              "ScheduledActivityInstance"
+            ],
+            "const": "ScheduledActivityInstance",
+            "title": "Instancetype"
           }
         },
         "type": "object",
@@ -9432,6 +9330,13 @@
             ],
             "title": "Epochid"
           },
+          "conditionAssignments": {
+            "items": {
+              "$ref": "#/components/schemas/ConditionAssignment-Input"
+            },
+            "type": "array",
+            "title": "Conditionassignments"
+          },
           "instanceType": {
             "type": "string",
             "enum": [
@@ -9439,21 +9344,14 @@
             ],
             "const": "ScheduledDecisionInstance",
             "title": "Instancetype"
-          },
-          "conditionAssignments": {
-            "items": {
-              "$ref": "#/components/schemas/ConditionAssignment-Input"
-            },
-            "type": "array",
-            "title": "Conditionassignments"
           }
         },
         "type": "object",
         "required": [
           "id",
           "name",
-          "instanceType",
-          "conditionAssignments"
+          "conditionAssignments",
+          "instanceType"
         ],
         "title": "ScheduledDecisionInstance"
       },
@@ -9521,6 +9419,13 @@
             ],
             "title": "Epochid"
           },
+          "conditionAssignments": {
+            "items": {
+              "$ref": "#/components/schemas/ConditionAssignment-Output"
+            },
+            "type": "array",
+            "title": "Conditionassignments"
+          },
           "instanceType": {
             "type": "string",
             "enum": [
@@ -9528,21 +9433,14 @@
             ],
             "const": "ScheduledDecisionInstance",
             "title": "Instancetype"
-          },
-          "conditionAssignments": {
-            "items": {
-              "$ref": "#/components/schemas/ConditionAssignment-Output"
-            },
-            "type": "array",
-            "title": "Conditionassignments"
           }
         },
         "type": "object",
         "required": [
           "id",
           "name",
-          "instanceType",
-          "conditionAssignments"
+          "conditionAssignments",
+          "instanceType"
         ],
         "title": "ScheduledDecisionInstance"
       },
@@ -9589,7 +9487,15 @@
             "title": "Description"
           },
           "numerator": {
-            "$ref": "#/components/schemas/QuantityRange-Input"
+            "anyOf": [
+              {
+                "$ref": "#/components/schemas/Quantity-Input"
+              },
+              {
+                "$ref": "#/components/schemas/Range-Input"
+              }
+            ],
+            "title": "Numerator"
           },
           "denominator": {
             "anyOf": [
@@ -9662,7 +9568,15 @@
             "title": "Description"
           },
           "numerator": {
-            "$ref": "#/components/schemas/QuantityRange-Output"
+            "anyOf": [
+              {
+                "$ref": "#/components/schemas/Quantity-Output"
+              },
+              {
+                "$ref": "#/components/schemas/Range-Output"
+              }
+            ],
+            "title": "Numerator"
           },
           "denominator": {
             "anyOf": [
@@ -10809,22 +10723,30 @@
           "plannedEnrollmentNumber": {
             "anyOf": [
               {
-                "$ref": "#/components/schemas/QuantityRange-Input"
+                "$ref": "#/components/schemas/Quantity-Input"
+              },
+              {
+                "$ref": "#/components/schemas/Range-Input"
               },
               {
                 "type": "null"
               }
-            ]
+            ],
+            "title": "Plannedenrollmentnumber"
           },
           "plannedCompletionNumber": {
             "anyOf": [
               {
-                "$ref": "#/components/schemas/QuantityRange-Input"
+                "$ref": "#/components/schemas/Quantity-Input"
+              },
+              {
+                "$ref": "#/components/schemas/Range-Input"
               },
               {
                 "type": "null"
               }
-            ]
+            ],
+            "title": "Plannedcompletionnumber"
           },
           "plannedSex": {
             "items": {
@@ -10861,14 +10783,6 @@
             "title": "Notes",
             "default": []
           },
-          "instanceType": {
-            "type": "string",
-            "enum": [
-              "StudyCohort"
-            ],
-            "const": "StudyCohort",
-            "title": "Instancetype"
-          },
           "characteristics": {
             "items": {
               "$ref": "#/components/schemas/Characteristic-Input"
@@ -10884,6 +10798,14 @@
             "type": "array",
             "title": "Indicationids",
             "default": []
+          },
+          "instanceType": {
+            "type": "string",
+            "enum": [
+              "StudyCohort"
+            ],
+            "const": "StudyCohort",
+            "title": "Instancetype"
           }
         },
         "type": "object",
@@ -10944,22 +10866,30 @@
           "plannedEnrollmentNumber": {
             "anyOf": [
               {
-                "$ref": "#/components/schemas/QuantityRange-Output"
+                "$ref": "#/components/schemas/Quantity-Output"
+              },
+              {
+                "$ref": "#/components/schemas/Range-Output"
               },
               {
                 "type": "null"
               }
-            ]
+            ],
+            "title": "Plannedenrollmentnumber"
           },
           "plannedCompletionNumber": {
             "anyOf": [
               {
-                "$ref": "#/components/schemas/QuantityRange-Output"
+                "$ref": "#/components/schemas/Quantity-Output"
+              },
+              {
+                "$ref": "#/components/schemas/Range-Output"
               },
               {
                 "type": "null"
               }
-            ]
+            ],
+            "title": "Plannedcompletionnumber"
           },
           "plannedSex": {
             "items": {
@@ -10996,14 +10926,6 @@
             "title": "Notes",
             "default": []
           },
-          "instanceType": {
-            "type": "string",
-            "enum": [
-              "StudyCohort"
-            ],
-            "const": "StudyCohort",
-            "title": "Instancetype"
-          },
           "characteristics": {
             "items": {
               "$ref": "#/components/schemas/Characteristic-Output"
@@ -11019,6 +10941,14 @@
             "type": "array",
             "title": "Indicationids",
             "default": []
+          },
+          "instanceType": {
+            "type": "string",
+            "enum": [
+              "StudyCohort"
+            ],
+            "const": "StudyCohort",
+            "title": "Instancetype"
           }
         },
         "type": "object",
@@ -11399,22 +11329,30 @@
           "plannedEnrollmentNumber": {
             "anyOf": [
               {
-                "$ref": "#/components/schemas/QuantityRange-Input"
+                "$ref": "#/components/schemas/Quantity-Input"
+              },
+              {
+                "$ref": "#/components/schemas/Range-Input"
               },
               {
                 "type": "null"
               }
-            ]
+            ],
+            "title": "Plannedenrollmentnumber"
           },
           "plannedCompletionNumber": {
             "anyOf": [
               {
-                "$ref": "#/components/schemas/QuantityRange-Input"
+                "$ref": "#/components/schemas/Quantity-Input"
+              },
+              {
+                "$ref": "#/components/schemas/Range-Input"
               },
               {
                 "type": "null"
               }
-            ]
+            ],
+            "title": "Plannedcompletionnumber"
           },
           "plannedSex": {
             "items": {
@@ -11451,14 +11389,6 @@
             "title": "Notes",
             "default": []
           },
-          "instanceType": {
-            "type": "string",
-            "enum": [
-              "StudyDesignPopulation"
-            ],
-            "const": "StudyDesignPopulation",
-            "title": "Instancetype"
-          },
           "cohorts": {
             "items": {
               "$ref": "#/components/schemas/StudyCohort-Input"
@@ -11466,6 +11396,14 @@
             "type": "array",
             "title": "Cohorts",
             "default": []
+          },
+          "instanceType": {
+            "type": "string",
+            "enum": [
+              "StudyDesignPopulation"
+            ],
+            "const": "StudyDesignPopulation",
+            "title": "Instancetype"
           }
         },
         "type": "object",
@@ -11526,22 +11464,30 @@
           "plannedEnrollmentNumber": {
             "anyOf": [
               {
-                "$ref": "#/components/schemas/QuantityRange-Output"
+                "$ref": "#/components/schemas/Quantity-Output"
+              },
+              {
+                "$ref": "#/components/schemas/Range-Output"
               },
               {
                 "type": "null"
               }
-            ]
+            ],
+            "title": "Plannedenrollmentnumber"
           },
           "plannedCompletionNumber": {
             "anyOf": [
               {
-                "$ref": "#/components/schemas/QuantityRange-Output"
+                "$ref": "#/components/schemas/Quantity-Output"
+              },
+              {
+                "$ref": "#/components/schemas/Range-Output"
               },
               {
                 "type": "null"
               }
-            ]
+            ],
+            "title": "Plannedcompletionnumber"
           },
           "plannedSex": {
             "items": {
@@ -11578,14 +11524,6 @@
             "title": "Notes",
             "default": []
           },
-          "instanceType": {
-            "type": "string",
-            "enum": [
-              "StudyDesignPopulation"
-            ],
-            "const": "StudyDesignPopulation",
-            "title": "Instancetype"
-          },
           "cohorts": {
             "items": {
               "$ref": "#/components/schemas/StudyCohort-Output"
@@ -11593,6 +11531,14 @@
             "type": "array",
             "title": "Cohorts",
             "default": []
+          },
+          "instanceType": {
+            "type": "string",
+            "enum": [
+              "StudyDesignPopulation"
+            ],
+            "const": "StudyDesignPopulation",
+            "title": "Instancetype"
           }
         },
         "type": "object",
