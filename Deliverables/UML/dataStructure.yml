@@ -1713,8 +1713,8 @@ Condition:
       - $ref: '#/SyntaxTemplate'
     contextIds:
       Type:
-      - $ref: '#/Activity'
       - $ref: '#/ScheduledActivityInstance'
+      - $ref: '#/Activity'
       Definition: A USDM relationship between the Condition and the ScheduledActivityInstance
         or Activity classes which identifies the scheduled activity instance or activity
         to which the condition belongs.
@@ -1724,10 +1724,10 @@ Condition:
       Model Representation: Relationship
     appliesToIds:
       Type:
-      - $ref: '#/Procedure'
-      - $ref: '#/Activity'
-      - $ref: '#/BiomedicalConcept'
       - $ref: '#/BiomedicalConceptSurrogate'
+      - $ref: '#/Activity'
+      - $ref: '#/Procedure'
+      - $ref: '#/BiomedicalConcept'
       - $ref: '#/BiomedicalConceptCategory'
       Definition: A USDM relationship between the Condition and the Activity, Procedure,
         BiomedicalConcept, BiomedicalConceptSurrogate, or BiomedicalConceptCategory

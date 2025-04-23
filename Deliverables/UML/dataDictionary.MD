@@ -158,8 +158,8 @@
 ||text|String|C207484|1|Condition Text|An instance of structured text that represents the condition.||SyntaxTemplate|
 ||notes|CommentAnnotation|C215552|0..*|Condition Notes|A brief written record relevant to the condition.||SyntaxTemplate|
 ||dictionary|SyntaxTemplateDictionary||0..1||A USDM relationship between the Condition and SyntaxTemplateDictionary classes which provides the set of dictionary entries related to conditions.||SyntaxTemplate|
-||context|Activity, ScheduledActivityInstance||0..*||A USDM relationship between the Condition and the ScheduledActivityInstance or Activity classes which identifies the scheduled activity instance or activity to which the condition belongs.|||
-||appliesTo|Procedure, Activity, BiomedicalConcept, BiomedicalConceptSurrogate, BiomedicalConceptCategory||0..*||A USDM relationship between the Condition and the Activity, Procedure, BiomedicalConcept, BiomedicalConceptSurrogate, or BiomedicalConceptCategory classes which identifies the procedure, activity, biomedical concept, biomedical concept surrogate, or biomedical concept category that applies to the condition.|||
+||context|ScheduledActivityInstance, Activity||0..*||A USDM relationship between the Condition and the ScheduledActivityInstance or Activity classes which identifies the scheduled activity instance or activity to which the condition belongs.|||
+||appliesTo|BiomedicalConceptSurrogate, Activity, Procedure, BiomedicalConcept, BiomedicalConceptCategory||0..*||A USDM relationship between the Condition and the Activity, Procedure, BiomedicalConcept, BiomedicalConceptSurrogate, or BiomedicalConceptCategory classes which identifies the procedure, activity, biomedical concept, biomedical concept surrogate, or biomedical concept category that applies to the condition.|||
 |ConditionAssignment|||C201335||Condition Assignment|An allotting or appointment to a condition or set of conditions that are to be met in order to make a logical decision.|||
 ||id|string||1|||||
 ||condition|String|C47953|1|Logical Condition|An assumption on which rests the validity or effect of something else.|||
@@ -418,8 +418,8 @@
 ||unit|AliasCode|C44258|0..1|Quantity Unit|The type of unit of measure being used to express a quantity.|SDTM Terminology Codelist C71620||
 |QuantityRange|||||||||
 ||id|String||1|||||
-||quantity|Quantity||1|||||
-||range|Range||1|||||
+||quantity|Quantity||0..1|||||
+||range|Range||0..1|||||
 |Range|||C38013||Range|The difference between the lowest and highest numerical values; the limits or scale of variation.|||
 ||id|String||1|||||
 ||minValue|Quantity|C25570|1|Minimum Value|The smallest value in quantity or degree in a set of values.|||
