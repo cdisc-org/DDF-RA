@@ -158,8 +158,8 @@
 ||text|String|C207484|1|Condition Text|An instance of structured text that represents the condition.||SyntaxTemplate|
 ||notes|CommentAnnotation|C215552|0..*|Condition Notes|A brief written record relevant to the condition.||SyntaxTemplate|
 ||dictionary|SyntaxTemplateDictionary||0..1||A USDM relationship between the Condition and SyntaxTemplateDictionary classes which provides the set of dictionary entries related to conditions.||SyntaxTemplate|
-||context|ScheduledActivityInstance, Activity||0..*||A USDM relationship between the Condition and the ScheduledActivityInstance or Activity classes which identifies the scheduled activity instance or activity to which the condition belongs.|||
-||appliesTo|BiomedicalConceptSurrogate, Activity, Procedure, BiomedicalConcept, BiomedicalConceptCategory||0..*||A USDM relationship between the Condition and the Activity, Procedure, BiomedicalConcept, BiomedicalConceptSurrogate, or BiomedicalConceptCategory classes which identifies the procedure, activity, biomedical concept, biomedical concept surrogate, or biomedical concept category that applies to the condition.|||
+||context|Activity, ScheduledActivityInstance||0..*||A USDM relationship between the Condition and the ScheduledActivityInstance or Activity classes which identifies the scheduled activity instance or activity to which the condition belongs.|||
+||appliesTo|Activity, Procedure, BiomedicalConceptCategory, BiomedicalConceptSurrogate, BiomedicalConcept||0..*||A USDM relationship between the Condition and the Activity, Procedure, BiomedicalConcept, BiomedicalConceptSurrogate, or BiomedicalConceptCategory classes which identifies the procedure, activity, biomedical concept, biomedical concept surrogate, or biomedical concept category that applies to the condition.|||
 |ConditionAssignment|||C201335||Condition Assignment|An allotting or appointment to a condition or set of conditions that are to be met in order to make a logical decision.|||
 ||id|string||1|||||
 ||condition|String|C47953|1|Logical Condition|An assumption on which rests the validity or effect of something else.|||
@@ -433,7 +433,7 @@
 |ResponseCode|||C201347||Response Code|A symbol or combination of symbols representing the response to the question.|||
 ||id|String||1|||||
 ||name|String||1|||||
-||label|String||1|||||
+||label|String||0..1|||||
 ||isEnabled|Boolean|C201330|1|Response Code Enabled Indicator|An indication as to whether the response code is activated for use within a given usage context.|||
 ||code|Code|CNEW|1|Response Code Value|The literal value of a response code.|||
 |ScheduleTimeline|||C201348||Schedule Timeline|A chronological schedule of planned temporal events.|||
@@ -492,8 +492,8 @@
 |StudyAmendment|||C207594||Study Amendment|A written description of a change(s) to, or formal clarification of, a study.|||
 ||id|String||1|||||
 ||name|String||1|||||
-||label|String||1|||||
-||description|String||1|||||
+||label|String||0..1|||||
+||description|String||0..1|||||
 ||number|String|C207537|1|Study Amendment Number|A string of numerals that uniquely identifies a protocol amendment.|||
 ||notes|CommentAnnotation|C215538|0..*|Study Amendment Notes|A brief written record relevant to the study amendment.|||
 ||summary|String|C115627|1|Study Amendment Summary|A short narrative representation describing the changes introduced in the current version of the protocol.|||
@@ -650,7 +650,7 @@
 ||assignedPersons|AssignedPerson||0..*||A USDM relationship between the StudyRole and AssignedPerson classes that identifies the set of individuals that are assigned to fill a particular role within the study.|||
 ||masking|Masking||0..1||A USDM relationship between the StudyRole and Masking classes which describes the masking associated with the study role.|||
 ||organizations|Organization||0..*||A USDM relationship between the StudyRole and Organization classes which identifies the set of organizations associated with the study role.|||
-||appliesTo|StudyDesign, StudyVersion||0..*||A USDM relationship between the StudyRole and either StudyVersion or StudyDesign classes that identifies the study version or study design to which the study role applies.|||
+||appliesTo|StudyVersion, StudyDesign||0..*||A USDM relationship between the StudyRole and either StudyVersion or StudyDesign classes that identifies the study version or study design to which the study role applies.|||
 |StudySite|||C80403||Study Site|The location at which a study investigator conducts study activities.|||
 ||id|String||1|||||
 ||name|String|C207566|1|Study Site Name|The literal identifier (i.e., distinctive designation) of the study site.|||

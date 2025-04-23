@@ -1713,8 +1713,8 @@ Condition:
       - $ref: '#/SyntaxTemplate'
     contextIds:
       Type:
-      - $ref: '#/ScheduledActivityInstance'
       - $ref: '#/Activity'
+      - $ref: '#/ScheduledActivityInstance'
       Definition: A USDM relationship between the Condition and the ScheduledActivityInstance
         or Activity classes which identifies the scheduled activity instance or activity
         to which the condition belongs.
@@ -1724,11 +1724,11 @@ Condition:
       Model Representation: Relationship
     appliesToIds:
       Type:
-      - $ref: '#/BiomedicalConceptSurrogate'
       - $ref: '#/Activity'
       - $ref: '#/Procedure'
-      - $ref: '#/BiomedicalConcept'
       - $ref: '#/BiomedicalConceptCategory'
+      - $ref: '#/BiomedicalConceptSurrogate'
+      - $ref: '#/BiomedicalConcept'
       Definition: A USDM relationship between the Condition and the Activity, Procedure,
         BiomedicalConcept, BiomedicalConceptSurrogate, or BiomedicalConceptCategory
         classes which identifies the procedure, activity, biomedical concept, biomedical
@@ -7225,8 +7225,8 @@ StudyRole:
       Model Representation: Relationship
     appliesToIds:
       Type:
-      - $ref: '#/StudyDesign'
       - $ref: '#/StudyVersion'
+      - $ref: '#/StudyDesign'
       Definition: A USDM relationship between the StudyRole and either StudyVersion
         or StudyDesign classes that identifies the study version or study design to
         which the study role applies.
