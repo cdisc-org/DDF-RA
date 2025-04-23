@@ -15,7 +15,7 @@ Abbreviation:
     abbreviatedText:
       Type:
       - $ref: '#/string'
-      NCI C-Code: CNEW
+      NCI C-Code: C215487
       Preferred Term: Text Abbreviation Value
       Definition: 'The literal value of an instance of unstructured text that is used
         as the abbreviation.
@@ -28,7 +28,7 @@ Abbreviation:
     expandedText:
       Type:
       - $ref: '#/string'
-      NCI C-Code: CNEW
+      NCI C-Code: C215569
       Preferred Term: Abbreviation Long Name
       Definition: The full literal representation of the abbreviation.
       Cardinality: '1'
@@ -38,7 +38,7 @@ Abbreviation:
     notes:
       Type:
       - $ref: '#/CommentAnnotation'
-      NCI C-Code: CNEW
+      NCI C-Code: C215570
       Preferred Term: Abbreviation Notes
       Definition: A brief written record relevant to the abbreviation.
       Cardinality: 0..*
@@ -104,7 +104,7 @@ Activity:
     notes:
       Type:
       - $ref: '#/CommentAnnotation'
-      NCI C-Code: CNEW
+      NCI C-Code: C215519
       Preferred Term: Activity Notes
       Definition: A brief written record relevant to the activity.
       Cardinality: 0..*
@@ -299,7 +299,7 @@ Address:
       Cardinality: '1'
       Relationship Type: Value
 AdministrableProduct:
-  NCI C-Code: CNEW
+  NCI C-Code: C215492
   Preferred Term: Administrable Product
   Definition: Any study product that is formulated and presented in the form that
     is suitable for administration to a study participant.
@@ -315,7 +315,7 @@ AdministrableProduct:
     name:
       Type:
       - $ref: '#/string'
-      NCI C-Code: CNEW
+      NCI C-Code: C215573
       Preferred Term: Administrable Product Definition Name
       Definition: The literal identifier (i.e., distinctive designation) of the administrable
         product.
@@ -326,7 +326,7 @@ AdministrableProduct:
     label:
       Type:
       - $ref: '#/string'
-      NCI C-Code: CNEW
+      NCI C-Code: C215575
       Preferred Term: Administrable Product Definition Label
       Definition: The short descriptive designation for the administrable product.
       Cardinality: 0..1
@@ -336,7 +336,7 @@ AdministrableProduct:
     description:
       Type:
       - $ref: '#/string'
-      NCI C-Code: CNEW
+      NCI C-Code: C215574
       Preferred Term: Administrable Product Definition Description
       Definition: A narrative representation of the administrable product.
       Cardinality: 0..1
@@ -346,7 +346,7 @@ AdministrableProduct:
     administrableDoseForm:
       Type:
       - $ref: '#/AliasCode'
-      NCI C-Code: CNEW
+      NCI C-Code: C215576
       Preferred Term: Administrable Product Dose Form
       Definition: The physical form in which formulated ingredient(s) are presented
         in the administrable product.
@@ -357,7 +357,7 @@ AdministrableProduct:
     sourcing:
       Type:
       - $ref: '#/Code'
-      NCI C-Code: CNEW
+      NCI C-Code: C215578
       Preferred Term: Administrable Product Sourcing
       Definition: An indication as to whether the administrable product is obtained
         from a local or central source.
@@ -368,7 +368,7 @@ AdministrableProduct:
     productDesignation:
       Type:
       - $ref: '#/Code'
-      NCI C-Code: CNEW
+      NCI C-Code: C215579
       Preferred Term: Administrable Product Product Designation
       Definition: An indication as to whether the administrable product is an investigational
         medicinal product or an auxiliary medicinal product.
@@ -379,7 +379,7 @@ AdministrableProduct:
     pharmacologicClass:
       Type:
       - $ref: '#/Code'
-      NCI C-Code: CNEW
+      NCI C-Code: C215577
       Preferred Term: Administrable Product Pharmacologic Class
       Definition: The pharmacological class of the administrable product.
       Cardinality: 0..1
@@ -389,7 +389,7 @@ AdministrableProduct:
     notes:
       Type:
       - $ref: '#/CommentAnnotation'
-      NCI C-Code: CNEW
+      NCI C-Code: C215580
       Preferred Term: Administrable Product Notes
       Definition: A brief written record relevant to the administrable product.
       Cardinality: 0..*
@@ -437,7 +437,7 @@ AdministrableProduct:
       Cardinality: '1'
       Relationship Type: Value
 AdministrableProductIdentifier:
-  NCI C-Code: CNEW
+  NCI C-Code: C215493
   Preferred Term: Administrable Product Identifier
   Definition: A sequence of characters used to identify, name, or characterize the
     administrable product.
@@ -457,7 +457,7 @@ AdministrableProductIdentifier:
     text:
       Type:
       - $ref: '#/string'
-      NCI C-Code: CNEW
+      NCI C-Code: C215581
       Preferred Term: Administrable Product Identifier Text
       Definition: An instance of structured text that represents the administrable
         product.
@@ -491,7 +491,7 @@ AdministrableProductIdentifier:
       Cardinality: '1'
       Relationship Type: Value
 AdministrableProductProperty:
-  NCI C-Code: CNEW
+  NCI C-Code: C215494
   Preferred Term: Administrable Product Property
   Definition: A characteristic from a set of characteristics used to define an administrable
     product.
@@ -507,7 +507,7 @@ AdministrableProductProperty:
     name:
       Type:
       - $ref: '#/string'
-      NCI C-Code: CNEW
+      NCI C-Code: C215582
       Preferred Term: Administrable Product Property Name
       Definition: The literal identifier (i.e., distinctive designation) of the administrable
         product property.
@@ -518,7 +518,7 @@ AdministrableProductProperty:
     type:
       Type:
       - $ref: '#/Code'
-      NCI C-Code: CNEW
+      NCI C-Code: C215585
       Preferred Term: Administrable Product Property Type
       Definition: A characterization or classification of the administrable product
         property.
@@ -529,7 +529,7 @@ AdministrableProductProperty:
     text:
       Type:
       - $ref: '#/string'
-      NCI C-Code: CNEW
+      NCI C-Code: C215583
       Preferred Term: Administrable Product Property Text
       Definition: An instance of structured text that represents the administrable
         product property.
@@ -540,7 +540,7 @@ AdministrableProductProperty:
     quantity:
       Type:
       - $ref: '#/Quantity'
-      NCI C-Code: CNEW
+      NCI C-Code: C215584
       Preferred Term: Administrable Product Property Quantity Value
       Definition: The numeric value associated with an administrable product property.
       Cardinality: 0..1
@@ -638,7 +638,7 @@ Administration:
     notes:
       Type:
       - $ref: '#/CommentAnnotation'
-      NCI C-Code: CNEW
+      NCI C-Code: C215544
       Preferred Term: Administration Notes
       Definition: A brief written record relevant to the administration of the product,
         agent, or therapy.
@@ -769,7 +769,7 @@ AliasCode:
     standardCode:
       Type:
       - $ref: '#/Code'
-      NCI C-Code: CNEW
+      NCI C-Code: C215528
       Preferred Term: Standard Code
       Definition: A combination of symbols that is used to represent the standard
         code.
@@ -780,7 +780,7 @@ AliasCode:
     standardCodeAliases:
       Type:
       - $ref: '#/Code'
-      NCI C-Code: CNEW
+      NCI C-Code: C215529
       Preferred Term: Standard Code Aliases
       Definition: Alternative combinations of symbols used to represent aliases or
         alternatives to the standard code.
@@ -859,7 +859,7 @@ AnalysisPopulation:
     notes:
       Type:
       - $ref: '#/CommentAnnotation'
-      NCI C-Code: CNEW
+      NCI C-Code: C215525
       Preferred Term: Analysis Population Notes
       Definition: A brief written record relevant to the analysis population.
       Cardinality: 0..*
@@ -887,7 +887,7 @@ AnalysisPopulation:
       Cardinality: '1'
       Relationship Type: Value
 AssignedPerson:
-  NCI C-Code: CNEW
+  NCI C-Code: C215496
   Preferred Term: Assigned Person
   Definition: An individual person who is allotted or appointed to a particular role,
     function, or other entity.
@@ -903,7 +903,7 @@ AssignedPerson:
     name:
       Type:
       - $ref: '#/string'
-      NCI C-Code: CNEW
+      NCI C-Code: C215596
       Preferred Term: Assigned Person Name
       Definition: The literal identifier (i.e., distinctive designation) of the assigned
         person.
@@ -914,7 +914,7 @@ AssignedPerson:
     label:
       Type:
       - $ref: '#/string'
-      NCI C-Code: CNEW
+      NCI C-Code: C215598
       Preferred Term: Assigned Person Label
       Definition: The short descriptive designation for the assigned person.
       Cardinality: 0..1
@@ -924,7 +924,7 @@ AssignedPerson:
     description:
       Type:
       - $ref: '#/string'
-      NCI C-Code: CNEW
+      NCI C-Code: C215597
       Preferred Term: Assigned Person Description
       Definition: A narrative representation of the assigned person.
       Cardinality: 0..1
@@ -934,7 +934,7 @@ AssignedPerson:
     jobTitle:
       Type:
       - $ref: '#/string'
-      NCI C-Code: CNEW
+      NCI C-Code: C215599
       Preferred Term: Assigned Person Job Title
       Definition: An identifying designation related to the assigned person's occupation.
       Cardinality: '1'
@@ -1032,7 +1032,7 @@ BiomedicalConcept:
     notes:
       Type:
       - $ref: '#/CommentAnnotation'
-      NCI C-Code: CNEW
+      NCI C-Code: C215530
       Preferred Term: Biomedical Concept Notes
       Definition: A brief written record relevant to the biomedical concept.
       Cardinality: 0..*
@@ -1118,7 +1118,7 @@ BiomedicalConceptCategory:
     notes:
       Type:
       - $ref: '#/CommentAnnotation'
-      NCI C-Code: CNEW
+      NCI C-Code: C215533
       Preferred Term: Biomedical Concept Category Notes
       Definition: A brief written record relevant to the biomedical concept category.
       Cardinality: 0..*
@@ -1236,7 +1236,7 @@ BiomedicalConceptProperty:
     notes:
       Type:
       - $ref: '#/CommentAnnotation'
-      NCI C-Code: CNEW
+      NCI C-Code: C215531
       Preferred Term: Biomedical Concept Property Notes
       Definition: A brief written record relevant to the biomedical concept property.
       Cardinality: 0..*
@@ -1321,7 +1321,7 @@ BiomedicalConceptSurrogate:
     notes:
       Type:
       - $ref: '#/CommentAnnotation'
-      NCI C-Code: CNEW
+      NCI C-Code: C215532
       Preferred Term: Biomedical Concept Surrogate Notes
       Definition: A brief written record relevant to the biomedical concept surrogate.
       Cardinality: 0..*
@@ -1339,7 +1339,7 @@ BiomedicalConceptSurrogate:
       Cardinality: '1'
       Relationship Type: Value
 BiospecimenRetention:
-  NCI C-Code: CNEW
+  NCI C-Code: C215505
   Preferred Term: Biospecimen Retention
   Definition: The continued possession, cataloging, and storage of collected biological
     specimens beyond their initial use.
@@ -1355,7 +1355,7 @@ BiospecimenRetention:
     name:
       Type:
       - $ref: '#/string'
-      NCI C-Code: CNEW
+      NCI C-Code: C215645
       Preferred Term: Biospecimen Retention Name
       Definition: The literal identifier (i.e., distinctive designation) of the biospecimen
         retention.
@@ -1366,7 +1366,7 @@ BiospecimenRetention:
     label:
       Type:
       - $ref: '#/string'
-      NCI C-Code: CNEW
+      NCI C-Code: C215646
       Preferred Term: Biospecimen Retention Label
       Definition: The short descriptive designation for the biospecimen retention.
       Cardinality: 0..1
@@ -1481,7 +1481,7 @@ Characteristic:
     notes:
       Type:
       - $ref: '#/CommentAnnotation'
-      NCI C-Code: CNEW
+      NCI C-Code: C215548
       Preferred Term: Characteristic Notes
       Definition: A brief written record relevant to the characteristic.
       Cardinality: 0..*
@@ -1595,7 +1595,7 @@ CommentAnnotation:
     text:
       Type:
       - $ref: '#/string'
-      NCI C-Code: CNEW
+      NCI C-Code: C215555
       Preferred Term: Comment Annotation Text
       Definition: An instance of unstructured text that represents the comment annotation.
       Cardinality: '1'
@@ -1605,7 +1605,7 @@ CommentAnnotation:
     codes:
       Type:
       - $ref: '#/Code'
-      NCI C-Code: CNEW
+      NCI C-Code: C215556
       Preferred Term: Comment Annotation Code
       Definition: A symbol or combination of symbols which is assigned to the comment
         annotation.
@@ -1691,7 +1691,7 @@ Condition:
     notes:
       Type:
       - $ref: '#/CommentAnnotation'
-      NCI C-Code: CNEW
+      NCI C-Code: C215552
       Preferred Term: Condition Notes
       Definition: A brief written record relevant to the condition.
       Cardinality: 0..*
@@ -1724,11 +1724,11 @@ Condition:
       Model Representation: Relationship
     appliesToIds:
       Type:
-      - $ref: '#/BiomedicalConcept'
-      - $ref: '#/BiomedicalConceptCategory'
-      - $ref: '#/Activity'
-      - $ref: '#/BiomedicalConceptSurrogate'
       - $ref: '#/Procedure'
+      - $ref: '#/Activity'
+      - $ref: '#/BiomedicalConcept'
+      - $ref: '#/BiomedicalConceptSurrogate'
+      - $ref: '#/BiomedicalConceptCategory'
       Definition: A USDM relationship between the Condition and the Activity, Procedure,
         BiomedicalConcept, BiomedicalConceptSurrogate, or BiomedicalConceptCategory
         classes which identifies the procedure, activity, biomedical concept, biomedical
@@ -1793,7 +1793,7 @@ ConditionAssignment:
       Cardinality: '1'
       Relationship Type: Value
 DocumentContentReference:
-  NCI C-Code: CNEW
+  NCI C-Code: C215499
   Preferred Term: Document Content Reference
   Definition: A citation pointing to the location of specific content within a document.
   Modifier: Concrete
@@ -1808,7 +1808,7 @@ DocumentContentReference:
     sectionNumber:
       Type:
       - $ref: '#/string'
-      NCI C-Code: CNEW
+      NCI C-Code: C215609
       Preferred Term: Document Content Reference Section Number
       Definition: The numeric identifier of a particular section for the document
         content reference.
@@ -1819,7 +1819,7 @@ DocumentContentReference:
     sectionTitle:
       Type:
       - $ref: '#/string'
-      NCI C-Code: CNEW
+      NCI C-Code: C215610
       Preferred Term: Document Content Reference Section Title
       Definition: An identifying designation for a particular section for the document
         content reference.
@@ -1917,7 +1917,7 @@ EligibilityCriterion:
     notes:
       Type:
       - $ref: '#/CommentAnnotation'
-      NCI C-Code: CNEW
+      NCI C-Code: C215537
       Preferred Term: Eligibility Criterion Notes
       Definition: A brief written record relevant to the eligibility criterion.
       Cardinality: 0..*
@@ -1964,7 +1964,7 @@ EligibilityCriterion:
       Cardinality: '1'
       Relationship Type: Value
 EligibilityCriterionItem:
-  NCI C-Code: CNEW
+  NCI C-Code: C215506
   Preferred Term: Eligibility Criterion Item
   Definition: An individual item within the container that holds an instance of an
     eligibility criterion.
@@ -1984,7 +1984,7 @@ EligibilityCriterionItem:
     name:
       Type:
       - $ref: '#/string'
-      NCI C-Code: CNEW
+      NCI C-Code: C215647
       Preferred Term: Eligibility Criterion Item Name
       Definition: The literal identifier (i.e., distinctive designation) of the eligibility
         criterion item.
@@ -1997,7 +1997,7 @@ EligibilityCriterionItem:
     label:
       Type:
       - $ref: '#/string'
-      NCI C-Code: CNEW
+      NCI C-Code: C215650
       Preferred Term: Eligibility Criterion Item Label
       Definition: The short descriptive designation for the eligibility criterion
         item.
@@ -2010,7 +2010,7 @@ EligibilityCriterionItem:
     description:
       Type:
       - $ref: '#/string'
-      NCI C-Code: CNEW
+      NCI C-Code: C215649
       Preferred Term: Eligibility Criterion Item Description
       Definition: A narrative representation of the eligibility criterion item.
       Cardinality: 0..1
@@ -2022,7 +2022,7 @@ EligibilityCriterionItem:
     text:
       Type:
       - $ref: '#/string'
-      NCI C-Code: CNEW
+      NCI C-Code: C215648
       Preferred Term: Eligibility Criterion Item Text
       Definition: An instance of structured text that represents the eligibility criterion
         item.
@@ -2035,7 +2035,7 @@ EligibilityCriterionItem:
     notes:
       Type:
       - $ref: '#/CommentAnnotation'
-      NCI C-Code: CNEW
+      NCI C-Code: C215651
       Preferred Term: Eligibility Criterion Item Notes
       Definition: A brief written record relevant to the eligibility criterion item.
       Cardinality: 0..*
@@ -2067,7 +2067,7 @@ EligibilityCriterionItem:
       Cardinality: '1'
       Relationship Type: Value
 Encounter:
-  NCI C-Code: CNEW
+  NCI C-Code: C215488
   Preferred Term: Study Encounter
   Definition: Any physical or virtual contact between two or more parties involved
     in a study, at which an assessment or activity takes place.
@@ -2146,7 +2146,7 @@ Encounter:
     notes:
       Type:
       - $ref: '#/CommentAnnotation'
-      NCI C-Code: CNEW
+      NCI C-Code: C215518
       Preferred Term: Encounter Notes
       Definition: A brief written record relevant to the study encounter.
       Cardinality: 0..*
@@ -2284,7 +2284,7 @@ Endpoint:
     notes:
       Type:
       - $ref: '#/CommentAnnotation'
-      NCI C-Code: CNEW
+      NCI C-Code: C215514
       Preferred Term: Endpoint Notes
       Definition: A brief written record relevant to the study endpoint.
       Cardinality: 0..*
@@ -2365,7 +2365,7 @@ Estimand:
     name:
       Type:
       - $ref: '#/string'
-      NCI C-Code: CNEW
+      NCI C-Code: C215522
       Preferred Term: Estimand Name
       Definition: The literal identifier (i.e., distinctive designation) of the estimand.
       Cardinality: '1'
@@ -2375,7 +2375,7 @@ Estimand:
     label:
       Type:
       - $ref: '#/string'
-      NCI C-Code: CNEW
+      NCI C-Code: C215524
       Preferred Term: Estimand Label
       Definition: The short descriptive designation for the estimand.
       Cardinality: 0..1
@@ -2385,7 +2385,7 @@ Estimand:
     description:
       Type:
       - $ref: '#/string'
-      NCI C-Code: CNEW
+      NCI C-Code: C215523
       Preferred Term: Estimand Description
       Definition: A narrative representation of the estimand.
       Cardinality: 0..1
@@ -2395,7 +2395,7 @@ Estimand:
     notes:
       Type:
       - $ref: '#/CommentAnnotation'
-      NCI C-Code: CNEW
+      NCI C-Code: C215521
       Preferred Term: Estimand Notes
       Definition: A brief written record relevant to the study estimand.
       Cardinality: 0..*
@@ -2694,7 +2694,7 @@ Identifier:
     text:
       Type:
       - $ref: '#/string'
-      NCI C-Code: CNEW
+      NCI C-Code: C215581
       Preferred Term: Administrable Product Identifier Text
       Definition: An instance of structured text that represents the administrable
         product.
@@ -2784,7 +2784,7 @@ Indication:
     notes:
       Type:
       - $ref: '#/CommentAnnotation'
-      NCI C-Code: CNEW
+      NCI C-Code: C215509
       Preferred Term: Indication Notes
       Definition: A brief written record relevant to the disease/condition indication.
       Cardinality: 0..*
@@ -2817,7 +2817,7 @@ Ingredient:
     role:
       Type:
       - $ref: '#/Code'
-      NCI C-Code: CNEW
+      NCI C-Code: C215595
       Preferred Term: Ingredient Role
       Definition: The intended use of the ingredient within the context of the compounded
         substance or mixture.
@@ -2903,7 +2903,7 @@ IntercurrentEvent:
     text:
       Type:
       - $ref: '#/string'
-      NCI C-Code: CNEW
+      NCI C-Code: C215526
       Preferred Term: Intercurrent Event Text
       Definition: An instance of structured text that represents the intercurrent
         event.
@@ -2916,7 +2916,7 @@ IntercurrentEvent:
     notes:
       Type:
       - $ref: '#/CommentAnnotation'
-      NCI C-Code: CNEW
+      NCI C-Code: C215527
       Preferred Term: Intercurrent Event Notes
       Definition: A brief written record relevant to the intercurrent event.
       Cardinality: 0..*
@@ -2959,7 +2959,7 @@ IntercurrentEvent:
       Cardinality: '1'
       Relationship Type: Value
 InterventionalStudyDesign:
-  NCI C-Code: CNEW
+  NCI C-Code: C215503
   Preferred Term: Interventional Study Design
   Definition: The strategy that specifies the structure of an interventional trial
     in terms of the planned activities (including timing) and statistical analysis
@@ -2980,7 +2980,7 @@ InterventionalStudyDesign:
     name:
       Type:
       - $ref: '#/string'
-      NCI C-Code: CNEW
+      NCI C-Code: C215626
       Preferred Term: Interventional Study Design Name
       Definition: The literal identifier (i.e., distinctive designation) of the interventional
         study design.
@@ -2993,7 +2993,7 @@ InterventionalStudyDesign:
     label:
       Type:
       - $ref: '#/string'
-      NCI C-Code: CNEW
+      NCI C-Code: C215628
       Preferred Term: Interventional Study Design Label
       Definition: The short descriptive designation for the interventional study design.
       Cardinality: 0..1
@@ -3005,7 +3005,7 @@ InterventionalStudyDesign:
     description:
       Type:
       - $ref: '#/string'
-      NCI C-Code: CNEW
+      NCI C-Code: C215627
       Preferred Term: Interventional Study Design Description
       Definition: A narrative representation of the interventional study design.
       Cardinality: 0..1
@@ -3017,7 +3017,7 @@ InterventionalStudyDesign:
     rationale:
       Type:
       - $ref: '#/string'
-      NCI C-Code: CNEW
+      NCI C-Code: C215629
       Preferred Term: Interventional Study Design Rationale
       Definition: Reason(s) for choosing the interventional study design. This may
         include reasons for the choice of control or comparator, as well as the scientific
@@ -3031,7 +3031,7 @@ InterventionalStudyDesign:
     therapeuticAreas:
       Type:
       - $ref: '#/Code'
-      NCI C-Code: CNEW
+      NCI C-Code: C215633
       Preferred Term: Interventional Study Design Therapeutic Areas
       Definition: A categorization of a disease, disorder, or other condition based
         on common characteristics and often associated with a medical specialty focusing
@@ -3047,7 +3047,7 @@ InterventionalStudyDesign:
     studyType:
       Type:
       - $ref: '#/Code'
-      NCI C-Code: CNEW
+      NCI C-Code: C215631
       Preferred Term: Interventional Study Design Study Type
       Definition: The study type associated with the interventional study design.
       Cardinality: 0..1
@@ -3059,7 +3059,7 @@ InterventionalStudyDesign:
     characteristics:
       Type:
       - $ref: '#/Code'
-      NCI C-Code: CNEW
+      NCI C-Code: C215632
       Preferred Term: Interventional Study Design Characteristics
       Definition: The distinguishing qualities or prominent aspects of an interventional
         study design.
@@ -3072,7 +3072,7 @@ InterventionalStudyDesign:
     studyPhase:
       Type:
       - $ref: '#/AliasCode'
-      NCI C-Code: CNEW
+      NCI C-Code: C215630
       Preferred Term: Interventional Study Design Study Phase
       Definition: The study phase associated with the interventional study design.
       Cardinality: 0..1
@@ -3084,7 +3084,7 @@ InterventionalStudyDesign:
     notes:
       Type:
       - $ref: '#/CommentAnnotation'
-      NCI C-Code: CNEW
+      NCI C-Code: C215634
       Preferred Term: Interventional Study Design Notes
       Definition: A brief written record relevant to the interventional study design.
       Cardinality: 0..*
@@ -3344,7 +3344,7 @@ Masking:
     text:
       Type:
       - $ref: '#/string'
-      NCI C-Code: CNEW
+      NCI C-Code: C215553
       Preferred Term: Masking Text
       Definition: An instance of unstructured text that represents how the masking
         is performed and maintained.
@@ -3355,7 +3355,7 @@ Masking:
     isMasked:
       Type:
       - $ref: '#/boolean'
-      NCI C-Code: CNEW
+      NCI C-Code: C215554
       Preferred Term: Masked Indicator
       Definition: An indication as to whether the study role is masked.
       Cardinality: '1'
@@ -3392,7 +3392,7 @@ MedicalDevice:
     name:
       Type:
       - $ref: '#/string'
-      NCI C-Code: CNEW
+      NCI C-Code: C215614
       Preferred Term: Medical Device Name
       Definition: The literal identifier (i.e., distinctive designation) of the medical
         device.
@@ -3403,7 +3403,7 @@ MedicalDevice:
     label:
       Type:
       - $ref: '#/string'
-      NCI C-Code: CNEW
+      NCI C-Code: C215616
       Preferred Term: Medical Device Label
       Definition: The short descriptive designation for the medical device.
       Cardinality: 0..1
@@ -3413,7 +3413,7 @@ MedicalDevice:
     description:
       Type:
       - $ref: '#/string'
-      NCI C-Code: CNEW
+      NCI C-Code: C215615
       Preferred Term: Medical Device Description
       Definition: A narrative representation of the medical device.
       Cardinality: 0..1
@@ -3423,7 +3423,7 @@ MedicalDevice:
     hardwareVersion:
       Type:
       - $ref: '#/string'
-      NCI C-Code: CNEW
+      NCI C-Code: C215617
       Preferred Term: Hardware Version
       Definition: A form or variant of hardware; one of a sequence of copies of the
         physical components from which a computer is constructed, each incorporating
@@ -3446,7 +3446,7 @@ MedicalDevice:
     sourcing:
       Type:
       - $ref: '#/Code'
-      NCI C-Code: CNEW
+      NCI C-Code: C215619
       Preferred Term: Medical Device Sourcing
       Definition: An indication as to whether the medical device is obtained from
         a local or central source.
@@ -3457,7 +3457,7 @@ MedicalDevice:
     notes:
       Type:
       - $ref: '#/CommentAnnotation'
-      NCI C-Code: CNEW
+      NCI C-Code: C215618
       Preferred Term: Medical Device Notes
       Definition: A brief written record relevant to the medical device.
       Cardinality: 0..*
@@ -3494,7 +3494,7 @@ MedicalDevice:
       Cardinality: '1'
       Relationship Type: Value
 MedicalDeviceIdentifier:
-  NCI C-Code: CNEW
+  NCI C-Code: C215501
   Preferred Term: Medical Device Identifier
   Definition: A sequence of characters used to identify, name, or characterize the
     medical device.
@@ -3514,7 +3514,7 @@ MedicalDeviceIdentifier:
     text:
       Type:
       - $ref: '#/string'
-      NCI C-Code: CNEW
+      NCI C-Code: C215620
       Preferred Term: Medical Device Identifier Text
       Definition: An instance of structured text that represents the medical device
         identifier.
@@ -3539,7 +3539,7 @@ MedicalDeviceIdentifier:
     type:
       Type:
       - $ref: '#/Code'
-      NCI C-Code: CNEW
+      NCI C-Code: C215621
       Preferred Term: Medical Device Identifier Type
       Definition: A characterization or classification of the medical device identifier.
       Cardinality: '1'
@@ -3606,7 +3606,7 @@ NarrativeContent:
     displaySectionTitle:
       Type:
       - $ref: '#/boolean'
-      NCI C-Code: CNEW
+      NCI C-Code: C215534
       Preferred Term: Narrative Content Section Title Display Indicator
       Definition: An indication as to whether the section title is to be displayed
         in the document containing narrative content.
@@ -3617,7 +3617,7 @@ NarrativeContent:
     displaySectionNumber:
       Type:
       - $ref: '#/boolean'
-      NCI C-Code: CNEW
+      NCI C-Code: C215535
       Preferred Term: Narrative Content Section Number Display Indicator
       Definition: An indication as to whether the section number is to be displayed
         in the document containing narrative content.
@@ -3674,7 +3674,7 @@ NarrativeContent:
       Cardinality: '1'
       Relationship Type: Value
 NarrativeContentItem:
-  NCI C-Code: CNEW
+  NCI C-Code: C215489
   Preferred Term: Narrative Content Item
   Definition: An individual item within the container that holds an instance of unstructured
     text and which may include objects such as tables, figures, and images.
@@ -3690,7 +3690,7 @@ NarrativeContentItem:
     name:
       Type:
       - $ref: '#/string'
-      NCI C-Code: CNEW
+      NCI C-Code: C215557
       Preferred Term: Narrative Content Item Name
       Definition: The literal identifier (i.e., distinctive designation) of the narrative
         content item.
@@ -3701,7 +3701,7 @@ NarrativeContentItem:
     text:
       Type:
       - $ref: '#/string'
-      NCI C-Code: CNEW
+      NCI C-Code: C215558
       Preferred Term: Narrative Content Item Text
       Definition: An instance of unstructured text that represents the narrative content
         item.
@@ -3789,7 +3789,7 @@ Objective:
     notes:
       Type:
       - $ref: '#/CommentAnnotation'
-      NCI C-Code: CNEW
+      NCI C-Code: C215513
       Preferred Term: Objective Notes
       Definition: A brief written record relevant to the study objective.
       Cardinality: 0..*
@@ -3840,7 +3840,7 @@ Objective:
       Cardinality: '1'
       Relationship Type: Value
 ObservationalStudyDesign:
-  NCI C-Code: CNEW
+  NCI C-Code: C215504
   Preferred Term: Observational Study Design
   Definition: The strategy that specifies the structure of an observational study
     in terms of the planned activities (including timing) and statistical analysis
@@ -3861,7 +3861,7 @@ ObservationalStudyDesign:
     name:
       Type:
       - $ref: '#/string'
-      NCI C-Code: CNEW
+      NCI C-Code: C215636
       Preferred Term: Observational Study Design Name
       Definition: The literal identifier (i.e., distinctive designation) of the observational
         study design.
@@ -3874,7 +3874,7 @@ ObservationalStudyDesign:
     label:
       Type:
       - $ref: '#/string'
-      NCI C-Code: CNEW
+      NCI C-Code: C215638
       Preferred Term: Observational Study Design Label
       Definition: The short descriptive designation for the observational study design.
       Cardinality: 0..1
@@ -3886,7 +3886,7 @@ ObservationalStudyDesign:
     description:
       Type:
       - $ref: '#/string'
-      NCI C-Code: CNEW
+      NCI C-Code: C215637
       Preferred Term: Observational Study Design Description
       Definition: A narrative representation of the observational study design.
       Cardinality: 0..1
@@ -3898,7 +3898,7 @@ ObservationalStudyDesign:
     rationale:
       Type:
       - $ref: '#/string'
-      NCI C-Code: CNEW
+      NCI C-Code: C215639
       Preferred Term: Observational Study Design Rationale
       Definition: Reason(s) for choosing the observational study design. This may
         include reasons for the choice of control or comparator, as well as the scientific
@@ -3912,7 +3912,7 @@ ObservationalStudyDesign:
     therapeuticAreas:
       Type:
       - $ref: '#/Code'
-      NCI C-Code: CNEW
+      NCI C-Code: C215643
       Preferred Term: Observational Study Design Therapeutic Areas
       Definition: A categorization of a disease, disorder, or other condition based
         on common characteristics and often associated with a medical specialty focusing
@@ -3928,7 +3928,7 @@ ObservationalStudyDesign:
     studyType:
       Type:
       - $ref: '#/Code'
-      NCI C-Code: CNEW
+      NCI C-Code: C215641
       Preferred Term: Observational Study Design Study Type
       Definition: The study type associated with the observational study design.
       Cardinality: 0..1
@@ -3940,7 +3940,7 @@ ObservationalStudyDesign:
     characteristics:
       Type:
       - $ref: '#/Code'
-      NCI C-Code: CNEW
+      NCI C-Code: C215642
       Preferred Term: Observational Study Design Characteristics
       Definition: The distinguishing qualities or prominent aspects of an observational
         study design.
@@ -3953,7 +3953,7 @@ ObservationalStudyDesign:
     studyPhase:
       Type:
       - $ref: '#/AliasCode'
-      NCI C-Code: CNEW
+      NCI C-Code: C215640
       Preferred Term: Observational Study Design Study Phase
       Definition: The study phase associated with the observational study design.
       Cardinality: 0..1
@@ -3965,7 +3965,7 @@ ObservationalStudyDesign:
     notes:
       Type:
       - $ref: '#/CommentAnnotation'
-      NCI C-Code: CNEW
+      NCI C-Code: C215644
       Preferred Term: Observational Study Design Notes
       Definition: A brief written record relevant to the observational study design.
       Cardinality: 0..*
@@ -4156,7 +4156,7 @@ ObservationalStudyDesign:
     subTypes:
       Type:
       - $ref: '#/Code'
-      NCI C-Code: CNEW
+      NCI C-Code: C215635
       Preferred Term: Observational Study Type
       Definition: The nature of the observational study for which information is being
         collected.
@@ -4429,7 +4429,7 @@ PopulationDefinition:
     notes:
       Type:
       - $ref: '#/CommentAnnotation'
-      NCI C-Code: CNEW
+      NCI C-Code: C215547
       Preferred Term: Study Cohort Notes
       Definition: A brief written record relevant to the study cohort.
       Cardinality: 0..*
@@ -4449,7 +4449,7 @@ PopulationDefinition:
     plannedEnrollmentNumberRange:
       Type:
       - $ref: '#/Range'
-      NCI C-Code: CNEW
+      NCI C-Code: C215546
       Preferred Term: Study Cohort Planned Enrollment Number Range
       Definition: The range of values representing the planned number of subjects
         to be entered in a clinical trial, within the study cohort.
@@ -4469,7 +4469,7 @@ PopulationDefinition:
     plannedCompletionNumberRange:
       Type:
       - $ref: '#/Range'
-      NCI C-Code: CNEW
+      NCI C-Code: C215545
       Preferred Term: Study Cohort Planned Completion Number Range
       Definition: The range of values representing the planned number of subjects
         that must complete the study in order to meet the objectives and endpoints
@@ -4556,7 +4556,7 @@ Procedure:
     notes:
       Type:
       - $ref: '#/CommentAnnotation'
-      NCI C-Code: CNEW
+      NCI C-Code: C215520
       Preferred Term: Procedure Notes
       Definition: A brief written record relevant to the procedure.
       Cardinality: 0..*
@@ -4584,7 +4584,7 @@ Procedure:
       Cardinality: '1'
       Relationship Type: Value
 ProductOrganizationRole:
-  NCI C-Code: CNEW
+  NCI C-Code: C215502
   Preferred Term: Product Organization Role
   Definition: A designation that identifies the function of an organization within
     the context of the product.
@@ -4600,7 +4600,7 @@ ProductOrganizationRole:
     name:
       Type:
       - $ref: '#/string'
-      NCI C-Code: CNEW
+      NCI C-Code: C215622
       Preferred Term: Product Organization Role Name
       Definition: The literal identifier (i.e., distinctive designation) of the product
         organization role.
@@ -4611,7 +4611,7 @@ ProductOrganizationRole:
     label:
       Type:
       - $ref: '#/string'
-      NCI C-Code: CNEW
+      NCI C-Code: C215624
       Preferred Term: Product Organization Role Label
       Definition: The short descriptive designation for the product organization role.
       Cardinality: 0..1
@@ -4621,7 +4621,7 @@ ProductOrganizationRole:
     description:
       Type:
       - $ref: '#/string'
-      NCI C-Code: CNEW
+      NCI C-Code: C215623
       Preferred Term: Product Organization Role Description
       Definition: A narrative representation of the product organization role.
       Cardinality: 0..1
@@ -4631,7 +4631,7 @@ ProductOrganizationRole:
     code:
       Type:
       - $ref: '#/Code'
-      NCI C-Code: CNEW
+      NCI C-Code: C215625
       Preferred Term: Product Organization Role Code
       Definition: A symbol or combination of symbols which is assigned to the product
         organization role.
@@ -4772,7 +4772,7 @@ Range:
       Cardinality: '1'
       Relationship Type: Value
 ReferenceIdentifier:
-  NCI C-Code: CNEW
+  NCI C-Code: C82531
   Preferred Term: Reference Identifier
   Definition: A sequence of characters used to identify, name, or characterize the
     reference.
@@ -4792,7 +4792,7 @@ ReferenceIdentifier:
     text:
       Type:
       - $ref: '#/string'
-      NCI C-Code: CNEW
+      NCI C-Code: C215572
       Preferred Term: Reference Identifier Text
       Definition: An instance of structured text that represents the reference identifier.
       Cardinality: '1'
@@ -4816,7 +4816,7 @@ ReferenceIdentifier:
     type:
       Type:
       - $ref: '#/Code'
-      NCI C-Code: CNEW
+      NCI C-Code: C215571
       Preferred Term: Reference Identifier Type
       Definition: A characterization or classification of the reference identifier.
       Cardinality: '1'
@@ -5305,7 +5305,7 @@ ScheduledInstance:
       Model Name: epoch
       Model Representation: Relationship
 Strength:
-  NCI C-Code: CNEW
+  NCI C-Code: C215495
   Preferred Term: Substance Strength
   Definition: The content of an substance expressed quantitatively per dosage unit,
     per unit of volume, or per unit of weight, according to the pharmaceutical dose
@@ -5322,7 +5322,7 @@ Strength:
     name:
       Type:
       - $ref: '#/string'
-      NCI C-Code: CNEW
+      NCI C-Code: C215590
       Preferred Term: Substance Strength Name
       Definition: The literal identifier (i.e., distinctive designation) of the substance
         strength.
@@ -5333,7 +5333,7 @@ Strength:
     label:
       Type:
       - $ref: '#/string'
-      NCI C-Code: CNEW
+      NCI C-Code: C215592
       Preferred Term: Substance Strength Label
       Definition: The short descriptive designation for the substance strength.
       Cardinality: 0..1
@@ -5343,7 +5343,7 @@ Strength:
     description:
       Type:
       - $ref: '#/string'
-      NCI C-Code: CNEW
+      NCI C-Code: C215591
       Preferred Term: Substance Strength Description
       Definition: A narrative representation of the substance strength.
       Cardinality: 0..1
@@ -5368,7 +5368,7 @@ Strength:
     numeratorQuantity:
       Type:
       - $ref: '#/Quantity'
-      NCI C-Code: CNEW
+      NCI C-Code: C215593
       Preferred Term: Substance Strength Numerator Quantity
       Definition: The value representing the numerator for the substance strength.
       Cardinality: 0..1
@@ -5377,7 +5377,7 @@ Strength:
     numeratorRange:
       Type:
       - $ref: '#/Range'
-      NCI C-Code: CNEW
+      NCI C-Code: C215594
       Preferred Term: Substance Strength Numerator Range
       Definition: The lowest and highest numerical values that define a range for
         the substance strength.
@@ -5454,6 +5454,11 @@ Study:
       Relationship Type: Value
       Model Name: documentedBy
       Model Representation: Relationship
+    extensionAttributes:
+      Type:
+      - $ref: '#/ExtensionAttribute'
+      Cardinality: 0..*
+      Relationship Type: Value
     instanceType:
       Type:
       - $ref: '#/string'
@@ -5486,7 +5491,7 @@ StudyAmendment:
     notes:
       Type:
       - $ref: '#/CommentAnnotation'
-      NCI C-Code: CNEW
+      NCI C-Code: C215538
       Preferred Term: Study Amendment Notes
       Definition: A brief written record relevant to the study amendment.
       Cardinality: 0..*
@@ -5592,7 +5597,7 @@ StudyAmendment:
       Cardinality: '1'
       Relationship Type: Value
 StudyAmendmentImpact:
-  NCI C-Code: CNEW
+  NCI C-Code: C215500
   Preferred Term: Study Amendment Impact
   Definition: The effect or consequence of an amendment on some aspect of the study.
   Modifier: Concrete
@@ -5607,7 +5612,7 @@ StudyAmendmentImpact:
     text:
       Type:
       - $ref: '#/string'
-      NCI C-Code: CNEW
+      NCI C-Code: C215611
       Preferred Term: Study Amendment Impact Text
       Definition: An instance of unstructured text that represents the study amendment
         impact.
@@ -5629,7 +5634,7 @@ StudyAmendmentImpact:
     type:
       Type:
       - $ref: '#/Code'
-      NCI C-Code: CNEW
+      NCI C-Code: C215612
       Preferred Term: Study Amendment Impact Type
       Definition: A characterization or classification of the study amendment impact.
       Cardinality: '1'
@@ -5639,7 +5644,7 @@ StudyAmendmentImpact:
     notes:
       Type:
       - $ref: '#/CommentAnnotation'
-      NCI C-Code: CNEW
+      NCI C-Code: C215613
       Preferred Term: Study Amendment Impact Notes
       Definition: A brief written record relevant to the study amendment impact.
       Cardinality: 0..*
@@ -5781,7 +5786,7 @@ StudyArm:
     notes:
       Type:
       - $ref: '#/CommentAnnotation'
-      NCI C-Code: CNEW
+      NCI C-Code: C215515
       Preferred Term: Study Arm Notes
       Definition: A brief written record relevant to the study arm.
       Cardinality: 0..*
@@ -5860,7 +5865,7 @@ StudyCell:
       Cardinality: '1'
       Relationship Type: Value
 StudyChange:
-  NCI C-Code: CNEW
+  NCI C-Code: C215498
   Preferred Term: Study Change
   Definition: The act of alteration or modification to a study.
   Modifier: Concrete
@@ -5875,7 +5880,7 @@ StudyChange:
     name:
       Type:
       - $ref: '#/string'
-      NCI C-Code: CNEW
+      NCI C-Code: C215604
       Preferred Term: Study Change Name
       Definition: The literal identifier (i.e., distinctive designation) of the study
         change.
@@ -5886,7 +5891,7 @@ StudyChange:
     label:
       Type:
       - $ref: '#/string'
-      NCI C-Code: CNEW
+      NCI C-Code: C215606
       Preferred Term: Study Change Label
       Definition: The short descriptive designation for the study change.
       Cardinality: 0..1
@@ -5896,7 +5901,7 @@ StudyChange:
     description:
       Type:
       - $ref: '#/string'
-      NCI C-Code: CNEW
+      NCI C-Code: C215605
       Preferred Term: Study Change Description
       Definition: A narrative representation of the study change.
       Cardinality: 0..1
@@ -5906,7 +5911,7 @@ StudyChange:
     rationale:
       Type:
       - $ref: '#/string'
-      NCI C-Code: CNEW
+      NCI C-Code: C215608
       Preferred Term: Study Change Rationale
       Definition: An explanation as to the logical reasons for why a study change
         has occurred.
@@ -5917,7 +5922,7 @@ StudyChange:
     summary:
       Type:
       - $ref: '#/string'
-      NCI C-Code: CNEW
+      NCI C-Code: C215607
       Preferred Term: Study Change Summary
       Definition: A short narrative representation describing the changes introduced
         in the current version of the study.
@@ -6040,7 +6045,7 @@ StudyCohort:
     notes:
       Type:
       - $ref: '#/CommentAnnotation'
-      NCI C-Code: CNEW
+      NCI C-Code: C215547
       Preferred Term: Study Cohort Notes
       Definition: A brief written record relevant to the study cohort.
       Cardinality: 0..*
@@ -6088,7 +6093,7 @@ StudyCohort:
     plannedEnrollmentNumberRange:
       Type:
       - $ref: '#/Range'
-      NCI C-Code: CNEW
+      NCI C-Code: C215546
       Preferred Term: Study Cohort Planned Enrollment Number Range
       Definition: The range of values representing the planned number of subjects
         to be entered in a clinical trial, within the study cohort.
@@ -6108,7 +6113,7 @@ StudyCohort:
     plannedCompletionNumberRange:
       Type:
       - $ref: '#/Range'
-      NCI C-Code: CNEW
+      NCI C-Code: C215545
       Preferred Term: Study Cohort Planned Completion Number Range
       Definition: The range of values representing the planned number of subjects
         that must complete the study in order to meet the objectives and endpoints
@@ -6133,7 +6138,7 @@ StudyCohort:
       Cardinality: '1'
       Relationship Type: Value
 StudyDefinitionDocument:
-  NCI C-Code: CNEW
+  NCI C-Code: C215490
   Preferred Term: Study Definition Document
   Definition: Any physical or electronic document that is related to defining a study
     or part of a study.
@@ -6149,7 +6154,7 @@ StudyDefinitionDocument:
     name:
       Type:
       - $ref: '#/string'
-      NCI C-Code: CNEW
+      NCI C-Code: C215559
       Preferred Term: Study Definition Document Name
       Definition: The literal identifier (i.e., distinctive designation) of the study
         definition document.
@@ -6160,7 +6165,7 @@ StudyDefinitionDocument:
     label:
       Type:
       - $ref: '#/string'
-      NCI C-Code: CNEW
+      NCI C-Code: C215561
       Preferred Term: Study Definition Document Label
       Definition: The short descriptive designation for the study definition document.
       Cardinality: 0..1
@@ -6170,7 +6175,7 @@ StudyDefinitionDocument:
     description:
       Type:
       - $ref: '#/string'
-      NCI C-Code: CNEW
+      NCI C-Code: C215560
       Preferred Term: Study Definition Document Description
       Definition: A narrative representation of the study definition document.
       Cardinality: 0..1
@@ -6180,7 +6185,7 @@ StudyDefinitionDocument:
     type:
       Type:
       - $ref: '#/Code'
-      NCI C-Code: CNEW
+      NCI C-Code: C215564
       Preferred Term: Study Definition Document Type
       Definition: A characterization or classification of the study definition document.
       Cardinality: '1'
@@ -6190,7 +6195,7 @@ StudyDefinitionDocument:
     templateName:
       Type:
       - $ref: '#/string'
-      NCI C-Code: CNEW
+      NCI C-Code: C215562
       Preferred Term: Study Definition Document Template Name
       Definition: The literal identifier (i.e., distinctive designation) of the study
         definition document template.
@@ -6201,7 +6206,7 @@ StudyDefinitionDocument:
     language:
       Type:
       - $ref: '#/Code'
-      NCI C-Code: CNEW
+      NCI C-Code: C215563
       Preferred Term: Study Definition Document Language
       Definition: The language in which the study definition document is written.
       Cardinality: '1'
@@ -6211,7 +6216,7 @@ StudyDefinitionDocument:
     notes:
       Type:
       - $ref: '#/CommentAnnotation'
-      NCI C-Code: CNEW
+      NCI C-Code: C215565
       Preferred Term: Study Definition Document Notes
       Definition: A brief written record relevant to the study definition document.
       Cardinality: 0..*
@@ -6239,7 +6244,7 @@ StudyDefinitionDocument:
       Cardinality: '1'
       Relationship Type: Value
 StudyDefinitionDocumentVersion:
-  NCI C-Code: CNEW
+  NCI C-Code: C215491
   Preferred Term: Study Definition Document Version
   Definition: A representation of a particular edition or snapshot of the study definition
     document as it exists at a particular point in time.
@@ -6255,7 +6260,7 @@ StudyDefinitionDocumentVersion:
     status:
       Type:
       - $ref: '#/Code'
-      NCI C-Code: CNEW
+      NCI C-Code: C215567
       Preferred Term: Study Definition Document Status
       Definition: A condition of the study definition document at a point in time
         with respect to its state of readiness for implementation.
@@ -6266,7 +6271,7 @@ StudyDefinitionDocumentVersion:
     version:
       Type:
       - $ref: '#/string'
-      NCI C-Code: CNEW
+      NCI C-Code: C215566
       Preferred Term: Study Definition Document Version Identifier
       Definition: A sequence of characters used to identify the version of the study
         definition document.
@@ -6277,7 +6282,7 @@ StudyDefinitionDocumentVersion:
     notes:
       Type:
       - $ref: '#/CommentAnnotation'
-      NCI C-Code: CNEW
+      NCI C-Code: C215568
       Preferred Term: Study Definition Document Version Notes
       Definition: A brief written record relevant to the study definition document
         version.
@@ -6346,7 +6351,7 @@ StudyDesign:
     name:
       Type:
       - $ref: '#/string'
-      NCI C-Code: CNEW
+      NCI C-Code: C215626
       Preferred Term: Interventional Study Design Name
       Definition: The literal identifier (i.e., distinctive designation) of the interventional
         study design.
@@ -6357,7 +6362,7 @@ StudyDesign:
     label:
       Type:
       - $ref: '#/string'
-      NCI C-Code: CNEW
+      NCI C-Code: C215628
       Preferred Term: Interventional Study Design Label
       Definition: The short descriptive designation for the interventional study design.
       Cardinality: 0..1
@@ -6367,7 +6372,7 @@ StudyDesign:
     description:
       Type:
       - $ref: '#/string'
-      NCI C-Code: CNEW
+      NCI C-Code: C215627
       Preferred Term: Interventional Study Design Description
       Definition: A narrative representation of the interventional study design.
       Cardinality: 0..1
@@ -6377,7 +6382,7 @@ StudyDesign:
     rationale:
       Type:
       - $ref: '#/string'
-      NCI C-Code: CNEW
+      NCI C-Code: C215629
       Preferred Term: Interventional Study Design Rationale
       Definition: Reason(s) for choosing the interventional study design. This may
         include reasons for the choice of control or comparator, as well as the scientific
@@ -6389,7 +6394,7 @@ StudyDesign:
     therapeuticAreas:
       Type:
       - $ref: '#/Code'
-      NCI C-Code: CNEW
+      NCI C-Code: C215633
       Preferred Term: Interventional Study Design Therapeutic Areas
       Definition: A categorization of a disease, disorder, or other condition based
         on common characteristics and often associated with a medical specialty focusing
@@ -6403,7 +6408,7 @@ StudyDesign:
     studyType:
       Type:
       - $ref: '#/Code'
-      NCI C-Code: CNEW
+      NCI C-Code: C215631
       Preferred Term: Interventional Study Design Study Type
       Definition: The study type associated with the interventional study design.
       Cardinality: 0..1
@@ -6413,7 +6418,7 @@ StudyDesign:
     characteristics:
       Type:
       - $ref: '#/Code'
-      NCI C-Code: CNEW
+      NCI C-Code: C215632
       Preferred Term: Interventional Study Design Characteristics
       Definition: The distinguishing qualities or prominent aspects of an interventional
         study design.
@@ -6424,7 +6429,7 @@ StudyDesign:
     studyPhase:
       Type:
       - $ref: '#/AliasCode'
-      NCI C-Code: CNEW
+      NCI C-Code: C215630
       Preferred Term: Interventional Study Design Study Phase
       Definition: The study phase associated with the interventional study design.
       Cardinality: 0..1
@@ -6434,7 +6439,7 @@ StudyDesign:
     notes:
       Type:
       - $ref: '#/CommentAnnotation'
-      NCI C-Code: CNEW
+      NCI C-Code: C215634
       Preferred Term: Interventional Study Design Notes
       Definition: A brief written record relevant to the interventional study design.
       Cardinality: 0..*
@@ -6687,7 +6692,7 @@ StudyDesignPopulation:
     notes:
       Type:
       - $ref: '#/CommentAnnotation'
-      NCI C-Code: CNEW
+      NCI C-Code: C215512
       Preferred Term: Study Design Population Notes
       Definition: A brief written record relevant to the study design population.
       Cardinality: 0..*
@@ -6726,7 +6731,7 @@ StudyDesignPopulation:
     plannedEnrollmentNumberRange:
       Type:
       - $ref: '#/Range'
-      NCI C-Code: CNEW
+      NCI C-Code: C215511
       Preferred Term: Study Design Population Planned Enrollment Number Range
       Definition: The range of values representing the planned number of subjects
         to be entered in a clinical trial, within the study design population.
@@ -6746,7 +6751,7 @@ StudyDesignPopulation:
     plannedCompletionNumberRange:
       Type:
       - $ref: '#/Range'
-      NCI C-Code: CNEW
+      NCI C-Code: C215510
       Preferred Term: Study Design Population Planned Completion Number Range
       Definition: The range of values representing the planned number of subjects
         that must complete the study in order to meet the objectives and endpoints
@@ -6819,7 +6824,7 @@ StudyElement:
     notes:
       Type:
       - $ref: '#/CommentAnnotation'
-      NCI C-Code: CNEW
+      NCI C-Code: C215517
       Preferred Term: Study Element Notes
       Definition: A brief written record relevant to the study element.
       Cardinality: 0..*
@@ -6929,7 +6934,7 @@ StudyEpoch:
     notes:
       Type:
       - $ref: '#/CommentAnnotation'
-      NCI C-Code: CNEW
+      NCI C-Code: C215516
       Preferred Term: Study Epoch Notes
       Definition: A brief written record relevant to the study epoch.
       Cardinality: 0..*
@@ -6985,7 +6990,7 @@ StudyIdentifier:
     text:
       Type:
       - $ref: '#/string'
-      NCI C-Code: CNEW
+      NCI C-Code: C215507
       Preferred Term: Study Identifier Text
       Definition: An instance of structured text that represents the study identifier.
       Cardinality: '1'
@@ -7107,7 +7112,7 @@ StudyIntervention:
     notes:
       Type:
       - $ref: '#/CommentAnnotation'
-      NCI C-Code: CNEW
+      NCI C-Code: C215543
       Preferred Term: Study Intervention Notes
       Definition: A brief written record relevant to the study intervention.
       Cardinality: 0..*
@@ -7135,7 +7140,7 @@ StudyIntervention:
       Cardinality: '1'
       Relationship Type: Value
 StudyRole:
-  NCI C-Code: CNEW
+  NCI C-Code: C215497
   Preferred Term: Study Role
   Definition: A designation that identifies the function of study personnel or an
     organization within the context of the study.
@@ -7151,7 +7156,7 @@ StudyRole:
     name:
       Type:
       - $ref: '#/string'
-      NCI C-Code: CNEW
+      NCI C-Code: C215600
       Preferred Term: Study Role Name
       Definition: The literal identifier (i.e., distinctive designation) of the study
         role.
@@ -7162,7 +7167,7 @@ StudyRole:
     label:
       Type:
       - $ref: '#/string'
-      NCI C-Code: CNEW
+      NCI C-Code: C215602
       Preferred Term: Study Role Label
       Definition: The short descriptive designation for the study role.
       Cardinality: 0..1
@@ -7172,7 +7177,7 @@ StudyRole:
     description:
       Type:
       - $ref: '#/string'
-      NCI C-Code: CNEW
+      NCI C-Code: C215601
       Preferred Term: Study Role Description
       Definition: A narrative representation of the study role.
       Cardinality: 0..1
@@ -7182,7 +7187,7 @@ StudyRole:
     code:
       Type:
       - $ref: '#/Code'
-      NCI C-Code: CNEW
+      NCI C-Code: C215603
       Preferred Term: Study Role Code
       Definition: A symbol or combination of symbols which is assigned to the study
         role.
@@ -7220,8 +7225,8 @@ StudyRole:
       Model Representation: Relationship
     appliesToIds:
       Type:
-      - $ref: '#/StudyVersion'
       - $ref: '#/StudyDesign'
+      - $ref: '#/StudyVersion'
       Definition: A USDM relationship between the StudyRole and either StudyVersion
         or StudyDesign classes that identifies the study version or study design to
         which the study role applies.
@@ -7396,7 +7401,7 @@ StudyVersion:
     notes:
       Type:
       - $ref: '#/CommentAnnotation'
-      NCI C-Code: CNEW
+      NCI C-Code: C215539
       Preferred Term: Study Version Notes
       Definition: A brief written record relevant to the study version.
       Cardinality: 0..*
@@ -7573,7 +7578,7 @@ SubjectEnrollment:
     name:
       Type:
       - $ref: '#/string'
-      NCI C-Code: CNEW
+      NCI C-Code: C215540
       Preferred Term: Subject Enrollment Name
       Definition: The literal identifier (i.e., distinctive designation) of the subject
         enrollment.
@@ -7584,7 +7589,7 @@ SubjectEnrollment:
     label:
       Type:
       - $ref: '#/string'
-      NCI C-Code: CNEW
+      NCI C-Code: C215542
       Preferred Term: Subject Enrollment Label
       Definition: The short descriptive designation for the subject enrollment..
       Cardinality: 0..1
@@ -7594,7 +7599,7 @@ SubjectEnrollment:
     description:
       Type:
       - $ref: '#/string'
-      NCI C-Code: CNEW
+      NCI C-Code: C215541
       Preferred Term: Subject Enrollment Description
       Definition: A narrative representation of the subject enrollment.
       Cardinality: 0..1
@@ -7667,7 +7672,7 @@ Substance:
     name:
       Type:
       - $ref: '#/string'
-      NCI C-Code: CNEW
+      NCI C-Code: C215586
       Preferred Term: Substance Name
       Definition: The literal identifier (i.e., distinctive designation) of the substance.
       Cardinality: '1'
@@ -7677,7 +7682,7 @@ Substance:
     label:
       Type:
       - $ref: '#/string'
-      NCI C-Code: CNEW
+      NCI C-Code: C215588
       Preferred Term: Substance Label
       Definition: The short descriptive designation for the substance.
       Cardinality: 0..1
@@ -7687,7 +7692,7 @@ Substance:
     description:
       Type:
       - $ref: '#/string'
-      NCI C-Code: CNEW
+      NCI C-Code: C215587
       Preferred Term: Substance Description
       Definition: A narrative representation of the substance.
       Cardinality: 0..1
@@ -7697,7 +7702,7 @@ Substance:
     codes:
       Type:
       - $ref: '#/Code'
-      NCI C-Code: CNEW
+      NCI C-Code: C215589
       Preferred Term: Substance Code
       Definition: A symbol or combination of symbols which is assigned to the substance.
       Cardinality: 0..*
@@ -7797,7 +7802,7 @@ SyntaxTemplate:
     notes:
       Type:
       - $ref: '#/CommentAnnotation'
-      NCI C-Code: CNEW
+      NCI C-Code: C215548
       Preferred Term: Characteristic Notes
       Definition: A brief written record relevant to the characteristic.
       Cardinality: 0..*
