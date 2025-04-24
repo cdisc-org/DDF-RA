@@ -1,9 +1,8 @@
 Class,Attribute,Characteristic,API,CT,UML / DD
 Administration,duration,CT Role/UML Representation,,Relationship,Attribute
-Administration,duration,Datatype(s),AdministrationDuration,,Duration
-AdministrationDuration,,,AdministrationDuration,AdministrationDuration,
+AdministrationDuration,,,,AdministrationDuration,
 AssignedPerson,personName,,personName,,personName
-Duration,,,,,Duration
+Duration,,,Duration,,Duration
 InterventionalStudyDesign,eligibilityCriteria,,eligibilityCriteria,,eligibilityCriteria
 ObservationalStudyDesign,eligibilityCriteria,,eligibilityCriteria,,eligibilityCriteria
 PersonName,,,PersonName,,PersonName
@@ -16,7 +15,7 @@ PopulationDefinition,plannedEnrollmentNumberQuantity,,,plannedEnrollmentNumberQu
 QuantityRange,,,,,QuantityRange
 ResponseCode,name,,name,,name
 ResponseCode,label,,label,,label
-ScheduleTimeline,plannedDuration,,,,plannedDuration
+ScheduleTimeline,plannedDuration,,plannedDuration,,plannedDuration
 Strength,numerator,,numerator,,numerator
 Strength,numeratorQuantity,,,numeratorQuantity,
 Strength,numeratorRange,,,numeratorRange,
@@ -37,4 +36,4 @@ StudyDesignPopulation,plannedCompletionNumberRange,,,plannedCompletionNumberRang
 StudyDesignPopulation,plannedEnrollmentNumberRange,,,plannedEnrollmentNumberRange,
 StudyDesignPopulation,plannedCompletionNumberQuantity,,,plannedCompletionNumberQuantity,
 StudyDesignPopulation,plannedEnrollmentNumberQuantity,,,plannedEnrollmentNumberQuantity,
-StudyRole,notes,,,,notes
+StudyRole,notes,,notes,,notes
