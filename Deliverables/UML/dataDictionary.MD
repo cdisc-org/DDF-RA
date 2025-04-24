@@ -60,16 +60,10 @@
 ||dose|Quantity|C167190|0..1|Administration Dose|The value representing the amount of an agent given to an individual at one time.|||
 ||frequency|AliasCode|C89081|0..1|Dosing Frequency|The number of doses administered per a specific interval.|SDTM Terminology Codelist C71113||
 ||route|AliasCode|C38114|0..1|Route of Administration|The pathway by which a substance is administered in order to reach the site of action in the body.|SDTM Terminology Codelist C66729||
+||duration|Duration||1||A USDM relationship between the Administration and AdministrationDuration classes which provides the duration of an instance of product, agent, or therapy administration.|||
 ||notes|CommentAnnotation|C215544|0..*|Administration Notes|A brief written record relevant to the administration of the product, agent, or therapy.|||
 ||administrableProduct|AdministrableProduct||0..1||A USDM relationship between the Administration and AdministrableProductDefinition classes which identifies the administrable product associated with the administration of the product, agent, or therapy.|||
-||duration|AdministrationDuration||1||A USDM relationship between the Administration and AdministrationDuration classes which provides the duration of an instance of product, agent, or therapy administration.|||
 ||medicalDevice|MedicalDevice||0..1||A USDM relationship between the Administration and MedicalDevice classes which identifies the medical device associated with an instance of product, agent, or therapy administration.|||
-|AdministrationDuration|||C69282||Administration Duration|The amount of time elapsed during the administration of an agent.|||
-||id|String||1|||||
-||description|String|C207459|0..1|Administration Duration Description|A narrative representation of the agent administration duration.||Duration|
-||quantity|Quantity|C207460|0..1|Administration Duration Quantity Value|The value representing the amount of time over which the administration of an agent occurs.||Duration|
-||durationWillVary|Boolean|C207461|1|Administration Duration Will Vary Indicator|An indication as to whether the agent administration duration is planned to vary within and/or across subjects.||Duration|
-||reasonDurationWillVary|String|C207462|0..1|Administration Duration Reason Duration Will Vary|The explanation for why the agent administration duration will vary within and/or across subjects.||Duration|
 |AliasCode|||C201344||Alias Code|An alternative symbol or combination of symbols which is assigned to the members of a collection.|||
 ||id|String||1|||||
 ||standardCode|Code|C215528|1|Standard Code|A combination of symbols that is used to represent the standard code.|||
@@ -159,7 +153,7 @@
 ||notes|CommentAnnotation|C215552|0..*|Condition Notes|A brief written record relevant to the condition.||SyntaxTemplate|
 ||dictionary|SyntaxTemplateDictionary||0..1||A USDM relationship between the Condition and SyntaxTemplateDictionary classes which provides the set of dictionary entries related to conditions.||SyntaxTemplate|
 ||context|Activity, ScheduledActivityInstance||0..*||A USDM relationship between the Condition and the ScheduledActivityInstance or Activity classes which identifies the scheduled activity instance or activity to which the condition belongs.|||
-||appliesTo|BiomedicalConceptCategory, Procedure, BiomedicalConceptSurrogate, Activity, BiomedicalConcept||0..*||A USDM relationship between the Condition and the Activity, Procedure, BiomedicalConcept, BiomedicalConceptSurrogate, or BiomedicalConceptCategory classes which identifies the procedure, activity, biomedical concept, biomedical concept surrogate, or biomedical concept category that applies to the condition.|||
+||appliesTo|BiomedicalConcept, Activity, BiomedicalConceptCategory, BiomedicalConceptSurrogate, Procedure||0..*||A USDM relationship between the Condition and the Activity, Procedure, BiomedicalConcept, BiomedicalConceptSurrogate, or BiomedicalConceptCategory classes which identifies the procedure, activity, biomedical concept, biomedical concept surrogate, or biomedical concept category that applies to the condition.|||
 |ConditionAssignment|||C201335||Condition Assignment|An allotting or appointment to a condition or set of conditions that are to be met in order to make a logical decision.|||
 ||id|string||1|||||
 ||condition|String|C47953|1|Logical Condition|An assumption on which rests the validity or effect of something else.|||
@@ -171,8 +165,8 @@
 ||appliesTo|StudyDefinitionDocument||1||A USDM relationship between the DocumentContentReference and StudyDefinitionDocument classes which identifies the study definition document to which the document content reference applies.|||
 |Duration|||||||||
 ||id|String||1|||||
-||description|String||0..1|||||
-||quantity|Quantity||0..1|||||
+||text|String||0..1|||||
+||quantity|QuantityRange||0..1|||||
 ||durationWillVary|Boolean||1|||||
 ||reasonDurationWillVary|String||0..1|||||
 |EligibilityCriterion|||C16112||Study Eligibility Criterion|Characteristics which are necessary to allow a subject to participate in a clinical study, as outlined in the study protocol. The concept covers inclusion and exclusion criteria.|||
@@ -279,6 +273,7 @@
 ||notes|CommentAnnotation|C215634|0..*|Interventional Study Design Notes|A brief written record relevant to the interventional study design.||StudyDesign|
 ||activities|Activity||0..*||A USDM relationship between the InterventionalStudyDesign and Activity classes which identifies the set of activities associated with the interventional study design.||StudyDesign|
 ||biospecimenRetentions|BiospecimenRetention||0..*||A USDM relationship between the InterventionalStudyDesign and BiospecimenRetention classes which identifies the status of biospecimen retentions related to the interventional study design.||StudyDesign|
+||eligibilityCriteria|EligibilityCriterion||1..*|||||
 ||encounters|Encounter||0..*||A USDM relationship between the InterventionalStudyDesign and Encounter classes which identifies the set of encounters associated with the interventional study design.||StudyDesign|
 ||estimands|Estimand||0..*||A USDM relationship between the InterventionalStudyDesign and Estimand classes which identifies the set of estimands associated with the interventional study design.||StudyDesign|
 ||indications|Indication||0..*||A USDM relationship between the InterventionalStudyDesign and Indication classes which identifies the set of indications associated with the interventional study design.||StudyDesign|
@@ -353,6 +348,7 @@
 ||notes|CommentAnnotation|C215644|0..*|Observational Study Design Notes|A brief written record relevant to the observational study design.||StudyDesign|
 ||activities|Activity||0..*||A USDM relationship between the ObservationalStudyDesign and Activity classes which identifies the set of activities associated with the observational study design.||StudyDesign|
 ||biospecimenRetentions|BiospecimenRetention||0..*||A USDM relationship between the ObservationalStudyDesign and BiospecimenRetention classes which identifies the status of biospecimen retentions related to the observational study design.||StudyDesign|
+||eligibilityCriteria|EligibilityCriterion||1..*|||||
 ||encounters|Encounter||0..*||A USDM relationship between the ObservationalStudyDesign and Encounter classes which identifies the set of encounters associated with the observational study design.||StudyDesign|
 ||estimands|Estimand||0..*||A USDM relationship between the ObservationalStudyDesign and Estimand classes which identifies the set of estimands associated with the observational study design.||StudyDesign|
 ||indications|Indication||0..*||A USDM relationship between the ObservationalStudyDesign and Indication classes which identifies the set of indications associated with the observational study design.||StudyDesign|
@@ -447,11 +443,11 @@
 ||description|String|C201332|0..1|Schedule Timeline Description|A narrative representation of the schedule timeline.|||
 ||entryCondition|String|C201333|1|Schedule Timeline Entry Condition|A logical evaluation on which rests the validity of entry into a schedule timeline.|||
 ||mainTimeline|Boolean|C201331|1|Main Timeline Indicator|An indication as to whether the timeline or timeline component is part of the central or principal timeline.|||
+||plannedDuration|Duration||0..1|||||
 ||instances|ScheduledInstance||0..*||A USDM relationship between the ScheduleTimeline and ScheduledInstance classes which identifies the set of scheduled instances (e.g., scheduled activity instances or scheduled decision instances) associated with the scheduled timeline.|||
 ||entry|ScheduledInstance||1||A USDM relationship between the ScheduleTimeline and ScheduledInstance classes which defines the entry into a scheduled instance (e.g., scheduled activity instances or scheduled decision instances) for a timeline.|||
 ||exits|ScheduleTimelineExit||0..*||A USDM relationship between the ScheduleTimeline and ScheduleTimelineExit classes which identifies the set of exits from the scheduled timeline.|||
 ||timings|Timing||0..*||A USDM relationship between the ScheduleTimeline and Timing classes which identifies the set of timings associated with the scheduled timeline.|||
-||plannedDuration|TimelineDuration||0..1|||||
 |ScheduleTimelineExit|||C201349||Schedule Timeline Exit|To go out of or leave the schedule timeline.|||
 ||id|String||1|||||
 |ScheduledActivityInstance|||C201350||Scheduled Activity Instance|A scheduled occurrence of an activity event.|||
@@ -588,6 +584,7 @@
 ||notes|CommentAnnotation|C215508|0..*|Study Design Notes|A brief written record relevant to the study design.|||
 ||activities|Activity||0..*||A USDM relationship between the StudyDesign and Activity classes which identifies the set of activities associated with the study design.|||
 ||biospecimenRetentions|BiospecimenRetention||0..*||A USDM relationship between the StudyDesign and BiospecimenRetention classes which identifies the status of biospecimen retentions related to the study design.|||
+||eligibilityCriteria|EligibilityCriterion||1..*|||||
 ||encounters|Encounter||0..*||A USDM relationship between the StudyDesign and Encounter classes which identifies the set of encounters associated with the study design.|||
 ||estimands|Estimand||0..*||A USDM relationship between the StudyDesign and Estimand classes which identifies the set of estimands associated with the study design.|||
 ||indications|Indication||0..*||A USDM relationship between the StudyDesign and Indication classes which identifies the set of indications associated with the study design.|||
@@ -652,6 +649,7 @@
 ||label|String|C215602|0..1|Study Role Label|The short descriptive designation for the study role.|||
 ||description|String|C215601|0..1|Study Role Description|A narrative representation of the study role.|||
 ||code|Code|C215603|1|Study Role Code|A symbol or combination of symbols which is assigned to the study role.|CNEW Study Role Code||
+||notes|CommentAnnotation||0..1|||||
 ||assignedPersons|AssignedPerson||0..*||A USDM relationship between the StudyRole and AssignedPerson classes that identifies the set of individuals that are assigned to fill a particular role within the study.|||
 ||masking|Masking||0..1||A USDM relationship between the StudyRole and Masking classes which describes the masking associated with the study role.|||
 ||organizations|Organization||0..*||A USDM relationship between the StudyRole and Organization classes which identifies the set of organizations associated with the study role.|||
@@ -711,12 +709,6 @@
 ||label|String|C207580|0..1|Syntax Template Dictionary Label|The short descriptive designation for the syntax template dictionary.|||
 ||description|String|C207579|0..1|Syntax Template Dictionary Description|A narrative representation of the syntax template dictionary.|||
 ||parameterMaps|ParameterMap||1..*||A USDM relationship between the SyntaxTemplateDictionary and ParameterMap classes which identifies the set of parameter maps (parameter map entries) associated with a syntax template dictionary.|||
-|TimelineDuration|||||||||
-||id|String||1|||||
-||description|String||0..1|||||
-||quantity|Quantity||0..1|||||
-||durationWillVary|Boolean||1|||||
-||reasonDurationWillVary|String||0..1|||||
 |Timing|||C80484||Timing|The chronological relationship between temporal events.|||
 ||id|String||1|||||
 ||name|String|C207584|1|Timing Name|The literal identifier (i.e., distinctive designation) of the timing.|||

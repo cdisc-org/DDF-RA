@@ -635,6 +635,16 @@ Administration:
       Relationship Type: Value
       Model Name: route
       Model Representation: Attribute
+    duration:
+      Type:
+      - $ref: '#/Duration'
+      Definition: A USDM relationship between the Administration and AdministrationDuration
+        classes which provides the duration of an instance of product, agent, or therapy
+        administration.
+      Cardinality: '1'
+      Relationship Type: Value
+      Model Name: duration
+      Model Representation: Attribute
     notes:
       Type:
       - $ref: '#/CommentAnnotation'
@@ -655,16 +665,6 @@ Administration:
       Cardinality: 0..1
       Relationship Type: Ref
       Model Name: administrableProduct
-      Model Representation: Relationship
-    duration:
-      Type:
-      - $ref: '#/AdministrationDuration'
-      Definition: A USDM relationship between the Administration and AdministrationDuration
-        classes which provides the duration of an instance of product, agent, or therapy
-        administration.
-      Cardinality: '1'
-      Relationship Type: Value
-      Model Name: duration
       Model Representation: Relationship
     medicalDeviceId:
       Type:
@@ -691,18 +691,17 @@ AdministrationDuration:
   Preferred Term: Administration Duration
   Definition: The amount of time elapsed during the administration of an agent.
   Modifier: Concrete
-  Super Classes:
-  - $ref: '#/Duration'
   Attributes:
     id:
       Type:
       - $ref: '#/string'
       Cardinality: '1'
       Relationship Type: Value
-      Model Name: id
-      Model Representation: Attribute
-      inheritedFrom:
-      - $ref: '#/Duration'
+    extensionAttributes:
+      Type:
+      - $ref: '#/ExtensionAttribute'
+      Cardinality: 0..*
+      Relationship Type: Value
     description:
       Type:
       - $ref: '#/string'
@@ -711,10 +710,7 @@ AdministrationDuration:
       Definition: A narrative representation of the agent administration duration.
       Cardinality: 0..1
       Relationship Type: Value
-      Model Name: description
       Model Representation: Attribute
-      inheritedFrom:
-      - $ref: '#/Duration'
     quantity:
       Type:
       - $ref: '#/Quantity'
@@ -724,10 +720,7 @@ AdministrationDuration:
         of an agent occurs.
       Cardinality: 0..1
       Relationship Type: Value
-      Model Name: quantity
       Model Representation: Attribute
-      inheritedFrom:
-      - $ref: '#/Duration'
     durationWillVary:
       Type:
       - $ref: '#/boolean'
@@ -737,10 +730,7 @@ AdministrationDuration:
         planned to vary within and/or across subjects.
       Cardinality: '1'
       Relationship Type: Value
-      Model Name: durationWillVary
       Model Representation: Attribute
-      inheritedFrom:
-      - $ref: '#/Duration'
     reasonDurationWillVary:
       Type:
       - $ref: '#/string'
@@ -750,15 +740,7 @@ AdministrationDuration:
         within and/or across subjects.
       Cardinality: 0..1
       Relationship Type: Value
-      Model Name: reasonDurationWillVary
       Model Representation: Attribute
-      inheritedFrom:
-      - $ref: '#/Duration'
-    extensionAttributes:
-      Type:
-      - $ref: '#/ExtensionAttribute'
-      Cardinality: 0..*
-      Relationship Type: Value
     instanceType:
       Type:
       - $ref: '#/string'
@@ -1743,11 +1725,11 @@ Condition:
       Model Representation: Relationship
     appliesToIds:
       Type:
-      - $ref: '#/BiomedicalConceptCategory'
-      - $ref: '#/Procedure'
-      - $ref: '#/BiomedicalConceptSurrogate'
-      - $ref: '#/Activity'
       - $ref: '#/BiomedicalConcept'
+      - $ref: '#/Activity'
+      - $ref: '#/BiomedicalConceptCategory'
+      - $ref: '#/BiomedicalConceptSurrogate'
+      - $ref: '#/Procedure'
       Definition: A USDM relationship between the Condition and the Activity, Procedure,
         BiomedicalConcept, BiomedicalConceptSurrogate, or BiomedicalConceptCategory
         classes which identifies the procedure, activity, biomedical concept, biomedical
@@ -1867,61 +1849,7 @@ DocumentContentReference:
       Cardinality: '1'
       Relationship Type: Value
 Duration:
-  Modifier: Abstract
-  Sub Classes:
-  - $ref: '#/AdministrationDuration'
-  - $ref: '#/TimelineDuration'
-  Attributes:
-    id:
-      Type:
-      - $ref: '#/string'
-      Cardinality: '1'
-      Relationship Type: Value
-      Model Name: id
-      Model Representation: Attribute
-    description:
-      Type:
-      - $ref: '#/string'
-      NCI C-Code: C207459
-      Preferred Term: Administration Duration Description
-      Definition: A narrative representation of the agent administration duration.
-      Cardinality: 0..1
-      Relationship Type: Value
-      Model Name: description
-      Model Representation: Attribute
-    quantity:
-      Type:
-      - $ref: '#/Quantity'
-      NCI C-Code: C207460
-      Preferred Term: Administration Duration Quantity Value
-      Definition: The value representing the amount of time over which the administration
-        of an agent occurs.
-      Cardinality: 0..1
-      Relationship Type: Value
-      Model Name: quantity
-      Model Representation: Attribute
-    durationWillVary:
-      Type:
-      - $ref: '#/boolean'
-      NCI C-Code: C207461
-      Preferred Term: Administration Duration Will Vary Indicator
-      Definition: An indication as to whether the agent administration duration is
-        planned to vary within and/or across subjects.
-      Cardinality: '1'
-      Relationship Type: Value
-      Model Name: durationWillVary
-      Model Representation: Attribute
-    reasonDurationWillVary:
-      Type:
-      - $ref: '#/string'
-      NCI C-Code: C207462
-      Preferred Term: Administration Duration Reason Duration Will Vary
-      Definition: The explanation for why the agent administration duration will vary
-        within and/or across subjects.
-      Cardinality: 0..1
-      Relationship Type: Value
-      Model Name: reasonDurationWillVary
-      Model Representation: Attribute
+  Modifier: Concrete
 EligibilityCriterion:
   NCI C-Code: C16112
   Preferred Term: Study Eligibility Criterion
@@ -3190,6 +3118,15 @@ InterventionalStudyDesign:
       Model Representation: Relationship
       inheritedFrom:
       - $ref: '#/StudyDesign'
+    eligibilityCriteria:
+      Type:
+      - $ref: '#/EligibilityCriterion'
+      Cardinality: 1..*
+      Relationship Type: Value
+      Model Name: eligibilityCriteria
+      Model Representation: Relationship
+      inheritedFrom:
+      - $ref: '#/StudyDesign'
     encounters:
       Type:
       - $ref: '#/Encounter'
@@ -3382,11 +3319,6 @@ InterventionalStudyDesign:
     extensionAttributes:
       Type:
       - $ref: '#/ExtensionAttribute'
-      Cardinality: 0..*
-      Relationship Type: Value
-    eligibilityCriteria:
-      Type:
-      - $ref: '#/EligibilityCriterion'
       Cardinality: 0..*
       Relationship Type: Value
     analysisPopulations:
@@ -4071,6 +4003,15 @@ ObservationalStudyDesign:
       Model Representation: Relationship
       inheritedFrom:
       - $ref: '#/StudyDesign'
+    eligibilityCriteria:
+      Type:
+      - $ref: '#/EligibilityCriterion'
+      Cardinality: 1..*
+      Relationship Type: Value
+      Model Name: eligibilityCriteria
+      Model Representation: Relationship
+      inheritedFrom:
+      - $ref: '#/StudyDesign'
     encounters:
       Type:
       - $ref: '#/Encounter'
@@ -4262,11 +4203,6 @@ ObservationalStudyDesign:
     extensionAttributes:
       Type:
       - $ref: '#/ExtensionAttribute'
-      Cardinality: 0..*
-      Relationship Type: Value
-    eligibilityCriteria:
-      Type:
-      - $ref: '#/EligibilityCriterion'
       Cardinality: 0..*
       Relationship Type: Value
     analysisPopulations:
@@ -6584,6 +6520,13 @@ StudyDesign:
       Relationship Type: Value
       Model Name: biospecimenRetentions
       Model Representation: Relationship
+    eligibilityCriteria:
+      Type:
+      - $ref: '#/EligibilityCriterion'
+      Cardinality: 1..*
+      Relationship Type: Value
+      Model Name: eligibilityCriteria
+      Model Representation: Relationship
     encounters:
       Type:
       - $ref: '#/Encounter'
@@ -6704,11 +6647,6 @@ StudyDesign:
       Relationship Type: Value
       Model Name: population
       Model Representation: Relationship
-    eligibilityCriteria:
-      Type:
-      - $ref: '#/EligibilityCriterion'
-      Cardinality: 0..*
-      Relationship Type: Value
     analysisPopulations:
       Type:
       - $ref: '#/AnalysisPopulation'
@@ -7977,10 +7915,6 @@ SyntaxTemplateDictionary:
       - $ref: '#/string'
       Cardinality: '1'
       Relationship Type: Value
-TimelineDuration:
-  Modifier: Concrete
-  Super Classes:
-  - $ref: '#/Duration'
 Timing:
   NCI C-Code: C80484
   Preferred Term: Timing

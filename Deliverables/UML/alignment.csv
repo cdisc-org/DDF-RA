@@ -1,10 +1,11 @@
 Class,Attribute,Characteristic,API,CT,UML / DD
-AdministrationDuration,description,Inherited From,,,Duration
-AdministrationDuration,quantity,Inherited From,,,Duration
-AdministrationDuration,durationWillVary,Inherited From,,,Duration
-AdministrationDuration,reasonDurationWillVary,Inherited From,,,Duration
+Administration,duration,CT Role/UML Representation,,Relationship,Attribute
+Administration,duration,Datatype(s),AdministrationDuration,,Duration
+AdministrationDuration,,,AdministrationDuration,AdministrationDuration,
 AssignedPerson,personName,,personName,,personName
 Duration,,,,,Duration
+InterventionalStudyDesign,eligibilityCriteria,,eligibilityCriteria,,eligibilityCriteria
+ObservationalStudyDesign,eligibilityCriteria,,eligibilityCriteria,,eligibilityCriteria
 PersonName,,,PersonName,,PersonName
 PopulationDefinition,plannedCompletionNumber,,,,plannedCompletionNumber
 PopulationDefinition,plannedEnrollmentNumber,,,,plannedEnrollmentNumber
@@ -29,10 +30,11 @@ StudyCohort,plannedCompletionNumberRange,,,plannedCompletionNumberRange,
 StudyCohort,plannedEnrollmentNumberRange,,,plannedEnrollmentNumberRange,
 StudyCohort,plannedCompletionNumberQuantity,,,plannedCompletionNumberQuantity,
 StudyCohort,plannedEnrollmentNumberQuantity,,,plannedEnrollmentNumberQuantity,
+StudyDesign,eligibilityCriteria,,,,eligibilityCriteria
 StudyDesignPopulation,plannedCompletionNumber,,plannedCompletionNumber,,plannedCompletionNumber
 StudyDesignPopulation,plannedEnrollmentNumber,,plannedEnrollmentNumber,,plannedEnrollmentNumber
 StudyDesignPopulation,plannedCompletionNumberRange,,,plannedCompletionNumberRange,
 StudyDesignPopulation,plannedEnrollmentNumberRange,,,plannedEnrollmentNumberRange,
 StudyDesignPopulation,plannedCompletionNumberQuantity,,,plannedCompletionNumberQuantity,
 StudyDesignPopulation,plannedEnrollmentNumberQuantity,,,plannedEnrollmentNumberQuantity,
-TimelineDuration,,,,,TimelineDuration
+StudyRole,notes,,,,notes
