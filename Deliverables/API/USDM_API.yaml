@@ -903,7 +903,7 @@ components:
           - type: 'null'
           title: Description
         duration:
-          $ref: '#/components/schemas/AdministrationDuration-Input'
+          $ref: '#/components/schemas/Duration-Input'
         dose:
           anyOf:
           - $ref: '#/components/schemas/Quantity-Input'
@@ -972,7 +972,7 @@ components:
           - type: 'null'
           title: Description
         duration:
-          $ref: '#/components/schemas/AdministrationDuration-Output'
+          $ref: '#/components/schemas/Duration-Output'
         dose:
           anyOf:
           - $ref: '#/components/schemas/Quantity-Output'
@@ -1014,88 +1014,6 @@ components:
       - duration
       - instanceType
       title: Administration
-    AdministrationDuration-Input:
-      properties:
-        id:
-          type: string
-          minLength: 1
-          title: Id
-        extensionAttributes:
-          items:
-            $ref: '#/components/schemas/ExtensionAttribute-Input'
-          type: array
-          title: Extensionattributes
-          default: []
-        description:
-          anyOf:
-          - type: string
-          - type: 'null'
-          title: Description
-        quantity:
-          anyOf:
-          - $ref: '#/components/schemas/Quantity-Input'
-          - type: 'null'
-        durationWillVary:
-          type: boolean
-          title: Durationwillvary
-        reasonDurationWillVary:
-          anyOf:
-          - type: string
-          - type: 'null'
-          title: Reasondurationwillvary
-        instanceType:
-          type: string
-          enum:
-          - AdministrationDuration
-          const: AdministrationDuration
-          title: Instancetype
-      type: object
-      required:
-      - id
-      - durationWillVary
-      - instanceType
-      title: AdministrationDuration
-    AdministrationDuration-Output:
-      properties:
-        id:
-          type: string
-          minLength: 1
-          title: Id
-        extensionAttributes:
-          items:
-            $ref: '#/components/schemas/ExtensionAttribute-Output'
-          type: array
-          title: Extensionattributes
-          default: []
-        description:
-          anyOf:
-          - type: string
-          - type: 'null'
-          title: Description
-        quantity:
-          anyOf:
-          - $ref: '#/components/schemas/Quantity-Output'
-          - type: 'null'
-        durationWillVary:
-          type: boolean
-          title: Durationwillvary
-        reasonDurationWillVary:
-          anyOf:
-          - type: string
-          - type: 'null'
-          title: Reasondurationwillvary
-        instanceType:
-          type: string
-          enum:
-          - AdministrationDuration
-          const: AdministrationDuration
-          title: Instancetype
-      type: object
-      required:
-      - id
-      - durationWillVary
-      - instanceType
-      title: AdministrationDuration
     AliasCode-Input:
       properties:
         id:
@@ -2428,6 +2346,92 @@ components:
       - appliesToId
       - instanceType
       title: DocumentContentReference
+    Duration-Input:
+      properties:
+        id:
+          type: string
+          minLength: 1
+          title: Id
+        extensionAttributes:
+          items:
+            $ref: '#/components/schemas/ExtensionAttribute-Input'
+          type: array
+          title: Extensionattributes
+          default: []
+        text:
+          anyOf:
+          - type: string
+          - type: 'null'
+          title: Text
+        quantity:
+          anyOf:
+          - $ref: '#/components/schemas/Quantity-Input'
+          - $ref: '#/components/schemas/Range-Input'
+          - type: 'null'
+          title: Quantity
+        durationWillVary:
+          type: boolean
+          title: Durationwillvary
+        reasonDurationWillVary:
+          anyOf:
+          - type: string
+          - type: 'null'
+          title: Reasondurationwillvary
+        instanceType:
+          type: string
+          enum:
+          - Duration
+          const: Duration
+          title: Instancetype
+      type: object
+      required:
+      - id
+      - durationWillVary
+      - instanceType
+      title: Duration
+    Duration-Output:
+      properties:
+        id:
+          type: string
+          minLength: 1
+          title: Id
+        extensionAttributes:
+          items:
+            $ref: '#/components/schemas/ExtensionAttribute-Output'
+          type: array
+          title: Extensionattributes
+          default: []
+        text:
+          anyOf:
+          - type: string
+          - type: 'null'
+          title: Text
+        quantity:
+          anyOf:
+          - $ref: '#/components/schemas/Quantity-Output'
+          - $ref: '#/components/schemas/Range-Output'
+          - type: 'null'
+          title: Quantity
+        durationWillVary:
+          type: boolean
+          title: Durationwillvary
+        reasonDurationWillVary:
+          anyOf:
+          - type: string
+          - type: 'null'
+          title: Reasondurationwillvary
+        instanceType:
+          type: string
+          enum:
+          - Duration
+          const: Duration
+          title: Instancetype
+      type: object
+      required:
+      - id
+      - durationWillVary
+      - instanceType
+      title: Duration
     EligibilityCriterion-Input:
       properties:
         id:
@@ -5846,6 +5850,10 @@ components:
           type: array
           title: Instances
           default: []
+        plannedDuration:
+          anyOf:
+          - $ref: '#/components/schemas/Duration-Input'
+          - type: 'null'
         instanceType:
           type: string
           enum:
@@ -5916,6 +5924,10 @@ components:
           type: array
           title: Instances
           default: []
+        plannedDuration:
+          anyOf:
+          - $ref: '#/components/schemas/Duration-Output'
+          - type: 'null'
         instanceType:
           type: string
           enum:
@@ -8099,6 +8111,12 @@ components:
           anyOf:
           - $ref: '#/components/schemas/Masking-Input'
           - type: 'null'
+        notes:
+          items:
+            $ref: '#/components/schemas/CommentAnnotation-Input'
+          type: array
+          title: Notes
+          default: []
         instanceType:
           type: string
           enum:
@@ -8162,6 +8180,12 @@ components:
           anyOf:
           - $ref: '#/components/schemas/Masking-Output'
           - type: 'null'
+        notes:
+          items:
+            $ref: '#/components/schemas/CommentAnnotation-Output'
+          type: array
+          title: Notes
+          default: []
         instanceType:
           type: string
           enum:
