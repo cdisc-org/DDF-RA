@@ -11048,6 +11048,14 @@
             "title": "Versions",
             "default": []
           },
+          "childIds": {
+            "items": {
+              "type": "string"
+            },
+            "type": "array",
+            "title": "Childids",
+            "default": []
+          },
           "notes": {
             "items": {
               "$ref": "#/components/schemas/CommentAnnotation-Input"
@@ -11136,6 +11144,14 @@
             "title": "Versions",
             "default": []
           },
+          "childIds": {
+            "items": {
+              "type": "string"
+            },
+            "type": "array",
+            "title": "Childids",
+            "default": []
+          },
           "notes": {
             "items": {
               "$ref": "#/components/schemas/CommentAnnotation-Output"
@@ -11202,14 +11218,6 @@
             "title": "Contents",
             "default": []
           },
-          "childIds": {
-            "items": {
-              "type": "string"
-            },
-            "type": "array",
-            "title": "Childids",
-            "default": []
-          },
           "notes": {
             "items": {
               "$ref": "#/components/schemas/CommentAnnotation-Input"
@@ -11272,14 +11280,6 @@
             },
             "type": "array",
             "title": "Contents",
-            "default": []
-          },
-          "childIds": {
-            "items": {
-              "type": "string"
-            },
-            "type": "array",
-            "title": "Childids",
             "default": []
           },
           "notes": {

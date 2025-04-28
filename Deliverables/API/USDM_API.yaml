@@ -7282,6 +7282,12 @@ components:
           type: array
           title: Versions
           default: []
+        childIds:
+          items:
+            type: string
+          type: array
+          title: Childids
+          default: []
         notes:
           items:
             $ref: '#/components/schemas/CommentAnnotation-Input'
@@ -7342,6 +7348,12 @@ components:
           type: array
           title: Versions
           default: []
+        childIds:
+          items:
+            type: string
+          type: array
+          title: Childids
+          default: []
         notes:
           items:
             $ref: '#/components/schemas/CommentAnnotation-Output'
@@ -7392,12 +7404,6 @@ components:
           type: array
           title: Contents
           default: []
-        childIds:
-          items:
-            type: string
-          type: array
-          title: Childids
-          default: []
         notes:
           items:
             $ref: '#/components/schemas/CommentAnnotation-Input'
@@ -7445,12 +7451,6 @@ components:
             $ref: '#/components/schemas/NarrativeContent-Output'
           type: array
           title: Contents
-          default: []
-        childIds:
-          items:
-            type: string
-          type: array
-          title: Childids
           default: []
         notes:
           items:
