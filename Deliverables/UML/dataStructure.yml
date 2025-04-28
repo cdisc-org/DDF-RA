@@ -1670,11 +1670,11 @@ Condition:
       Model Representation: Relationship
     appliesToIds:
       Type:
+      - $ref: '#/BiomedicalConceptSurrogate'
+      - $ref: '#/Activity'
+      - $ref: '#/Procedure'
       - $ref: '#/BiomedicalConceptCategory'
       - $ref: '#/BiomedicalConcept'
-      - $ref: '#/Procedure'
-      - $ref: '#/Activity'
-      - $ref: '#/BiomedicalConceptSurrogate'
       Definition: A USDM relationship between the Condition and the Activity, Procedure,
         BiomedicalConcept, BiomedicalConceptSurrogate, or BiomedicalConceptCategory
         classes which identifies the procedure, activity, biomedical concept, biomedical
@@ -6275,6 +6275,13 @@ StudyDefinitionDocument:
       Relationship Type: Value
       Model Name: notes
       Model Representation: Attribute
+    childIds:
+      Type:
+      - $ref: '#/StudyDefinitionDocument'
+      Cardinality: 0..*
+      Relationship Type: Ref
+      Model Name: children
+      Model Representation: Relationship
     versions:
       Type:
       - $ref: '#/StudyDefinitionDocumentVersion'
@@ -6372,12 +6379,6 @@ StudyDefinitionDocumentVersion:
       - $ref: '#/string'
       Cardinality: '1'
       Relationship Type: Value
-    childIds:
-      Definition: A USDM relationship within the StudyDefinitionDocumentVersion class
-        which identifies the set of child documents of a study definition document
-        version.
-      Relationship Type: Ref
-      Model Representation: Relationship
 StudyDesign:
   NCI C-Code: C15320
   Preferred Term: Study Design
