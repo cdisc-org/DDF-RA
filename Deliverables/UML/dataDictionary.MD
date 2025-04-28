@@ -153,7 +153,7 @@
 ||notes|CommentAnnotation|C215552|0..*|Condition Notes|A brief written record relevant to the condition.||SyntaxTemplate|
 ||dictionary|SyntaxTemplateDictionary||0..1||A USDM relationship between the Condition and SyntaxTemplateDictionary classes which provides the set of dictionary entries related to conditions.||SyntaxTemplate|
 ||context|Activity, ScheduledActivityInstance||0..*||A USDM relationship between the Condition and the ScheduledActivityInstance or Activity classes which identifies the scheduled activity instance or activity to which the condition belongs.|||
-||appliesTo|BiomedicalConcept, BiomedicalConceptSurrogate, BiomedicalConceptCategory, Activity, Procedure||0..*||A USDM relationship between the Condition and the Activity, Procedure, BiomedicalConcept, BiomedicalConceptSurrogate, or BiomedicalConceptCategory classes which identifies the procedure, activity, biomedical concept, biomedical concept surrogate, or biomedical concept category that applies to the condition.|||
+||appliesTo|BiomedicalConceptCategory, BiomedicalConcept, Procedure, Activity, BiomedicalConceptSurrogate||0..*||A USDM relationship between the Condition and the Activity, Procedure, BiomedicalConcept, BiomedicalConceptSurrogate, or BiomedicalConceptCategory classes which identifies the procedure, activity, biomedical concept, biomedical concept surrogate, or biomedical concept category that applies to the condition.|||
 |ConditionAssignment|||C201335||Condition Assignment|An allotting or appointment to a condition or set of conditions that are to be met in order to make a logical decision.|||
 ||id|string||1|||||
 ||condition|String|C47953|1|Logical Condition|An assumption on which rests the validity or effect of something else.|||
@@ -412,7 +412,7 @@
 ||label|String|C215624|0..1|Product Organization Role Label|The short descriptive designation for the product organization role.|||
 ||description|String|C215623|0..1|Product Organization Role Description|A narrative representation of the product organization role.|||
 ||code|Code|C215625|1|Product Organization Role Code|A symbol or combination of symbols which is assigned to the product organization role.|||
-||appliesTo|AdministrableProduct, MedicalDevice||0..*||A USDM relationship between the ProductOrganizationRole and either the AdministrableProduct or MedicalDevice class that identifies the administrable product or medical device to which the product organization role applies.|||
+||appliesTo|MedicalDevice, AdministrableProduct||0..*||A USDM relationship between the ProductOrganizationRole and either the AdministrableProduct or MedicalDevice class that identifies the administrable product or medical device to which the product organization role applies.|||
 ||organization|Organization||1||A USDM relationship between the ProductOrganizationRole and Organization classes which identifies the organization associated with the product organization role.|||
 |Quantity|||C25256||Quantity|How much there is of something that can be measured; the total amount or number.|||
 ||id|String||1|||||
@@ -562,6 +562,7 @@
 ||templateName|String|C215562|1|Study Definition Document Template Name|The literal identifier (i.e., distinctive designation) of the study definition document template.|||
 ||language|Code|C215563|1|Study Definition Document Language|The language in which the study definition document is written.|Point out to ISO 639 language value list||
 ||notes|CommentAnnotation|C215565|0..*|Study Definition Document Notes|A brief written record relevant to the study definition document.|||
+||children|StudyDefinitionDocument||0..*|||||
 ||versions|StudyDefinitionDocumentVersion||0..*||A USDM relationship between the StudyDefinitionDocument and StudyDefinitionDocumentVersion classes which identifies the set of versions associated with the study definition document.|||
 |StudyDefinitionDocumentVersion|||C215491||Study Definition Document Version|A representation of a particular edition or snapshot of the study definition document as it exists at a particular point in time.|||
 ||id|String||1|||||
@@ -570,7 +571,6 @@
 ||notes|CommentAnnotation|C215568|0..*|Study Definition Document Version Notes|A brief written record relevant to the study definition document version.|||
 ||dateValues|GovernanceDate||0..*||A USDM relationship between the StudyDefinitionDocumentVersion and GovernanceDate classes which provides the set of governance dates associated with the study definition document version.|||
 ||contents|NarrativeContent||0..*||A USDM relationship between the StudyDefinitionDocumentVersion and NarrativeContent classes which identifies the set of narrative content associated with the version of the study definition document.|||
-||children|StudyDefinitionDocumentVersion||0..*||A USDM relationship within the StudyDefinitionDocumentVersion class which identifies the set of child documents of a study definition document version.|||
 |StudyDesign|||C15320||Study Design|A plan detailing how a study will be performed in order to represent the phenomenon under examination, to answer the research questions that have been asked, and informing the statistical approach.|||
 ||id|String||1|||||
 ||name|String|C201338|1|Study Design Name|The literal identifier (i.e., distinctive designation) of the study design.|||

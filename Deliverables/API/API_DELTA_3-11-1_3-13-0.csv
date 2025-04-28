@@ -1,89 +1,52 @@
 Class Name,Class Status,Class Characteristic,Attribute/Relationship Name,Attribute/Relationship Status,Attribute/Relationship Characteristic,Old Value,New Value
+PersonName,Added,Attributes/Relationships,prefixes,Added,Cardinality,,0..*
+PersonName,Added,Attributes/Relationships,prefixes,Added,Data Type,,string
+PersonName,Added,Attributes/Relationships,text,Added,Cardinality,,0..1
+PersonName,Added,Attributes/Relationships,text,Added,Data Type,,string
+PersonName,Added,Attributes/Relationships,id,Added,Cardinality,,1
+PersonName,Added,Attributes/Relationships,id,Added,Data Type,,string
+PersonName,Added,Attributes/Relationships,suffixes,Added,Cardinality,,0..*
+PersonName,Added,Attributes/Relationships,suffixes,Added,Data Type,,string
+PersonName,Added,Attributes/Relationships,instanceType,Added,Cardinality,,1
+PersonName,Added,Attributes/Relationships,instanceType,Added,Data Type,,string
+PersonName,Added,Attributes/Relationships,familyName,Added,Cardinality,,0..1
+PersonName,Added,Attributes/Relationships,familyName,Added,Data Type,,string
+PersonName,Added,Attributes/Relationships,givenNames,Added,Cardinality,,0..*
+PersonName,Added,Attributes/Relationships,givenNames,Added,Data Type,,string
+PersonName,Added,Attributes/Relationships,extensionAttributes,Added,Cardinality,,0..*
+PersonName,Added,Attributes/Relationships,extensionAttributes,Added,Data Type,,ExtensionAttribute
 Duration,Added,Attributes/Relationships,reasonDurationWillVary,Added,Cardinality,,0..1
 Duration,Added,Attributes/Relationships,reasonDurationWillVary,Added,Data Type,,string
-Duration,Added,Attributes/Relationships,id,Added,Cardinality,,1
-Duration,Added,Attributes/Relationships,id,Added,Data Type,,string
+Duration,Added,Attributes/Relationships,quantity,Added,Cardinality,,0..1
+Duration,Added,Attributes/Relationships,quantity,Added,Data Type,,"Quantity, Range"
 Duration,Added,Attributes/Relationships,durationWillVary,Added,Cardinality,,1
 Duration,Added,Attributes/Relationships,durationWillVary,Added,Data Type,,boolean
 Duration,Added,Attributes/Relationships,text,Added,Cardinality,,0..1
 Duration,Added,Attributes/Relationships,text,Added,Data Type,,string
+Duration,Added,Attributes/Relationships,id,Added,Cardinality,,1
+Duration,Added,Attributes/Relationships,id,Added,Data Type,,string
 Duration,Added,Attributes/Relationships,instanceType,Added,Cardinality,,1
 Duration,Added,Attributes/Relationships,instanceType,Added,Data Type,,string
-Duration,Added,Attributes/Relationships,quantity,Added,Cardinality,,0..1
-Duration,Added,Attributes/Relationships,quantity,Added,Data Type,,"Quantity, Range"
 Duration,Added,Attributes/Relationships,extensionAttributes,Added,Cardinality,,0..*
 Duration,Added,Attributes/Relationships,extensionAttributes,Added,Data Type,,ExtensionAttribute
-PersonName,Added,Attributes/Relationships,prefixes,Added,Cardinality,,0..*
-PersonName,Added,Attributes/Relationships,prefixes,Added,Data Type,,string
-PersonName,Added,Attributes/Relationships,suffixes,Added,Cardinality,,0..*
-PersonName,Added,Attributes/Relationships,suffixes,Added,Data Type,,string
-PersonName,Added,Attributes/Relationships,text,Added,Cardinality,,0..1
-PersonName,Added,Attributes/Relationships,text,Added,Data Type,,string
-PersonName,Added,Attributes/Relationships,givenNames,Added,Cardinality,,0..*
-PersonName,Added,Attributes/Relationships,givenNames,Added,Data Type,,string
-PersonName,Added,Attributes/Relationships,familyName,Added,Cardinality,,0..1
-PersonName,Added,Attributes/Relationships,familyName,Added,Data Type,,string
-PersonName,Added,Attributes/Relationships,id,Added,Cardinality,,1
-PersonName,Added,Attributes/Relationships,id,Added,Data Type,,string
-PersonName,Added,Attributes/Relationships,instanceType,Added,Cardinality,,1
-PersonName,Added,Attributes/Relationships,instanceType,Added,Data Type,,string
-PersonName,Added,Attributes/Relationships,extensionAttributes,Added,Cardinality,,0..*
-PersonName,Added,Attributes/Relationships,extensionAttributes,Added,Data Type,,ExtensionAttribute
 AdministrationDuration,Deleted,Attributes/Relationships,reasonDurationWillVary,Deleted,Cardinality,0..1,
 AdministrationDuration,Deleted,Attributes/Relationships,reasonDurationWillVary,Deleted,Data Type,string,
+AdministrationDuration,Deleted,Attributes/Relationships,quantity,Deleted,Cardinality,0..1,
+AdministrationDuration,Deleted,Attributes/Relationships,quantity,Deleted,Data Type,Quantity,
+AdministrationDuration,Deleted,Attributes/Relationships,extensionAttributes,Deleted,Cardinality,0..*,
+AdministrationDuration,Deleted,Attributes/Relationships,extensionAttributes,Deleted,Data Type,ExtensionAttribute,
 AdministrationDuration,Deleted,Attributes/Relationships,durationWillVary,Deleted,Cardinality,1,
 AdministrationDuration,Deleted,Attributes/Relationships,durationWillVary,Deleted,Data Type,boolean,
 AdministrationDuration,Deleted,Attributes/Relationships,id,Deleted,Cardinality,1,
 AdministrationDuration,Deleted,Attributes/Relationships,id,Deleted,Data Type,string,
 AdministrationDuration,Deleted,Attributes/Relationships,instanceType,Deleted,Cardinality,1,
 AdministrationDuration,Deleted,Attributes/Relationships,instanceType,Deleted,Data Type,string,
-AdministrationDuration,Deleted,Attributes/Relationships,quantity,Deleted,Cardinality,0..1,
-AdministrationDuration,Deleted,Attributes/Relationships,quantity,Deleted,Data Type,Quantity,
 AdministrationDuration,Deleted,Attributes/Relationships,description,Deleted,Cardinality,0..1,
 AdministrationDuration,Deleted,Attributes/Relationships,description,Deleted,Data Type,string,
-AdministrationDuration,Deleted,Attributes/Relationships,extensionAttributes,Deleted,Cardinality,0..*,
-AdministrationDuration,Deleted,Attributes/Relationships,extensionAttributes,Deleted,Data Type,ExtensionAttribute,
-ResponseCode,Modified,Attributes/Relationships,label,Added,Cardinality,,0..1
-ResponseCode,Modified,Attributes/Relationships,label,Added,Data Type,,string
-ResponseCode,Modified,Attributes/Relationships,name,Added,Cardinality,,1
-ResponseCode,Modified,Attributes/Relationships,name,Added,Data Type,,string
-StudyDesignPopulation,Modified,Attributes/Relationships,plannedEnrollmentNumber,Added,Cardinality,,0..1
-StudyDesignPopulation,Modified,Attributes/Relationships,plannedEnrollmentNumber,Added,Data Type,,"Quantity, Range"
-StudyDesignPopulation,Modified,Attributes/Relationships,plannedCompletionNumber,Added,Cardinality,,0..1
-StudyDesignPopulation,Modified,Attributes/Relationships,plannedCompletionNumber,Added,Data Type,,"Quantity, Range"
-StudyDesignPopulation,Modified,Attributes/Relationships,plannedCompletionNumberRange,Deleted,Cardinality,0..1,
-StudyDesignPopulation,Modified,Attributes/Relationships,plannedCompletionNumberRange,Deleted,Data Type,Range,
-StudyDesignPopulation,Modified,Attributes/Relationships,plannedEnrollmentNumberQuantity,Deleted,Cardinality,0..1,
-StudyDesignPopulation,Modified,Attributes/Relationships,plannedEnrollmentNumberQuantity,Deleted,Data Type,Quantity,
-StudyDesignPopulation,Modified,Attributes/Relationships,plannedEnrollmentNumberRange,Deleted,Cardinality,0..1,
-StudyDesignPopulation,Modified,Attributes/Relationships,plannedEnrollmentNumberRange,Deleted,Data Type,Range,
-StudyDesignPopulation,Modified,Attributes/Relationships,plannedCompletionNumberQuantity,Deleted,Cardinality,0..1,
-StudyDesignPopulation,Modified,Attributes/Relationships,plannedCompletionNumberQuantity,Deleted,Data Type,Quantity,
-StudyRole,Modified,Attributes/Relationships,notes,Added,Cardinality,,0..*
-StudyRole,Modified,Attributes/Relationships,notes,Added,Data Type,,CommentAnnotation
-StudyCohort,Modified,Attributes/Relationships,plannedEnrollmentNumber,Added,Cardinality,,0..1
-StudyCohort,Modified,Attributes/Relationships,plannedEnrollmentNumber,Added,Data Type,,"Quantity, Range"
-StudyCohort,Modified,Attributes/Relationships,plannedCompletionNumber,Added,Cardinality,,0..1
-StudyCohort,Modified,Attributes/Relationships,plannedCompletionNumber,Added,Data Type,,"Quantity, Range"
-StudyCohort,Modified,Attributes/Relationships,plannedCompletionNumberRange,Deleted,Cardinality,0..1,
-StudyCohort,Modified,Attributes/Relationships,plannedCompletionNumberRange,Deleted,Data Type,Range,
-StudyCohort,Modified,Attributes/Relationships,plannedEnrollmentNumberQuantity,Deleted,Cardinality,0..1,
-StudyCohort,Modified,Attributes/Relationships,plannedEnrollmentNumberQuantity,Deleted,Data Type,Quantity,
-StudyCohort,Modified,Attributes/Relationships,plannedEnrollmentNumberRange,Deleted,Cardinality,0..1,
-StudyCohort,Modified,Attributes/Relationships,plannedEnrollmentNumberRange,Deleted,Data Type,Range,
-StudyCohort,Modified,Attributes/Relationships,plannedCompletionNumberQuantity,Deleted,Cardinality,0..1,
-StudyCohort,Modified,Attributes/Relationships,plannedCompletionNumberQuantity,Deleted,Data Type,Quantity,
-StudyAmendment,Modified,Attributes/Relationships,label,Added,Cardinality,,0..1
-StudyAmendment,Modified,Attributes/Relationships,label,Added,Data Type,,string
-StudyAmendment,Modified,Attributes/Relationships,name,Added,Cardinality,,1
-StudyAmendment,Modified,Attributes/Relationships,name,Added,Data Type,,string
-StudyAmendment,Modified,Attributes/Relationships,description,Added,Cardinality,,0..1
-StudyAmendment,Modified,Attributes/Relationships,description,Added,Data Type,,string
 Study,Modified,Attributes/Relationships,extensionAttributes,Added,Cardinality,,0..*
 Study,Modified,Attributes/Relationships,extensionAttributes,Added,Data Type,,ExtensionAttribute
-AssignedPerson,Modified,Attributes/Relationships,personName,Added,Cardinality,,1
-AssignedPerson,Modified,Attributes/Relationships,personName,Added,Data Type,,PersonName
-Administration,Modified,Attributes/Relationships,duration,Modified,Data Type,AdministrationDuration,Duration
+StudyRole,Modified,Attributes/Relationships,notes,Added,Cardinality,,0..*
+StudyRole,Modified,Attributes/Relationships,notes,Added,Data Type,,CommentAnnotation
 ScheduleTimeline,Modified,Attributes/Relationships,plannedDuration,Added,Cardinality,,0..1
 ScheduleTimeline,Modified,Attributes/Relationships,plannedDuration,Added,Data Type,,Duration
 Strength,Modified,Attributes/Relationships,numerator,Added,Cardinality,,1
@@ -92,3 +55,40 @@ Strength,Modified,Attributes/Relationships,numeratorRange,Deleted,Cardinality,0.
 Strength,Modified,Attributes/Relationships,numeratorRange,Deleted,Data Type,Range,
 Strength,Modified,Attributes/Relationships,numeratorQuantity,Deleted,Cardinality,0..1,
 Strength,Modified,Attributes/Relationships,numeratorQuantity,Deleted,Data Type,Quantity,
+StudyCohort,Modified,Attributes/Relationships,plannedEnrollmentNumber,Added,Cardinality,,0..1
+StudyCohort,Modified,Attributes/Relationships,plannedEnrollmentNumber,Added,Data Type,,"Quantity, Range"
+StudyCohort,Modified,Attributes/Relationships,plannedCompletionNumber,Added,Cardinality,,0..1
+StudyCohort,Modified,Attributes/Relationships,plannedCompletionNumber,Added,Data Type,,"Quantity, Range"
+StudyCohort,Modified,Attributes/Relationships,plannedCompletionNumberQuantity,Deleted,Cardinality,0..1,
+StudyCohort,Modified,Attributes/Relationships,plannedCompletionNumberQuantity,Deleted,Data Type,Quantity,
+StudyCohort,Modified,Attributes/Relationships,plannedEnrollmentNumberQuantity,Deleted,Cardinality,0..1,
+StudyCohort,Modified,Attributes/Relationships,plannedEnrollmentNumberQuantity,Deleted,Data Type,Quantity,
+StudyCohort,Modified,Attributes/Relationships,plannedCompletionNumberRange,Deleted,Cardinality,0..1,
+StudyCohort,Modified,Attributes/Relationships,plannedCompletionNumberRange,Deleted,Data Type,Range,
+StudyCohort,Modified,Attributes/Relationships,plannedEnrollmentNumberRange,Deleted,Cardinality,0..1,
+StudyCohort,Modified,Attributes/Relationships,plannedEnrollmentNumberRange,Deleted,Data Type,Range,
+AssignedPerson,Modified,Attributes/Relationships,personName,Added,Cardinality,,1
+AssignedPerson,Modified,Attributes/Relationships,personName,Added,Data Type,,PersonName
+Administration,Modified,Attributes/Relationships,duration,Modified,Data Type,AdministrationDuration,Duration
+StudyDesignPopulation,Modified,Attributes/Relationships,plannedEnrollmentNumber,Added,Cardinality,,0..1
+StudyDesignPopulation,Modified,Attributes/Relationships,plannedEnrollmentNumber,Added,Data Type,,"Quantity, Range"
+StudyDesignPopulation,Modified,Attributes/Relationships,plannedCompletionNumber,Added,Cardinality,,0..1
+StudyDesignPopulation,Modified,Attributes/Relationships,plannedCompletionNumber,Added,Data Type,,"Quantity, Range"
+StudyDesignPopulation,Modified,Attributes/Relationships,plannedCompletionNumberQuantity,Deleted,Cardinality,0..1,
+StudyDesignPopulation,Modified,Attributes/Relationships,plannedCompletionNumberQuantity,Deleted,Data Type,Quantity,
+StudyDesignPopulation,Modified,Attributes/Relationships,plannedEnrollmentNumberQuantity,Deleted,Cardinality,0..1,
+StudyDesignPopulation,Modified,Attributes/Relationships,plannedEnrollmentNumberQuantity,Deleted,Data Type,Quantity,
+StudyDesignPopulation,Modified,Attributes/Relationships,plannedCompletionNumberRange,Deleted,Cardinality,0..1,
+StudyDesignPopulation,Modified,Attributes/Relationships,plannedCompletionNumberRange,Deleted,Data Type,Range,
+StudyDesignPopulation,Modified,Attributes/Relationships,plannedEnrollmentNumberRange,Deleted,Cardinality,0..1,
+StudyDesignPopulation,Modified,Attributes/Relationships,plannedEnrollmentNumberRange,Deleted,Data Type,Range,
+StudyAmendment,Modified,Attributes/Relationships,name,Added,Cardinality,,1
+StudyAmendment,Modified,Attributes/Relationships,name,Added,Data Type,,string
+StudyAmendment,Modified,Attributes/Relationships,label,Added,Cardinality,,0..1
+StudyAmendment,Modified,Attributes/Relationships,label,Added,Data Type,,string
+StudyAmendment,Modified,Attributes/Relationships,description,Added,Cardinality,,0..1
+StudyAmendment,Modified,Attributes/Relationships,description,Added,Data Type,,string
+ResponseCode,Modified,Attributes/Relationships,name,Added,Cardinality,,1
+ResponseCode,Modified,Attributes/Relationships,name,Added,Data Type,,string
+ResponseCode,Modified,Attributes/Relationships,label,Added,Cardinality,,0..1
+ResponseCode,Modified,Attributes/Relationships,label,Added,Data Type,,string
