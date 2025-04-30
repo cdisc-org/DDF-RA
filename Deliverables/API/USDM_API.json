@@ -5901,8 +5901,7 @@
               "$ref": "#/components/schemas/EligibilityCriterion-Input"
             },
             "type": "array",
-            "title": "Eligibilitycriteria",
-            "default": []
+            "title": "Eligibilitycriteria"
           },
           "analysisPopulations": {
             "items": {
@@ -5967,6 +5966,7 @@
           "rationale",
           "epochs",
           "population",
+          "eligibilityCriteria",
           "model",
           "instanceType"
         ],
@@ -6163,8 +6163,7 @@
               "$ref": "#/components/schemas/EligibilityCriterion-Output"
             },
             "type": "array",
-            "title": "Eligibilitycriteria",
-            "default": []
+            "title": "Eligibilitycriteria"
           },
           "analysisPopulations": {
             "items": {
@@ -6229,6 +6228,7 @@
           "rationale",
           "epochs",
           "population",
+          "eligibilityCriteria",
           "model",
           "instanceType"
         ],
@@ -7327,8 +7327,7 @@
               "$ref": "#/components/schemas/EligibilityCriterion-Input"
             },
             "type": "array",
-            "title": "Eligibilitycriteria",
-            "default": []
+            "title": "Eligibilitycriteria"
           },
           "analysisPopulations": {
             "items": {
@@ -7388,6 +7387,7 @@
           "rationale",
           "epochs",
           "population",
+          "eligibilityCriteria",
           "model",
           "timePerspective",
           "instanceType"
@@ -7585,8 +7585,7 @@
               "$ref": "#/components/schemas/EligibilityCriterion-Output"
             },
             "type": "array",
-            "title": "Eligibilitycriteria",
-            "default": []
+            "title": "Eligibilitycriteria"
           },
           "analysisPopulations": {
             "items": {
@@ -7646,6 +7645,7 @@
           "rationale",
           "epochs",
           "population",
+          "eligibilityCriteria",
           "model",
           "timePerspective",
           "instanceType"

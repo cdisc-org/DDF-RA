@@ -3860,7 +3860,6 @@ components:
             $ref: '#/components/schemas/EligibilityCriterion-Input'
           type: array
           title: Eligibilitycriteria
-          default: []
         analysisPopulations:
           items:
             $ref: '#/components/schemas/AnalysisPopulation-Input'
@@ -3906,6 +3905,7 @@ components:
       - rationale
       - epochs
       - population
+      - eligibilityCriteria
       - model
       - instanceType
       title: InterventionalStudyDesign
@@ -4040,7 +4040,6 @@ components:
             $ref: '#/components/schemas/EligibilityCriterion-Output'
           type: array
           title: Eligibilitycriteria
-          default: []
         analysisPopulations:
           items:
             $ref: '#/components/schemas/AnalysisPopulation-Output'
@@ -4086,6 +4085,7 @@ components:
       - rationale
       - epochs
       - population
+      - eligibilityCriteria
       - model
       - instanceType
       title: InterventionalStudyDesign
@@ -4810,7 +4810,6 @@ components:
             $ref: '#/components/schemas/EligibilityCriterion-Input'
           type: array
           title: Eligibilitycriteria
-          default: []
         analysisPopulations:
           items:
             $ref: '#/components/schemas/AnalysisPopulation-Input'
@@ -4852,6 +4851,7 @@ components:
       - rationale
       - epochs
       - population
+      - eligibilityCriteria
       - model
       - timePerspective
       - instanceType
@@ -4987,7 +4987,6 @@ components:
             $ref: '#/components/schemas/EligibilityCriterion-Output'
           type: array
           title: Eligibilitycriteria
-          default: []
         analysisPopulations:
           items:
             $ref: '#/components/schemas/AnalysisPopulation-Output'
@@ -5029,6 +5028,7 @@ components:
       - rationale
       - epochs
       - population
+      - eligibilityCriteria
       - model
       - timePerspective
       - instanceType
