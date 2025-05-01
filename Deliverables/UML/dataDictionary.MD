@@ -2,8 +2,7 @@
 |---|---|---|---|---|---|---|---|---|
 |Abbreviation|||C42610||Abbreviation|A set of letters that are drawn from a word or from a sequence of words and that are used for brevity in place of the full word or phrase. (CDISC Glossary)|||
 ||id|String||1|||||
-||abbreviatedText|String|C215487|1|Text Abbreviation Value|The literal value of an instance of unstructured text that is used as the abbreviation.
-|||
+||abbreviatedText|String|C215487|1|Text Abbreviation Value|The literal value of an instance of unstructured text that is used as the abbreviation.|||
 ||expandedText|String|C215569|1|Abbreviation Long Name|The full literal representation of the abbreviation.|||
 ||notes|CommentAnnotation|C215570|0..*|Abbreviation Notes|A brief written record relevant to the abbreviation.|||
 |Activity|||C71473||Study Activity|An action, undertaking, or event, which is anticipated to be performed or observed, or was performed or observed, according to the study protocol during the execution of the study.|||
@@ -152,8 +151,8 @@
 ||text|String|C207484|1|Condition Text|An instance of structured text that represents the condition.||SyntaxTemplate|
 ||notes|CommentAnnotation|C215552|0..*|Condition Notes|A brief written record relevant to the condition.||SyntaxTemplate|
 ||dictionary|SyntaxTemplateDictionary||0..1||A USDM relationship between the Condition and SyntaxTemplateDictionary classes which provides the set of dictionary entries related to conditions.||SyntaxTemplate|
-||context|Activity, ScheduledActivityInstance||0..*||A USDM relationship between the Condition and the ScheduledActivityInstance or Activity classes which identifies the scheduled activity instance or activity to which the condition belongs.|||
-||appliesTo|Procedure, Activity, BiomedicalConceptSurrogate, BiomedicalConcept, BiomedicalConceptCategory||0..*||A USDM relationship between the Condition and the Activity, Procedure, BiomedicalConcept, BiomedicalConceptSurrogate, or BiomedicalConceptCategory classes which identifies the procedure, activity, biomedical concept, biomedical concept surrogate, or biomedical concept category that applies to the condition.|||
+||context|ScheduledActivityInstance, Activity||0..*||A USDM relationship between the Condition and the ScheduledActivityInstance or Activity classes which identifies the scheduled activity instance or activity to which the condition belongs.|||
+||appliesTo|BiomedicalConcept, Activity, Procedure, BiomedicalConceptCategory, BiomedicalConceptSurrogate||0..*||A USDM relationship between the Condition and the Activity, Procedure, BiomedicalConcept, BiomedicalConceptSurrogate, or BiomedicalConceptCategory classes which identifies the procedure, activity, biomedical concept, biomedical concept surrogate, or biomedical concept category that applies to the condition.|||
 |ConditionAssignment|||C201335||Condition Assignment|An allotting or appointment to a condition or set of conditions that are to be met in order to make a logical decision.|||
 ||id|string||1|||||
 ||condition|String|C47953|1|Logical Condition|An assumption on which rests the validity or effect of something else.|||
@@ -163,12 +162,12 @@
 ||sectionNumber|String|C215609|1|Document Content Reference Section Number|The numeric identifier of a particular section for the document content reference.|||
 ||sectionTitle|String|C215610|1|Document Content Reference Section Title|An identifying designation for a particular section for the document content reference.|||
 ||appliesTo|StudyDefinitionDocument||1||A USDM relationship between the DocumentContentReference and StudyDefinitionDocument classes which identifies the study definition document to which the document content reference applies.|||
-|Duration|||||||||
+|Duration|||C25330||Duration|The length of time during which something continues.|||
 ||id|String||1|||||
-||text|String||0..1|||||
-||quantity|QuantityRange||0..1|||||
-||durationWillVary|Boolean||1|||||
-||reasonDurationWillVary|String||0..1|||||
+||text|String|CNEW|0..1|Duration Text|An instance of unstructured text that represents the event duration.|||
+||quantity|QuantityRange|CNEW|0..1|Duration Quantity Value|The value representing the amount of time over which the event occurs.|||
+||durationWillVary|Boolean|CNEW|1|Duration Will Vary Indicator|An indication as to whether the event duration is planned to vary within and/or across subjects.|||
+||reasonDurationWillVary|String|CNEW|0..1|Reason Duration Will Vary|The explanation for why the event duration will vary within and/or across subjects.|||
 |EligibilityCriterion|||C16112||Study Eligibility Criterion|Characteristics which are necessary to allow a subject to participate in a clinical study, as outlined in the study protocol. The concept covers inclusion and exclusion criteria.|||
 ||id|String||1|||||
 ||name|String|C207488|1|Study Eligibility Criterion Name|The literal identifier (i.e., distinctive designation) of the study eligibility criterion.|||
@@ -378,13 +377,13 @@
 ||id|string||1|||||
 ||tag|String|C207515|1|Programming Tag|Character strings bounded by angle brackets that act as containers for programming language elements.|||
 ||reference|String|C207516|1|Programming Tag Reference|The reference for a tag used in programming languages, such as a markup language (e.g., HTML, XML), to store attributes and elements.|||
-|PersonName|||||||||
+|PersonName|||C25191||Person Name|A word or group of words indicating the identity of a person usually consisting of a first (personal) name and a last (family) name with an optional middle name. In some cultural traditions the family name comes first.|||
 ||id|String||1|||||
-||text|String||0..1|||||
-||familyName|String||0..1|||||
-||givenNames|String||0..*|||||
-||prefixes|String||0..*|||||
-||suffixes|String||0..*|||||
+||text|String|CNEW|0..1|Person Name Text|An instance of structured text that represents the person's full name.|||
+||familyName|String|C40975|0..1|Person Family Name|A word or group of words indicating a person's last (family) name.|||
+||givenNames|String|C40974|0..*|Person Given Name|A word or group of words indicating a person's first (personal or given) name; the name that precedes the surname.|||
+||prefixes|String|CNEW|0..*|Person Name Prefix|An affix occurring at the start of the person name string, usually denoting a title or honorific.|||
+||suffixes|String|CNEW|0..*|Person Name Suffix|An affix occurring at the end of the person name, usually denoting educational or professional degrees and certifications, and/or filial rank.|||
 |PopulationDefinition|||C207593||Population Definition|A concise explanation of the meaning of a population.|||
 ||id|String||1|||||
 ||name|String|C207520|1|Population Definition Name|The literal identifier (i.e., distinctive designation) of the population definition.|||
@@ -393,8 +392,8 @@
 ||plannedSex|Code|C207523|0..2|Population Definition Planned Sex|The protocol-defined sex within the population definition.|SDTM Terminology Codelist C66732||
 ||includesHealthySubjects|Boolean|C207518|1|Population Definition Includes Healthy Subjects Indicator|An indication as to whether the population definition includes healthy subjects, that is, subjects without the disease or condition under study.|||
 ||plannedAge|Range|C207701|0..1|Population Definition Planned Age|The anticipated age of subjects within the population definition.|||
-||plannedCompletionNumber|QuantityRange||0..1|||||
-||plannedEnrollmentNumber|QuantityRange||0..1|||||
+||plannedCompletionNumber|QuantityRange|C207521|0..1|Population Definition Planned Completion Number|The value representing the planned number of subjects that must complete the study in order to meet the objectives and endpoints of the study, within the population definition.|||
+||plannedEnrollmentNumber|QuantityRange|C207522|0..1|Population Definition Planned Enrollment Number|The value representing the planned number of subjects to be entered in a clinical trial, within the population definition.|||
 ||notes|CommentAnnotation|C215551|0..*|Population Definition Notes|A brief written record relevant to the population definition.|||
 ||criteria|EligibilityCriterion||0..*||A USDM relationship between the PopulationDefinition and EligibilityCriterion classes which identifies the set of eligibility criteria associated with the population definition.|||
 |Procedure|||C98769||Procedure|Any activity performed by manual and/or instrumental means for the purpose of diagnosis, assessment, therapy, prevention, or palliative care.|||
@@ -418,9 +417,9 @@
 ||id|String||1|||||
 ||value|Float|C25712|1|Quantity Value|A numerical quantity measured or assigned or computed.|||
 ||unit|AliasCode|C44258|0..1|Quantity Unit|The type of unit of measure being used to express a quantity.|SDTM Terminology Codelist C71620||
-|QuantityRange|||||||||
+|QuantityRange|||CNEW||Quantity or Range|The total amount (number), or the limits (minimum and maximum) of a variation.|||
 ||id|String||1|||||
-|Range|||C38013||Range|The difference between the lowest and highest numerical values; the limits or scale of variation.|||
+|Range|||C38013||Range|An expression that defines the lower and upper limits of a variation.|||
 ||id|String||1|||||
 ||minValue|Quantity|C25570|1|Minimum Value|The smallest value in quantity or degree in a set of values.|||
 ||maxValue|Quantity|C25564|1|Maximum Value|The largest value in quantity or degree in a set of values.|||
@@ -432,8 +431,8 @@
 ||type|Code|C215571|1|Reference Identifier Type|A characterization or classification of the reference identifier.|CNEW Reference Identifier Type||
 |ResponseCode|||C201347||Response Code|A symbol or combination of symbols representing the response to the question.|||
 ||id|String||1|||||
-||name|String||1|||||
-||label|String||0..1|||||
+||name|String|CNEW|1|Response Code Name|The literal identifier (i.e., distinctive designation) of the response code.|||
+||label|String|CNEW|0..1|Response Code Label|The short descriptive designation for the response code.|||
 ||isEnabled|Boolean|C201330|1|Response Code Enabled Indicator|An indication as to whether the response code is activated for use within a given usage context.|||
 ||code|Code|CNEW|1|Response Code Value|The literal value of a response code.|||
 |ScheduleTimeline|||C201348||Schedule Timeline|A chronological schedule of planned temporal events.|||
@@ -481,7 +480,7 @@
 ||name|String|C215590|1|Substance Strength Name|The literal identifier (i.e., distinctive designation) of the substance strength.|||
 ||label|String|C215592|0..1|Substance Strength Label|The short descriptive designation for the substance strength.|||
 ||description|String|C215591|0..1|Substance Strength Description|A narrative representation of the substance strength.|||
-||numerator|QuantityRange||1|||||
+||numerator|QuantityRange|C80490|1|Numerator|The dividend of a fraction.|||
 ||denominator|Quantity|C80489|0..1|Denominator|The divisor of a fraction.|||
 |Study|||C15206||Clinical Study|A clinical study involves research using human volunteers (also called participants) that is intended to add to medical knowledge. There are two main types of clinical studies: clinical trials (also called interventional studies) and observational studies. (CDISC Glossary)|||
 ||id|String||1|||||
@@ -492,9 +491,9 @@
 ||documentedBy|StudyDefinitionDocument||0..*||A USDM relationship between the Study and StudyDefinitionDocument classes signifying that the study is documented in a study definition document.|||
 |StudyAmendment|||C207594||Study Amendment|A written description of a change(s) to, or formal clarification of, a study.|||
 ||id|String||1|||||
-||name|String||1|||||
-||label|String||0..1|||||
-||description|String||0..1|||||
+||name|String|CNEW|1|Study Amendment Name|The literal identifier (i.e., distinctive designation) of the study amendment.|||
+||label|String|CNEW|0..1|Study Amendment Label|The short descriptive designation for the study amendment.|||
+||description|String|CNEW|0..1|Study Amendment Description|A narrative representation of the study amendment.|||
 ||number|String|C207537|1|Study Amendment Number|A string of numerals that uniquely identifies a protocol amendment.|||
 ||notes|CommentAnnotation|C215538|0..*|Study Amendment Notes|A brief written record relevant to the study amendment.|||
 ||summary|String|C115627|1|Study Amendment Summary|A short narrative representation describing the changes introduced in the current version of the protocol.|||
@@ -547,8 +546,8 @@
 ||plannedSex|Code|C207541|0..2|Study Cohort Planned Sex|The protocol-defined sex within the study cohort.|SDTM Terminology Codelist C66732|PopulationDefinition|
 ||includesHealthySubjects|Boolean|C207480|1|Study Cohort Includes Healthy Subjects Indicator|An indication as to whether the study cohort includes healthy subjects, that is, subjects without the disease or condition under study.||PopulationDefinition|
 ||plannedAge|Range|C207545|0..1|Study Cohort Planned Age|The anticipated age of subjects within the study cohort.||PopulationDefinition|
-||plannedCompletionNumber|QuantityRange||0..1|||||
-||plannedEnrollmentNumber|QuantityRange||0..1|||||
+||plannedCompletionNumber|QuantityRange|C207546|0..1|Study Cohort Planned Completion Number|The value representing the planned number of subjects that must complete the study in order to meet the objectives and endpoints of the study, within the study cohort.||PopulationDefinition|
+||plannedEnrollmentNumber|QuantityRange|C207702|0..1|Study Cohort Planned Enrollment Number|The value representing the planned number of subjects to be entered in a clinical trial, within the study cohort.||PopulationDefinition|
 ||notes|CommentAnnotation|C215547|0..*|Study Cohort Notes|A brief written record relevant to the study cohort.||PopulationDefinition|
 ||criteria|EligibilityCriterion||0..*||A USDM relationship between the StudyCohort and EligibilityCriterion classes which identifies the set of eligibility criteria associated with the study cohort.||PopulationDefinition|
 ||characteristics|Characteristic||0..*||A USDM relationship between the StudyCohort and Characteristic classes which identifies the set of subject characteristics associated with the study cohort.|||
@@ -562,7 +561,7 @@
 ||templateName|String|C215562|1|Study Definition Document Template Name|The literal identifier (i.e., distinctive designation) of the study definition document template.|||
 ||language|Code|C215563|1|Study Definition Document Language|The language in which the study definition document is written.|Point out to ISO 639 language value list||
 ||notes|CommentAnnotation|C215565|0..*|Study Definition Document Notes|A brief written record relevant to the study definition document.|||
-||children|StudyDefinitionDocument||0..*|||||
+||children|StudyDefinitionDocument||0..*||A USDM relationship within the StudyDefinitionDocument class which identifies the set of child documents of a study definition document.|||
 ||versions|StudyDefinitionDocumentVersion||0..*||A USDM relationship between the StudyDefinitionDocument and StudyDefinitionDocumentVersion classes which identifies the set of versions associated with the study definition document.|||
 |StudyDefinitionDocumentVersion|||C215491||Study Definition Document Version|A representation of a particular edition or snapshot of the study definition document as it exists at a particular point in time.|||
 ||id|String||1|||||
@@ -584,7 +583,7 @@
 ||notes|CommentAnnotation|C215508|0..*|Study Design Notes|A brief written record relevant to the study design.|||
 ||activities|Activity||0..*||A USDM relationship between the StudyDesign and Activity classes which identifies the set of activities associated with the study design.|||
 ||biospecimenRetentions|BiospecimenRetention||0..*||A USDM relationship between the StudyDesign and BiospecimenRetention classes which identifies the status of biospecimen retentions related to the study design.|||
-||eligibilityCriteria|EligibilityCriterion||1..*|||||
+||eligibilityCriteria|EligibilityCriterion||1..*||A USDM relationship between the StudyDesign and EligibilityCriterion classes which identifies the set of eligibility criterion associated with the study design.|||
 ||encounters|Encounter||0..*||A USDM relationship between the StudyDesign and Encounter classes which identifies the set of encounters associated with the study design.|||
 ||estimands|Estimand||0..*||A USDM relationship between the StudyDesign and Estimand classes which identifies the set of estimands associated with the study design.|||
 ||indications|Indication||0..*||A USDM relationship between the StudyDesign and Indication classes which identifies the set of indications associated with the study design.|||
@@ -605,8 +604,8 @@
 ||plannedSex|Code|C207551|0..2|Study Design Population Planned Sex|The protocol-defined sex within the study design population.|SDTM Terminology Codelist C66732|PopulationDefinition|
 ||includesHealthySubjects|Boolean|C207549|1|Study Design Population Includes Healthy Subjects Indicator|An indication as to whether the study design population includes healthy subjects, that is, subjects without the disease or condition under study.||PopulationDefinition|
 ||plannedAge|Range|C207450|0..1|Study Design Population Planned Age|The anticipated age of subjects within the study design population.||PopulationDefinition|
-||plannedCompletionNumber|QuantityRange||0..1|||||
-||plannedEnrollmentNumber|QuantityRange||0..1|||||
+||plannedCompletionNumber|QuantityRange|C207451|0..1|Study Design Population Planned Completion Number|The value representing the planned number of subjects that must complete the study in order to meet the objectives and endpoints of the study, within the study design population.||PopulationDefinition|
+||plannedEnrollmentNumber|QuantityRange|C207452|0..1|Study Design Population Planned Enrollment Number|The value representing the planned number of subjects to be entered in a clinical trial, within the study design population.||PopulationDefinition|
 ||notes|CommentAnnotation|C215512|0..*|Study Design Population Notes|A brief written record relevant to the study design population.||PopulationDefinition|
 ||criteria|EligibilityCriterion||0..*||A USDM relationship between the StudyDesignPopulation and EligibilityCriterion classes which identifies the set of eligibility criteria associated with the study design population.||PopulationDefinition|
 ||cohorts|StudyCohort||0..*||A USDM relationship between the StudyDesignPopulation and StudyCohort classes which identifies the set of study cohorts associated with the study design population.|||
@@ -649,7 +648,7 @@
 ||label|String|C215602|0..1|Study Role Label|The short descriptive designation for the study role.|||
 ||description|String|C215601|0..1|Study Role Description|A narrative representation of the study role.|||
 ||code|Code|C215603|1|Study Role Code|A symbol or combination of symbols which is assigned to the study role.|CNEW Study Role Code||
-||notes|CommentAnnotation||0..1|||||
+||notes|CommentAnnotation|CNEW|0..1|Study Role Notes|A brief written record relevant to the study role.|||
 ||assignedPersons|AssignedPerson||0..*||A USDM relationship between the StudyRole and AssignedPerson classes that identifies the set of individuals that are assigned to fill a particular role within the study.|||
 ||masking|Masking||0..1||A USDM relationship between the StudyRole and Masking classes which describes the masking associated with the study role.|||
 ||organizations|Organization||0..*||A USDM relationship between the StudyRole and Organization classes which identifies the set of organizations associated with the study role.|||

@@ -1,41 +1,15 @@
 Class,Attribute,Characteristic,API,CT,UML / DD
 Administration,duration,CT Role/UML Representation,,Relationship,Attribute
-AdministrationDuration,,,,AdministrationDuration,
 AssignedPerson,personName,,personName,,personName
-Duration,,,Duration,,Duration
 InterventionalStudyDesign,eligibilityCriteria,,eligibilityCriteria,,eligibilityCriteria
 ObservationalStudyDesign,eligibilityCriteria,,eligibilityCriteria,,eligibilityCriteria
-PersonName,,,PersonName,,PersonName
-PopulationDefinition,plannedCompletionNumber,,,,plannedCompletionNumber
-PopulationDefinition,plannedEnrollmentNumber,,,,plannedEnrollmentNumber
-PopulationDefinition,plannedCompletionNumberRange,,,plannedCompletionNumberRange,
-PopulationDefinition,plannedEnrollmentNumberRange,,,plannedEnrollmentNumberRange,
-PopulationDefinition,plannedCompletionNumberQuantity,,,plannedCompletionNumberQuantity,
-PopulationDefinition,plannedEnrollmentNumberQuantity,,,plannedEnrollmentNumberQuantity,
-QuantityRange,,,,,QuantityRange
-ResponseCode,name,,name,,name
-ResponseCode,label,,label,,label
+PersonName,text,CT Role/UML Datatype,,Complex Datatype Relationship,String
+PersonName,familyName,CT Role/UML Datatype,,Complex Datatype Relationship,String
+PersonName,givenNames,CT Role/UML Datatype,,Complex Datatype Relationship,String
+PersonName,prefixes,CT Role/UML Datatype,,Complex Datatype Relationship,String
+PersonName,suffixes,CT Role/UML Datatype,,Complex Datatype Relationship,String
+QuantityRange,quantity,,,quantity,
+QuantityRange,range,,,range,
 ScheduleTimeline,plannedDuration,,plannedDuration,,plannedDuration
-Strength,numerator,,numerator,,numerator
-Strength,numeratorQuantity,,,numeratorQuantity,
-Strength,numeratorRange,,,numeratorRange,
 Study,id,Cardinality,0..1,,1
-StudyAmendment,name,,name,,name
-StudyAmendment,label,,label,,label
-StudyAmendment,description,,description,,description
-StudyCohort,plannedCompletionNumber,,plannedCompletionNumber,,plannedCompletionNumber
-StudyCohort,plannedEnrollmentNumber,,plannedEnrollmentNumber,,plannedEnrollmentNumber
-StudyCohort,plannedCompletionNumberRange,,,plannedCompletionNumberRange,
-StudyCohort,plannedEnrollmentNumberRange,,,plannedEnrollmentNumberRange,
-StudyCohort,plannedCompletionNumberQuantity,,,plannedCompletionNumberQuantity,
-StudyCohort,plannedEnrollmentNumberQuantity,,,plannedEnrollmentNumberQuantity,
-StudyDefinitionDocument,children,,childIds,,children
-StudyDefinitionDocumentVersion,children,,,children,
-StudyDesign,eligibilityCriteria,,,,eligibilityCriteria
-StudyDesignPopulation,plannedCompletionNumber,,plannedCompletionNumber,,plannedCompletionNumber
-StudyDesignPopulation,plannedEnrollmentNumber,,plannedEnrollmentNumber,,plannedEnrollmentNumber
-StudyDesignPopulation,plannedCompletionNumberRange,,,plannedCompletionNumberRange,
-StudyDesignPopulation,plannedEnrollmentNumberRange,,,plannedEnrollmentNumberRange,
-StudyDesignPopulation,plannedCompletionNumberQuantity,,,plannedCompletionNumberQuantity,
-StudyDesignPopulation,plannedEnrollmentNumberQuantity,,,plannedEnrollmentNumberQuantity,
-StudyRole,notes,,notes,,notes
+StudyRole,notes,Cardinality,0..*,,0..1

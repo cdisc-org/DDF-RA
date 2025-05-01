@@ -1,182 +1,462 @@
 Class Name,Class Status,Class Characteristic,Attribute/Relationship Name,Attribute/Relationship Status,Attribute/Relationship Characteristic,Old Value,New Value
-StudyDefinitionDocument,Modified,NCI C-Code,,,,CNEW,C215490
-StudyDefinitionDocument,Modified,Attributes/Relationships,type,Modified,NCI C-Code,CNEW,C215564
-StudyDefinitionDocument,Modified,Attributes/Relationships,name,Modified,NCI C-Code,CNEW,C215559
-StudyDefinitionDocument,Modified,Attributes/Relationships,templateName,Modified,NCI C-Code,CNEW,C215562
-StudyDefinitionDocument,Modified,Attributes/Relationships,language,Modified,NCI C-Code,CNEW,C215563
-StudyDefinitionDocument,Modified,Attributes/Relationships,notes,Modified,NCI C-Code,CNEW,C215565
-StudyDefinitionDocument,Modified,Attributes/Relationships,label,Modified,NCI C-Code,CNEW,C215561
-StudyDefinitionDocument,Modified,Attributes/Relationships,description,Modified,NCI C-Code,CNEW,C215560
+PersonName,Added,NCI C-Code,,,,,C25191
+PersonName,Added,Attributes/Relationships,suffixes,Added,NCI C-Code,,CNEW
+PersonName,Added,Attributes/Relationships,suffixes,Added,Model Representation,,Attribute
+PersonName,Added,Attributes/Relationships,suffixes,Added,Definition,,"An affix occurring at the end of the person name, usually denoting educational or professional degrees and certifications, and/or filial rank."
+PersonName,Added,Attributes/Relationships,suffixes,Added,Role,,Complex Datatype Relationship
+PersonName,Added,Attributes/Relationships,suffixes,Added,Preferred Term,,Person Name Suffix
+PersonName,Added,Attributes/Relationships,suffixes,Added,Has Value List,,N
+PersonName,Added,Attributes/Relationships,prefixes,Added,NCI C-Code,,CNEW
+PersonName,Added,Attributes/Relationships,prefixes,Added,Model Representation,,Attribute
+PersonName,Added,Attributes/Relationships,prefixes,Added,Definition,,"An affix occurring at the start of the person name string, usually denoting a title or honorific."
+PersonName,Added,Attributes/Relationships,prefixes,Added,Role,,Complex Datatype Relationship
+PersonName,Added,Attributes/Relationships,prefixes,Added,Preferred Term,,Person Name Prefix
+PersonName,Added,Attributes/Relationships,prefixes,Added,Has Value List,,N
+PersonName,Added,Attributes/Relationships,text,Added,NCI C-Code,,CNEW
+PersonName,Added,Attributes/Relationships,text,Added,Model Representation,,Attribute
+PersonName,Added,Attributes/Relationships,text,Added,Definition,,An instance of structured text that represents the person's full name.
+PersonName,Added,Attributes/Relationships,text,Added,Role,,Complex Datatype Relationship
+PersonName,Added,Attributes/Relationships,text,Added,Preferred Term,,Person Name Text
+PersonName,Added,Attributes/Relationships,text,Added,Has Value List,,N
+PersonName,Added,Attributes/Relationships,givenNames,Added,NCI C-Code,,C40974
+PersonName,Added,Attributes/Relationships,givenNames,Added,Model Representation,,Attribute
+PersonName,Added,Attributes/Relationships,givenNames,Added,Definition,,A word or group of words indicating a person's first (personal or given) name; the name that precedes the surname.
+PersonName,Added,Attributes/Relationships,givenNames,Added,Role,,Complex Datatype Relationship
+PersonName,Added,Attributes/Relationships,givenNames,Added,Preferred Term,,Person Given Name
+PersonName,Added,Attributes/Relationships,givenNames,Added,Has Value List,,N
+PersonName,Added,Attributes/Relationships,familyName,Added,NCI C-Code,,C40975
+PersonName,Added,Attributes/Relationships,familyName,Added,Model Representation,,Attribute
+PersonName,Added,Attributes/Relationships,familyName,Added,Definition,,A word or group of words indicating a person's last (family) name.
+PersonName,Added,Attributes/Relationships,familyName,Added,Role,,Complex Datatype Relationship
+PersonName,Added,Attributes/Relationships,familyName,Added,Preferred Term,,Person Family Name
+PersonName,Added,Attributes/Relationships,familyName,Added,Has Value List,,N
+PersonName,Added,Definition,,,,,A word or group of words indicating the identity of a person usually consisting of a first (personal) name and a last (family) name with an optional middle name. In some cultural traditions the family name comes first.
+PersonName,Added,Preferred Term,,,,,Person Name
+Duration,Added,NCI C-Code,,,,,C25330
+Duration,Added,Attributes/Relationships,durationWillVary,Added,NCI C-Code,,CNEW
+Duration,Added,Attributes/Relationships,durationWillVary,Added,Model Representation,,Attribute
+Duration,Added,Attributes/Relationships,durationWillVary,Added,Definition,,An indication as to whether the event duration is planned to vary within and/or across subjects.
+Duration,Added,Attributes/Relationships,durationWillVary,Added,Role,,Attribute
+Duration,Added,Attributes/Relationships,durationWillVary,Added,Preferred Term,,Duration Will Vary Indicator
+Duration,Added,Attributes/Relationships,durationWillVary,Added,Has Value List,,N
+Duration,Added,Attributes/Relationships,reasonDurationWillVary,Added,NCI C-Code,,CNEW
+Duration,Added,Attributes/Relationships,reasonDurationWillVary,Added,Model Representation,,Attribute
+Duration,Added,Attributes/Relationships,reasonDurationWillVary,Added,Definition,,The explanation for why the event duration will vary within and/or across subjects.
+Duration,Added,Attributes/Relationships,reasonDurationWillVary,Added,Role,,Attribute
+Duration,Added,Attributes/Relationships,reasonDurationWillVary,Added,Preferred Term,,Reason Duration Will Vary
+Duration,Added,Attributes/Relationships,reasonDurationWillVary,Added,Has Value List,,N
+Duration,Added,Attributes/Relationships,text,Added,NCI C-Code,,CNEW
+Duration,Added,Attributes/Relationships,text,Added,Model Representation,,Attribute
+Duration,Added,Attributes/Relationships,text,Added,Definition,,An instance of unstructured text that represents the event duration.
+Duration,Added,Attributes/Relationships,text,Added,Role,,Attribute
+Duration,Added,Attributes/Relationships,text,Added,Preferred Term,,Duration Text
+Duration,Added,Attributes/Relationships,text,Added,Has Value List,,N
+Duration,Added,Attributes/Relationships,quantity,Added,NCI C-Code,,CNEW
+Duration,Added,Attributes/Relationships,quantity,Added,Model Representation,,Attribute
+Duration,Added,Attributes/Relationships,quantity,Added,Definition,,The value representing the amount of time over which the event occurs.
+Duration,Added,Attributes/Relationships,quantity,Added,Role,,Complex Datatype Relationship
+Duration,Added,Attributes/Relationships,quantity,Added,Preferred Term,,Duration Quantity Value
+Duration,Added,Attributes/Relationships,quantity,Added,Has Value List,,N
+Duration,Added,Definition,,,,,The length of time during which something continues.
+Duration,Added,Preferred Term,,,,,Duration
+QuantityRange,Added,NCI C-Code,,,,,CNEW
+QuantityRange,Added,Attributes/Relationships,quantity,Added,NCI C-Code,,C25256
+QuantityRange,Added,Attributes/Relationships,quantity,Added,Model Representation,,Attribute
+QuantityRange,Added,Attributes/Relationships,quantity,Added,Definition,,How much there is of something that can be measured; the total amount or number.
+QuantityRange,Added,Attributes/Relationships,quantity,Added,Role,,Complex Datatype Relationship
+QuantityRange,Added,Attributes/Relationships,quantity,Added,Preferred Term,,Quantity
+QuantityRange,Added,Attributes/Relationships,quantity,Added,Has Value List,,N
+QuantityRange,Added,Attributes/Relationships,range,Added,NCI C-Code,,C38013
+QuantityRange,Added,Attributes/Relationships,range,Added,Model Representation,,Attribute
+QuantityRange,Added,Attributes/Relationships,range,Added,Definition,,An expression that defines the lower and upper limits of a variation.
+QuantityRange,Added,Attributes/Relationships,range,Added,Role,,Complex Datatype Relationship
+QuantityRange,Added,Attributes/Relationships,range,Added,Preferred Term,,Range
+QuantityRange,Added,Attributes/Relationships,range,Added,Has Value List,,N
+QuantityRange,Added,Definition,,,,,"The total amount (number), or the limits (minimum and maximum) of a variation."
+QuantityRange,Added,Preferred Term,,,,,Quantity or Range
+AdministrationDuration,Deleted,NCI C-Code,,,,C69282,
+AdministrationDuration,Deleted,Attributes/Relationships,quantity,Deleted,NCI C-Code,C207460,
+AdministrationDuration,Deleted,Attributes/Relationships,quantity,Deleted,Model Representation,Attribute,
+AdministrationDuration,Deleted,Attributes/Relationships,quantity,Deleted,Definition,The value representing the amount of time over which the administration of an agent occurs.,
+AdministrationDuration,Deleted,Attributes/Relationships,quantity,Deleted,Role,Complex Datatype Relationship,
+AdministrationDuration,Deleted,Attributes/Relationships,quantity,Deleted,Preferred Term,Administration Duration Quantity Value,
+AdministrationDuration,Deleted,Attributes/Relationships,quantity,Deleted,Has Value List,N,
+AdministrationDuration,Deleted,Attributes/Relationships,reasonDurationWillVary,Deleted,NCI C-Code,C207462,
+AdministrationDuration,Deleted,Attributes/Relationships,reasonDurationWillVary,Deleted,Model Representation,Attribute,
+AdministrationDuration,Deleted,Attributes/Relationships,reasonDurationWillVary,Deleted,Definition,The explanation for why the agent administration duration will vary within and/or across subjects.,
+AdministrationDuration,Deleted,Attributes/Relationships,reasonDurationWillVary,Deleted,Role,Attribute,
+AdministrationDuration,Deleted,Attributes/Relationships,reasonDurationWillVary,Deleted,Preferred Term,Administration Duration Reason Duration Will Vary,
+AdministrationDuration,Deleted,Attributes/Relationships,reasonDurationWillVary,Deleted,Has Value List,N,
+AdministrationDuration,Deleted,Attributes/Relationships,durationWillVary,Deleted,NCI C-Code,C207461,
+AdministrationDuration,Deleted,Attributes/Relationships,durationWillVary,Deleted,Model Representation,Attribute,
+AdministrationDuration,Deleted,Attributes/Relationships,durationWillVary,Deleted,Definition,An indication as to whether the agent administration duration is planned to vary within and/or across subjects.,
+AdministrationDuration,Deleted,Attributes/Relationships,durationWillVary,Deleted,Role,Attribute,
+AdministrationDuration,Deleted,Attributes/Relationships,durationWillVary,Deleted,Preferred Term,Administration Duration Will Vary Indicator,
+AdministrationDuration,Deleted,Attributes/Relationships,durationWillVary,Deleted,Has Value List,N,
+AdministrationDuration,Deleted,Attributes/Relationships,description,Deleted,NCI C-Code,C207459,
+AdministrationDuration,Deleted,Attributes/Relationships,description,Deleted,Model Representation,Attribute,
+AdministrationDuration,Deleted,Attributes/Relationships,description,Deleted,Definition,A narrative representation of the agent administration duration.,
+AdministrationDuration,Deleted,Attributes/Relationships,description,Deleted,Role,Attribute,
+AdministrationDuration,Deleted,Attributes/Relationships,description,Deleted,Preferred Term,Administration Duration Description,
+AdministrationDuration,Deleted,Attributes/Relationships,description,Deleted,Has Value List,N,
+AdministrationDuration,Deleted,Definition,,,,The amount of time elapsed during the administration of an agent.,
+AdministrationDuration,Deleted,Preferred Term,,,,Administration Duration,
+StudyAmendment,Modified,Attributes/Relationships,name,Added,NCI C-Code,,CNEW
+StudyAmendment,Modified,Attributes/Relationships,name,Added,Model Representation,,Attribute
+StudyAmendment,Modified,Attributes/Relationships,name,Added,Definition,,"The literal identifier (i.e., distinctive designation) of the study amendment."
+StudyAmendment,Modified,Attributes/Relationships,name,Added,Role,,Attribute
+StudyAmendment,Modified,Attributes/Relationships,name,Added,Preferred Term,,Study Amendment Name
+StudyAmendment,Modified,Attributes/Relationships,name,Added,Has Value List,,N
+StudyAmendment,Modified,Attributes/Relationships,label,Added,NCI C-Code,,CNEW
+StudyAmendment,Modified,Attributes/Relationships,label,Added,Model Representation,,Attribute
+StudyAmendment,Modified,Attributes/Relationships,label,Added,Definition,,The short descriptive designation for the study amendment.
+StudyAmendment,Modified,Attributes/Relationships,label,Added,Role,,Attribute
+StudyAmendment,Modified,Attributes/Relationships,label,Added,Preferred Term,,Study Amendment Label
+StudyAmendment,Modified,Attributes/Relationships,label,Added,Has Value List,,N
+StudyAmendment,Modified,Attributes/Relationships,description,Added,NCI C-Code,,CNEW
+StudyAmendment,Modified,Attributes/Relationships,description,Added,Model Representation,,Attribute
+StudyAmendment,Modified,Attributes/Relationships,description,Added,Definition,,A narrative representation of the study amendment.
+StudyAmendment,Modified,Attributes/Relationships,description,Added,Role,,Attribute
+StudyAmendment,Modified,Attributes/Relationships,description,Added,Preferred Term,,Study Amendment Description
+StudyAmendment,Modified,Attributes/Relationships,description,Added,Has Value List,,N
+StudyAmendment,Modified,Attributes/Relationships,notes,Modified,NCI C-Code,CNEW,C215538
 AliasCode,Modified,Attributes/Relationships,standardCode,Modified,NCI C-Code,CNEW,C215528
 AliasCode,Modified,Attributes/Relationships,standardCodeAliases,Modified,NCI C-Code,CNEW,C215529
-Indication,Modified,Attributes/Relationships,notes,Modified,NCI C-Code,CNEW,C215509
-Substance,Modified,Attributes/Relationships,name,Modified,NCI C-Code,CNEW,C215586
-Substance,Modified,Attributes/Relationships,label,Modified,NCI C-Code,CNEW,C215588
+StudyArm,Modified,Attributes/Relationships,notes,Modified,NCI C-Code,CNEW,C215515
+StudyArm,Modified,Attributes/Relationships,dataOriginType,Modified,Definition,A characterization or classification of the study arm with respect to where the study arm data originates. ,A characterization or classification of the study arm with respect to where the study arm data originates.
+StudyArm,Modified,Attributes/Relationships,type,Modified,NCI C-Code,C188827,C172457
+AnalysisPopulation,Modified,Attributes/Relationships,notes,Modified,NCI C-Code,CNEW,C215525
+Administration,Modified,Attributes/Relationships,notes,Modified,NCI C-Code,CNEW,C215544
+BiomedicalConcept,Modified,Attributes/Relationships,notes,Modified,NCI C-Code,CNEW,C215530
+InterventionalStudyDesign,Modified,NCI C-Code,,,,CNEW,C215503
+InterventionalStudyDesign,Modified,Attributes/Relationships,notes,Modified,NCI C-Code,CNEW,C215634
+InterventionalStudyDesign,Modified,Attributes/Relationships,name,Modified,NCI C-Code,CNEW,C215626
+InterventionalStudyDesign,Modified,Attributes/Relationships,studyPhase,Modified,NCI C-Code,CNEW,C215630
+InterventionalStudyDesign,Modified,Attributes/Relationships,description,Modified,NCI C-Code,CNEW,C215627
+InterventionalStudyDesign,Modified,Attributes/Relationships,therapeuticAreas,Modified,NCI C-Code,CNEW,C215633
+InterventionalStudyDesign,Modified,Attributes/Relationships,characteristics,Modified,NCI C-Code,CNEW,C215632
+InterventionalStudyDesign,Modified,Attributes/Relationships,studyType,Modified,NCI C-Code,CNEW,C215631
+InterventionalStudyDesign,Modified,Attributes/Relationships,rationale,Modified,NCI C-Code,CNEW,C215629
+InterventionalStudyDesign,Modified,Attributes/Relationships,label,Modified,NCI C-Code,CNEW,C215628
+ResponseCode,Modified,Attributes/Relationships,label,Added,NCI C-Code,,CNEW
+ResponseCode,Modified,Attributes/Relationships,label,Added,Model Representation,,Attribute
+ResponseCode,Modified,Attributes/Relationships,label,Added,Definition,,The short descriptive designation for the response code.
+ResponseCode,Modified,Attributes/Relationships,label,Added,Role,,Attribute
+ResponseCode,Modified,Attributes/Relationships,label,Added,Preferred Term,,Response Code Label
+ResponseCode,Modified,Attributes/Relationships,label,Added,Has Value List,,N
+ResponseCode,Modified,Attributes/Relationships,name,Added,NCI C-Code,,CNEW
+ResponseCode,Modified,Attributes/Relationships,name,Added,Model Representation,,Attribute
+ResponseCode,Modified,Attributes/Relationships,name,Added,Definition,,"The literal identifier (i.e., distinctive designation) of the response code."
+ResponseCode,Modified,Attributes/Relationships,name,Added,Role,,Attribute
+ResponseCode,Modified,Attributes/Relationships,name,Added,Preferred Term,,Response Code Name
+ResponseCode,Modified,Attributes/Relationships,name,Added,Has Value List,,N
+ResponseCode,Modified,Attributes/Relationships,code,Modified,NCI C-Code,C25162,CNEW
+ResponseCode,Modified,Attributes/Relationships,code,Modified,Definition,A symbol or combination of symbols which is assigned to the members of a collection.,The literal value of a response code.
+ResponseCode,Modified,Attributes/Relationships,code,Modified,Preferred Term,Code,Response Code Value
+MedicalDevice,Modified,Attributes/Relationships,notes,Modified,NCI C-Code,CNEW,C215618
+MedicalDevice,Modified,Attributes/Relationships,sourcing,Modified,NCI C-Code,CNEW,C215619
+MedicalDevice,Modified,Attributes/Relationships,description,Modified,NCI C-Code,CNEW,C215615
+MedicalDevice,Modified,Attributes/Relationships,hardwareVersion,Modified,NCI C-Code,CNEW,C215617
+MedicalDevice,Modified,Attributes/Relationships,label,Modified,NCI C-Code,CNEW,C215616
+MedicalDevice,Modified,Attributes/Relationships,name,Modified,NCI C-Code,CNEW,C215614
+StudyDesign,Modified,Attributes/Relationships,eligibilityCriteria,Added,Model Representation,,Relationship
+StudyDesign,Modified,Attributes/Relationships,eligibilityCriteria,Added,Definition,,A USDM relationship between the StudyDesign and EligibilityCriterion classes which identifies the set of eligibility criterion associated with the study design.
+StudyDesign,Modified,Attributes/Relationships,eligibilityCriteria,Added,Role,,Relationship
+StudyDesign,Modified,Attributes/Relationships,eligibilityCriteria,Added,Has Value List,,N/A
+StudyDesign,Modified,Attributes/Relationships,notes,Modified,NCI C-Code,CNEW,C215508
+StudyDesign,Modified,Attributes/Relationships,studyType,Modified,Definition,The nature of the investigation for which study information is being collected. (After clinicaltrials.gov),The nature of the investigation for which study information is being collected. (After clinicaltrials.gov)
+MedicalDeviceIdentifier,Modified,NCI C-Code,,,,CNEW,C215501
+MedicalDeviceIdentifier,Modified,Attributes/Relationships,type,Modified,NCI C-Code,CNEW,C215621
+MedicalDeviceIdentifier,Modified,Attributes/Relationships,text,Modified,NCI C-Code,CNEW,C215620
+Objective,Modified,Attributes/Relationships,notes,Modified,NCI C-Code,CNEW,C215513
+ReferenceIdentifier,Modified,NCI C-Code,,,,CNEW,C82531
+ReferenceIdentifier,Modified,Attributes/Relationships,type,Modified,NCI C-Code,CNEW,C215571
+ReferenceIdentifier,Modified,Attributes/Relationships,text,Modified,NCI C-Code,CNEW,C215572
+StudyCohort,Modified,Attributes/Relationships,plannedCompletionNumber,Added,Inherited From,,PopulationDefinition
+StudyCohort,Modified,Attributes/Relationships,plannedCompletionNumber,Added,NCI C-Code,,C207546
+StudyCohort,Modified,Attributes/Relationships,plannedCompletionNumber,Added,Model Representation,,Attribute
+StudyCohort,Modified,Attributes/Relationships,plannedCompletionNumber,Added,Definition,,"The value representing the planned number of subjects that must complete the study in order to meet the objectives and endpoints of the study, within the study cohort."
+StudyCohort,Modified,Attributes/Relationships,plannedCompletionNumber,Added,Role,,Complex Datatype Relationship
+StudyCohort,Modified,Attributes/Relationships,plannedCompletionNumber,Added,Preferred Term,,Study Cohort Planned Completion Number
+StudyCohort,Modified,Attributes/Relationships,plannedCompletionNumber,Added,Has Value List,,N
+StudyCohort,Modified,Attributes/Relationships,plannedEnrollmentNumber,Added,Inherited From,,PopulationDefinition
+StudyCohort,Modified,Attributes/Relationships,plannedEnrollmentNumber,Added,NCI C-Code,,C207702
+StudyCohort,Modified,Attributes/Relationships,plannedEnrollmentNumber,Added,Model Representation,,Attribute
+StudyCohort,Modified,Attributes/Relationships,plannedEnrollmentNumber,Added,Definition,,"The value representing the planned number of subjects to be entered in a clinical trial, within the study cohort."
+StudyCohort,Modified,Attributes/Relationships,plannedEnrollmentNumber,Added,Role,,Complex Datatype Relationship
+StudyCohort,Modified,Attributes/Relationships,plannedEnrollmentNumber,Added,Preferred Term,,Study Cohort Planned Enrollment Number
+StudyCohort,Modified,Attributes/Relationships,plannedEnrollmentNumber,Added,Has Value List,,N
+StudyCohort,Modified,Attributes/Relationships,plannedEnrollmentNumberRange,Deleted,Inherited From,PopulationDefinition,
+StudyCohort,Modified,Attributes/Relationships,plannedEnrollmentNumberRange,Deleted,NCI C-Code,CNEW,
+StudyCohort,Modified,Attributes/Relationships,plannedEnrollmentNumberRange,Deleted,Model Representation,Attribute,
+StudyCohort,Modified,Attributes/Relationships,plannedEnrollmentNumberRange,Deleted,Definition,"The range of values representing the planned number of subjects to be entered in a clinical trial, within the study cohort.",
+StudyCohort,Modified,Attributes/Relationships,plannedEnrollmentNumberRange,Deleted,Role,Complex Datatype Relationship,
+StudyCohort,Modified,Attributes/Relationships,plannedEnrollmentNumberRange,Deleted,Preferred Term,Study Cohort Planned Enrollment Number Range,
+StudyCohort,Modified,Attributes/Relationships,plannedEnrollmentNumberRange,Deleted,Has Value List,N,
+StudyCohort,Modified,Attributes/Relationships,plannedCompletionNumberQuantity,Deleted,Inherited From,PopulationDefinition,
+StudyCohort,Modified,Attributes/Relationships,plannedCompletionNumberQuantity,Deleted,NCI C-Code,CNEW,
+StudyCohort,Modified,Attributes/Relationships,plannedCompletionNumberQuantity,Deleted,Model Representation,Attribute,
+StudyCohort,Modified,Attributes/Relationships,plannedCompletionNumberQuantity,Deleted,Definition,"The value representing the planned number of subjects that must complete the study in order to meet the objectives and endpoints of the study, within the study cohort.",
+StudyCohort,Modified,Attributes/Relationships,plannedCompletionNumberQuantity,Deleted,Role,Complex Datatype Relationship,
+StudyCohort,Modified,Attributes/Relationships,plannedCompletionNumberQuantity,Deleted,Preferred Term,Study Cohort Planned Completion Number Quantity,
+StudyCohort,Modified,Attributes/Relationships,plannedCompletionNumberQuantity,Deleted,Has Value List,N,
+StudyCohort,Modified,Attributes/Relationships,plannedCompletionNumberRange,Deleted,Inherited From,PopulationDefinition,
+StudyCohort,Modified,Attributes/Relationships,plannedCompletionNumberRange,Deleted,NCI C-Code,CNEW,
+StudyCohort,Modified,Attributes/Relationships,plannedCompletionNumberRange,Deleted,Model Representation,Attribute,
+StudyCohort,Modified,Attributes/Relationships,plannedCompletionNumberRange,Deleted,Definition,"The range of values representing the planned number of subjects that must complete the study in order to meet the objectives and endpoints of the study, within the study cohort.",
+StudyCohort,Modified,Attributes/Relationships,plannedCompletionNumberRange,Deleted,Role,Complex Datatype Relationship,
+StudyCohort,Modified,Attributes/Relationships,plannedCompletionNumberRange,Deleted,Preferred Term,Study Cohort Planned Completion Number Range,
+StudyCohort,Modified,Attributes/Relationships,plannedCompletionNumberRange,Deleted,Has Value List,N,
+StudyCohort,Modified,Attributes/Relationships,plannedEnrollmentNumberQuantity,Deleted,Inherited From,PopulationDefinition,
+StudyCohort,Modified,Attributes/Relationships,plannedEnrollmentNumberQuantity,Deleted,NCI C-Code,CNEW,
+StudyCohort,Modified,Attributes/Relationships,plannedEnrollmentNumberQuantity,Deleted,Model Representation,Attribute,
+StudyCohort,Modified,Attributes/Relationships,plannedEnrollmentNumberQuantity,Deleted,Definition,"The value representing the planned number of subjects to be entered in a clinical trial, within the study cohort.",
+StudyCohort,Modified,Attributes/Relationships,plannedEnrollmentNumberQuantity,Deleted,Role,Complex Datatype Relationship,
+StudyCohort,Modified,Attributes/Relationships,plannedEnrollmentNumberQuantity,Deleted,Preferred Term,Study Cohort Planned Enrollment Number Quantity,
+StudyCohort,Modified,Attributes/Relationships,plannedEnrollmentNumberQuantity,Deleted,Has Value List,N,
+StudyCohort,Modified,Attributes/Relationships,notes,Modified,NCI C-Code,CNEW,C215547
+Identifier,Modified,Attributes/Relationships,text,Modified,NCI C-Code,CNEW,C215450
+StudyChange,Modified,NCI C-Code,,,,CNEW,C215498
+StudyChange,Modified,Attributes/Relationships,description,Modified,NCI C-Code,CNEW,C215605
+StudyChange,Modified,Attributes/Relationships,rationale,Modified,NCI C-Code,CNEW,C215608
+StudyChange,Modified,Attributes/Relationships,summary,Modified,NCI C-Code,CNEW,C215607
+StudyChange,Modified,Attributes/Relationships,label,Modified,NCI C-Code,CNEW,C215606
+StudyChange,Modified,Attributes/Relationships,name,Modified,NCI C-Code,CNEW,C215604
 Substance,Modified,Attributes/Relationships,description,Modified,NCI C-Code,CNEW,C215587
 Substance,Modified,Attributes/Relationships,codes,Modified,NCI C-Code,CNEW,C215589
-IntercurrentEvent,Modified,Attributes/Relationships,text,Modified,NCI C-Code,CNEW,C215526
-IntercurrentEvent,Modified,Attributes/Relationships,notes,Modified,NCI C-Code,CNEW,C215527
-PopulationDefinition,Modified,Attributes/Relationships,notes,Modified,NCI C-Code,CNEW,C215551
-PopulationDefinition,Modified,Attributes/Relationships,plannedCompletionNumberRange,Modified,NCI C-Code,CNEW,C215549
-PopulationDefinition,Modified,Attributes/Relationships,plannedEnrollmentNumberRange,Modified,NCI C-Code,CNEW,C215550
+Substance,Modified,Attributes/Relationships,label,Modified,NCI C-Code,CNEW,C215588
+Substance,Modified,Attributes/Relationships,name,Modified,NCI C-Code,CNEW,C215586
+Condition,Modified,Attributes/Relationships,notes,Modified,NCI C-Code,CNEW,C215552
+Activity,Modified,Attributes/Relationships,notes,Modified,NCI C-Code,CNEW,C215519
+StudyDesignPopulation,Modified,Attributes/Relationships,plannedCompletionNumber,Added,Inherited From,,PopulationDefinition
+StudyDesignPopulation,Modified,Attributes/Relationships,plannedCompletionNumber,Added,NCI C-Code,,C207451
+StudyDesignPopulation,Modified,Attributes/Relationships,plannedCompletionNumber,Added,Model Representation,,Attribute
+StudyDesignPopulation,Modified,Attributes/Relationships,plannedCompletionNumber,Added,Definition,,"The value representing the planned number of subjects that must complete the study in order to meet the objectives and endpoints of the study, within the study design population."
+StudyDesignPopulation,Modified,Attributes/Relationships,plannedCompletionNumber,Added,Role,,Complex Datatype Relationship
+StudyDesignPopulation,Modified,Attributes/Relationships,plannedCompletionNumber,Added,Preferred Term,,Study Design Population Planned Completion Number
+StudyDesignPopulation,Modified,Attributes/Relationships,plannedCompletionNumber,Added,Has Value List,,N
+StudyDesignPopulation,Modified,Attributes/Relationships,plannedEnrollmentNumber,Added,Inherited From,,PopulationDefinition
+StudyDesignPopulation,Modified,Attributes/Relationships,plannedEnrollmentNumber,Added,NCI C-Code,,C207452
+StudyDesignPopulation,Modified,Attributes/Relationships,plannedEnrollmentNumber,Added,Model Representation,,Attribute
+StudyDesignPopulation,Modified,Attributes/Relationships,plannedEnrollmentNumber,Added,Definition,,"The value representing the planned number of subjects to be entered in a clinical trial, within the study design population."
+StudyDesignPopulation,Modified,Attributes/Relationships,plannedEnrollmentNumber,Added,Role,,Complex Datatype Relationship
+StudyDesignPopulation,Modified,Attributes/Relationships,plannedEnrollmentNumber,Added,Preferred Term,,Study Design Population Planned Enrollment Number
+StudyDesignPopulation,Modified,Attributes/Relationships,plannedEnrollmentNumber,Added,Has Value List,,N
+StudyDesignPopulation,Modified,Attributes/Relationships,plannedEnrollmentNumberRange,Deleted,Inherited From,PopulationDefinition,
+StudyDesignPopulation,Modified,Attributes/Relationships,plannedEnrollmentNumberRange,Deleted,NCI C-Code,CNEW,
+StudyDesignPopulation,Modified,Attributes/Relationships,plannedEnrollmentNumberRange,Deleted,Model Representation,Attribute,
+StudyDesignPopulation,Modified,Attributes/Relationships,plannedEnrollmentNumberRange,Deleted,Definition,"The range of values representing the planned number of subjects to be entered in a clinical trial, within the study design population.",
+StudyDesignPopulation,Modified,Attributes/Relationships,plannedEnrollmentNumberRange,Deleted,Role,Complex Datatype Relationship,
+StudyDesignPopulation,Modified,Attributes/Relationships,plannedEnrollmentNumberRange,Deleted,Preferred Term,Study Design Population Planned Enrollment Number Range,
+StudyDesignPopulation,Modified,Attributes/Relationships,plannedEnrollmentNumberRange,Deleted,Has Value List,N,
+StudyDesignPopulation,Modified,Attributes/Relationships,plannedCompletionNumberQuantity,Deleted,Inherited From,PopulationDefinition,
+StudyDesignPopulation,Modified,Attributes/Relationships,plannedCompletionNumberQuantity,Deleted,NCI C-Code,CNEW,
+StudyDesignPopulation,Modified,Attributes/Relationships,plannedCompletionNumberQuantity,Deleted,Model Representation,Attribute,
+StudyDesignPopulation,Modified,Attributes/Relationships,plannedCompletionNumberQuantity,Deleted,Definition,"The value representing the planned number of subjects that must complete the study in order to meet the objectives and endpoints of the study, within the study design population.",
+StudyDesignPopulation,Modified,Attributes/Relationships,plannedCompletionNumberQuantity,Deleted,Role,Complex Datatype Relationship,
+StudyDesignPopulation,Modified,Attributes/Relationships,plannedCompletionNumberQuantity,Deleted,Preferred Term,Study Design Population Planned Completion Number Quantity,
+StudyDesignPopulation,Modified,Attributes/Relationships,plannedCompletionNumberQuantity,Deleted,Has Value List,N,
+StudyDesignPopulation,Modified,Attributes/Relationships,plannedCompletionNumberRange,Deleted,Inherited From,PopulationDefinition,
+StudyDesignPopulation,Modified,Attributes/Relationships,plannedCompletionNumberRange,Deleted,NCI C-Code,CNEW,
+StudyDesignPopulation,Modified,Attributes/Relationships,plannedCompletionNumberRange,Deleted,Model Representation,Attribute,
+StudyDesignPopulation,Modified,Attributes/Relationships,plannedCompletionNumberRange,Deleted,Definition,"The range of values representing the planned number of subjects that must complete the study in order to meet the objectives and endpoints of the study, within the study design population.",
+StudyDesignPopulation,Modified,Attributes/Relationships,plannedCompletionNumberRange,Deleted,Role,Complex Datatype Relationship,
+StudyDesignPopulation,Modified,Attributes/Relationships,plannedCompletionNumberRange,Deleted,Preferred Term,Study Design Population Planned Completion Number Range,
+StudyDesignPopulation,Modified,Attributes/Relationships,plannedCompletionNumberRange,Deleted,Has Value List,N,
+StudyDesignPopulation,Modified,Attributes/Relationships,plannedEnrollmentNumberQuantity,Deleted,Inherited From,PopulationDefinition,
+StudyDesignPopulation,Modified,Attributes/Relationships,plannedEnrollmentNumberQuantity,Deleted,NCI C-Code,CNEW,
+StudyDesignPopulation,Modified,Attributes/Relationships,plannedEnrollmentNumberQuantity,Deleted,Model Representation,Attribute,
+StudyDesignPopulation,Modified,Attributes/Relationships,plannedEnrollmentNumberQuantity,Deleted,Definition,"The value representing the planned number of subjects to be entered in a clinical trial, within the study design population.",
+StudyDesignPopulation,Modified,Attributes/Relationships,plannedEnrollmentNumberQuantity,Deleted,Role,Complex Datatype Relationship,
+StudyDesignPopulation,Modified,Attributes/Relationships,plannedEnrollmentNumberQuantity,Deleted,Preferred Term,Study Design Population Planned Enrollment Number Quantity,
+StudyDesignPopulation,Modified,Attributes/Relationships,plannedEnrollmentNumberQuantity,Deleted,Has Value List,N,
+StudyDesignPopulation,Modified,Attributes/Relationships,notes,Modified,NCI C-Code,CNEW,C215512
+SubjectEnrollment,Modified,Attributes/Relationships,description,Modified,NCI C-Code,CNEW,C215541
+SubjectEnrollment,Modified,Attributes/Relationships,name,Modified,NCI C-Code,CNEW,C215540
+SubjectEnrollment,Modified,Attributes/Relationships,label,Modified,NCI C-Code,CNEW,C215542
 BiospecimenRetention,Modified,NCI C-Code,,,,CNEW,C215505
 BiospecimenRetention,Modified,Attributes/Relationships,label,Modified,NCI C-Code,CNEW,C215646
 BiospecimenRetention,Modified,Attributes/Relationships,name,Modified,NCI C-Code,CNEW,C215645
-DocumentContentReference,Modified,NCI C-Code,,,,CNEW,C215499
-DocumentContentReference,Modified,Attributes/Relationships,sectionNumber,Modified,NCI C-Code,CNEW,C215609
-DocumentContentReference,Modified,Attributes/Relationships,sectionTitle,Modified,NCI C-Code,CNEW,C215610
-StudyCohort,Modified,Attributes/Relationships,notes,Modified,NCI C-Code,CNEW,C215547
-StudyCohort,Modified,Attributes/Relationships,plannedCompletionNumberRange,Modified,NCI C-Code,CNEW,C215545
-StudyCohort,Modified,Attributes/Relationships,plannedEnrollmentNumberRange,Modified,NCI C-Code,CNEW,C215546
-Strength,Modified,NCI C-Code,,,,CNEW,C215495
-Strength,Modified,Attributes/Relationships,numeratorRange,Modified,NCI C-Code,CNEW,C215594
-Strength,Modified,Attributes/Relationships,description,Modified,NCI C-Code,CNEW,C215591
-Strength,Modified,Attributes/Relationships,name,Modified,NCI C-Code,CNEW,C215590
-Strength,Modified,Attributes/Relationships,numeratorQuantity,Modified,NCI C-Code,CNEW,C215593
-Strength,Modified,Attributes/Relationships,label,Modified,NCI C-Code,CNEW,C215592
-AnalysisPopulation,Modified,Attributes/Relationships,notes,Modified,NCI C-Code,CNEW,C215525
-Endpoint,Modified,Attributes/Relationships,notes,Modified,NCI C-Code,CNEW,C215514
-Encounter,Modified,NCI C-Code,,,,CNEW,C215488
-Encounter,Modified,Attributes/Relationships,notes,Modified,NCI C-Code,CNEW,C215518
-AdministrableProductIdentifier,Modified,NCI C-Code,,,,CNEW,C215493
-AdministrableProductIdentifier,Modified,Attributes/Relationships,text,Modified,NCI C-Code,CNEW,C215581
-ProductOrganizationRole,Modified,NCI C-Code,,,,CNEW,C215502
-ProductOrganizationRole,Modified,Attributes/Relationships,name,Modified,NCI C-Code,CNEW,C215622
-ProductOrganizationRole,Modified,Attributes/Relationships,label,Modified,NCI C-Code,CNEW,C215624
-ProductOrganizationRole,Modified,Attributes/Relationships,code,Modified,NCI C-Code,CNEW,C215625
-ProductOrganizationRole,Modified,Attributes/Relationships,description,Modified,NCI C-Code,CNEW,C215623
-Masking,Modified,Attributes/Relationships,text,Modified,NCI C-Code,CNEW,C215553
-Masking,Modified,Attributes/Relationships,isMasked,Modified,NCI C-Code,CNEW,C215554
-Abbreviation,Modified,Attributes/Relationships,abbreviatedText,Modified,Definition,A set of letters that are drawn from a word or from a sequence of words and that are used for brevity in place of the full word or phrase. (CDISC Glossary),"The literal value of an instance of unstructured text that is used as the abbreviation.
-"
-Abbreviation,Modified,Attributes/Relationships,abbreviatedText,Modified,NCI C-Code,C42610,C215487
-Abbreviation,Modified,Attributes/Relationships,abbreviatedText,Modified,Preferred Term,Abbreviation,Text Abbreviation Value
-Abbreviation,Modified,Attributes/Relationships,notes,Modified,NCI C-Code,CNEW,C215570
-Abbreviation,Modified,Attributes/Relationships,expandedText,Modified,NCI C-Code,CNEW,C215569
-StudyDesignPopulation,Modified,Attributes/Relationships,notes,Modified,NCI C-Code,CNEW,C215512
-StudyDesignPopulation,Modified,Attributes/Relationships,plannedCompletionNumberRange,Modified,NCI C-Code,CNEW,C215510
-StudyDesignPopulation,Modified,Attributes/Relationships,plannedEnrollmentNumberRange,Modified,NCI C-Code,CNEW,C215511
-ReferenceIdentifier,Modified,NCI C-Code,,,,CNEW,C82531
-ReferenceIdentifier,Modified,Attributes/Relationships,text,Modified,NCI C-Code,CNEW,C215572
-ReferenceIdentifier,Modified,Attributes/Relationships,type,Modified,NCI C-Code,CNEW,C215571
-StudyAmendment,Modified,Attributes/Relationships,notes,Modified,NCI C-Code,CNEW,C215538
-InterventionalStudyDesign,Modified,NCI C-Code,,,,CNEW,C215503
-InterventionalStudyDesign,Modified,Attributes/Relationships,label,Modified,NCI C-Code,CNEW,C215628
-InterventionalStudyDesign,Modified,Attributes/Relationships,rationale,Modified,NCI C-Code,CNEW,C215629
-InterventionalStudyDesign,Modified,Attributes/Relationships,characteristics,Modified,NCI C-Code,CNEW,C215632
-InterventionalStudyDesign,Modified,Attributes/Relationships,studyType,Modified,NCI C-Code,CNEW,C215631
-InterventionalStudyDesign,Modified,Attributes/Relationships,description,Modified,NCI C-Code,CNEW,C215627
-InterventionalStudyDesign,Modified,Attributes/Relationships,name,Modified,NCI C-Code,CNEW,C215626
-InterventionalStudyDesign,Modified,Attributes/Relationships,therapeuticAreas,Modified,NCI C-Code,CNEW,C215633
-InterventionalStudyDesign,Modified,Attributes/Relationships,studyPhase,Modified,NCI C-Code,CNEW,C215630
-InterventionalStudyDesign,Modified,Attributes/Relationships,notes,Modified,NCI C-Code,CNEW,C215634
-StudyDesign,Modified,Attributes/Relationships,studyType,Modified,Definition,The nature of the investigation for which study information is being collected. (After clinicaltrials.gov),The nature of the investigation for which study information is being collected. (After clinicaltrials.gov)
-StudyDesign,Modified,Attributes/Relationships,notes,Modified,NCI C-Code,CNEW,C215508
-StudyAmendmentImpact,Modified,NCI C-Code,,,,CNEW,C215500
-StudyAmendmentImpact,Modified,Attributes/Relationships,text,Modified,NCI C-Code,CNEW,C215611
-StudyAmendmentImpact,Modified,Attributes/Relationships,type,Modified,NCI C-Code,CNEW,C215612
-StudyAmendmentImpact,Modified,Attributes/Relationships,notes,Modified,NCI C-Code,CNEW,C215613
-BiomedicalConceptSurrogate,Modified,Attributes/Relationships,notes,Modified,NCI C-Code,CNEW,C215532
-ObservationalStudyDesign,Modified,NCI C-Code,,,,CNEW,C215504
-ObservationalStudyDesign,Modified,Attributes/Relationships,rationale,Modified,NCI C-Code,CNEW,C215639
-ObservationalStudyDesign,Modified,Attributes/Relationships,label,Modified,NCI C-Code,CNEW,C215638
-ObservationalStudyDesign,Modified,Attributes/Relationships,characteristics,Modified,NCI C-Code,CNEW,C215642
-ObservationalStudyDesign,Modified,Attributes/Relationships,studyType,Modified,NCI C-Code,CNEW,C215641
-ObservationalStudyDesign,Modified,Attributes/Relationships,description,Modified,NCI C-Code,CNEW,C215637
-ObservationalStudyDesign,Modified,Attributes/Relationships,name,Modified,NCI C-Code,CNEW,C215636
-ObservationalStudyDesign,Modified,Attributes/Relationships,therapeuticAreas,Modified,NCI C-Code,CNEW,C215643
-ObservationalStudyDesign,Modified,Attributes/Relationships,studyPhase,Modified,NCI C-Code,CNEW,C215640
-ObservationalStudyDesign,Modified,Attributes/Relationships,notes,Modified,NCI C-Code,CNEW,C215644
-ObservationalStudyDesign,Modified,Attributes/Relationships,subTypes,Modified,NCI C-Code,CNEW,C215635
-BiomedicalConceptCategory,Modified,Attributes/Relationships,notes,Modified,NCI C-Code,CNEW,C215533
-BiomedicalConceptProperty,Modified,Attributes/Relationships,notes,Modified,NCI C-Code,CNEW,C215531
-Activity,Modified,Attributes/Relationships,notes,Modified,NCI C-Code,CNEW,C215519
-Identifier,Modified,Attributes/Relationships,text,Modified,NCI C-Code,CNEW,C215450
-StudyIdentifier,Modified,Attributes/Relationships,text,Modified,NCI C-Code,CNEW,C215507
-AssignedPerson,Modified,NCI C-Code,,,,CNEW,C215496
-AssignedPerson,Modified,Attributes/Relationships,name,Modified,NCI C-Code,CNEW,C215596
-AssignedPerson,Modified,Attributes/Relationships,label,Modified,NCI C-Code,CNEW,C215598
-AssignedPerson,Modified,Attributes/Relationships,description,Modified,NCI C-Code,CNEW,C215597
-AssignedPerson,Modified,Attributes/Relationships,jobTitle,Modified,NCI C-Code,CNEW,C215599
-StudyEpoch,Modified,Definition,,,,"A named time period defined in the protocol, wherein a study activity is specified and unchanging throughout the interval, to support a study-specific purpose.","A named time period defined in the protocol, wherein a study activity is specified and unchanging throughout the interval, to support a study-specific purpose."
-StudyEpoch,Modified,Attributes/Relationships,type,Modified,Definition,"A characterization or classification of the study epoch, i.e., the named time period defined in the protocol, wherein a study activity is specified and unchanging throughout the interval, to support a study-specific purpose.","A characterization or classification of the study epoch, i.e., the named time period defined in the protocol, wherein a study activity is specified and unchanging throughout the interval, to support a study-specific purpose."
-StudyEpoch,Modified,Attributes/Relationships,name,Modified,Definition,"The literal identifier (i.e., distinctive designation) of the study epoch, i.e., the named time period defined in the protocol, wherein a study activity is specified and unchanging throughout the interval, to support a study-specific purpose.","The literal identifier (i.e., distinctive designation) of the study epoch, i.e., the named time period defined in the protocol, wherein a study activity is specified and unchanging throughout the interval, to support a study-specific purpose."
-StudyEpoch,Modified,Attributes/Relationships,notes,Modified,NCI C-Code,CNEW,C215516
-SyntaxTemplate,Modified,Attributes/Relationships,notes,Modified,NCI C-Code,CNEW,C215536
-StudyChange,Modified,NCI C-Code,,,,CNEW,C215498
-StudyChange,Modified,Attributes/Relationships,summary,Modified,NCI C-Code,CNEW,C215607
-StudyChange,Modified,Attributes/Relationships,name,Modified,NCI C-Code,CNEW,C215604
-StudyChange,Modified,Attributes/Relationships,rationale,Modified,NCI C-Code,CNEW,C215608
-StudyChange,Modified,Attributes/Relationships,label,Modified,NCI C-Code,CNEW,C215606
-StudyChange,Modified,Attributes/Relationships,description,Modified,NCI C-Code,CNEW,C215605
-Estimand,Modified,Attributes/Relationships,name,Modified,NCI C-Code,CNEW,C215522
-Estimand,Modified,Attributes/Relationships,notes,Modified,NCI C-Code,CNEW,C215521
-Estimand,Modified,Attributes/Relationships,label,Modified,NCI C-Code,CNEW,C215524
-Estimand,Modified,Attributes/Relationships,description,Modified,NCI C-Code,CNEW,C215523
-CommentAnnotation,Modified,Attributes/Relationships,text,Modified,NCI C-Code,CNEW,C215555
-CommentAnnotation,Modified,Attributes/Relationships,codes,Modified,NCI C-Code,CNEW,C215556
-Procedure,Modified,Attributes/Relationships,notes,Modified,NCI C-Code,CNEW,C215520
+NarrativeContent,Modified,Attributes/Relationships,displaySectionNumber,Modified,NCI C-Code,CNEW,C215535
+NarrativeContent,Modified,Attributes/Relationships,displaySectionTitle,Modified,NCI C-Code,CNEW,C215534
 AdministrableProductProperty,Modified,NCI C-Code,,,,CNEW,C215494
-AdministrableProductProperty,Modified,Attributes/Relationships,name,Modified,NCI C-Code,CNEW,C215582
+AdministrableProductProperty,Modified,Attributes/Relationships,type,Modified,NCI C-Code,CNEW,C215585
 AdministrableProductProperty,Modified,Attributes/Relationships,quantity,Modified,NCI C-Code,CNEW,C215584
 AdministrableProductProperty,Modified,Attributes/Relationships,text,Modified,NCI C-Code,CNEW,C215583
-AdministrableProductProperty,Modified,Attributes/Relationships,type,Modified,NCI C-Code,CNEW,C215585
-EligibilityCriterionItem,Modified,NCI C-Code,,,,CNEW,C215506
-EligibilityCriterionItem,Modified,Attributes/Relationships,text,Modified,NCI C-Code,CNEW,C215648
-EligibilityCriterionItem,Modified,Attributes/Relationships,name,Modified,NCI C-Code,CNEW,C215647
-EligibilityCriterionItem,Modified,Attributes/Relationships,notes,Modified,NCI C-Code,CNEW,C215651
-EligibilityCriterionItem,Modified,Attributes/Relationships,label,Modified,NCI C-Code,CNEW,C215650
-EligibilityCriterionItem,Modified,Attributes/Relationships,description,Modified,NCI C-Code,CNEW,C215649
-Administration,Modified,Attributes/Relationships,notes,Modified,NCI C-Code,CNEW,C215544
-NarrativeContentItem,Modified,NCI C-Code,,,,CNEW,C215489
-NarrativeContentItem,Modified,Attributes/Relationships,name,Modified,NCI C-Code,CNEW,C215557
-NarrativeContentItem,Modified,Attributes/Relationships,text,Modified,NCI C-Code,CNEW,C215558
-AdministrableProduct,Modified,NCI C-Code,,,,CNEW,C215492
-AdministrableProduct,Modified,Attributes/Relationships,name,Modified,NCI C-Code,CNEW,C215573
-AdministrableProduct,Modified,Attributes/Relationships,sourcing,Modified,NCI C-Code,CNEW,C215578
-AdministrableProduct,Modified,Attributes/Relationships,productDesignation,Modified,NCI C-Code,CNEW,C215579
-AdministrableProduct,Modified,Attributes/Relationships,description,Modified,NCI C-Code,CNEW,C215574
-AdministrableProduct,Modified,Attributes/Relationships,notes,Modified,NCI C-Code,CNEW,C215580
-AdministrableProduct,Modified,Attributes/Relationships,pharmacologicClass,Modified,NCI C-Code,CNEW,C215577
-AdministrableProduct,Modified,Attributes/Relationships,label,Modified,NCI C-Code,CNEW,C215575
-AdministrableProduct,Modified,Attributes/Relationships,administrableDoseForm,Modified,NCI C-Code,CNEW,C215576
-EligibilityCriterion,Modified,Attributes/Relationships,notes,Modified,NCI C-Code,CNEW,C215537
-ResponseCode,Modified,Attributes/Relationships,code,Modified,Definition,A symbol or combination of symbols which is assigned to the members of a collection.,The literal value of a response code.
-ResponseCode,Modified,Attributes/Relationships,code,Modified,NCI C-Code,C25162,CNEW
-ResponseCode,Modified,Attributes/Relationships,code,Modified,Preferred Term,Code,Response Code Value
-StudyVersion,Modified,Attributes/Relationships,notes,Modified,NCI C-Code,CNEW,C215539
-Ingredient,Modified,Attributes/Relationships,Role,Modified,NCI C-Code,CNEW,C215595
-Condition,Modified,Attributes/Relationships,notes,Modified,NCI C-Code,CNEW,C215552
-Objective,Modified,Attributes/Relationships,notes,Modified,NCI C-Code,CNEW,C215513
-StudyDefinitionDocumentVersion,Modified,NCI C-Code,,,,CNEW,C215491
-StudyDefinitionDocumentVersion,Modified,Attributes/Relationships,status,Modified,NCI C-Code,CNEW,C215567
-StudyDefinitionDocumentVersion,Modified,Attributes/Relationships,notes,Modified,NCI C-Code,CNEW,C215568
-StudyDefinitionDocumentVersion,Modified,Attributes/Relationships,version,Modified,Definition,A representation of a particular edition or snapshot of the study definition document as it exists at a particular point in time.,A sequence of characters used to identify the version of the study definition document.
-StudyDefinitionDocumentVersion,Modified,Attributes/Relationships,version,Modified,NCI C-Code,CNEW,C215566
-StudyDefinitionDocumentVersion,Modified,Attributes/Relationships,version,Modified,Preferred Term,Study Definition Document Version,Study Definition Document Version Identifier
-StudyArm,Modified,Attributes/Relationships,type,Modified,NCI C-Code,C188827,C172457
-StudyArm,Modified,Attributes/Relationships,dataOriginType,Modified,Definition,A characterization or classification of the study arm with respect to where the study arm data originates. ,A characterization or classification of the study arm with respect to where the study arm data originates.
-StudyArm,Modified,Attributes/Relationships,notes,Modified,NCI C-Code,CNEW,C215515
-NarrativeContent,Modified,Attributes/Relationships,displaySectionTitle,Modified,NCI C-Code,CNEW,C215534
-NarrativeContent,Modified,Attributes/Relationships,displaySectionNumber,Modified,NCI C-Code,CNEW,C215535
-MedicalDeviceIdentifier,Modified,NCI C-Code,,,,CNEW,C215501
-MedicalDeviceIdentifier,Modified,Attributes/Relationships,text,Modified,NCI C-Code,CNEW,C215620
-MedicalDeviceIdentifier,Modified,Attributes/Relationships,type,Modified,NCI C-Code,CNEW,C215621
-Characteristic,Modified,Attributes/Relationships,notes,Modified,NCI C-Code,CNEW,C215548
-StudyRole,Modified,NCI C-Code,,,,CNEW,C215497
-StudyRole,Modified,Attributes/Relationships,name,Modified,NCI C-Code,CNEW,C215600
-StudyRole,Modified,Attributes/Relationships,label,Modified,NCI C-Code,CNEW,C215602
-StudyRole,Modified,Attributes/Relationships,code,Modified,NCI C-Code,CNEW,C215603
-StudyRole,Modified,Attributes/Relationships,description,Modified,NCI C-Code,CNEW,C215601
-MedicalDevice,Modified,Attributes/Relationships,name,Modified,NCI C-Code,CNEW,C215614
-MedicalDevice,Modified,Attributes/Relationships,description,Modified,NCI C-Code,CNEW,C215615
-MedicalDevice,Modified,Attributes/Relationships,hardwareVersion,Modified,NCI C-Code,CNEW,C215617
-MedicalDevice,Modified,Attributes/Relationships,notes,Modified,NCI C-Code,CNEW,C215618
-MedicalDevice,Modified,Attributes/Relationships,label,Modified,NCI C-Code,CNEW,C215616
-MedicalDevice,Modified,Attributes/Relationships,sourcing,Modified,NCI C-Code,CNEW,C215619
-SubjectEnrollment,Modified,Attributes/Relationships,name,Modified,NCI C-Code,CNEW,C215540
-SubjectEnrollment,Modified,Attributes/Relationships,label,Modified,NCI C-Code,CNEW,C215542
-SubjectEnrollment,Modified,Attributes/Relationships,description,Modified,NCI C-Code,CNEW,C215541
-BiomedicalConcept,Modified,Attributes/Relationships,notes,Modified,NCI C-Code,CNEW,C215530
-StudyIntervention,Modified,Attributes/Relationships,notes,Modified,NCI C-Code,CNEW,C215543
+AdministrableProductProperty,Modified,Attributes/Relationships,name,Modified,NCI C-Code,CNEW,C215582
 StudyElement,Modified,Attributes/Relationships,notes,Modified,NCI C-Code,CNEW,C215517
+StudyDefinitionDocument,Modified,NCI C-Code,,,,CNEW,C215490
+StudyDefinitionDocument,Modified,Attributes/Relationships,children,Added,Model Representation,,Relationship
+StudyDefinitionDocument,Modified,Attributes/Relationships,children,Added,Definition,,A USDM relationship within the StudyDefinitionDocument class which identifies the set of child documents of a study definition document.
+StudyDefinitionDocument,Modified,Attributes/Relationships,children,Added,Role,,Relationship
+StudyDefinitionDocument,Modified,Attributes/Relationships,children,Added,Has Value List,,N/A
+StudyDefinitionDocument,Modified,Attributes/Relationships,notes,Modified,NCI C-Code,CNEW,C215565
+StudyDefinitionDocument,Modified,Attributes/Relationships,language,Modified,NCI C-Code,CNEW,C215563
+StudyDefinitionDocument,Modified,Attributes/Relationships,description,Modified,NCI C-Code,CNEW,C215560
+StudyDefinitionDocument,Modified,Attributes/Relationships,templateName,Modified,NCI C-Code,CNEW,C215562
+StudyDefinitionDocument,Modified,Attributes/Relationships,type,Modified,NCI C-Code,CNEW,C215564
+StudyDefinitionDocument,Modified,Attributes/Relationships,label,Modified,NCI C-Code,CNEW,C215561
+StudyDefinitionDocument,Modified,Attributes/Relationships,name,Modified,NCI C-Code,CNEW,C215559
+StudyIdentifier,Modified,Attributes/Relationships,text,Modified,NCI C-Code,CNEW,C215507
+PopulationDefinition,Modified,Attributes/Relationships,plannedCompletionNumber,Added,NCI C-Code,,C207521
+PopulationDefinition,Modified,Attributes/Relationships,plannedCompletionNumber,Added,Model Representation,,Attribute
+PopulationDefinition,Modified,Attributes/Relationships,plannedCompletionNumber,Added,Definition,,"The value representing the planned number of subjects that must complete the study in order to meet the objectives and endpoints of the study, within the population definition."
+PopulationDefinition,Modified,Attributes/Relationships,plannedCompletionNumber,Added,Role,,Complex Datatype Relationship
+PopulationDefinition,Modified,Attributes/Relationships,plannedCompletionNumber,Added,Preferred Term,,Population Definition Planned Completion Number
+PopulationDefinition,Modified,Attributes/Relationships,plannedCompletionNumber,Added,Has Value List,,N
+PopulationDefinition,Modified,Attributes/Relationships,plannedEnrollmentNumber,Added,NCI C-Code,,C207522
+PopulationDefinition,Modified,Attributes/Relationships,plannedEnrollmentNumber,Added,Model Representation,,Attribute
+PopulationDefinition,Modified,Attributes/Relationships,plannedEnrollmentNumber,Added,Definition,,"The value representing the planned number of subjects to be entered in a clinical trial, within the population definition."
+PopulationDefinition,Modified,Attributes/Relationships,plannedEnrollmentNumber,Added,Role,,Complex Datatype Relationship
+PopulationDefinition,Modified,Attributes/Relationships,plannedEnrollmentNumber,Added,Preferred Term,,Population Definition Planned Enrollment Number
+PopulationDefinition,Modified,Attributes/Relationships,plannedEnrollmentNumber,Added,Has Value List,,N
+PopulationDefinition,Modified,Attributes/Relationships,plannedEnrollmentNumberRange,Deleted,NCI C-Code,CNEW,
+PopulationDefinition,Modified,Attributes/Relationships,plannedEnrollmentNumberRange,Deleted,Model Representation,Attribute,
+PopulationDefinition,Modified,Attributes/Relationships,plannedEnrollmentNumberRange,Deleted,Definition,"The range of values representing the planned number of subjects to be entered in a clinical trial, within the population definition.",
+PopulationDefinition,Modified,Attributes/Relationships,plannedEnrollmentNumberRange,Deleted,Role,Complex Datatype Relationship,
+PopulationDefinition,Modified,Attributes/Relationships,plannedEnrollmentNumberRange,Deleted,Preferred Term,Population Definition Planned Enrollment Number Range,
+PopulationDefinition,Modified,Attributes/Relationships,plannedEnrollmentNumberRange,Deleted,Has Value List,N,
+PopulationDefinition,Modified,Attributes/Relationships,plannedCompletionNumberQuantity,Deleted,NCI C-Code,CNEW,
+PopulationDefinition,Modified,Attributes/Relationships,plannedCompletionNumberQuantity,Deleted,Model Representation,Attribute,
+PopulationDefinition,Modified,Attributes/Relationships,plannedCompletionNumberQuantity,Deleted,Definition,"The value representing the planned number of subjects that must complete the study in order to meet the objectives and endpoints of the study, within the population definition.",
+PopulationDefinition,Modified,Attributes/Relationships,plannedCompletionNumberQuantity,Deleted,Role,Complex Datatype Relationship,
+PopulationDefinition,Modified,Attributes/Relationships,plannedCompletionNumberQuantity,Deleted,Preferred Term,Population Definition Planned Completion Number Quantity,
+PopulationDefinition,Modified,Attributes/Relationships,plannedCompletionNumberQuantity,Deleted,Has Value List,N,
+PopulationDefinition,Modified,Attributes/Relationships,plannedCompletionNumberRange,Deleted,NCI C-Code,CNEW,
+PopulationDefinition,Modified,Attributes/Relationships,plannedCompletionNumberRange,Deleted,Model Representation,Attribute,
+PopulationDefinition,Modified,Attributes/Relationships,plannedCompletionNumberRange,Deleted,Definition,"The range of values representing the planned number of subjects that must complete the study in order to meet the objectives and endpoints of the study, within the population definition.",
+PopulationDefinition,Modified,Attributes/Relationships,plannedCompletionNumberRange,Deleted,Role,Complex Datatype Relationship,
+PopulationDefinition,Modified,Attributes/Relationships,plannedCompletionNumberRange,Deleted,Preferred Term,Population Definition Planned Completion Number Range,
+PopulationDefinition,Modified,Attributes/Relationships,plannedCompletionNumberRange,Deleted,Has Value List,N,
+PopulationDefinition,Modified,Attributes/Relationships,plannedEnrollmentNumberQuantity,Deleted,NCI C-Code,CNEW,
+PopulationDefinition,Modified,Attributes/Relationships,plannedEnrollmentNumberQuantity,Deleted,Model Representation,Attribute,
+PopulationDefinition,Modified,Attributes/Relationships,plannedEnrollmentNumberQuantity,Deleted,Definition,"The value representing the planned number of subjects to be entered in a clinical trial, within the population definition.",
+PopulationDefinition,Modified,Attributes/Relationships,plannedEnrollmentNumberQuantity,Deleted,Role,Complex Datatype Relationship,
+PopulationDefinition,Modified,Attributes/Relationships,plannedEnrollmentNumberQuantity,Deleted,Preferred Term,Population Definition Planned Enrollment Number Quantity,
+PopulationDefinition,Modified,Attributes/Relationships,plannedEnrollmentNumberQuantity,Deleted,Has Value List,N,
+PopulationDefinition,Modified,Attributes/Relationships,notes,Modified,NCI C-Code,CNEW,C215551
+CommentAnnotation,Modified,Attributes/Relationships,codes,Modified,NCI C-Code,CNEW,C215556
+CommentAnnotation,Modified,Attributes/Relationships,text,Modified,NCI C-Code,CNEW,C215555
+BiomedicalConceptSurrogate,Modified,Attributes/Relationships,notes,Modified,NCI C-Code,CNEW,C215532
+Endpoint,Modified,Attributes/Relationships,notes,Modified,NCI C-Code,CNEW,C215514
+StudyAmendmentImpact,Modified,NCI C-Code,,,,CNEW,C215500
+StudyAmendmentImpact,Modified,Attributes/Relationships,type,Modified,NCI C-Code,CNEW,C215612
+StudyAmendmentImpact,Modified,Attributes/Relationships,notes,Modified,NCI C-Code,CNEW,C215613
+StudyAmendmentImpact,Modified,Attributes/Relationships,text,Modified,NCI C-Code,CNEW,C215611
+ProductOrganizationRole,Modified,NCI C-Code,,,,CNEW,C215502
+ProductOrganizationRole,Modified,Attributes/Relationships,description,Modified,NCI C-Code,CNEW,C215623
+ProductOrganizationRole,Modified,Attributes/Relationships,code,Modified,NCI C-Code,CNEW,C215625
+ProductOrganizationRole,Modified,Attributes/Relationships,label,Modified,NCI C-Code,CNEW,C215624
+ProductOrganizationRole,Modified,Attributes/Relationships,name,Modified,NCI C-Code,CNEW,C215622
+NarrativeContentItem,Modified,NCI C-Code,,,,CNEW,C215489
+NarrativeContentItem,Modified,Attributes/Relationships,text,Modified,NCI C-Code,CNEW,C215558
+NarrativeContentItem,Modified,Attributes/Relationships,name,Modified,NCI C-Code,CNEW,C215557
+StudyEpoch,Modified,Attributes/Relationships,notes,Modified,NCI C-Code,CNEW,C215516
+StudyEpoch,Modified,Attributes/Relationships,type,Modified,Definition,"A characterization or classification of the study epoch, i.e., the named time period defined in the protocol, wherein a study activity is specified and unchanging throughout the interval, to support a study-specific purpose.","A characterization or classification of the study epoch, i.e., the named time period defined in the protocol, wherein a study activity is specified and unchanging throughout the interval, to support a study-specific purpose."
+StudyEpoch,Modified,Attributes/Relationships,name,Modified,Definition,"The literal identifier (i.e., distinctive designation) of the study epoch, i.e., the named time period defined in the protocol, wherein a study activity is specified and unchanging throughout the interval, to support a study-specific purpose.","The literal identifier (i.e., distinctive designation) of the study epoch, i.e., the named time period defined in the protocol, wherein a study activity is specified and unchanging throughout the interval, to support a study-specific purpose."
+StudyEpoch,Modified,Definition,,,,"A named time period defined in the protocol, wherein a study activity is specified and unchanging throughout the interval, to support a study-specific purpose.","A named time period defined in the protocol, wherein a study activity is specified and unchanging throughout the interval, to support a study-specific purpose."
+StudyRole,Modified,NCI C-Code,,,,CNEW,C215497
+StudyRole,Modified,Attributes/Relationships,notes,Added,NCI C-Code,,CNEW
+StudyRole,Modified,Attributes/Relationships,notes,Added,Model Representation,,Attribute
+StudyRole,Modified,Attributes/Relationships,notes,Added,Definition,,A brief written record relevant to the study role.
+StudyRole,Modified,Attributes/Relationships,notes,Added,Role,,Attribute
+StudyRole,Modified,Attributes/Relationships,notes,Added,Preferred Term,,Study Role Notes
+StudyRole,Modified,Attributes/Relationships,notes,Added,Has Value List,,N
+StudyRole,Modified,Attributes/Relationships,description,Modified,NCI C-Code,CNEW,C215601
+StudyRole,Modified,Attributes/Relationships,code,Modified,NCI C-Code,CNEW,C215603
+StudyRole,Modified,Attributes/Relationships,label,Modified,NCI C-Code,CNEW,C215602
+StudyRole,Modified,Attributes/Relationships,name,Modified,NCI C-Code,CNEW,C215600
+Procedure,Modified,Attributes/Relationships,notes,Modified,NCI C-Code,CNEW,C215520
+Strength,Modified,NCI C-Code,,,,CNEW,C215495
+Strength,Modified,Attributes/Relationships,numerator,Added,NCI C-Code,,C80490
+Strength,Modified,Attributes/Relationships,numerator,Added,Model Representation,,Attribute
+Strength,Modified,Attributes/Relationships,numerator,Added,Definition,,The dividend of a fraction.
+Strength,Modified,Attributes/Relationships,numerator,Added,Role,,Complex Datatype Relationship
+Strength,Modified,Attributes/Relationships,numerator,Added,Preferred Term,,Numerator
+Strength,Modified,Attributes/Relationships,numerator,Added,Has Value List,,N
+Strength,Modified,Attributes/Relationships,numeratorQuantity,Deleted,NCI C-Code,CNEW,
+Strength,Modified,Attributes/Relationships,numeratorQuantity,Deleted,Model Representation,Attribute,
+Strength,Modified,Attributes/Relationships,numeratorQuantity,Deleted,Definition,The value representing the numerator for the substance strength.,
+Strength,Modified,Attributes/Relationships,numeratorQuantity,Deleted,Role,Complex Datatype Relationship,
+Strength,Modified,Attributes/Relationships,numeratorQuantity,Deleted,Preferred Term,Substance Strength Numerator Quantity,
+Strength,Modified,Attributes/Relationships,numeratorQuantity,Deleted,Has Value List,N,
+Strength,Modified,Attributes/Relationships,numeratorRange,Deleted,NCI C-Code,CNEW,
+Strength,Modified,Attributes/Relationships,numeratorRange,Deleted,Model Representation,Attribute,
+Strength,Modified,Attributes/Relationships,numeratorRange,Deleted,Definition,The lowest and highest numerical values that define a range for the substance strength.,
+Strength,Modified,Attributes/Relationships,numeratorRange,Deleted,Role,Complex Datatype Relationship,
+Strength,Modified,Attributes/Relationships,numeratorRange,Deleted,Preferred Term,Substance Strength Numerator Range,
+Strength,Modified,Attributes/Relationships,numeratorRange,Deleted,Has Value List,N,
+Strength,Modified,Attributes/Relationships,name,Modified,NCI C-Code,CNEW,C215590
+Strength,Modified,Attributes/Relationships,label,Modified,NCI C-Code,CNEW,C215592
+Strength,Modified,Attributes/Relationships,description,Modified,NCI C-Code,CNEW,C215591
+StudyDefinitionDocumentVersion,Modified,NCI C-Code,,,,CNEW,C215491
+StudyDefinitionDocumentVersion,Modified,Attributes/Relationships,children,Deleted,Model Representation,Relationship,
+StudyDefinitionDocumentVersion,Modified,Attributes/Relationships,children,Deleted,Definition,A USDM relationship within the StudyDefinitionDocumentVersion class which identifies the set of child documents of a study definition document version.,
+StudyDefinitionDocumentVersion,Modified,Attributes/Relationships,children,Deleted,Role,Relationship,
+StudyDefinitionDocumentVersion,Modified,Attributes/Relationships,children,Deleted,Has Value List,N/A,
+StudyDefinitionDocumentVersion,Modified,Attributes/Relationships,version,Modified,NCI C-Code,CNEW,C215566
+StudyDefinitionDocumentVersion,Modified,Attributes/Relationships,version,Modified,Definition,A representation of a particular edition or snapshot of the study definition document as it exists at a particular point in time.,A sequence of characters used to identify the version of the study definition document.
+StudyDefinitionDocumentVersion,Modified,Attributes/Relationships,version,Modified,Preferred Term,Study Definition Document Version,Study Definition Document Version Identifier
+StudyDefinitionDocumentVersion,Modified,Attributes/Relationships,notes,Modified,NCI C-Code,CNEW,C215568
+StudyDefinitionDocumentVersion,Modified,Attributes/Relationships,status,Modified,NCI C-Code,CNEW,C215567
+SyntaxTemplate,Modified,Attributes/Relationships,notes,Modified,NCI C-Code,CNEW,C215536
+BiomedicalConceptProperty,Modified,Attributes/Relationships,notes,Modified,NCI C-Code,CNEW,C215531
+AdministrableProduct,Modified,NCI C-Code,,,,CNEW,C215492
+AdministrableProduct,Modified,Attributes/Relationships,notes,Modified,NCI C-Code,CNEW,C215580
+AdministrableProduct,Modified,Attributes/Relationships,sourcing,Modified,NCI C-Code,CNEW,C215578
+AdministrableProduct,Modified,Attributes/Relationships,description,Modified,NCI C-Code,CNEW,C215574
+AdministrableProduct,Modified,Attributes/Relationships,pharmacologicClass,Modified,NCI C-Code,CNEW,C215577
+AdministrableProduct,Modified,Attributes/Relationships,productDesignation,Modified,NCI C-Code,CNEW,C215579
+AdministrableProduct,Modified,Attributes/Relationships,administrableDoseForm,Modified,NCI C-Code,CNEW,C215576
+AdministrableProduct,Modified,Attributes/Relationships,label,Modified,NCI C-Code,CNEW,C215575
+AdministrableProduct,Modified,Attributes/Relationships,name,Modified,NCI C-Code,CNEW,C215573
+Range,Modified,Definition,,,,The difference between the lowest and highest numerical values; the limits or scale of variation.,An expression that defines the lower and upper limits of a variation.
+Indication,Modified,Attributes/Relationships,notes,Modified,NCI C-Code,CNEW,C215509
+EligibilityCriterion,Modified,Attributes/Relationships,notes,Modified,NCI C-Code,CNEW,C215537
+Masking,Modified,Attributes/Relationships,isMasked,Modified,NCI C-Code,CNEW,C215554
+Masking,Modified,Attributes/Relationships,text,Modified,NCI C-Code,CNEW,C215553
+StudyVersion,Modified,Attributes/Relationships,notes,Modified,NCI C-Code,CNEW,C215539
+Encounter,Modified,NCI C-Code,,,,CNEW,C215488
+Encounter,Modified,Attributes/Relationships,notes,Modified,NCI C-Code,CNEW,C215518
+ObservationalStudyDesign,Modified,NCI C-Code,,,,CNEW,C215504
+ObservationalStudyDesign,Modified,Attributes/Relationships,notes,Modified,NCI C-Code,CNEW,C215644
+ObservationalStudyDesign,Modified,Attributes/Relationships,name,Modified,NCI C-Code,CNEW,C215636
+ObservationalStudyDesign,Modified,Attributes/Relationships,studyPhase,Modified,NCI C-Code,CNEW,C215640
+ObservationalStudyDesign,Modified,Attributes/Relationships,description,Modified,NCI C-Code,CNEW,C215637
+ObservationalStudyDesign,Modified,Attributes/Relationships,therapeuticAreas,Modified,NCI C-Code,CNEW,C215643
+ObservationalStudyDesign,Modified,Attributes/Relationships,characteristics,Modified,NCI C-Code,CNEW,C215642
+ObservationalStudyDesign,Modified,Attributes/Relationships,studyType,Modified,NCI C-Code,CNEW,C215641
+ObservationalStudyDesign,Modified,Attributes/Relationships,subTypes,Modified,NCI C-Code,CNEW,C215635
+ObservationalStudyDesign,Modified,Attributes/Relationships,rationale,Modified,NCI C-Code,CNEW,C215639
+ObservationalStudyDesign,Modified,Attributes/Relationships,label,Modified,NCI C-Code,CNEW,C215638
+Estimand,Modified,Attributes/Relationships,notes,Modified,NCI C-Code,CNEW,C215521
+Estimand,Modified,Attributes/Relationships,description,Modified,NCI C-Code,CNEW,C215523
+Estimand,Modified,Attributes/Relationships,label,Modified,NCI C-Code,CNEW,C215524
+Estimand,Modified,Attributes/Relationships,name,Modified,NCI C-Code,CNEW,C215522
+DocumentContentReference,Modified,NCI C-Code,,,,CNEW,C215499
+DocumentContentReference,Modified,Attributes/Relationships,sectionTitle,Modified,NCI C-Code,CNEW,C215610
+DocumentContentReference,Modified,Attributes/Relationships,sectionNumber,Modified,NCI C-Code,CNEW,C215609
+StudyIntervention,Modified,Attributes/Relationships,notes,Modified,NCI C-Code,CNEW,C215543
+Abbreviation,Modified,Attributes/Relationships,expandedText,Modified,NCI C-Code,CNEW,C215569
+Abbreviation,Modified,Attributes/Relationships,notes,Modified,NCI C-Code,CNEW,C215570
+Abbreviation,Modified,Attributes/Relationships,abbreviatedText,Modified,NCI C-Code,C42610,C215487
+Abbreviation,Modified,Attributes/Relationships,abbreviatedText,Modified,Definition,A set of letters that are drawn from a word or from a sequence of words and that are used for brevity in place of the full word or phrase. (CDISC Glossary),The literal value of an instance of unstructured text that is used as the abbreviation.
+Abbreviation,Modified,Attributes/Relationships,abbreviatedText,Modified,Preferred Term,Abbreviation,Text Abbreviation Value
+AssignedPerson,Modified,NCI C-Code,,,,CNEW,C215496
+AssignedPerson,Modified,Attributes/Relationships,description,Modified,NCI C-Code,CNEW,C215597
+AssignedPerson,Modified,Attributes/Relationships,jobTitle,Modified,NCI C-Code,CNEW,C215599
+AssignedPerson,Modified,Attributes/Relationships,label,Modified,NCI C-Code,CNEW,C215598
+AssignedPerson,Modified,Attributes/Relationships,name,Modified,NCI C-Code,CNEW,C215596
+EligibilityCriterionItem,Modified,NCI C-Code,,,,CNEW,C215506
+EligibilityCriterionItem,Modified,Attributes/Relationships,notes,Modified,NCI C-Code,CNEW,C215651
+EligibilityCriterionItem,Modified,Attributes/Relationships,text,Modified,NCI C-Code,CNEW,C215648
+EligibilityCriterionItem,Modified,Attributes/Relationships,description,Modified,NCI C-Code,CNEW,C215649
+EligibilityCriterionItem,Modified,Attributes/Relationships,label,Modified,NCI C-Code,CNEW,C215650
+EligibilityCriterionItem,Modified,Attributes/Relationships,name,Modified,NCI C-Code,CNEW,C215647
+Characteristic,Modified,Attributes/Relationships,notes,Modified,NCI C-Code,CNEW,C215548
+AdministrableProductIdentifier,Modified,NCI C-Code,,,,CNEW,C215493
+AdministrableProductIdentifier,Modified,Attributes/Relationships,text,Modified,NCI C-Code,CNEW,C215581
+IntercurrentEvent,Modified,Attributes/Relationships,notes,Modified,NCI C-Code,CNEW,C215527
+IntercurrentEvent,Modified,Attributes/Relationships,text,Modified,NCI C-Code,CNEW,C215526
+BiomedicalConceptCategory,Modified,Attributes/Relationships,notes,Modified,NCI C-Code,CNEW,C215533
+Ingredient,Modified,Attributes/Relationships,Role,Modified,NCI C-Code,CNEW,C215595
