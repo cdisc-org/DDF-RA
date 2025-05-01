@@ -17,10 +17,8 @@ Abbreviation:
       - $ref: '#/string'
       NCI C-Code: C215487
       Preferred Term: Text Abbreviation Value
-      Definition: 'The literal value of an instance of unstructured text that is used
+      Definition: The literal value of an instance of unstructured text that is used
         as the abbreviation.
-
-        '
       Cardinality: '1'
       Relationship Type: Value
       Model Name: abbreviatedText
@@ -686,11 +684,6 @@ Administration:
       - $ref: '#/string'
       Cardinality: '1'
       Relationship Type: Value
-AdministrationDuration:
-  NCI C-Code: C69282
-  Preferred Term: Administration Duration
-  Definition: The amount of time elapsed during the administration of an agent.
-  Modifier: Concrete
 AliasCode:
   NCI C-Code: C201344
   Preferred Term: Alias Code
@@ -1659,8 +1652,8 @@ Condition:
       - $ref: '#/SyntaxTemplate'
     contextIds:
       Type:
-      - $ref: '#/Activity'
       - $ref: '#/ScheduledActivityInstance'
+      - $ref: '#/Activity'
       Definition: A USDM relationship between the Condition and the ScheduledActivityInstance
         or Activity classes which identifies the scheduled activity instance or activity
         to which the condition belongs.
@@ -1670,11 +1663,11 @@ Condition:
       Model Representation: Relationship
     appliesToIds:
       Type:
-      - $ref: '#/Procedure'
-      - $ref: '#/Activity'
-      - $ref: '#/BiomedicalConceptSurrogate'
       - $ref: '#/BiomedicalConcept'
+      - $ref: '#/Activity'
+      - $ref: '#/Procedure'
       - $ref: '#/BiomedicalConceptCategory'
+      - $ref: '#/BiomedicalConceptSurrogate'
       Definition: A USDM relationship between the Condition and the Activity, Procedure,
         BiomedicalConcept, BiomedicalConceptSurrogate, or BiomedicalConceptCategory
         classes which identifies the procedure, activity, biomedical concept, biomedical
@@ -1794,6 +1787,9 @@ DocumentContentReference:
       Cardinality: '1'
       Relationship Type: Value
 Duration:
+  NCI C-Code: C25330
+  Preferred Term: Duration
+  Definition: The length of time during which something continues.
   Modifier: Concrete
   Attributes:
     id:
@@ -1806,6 +1802,9 @@ Duration:
     text:
       Type:
       - $ref: '#/string'
+      NCI C-Code: CNEW
+      Preferred Term: Duration Text
+      Definition: An instance of unstructured text that represents the event duration.
       Cardinality: 0..1
       Relationship Type: Value
       Model Name: text
@@ -1813,6 +1812,9 @@ Duration:
     quantity:
       Type:
       - $ref: '#/QuantityRange'
+      NCI C-Code: CNEW
+      Preferred Term: Duration Quantity Value
+      Definition: The value representing the amount of time over which the event occurs.
       Cardinality: 0..1
       Relationship Type: Value
       Model Name: quantity
@@ -1820,6 +1822,10 @@ Duration:
     durationWillVary:
       Type:
       - $ref: '#/boolean'
+      NCI C-Code: CNEW
+      Preferred Term: Duration Will Vary Indicator
+      Definition: An indication as to whether the event duration is planned to vary
+        within and/or across subjects.
       Cardinality: '1'
       Relationship Type: Value
       Model Name: durationWillVary
@@ -1827,6 +1833,10 @@ Duration:
     reasonDurationWillVary:
       Type:
       - $ref: '#/string'
+      NCI C-Code: CNEW
+      Preferred Term: Reason Duration Will Vary
+      Definition: The explanation for why the event duration will vary within and/or
+        across subjects.
       Cardinality: 0..1
       Relationship Type: Value
       Model Name: reasonDurationWillVary
@@ -4349,6 +4359,11 @@ ParameterMap:
       Cardinality: '1'
       Relationship Type: Value
 PersonName:
+  NCI C-Code: C25191
+  Preferred Term: Person Name
+  Definition: A word or group of words indicating the identity of a person usually
+    consisting of a first (personal) name and a last (family) name with an optional
+    middle name. In some cultural traditions the family name comes first.
   Modifier: Concrete
   Attributes:
     id:
@@ -4361,6 +4376,10 @@ PersonName:
     text:
       Type:
       - $ref: '#/string'
+      NCI C-Code: CNEW
+      Preferred Term: Person Name Text
+      Definition: An instance of structured text that represents the person's full
+        name.
       Cardinality: 0..1
       Relationship Type: Value
       Model Name: text
@@ -4368,6 +4387,9 @@ PersonName:
     familyName:
       Type:
       - $ref: '#/string'
+      NCI C-Code: C40975
+      Preferred Term: Person Family Name
+      Definition: A word or group of words indicating a person's last (family) name.
       Cardinality: 0..1
       Relationship Type: Value
       Model Name: familyName
@@ -4375,6 +4397,10 @@ PersonName:
     givenNames:
       Type:
       - $ref: '#/string'
+      NCI C-Code: C40974
+      Preferred Term: Person Given Name
+      Definition: A word or group of words indicating a person's first (personal or
+        given) name; the name that precedes the surname.
       Cardinality: 0..*
       Relationship Type: Value
       Model Name: givenNames
@@ -4382,6 +4408,10 @@ PersonName:
     prefixes:
       Type:
       - $ref: '#/string'
+      NCI C-Code: CNEW
+      Preferred Term: Person Name Prefix
+      Definition: An affix occurring at the start of the person name string, usually
+        denoting a title or honorific.
       Cardinality: 0..*
       Relationship Type: Value
       Model Name: prefixes
@@ -4389,6 +4419,10 @@ PersonName:
     suffixes:
       Type:
       - $ref: '#/string'
+      NCI C-Code: CNEW
+      Preferred Term: Person Name Suffix
+      Definition: An affix occurring at the end of the person name, usually denoting
+        educational or professional degrees and certifications, and/or filial rank.
       Cardinality: 0..*
       Relationship Type: Value
       Model Name: suffixes
@@ -4484,6 +4518,11 @@ PopulationDefinition:
     plannedCompletionNumber:
       Type:
       - $ref: '#/QuantityRange'
+      NCI C-Code: C207546
+      Preferred Term: Study Cohort Planned Completion Number
+      Definition: The value representing the planned number of subjects that must
+        complete the study in order to meet the objectives and endpoints of the study,
+        within the study cohort.
       Cardinality: 0..1
       Relationship Type: Value
       Model Name: plannedCompletionNumber
@@ -4491,6 +4530,10 @@ PopulationDefinition:
     plannedEnrollmentNumber:
       Type:
       - $ref: '#/QuantityRange'
+      NCI C-Code: C207702
+      Preferred Term: Study Cohort Planned Enrollment Number
+      Definition: The value representing the planned number of subjects to be entered
+        in a clinical trial, within the study cohort.
       Cardinality: 0..1
       Relationship Type: Value
       Model Name: plannedEnrollmentNumber
@@ -4746,6 +4789,10 @@ Quantity:
       Cardinality: '1'
       Relationship Type: Value
 QuantityRange:
+  NCI C-Code: CNEW
+  Preferred Term: Quantity or Range
+  Definition: The total amount (number), or the limits (minimum and maximum) of a
+    variation.
   Modifier: Abstract
   Sub Classes:
   - $ref: '#/Quantity'
@@ -4761,8 +4808,7 @@ QuantityRange:
 Range:
   NCI C-Code: C38013
   Preferred Term: Range
-  Definition: The difference between the lowest and highest numerical values; the
-    limits or scale of variation.
+  Definition: An expression that defines the lower and upper limits of a variation.
   Modifier: Concrete
   Super Classes:
   - $ref: '#/QuantityRange'
@@ -4896,6 +4942,10 @@ ResponseCode:
     name:
       Type:
       - $ref: '#/string'
+      NCI C-Code: CNEW
+      Preferred Term: Response Code Name
+      Definition: The literal identifier (i.e., distinctive designation) of the response
+        code.
       Cardinality: '1'
       Relationship Type: Value
       Model Name: name
@@ -4903,6 +4953,9 @@ ResponseCode:
     label:
       Type:
       - $ref: '#/string'
+      NCI C-Code: CNEW
+      Preferred Term: Response Code Label
+      Definition: The short descriptive designation for the response code.
       Cardinality: 0..1
       Relationship Type: Value
       Model Name: label
@@ -5420,6 +5473,9 @@ Strength:
     numerator:
       Type:
       - $ref: '#/QuantityRange'
+      NCI C-Code: C80490
+      Preferred Term: Numerator
+      Definition: The dividend of a fraction.
       Cardinality: '1'
       Relationship Type: Value
       Model Name: numerator
@@ -5536,6 +5592,10 @@ StudyAmendment:
     name:
       Type:
       - $ref: '#/string'
+      NCI C-Code: CNEW
+      Preferred Term: Study Amendment Name
+      Definition: The literal identifier (i.e., distinctive designation) of the study
+        amendment.
       Cardinality: '1'
       Relationship Type: Value
       Model Name: name
@@ -5543,6 +5603,9 @@ StudyAmendment:
     label:
       Type:
       - $ref: '#/string'
+      NCI C-Code: CNEW
+      Preferred Term: Study Amendment Label
+      Definition: The short descriptive designation for the study amendment.
       Cardinality: 0..1
       Relationship Type: Value
       Model Name: label
@@ -5550,6 +5613,9 @@ StudyAmendment:
     description:
       Type:
       - $ref: '#/string'
+      NCI C-Code: CNEW
+      Preferred Term: Study Amendment Description
+      Definition: A narrative representation of the study amendment.
       Cardinality: 0..1
       Relationship Type: Value
       Model Name: description
@@ -6121,6 +6187,11 @@ StudyCohort:
     plannedCompletionNumber:
       Type:
       - $ref: '#/QuantityRange'
+      NCI C-Code: C207546
+      Preferred Term: Study Cohort Planned Completion Number
+      Definition: The value representing the planned number of subjects that must
+        complete the study in order to meet the objectives and endpoints of the study,
+        within the study cohort.
       Cardinality: 0..1
       Relationship Type: Value
       Model Name: plannedCompletionNumber
@@ -6130,6 +6201,10 @@ StudyCohort:
     plannedEnrollmentNumber:
       Type:
       - $ref: '#/QuantityRange'
+      NCI C-Code: C207702
+      Preferred Term: Study Cohort Planned Enrollment Number
+      Definition: The value representing the planned number of subjects to be entered
+        in a clinical trial, within the study cohort.
       Cardinality: 0..1
       Relationship Type: Value
       Model Name: plannedEnrollmentNumber
@@ -6278,6 +6353,8 @@ StudyDefinitionDocument:
     childIds:
       Type:
       - $ref: '#/StudyDefinitionDocument'
+      Definition: A USDM relationship within the StudyDefinitionDocument class which
+        identifies the set of child documents of a study definition document.
       Cardinality: 0..*
       Relationship Type: Ref
       Model Name: children
@@ -6743,6 +6820,11 @@ StudyDesignPopulation:
     plannedCompletionNumber:
       Type:
       - $ref: '#/QuantityRange'
+      NCI C-Code: C207451
+      Preferred Term: Study Design Population Planned Completion Number
+      Definition: The value representing the planned number of subjects that must
+        complete the study in order to meet the objectives and endpoints of the study,
+        within the study design population.
       Cardinality: 0..1
       Relationship Type: Value
       Model Name: plannedCompletionNumber
@@ -6752,6 +6834,10 @@ StudyDesignPopulation:
     plannedEnrollmentNumber:
       Type:
       - $ref: '#/QuantityRange'
+      NCI C-Code: C207452
+      Preferred Term: Study Design Population Planned Enrollment Number
+      Definition: The value representing the planned number of subjects to be entered
+        in a clinical trial, within the study design population.
       Cardinality: 0..1
       Relationship Type: Value
       Model Name: plannedEnrollmentNumber
@@ -7225,6 +7311,9 @@ StudyRole:
     notes:
       Type:
       - $ref: '#/CommentAnnotation'
+      NCI C-Code: CNEW
+      Preferred Term: Study Role Notes
+      Definition: A brief written record relevant to the study role.
       Cardinality: 0..1
       Relationship Type: Value
       Model Name: notes
