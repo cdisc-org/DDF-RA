@@ -636,9 +636,9 @@ Administration:
     duration:
       Type:
       - $ref: '#/Duration'
-      Definition: A USDM relationship between the Administration and AdministrationDuration
-        classes which provides the duration of an instance of product, agent, or therapy
-        administration.
+      NCI C-Code: C69282
+      Preferred Term: Administration Duration
+      Definition: The amount of time elapsed during the administration of an agent.
       Cardinality: '1'
       Relationship Type: Value
       Model Name: duration
@@ -866,6 +866,12 @@ AssignedPerson:
     personName:
       Type:
       - $ref: '#/PersonName'
+      NCI C-Code: CNEW
+      Preferred Term: Assigned Person Person Name
+      Definition: A word or group of words indicating the identity of an assigned
+        person usually consisting of a first (personal) name and a last (family) name
+        with an optional middle name. In some cultural traditions the family name
+        comes first.
       Cardinality: '1'
       Relationship Type: Value
       Model Name: personName
@@ -1663,11 +1669,11 @@ Condition:
       Model Representation: Relationship
     appliesToIds:
       Type:
-      - $ref: '#/BiomedicalConcept'
-      - $ref: '#/Activity'
       - $ref: '#/Procedure'
       - $ref: '#/BiomedicalConceptCategory'
+      - $ref: '#/BiomedicalConcept'
       - $ref: '#/BiomedicalConceptSurrogate'
+      - $ref: '#/Activity'
       Definition: A USDM relationship between the Condition and the Activity, Procedure,
         BiomedicalConcept, BiomedicalConceptSurrogate, or BiomedicalConceptCategory
         classes which identifies the procedure, activity, biomedical concept, biomedical
@@ -3122,6 +3128,9 @@ InterventionalStudyDesign:
     eligibilityCriteria:
       Type:
       - $ref: '#/EligibilityCriterion'
+      Definition: A USDM relationship between the InterventionalStudyDesign and EligibilityCriterion
+        classes which identifies the set of eligibility criterion associated with
+        the interventional study design.
       Cardinality: 1..*
       Relationship Type: Value
       Model Name: eligibilityCriteria
@@ -4007,6 +4016,9 @@ ObservationalStudyDesign:
     eligibilityCriteria:
       Type:
       - $ref: '#/EligibilityCriterion'
+      Definition: A USDM relationship between the ObservationalStudyDesign and EligibilityCriterion
+        classes which identifies the set of eligibility criterion associated with
+        the observational study design.
       Cardinality: 1..*
       Relationship Type: Value
       Model Name: eligibilityCriteria
@@ -4711,8 +4723,8 @@ ProductOrganizationRole:
       Model Representation: Attribute
     appliesToIds:
       Type:
-      - $ref: '#/MedicalDevice'
       - $ref: '#/AdministrableProduct'
+      - $ref: '#/MedicalDevice'
       Definition: A USDM relationship between the ProductOrganizationRole and either
         the AdministrableProduct or MedicalDevice class that identifies the administrable
         product or medical device to which the product organization role applies.
@@ -5060,6 +5072,10 @@ ScheduleTimeline:
     plannedDuration:
       Type:
       - $ref: '#/Duration'
+      NCI C-Code: CNEW
+      Preferred Term: Schedule Timeline Planned Duration
+      Definition: The period of time over which the scheduled timeline is intended
+        to take place.
       Cardinality: 0..1
       Relationship Type: Value
       Model Name: plannedDuration
@@ -6595,6 +6611,9 @@ StudyDesign:
     eligibilityCriteria:
       Type:
       - $ref: '#/EligibilityCriterion'
+      Definition: A USDM relationship between the InterventionalStudyDesign and EligibilityCriterion
+        classes which identifies the set of eligibility criterion associated with
+        the interventional study design.
       Cardinality: 1..*
       Relationship Type: Value
       Model Name: eligibilityCriteria

@@ -1,15 +1,5 @@
 Class,Attribute,Characteristic,API,CT,UML / DD
-Administration,duration,CT Role/UML Representation,,Relationship,Attribute
-AssignedPerson,personName,,personName,,personName
-InterventionalStudyDesign,eligibilityCriteria,,eligibilityCriteria,,eligibilityCriteria
-ObservationalStudyDesign,eligibilityCriteria,,eligibilityCriteria,,eligibilityCriteria
-PersonName,text,CT Role/UML Datatype,,Complex Datatype Relationship,String
-PersonName,familyName,CT Role/UML Datatype,,Complex Datatype Relationship,String
-PersonName,givenNames,CT Role/UML Datatype,,Complex Datatype Relationship,String
-PersonName,prefixes,CT Role/UML Datatype,,Complex Datatype Relationship,String
-PersonName,suffixes,CT Role/UML Datatype,,Complex Datatype Relationship,String
 QuantityRange,quantity,,,quantity,
 QuantityRange,range,,,range,
-ScheduleTimeline,plannedDuration,,plannedDuration,,plannedDuration
 Study,id,Cardinality,0..1,,1
 StudyRole,notes,Cardinality,0..*,,0..1
