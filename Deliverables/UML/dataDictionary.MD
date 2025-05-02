@@ -59,7 +59,7 @@
 ||dose|Quantity|C167190|0..1|Administration Dose|The value representing the amount of an agent given to an individual at one time.|||
 ||frequency|AliasCode|C89081|0..1|Dosing Frequency|The number of doses administered per a specific interval.|SDTM Terminology Codelist C71113||
 ||route|AliasCode|C38114|0..1|Route of Administration|The pathway by which a substance is administered in order to reach the site of action in the body.|SDTM Terminology Codelist C66729||
-||duration|Duration||1||A USDM relationship between the Administration and AdministrationDuration classes which provides the duration of an instance of product, agent, or therapy administration.|||
+||duration|Duration|C69282|1|Administration Duration|The amount of time elapsed during the administration of an agent.|||
 ||notes|CommentAnnotation|C215544|0..*|Administration Notes|A brief written record relevant to the administration of the product, agent, or therapy.|||
 ||administrableProduct|AdministrableProduct||0..1||A USDM relationship between the Administration and AdministrableProductDefinition classes which identifies the administrable product associated with the administration of the product, agent, or therapy.|||
 ||medicalDevice|MedicalDevice||0..1||A USDM relationship between the Administration and MedicalDevice classes which identifies the medical device associated with an instance of product, agent, or therapy administration.|||
@@ -80,7 +80,7 @@
 ||name|String|C215596|1|Assigned Person Name|The literal identifier (i.e., distinctive designation) of the assigned person.|||
 ||label|String|C215598|0..1|Assigned Person Label|The short descriptive designation for the assigned person.|||
 ||description|String|C215597|0..1|Assigned Person Description|A narrative representation of the assigned person.|||
-||personName|PersonName||1|||||
+||personName|PersonName|CNEW|1|Assigned Person Person Name|A word or group of words indicating the identity of an assigned person usually consisting of a first (personal) name and a last (family) name with an optional middle name. In some cultural traditions the family name comes first.|||
 ||jobTitle|String|C215599|1|Assigned Person Job Title|An identifying designation related to the assigned person's occupation.|||
 ||organization|Organization||0..1||A USDM relationship between the AssignedPerson and Organization classes that identifies that organization to which the assigned person belongs.|||
 |BiomedicalConcept|||C201345||Biomedical Concept|A unit of biomedical knowledge created from a unique combination of characteristics that include implementation details like variables and terminologies, used as building blocks for standardized, hierarchically structured clinical research information.|||
@@ -152,7 +152,7 @@
 ||notes|CommentAnnotation|C215552|0..*|Condition Notes|A brief written record relevant to the condition.||SyntaxTemplate|
 ||dictionary|SyntaxTemplateDictionary||0..1||A USDM relationship between the Condition and SyntaxTemplateDictionary classes which provides the set of dictionary entries related to conditions.||SyntaxTemplate|
 ||context|ScheduledActivityInstance, Activity||0..*||A USDM relationship between the Condition and the ScheduledActivityInstance or Activity classes which identifies the scheduled activity instance or activity to which the condition belongs.|||
-||appliesTo|BiomedicalConcept, Activity, Procedure, BiomedicalConceptCategory, BiomedicalConceptSurrogate||0..*||A USDM relationship between the Condition and the Activity, Procedure, BiomedicalConcept, BiomedicalConceptSurrogate, or BiomedicalConceptCategory classes which identifies the procedure, activity, biomedical concept, biomedical concept surrogate, or biomedical concept category that applies to the condition.|||
+||appliesTo|Procedure, BiomedicalConceptCategory, BiomedicalConcept, BiomedicalConceptSurrogate, Activity||0..*||A USDM relationship between the Condition and the Activity, Procedure, BiomedicalConcept, BiomedicalConceptSurrogate, or BiomedicalConceptCategory classes which identifies the procedure, activity, biomedical concept, biomedical concept surrogate, or biomedical concept category that applies to the condition.|||
 |ConditionAssignment|||C201335||Condition Assignment|An allotting or appointment to a condition or set of conditions that are to be met in order to make a logical decision.|||
 ||id|string||1|||||
 ||condition|String|C47953|1|Logical Condition|An assumption on which rests the validity or effect of something else.|||
@@ -272,7 +272,7 @@
 ||notes|CommentAnnotation|C215634|0..*|Interventional Study Design Notes|A brief written record relevant to the interventional study design.||StudyDesign|
 ||activities|Activity||0..*||A USDM relationship between the InterventionalStudyDesign and Activity classes which identifies the set of activities associated with the interventional study design.||StudyDesign|
 ||biospecimenRetentions|BiospecimenRetention||0..*||A USDM relationship between the InterventionalStudyDesign and BiospecimenRetention classes which identifies the status of biospecimen retentions related to the interventional study design.||StudyDesign|
-||eligibilityCriteria|EligibilityCriterion||1..*|||||
+||eligibilityCriteria|EligibilityCriterion||1..*||A USDM relationship between the InterventionalStudyDesign and EligibilityCriterion classes which identifies the set of eligibility criterion associated with the interventional study design.||StudyDesign|
 ||encounters|Encounter||0..*||A USDM relationship between the InterventionalStudyDesign and Encounter classes which identifies the set of encounters associated with the interventional study design.||StudyDesign|
 ||estimands|Estimand||0..*||A USDM relationship between the InterventionalStudyDesign and Estimand classes which identifies the set of estimands associated with the interventional study design.||StudyDesign|
 ||indications|Indication||0..*||A USDM relationship between the InterventionalStudyDesign and Indication classes which identifies the set of indications associated with the interventional study design.||StudyDesign|
@@ -347,7 +347,7 @@
 ||notes|CommentAnnotation|C215644|0..*|Observational Study Design Notes|A brief written record relevant to the observational study design.||StudyDesign|
 ||activities|Activity||0..*||A USDM relationship between the ObservationalStudyDesign and Activity classes which identifies the set of activities associated with the observational study design.||StudyDesign|
 ||biospecimenRetentions|BiospecimenRetention||0..*||A USDM relationship between the ObservationalStudyDesign and BiospecimenRetention classes which identifies the status of biospecimen retentions related to the observational study design.||StudyDesign|
-||eligibilityCriteria|EligibilityCriterion||1..*|||||
+||eligibilityCriteria|EligibilityCriterion||1..*||A USDM relationship between the ObservationalStudyDesign and EligibilityCriterion classes which identifies the set of eligibility criterion associated with the observational study design.||StudyDesign|
 ||encounters|Encounter||0..*||A USDM relationship between the ObservationalStudyDesign and Encounter classes which identifies the set of encounters associated with the observational study design.||StudyDesign|
 ||estimands|Estimand||0..*||A USDM relationship between the ObservationalStudyDesign and Estimand classes which identifies the set of estimands associated with the observational study design.||StudyDesign|
 ||indications|Indication||0..*||A USDM relationship between the ObservationalStudyDesign and Indication classes which identifies the set of indications associated with the observational study design.||StudyDesign|
@@ -411,7 +411,7 @@
 ||label|String|C215624|0..1|Product Organization Role Label|The short descriptive designation for the product organization role.|||
 ||description|String|C215623|0..1|Product Organization Role Description|A narrative representation of the product organization role.|||
 ||code|Code|C215625|1|Product Organization Role Code|A symbol or combination of symbols which is assigned to the product organization role.|||
-||appliesTo|MedicalDevice, AdministrableProduct||0..*||A USDM relationship between the ProductOrganizationRole and either the AdministrableProduct or MedicalDevice class that identifies the administrable product or medical device to which the product organization role applies.|||
+||appliesTo|AdministrableProduct, MedicalDevice||0..*||A USDM relationship between the ProductOrganizationRole and either the AdministrableProduct or MedicalDevice class that identifies the administrable product or medical device to which the product organization role applies.|||
 ||organization|Organization||1||A USDM relationship between the ProductOrganizationRole and Organization classes which identifies the organization associated with the product organization role.|||
 |Quantity|||C25256||Quantity|How much there is of something that can be measured; the total amount or number.|||
 ||id|String||1|||||
@@ -442,7 +442,7 @@
 ||description|String|C201332|0..1|Schedule Timeline Description|A narrative representation of the schedule timeline.|||
 ||entryCondition|String|C201333|1|Schedule Timeline Entry Condition|A logical evaluation on which rests the validity of entry into a schedule timeline.|||
 ||mainTimeline|Boolean|C201331|1|Main Timeline Indicator|An indication as to whether the timeline or timeline component is part of the central or principal timeline.|||
-||plannedDuration|Duration||0..1|||||
+||plannedDuration|Duration|CNEW|0..1|Schedule Timeline Planned Duration|The period of time over which the scheduled timeline is intended to take place.|||
 ||instances|ScheduledInstance||0..*||A USDM relationship between the ScheduleTimeline and ScheduledInstance classes which identifies the set of scheduled instances (e.g., scheduled activity instances or scheduled decision instances) associated with the scheduled timeline.|||
 ||entry|ScheduledInstance||1||A USDM relationship between the ScheduleTimeline and ScheduledInstance classes which defines the entry into a scheduled instance (e.g., scheduled activity instances or scheduled decision instances) for a timeline.|||
 ||exits|ScheduleTimelineExit||0..*||A USDM relationship between the ScheduleTimeline and ScheduleTimelineExit classes which identifies the set of exits from the scheduled timeline.|||
