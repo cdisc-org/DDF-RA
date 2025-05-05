@@ -34,7 +34,7 @@
 ||label|String|C215575|0..1|Administrable Product Definition Label|The short descriptive designation for the administrable product.|||
 ||description|String|C215574|0..1|Administrable Product Definition Description|A narrative representation of the administrable product.|||
 ||administrableDoseForm|AliasCode|C215576|1|Administrable Product Dose Form|The physical form in which formulated ingredient(s) are presented in the administrable product.|SDTM Terminology Codelist C66726||
-||sourcing|Code|C215578|0..1|Administrable Product Sourcing|An indication as to whether the administrable product is obtained from a local or central source.|CNEW - Product Sourcing Value Set||
+||sourcing|Code|C215578|0..1|Administrable Product Sourcing|An indication as to whether the administrable product is obtained from a local or central source.|C215483||
 ||productDesignation|Code|C215579|1|Administrable Product Product Designation|An indication as to whether the administrable product is an investigational medicinal product or an auxiliary medicinal product.|C207418||
 ||pharmacologicClass|Code|C215577|0..1|Administrable Product Pharmacologic Class|The pharmacological class of the administrable product.|Points to external codelists such as UNII, MED-RT||
 ||notes|CommentAnnotation|C215580|0..*|Administrable Product Notes|A brief written record relevant to the administrable product.|||
@@ -48,7 +48,7 @@
 |AdministrableProductProperty|||C215494||Administrable Product Property|A characteristic from a set of characteristics used to define an administrable product.|||
 ||id|String||1|||||
 ||name|String|C215582|1|Administrable Product Property Name|The literal identifier (i.e., distinctive designation) of the administrable product property.|||
-||type|Code|C215585|1|Administrable Product Property Type|A characterization or classification of the administrable product property.|CNEW Administrable Product Property Type||
+||type|Code|C215585|1|Administrable Product Property Type|A characterization or classification of the administrable product property.|C215479||
 ||text|String|C215583|1|Administrable Product Property Text|An instance of structured text that represents the administrable product property.|||
 ||quantity|Quantity|C215584|0..1|Administrable Product Property Quantity Value|The numeric value associated with an administrable product property.|||
 |Administration|||C25409||Administration|The act of dispensing, applying, or tendering a product, agent, or therapy.|||
@@ -80,7 +80,7 @@
 ||name|String|C215596|1|Assigned Person Name|The literal identifier (i.e., distinctive designation) of the assigned person.|||
 ||label|String|C215598|0..1|Assigned Person Label|The short descriptive designation for the assigned person.|||
 ||description|String|C215597|0..1|Assigned Person Description|A narrative representation of the assigned person.|||
-||personName|PersonName|CNEW|1|Assigned Person Person Name|A word or group of words indicating the identity of an assigned person usually consisting of a first (personal) name and a last (family) name with an optional middle name. In some cultural traditions the family name comes first.|||
+||personName|PersonName|C216993|1|Assigned Person Person Name|A word or group of words indicating the identity of an assigned person usually consisting of a first (personal) name and a last (family) name with an optional middle name. In some cultural traditions the family name comes first.|||
 ||jobTitle|String|C215599|1|Assigned Person Job Title|An identifying designation related to the assigned person's occupation.|||
 ||organization|Organization||0..1||A USDM relationship between the AssignedPerson and Organization classes that identifies that organization to which the assigned person belongs.|||
 |BiomedicalConcept|||C201345||Biomedical Concept|A unit of biomedical knowledge created from a unique combination of characteristics that include implementation details like variables and terminologies, used as building blocks for standardized, hierarchically structured clinical research information.|||
@@ -152,7 +152,7 @@
 ||notes|CommentAnnotation|C215552|0..*|Condition Notes|A brief written record relevant to the condition.||SyntaxTemplate|
 ||dictionary|SyntaxTemplateDictionary||0..1||A USDM relationship between the Condition and SyntaxTemplateDictionary classes which provides the set of dictionary entries related to conditions.||SyntaxTemplate|
 ||context|ScheduledActivityInstance, Activity||0..*||A USDM relationship between the Condition and the ScheduledActivityInstance or Activity classes which identifies the scheduled activity instance or activity to which the condition belongs.|||
-||appliesTo|BiomedicalConceptCategory, Activity, Procedure, BiomedicalConcept, BiomedicalConceptSurrogate||0..*||A USDM relationship between the Condition and the Activity, Procedure, BiomedicalConcept, BiomedicalConceptSurrogate, or BiomedicalConceptCategory classes which identifies the procedure, activity, biomedical concept, biomedical concept surrogate, or biomedical concept category that applies to the condition.|||
+||appliesTo|Activity, Procedure, BiomedicalConceptCategory, BiomedicalConceptSurrogate, BiomedicalConcept||0..*||A USDM relationship between the Condition and the Activity, Procedure, BiomedicalConcept, BiomedicalConceptSurrogate, or BiomedicalConceptCategory classes which identifies the procedure, activity, biomedical concept, biomedical concept surrogate, or biomedical concept category that applies to the condition.|||
 |ConditionAssignment|||C201335||Condition Assignment|An allotting or appointment to a condition or set of conditions that are to be met in order to make a logical decision.|||
 ||id|string||1|||||
 ||condition|String|C47953|1|Logical Condition|An assumption on which rests the validity or effect of something else.|||
@@ -164,10 +164,10 @@
 ||appliesTo|StudyDefinitionDocument||1||A USDM relationship between the DocumentContentReference and StudyDefinitionDocument classes which identifies the study definition document to which the document content reference applies.|||
 |Duration|||C25330||Duration|The length of time during which something continues.|||
 ||id|String||1|||||
-||text|String|CNEW|0..1|Duration Text|An instance of unstructured text that represents the event duration.|||
-||quantity|QuantityRange|CNEW|0..1|Duration Quantity Value|The value representing the amount of time over which the event occurs.|||
-||durationWillVary|Boolean|CNEW|1|Duration Will Vary Indicator|An indication as to whether the event duration is planned to vary within and/or across subjects.|||
-||reasonDurationWillVary|String|CNEW|0..1|Reason Duration Will Vary|The explanation for why the event duration will vary within and/or across subjects.|||
+||text|String|C217008|0..1|Duration Text|An instance of unstructured text that represents the event duration.|||
+||quantity|QuantityRange|C217011|0..1|Duration Quantity Value|The value representing the amount of time over which the event occurs.|||
+||durationWillVary|Boolean|C217009|1|Duration Will Vary Indicator|An indication as to whether the event duration is planned to vary within and/or across subjects.|||
+||reasonDurationWillVary|String|C217010|0..1|Reason Duration Will Vary|The explanation for why the event duration will vary within and/or across subjects.|||
 |EligibilityCriterion|||C16112||Study Eligibility Criterion|Characteristics which are necessary to allow a subject to participate in a clinical study, as outlined in the study protocol. The concept covers inclusion and exclusion criteria.|||
 ||id|String||1|||||
 ||name|String|C207488|1|Study Eligibility Criterion Name|The literal identifier (i.e., distinctive designation) of the study eligibility criterion.|||
@@ -300,7 +300,7 @@
 ||description|String|C215615|0..1|Medical Device Description|A narrative representation of the medical device.|||
 ||hardwareVersion|String|C215617|0..1|Hardware Version|A form or variant of hardware; one of a sequence of copies of the physical components from which a computer is constructed, each incorporating new modifications.|||
 ||softwareVersion|String|C111093|0..1|Software Version|A form or variant of software; one of a sequence of copies of a software program, each incorporating new modifications. (NCI)|||
-||sourcing|Code|C215619|0..1|Medical Device Sourcing|An indication as to whether the medical device is obtained from a local or central source.|CNEW - Product Sourcing Value Set||
+||sourcing|Code|C215619|0..1|Medical Device Sourcing|An indication as to whether the medical device is obtained from a local or central source.|C215482||
 ||notes|CommentAnnotation|C215618|0..*|Medical Device Notes|A brief written record relevant to the medical device.|||
 ||embeddedProduct|AdministrableProduct||0..1||A USDM relationship between the MedicalDevice and AdministrableProduct classes which identifies the administrable product that is an integral component of the medical device.|||
 ||identifiers|MedicalDeviceIdentifier||0..*||A USDM relationship between the MedicalDevice and MedicalDeviceIdentifier classes which provides the set of identifiers related to the medical device.|||
@@ -308,7 +308,7 @@
 ||id|String||1|||||
 ||text|String|C215620|1|Medical Device Identifier Text|An instance of structured text that represents the medical device identifier.||Identifier|
 ||scope|Organization||1||A USDM relationship between the MedicalDeviceIdentifier and Organization classes which provides the details associated with each organization that has assigned the identifier.||Identifier|
-||type|Code|C215621|1|Medical Device Identifier Type|A characterization or classification of the medical device identifier.|CNEW - Medical Device Identifier Type Value Set||
+||type|Code|C215621|1|Medical Device Identifier Type|A characterization or classification of the medical device identifier.|C215484||
 |NarrativeContent|||C207592||Narrative Content|The container that holds an instance of unstructured text and which may include objects such as tables, figures, and images.|||
 ||id|String||1|||||
 ||name|String|C207507|1|Narrative Content Name|The literal identifier (i.e., distinctive designation) of the narrative content.|||
@@ -361,7 +361,7 @@
 ||epochs|StudyEpoch||1..*||A USDM relationship between the ObservationalStudyDesign and StudyEpoch classes which identifies the set of study epochs associated with the observational study design.||StudyDesign|
 ||population|StudyDesignPopulation||1||A USDM relationship between the ObservationalStudyDesign and StudyDesignPopulation classes which identifies the population associated with the observational study design.||StudyDesign|
 ||model|Code|C147138|1|Observation Study Design Model Type|The general design of the strategy for identifying and following up with participants during observational studies. (clinicaltrials.gov)|SDTM Terminology Codelist C127259||
-||subTypes|Code|C215635|0..*|Observational Study Type|The nature of the observational study for which information is being collected.|CNEW - Observational Study Type Response||
+||subTypes|Code|C215635|0..*|Observational Study Type|The nature of the observational study for which information is being collected.|C215486||
 ||timePerspective|Code|C126065|1|Observational Time Perspective|The temporal relationship between the observation period and time of subject enrollment. (ClinicalTrials.gov)|SDTM Terminology Codelist C127261||
 ||samplingMethod|Code|C126067|0..1|Observational Study Sampling Method|The sampling method used to assign study participants into groups or cohorts within an observational study.|SDTM Terminology Codelist C127260||
 |Organization|||C19711||Organization|A formalized group of persons or other organizations collected together for a common purpose (such as administrative, legal, political) and the infrastructure to carry out that purpose. (BRIDG)|||
@@ -379,11 +379,11 @@
 ||reference|String|C207516|1|Programming Tag Reference|The reference for a tag used in programming languages, such as a markup language (e.g., HTML, XML), to store attributes and elements.|||
 |PersonName|||C25191||Person Name|A word or group of words indicating the identity of a person usually consisting of a first (personal) name and a last (family) name with an optional middle name. In some cultural traditions the family name comes first.|||
 ||id|String||1|||||
-||text|String|CNEW|0..1|Person Name Text|An instance of structured text that represents the person's full name.|||
+||text|String|C217001|0..1|Person Name Text|An instance of structured text that represents the person's full name.|||
 ||familyName|String|C40975|0..1|Person Family Name|A word or group of words indicating a person's last (family) name.|||
 ||givenNames|String|C40974|0..*|Person Given Name|A word or group of words indicating a person's first (personal or given) name; the name that precedes the surname.|||
-||prefixes|String|CNEW|0..*|Person Name Prefix|An affix occurring at the start of the person name string, usually denoting a title or honorific.|||
-||suffixes|String|CNEW|0..*|Person Name Suffix|An affix occurring at the end of the person name, usually denoting educational or professional degrees and certifications, and/or filial rank.|||
+||prefixes|String|C217002|0..*|Person Name Prefix|An affix occurring at the start of the person name string, usually denoting a title or honorific.|||
+||suffixes|String|C217003|0..*|Person Name Suffix|An affix occurring at the end of the person name, usually denoting educational or professional degrees and certifications, and/or filial rank.|||
 |PopulationDefinition|||C207593||Population Definition|A concise explanation of the meaning of a population.|||
 ||id|String||1|||||
 ||name|String|C207520|1|Population Definition Name|The literal identifier (i.e., distinctive designation) of the population definition.|||
@@ -410,14 +410,14 @@
 ||name|String|C215622|1|Product Organization Role Name|The literal identifier (i.e., distinctive designation) of the product organization role.|||
 ||label|String|C215624|0..1|Product Organization Role Label|The short descriptive designation for the product organization role.|||
 ||description|String|C215623|0..1|Product Organization Role Description|A narrative representation of the product organization role.|||
-||code|Code|C215625|1|Product Organization Role Code|A symbol or combination of symbols which is assigned to the product organization role.|||
-||appliesTo|MedicalDevice, AdministrableProduct||0..*||A USDM relationship between the ProductOrganizationRole and either the AdministrableProduct or MedicalDevice class that identifies the administrable product or medical device to which the product organization role applies.|||
+||code|Code|C215625|1|Product Organization Role Code|A symbol or combination of symbols which is assigned to the product organization role.|C215485||
+||appliesTo|AdministrableProduct, MedicalDevice||0..*||A USDM relationship between the ProductOrganizationRole and either the AdministrableProduct or MedicalDevice class that identifies the administrable product or medical device to which the product organization role applies.|||
 ||organization|Organization||1||A USDM relationship between the ProductOrganizationRole and Organization classes which identifies the organization associated with the product organization role.|||
 |Quantity|||C25256||Quantity|How much there is of something that can be measured; the total amount or number.|||
 ||id|String||1|||||
 ||value|Float|C25712|1|Quantity Value|A numerical quantity measured or assigned or computed.|||
 ||unit|AliasCode|C44258|0..1|Quantity Unit|The type of unit of measure being used to express a quantity.|SDTM Terminology Codelist C71620||
-|QuantityRange|||CNEW||Quantity or Range|The total amount (number), or the limits (minimum and maximum) of a variation.|||
+|QuantityRange|||C217000||Quantity or Range|The total amount (number), or the limits (minimum and maximum) of a variation.|||
 ||id|String||1|||||
 |Range|||C38013||Range|An expression that defines the lower and upper limits of a variation.|||
 ||id|String||1|||||
@@ -428,13 +428,13 @@
 ||id|String||1|||||
 ||text|String|C215572|1|Reference Identifier Text|An instance of structured text that represents the reference identifier.||Identifier|
 ||scope|Organization||1||A USDM relationship between the ReferenceIdentifier and Organization classes which provides the details associated with each organization that has assigned the reference identifier.||Identifier|
-||type|Code|C215571|1|Reference Identifier Type|A characterization or classification of the reference identifier.|CNEW Reference Identifier Type||
+||type|Code|C215571|1|Reference Identifier Type|A characterization or classification of the reference identifier.|C215478||
 |ResponseCode|||C201347||Response Code|A symbol or combination of symbols representing the response to the question.|||
 ||id|String||1|||||
-||name|String|CNEW|1|Response Code Name|The literal identifier (i.e., distinctive designation) of the response code.|||
-||label|String|CNEW|0..1|Response Code Label|The short descriptive designation for the response code.|||
+||name|String|C216998|1|Response Code Name|The literal identifier (i.e., distinctive designation) of the response code.|||
+||label|String|C216999|0..1|Response Code Label|The short descriptive designation for the response code.|||
 ||isEnabled|Boolean|C201330|1|Response Code Enabled Indicator|An indication as to whether the response code is activated for use within a given usage context.|||
-||code|Code|CNEW|1|Response Code Value|The literal value of a response code.|||
+||code|Code|C217013|1|Response Code Value|The literal value of a response code.|||
 |ScheduleTimeline|||C201348||Schedule Timeline|A chronological schedule of planned temporal events.|||
 ||id|String||1|||||
 ||name|String|C201334|1|Schedule Timeline Name|The literal identifier (i.e., distinctive designation) of the schedule timeline.|||
@@ -442,7 +442,7 @@
 ||description|String|C201332|0..1|Schedule Timeline Description|A narrative representation of the schedule timeline.|||
 ||entryCondition|String|C201333|1|Schedule Timeline Entry Condition|A logical evaluation on which rests the validity of entry into a schedule timeline.|||
 ||mainTimeline|Boolean|C201331|1|Main Timeline Indicator|An indication as to whether the timeline or timeline component is part of the central or principal timeline.|||
-||plannedDuration|Duration|CNEW|0..1|Schedule Timeline Planned Duration|The period of time over which the scheduled timeline is intended to take place.|||
+||plannedDuration|Duration|C217012|0..1|Schedule Timeline Planned Duration|The period of time over which the scheduled timeline is intended to take place.|||
 ||instances|ScheduledInstance||0..*||A USDM relationship between the ScheduleTimeline and ScheduledInstance classes which identifies the set of scheduled instances (e.g., scheduled activity instances or scheduled decision instances) associated with the scheduled timeline.|||
 ||entry|ScheduledInstance||1||A USDM relationship between the ScheduleTimeline and ScheduledInstance classes which defines the entry into a scheduled instance (e.g., scheduled activity instances or scheduled decision instances) for a timeline.|||
 ||exits|ScheduleTimelineExit||0..*||A USDM relationship between the ScheduleTimeline and ScheduleTimelineExit classes which identifies the set of exits from the scheduled timeline.|||
@@ -491,9 +491,9 @@
 ||documentedBy|StudyDefinitionDocument||0..*||A USDM relationship between the Study and StudyDefinitionDocument classes signifying that the study is documented in a study definition document.|||
 |StudyAmendment|||C207594||Study Amendment|A written description of a change(s) to, or formal clarification of, a study.|||
 ||id|String||1|||||
-||name|String|CNEW|1|Study Amendment Name|The literal identifier (i.e., distinctive designation) of the study amendment.|||
-||label|String|CNEW|0..1|Study Amendment Label|The short descriptive designation for the study amendment.|||
-||description|String|CNEW|0..1|Study Amendment Description|A narrative representation of the study amendment.|||
+||name|String|C216995|1|Study Amendment Name|The literal identifier (i.e., distinctive designation) of the study amendment.|||
+||label|String|C216997|0..1|Study Amendment Label|The short descriptive designation for the study amendment.|||
+||description|String|C216996|0..1|Study Amendment Description|A narrative representation of the study amendment.|||
 ||number|String|C207537|1|Study Amendment Number|A string of numerals that uniquely identifies a protocol amendment.|||
 ||notes|CommentAnnotation|C215538|0..*|Study Amendment Notes|A brief written record relevant to the study amendment.|||
 ||summary|String|C115627|1|Study Amendment Summary|A short narrative representation describing the changes introduced in the current version of the protocol.|||
@@ -509,7 +509,7 @@
 ||id|String||1|||||
 ||text|String|C215611|1|Study Amendment Impact Text|An instance of unstructured text that represents the study amendment impact.|||
 ||isSubstantial|Boolean|C207538|1|Study Amendment Impact Substantial Indicator|An indication as to whether the study amendment's impact on the study is substantial.|||
-||type|Code|C215612|1|Study Amendment Impact Type|A characterization or classification of the study amendment impact.|CNEW Study Amendment Impact Type Response||
+||type|Code|C215612|1|Study Amendment Impact Type|A characterization or classification of the study amendment impact.|C215481||
 ||notes|CommentAnnotation|C215613|0..*|Study Amendment Impact Notes|A brief written record relevant to the study amendment impact.|||
 |StudyAmendmentReason|||C207457||Study Amendment Reason|The rationale for the change(s) to, or formal clarification of, a protocol.|||
 ||id|String||1|||||
@@ -557,7 +557,7 @@
 ||name|String|C215559|1|Study Definition Document Name|The literal identifier (i.e., distinctive designation) of the study definition document.|||
 ||label|String|C215561|0..1|Study Definition Document Label|The short descriptive designation for the study definition document.|||
 ||description|String|C215560|0..1|Study Definition Document Description|A narrative representation of the study definition document.|||
-||type|Code|C215564|1|Study Definition Document Type|A characterization or classification of the study definition document.|CNEW Study Definition Document Type||
+||type|Code|C215564|1|Study Definition Document Type|A characterization or classification of the study definition document.|C215477||
 ||templateName|String|C215562|1|Study Definition Document Template Name|The literal identifier (i.e., distinctive designation) of the study definition document template.|||
 ||language|Code|C215563|1|Study Definition Document Language|The language in which the study definition document is written.|Point out to ISO 639 language value list||
 ||notes|CommentAnnotation|C215565|0..*|Study Definition Document Notes|A brief written record relevant to the study definition document.|||
@@ -647,8 +647,8 @@
 ||name|String|C215600|1|Study Role Name|The literal identifier (i.e., distinctive designation) of the study role.|||
 ||label|String|C215602|0..1|Study Role Label|The short descriptive designation for the study role.|||
 ||description|String|C215601|0..1|Study Role Description|A narrative representation of the study role.|||
-||code|Code|C215603|1|Study Role Code|A symbol or combination of symbols which is assigned to the study role.|CNEW Study Role Code||
-||notes|CommentAnnotation|CNEW|0..1|Study Role Notes|A brief written record relevant to the study role.|||
+||code|Code|C215603|1|Study Role Code|A symbol or combination of symbols which is assigned to the study role.|C215480||
+||notes|CommentAnnotation|C216994|0..1|Study Role Notes|A brief written record relevant to the study role.|||
 ||assignedPersons|AssignedPerson||0..*||A USDM relationship between the StudyRole and AssignedPerson classes that identifies the set of individuals that are assigned to fill a particular role within the study.|||
 ||masking|Masking||0..1||A USDM relationship between the StudyRole and Masking classes which describes the masking associated with the study role.|||
 ||organizations|Organization||0..*||A USDM relationship between the StudyRole and Organization classes which identifies the set of organizations associated with the study role.|||

@@ -866,7 +866,7 @@ AssignedPerson:
     personName:
       Type:
       - $ref: '#/PersonName'
-      NCI C-Code: CNEW
+      NCI C-Code: C216993
       Preferred Term: Assigned Person Person Name
       Definition: A word or group of words indicating the identity of an assigned
         person usually consisting of a first (personal) name and a last (family) name
@@ -1669,11 +1669,11 @@ Condition:
       Model Representation: Relationship
     appliesToIds:
       Type:
-      - $ref: '#/BiomedicalConceptCategory'
       - $ref: '#/Activity'
       - $ref: '#/Procedure'
-      - $ref: '#/BiomedicalConcept'
+      - $ref: '#/BiomedicalConceptCategory'
       - $ref: '#/BiomedicalConceptSurrogate'
+      - $ref: '#/BiomedicalConcept'
       Definition: A USDM relationship between the Condition and the Activity, Procedure,
         BiomedicalConcept, BiomedicalConceptSurrogate, or BiomedicalConceptCategory
         classes which identifies the procedure, activity, biomedical concept, biomedical
@@ -1808,7 +1808,7 @@ Duration:
     text:
       Type:
       - $ref: '#/string'
-      NCI C-Code: CNEW
+      NCI C-Code: C217008
       Preferred Term: Duration Text
       Definition: An instance of unstructured text that represents the event duration.
       Cardinality: 0..1
@@ -1818,7 +1818,7 @@ Duration:
     quantity:
       Type:
       - $ref: '#/QuantityRange'
-      NCI C-Code: CNEW
+      NCI C-Code: C217011
       Preferred Term: Duration Quantity Value
       Definition: The value representing the amount of time over which the event occurs.
       Cardinality: 0..1
@@ -1828,7 +1828,7 @@ Duration:
     durationWillVary:
       Type:
       - $ref: '#/boolean'
-      NCI C-Code: CNEW
+      NCI C-Code: C217009
       Preferred Term: Duration Will Vary Indicator
       Definition: An indication as to whether the event duration is planned to vary
         within and/or across subjects.
@@ -1839,7 +1839,7 @@ Duration:
     reasonDurationWillVary:
       Type:
       - $ref: '#/string'
-      NCI C-Code: CNEW
+      NCI C-Code: C217010
       Preferred Term: Reason Duration Will Vary
       Definition: The explanation for why the event duration will vary within and/or
         across subjects.
@@ -4388,7 +4388,7 @@ PersonName:
     text:
       Type:
       - $ref: '#/string'
-      NCI C-Code: CNEW
+      NCI C-Code: C217001
       Preferred Term: Person Name Text
       Definition: An instance of structured text that represents the person's full
         name.
@@ -4420,7 +4420,7 @@ PersonName:
     prefixes:
       Type:
       - $ref: '#/string'
-      NCI C-Code: CNEW
+      NCI C-Code: C217002
       Preferred Term: Person Name Prefix
       Definition: An affix occurring at the start of the person name string, usually
         denoting a title or honorific.
@@ -4431,7 +4431,7 @@ PersonName:
     suffixes:
       Type:
       - $ref: '#/string'
-      NCI C-Code: CNEW
+      NCI C-Code: C217003
       Preferred Term: Person Name Suffix
       Definition: An affix occurring at the end of the person name, usually denoting
         educational or professional degrees and certifications, and/or filial rank.
@@ -4723,8 +4723,8 @@ ProductOrganizationRole:
       Model Representation: Attribute
     appliesToIds:
       Type:
-      - $ref: '#/MedicalDevice'
       - $ref: '#/AdministrableProduct'
+      - $ref: '#/MedicalDevice'
       Definition: A USDM relationship between the ProductOrganizationRole and either
         the AdministrableProduct or MedicalDevice class that identifies the administrable
         product or medical device to which the product organization role applies.
@@ -4801,7 +4801,7 @@ Quantity:
       Cardinality: '1'
       Relationship Type: Value
 QuantityRange:
-  NCI C-Code: CNEW
+  NCI C-Code: C217000
   Preferred Term: Quantity or Range
   Definition: The total amount (number), or the limits (minimum and maximum) of a
     variation.
@@ -4954,7 +4954,7 @@ ResponseCode:
     name:
       Type:
       - $ref: '#/string'
-      NCI C-Code: CNEW
+      NCI C-Code: C216998
       Preferred Term: Response Code Name
       Definition: The literal identifier (i.e., distinctive designation) of the response
         code.
@@ -4965,7 +4965,7 @@ ResponseCode:
     label:
       Type:
       - $ref: '#/string'
-      NCI C-Code: CNEW
+      NCI C-Code: C216999
       Preferred Term: Response Code Label
       Definition: The short descriptive designation for the response code.
       Cardinality: 0..1
@@ -4986,7 +4986,7 @@ ResponseCode:
     code:
       Type:
       - $ref: '#/Code'
-      NCI C-Code: CNEW
+      NCI C-Code: C217013
       Preferred Term: Response Code Value
       Definition: The literal value of a response code.
       Cardinality: '1'
@@ -5072,7 +5072,7 @@ ScheduleTimeline:
     plannedDuration:
       Type:
       - $ref: '#/Duration'
-      NCI C-Code: CNEW
+      NCI C-Code: C217012
       Preferred Term: Schedule Timeline Planned Duration
       Definition: The period of time over which the scheduled timeline is intended
         to take place.
@@ -5608,7 +5608,7 @@ StudyAmendment:
     name:
       Type:
       - $ref: '#/string'
-      NCI C-Code: CNEW
+      NCI C-Code: C216995
       Preferred Term: Study Amendment Name
       Definition: The literal identifier (i.e., distinctive designation) of the study
         amendment.
@@ -5619,7 +5619,7 @@ StudyAmendment:
     label:
       Type:
       - $ref: '#/string'
-      NCI C-Code: CNEW
+      NCI C-Code: C216997
       Preferred Term: Study Amendment Label
       Definition: The short descriptive designation for the study amendment.
       Cardinality: 0..1
@@ -5629,7 +5629,7 @@ StudyAmendment:
     description:
       Type:
       - $ref: '#/string'
-      NCI C-Code: CNEW
+      NCI C-Code: C216996
       Preferred Term: Study Amendment Description
       Definition: A narrative representation of the study amendment.
       Cardinality: 0..1
@@ -7330,7 +7330,7 @@ StudyRole:
     notes:
       Type:
       - $ref: '#/CommentAnnotation'
-      NCI C-Code: CNEW
+      NCI C-Code: C216994
       Preferred Term: Study Role Notes
       Definition: A brief written record relevant to the study role.
       Cardinality: 0..1
