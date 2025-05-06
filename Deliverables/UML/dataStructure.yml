@@ -1669,11 +1669,11 @@ Condition:
       Model Representation: Relationship
     appliesToIds:
       Type:
+      - $ref: '#/BiomedicalConcept'
       - $ref: '#/Activity'
+      - $ref: '#/BiomedicalConceptSurrogate'
       - $ref: '#/Procedure'
       - $ref: '#/BiomedicalConceptCategory'
-      - $ref: '#/BiomedicalConceptSurrogate'
-      - $ref: '#/BiomedicalConcept'
       Definition: A USDM relationship between the Condition and the Activity, Procedure,
         BiomedicalConcept, BiomedicalConceptSurrogate, or BiomedicalConceptCategory
         classes which identifies the procedure, activity, biomedical concept, biomedical
@@ -4723,8 +4723,8 @@ ProductOrganizationRole:
       Model Representation: Attribute
     appliesToIds:
       Type:
-      - $ref: '#/AdministrableProduct'
       - $ref: '#/MedicalDevice'
+      - $ref: '#/AdministrableProduct'
       Definition: A USDM relationship between the ProductOrganizationRole and either
         the AdministrableProduct or MedicalDevice class that identifies the administrable
         product or medical device to which the product organization role applies.
@@ -7367,8 +7367,8 @@ StudyRole:
       Model Representation: Relationship
     appliesToIds:
       Type:
-      - $ref: '#/StudyDesign'
       - $ref: '#/StudyVersion'
+      - $ref: '#/StudyDesign'
       Definition: A USDM relationship between the StudyRole and either StudyVersion
         or StudyDesign classes that identifies the study version or study design to
         which the study role applies.
