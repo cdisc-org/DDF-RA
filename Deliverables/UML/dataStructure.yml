@@ -450,7 +450,7 @@ AdministrableProductIdentifier:
       Relationship Type: Value
       Model Name: id
       Model Representation: Attribute
-      inheritedFrom:
+      Inherited From:
       - $ref: '#/Identifier'
     text:
       Type:
@@ -463,7 +463,7 @@ AdministrableProductIdentifier:
       Relationship Type: Value
       Model Name: text
       Model Representation: Attribute
-      inheritedFrom:
+      Inherited From:
       - $ref: '#/Identifier'
     scopeId:
       Type:
@@ -476,7 +476,7 @@ AdministrableProductIdentifier:
       Relationship Type: Ref
       Model Name: scope
       Model Representation: Relationship
-      inheritedFrom:
+      Inherited From:
       - $ref: '#/Identifier'
     extensionAttributes:
       Type:
@@ -1373,7 +1373,7 @@ Characteristic:
       Relationship Type: Value
       Model Name: id
       Model Representation: Attribute
-      inheritedFrom:
+      Inherited From:
       - $ref: '#/SyntaxTemplate'
     name:
       Type:
@@ -1385,7 +1385,7 @@ Characteristic:
       Relationship Type: Value
       Model Name: name
       Model Representation: Attribute
-      inheritedFrom:
+      Inherited From:
       - $ref: '#/SyntaxTemplate'
     label:
       Type:
@@ -1397,7 +1397,7 @@ Characteristic:
       Relationship Type: Value
       Model Name: label
       Model Representation: Attribute
-      inheritedFrom:
+      Inherited From:
       - $ref: '#/SyntaxTemplate'
     description:
       Type:
@@ -1409,7 +1409,7 @@ Characteristic:
       Relationship Type: Value
       Model Name: description
       Model Representation: Attribute
-      inheritedFrom:
+      Inherited From:
       - $ref: '#/SyntaxTemplate'
     text:
       Type:
@@ -1421,7 +1421,7 @@ Characteristic:
       Relationship Type: Value
       Model Name: text
       Model Representation: Attribute
-      inheritedFrom:
+      Inherited From:
       - $ref: '#/SyntaxTemplate'
     notes:
       Type:
@@ -1433,7 +1433,7 @@ Characteristic:
       Relationship Type: Value
       Model Name: notes
       Model Representation: Attribute
-      inheritedFrom:
+      Inherited From:
       - $ref: '#/SyntaxTemplate'
     dictionaryId:
       Type:
@@ -1444,7 +1444,7 @@ Characteristic:
       Relationship Type: Ref
       Model Name: dictionary
       Model Representation: Relationship
-      inheritedFrom:
+      Inherited From:
       - $ref: '#/SyntaxTemplate'
     extensionAttributes:
       Type:
@@ -1583,7 +1583,7 @@ Condition:
       Relationship Type: Value
       Model Name: id
       Model Representation: Attribute
-      inheritedFrom:
+      Inherited From:
       - $ref: '#/SyntaxTemplate'
     name:
       Type:
@@ -1595,7 +1595,7 @@ Condition:
       Relationship Type: Value
       Model Name: name
       Model Representation: Attribute
-      inheritedFrom:
+      Inherited From:
       - $ref: '#/SyntaxTemplate'
     label:
       Type:
@@ -1607,7 +1607,7 @@ Condition:
       Relationship Type: Value
       Model Name: label
       Model Representation: Attribute
-      inheritedFrom:
+      Inherited From:
       - $ref: '#/SyntaxTemplate'
     description:
       Type:
@@ -1619,7 +1619,7 @@ Condition:
       Relationship Type: Value
       Model Name: description
       Model Representation: Attribute
-      inheritedFrom:
+      Inherited From:
       - $ref: '#/SyntaxTemplate'
     text:
       Type:
@@ -1631,7 +1631,7 @@ Condition:
       Relationship Type: Value
       Model Name: text
       Model Representation: Attribute
-      inheritedFrom:
+      Inherited From:
       - $ref: '#/SyntaxTemplate'
     notes:
       Type:
@@ -1643,7 +1643,7 @@ Condition:
       Relationship Type: Value
       Model Name: notes
       Model Representation: Attribute
-      inheritedFrom:
+      Inherited From:
       - $ref: '#/SyntaxTemplate'
     dictionaryId:
       Type:
@@ -1654,12 +1654,12 @@ Condition:
       Relationship Type: Ref
       Model Name: dictionary
       Model Representation: Relationship
-      inheritedFrom:
+      Inherited From:
       - $ref: '#/SyntaxTemplate'
     contextIds:
       Type:
-      - $ref: '#/Activity'
       - $ref: '#/ScheduledActivityInstance'
+      - $ref: '#/Activity'
       Definition: A USDM relationship between the Condition and the ScheduledActivityInstance
         or Activity classes which identifies the scheduled activity instance or activity
         to which the condition belongs.
@@ -1669,11 +1669,11 @@ Condition:
       Model Representation: Relationship
     appliesToIds:
       Type:
-      - $ref: '#/Activity'
+      - $ref: '#/Procedure'
+      - $ref: '#/BiomedicalConceptSurrogate'
       - $ref: '#/BiomedicalConceptCategory'
       - $ref: '#/BiomedicalConcept'
-      - $ref: '#/BiomedicalConceptSurrogate'
-      - $ref: '#/Procedure'
+      - $ref: '#/Activity'
       Definition: A USDM relationship between the Condition and the Activity, Procedure,
         BiomedicalConcept, BiomedicalConceptSurrogate, or BiomedicalConceptCategory
         classes which identifies the procedure, activity, biomedical concept, biomedical
@@ -1989,7 +1989,7 @@ EligibilityCriterionItem:
       Relationship Type: Value
       Model Name: id
       Model Representation: Attribute
-      inheritedFrom:
+      Inherited From:
       - $ref: '#/SyntaxTemplate'
     name:
       Type:
@@ -2002,7 +2002,7 @@ EligibilityCriterionItem:
       Relationship Type: Value
       Model Name: name
       Model Representation: Attribute
-      inheritedFrom:
+      Inherited From:
       - $ref: '#/SyntaxTemplate'
     label:
       Type:
@@ -2015,7 +2015,7 @@ EligibilityCriterionItem:
       Relationship Type: Value
       Model Name: label
       Model Representation: Attribute
-      inheritedFrom:
+      Inherited From:
       - $ref: '#/SyntaxTemplate'
     description:
       Type:
@@ -2027,7 +2027,7 @@ EligibilityCriterionItem:
       Relationship Type: Value
       Model Name: description
       Model Representation: Attribute
-      inheritedFrom:
+      Inherited From:
       - $ref: '#/SyntaxTemplate'
     text:
       Type:
@@ -2040,7 +2040,7 @@ EligibilityCriterionItem:
       Relationship Type: Value
       Model Name: text
       Model Representation: Attribute
-      inheritedFrom:
+      Inherited From:
       - $ref: '#/SyntaxTemplate'
     notes:
       Type:
@@ -2052,7 +2052,7 @@ EligibilityCriterionItem:
       Relationship Type: Value
       Model Name: notes
       Model Representation: Attribute
-      inheritedFrom:
+      Inherited From:
       - $ref: '#/SyntaxTemplate'
     dictionaryId:
       Type:
@@ -2064,7 +2064,7 @@ EligibilityCriterionItem:
       Relationship Type: Ref
       Model Name: dictionary
       Model Representation: Relationship
-      inheritedFrom:
+      Inherited From:
       - $ref: '#/SyntaxTemplate'
     extensionAttributes:
       Type:
@@ -2240,7 +2240,7 @@ Endpoint:
       Relationship Type: Value
       Model Name: id
       Model Representation: Attribute
-      inheritedFrom:
+      Inherited From:
       - $ref: '#/SyntaxTemplate'
     name:
       Type:
@@ -2253,7 +2253,7 @@ Endpoint:
       Relationship Type: Value
       Model Name: name
       Model Representation: Attribute
-      inheritedFrom:
+      Inherited From:
       - $ref: '#/SyntaxTemplate'
     label:
       Type:
@@ -2265,7 +2265,7 @@ Endpoint:
       Relationship Type: Value
       Model Name: label
       Model Representation: Attribute
-      inheritedFrom:
+      Inherited From:
       - $ref: '#/SyntaxTemplate'
     description:
       Type:
@@ -2277,7 +2277,7 @@ Endpoint:
       Relationship Type: Value
       Model Name: description
       Model Representation: Attribute
-      inheritedFrom:
+      Inherited From:
       - $ref: '#/SyntaxTemplate'
     text:
       Type:
@@ -2289,7 +2289,7 @@ Endpoint:
       Relationship Type: Value
       Model Name: text
       Model Representation: Attribute
-      inheritedFrom:
+      Inherited From:
       - $ref: '#/SyntaxTemplate'
     notes:
       Type:
@@ -2301,7 +2301,7 @@ Endpoint:
       Relationship Type: Value
       Model Name: notes
       Model Representation: Attribute
-      inheritedFrom:
+      Inherited From:
       - $ref: '#/SyntaxTemplate'
     dictionaryId:
       Type:
@@ -2312,7 +2312,7 @@ Endpoint:
       Relationship Type: Ref
       Model Name: dictionary
       Model Representation: Relationship
-      inheritedFrom:
+      Inherited From:
       - $ref: '#/SyntaxTemplate'
     level:
       Type:
@@ -2869,7 +2869,7 @@ IntercurrentEvent:
       Relationship Type: Value
       Model Name: id
       Model Representation: Attribute
-      inheritedFrom:
+      Inherited From:
       - $ref: '#/SyntaxTemplate'
     name:
       Type:
@@ -2882,7 +2882,7 @@ IntercurrentEvent:
       Relationship Type: Value
       Model Name: name
       Model Representation: Attribute
-      inheritedFrom:
+      Inherited From:
       - $ref: '#/SyntaxTemplate'
     label:
       Type:
@@ -2894,7 +2894,7 @@ IntercurrentEvent:
       Relationship Type: Value
       Model Name: label
       Model Representation: Attribute
-      inheritedFrom:
+      Inherited From:
       - $ref: '#/SyntaxTemplate'
     description:
       Type:
@@ -2906,7 +2906,7 @@ IntercurrentEvent:
       Relationship Type: Value
       Model Name: description
       Model Representation: Attribute
-      inheritedFrom:
+      Inherited From:
       - $ref: '#/SyntaxTemplate'
     text:
       Type:
@@ -2919,7 +2919,7 @@ IntercurrentEvent:
       Relationship Type: Value
       Model Name: text
       Model Representation: Attribute
-      inheritedFrom:
+      Inherited From:
       - $ref: '#/SyntaxTemplate'
     notes:
       Type:
@@ -2931,7 +2931,7 @@ IntercurrentEvent:
       Relationship Type: Value
       Model Name: notes
       Model Representation: Attribute
-      inheritedFrom:
+      Inherited From:
       - $ref: '#/SyntaxTemplate'
     dictionaryId:
       Type:
@@ -2943,7 +2943,7 @@ IntercurrentEvent:
       Relationship Type: Ref
       Model Name: dictionary
       Model Representation: Relationship
-      inheritedFrom:
+      Inherited From:
       - $ref: '#/SyntaxTemplate'
     strategy:
       Type:
@@ -2983,7 +2983,7 @@ InterventionalStudyDesign:
       Relationship Type: Value
       Model Name: id
       Model Representation: Attribute
-      inheritedFrom:
+      Inherited From:
       - $ref: '#/StudyDesign'
     name:
       Type:
@@ -2996,7 +2996,7 @@ InterventionalStudyDesign:
       Relationship Type: Value
       Model Name: name
       Model Representation: Attribute
-      inheritedFrom:
+      Inherited From:
       - $ref: '#/StudyDesign'
     label:
       Type:
@@ -3008,7 +3008,7 @@ InterventionalStudyDesign:
       Relationship Type: Value
       Model Name: label
       Model Representation: Attribute
-      inheritedFrom:
+      Inherited From:
       - $ref: '#/StudyDesign'
     description:
       Type:
@@ -3020,7 +3020,7 @@ InterventionalStudyDesign:
       Relationship Type: Value
       Model Name: description
       Model Representation: Attribute
-      inheritedFrom:
+      Inherited From:
       - $ref: '#/StudyDesign'
     rationale:
       Type:
@@ -3034,7 +3034,7 @@ InterventionalStudyDesign:
       Relationship Type: Value
       Model Name: rationale
       Model Representation: Attribute
-      inheritedFrom:
+      Inherited From:
       - $ref: '#/StudyDesign'
     therapeuticAreas:
       Type:
@@ -3050,7 +3050,7 @@ InterventionalStudyDesign:
       Relationship Type: Value
       Model Name: therapeuticAreas
       Model Representation: Attribute
-      inheritedFrom:
+      Inherited From:
       - $ref: '#/StudyDesign'
     studyType:
       Type:
@@ -3062,7 +3062,7 @@ InterventionalStudyDesign:
       Relationship Type: Value
       Model Name: studyType
       Model Representation: Attribute
-      inheritedFrom:
+      Inherited From:
       - $ref: '#/StudyDesign'
     characteristics:
       Type:
@@ -3075,7 +3075,7 @@ InterventionalStudyDesign:
       Relationship Type: Value
       Model Name: characteristics
       Model Representation: Attribute
-      inheritedFrom:
+      Inherited From:
       - $ref: '#/StudyDesign'
     studyPhase:
       Type:
@@ -3087,7 +3087,7 @@ InterventionalStudyDesign:
       Relationship Type: Value
       Model Name: studyPhase
       Model Representation: Attribute
-      inheritedFrom:
+      Inherited From:
       - $ref: '#/StudyDesign'
     notes:
       Type:
@@ -3099,7 +3099,7 @@ InterventionalStudyDesign:
       Relationship Type: Value
       Model Name: notes
       Model Representation: Attribute
-      inheritedFrom:
+      Inherited From:
       - $ref: '#/StudyDesign'
     activities:
       Type:
@@ -3111,7 +3111,7 @@ InterventionalStudyDesign:
       Relationship Type: Value
       Model Name: activities
       Model Representation: Relationship
-      inheritedFrom:
+      Inherited From:
       - $ref: '#/StudyDesign'
     biospecimenRetentions:
       Type:
@@ -3123,7 +3123,7 @@ InterventionalStudyDesign:
       Relationship Type: Value
       Model Name: biospecimenRetentions
       Model Representation: Relationship
-      inheritedFrom:
+      Inherited From:
       - $ref: '#/StudyDesign'
     eligibilityCriteria:
       Type:
@@ -3135,7 +3135,7 @@ InterventionalStudyDesign:
       Relationship Type: Value
       Model Name: eligibilityCriteria
       Model Representation: Relationship
-      inheritedFrom:
+      Inherited From:
       - $ref: '#/StudyDesign'
     encounters:
       Type:
@@ -3147,7 +3147,7 @@ InterventionalStudyDesign:
       Relationship Type: Value
       Model Name: encounters
       Model Representation: Relationship
-      inheritedFrom:
+      Inherited From:
       - $ref: '#/StudyDesign'
     estimands:
       Type:
@@ -3159,7 +3159,7 @@ InterventionalStudyDesign:
       Relationship Type: Value
       Model Name: estimands
       Model Representation: Relationship
-      inheritedFrom:
+      Inherited From:
       - $ref: '#/StudyDesign'
     indications:
       Type:
@@ -3171,7 +3171,7 @@ InterventionalStudyDesign:
       Relationship Type: Value
       Model Name: indications
       Model Representation: Relationship
-      inheritedFrom:
+      Inherited From:
       - $ref: '#/StudyDesign'
     objectives:
       Type:
@@ -3183,7 +3183,7 @@ InterventionalStudyDesign:
       Relationship Type: Value
       Model Name: objectives
       Model Representation: Relationship
-      inheritedFrom:
+      Inherited From:
       - $ref: '#/StudyDesign'
     scheduleTimelines:
       Type:
@@ -3195,7 +3195,7 @@ InterventionalStudyDesign:
       Relationship Type: Value
       Model Name: scheduleTimelines
       Model Representation: Relationship
-      inheritedFrom:
+      Inherited From:
       - $ref: '#/StudyDesign'
     arms:
       Type:
@@ -3207,7 +3207,7 @@ InterventionalStudyDesign:
       Relationship Type: Value
       Model Name: arms
       Model Representation: Relationship
-      inheritedFrom:
+      Inherited From:
       - $ref: '#/StudyDesign'
     studyCells:
       Type:
@@ -3219,7 +3219,7 @@ InterventionalStudyDesign:
       Relationship Type: Value
       Model Name: studyCells
       Model Representation: Relationship
-      inheritedFrom:
+      Inherited From:
       - $ref: '#/StudyDesign'
     documentVersionIds:
       Type:
@@ -3231,7 +3231,7 @@ InterventionalStudyDesign:
       Relationship Type: Ref
       Model Name: documentVersions
       Model Representation: Relationship
-      inheritedFrom:
+      Inherited From:
       - $ref: '#/StudyDesign'
     elements:
       Type:
@@ -3243,7 +3243,7 @@ InterventionalStudyDesign:
       Relationship Type: Value
       Model Name: elements
       Model Representation: Relationship
-      inheritedFrom:
+      Inherited From:
       - $ref: '#/StudyDesign'
     studyInterventionIds:
       Type:
@@ -3255,7 +3255,7 @@ InterventionalStudyDesign:
       Relationship Type: Ref
       Model Name: studyInterventions
       Model Representation: Relationship
-      inheritedFrom:
+      Inherited From:
       - $ref: '#/StudyDesign'
     epochs:
       Type:
@@ -3267,7 +3267,7 @@ InterventionalStudyDesign:
       Relationship Type: Value
       Model Name: epochs
       Model Representation: Relationship
-      inheritedFrom:
+      Inherited From:
       - $ref: '#/StudyDesign'
     population:
       Type:
@@ -3279,7 +3279,7 @@ InterventionalStudyDesign:
       Relationship Type: Value
       Model Name: population
       Model Representation: Relationship
-      inheritedFrom:
+      Inherited From:
       - $ref: '#/StudyDesign'
     model:
       Type:
@@ -3524,7 +3524,7 @@ MedicalDeviceIdentifier:
       Relationship Type: Value
       Model Name: id
       Model Representation: Attribute
-      inheritedFrom:
+      Inherited From:
       - $ref: '#/Identifier'
     text:
       Type:
@@ -3537,7 +3537,7 @@ MedicalDeviceIdentifier:
       Relationship Type: Value
       Model Name: text
       Model Representation: Attribute
-      inheritedFrom:
+      Inherited From:
       - $ref: '#/Identifier'
     scopeId:
       Type:
@@ -3549,7 +3549,7 @@ MedicalDeviceIdentifier:
       Relationship Type: Ref
       Model Name: scope
       Model Representation: Relationship
-      inheritedFrom:
+      Inherited From:
       - $ref: '#/Identifier'
     type:
       Type:
@@ -3750,7 +3750,7 @@ Objective:
       Relationship Type: Value
       Model Name: id
       Model Representation: Attribute
-      inheritedFrom:
+      Inherited From:
       - $ref: '#/SyntaxTemplate'
     name:
       Type:
@@ -3763,7 +3763,7 @@ Objective:
       Relationship Type: Value
       Model Name: name
       Model Representation: Attribute
-      inheritedFrom:
+      Inherited From:
       - $ref: '#/SyntaxTemplate'
     label:
       Type:
@@ -3775,7 +3775,7 @@ Objective:
       Relationship Type: Value
       Model Name: label
       Model Representation: Attribute
-      inheritedFrom:
+      Inherited From:
       - $ref: '#/SyntaxTemplate'
     description:
       Type:
@@ -3787,7 +3787,7 @@ Objective:
       Relationship Type: Value
       Model Name: description
       Model Representation: Attribute
-      inheritedFrom:
+      Inherited From:
       - $ref: '#/SyntaxTemplate'
     text:
       Type:
@@ -3799,7 +3799,7 @@ Objective:
       Relationship Type: Value
       Model Name: text
       Model Representation: Attribute
-      inheritedFrom:
+      Inherited From:
       - $ref: '#/SyntaxTemplate'
     notes:
       Type:
@@ -3811,7 +3811,7 @@ Objective:
       Relationship Type: Value
       Model Name: notes
       Model Representation: Attribute
-      inheritedFrom:
+      Inherited From:
       - $ref: '#/SyntaxTemplate'
     dictionaryId:
       Type:
@@ -3822,7 +3822,7 @@ Objective:
       Relationship Type: Ref
       Model Name: dictionary
       Model Representation: Relationship
-      inheritedFrom:
+      Inherited From:
       - $ref: '#/SyntaxTemplate'
     level:
       Type:
@@ -3871,7 +3871,7 @@ ObservationalStudyDesign:
       Relationship Type: Value
       Model Name: id
       Model Representation: Attribute
-      inheritedFrom:
+      Inherited From:
       - $ref: '#/StudyDesign'
     name:
       Type:
@@ -3884,7 +3884,7 @@ ObservationalStudyDesign:
       Relationship Type: Value
       Model Name: name
       Model Representation: Attribute
-      inheritedFrom:
+      Inherited From:
       - $ref: '#/StudyDesign'
     label:
       Type:
@@ -3896,7 +3896,7 @@ ObservationalStudyDesign:
       Relationship Type: Value
       Model Name: label
       Model Representation: Attribute
-      inheritedFrom:
+      Inherited From:
       - $ref: '#/StudyDesign'
     description:
       Type:
@@ -3908,7 +3908,7 @@ ObservationalStudyDesign:
       Relationship Type: Value
       Model Name: description
       Model Representation: Attribute
-      inheritedFrom:
+      Inherited From:
       - $ref: '#/StudyDesign'
     rationale:
       Type:
@@ -3922,7 +3922,7 @@ ObservationalStudyDesign:
       Relationship Type: Value
       Model Name: rationale
       Model Representation: Attribute
-      inheritedFrom:
+      Inherited From:
       - $ref: '#/StudyDesign'
     therapeuticAreas:
       Type:
@@ -3938,7 +3938,7 @@ ObservationalStudyDesign:
       Relationship Type: Value
       Model Name: therapeuticAreas
       Model Representation: Attribute
-      inheritedFrom:
+      Inherited From:
       - $ref: '#/StudyDesign'
     studyType:
       Type:
@@ -3950,7 +3950,7 @@ ObservationalStudyDesign:
       Relationship Type: Value
       Model Name: studyType
       Model Representation: Attribute
-      inheritedFrom:
+      Inherited From:
       - $ref: '#/StudyDesign'
     characteristics:
       Type:
@@ -3963,7 +3963,7 @@ ObservationalStudyDesign:
       Relationship Type: Value
       Model Name: characteristics
       Model Representation: Attribute
-      inheritedFrom:
+      Inherited From:
       - $ref: '#/StudyDesign'
     studyPhase:
       Type:
@@ -3975,7 +3975,7 @@ ObservationalStudyDesign:
       Relationship Type: Value
       Model Name: studyPhase
       Model Representation: Attribute
-      inheritedFrom:
+      Inherited From:
       - $ref: '#/StudyDesign'
     notes:
       Type:
@@ -3987,7 +3987,7 @@ ObservationalStudyDesign:
       Relationship Type: Value
       Model Name: notes
       Model Representation: Attribute
-      inheritedFrom:
+      Inherited From:
       - $ref: '#/StudyDesign'
     activities:
       Type:
@@ -3999,7 +3999,7 @@ ObservationalStudyDesign:
       Relationship Type: Value
       Model Name: activities
       Model Representation: Relationship
-      inheritedFrom:
+      Inherited From:
       - $ref: '#/StudyDesign'
     biospecimenRetentions:
       Type:
@@ -4011,7 +4011,7 @@ ObservationalStudyDesign:
       Relationship Type: Value
       Model Name: biospecimenRetentions
       Model Representation: Relationship
-      inheritedFrom:
+      Inherited From:
       - $ref: '#/StudyDesign'
     eligibilityCriteria:
       Type:
@@ -4023,7 +4023,7 @@ ObservationalStudyDesign:
       Relationship Type: Value
       Model Name: eligibilityCriteria
       Model Representation: Relationship
-      inheritedFrom:
+      Inherited From:
       - $ref: '#/StudyDesign'
     encounters:
       Type:
@@ -4035,7 +4035,7 @@ ObservationalStudyDesign:
       Relationship Type: Value
       Model Name: encounters
       Model Representation: Relationship
-      inheritedFrom:
+      Inherited From:
       - $ref: '#/StudyDesign'
     estimands:
       Type:
@@ -4047,7 +4047,7 @@ ObservationalStudyDesign:
       Relationship Type: Value
       Model Name: estimands
       Model Representation: Relationship
-      inheritedFrom:
+      Inherited From:
       - $ref: '#/StudyDesign'
     indications:
       Type:
@@ -4059,7 +4059,7 @@ ObservationalStudyDesign:
       Relationship Type: Value
       Model Name: indications
       Model Representation: Relationship
-      inheritedFrom:
+      Inherited From:
       - $ref: '#/StudyDesign'
     objectives:
       Type:
@@ -4071,7 +4071,7 @@ ObservationalStudyDesign:
       Relationship Type: Value
       Model Name: objectives
       Model Representation: Relationship
-      inheritedFrom:
+      Inherited From:
       - $ref: '#/StudyDesign'
     scheduleTimelines:
       Type:
@@ -4083,7 +4083,7 @@ ObservationalStudyDesign:
       Relationship Type: Value
       Model Name: scheduleTimelines
       Model Representation: Relationship
-      inheritedFrom:
+      Inherited From:
       - $ref: '#/StudyDesign'
     arms:
       Type:
@@ -4095,7 +4095,7 @@ ObservationalStudyDesign:
       Relationship Type: Value
       Model Name: arms
       Model Representation: Relationship
-      inheritedFrom:
+      Inherited From:
       - $ref: '#/StudyDesign'
     studyCells:
       Type:
@@ -4107,7 +4107,7 @@ ObservationalStudyDesign:
       Relationship Type: Value
       Model Name: studyCells
       Model Representation: Relationship
-      inheritedFrom:
+      Inherited From:
       - $ref: '#/StudyDesign'
     documentVersionIds:
       Type:
@@ -4119,7 +4119,7 @@ ObservationalStudyDesign:
       Relationship Type: Ref
       Model Name: documentVersions
       Model Representation: Relationship
-      inheritedFrom:
+      Inherited From:
       - $ref: '#/StudyDesign'
     elements:
       Type:
@@ -4131,7 +4131,7 @@ ObservationalStudyDesign:
       Relationship Type: Value
       Model Name: elements
       Model Representation: Relationship
-      inheritedFrom:
+      Inherited From:
       - $ref: '#/StudyDesign'
     studyInterventionIds:
       Type:
@@ -4143,7 +4143,7 @@ ObservationalStudyDesign:
       Relationship Type: Ref
       Model Name: studyInterventions
       Model Representation: Relationship
-      inheritedFrom:
+      Inherited From:
       - $ref: '#/StudyDesign'
     epochs:
       Type:
@@ -4155,7 +4155,7 @@ ObservationalStudyDesign:
       Relationship Type: Value
       Model Name: epochs
       Model Representation: Relationship
-      inheritedFrom:
+      Inherited From:
       - $ref: '#/StudyDesign'
     population:
       Type:
@@ -4167,7 +4167,7 @@ ObservationalStudyDesign:
       Relationship Type: Value
       Model Name: population
       Model Representation: Relationship
-      inheritedFrom:
+      Inherited From:
       - $ref: '#/StudyDesign'
     model:
       Type:
@@ -4768,7 +4768,7 @@ Quantity:
       Relationship Type: Value
       Model Name: id
       Model Representation: Attribute
-      inheritedFrom:
+      Inherited From:
       - $ref: '#/QuantityRange'
     value:
       Type:
@@ -4832,7 +4832,7 @@ Range:
       Relationship Type: Value
       Model Name: id
       Model Representation: Attribute
-      inheritedFrom:
+      Inherited From:
       - $ref: '#/QuantityRange'
     minValue:
       Type:
@@ -4891,7 +4891,7 @@ ReferenceIdentifier:
       Relationship Type: Value
       Model Name: id
       Model Representation: Attribute
-      inheritedFrom:
+      Inherited From:
       - $ref: '#/Identifier'
     text:
       Type:
@@ -4903,7 +4903,7 @@ ReferenceIdentifier:
       Relationship Type: Value
       Model Name: text
       Model Representation: Attribute
-      inheritedFrom:
+      Inherited From:
       - $ref: '#/Identifier'
     scopeId:
       Type:
@@ -4915,7 +4915,7 @@ ReferenceIdentifier:
       Relationship Type: Ref
       Model Name: scope
       Model Representation: Relationship
-      inheritedFrom:
+      Inherited From:
       - $ref: '#/Identifier'
     type:
       Type:
@@ -5166,7 +5166,7 @@ ScheduledActivityInstance:
       Relationship Type: Value
       Model Name: id
       Model Representation: Attribute
-      inheritedFrom:
+      Inherited From:
       - $ref: '#/ScheduledInstance'
     name:
       Type:
@@ -5179,7 +5179,7 @@ ScheduledActivityInstance:
       Relationship Type: Value
       Model Name: name
       Model Representation: Attribute
-      inheritedFrom:
+      Inherited From:
       - $ref: '#/ScheduledInstance'
     label:
       Type:
@@ -5191,7 +5191,7 @@ ScheduledActivityInstance:
       Relationship Type: Value
       Model Name: label
       Model Representation: Attribute
-      inheritedFrom:
+      Inherited From:
       - $ref: '#/ScheduledInstance'
     description:
       Type:
@@ -5203,7 +5203,7 @@ ScheduledActivityInstance:
       Relationship Type: Value
       Model Name: description
       Model Representation: Attribute
-      inheritedFrom:
+      Inherited From:
       - $ref: '#/ScheduledInstance'
     defaultConditionId:
       Type:
@@ -5214,7 +5214,7 @@ ScheduledActivityInstance:
       Relationship Type: Ref
       Model Name: defaultCondition
       Model Representation: Relationship
-      inheritedFrom:
+      Inherited From:
       - $ref: '#/ScheduledInstance'
     epochId:
       Type:
@@ -5226,7 +5226,7 @@ ScheduledActivityInstance:
       Relationship Type: Ref
       Model Name: epoch
       Model Representation: Relationship
-      inheritedFrom:
+      Inherited From:
       - $ref: '#/ScheduledInstance'
     activityIds:
       Type:
@@ -5292,7 +5292,7 @@ ScheduledDecisionInstance:
       Relationship Type: Value
       Model Name: id
       Model Representation: Attribute
-      inheritedFrom:
+      Inherited From:
       - $ref: '#/ScheduledInstance'
     name:
       Type:
@@ -5305,7 +5305,7 @@ ScheduledDecisionInstance:
       Relationship Type: Value
       Model Name: name
       Model Representation: Attribute
-      inheritedFrom:
+      Inherited From:
       - $ref: '#/ScheduledInstance'
     label:
       Type:
@@ -5317,7 +5317,7 @@ ScheduledDecisionInstance:
       Relationship Type: Value
       Model Name: label
       Model Representation: Attribute
-      inheritedFrom:
+      Inherited From:
       - $ref: '#/ScheduledInstance'
     description:
       Type:
@@ -5329,7 +5329,7 @@ ScheduledDecisionInstance:
       Relationship Type: Value
       Model Name: description
       Model Representation: Attribute
-      inheritedFrom:
+      Inherited From:
       - $ref: '#/ScheduledInstance'
     defaultConditionId:
       Type:
@@ -5340,7 +5340,7 @@ ScheduledDecisionInstance:
       Relationship Type: Ref
       Model Name: defaultCondition
       Model Representation: Relationship
-      inheritedFrom:
+      Inherited From:
       - $ref: '#/ScheduledInstance'
     epochId:
       Type:
@@ -5352,7 +5352,7 @@ ScheduledDecisionInstance:
       Relationship Type: Ref
       Model Name: epoch
       Model Representation: Relationship
-      inheritedFrom:
+      Inherited From:
       - $ref: '#/ScheduledInstance'
     conditionAssignments:
       Type:
@@ -6124,7 +6124,7 @@ StudyCohort:
       Relationship Type: Value
       Model Name: id
       Model Representation: Attribute
-      inheritedFrom:
+      Inherited From:
       - $ref: '#/PopulationDefinition'
     name:
       Type:
@@ -6137,7 +6137,7 @@ StudyCohort:
       Relationship Type: Value
       Model Name: name
       Model Representation: Attribute
-      inheritedFrom:
+      Inherited From:
       - $ref: '#/PopulationDefinition'
     label:
       Type:
@@ -6149,7 +6149,7 @@ StudyCohort:
       Relationship Type: Value
       Model Name: label
       Model Representation: Attribute
-      inheritedFrom:
+      Inherited From:
       - $ref: '#/PopulationDefinition'
     description:
       Type:
@@ -6161,7 +6161,7 @@ StudyCohort:
       Relationship Type: Value
       Model Name: description
       Model Representation: Attribute
-      inheritedFrom:
+      Inherited From:
       - $ref: '#/PopulationDefinition'
     plannedSex:
       Type:
@@ -6173,7 +6173,7 @@ StudyCohort:
       Relationship Type: Value
       Model Name: plannedSex
       Model Representation: Attribute
-      inheritedFrom:
+      Inherited From:
       - $ref: '#/PopulationDefinition'
     includesHealthySubjects:
       Type:
@@ -6186,7 +6186,7 @@ StudyCohort:
       Relationship Type: Value
       Model Name: includesHealthySubjects
       Model Representation: Attribute
-      inheritedFrom:
+      Inherited From:
       - $ref: '#/PopulationDefinition'
     plannedAge:
       Type:
@@ -6198,7 +6198,7 @@ StudyCohort:
       Relationship Type: Value
       Model Name: plannedAge
       Model Representation: Attribute
-      inheritedFrom:
+      Inherited From:
       - $ref: '#/PopulationDefinition'
     plannedCompletionNumber:
       Type:
@@ -6212,7 +6212,7 @@ StudyCohort:
       Relationship Type: Value
       Model Name: plannedCompletionNumber
       Model Representation: Attribute
-      inheritedFrom:
+      Inherited From:
       - $ref: '#/PopulationDefinition'
     plannedEnrollmentNumber:
       Type:
@@ -6225,7 +6225,7 @@ StudyCohort:
       Relationship Type: Value
       Model Name: plannedEnrollmentNumber
       Model Representation: Attribute
-      inheritedFrom:
+      Inherited From:
       - $ref: '#/PopulationDefinition'
     notes:
       Type:
@@ -6237,7 +6237,7 @@ StudyCohort:
       Relationship Type: Value
       Model Name: notes
       Model Representation: Attribute
-      inheritedFrom:
+      Inherited From:
       - $ref: '#/PopulationDefinition'
     criterionIds:
       Type:
@@ -6249,7 +6249,7 @@ StudyCohort:
       Relationship Type: Ref
       Model Name: criteria
       Model Representation: Relationship
-      inheritedFrom:
+      Inherited From:
       - $ref: '#/PopulationDefinition'
     characteristics:
       Type:
@@ -6759,7 +6759,7 @@ StudyDesignPopulation:
       Relationship Type: Value
       Model Name: id
       Model Representation: Attribute
-      inheritedFrom:
+      Inherited From:
       - $ref: '#/PopulationDefinition'
     name:
       Type:
@@ -6772,7 +6772,7 @@ StudyDesignPopulation:
       Relationship Type: Value
       Model Name: name
       Model Representation: Attribute
-      inheritedFrom:
+      Inherited From:
       - $ref: '#/PopulationDefinition'
     label:
       Type:
@@ -6784,7 +6784,7 @@ StudyDesignPopulation:
       Relationship Type: Value
       Model Name: label
       Model Representation: Attribute
-      inheritedFrom:
+      Inherited From:
       - $ref: '#/PopulationDefinition'
     description:
       Type:
@@ -6796,7 +6796,7 @@ StudyDesignPopulation:
       Relationship Type: Value
       Model Name: description
       Model Representation: Attribute
-      inheritedFrom:
+      Inherited From:
       - $ref: '#/PopulationDefinition'
     plannedSex:
       Type:
@@ -6808,7 +6808,7 @@ StudyDesignPopulation:
       Relationship Type: Value
       Model Name: plannedSex
       Model Representation: Attribute
-      inheritedFrom:
+      Inherited From:
       - $ref: '#/PopulationDefinition'
     includesHealthySubjects:
       Type:
@@ -6822,7 +6822,7 @@ StudyDesignPopulation:
       Relationship Type: Value
       Model Name: includesHealthySubjects
       Model Representation: Attribute
-      inheritedFrom:
+      Inherited From:
       - $ref: '#/PopulationDefinition'
     plannedAge:
       Type:
@@ -6834,7 +6834,7 @@ StudyDesignPopulation:
       Relationship Type: Value
       Model Name: plannedAge
       Model Representation: Attribute
-      inheritedFrom:
+      Inherited From:
       - $ref: '#/PopulationDefinition'
     plannedCompletionNumber:
       Type:
@@ -6848,7 +6848,7 @@ StudyDesignPopulation:
       Relationship Type: Value
       Model Name: plannedCompletionNumber
       Model Representation: Attribute
-      inheritedFrom:
+      Inherited From:
       - $ref: '#/PopulationDefinition'
     plannedEnrollmentNumber:
       Type:
@@ -6861,7 +6861,7 @@ StudyDesignPopulation:
       Relationship Type: Value
       Model Name: plannedEnrollmentNumber
       Model Representation: Attribute
-      inheritedFrom:
+      Inherited From:
       - $ref: '#/PopulationDefinition'
     notes:
       Type:
@@ -6873,7 +6873,7 @@ StudyDesignPopulation:
       Relationship Type: Value
       Model Name: notes
       Model Representation: Attribute
-      inheritedFrom:
+      Inherited From:
       - $ref: '#/PopulationDefinition'
     criterionIds:
       Type:
@@ -6885,7 +6885,7 @@ StudyDesignPopulation:
       Relationship Type: Ref
       Model Name: criteria
       Model Representation: Relationship
-      inheritedFrom:
+      Inherited From:
       - $ref: '#/PopulationDefinition'
     cohorts:
       Type:
@@ -7117,7 +7117,7 @@ StudyIdentifier:
       Relationship Type: Value
       Model Name: id
       Model Representation: Attribute
-      inheritedFrom:
+      Inherited From:
       - $ref: '#/Identifier'
     text:
       Type:
@@ -7129,7 +7129,7 @@ StudyIdentifier:
       Relationship Type: Value
       Model Name: text
       Model Representation: Attribute
-      inheritedFrom:
+      Inherited From:
       - $ref: '#/Identifier'
     scopeId:
       Type:
@@ -7141,7 +7141,7 @@ StudyIdentifier:
       Relationship Type: Ref
       Model Name: scope
       Model Representation: Relationship
-      inheritedFrom:
+      Inherited From:
       - $ref: '#/Identifier'
     extensionAttributes:
       Type:
@@ -7367,8 +7367,8 @@ StudyRole:
       Model Representation: Relationship
     appliesToIds:
       Type:
-      - $ref: '#/StudyVersion'
       - $ref: '#/StudyDesign'
+      - $ref: '#/StudyVersion'
       Definition: A USDM relationship between the StudyRole and either StudyVersion
         or StudyDesign classes that identifies the study version or study design to
         which the study role applies.
