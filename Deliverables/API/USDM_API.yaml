@@ -3,16 +3,16 @@ info:
   title: DDF USDM API
   description: A simple TransCelerate Digital Data Flow (DDF) Study Definitions Repository
     API.
-  version: 3.13.0
+  version: 4.0.0
 paths:
-  /v3/studyDefinitions:
+  /v4/studyDefinitions:
     post:
       tags:
       - Production
       summary: Create a study
       description: Create an entire study including all child element with a single
         post
-      operationId: create_study_v3_studyDefinitions_post
+      operationId: create_study_v4_studyDefinitions_post
       requestBody:
         content:
           application/json:
@@ -27,7 +27,7 @@ paths:
               schema:
                 type: string
                 format: uuid
-                title: Response Create Study V3 Studydefinitions Post
+                title: Response Create Study V4 Studydefinitions Post
         '400':
           description: Bad Request
           status_code: string
@@ -44,14 +44,14 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/HTTPValidationError'
-  /v3/studyDefinitions/{studyId}:
+  /v4/studyDefinitions/{studyId}:
     put:
       tags:
       - Production
       summary: Update a study
       description: Update an entire study including all child element with a single
         put
-      operationId: update_study_v3_studyDefinitions__studyId__put
+      operationId: update_study_v4_studyDefinitions__studyId__put
       parameters:
       - name: studyId
         in: path
@@ -73,7 +73,7 @@ paths:
               schema:
                 type: string
                 format: uuid
-                title: Response Update Study V3 Studydefinitions  Studyid  Put
+                title: Response Update Study V4 Studydefinitions  Studyid  Put
         '400':
           status_code: string
           detail: string
@@ -95,7 +95,7 @@ paths:
       - Production
       summary: Return a study
       description: Return an entire study including all child elements
-      operationId: read_full_study_v3_studyDefinitions__studyId__get
+      operationId: read_full_study_v4_studyDefinitions__studyId__get
       parameters:
       - name: studyId
         in: path
@@ -126,13 +126,13 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/HTTPValidationError'
-  /v3/studyDefinitions/{studyId}/history:
+  /v4/studyDefinitions/{studyId}/history:
     get:
       tags:
       - Production
       summary: Returns the study history
       description: Returns the history for the specified study
-      operationId: read_study_history_v3_studyDefinitions__studyId__history_get
+      operationId: read_study_history_v4_studyDefinitions__studyId__history_get
       parameters:
       - name: studyId
         in: path
@@ -149,7 +149,7 @@ paths:
                 type: array
                 items:
                   $ref: '#/components/schemas/Wrapper-Output'
-                title: Response Read Study History V3 Studydefinitions  Studyid  History
+                title: Response Read Study History V4 Studydefinitions  Studyid  History
                   Get
         '400':
           status_code: string
@@ -167,13 +167,13 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/HTTPValidationError'
-  /v3/studyDesigns:
+  /v4/studyDesigns:
     get:
       tags:
       - Production
       summary: Study designs for a study
       description: Returns all the study designs for a specified study.
-      operationId: search_study_design_v3_studyDesigns_get
+      operationId: search_study_design_v4_studyDesigns_get
       parameters:
       - name: studyId
         in: query
@@ -193,7 +193,7 @@ paths:
                   anyOf:
                   - $ref: '#/components/schemas/InterventionalStudyDesign-Output'
                   - $ref: '#/components/schemas/ObservationalStudyDesign-Output'
-                title: Response Search Study Design V3 Studydesigns Get
+                title: Response Search Study Design V4 Studydesigns Get
         '400':
           status_code: string
           detail: string
