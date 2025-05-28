@@ -1,0 +1,1051 @@
+Class Name,Class Status,Class Characteristic,Attribute/Relationship Name,Attribute/Relationship Status,Attribute/Relationship Characteristic,Old Value,New Value
+MedicalDeviceIdentifier,Added,Attributes/Relationships,type,Added,Data Type,,Code
+MedicalDeviceIdentifier,Added,Attributes/Relationships,type,Added,Cardinality,,1
+MedicalDeviceIdentifier,Added,Attributes/Relationships,instanceType,Added,Data Type,,string
+MedicalDeviceIdentifier,Added,Attributes/Relationships,instanceType,Added,Cardinality,,1
+MedicalDeviceIdentifier,Added,Attributes/Relationships,extensionAttributes,Added,Data Type,,ExtensionAttribute
+MedicalDeviceIdentifier,Added,Attributes/Relationships,extensionAttributes,Added,Cardinality,,0..*
+MedicalDeviceIdentifier,Added,Attributes/Relationships,scopeId,Added,Data Type,,string
+MedicalDeviceIdentifier,Added,Attributes/Relationships,scopeId,Added,Cardinality,,1
+MedicalDeviceIdentifier,Added,Attributes/Relationships,text,Added,Data Type,,string
+MedicalDeviceIdentifier,Added,Attributes/Relationships,text,Added,Cardinality,,1
+MedicalDeviceIdentifier,Added,Attributes/Relationships,id,Added,Data Type,,string
+MedicalDeviceIdentifier,Added,Attributes/Relationships,id,Added,Cardinality,,1
+StudyAmendmentImpact,Added,Attributes/Relationships,type,Added,Data Type,,Code
+StudyAmendmentImpact,Added,Attributes/Relationships,type,Added,Cardinality,,1
+StudyAmendmentImpact,Added,Attributes/Relationships,instanceType,Added,Data Type,,string
+StudyAmendmentImpact,Added,Attributes/Relationships,instanceType,Added,Cardinality,,1
+StudyAmendmentImpact,Added,Attributes/Relationships,extensionAttributes,Added,Data Type,,ExtensionAttribute
+StudyAmendmentImpact,Added,Attributes/Relationships,extensionAttributes,Added,Cardinality,,0..*
+StudyAmendmentImpact,Added,Attributes/Relationships,text,Added,Data Type,,string
+StudyAmendmentImpact,Added,Attributes/Relationships,text,Added,Cardinality,,1
+StudyAmendmentImpact,Added,Attributes/Relationships,notes,Added,Data Type,,CommentAnnotation
+StudyAmendmentImpact,Added,Attributes/Relationships,notes,Added,Cardinality,,0..*
+StudyAmendmentImpact,Added,Attributes/Relationships,id,Added,Data Type,,string
+StudyAmendmentImpact,Added,Attributes/Relationships,id,Added,Cardinality,,1
+StudyAmendmentImpact,Added,Attributes/Relationships,isSubstantial,Added,Data Type,,boolean
+StudyAmendmentImpact,Added,Attributes/Relationships,isSubstantial,Added,Cardinality,,1
+Duration,Added,Attributes/Relationships,instanceType,Added,Data Type,,string
+Duration,Added,Attributes/Relationships,instanceType,Added,Cardinality,,1
+Duration,Added,Attributes/Relationships,extensionAttributes,Added,Data Type,,ExtensionAttribute
+Duration,Added,Attributes/Relationships,extensionAttributes,Added,Cardinality,,0..*
+Duration,Added,Attributes/Relationships,durationWillVary,Added,Data Type,,boolean
+Duration,Added,Attributes/Relationships,durationWillVary,Added,Cardinality,,1
+Duration,Added,Attributes/Relationships,reasonDurationWillVary,Added,Data Type,,string
+Duration,Added,Attributes/Relationships,reasonDurationWillVary,Added,Cardinality,,0..1
+Duration,Added,Attributes/Relationships,text,Added,Data Type,,string
+Duration,Added,Attributes/Relationships,text,Added,Cardinality,,0..1
+Duration,Added,Attributes/Relationships,id,Added,Data Type,,string
+Duration,Added,Attributes/Relationships,id,Added,Cardinality,,1
+Duration,Added,Attributes/Relationships,quantity,Added,Data Type,,"Quantity, Range"
+Duration,Added,Attributes/Relationships,quantity,Added,Cardinality,,0..1
+MedicalDevice,Added,Attributes/Relationships,instanceType,Added,Data Type,,string
+MedicalDevice,Added,Attributes/Relationships,instanceType,Added,Cardinality,,1
+MedicalDevice,Added,Attributes/Relationships,extensionAttributes,Added,Data Type,,ExtensionAttribute
+MedicalDevice,Added,Attributes/Relationships,extensionAttributes,Added,Cardinality,,0..*
+MedicalDevice,Added,Attributes/Relationships,softwareVersion,Added,Data Type,,string
+MedicalDevice,Added,Attributes/Relationships,softwareVersion,Added,Cardinality,,0..1
+MedicalDevice,Added,Attributes/Relationships,notes,Added,Data Type,,CommentAnnotation
+MedicalDevice,Added,Attributes/Relationships,notes,Added,Cardinality,,0..*
+MedicalDevice,Added,Attributes/Relationships,id,Added,Data Type,,string
+MedicalDevice,Added,Attributes/Relationships,id,Added,Cardinality,,1
+MedicalDevice,Added,Attributes/Relationships,name,Added,Data Type,,string
+MedicalDevice,Added,Attributes/Relationships,name,Added,Cardinality,,1
+MedicalDevice,Added,Attributes/Relationships,label,Added,Data Type,,string
+MedicalDevice,Added,Attributes/Relationships,label,Added,Cardinality,,0..1
+MedicalDevice,Added,Attributes/Relationships,description,Added,Data Type,,string
+MedicalDevice,Added,Attributes/Relationships,description,Added,Cardinality,,0..1
+MedicalDevice,Added,Attributes/Relationships,hardwareVersion,Added,Data Type,,string
+MedicalDevice,Added,Attributes/Relationships,hardwareVersion,Added,Cardinality,,0..1
+MedicalDevice,Added,Attributes/Relationships,embeddedProductId,Added,Data Type,,string
+MedicalDevice,Added,Attributes/Relationships,embeddedProductId,Added,Cardinality,,0..1
+MedicalDevice,Added,Attributes/Relationships,identifiers,Added,Data Type,,MedicalDeviceIdentifier
+MedicalDevice,Added,Attributes/Relationships,identifiers,Added,Cardinality,,0..*
+MedicalDevice,Added,Attributes/Relationships,sourcing,Added,Data Type,,Code
+MedicalDevice,Added,Attributes/Relationships,sourcing,Added,Cardinality,,0..1
+EligibilityCriterionItem,Added,Attributes/Relationships,instanceType,Added,Data Type,,string
+EligibilityCriterionItem,Added,Attributes/Relationships,instanceType,Added,Cardinality,,1
+EligibilityCriterionItem,Added,Attributes/Relationships,extensionAttributes,Added,Data Type,,ExtensionAttribute
+EligibilityCriterionItem,Added,Attributes/Relationships,extensionAttributes,Added,Cardinality,,0..*
+EligibilityCriterionItem,Added,Attributes/Relationships,notes,Added,Data Type,,CommentAnnotation
+EligibilityCriterionItem,Added,Attributes/Relationships,notes,Added,Cardinality,,0..*
+EligibilityCriterionItem,Added,Attributes/Relationships,id,Added,Data Type,,string
+EligibilityCriterionItem,Added,Attributes/Relationships,id,Added,Cardinality,,1
+EligibilityCriterionItem,Added,Attributes/Relationships,dictionaryId,Added,Data Type,,string
+EligibilityCriterionItem,Added,Attributes/Relationships,dictionaryId,Added,Cardinality,,0..1
+EligibilityCriterionItem,Added,Attributes/Relationships,name,Added,Data Type,,string
+EligibilityCriterionItem,Added,Attributes/Relationships,name,Added,Cardinality,,1
+EligibilityCriterionItem,Added,Attributes/Relationships,label,Added,Data Type,,string
+EligibilityCriterionItem,Added,Attributes/Relationships,label,Added,Cardinality,,0..1
+EligibilityCriterionItem,Added,Attributes/Relationships,description,Added,Data Type,,string
+EligibilityCriterionItem,Added,Attributes/Relationships,description,Added,Cardinality,,0..1
+EligibilityCriterionItem,Added,Attributes/Relationships,text,Added,Data Type,,string
+EligibilityCriterionItem,Added,Attributes/Relationships,text,Added,Cardinality,,1
+Abbreviation,Added,Attributes/Relationships,instanceType,Added,Data Type,,string
+Abbreviation,Added,Attributes/Relationships,instanceType,Added,Cardinality,,1
+Abbreviation,Added,Attributes/Relationships,extensionAttributes,Added,Data Type,,ExtensionAttribute
+Abbreviation,Added,Attributes/Relationships,extensionAttributes,Added,Cardinality,,0..*
+Abbreviation,Added,Attributes/Relationships,expandedText,Added,Data Type,,string
+Abbreviation,Added,Attributes/Relationships,expandedText,Added,Cardinality,,1
+Abbreviation,Added,Attributes/Relationships,abbreviatedText,Added,Data Type,,string
+Abbreviation,Added,Attributes/Relationships,abbreviatedText,Added,Cardinality,,1
+Abbreviation,Added,Attributes/Relationships,notes,Added,Data Type,,CommentAnnotation
+Abbreviation,Added,Attributes/Relationships,notes,Added,Cardinality,,0..*
+Abbreviation,Added,Attributes/Relationships,id,Added,Data Type,,string
+Abbreviation,Added,Attributes/Relationships,id,Added,Cardinality,,1
+AdministrableProductProperty,Added,Attributes/Relationships,type,Added,Data Type,,Code
+AdministrableProductProperty,Added,Attributes/Relationships,type,Added,Cardinality,,1
+AdministrableProductProperty,Added,Attributes/Relationships,instanceType,Added,Data Type,,string
+AdministrableProductProperty,Added,Attributes/Relationships,instanceType,Added,Cardinality,,1
+AdministrableProductProperty,Added,Attributes/Relationships,extensionAttributes,Added,Data Type,,ExtensionAttribute
+AdministrableProductProperty,Added,Attributes/Relationships,extensionAttributes,Added,Cardinality,,0..*
+AdministrableProductProperty,Added,Attributes/Relationships,text,Added,Data Type,,string
+AdministrableProductProperty,Added,Attributes/Relationships,text,Added,Cardinality,,1
+AdministrableProductProperty,Added,Attributes/Relationships,id,Added,Data Type,,string
+AdministrableProductProperty,Added,Attributes/Relationships,id,Added,Cardinality,,1
+AdministrableProductProperty,Added,Attributes/Relationships,name,Added,Data Type,,string
+AdministrableProductProperty,Added,Attributes/Relationships,name,Added,Cardinality,,1
+AdministrableProductProperty,Added,Attributes/Relationships,quantity,Added,Data Type,,Quantity
+AdministrableProductProperty,Added,Attributes/Relationships,quantity,Added,Cardinality,,0..1
+StudyDefinitionDocumentVersion,Added,Attributes/Relationships,instanceType,Added,Data Type,,string
+StudyDefinitionDocumentVersion,Added,Attributes/Relationships,instanceType,Added,Cardinality,,1
+StudyDefinitionDocumentVersion,Added,Attributes/Relationships,extensionAttributes,Added,Data Type,,ExtensionAttribute
+StudyDefinitionDocumentVersion,Added,Attributes/Relationships,extensionAttributes,Added,Cardinality,,0..*
+StudyDefinitionDocumentVersion,Added,Attributes/Relationships,dateValues,Added,Data Type,,GovernanceDate
+StudyDefinitionDocumentVersion,Added,Attributes/Relationships,dateValues,Added,Cardinality,,0..*
+StudyDefinitionDocumentVersion,Added,Attributes/Relationships,notes,Added,Data Type,,CommentAnnotation
+StudyDefinitionDocumentVersion,Added,Attributes/Relationships,notes,Added,Cardinality,,0..*
+StudyDefinitionDocumentVersion,Added,Attributes/Relationships,id,Added,Data Type,,string
+StudyDefinitionDocumentVersion,Added,Attributes/Relationships,id,Added,Cardinality,,1
+StudyDefinitionDocumentVersion,Added,Attributes/Relationships,contents,Added,Data Type,,NarrativeContent
+StudyDefinitionDocumentVersion,Added,Attributes/Relationships,contents,Added,Cardinality,,0..*
+StudyDefinitionDocumentVersion,Added,Attributes/Relationships,version,Added,Data Type,,string
+StudyDefinitionDocumentVersion,Added,Attributes/Relationships,version,Added,Cardinality,,1
+StudyDefinitionDocumentVersion,Added,Attributes/Relationships,status,Added,Data Type,,Code
+StudyDefinitionDocumentVersion,Added,Attributes/Relationships,status,Added,Cardinality,,1
+AssignedPerson,Added,Attributes/Relationships,instanceType,Added,Data Type,,string
+AssignedPerson,Added,Attributes/Relationships,instanceType,Added,Cardinality,,1
+AssignedPerson,Added,Attributes/Relationships,extensionAttributes,Added,Data Type,,ExtensionAttribute
+AssignedPerson,Added,Attributes/Relationships,extensionAttributes,Added,Cardinality,,0..*
+AssignedPerson,Added,Attributes/Relationships,jobTitle,Added,Data Type,,string
+AssignedPerson,Added,Attributes/Relationships,jobTitle,Added,Cardinality,,1
+AssignedPerson,Added,Attributes/Relationships,id,Added,Data Type,,string
+AssignedPerson,Added,Attributes/Relationships,id,Added,Cardinality,,1
+AssignedPerson,Added,Attributes/Relationships,name,Added,Data Type,,string
+AssignedPerson,Added,Attributes/Relationships,name,Added,Cardinality,,1
+AssignedPerson,Added,Attributes/Relationships,label,Added,Data Type,,string
+AssignedPerson,Added,Attributes/Relationships,label,Added,Cardinality,,0..1
+AssignedPerson,Added,Attributes/Relationships,description,Added,Data Type,,string
+AssignedPerson,Added,Attributes/Relationships,description,Added,Cardinality,,0..1
+AssignedPerson,Added,Attributes/Relationships,organizationId,Added,Data Type,,string
+AssignedPerson,Added,Attributes/Relationships,organizationId,Added,Cardinality,,0..1
+AssignedPerson,Added,Attributes/Relationships,personName,Added,Data Type,,PersonName
+AssignedPerson,Added,Attributes/Relationships,personName,Added,Cardinality,,1
+ReferenceIdentifier,Added,Attributes/Relationships,type,Added,Data Type,,Code
+ReferenceIdentifier,Added,Attributes/Relationships,type,Added,Cardinality,,1
+ReferenceIdentifier,Added,Attributes/Relationships,instanceType,Added,Data Type,,string
+ReferenceIdentifier,Added,Attributes/Relationships,instanceType,Added,Cardinality,,1
+ReferenceIdentifier,Added,Attributes/Relationships,extensionAttributes,Added,Data Type,,ExtensionAttribute
+ReferenceIdentifier,Added,Attributes/Relationships,extensionAttributes,Added,Cardinality,,0..*
+ReferenceIdentifier,Added,Attributes/Relationships,scopeId,Added,Data Type,,string
+ReferenceIdentifier,Added,Attributes/Relationships,scopeId,Added,Cardinality,,1
+ReferenceIdentifier,Added,Attributes/Relationships,text,Added,Data Type,,string
+ReferenceIdentifier,Added,Attributes/Relationships,text,Added,Cardinality,,1
+ReferenceIdentifier,Added,Attributes/Relationships,id,Added,Data Type,,string
+ReferenceIdentifier,Added,Attributes/Relationships,id,Added,Cardinality,,1
+Strength,Added,Attributes/Relationships,instanceType,Added,Data Type,,string
+Strength,Added,Attributes/Relationships,instanceType,Added,Cardinality,,1
+Strength,Added,Attributes/Relationships,extensionAttributes,Added,Data Type,,ExtensionAttribute
+Strength,Added,Attributes/Relationships,extensionAttributes,Added,Cardinality,,0..*
+Strength,Added,Attributes/Relationships,id,Added,Data Type,,string
+Strength,Added,Attributes/Relationships,id,Added,Cardinality,,1
+Strength,Added,Attributes/Relationships,denominator,Added,Data Type,,Quantity
+Strength,Added,Attributes/Relationships,denominator,Added,Cardinality,,0..1
+Strength,Added,Attributes/Relationships,name,Added,Data Type,,string
+Strength,Added,Attributes/Relationships,name,Added,Cardinality,,1
+Strength,Added,Attributes/Relationships,label,Added,Data Type,,string
+Strength,Added,Attributes/Relationships,label,Added,Cardinality,,0..1
+Strength,Added,Attributes/Relationships,description,Added,Data Type,,string
+Strength,Added,Attributes/Relationships,description,Added,Cardinality,,0..1
+Strength,Added,Attributes/Relationships,numerator,Added,Data Type,,"Quantity, Range"
+Strength,Added,Attributes/Relationships,numerator,Added,Cardinality,,1
+ProductOrganizationRole,Added,Attributes/Relationships,instanceType,Added,Data Type,,string
+ProductOrganizationRole,Added,Attributes/Relationships,instanceType,Added,Cardinality,,1
+ProductOrganizationRole,Added,Attributes/Relationships,extensionAttributes,Added,Data Type,,ExtensionAttribute
+ProductOrganizationRole,Added,Attributes/Relationships,extensionAttributes,Added,Cardinality,,0..*
+ProductOrganizationRole,Added,Attributes/Relationships,code,Added,Data Type,,Code
+ProductOrganizationRole,Added,Attributes/Relationships,code,Added,Cardinality,,1
+ProductOrganizationRole,Added,Attributes/Relationships,appliesToIds,Added,Data Type,,string
+ProductOrganizationRole,Added,Attributes/Relationships,appliesToIds,Added,Cardinality,,0..*
+ProductOrganizationRole,Added,Attributes/Relationships,id,Added,Data Type,,string
+ProductOrganizationRole,Added,Attributes/Relationships,id,Added,Cardinality,,1
+ProductOrganizationRole,Added,Attributes/Relationships,name,Added,Data Type,,string
+ProductOrganizationRole,Added,Attributes/Relationships,name,Added,Cardinality,,1
+ProductOrganizationRole,Added,Attributes/Relationships,label,Added,Data Type,,string
+ProductOrganizationRole,Added,Attributes/Relationships,label,Added,Cardinality,,0..1
+ProductOrganizationRole,Added,Attributes/Relationships,description,Added,Data Type,,string
+ProductOrganizationRole,Added,Attributes/Relationships,description,Added,Cardinality,,0..1
+ProductOrganizationRole,Added,Attributes/Relationships,organizationId,Added,Data Type,,string
+ProductOrganizationRole,Added,Attributes/Relationships,organizationId,Added,Cardinality,,1
+ExtensionAttribute,Added,Attributes/Relationships,valueId,Added,Data Type,,string
+ExtensionAttribute,Added,Attributes/Relationships,valueId,Added,Cardinality,,0..1
+ExtensionAttribute,Added,Attributes/Relationships,instanceType,Added,Data Type,,string
+ExtensionAttribute,Added,Attributes/Relationships,instanceType,Added,Cardinality,,1
+ExtensionAttribute,Added,Attributes/Relationships,extensionAttributes,Added,Data Type,,ExtensionAttribute
+ExtensionAttribute,Added,Attributes/Relationships,extensionAttributes,Added,Cardinality,,0..*
+ExtensionAttribute,Added,Attributes/Relationships,valueCode,Added,Data Type,,Code
+ExtensionAttribute,Added,Attributes/Relationships,valueCode,Added,Cardinality,,0..1
+ExtensionAttribute,Added,Attributes/Relationships,valueQuantity,Added,Data Type,,Quantity
+ExtensionAttribute,Added,Attributes/Relationships,valueQuantity,Added,Cardinality,,0..1
+ExtensionAttribute,Added,Attributes/Relationships,id,Added,Data Type,,string
+ExtensionAttribute,Added,Attributes/Relationships,id,Added,Cardinality,,1
+ExtensionAttribute,Added,Attributes/Relationships,valueInteger,Added,Data Type,,integer
+ExtensionAttribute,Added,Attributes/Relationships,valueInteger,Added,Cardinality,,0..1
+ExtensionAttribute,Added,Attributes/Relationships,valueRange,Added,Data Type,,Range
+ExtensionAttribute,Added,Attributes/Relationships,valueRange,Added,Cardinality,,0..1
+ExtensionAttribute,Added,Attributes/Relationships,valueExtensionClass,Added,Data Type,,ExtensionClass
+ExtensionAttribute,Added,Attributes/Relationships,valueExtensionClass,Added,Cardinality,,0..1
+ExtensionAttribute,Added,Attributes/Relationships,valueBoolean,Added,Data Type,,boolean
+ExtensionAttribute,Added,Attributes/Relationships,valueBoolean,Added,Cardinality,,0..1
+ExtensionAttribute,Added,Attributes/Relationships,valueString,Added,Data Type,,string
+ExtensionAttribute,Added,Attributes/Relationships,valueString,Added,Cardinality,,0..1
+ExtensionAttribute,Added,Attributes/Relationships,valueAliasCode,Added,Data Type,,AliasCode
+ExtensionAttribute,Added,Attributes/Relationships,valueAliasCode,Added,Cardinality,,0..1
+ExtensionAttribute,Added,Attributes/Relationships,url,Added,Data Type,,string
+ExtensionAttribute,Added,Attributes/Relationships,url,Added,Cardinality,,1
+PersonName,Added,Attributes/Relationships,givenNames,Added,Data Type,,string
+PersonName,Added,Attributes/Relationships,givenNames,Added,Cardinality,,0..*
+PersonName,Added,Attributes/Relationships,instanceType,Added,Data Type,,string
+PersonName,Added,Attributes/Relationships,instanceType,Added,Cardinality,,1
+PersonName,Added,Attributes/Relationships,extensionAttributes,Added,Data Type,,ExtensionAttribute
+PersonName,Added,Attributes/Relationships,extensionAttributes,Added,Cardinality,,0..*
+PersonName,Added,Attributes/Relationships,suffixes,Added,Data Type,,string
+PersonName,Added,Attributes/Relationships,suffixes,Added,Cardinality,,0..*
+PersonName,Added,Attributes/Relationships,id,Added,Data Type,,string
+PersonName,Added,Attributes/Relationships,id,Added,Cardinality,,1
+PersonName,Added,Attributes/Relationships,text,Added,Data Type,,string
+PersonName,Added,Attributes/Relationships,text,Added,Cardinality,,0..1
+PersonName,Added,Attributes/Relationships,prefixes,Added,Data Type,,string
+PersonName,Added,Attributes/Relationships,prefixes,Added,Cardinality,,0..*
+PersonName,Added,Attributes/Relationships,familyName,Added,Data Type,,string
+PersonName,Added,Attributes/Relationships,familyName,Added,Cardinality,,0..1
+ExtensionClass,Added,Attributes/Relationships,instanceType,Added,Data Type,,string
+ExtensionClass,Added,Attributes/Relationships,instanceType,Added,Cardinality,,1
+ExtensionClass,Added,Attributes/Relationships,extensionAttributes,Added,Data Type,,ExtensionAttribute
+ExtensionClass,Added,Attributes/Relationships,extensionAttributes,Added,Cardinality,,1..*
+ExtensionClass,Added,Attributes/Relationships,id,Added,Data Type,,string
+ExtensionClass,Added,Attributes/Relationships,id,Added,Cardinality,,1
+ExtensionClass,Added,Attributes/Relationships,url,Added,Data Type,,string
+ExtensionClass,Added,Attributes/Relationships,url,Added,Cardinality,,1
+StudyRole,Added,Attributes/Relationships,instanceType,Added,Data Type,,string
+StudyRole,Added,Attributes/Relationships,instanceType,Added,Cardinality,,1
+StudyRole,Added,Attributes/Relationships,extensionAttributes,Added,Data Type,,ExtensionAttribute
+StudyRole,Added,Attributes/Relationships,extensionAttributes,Added,Cardinality,,0..*
+StudyRole,Added,Attributes/Relationships,code,Added,Data Type,,Code
+StudyRole,Added,Attributes/Relationships,code,Added,Cardinality,,1
+StudyRole,Added,Attributes/Relationships,masking,Added,Data Type,,Masking
+StudyRole,Added,Attributes/Relationships,masking,Added,Cardinality,,0..1
+StudyRole,Added,Attributes/Relationships,notes,Added,Data Type,,CommentAnnotation
+StudyRole,Added,Attributes/Relationships,notes,Added,Cardinality,,0..*
+StudyRole,Added,Attributes/Relationships,appliesToIds,Added,Data Type,,string
+StudyRole,Added,Attributes/Relationships,appliesToIds,Added,Cardinality,,0..*
+StudyRole,Added,Attributes/Relationships,id,Added,Data Type,,string
+StudyRole,Added,Attributes/Relationships,id,Added,Cardinality,,1
+StudyRole,Added,Attributes/Relationships,name,Added,Data Type,,string
+StudyRole,Added,Attributes/Relationships,name,Added,Cardinality,,1
+StudyRole,Added,Attributes/Relationships,label,Added,Data Type,,string
+StudyRole,Added,Attributes/Relationships,label,Added,Cardinality,,0..1
+StudyRole,Added,Attributes/Relationships,description,Added,Data Type,,string
+StudyRole,Added,Attributes/Relationships,description,Added,Cardinality,,0..1
+StudyRole,Added,Attributes/Relationships,assignedPersons,Added,Data Type,,AssignedPerson
+StudyRole,Added,Attributes/Relationships,assignedPersons,Added,Cardinality,,0..*
+StudyRole,Added,Attributes/Relationships,organizationIds,Added,Data Type,,string
+StudyRole,Added,Attributes/Relationships,organizationIds,Added,Cardinality,,0..*
+ObservationalStudyDesign,Added,Attributes/Relationships,arms,Added,Data Type,,StudyArm
+ObservationalStudyDesign,Added,Attributes/Relationships,arms,Added,Cardinality,,1..*
+ObservationalStudyDesign,Added,Attributes/Relationships,label,Added,Data Type,,string
+ObservationalStudyDesign,Added,Attributes/Relationships,label,Added,Cardinality,,0..1
+ObservationalStudyDesign,Added,Attributes/Relationships,description,Added,Data Type,,string
+ObservationalStudyDesign,Added,Attributes/Relationships,description,Added,Cardinality,,0..1
+ObservationalStudyDesign,Added,Attributes/Relationships,biospecimenRetentions,Added,Data Type,,BiospecimenRetention
+ObservationalStudyDesign,Added,Attributes/Relationships,biospecimenRetentions,Added,Cardinality,,0..*
+ObservationalStudyDesign,Added,Attributes/Relationships,indications,Added,Data Type,,Indication
+ObservationalStudyDesign,Added,Attributes/Relationships,indications,Added,Cardinality,,0..*
+ObservationalStudyDesign,Added,Attributes/Relationships,elements,Added,Data Type,,StudyElement
+ObservationalStudyDesign,Added,Attributes/Relationships,elements,Added,Cardinality,,0..*
+ObservationalStudyDesign,Added,Attributes/Relationships,notes,Added,Data Type,,CommentAnnotation
+ObservationalStudyDesign,Added,Attributes/Relationships,notes,Added,Cardinality,,0..*
+ObservationalStudyDesign,Added,Attributes/Relationships,therapeuticAreas,Added,Data Type,,Code
+ObservationalStudyDesign,Added,Attributes/Relationships,therapeuticAreas,Added,Cardinality,,0..*
+ObservationalStudyDesign,Added,Attributes/Relationships,model,Added,Data Type,,Code
+ObservationalStudyDesign,Added,Attributes/Relationships,model,Added,Cardinality,,1
+ObservationalStudyDesign,Added,Attributes/Relationships,characteristics,Added,Data Type,,Code
+ObservationalStudyDesign,Added,Attributes/Relationships,characteristics,Added,Cardinality,,0..*
+ObservationalStudyDesign,Added,Attributes/Relationships,studyInterventionIds,Added,Data Type,,string
+ObservationalStudyDesign,Added,Attributes/Relationships,studyInterventionIds,Added,Cardinality,,0..*
+ObservationalStudyDesign,Added,Attributes/Relationships,activities,Added,Data Type,,Activity
+ObservationalStudyDesign,Added,Attributes/Relationships,activities,Added,Cardinality,,0..*
+ObservationalStudyDesign,Added,Attributes/Relationships,instanceType,Added,Data Type,,string
+ObservationalStudyDesign,Added,Attributes/Relationships,instanceType,Added,Cardinality,,1
+ObservationalStudyDesign,Added,Attributes/Relationships,rationale,Added,Data Type,,string
+ObservationalStudyDesign,Added,Attributes/Relationships,rationale,Added,Cardinality,,1
+ObservationalStudyDesign,Added,Attributes/Relationships,subTypes,Added,Data Type,,Code
+ObservationalStudyDesign,Added,Attributes/Relationships,subTypes,Added,Cardinality,,0..*
+ObservationalStudyDesign,Added,Attributes/Relationships,id,Added,Data Type,,string
+ObservationalStudyDesign,Added,Attributes/Relationships,id,Added,Cardinality,,1
+ObservationalStudyDesign,Added,Attributes/Relationships,name,Added,Data Type,,string
+ObservationalStudyDesign,Added,Attributes/Relationships,name,Added,Cardinality,,1
+ObservationalStudyDesign,Added,Attributes/Relationships,objectives,Added,Data Type,,Objective
+ObservationalStudyDesign,Added,Attributes/Relationships,objectives,Added,Cardinality,,0..*
+ObservationalStudyDesign,Added,Attributes/Relationships,population,Added,Data Type,,StudyDesignPopulation
+ObservationalStudyDesign,Added,Attributes/Relationships,population,Added,Cardinality,,1
+ObservationalStudyDesign,Added,Attributes/Relationships,studyPhase,Added,Data Type,,AliasCode
+ObservationalStudyDesign,Added,Attributes/Relationships,studyPhase,Added,Cardinality,,0..1
+ObservationalStudyDesign,Added,Attributes/Relationships,estimands,Added,Data Type,,Estimand
+ObservationalStudyDesign,Added,Attributes/Relationships,estimands,Added,Cardinality,,0..*
+ObservationalStudyDesign,Added,Attributes/Relationships,timePerspective,Added,Data Type,,Code
+ObservationalStudyDesign,Added,Attributes/Relationships,timePerspective,Added,Cardinality,,1
+ObservationalStudyDesign,Added,Attributes/Relationships,scheduleTimelines,Added,Data Type,,ScheduleTimeline
+ObservationalStudyDesign,Added,Attributes/Relationships,scheduleTimelines,Added,Cardinality,,0..*
+ObservationalStudyDesign,Added,Attributes/Relationships,extensionAttributes,Added,Data Type,,ExtensionAttribute
+ObservationalStudyDesign,Added,Attributes/Relationships,extensionAttributes,Added,Cardinality,,0..*
+ObservationalStudyDesign,Added,Attributes/Relationships,studyType,Added,Data Type,,Code
+ObservationalStudyDesign,Added,Attributes/Relationships,studyType,Added,Cardinality,,0..1
+ObservationalStudyDesign,Added,Attributes/Relationships,eligibilityCriteria,Added,Data Type,,EligibilityCriterion
+ObservationalStudyDesign,Added,Attributes/Relationships,eligibilityCriteria,Added,Cardinality,,1..*
+ObservationalStudyDesign,Added,Attributes/Relationships,epochs,Added,Data Type,,StudyEpoch
+ObservationalStudyDesign,Added,Attributes/Relationships,epochs,Added,Cardinality,,1..*
+ObservationalStudyDesign,Added,Attributes/Relationships,analysisPopulations,Added,Data Type,,AnalysisPopulation
+ObservationalStudyDesign,Added,Attributes/Relationships,analysisPopulations,Added,Cardinality,,0..*
+ObservationalStudyDesign,Added,Attributes/Relationships,encounters,Added,Data Type,,Encounter
+ObservationalStudyDesign,Added,Attributes/Relationships,encounters,Added,Cardinality,,0..*
+ObservationalStudyDesign,Added,Attributes/Relationships,studyCells,Added,Data Type,,StudyCell
+ObservationalStudyDesign,Added,Attributes/Relationships,studyCells,Added,Cardinality,,1..*
+ObservationalStudyDesign,Added,Attributes/Relationships,documentVersionIds,Added,Data Type,,string
+ObservationalStudyDesign,Added,Attributes/Relationships,documentVersionIds,Added,Cardinality,,0..*
+ObservationalStudyDesign,Added,Attributes/Relationships,samplingMethod,Added,Data Type,,Code
+ObservationalStudyDesign,Added,Attributes/Relationships,samplingMethod,Added,Cardinality,,0..1
+NarrativeContentItem,Added,Attributes/Relationships,instanceType,Added,Data Type,,string
+NarrativeContentItem,Added,Attributes/Relationships,instanceType,Added,Cardinality,,1
+NarrativeContentItem,Added,Attributes/Relationships,extensionAttributes,Added,Data Type,,ExtensionAttribute
+NarrativeContentItem,Added,Attributes/Relationships,extensionAttributes,Added,Cardinality,,0..*
+NarrativeContentItem,Added,Attributes/Relationships,text,Added,Data Type,,string
+NarrativeContentItem,Added,Attributes/Relationships,text,Added,Cardinality,,1
+NarrativeContentItem,Added,Attributes/Relationships,id,Added,Data Type,,string
+NarrativeContentItem,Added,Attributes/Relationships,id,Added,Cardinality,,1
+NarrativeContentItem,Added,Attributes/Relationships,name,Added,Data Type,,string
+NarrativeContentItem,Added,Attributes/Relationships,name,Added,Cardinality,,1
+StudyDefinitionDocument,Added,Attributes/Relationships,language,Added,Data Type,,Code
+StudyDefinitionDocument,Added,Attributes/Relationships,language,Added,Cardinality,,1
+StudyDefinitionDocument,Added,Attributes/Relationships,type,Added,Data Type,,Code
+StudyDefinitionDocument,Added,Attributes/Relationships,type,Added,Cardinality,,1
+StudyDefinitionDocument,Added,Attributes/Relationships,extensionAttributes,Added,Data Type,,ExtensionAttribute
+StudyDefinitionDocument,Added,Attributes/Relationships,extensionAttributes,Added,Cardinality,,0..*
+StudyDefinitionDocument,Added,Attributes/Relationships,versions,Added,Data Type,,StudyDefinitionDocumentVersion
+StudyDefinitionDocument,Added,Attributes/Relationships,versions,Added,Cardinality,,0..*
+StudyDefinitionDocument,Added,Attributes/Relationships,instanceType,Added,Data Type,,string
+StudyDefinitionDocument,Added,Attributes/Relationships,instanceType,Added,Cardinality,,1
+StudyDefinitionDocument,Added,Attributes/Relationships,childIds,Added,Data Type,,string
+StudyDefinitionDocument,Added,Attributes/Relationships,childIds,Added,Cardinality,,0..*
+StudyDefinitionDocument,Added,Attributes/Relationships,notes,Added,Data Type,,CommentAnnotation
+StudyDefinitionDocument,Added,Attributes/Relationships,notes,Added,Cardinality,,0..*
+StudyDefinitionDocument,Added,Attributes/Relationships,id,Added,Data Type,,string
+StudyDefinitionDocument,Added,Attributes/Relationships,id,Added,Cardinality,,1
+StudyDefinitionDocument,Added,Attributes/Relationships,name,Added,Data Type,,string
+StudyDefinitionDocument,Added,Attributes/Relationships,name,Added,Cardinality,,1
+StudyDefinitionDocument,Added,Attributes/Relationships,label,Added,Data Type,,string
+StudyDefinitionDocument,Added,Attributes/Relationships,label,Added,Cardinality,,0..1
+StudyDefinitionDocument,Added,Attributes/Relationships,description,Added,Data Type,,string
+StudyDefinitionDocument,Added,Attributes/Relationships,description,Added,Cardinality,,0..1
+StudyDefinitionDocument,Added,Attributes/Relationships,templateName,Added,Data Type,,string
+StudyDefinitionDocument,Added,Attributes/Relationships,templateName,Added,Cardinality,,1
+CommentAnnotation,Added,Attributes/Relationships,instanceType,Added,Data Type,,string
+CommentAnnotation,Added,Attributes/Relationships,instanceType,Added,Cardinality,,1
+CommentAnnotation,Added,Attributes/Relationships,extensionAttributes,Added,Data Type,,ExtensionAttribute
+CommentAnnotation,Added,Attributes/Relationships,extensionAttributes,Added,Cardinality,,0..*
+CommentAnnotation,Added,Attributes/Relationships,codes,Added,Data Type,,Code
+CommentAnnotation,Added,Attributes/Relationships,codes,Added,Cardinality,,0..*
+CommentAnnotation,Added,Attributes/Relationships,text,Added,Data Type,,string
+CommentAnnotation,Added,Attributes/Relationships,text,Added,Cardinality,,1
+CommentAnnotation,Added,Attributes/Relationships,id,Added,Data Type,,string
+CommentAnnotation,Added,Attributes/Relationships,id,Added,Cardinality,,1
+Administration,Added,Attributes/Relationships,instanceType,Added,Data Type,,string
+Administration,Added,Attributes/Relationships,instanceType,Added,Cardinality,,1
+Administration,Added,Attributes/Relationships,extensionAttributes,Added,Data Type,,ExtensionAttribute
+Administration,Added,Attributes/Relationships,extensionAttributes,Added,Cardinality,,0..*
+Administration,Added,Attributes/Relationships,notes,Added,Data Type,,CommentAnnotation
+Administration,Added,Attributes/Relationships,notes,Added,Cardinality,,0..*
+Administration,Added,Attributes/Relationships,dose,Added,Data Type,,Quantity
+Administration,Added,Attributes/Relationships,dose,Added,Cardinality,,0..1
+Administration,Added,Attributes/Relationships,id,Added,Data Type,,string
+Administration,Added,Attributes/Relationships,id,Added,Cardinality,,1
+Administration,Added,Attributes/Relationships,name,Added,Data Type,,string
+Administration,Added,Attributes/Relationships,name,Added,Cardinality,,1
+Administration,Added,Attributes/Relationships,label,Added,Data Type,,string
+Administration,Added,Attributes/Relationships,label,Added,Cardinality,,0..1
+Administration,Added,Attributes/Relationships,description,Added,Data Type,,string
+Administration,Added,Attributes/Relationships,description,Added,Cardinality,,0..1
+Administration,Added,Attributes/Relationships,frequency,Added,Data Type,,AliasCode
+Administration,Added,Attributes/Relationships,frequency,Added,Cardinality,,0..1
+Administration,Added,Attributes/Relationships,administrableProductId,Added,Data Type,,string
+Administration,Added,Attributes/Relationships,administrableProductId,Added,Cardinality,,0..1
+Administration,Added,Attributes/Relationships,medicalDeviceId,Added,Data Type,,string
+Administration,Added,Attributes/Relationships,medicalDeviceId,Added,Cardinality,,0..1
+Administration,Added,Attributes/Relationships,route,Added,Data Type,,AliasCode
+Administration,Added,Attributes/Relationships,route,Added,Cardinality,,0..1
+Administration,Added,Attributes/Relationships,duration,Added,Data Type,,Duration
+Administration,Added,Attributes/Relationships,duration,Added,Cardinality,,1
+InterventionalStudyDesign,Added,Attributes/Relationships,arms,Added,Data Type,,StudyArm
+InterventionalStudyDesign,Added,Attributes/Relationships,arms,Added,Cardinality,,1..*
+InterventionalStudyDesign,Added,Attributes/Relationships,label,Added,Data Type,,string
+InterventionalStudyDesign,Added,Attributes/Relationships,label,Added,Cardinality,,0..1
+InterventionalStudyDesign,Added,Attributes/Relationships,description,Added,Data Type,,string
+InterventionalStudyDesign,Added,Attributes/Relationships,description,Added,Cardinality,,0..1
+InterventionalStudyDesign,Added,Attributes/Relationships,biospecimenRetentions,Added,Data Type,,BiospecimenRetention
+InterventionalStudyDesign,Added,Attributes/Relationships,biospecimenRetentions,Added,Cardinality,,0..*
+InterventionalStudyDesign,Added,Attributes/Relationships,indications,Added,Data Type,,Indication
+InterventionalStudyDesign,Added,Attributes/Relationships,indications,Added,Cardinality,,0..*
+InterventionalStudyDesign,Added,Attributes/Relationships,elements,Added,Data Type,,StudyElement
+InterventionalStudyDesign,Added,Attributes/Relationships,elements,Added,Cardinality,,0..*
+InterventionalStudyDesign,Added,Attributes/Relationships,blindingSchema,Added,Data Type,,AliasCode
+InterventionalStudyDesign,Added,Attributes/Relationships,blindingSchema,Added,Cardinality,,0..1
+InterventionalStudyDesign,Added,Attributes/Relationships,notes,Added,Data Type,,CommentAnnotation
+InterventionalStudyDesign,Added,Attributes/Relationships,notes,Added,Cardinality,,0..*
+InterventionalStudyDesign,Added,Attributes/Relationships,therapeuticAreas,Added,Data Type,,Code
+InterventionalStudyDesign,Added,Attributes/Relationships,therapeuticAreas,Added,Cardinality,,0..*
+InterventionalStudyDesign,Added,Attributes/Relationships,model,Added,Data Type,,Code
+InterventionalStudyDesign,Added,Attributes/Relationships,model,Added,Cardinality,,1
+InterventionalStudyDesign,Added,Attributes/Relationships,characteristics,Added,Data Type,,Code
+InterventionalStudyDesign,Added,Attributes/Relationships,characteristics,Added,Cardinality,,0..*
+InterventionalStudyDesign,Added,Attributes/Relationships,studyInterventionIds,Added,Data Type,,string
+InterventionalStudyDesign,Added,Attributes/Relationships,studyInterventionIds,Added,Cardinality,,0..*
+InterventionalStudyDesign,Added,Attributes/Relationships,activities,Added,Data Type,,Activity
+InterventionalStudyDesign,Added,Attributes/Relationships,activities,Added,Cardinality,,0..*
+InterventionalStudyDesign,Added,Attributes/Relationships,instanceType,Added,Data Type,,string
+InterventionalStudyDesign,Added,Attributes/Relationships,instanceType,Added,Cardinality,,1
+InterventionalStudyDesign,Added,Attributes/Relationships,rationale,Added,Data Type,,string
+InterventionalStudyDesign,Added,Attributes/Relationships,rationale,Added,Cardinality,,1
+InterventionalStudyDesign,Added,Attributes/Relationships,subTypes,Added,Data Type,,Code
+InterventionalStudyDesign,Added,Attributes/Relationships,subTypes,Added,Cardinality,,0..*
+InterventionalStudyDesign,Added,Attributes/Relationships,id,Added,Data Type,,string
+InterventionalStudyDesign,Added,Attributes/Relationships,id,Added,Cardinality,,1
+InterventionalStudyDesign,Added,Attributes/Relationships,name,Added,Data Type,,string
+InterventionalStudyDesign,Added,Attributes/Relationships,name,Added,Cardinality,,1
+InterventionalStudyDesign,Added,Attributes/Relationships,intentTypes,Added,Data Type,,Code
+InterventionalStudyDesign,Added,Attributes/Relationships,intentTypes,Added,Cardinality,,0..*
+InterventionalStudyDesign,Added,Attributes/Relationships,objectives,Added,Data Type,,Objective
+InterventionalStudyDesign,Added,Attributes/Relationships,objectives,Added,Cardinality,,0..*
+InterventionalStudyDesign,Added,Attributes/Relationships,population,Added,Data Type,,StudyDesignPopulation
+InterventionalStudyDesign,Added,Attributes/Relationships,population,Added,Cardinality,,1
+InterventionalStudyDesign,Added,Attributes/Relationships,studyPhase,Added,Data Type,,AliasCode
+InterventionalStudyDesign,Added,Attributes/Relationships,studyPhase,Added,Cardinality,,0..1
+InterventionalStudyDesign,Added,Attributes/Relationships,estimands,Added,Data Type,,Estimand
+InterventionalStudyDesign,Added,Attributes/Relationships,estimands,Added,Cardinality,,0..*
+InterventionalStudyDesign,Added,Attributes/Relationships,scheduleTimelines,Added,Data Type,,ScheduleTimeline
+InterventionalStudyDesign,Added,Attributes/Relationships,scheduleTimelines,Added,Cardinality,,0..*
+InterventionalStudyDesign,Added,Attributes/Relationships,extensionAttributes,Added,Data Type,,ExtensionAttribute
+InterventionalStudyDesign,Added,Attributes/Relationships,extensionAttributes,Added,Cardinality,,0..*
+InterventionalStudyDesign,Added,Attributes/Relationships,studyType,Added,Data Type,,Code
+InterventionalStudyDesign,Added,Attributes/Relationships,studyType,Added,Cardinality,,0..1
+InterventionalStudyDesign,Added,Attributes/Relationships,eligibilityCriteria,Added,Data Type,,EligibilityCriterion
+InterventionalStudyDesign,Added,Attributes/Relationships,eligibilityCriteria,Added,Cardinality,,1..*
+InterventionalStudyDesign,Added,Attributes/Relationships,epochs,Added,Data Type,,StudyEpoch
+InterventionalStudyDesign,Added,Attributes/Relationships,epochs,Added,Cardinality,,1..*
+InterventionalStudyDesign,Added,Attributes/Relationships,analysisPopulations,Added,Data Type,,AnalysisPopulation
+InterventionalStudyDesign,Added,Attributes/Relationships,analysisPopulations,Added,Cardinality,,0..*
+InterventionalStudyDesign,Added,Attributes/Relationships,encounters,Added,Data Type,,Encounter
+InterventionalStudyDesign,Added,Attributes/Relationships,encounters,Added,Cardinality,,0..*
+InterventionalStudyDesign,Added,Attributes/Relationships,studyCells,Added,Data Type,,StudyCell
+InterventionalStudyDesign,Added,Attributes/Relationships,studyCells,Added,Cardinality,,1..*
+InterventionalStudyDesign,Added,Attributes/Relationships,documentVersionIds,Added,Data Type,,string
+InterventionalStudyDesign,Added,Attributes/Relationships,documentVersionIds,Added,Cardinality,,0..*
+DocumentContentReference,Added,Attributes/Relationships,appliesToId,Added,Data Type,,string
+DocumentContentReference,Added,Attributes/Relationships,appliesToId,Added,Cardinality,,1
+DocumentContentReference,Added,Attributes/Relationships,extensionAttributes,Added,Data Type,,ExtensionAttribute
+DocumentContentReference,Added,Attributes/Relationships,extensionAttributes,Added,Cardinality,,0..*
+DocumentContentReference,Added,Attributes/Relationships,instanceType,Added,Data Type,,string
+DocumentContentReference,Added,Attributes/Relationships,instanceType,Added,Cardinality,,1
+DocumentContentReference,Added,Attributes/Relationships,sectionNumber,Added,Data Type,,string
+DocumentContentReference,Added,Attributes/Relationships,sectionNumber,Added,Cardinality,,1
+DocumentContentReference,Added,Attributes/Relationships,sectionTitle,Added,Data Type,,string
+DocumentContentReference,Added,Attributes/Relationships,sectionTitle,Added,Cardinality,,1
+DocumentContentReference,Added,Attributes/Relationships,id,Added,Data Type,,string
+DocumentContentReference,Added,Attributes/Relationships,id,Added,Cardinality,,1
+AdministrableProductIdentifier,Added,Attributes/Relationships,instanceType,Added,Data Type,,string
+AdministrableProductIdentifier,Added,Attributes/Relationships,instanceType,Added,Cardinality,,1
+AdministrableProductIdentifier,Added,Attributes/Relationships,extensionAttributes,Added,Data Type,,ExtensionAttribute
+AdministrableProductIdentifier,Added,Attributes/Relationships,extensionAttributes,Added,Cardinality,,0..*
+AdministrableProductIdentifier,Added,Attributes/Relationships,scopeId,Added,Data Type,,string
+AdministrableProductIdentifier,Added,Attributes/Relationships,scopeId,Added,Cardinality,,1
+AdministrableProductIdentifier,Added,Attributes/Relationships,text,Added,Data Type,,string
+AdministrableProductIdentifier,Added,Attributes/Relationships,text,Added,Cardinality,,1
+AdministrableProductIdentifier,Added,Attributes/Relationships,id,Added,Data Type,,string
+AdministrableProductIdentifier,Added,Attributes/Relationships,id,Added,Cardinality,,1
+Ingredient,Added,Attributes/Relationships,instanceType,Added,Data Type,,string
+Ingredient,Added,Attributes/Relationships,instanceType,Added,Cardinality,,1
+Ingredient,Added,Attributes/Relationships,extensionAttributes,Added,Data Type,,ExtensionAttribute
+Ingredient,Added,Attributes/Relationships,extensionAttributes,Added,Cardinality,,0..*
+Ingredient,Added,Attributes/Relationships,substance,Added,Data Type,,Substance
+Ingredient,Added,Attributes/Relationships,substance,Added,Cardinality,,1
+Ingredient,Added,Attributes/Relationships,Role,Added,Data Type,,Code
+Ingredient,Added,Attributes/Relationships,Role,Added,Cardinality,,1
+Ingredient,Added,Attributes/Relationships,id,Added,Data Type,,string
+Ingredient,Added,Attributes/Relationships,id,Added,Cardinality,,1
+BiospecimenRetention,Added,Attributes/Relationships,instanceType,Added,Data Type,,string
+BiospecimenRetention,Added,Attributes/Relationships,instanceType,Added,Cardinality,,1
+BiospecimenRetention,Added,Attributes/Relationships,extensionAttributes,Added,Data Type,,ExtensionAttribute
+BiospecimenRetention,Added,Attributes/Relationships,extensionAttributes,Added,Cardinality,,0..*
+BiospecimenRetention,Added,Attributes/Relationships,id,Added,Data Type,,string
+BiospecimenRetention,Added,Attributes/Relationships,id,Added,Cardinality,,1
+BiospecimenRetention,Added,Attributes/Relationships,name,Added,Data Type,,string
+BiospecimenRetention,Added,Attributes/Relationships,name,Added,Cardinality,,1
+BiospecimenRetention,Added,Attributes/Relationships,label,Added,Data Type,,string
+BiospecimenRetention,Added,Attributes/Relationships,label,Added,Cardinality,,0..1
+BiospecimenRetention,Added,Attributes/Relationships,description,Added,Data Type,,string
+BiospecimenRetention,Added,Attributes/Relationships,description,Added,Cardinality,,0..1
+BiospecimenRetention,Added,Attributes/Relationships,includesDNA,Added,Data Type,,boolean
+BiospecimenRetention,Added,Attributes/Relationships,includesDNA,Added,Cardinality,,0..1
+BiospecimenRetention,Added,Attributes/Relationships,isRetained,Added,Data Type,,boolean
+BiospecimenRetention,Added,Attributes/Relationships,isRetained,Added,Cardinality,,1
+AdministrableProduct,Added,Attributes/Relationships,ingredients,Added,Data Type,,Ingredient
+AdministrableProduct,Added,Attributes/Relationships,ingredients,Added,Cardinality,,0..*
+AdministrableProduct,Added,Attributes/Relationships,extensionAttributes,Added,Data Type,,ExtensionAttribute
+AdministrableProduct,Added,Attributes/Relationships,extensionAttributes,Added,Cardinality,,0..*
+AdministrableProduct,Added,Attributes/Relationships,instanceType,Added,Data Type,,string
+AdministrableProduct,Added,Attributes/Relationships,instanceType,Added,Cardinality,,1
+AdministrableProduct,Added,Attributes/Relationships,pharmacologicClass,Added,Data Type,,Code
+AdministrableProduct,Added,Attributes/Relationships,pharmacologicClass,Added,Cardinality,,0..1
+AdministrableProduct,Added,Attributes/Relationships,notes,Added,Data Type,,CommentAnnotation
+AdministrableProduct,Added,Attributes/Relationships,notes,Added,Cardinality,,0..*
+AdministrableProduct,Added,Attributes/Relationships,id,Added,Data Type,,string
+AdministrableProduct,Added,Attributes/Relationships,id,Added,Cardinality,,1
+AdministrableProduct,Added,Attributes/Relationships,administrableDoseForm,Added,Data Type,,AliasCode
+AdministrableProduct,Added,Attributes/Relationships,administrableDoseForm,Added,Cardinality,,1
+AdministrableProduct,Added,Attributes/Relationships,name,Added,Data Type,,string
+AdministrableProduct,Added,Attributes/Relationships,name,Added,Cardinality,,1
+AdministrableProduct,Added,Attributes/Relationships,label,Added,Data Type,,string
+AdministrableProduct,Added,Attributes/Relationships,label,Added,Cardinality,,0..1
+AdministrableProduct,Added,Attributes/Relationships,description,Added,Data Type,,string
+AdministrableProduct,Added,Attributes/Relationships,description,Added,Cardinality,,0..1
+AdministrableProduct,Added,Attributes/Relationships,productDesignation,Added,Data Type,,Code
+AdministrableProduct,Added,Attributes/Relationships,productDesignation,Added,Cardinality,,1
+AdministrableProduct,Added,Attributes/Relationships,Attributes/Relationships,Added,Data Type,,AdministrableProductProperty
+AdministrableProduct,Added,Attributes/Relationships,Attributes/Relationships,Added,Cardinality,,0..*
+AdministrableProduct,Added,Attributes/Relationships,identifiers,Added,Data Type,,AdministrableProductIdentifier
+AdministrableProduct,Added,Attributes/Relationships,identifiers,Added,Cardinality,,0..*
+AdministrableProduct,Added,Attributes/Relationships,sourcing,Added,Data Type,,Code
+AdministrableProduct,Added,Attributes/Relationships,sourcing,Added,Cardinality,,0..1
+Substance,Added,Attributes/Relationships,instanceType,Added,Data Type,,string
+Substance,Added,Attributes/Relationships,instanceType,Added,Cardinality,,1
+Substance,Added,Attributes/Relationships,extensionAttributes,Added,Data Type,,ExtensionAttribute
+Substance,Added,Attributes/Relationships,extensionAttributes,Added,Cardinality,,0..*
+Substance,Added,Attributes/Relationships,codes,Added,Data Type,,Code
+Substance,Added,Attributes/Relationships,codes,Added,Cardinality,,0..*
+Substance,Added,Attributes/Relationships,id,Added,Data Type,,string
+Substance,Added,Attributes/Relationships,id,Added,Cardinality,,1
+Substance,Added,Attributes/Relationships,name,Added,Data Type,,string
+Substance,Added,Attributes/Relationships,name,Added,Cardinality,,1
+Substance,Added,Attributes/Relationships,label,Added,Data Type,,string
+Substance,Added,Attributes/Relationships,label,Added,Cardinality,,0..1
+Substance,Added,Attributes/Relationships,description,Added,Data Type,,string
+Substance,Added,Attributes/Relationships,description,Added,Cardinality,,0..1
+Substance,Added,Attributes/Relationships,referenceSubstance,Added,Data Type,,Substance
+Substance,Added,Attributes/Relationships,referenceSubstance,Added,Cardinality,,0..1
+Substance,Added,Attributes/Relationships,strengths,Added,Data Type,,Strength
+Substance,Added,Attributes/Relationships,strengths,Added,Cardinality,,1..*
+StudyChange,Added,Attributes/Relationships,instanceType,Added,Data Type,,string
+StudyChange,Added,Attributes/Relationships,instanceType,Added,Cardinality,,1
+StudyChange,Added,Attributes/Relationships,extensionAttributes,Added,Data Type,,ExtensionAttribute
+StudyChange,Added,Attributes/Relationships,extensionAttributes,Added,Cardinality,,0..*
+StudyChange,Added,Attributes/Relationships,rationale,Added,Data Type,,string
+StudyChange,Added,Attributes/Relationships,rationale,Added,Cardinality,,1
+StudyChange,Added,Attributes/Relationships,id,Added,Data Type,,string
+StudyChange,Added,Attributes/Relationships,id,Added,Cardinality,,1
+StudyChange,Added,Attributes/Relationships,name,Added,Data Type,,string
+StudyChange,Added,Attributes/Relationships,name,Added,Cardinality,,1
+StudyChange,Added,Attributes/Relationships,label,Added,Data Type,,string
+StudyChange,Added,Attributes/Relationships,label,Added,Cardinality,,0..1
+StudyChange,Added,Attributes/Relationships,description,Added,Data Type,,string
+StudyChange,Added,Attributes/Relationships,description,Added,Cardinality,,0..1
+StudyChange,Added,Attributes/Relationships,changedSections,Added,Data Type,,DocumentContentReference
+StudyChange,Added,Attributes/Relationships,changedSections,Added,Cardinality,,1..*
+StudyChange,Added,Attributes/Relationships,summary,Added,Data Type,,string
+StudyChange,Added,Attributes/Relationships,summary,Added,Cardinality,,1
+AgentAdministration,Deleted,Attributes/Relationships,instanceType,Deleted,Data Type,string,
+AgentAdministration,Deleted,Attributes/Relationships,instanceType,Deleted,Cardinality,1,
+AgentAdministration,Deleted,Attributes/Relationships,dose,Deleted,Data Type,Quantity,
+AgentAdministration,Deleted,Attributes/Relationships,dose,Deleted,Cardinality,1,
+AgentAdministration,Deleted,Attributes/Relationships,id,Deleted,Data Type,string,
+AgentAdministration,Deleted,Attributes/Relationships,id,Deleted,Cardinality,1,
+AgentAdministration,Deleted,Attributes/Relationships,name,Deleted,Data Type,string,
+AgentAdministration,Deleted,Attributes/Relationships,name,Deleted,Cardinality,1,
+AgentAdministration,Deleted,Attributes/Relationships,label,Deleted,Data Type,string,
+AgentAdministration,Deleted,Attributes/Relationships,label,Deleted,Cardinality,0..1,
+AgentAdministration,Deleted,Attributes/Relationships,description,Deleted,Data Type,string,
+AgentAdministration,Deleted,Attributes/Relationships,description,Deleted,Cardinality,0..1,
+AgentAdministration,Deleted,Attributes/Relationships,frequency,Deleted,Data Type,AliasCode,
+AgentAdministration,Deleted,Attributes/Relationships,frequency,Deleted,Cardinality,1,
+AgentAdministration,Deleted,Attributes/Relationships,route,Deleted,Data Type,AliasCode,
+AgentAdministration,Deleted,Attributes/Relationships,route,Deleted,Cardinality,1,
+AgentAdministration,Deleted,Attributes/Relationships,duration,Deleted,Data Type,AdministrationDuration,
+AgentAdministration,Deleted,Attributes/Relationships,duration,Deleted,Cardinality,1,
+AdministrationDuration,Deleted,Attributes/Relationships,instanceType,Deleted,Data Type,string,
+AdministrationDuration,Deleted,Attributes/Relationships,instanceType,Deleted,Cardinality,1,
+AdministrationDuration,Deleted,Attributes/Relationships,durationWillVary,Deleted,Data Type,boolean,
+AdministrationDuration,Deleted,Attributes/Relationships,durationWillVary,Deleted,Cardinality,1,
+AdministrationDuration,Deleted,Attributes/Relationships,reasonDurationWillVary,Deleted,Data Type,string,
+AdministrationDuration,Deleted,Attributes/Relationships,reasonDurationWillVary,Deleted,Cardinality,1,
+AdministrationDuration,Deleted,Attributes/Relationships,id,Deleted,Data Type,string,
+AdministrationDuration,Deleted,Attributes/Relationships,id,Deleted,Cardinality,1,
+AdministrationDuration,Deleted,Attributes/Relationships,quantity,Deleted,Data Type,Quantity,
+AdministrationDuration,Deleted,Attributes/Relationships,quantity,Deleted,Cardinality,0..1,
+AdministrationDuration,Deleted,Attributes/Relationships,description,Deleted,Data Type,string,
+AdministrationDuration,Deleted,Attributes/Relationships,description,Deleted,Cardinality,1,
+StudyDesign,Deleted,Attributes/Relationships,arms,Deleted,Data Type,StudyArm,
+StudyDesign,Deleted,Attributes/Relationships,arms,Deleted,Cardinality,1..*,
+StudyDesign,Deleted,Attributes/Relationships,trialTypes,Deleted,Data Type,Code,
+StudyDesign,Deleted,Attributes/Relationships,trialTypes,Deleted,Cardinality,0..*,
+StudyDesign,Deleted,Attributes/Relationships,maskingRoles,Deleted,Data Type,Masking,
+StudyDesign,Deleted,Attributes/Relationships,maskingRoles,Deleted,Cardinality,0..*,
+StudyDesign,Deleted,Attributes/Relationships,label,Deleted,Data Type,string,
+StudyDesign,Deleted,Attributes/Relationships,label,Deleted,Cardinality,0..1,
+StudyDesign,Deleted,Attributes/Relationships,documentVersionId,Deleted,Data Type,string,
+StudyDesign,Deleted,Attributes/Relationships,documentVersionId,Deleted,Cardinality,0..1,
+StudyDesign,Deleted,Attributes/Relationships,description,Deleted,Data Type,string,
+StudyDesign,Deleted,Attributes/Relationships,description,Deleted,Cardinality,0..1,
+StudyDesign,Deleted,Attributes/Relationships,indications,Deleted,Data Type,Indication,
+StudyDesign,Deleted,Attributes/Relationships,indications,Deleted,Cardinality,0..*,
+StudyDesign,Deleted,Attributes/Relationships,interventionModel,Deleted,Data Type,Code,
+StudyDesign,Deleted,Attributes/Relationships,interventionModel,Deleted,Cardinality,1,
+StudyDesign,Deleted,Attributes/Relationships,elements,Deleted,Data Type,StudyElement,
+StudyDesign,Deleted,Attributes/Relationships,elements,Deleted,Cardinality,0..*,
+StudyDesign,Deleted,Attributes/Relationships,blindingSchema,Deleted,Data Type,AliasCode,
+StudyDesign,Deleted,Attributes/Relationships,blindingSchema,Deleted,Cardinality,0..1,
+StudyDesign,Deleted,Attributes/Relationships,biomedicalConcepts,Deleted,Data Type,BiomedicalConcept,
+StudyDesign,Deleted,Attributes/Relationships,biomedicalConcepts,Deleted,Cardinality,0..*,
+StudyDesign,Deleted,Attributes/Relationships,therapeuticAreas,Deleted,Data Type,Code,
+StudyDesign,Deleted,Attributes/Relationships,therapeuticAreas,Deleted,Cardinality,0..*,
+StudyDesign,Deleted,Attributes/Relationships,characteristics,Deleted,Data Type,Code,
+StudyDesign,Deleted,Attributes/Relationships,characteristics,Deleted,Cardinality,0..*,
+StudyDesign,Deleted,Attributes/Relationships,organizations,Deleted,Data Type,ResearchOrganization,
+StudyDesign,Deleted,Attributes/Relationships,organizations,Deleted,Cardinality,0..*,
+StudyDesign,Deleted,Attributes/Relationships,activities,Deleted,Data Type,Activity,
+StudyDesign,Deleted,Attributes/Relationships,activities,Deleted,Cardinality,0..*,
+StudyDesign,Deleted,Attributes/Relationships,instanceType,Deleted,Data Type,string,
+StudyDesign,Deleted,Attributes/Relationships,instanceType,Deleted,Cardinality,1,
+StudyDesign,Deleted,Attributes/Relationships,dictionaries,Deleted,Data Type,SyntaxTemplateDictionary,
+StudyDesign,Deleted,Attributes/Relationships,dictionaries,Deleted,Cardinality,0..*,
+StudyDesign,Deleted,Attributes/Relationships,rationale,Deleted,Data Type,string,
+StudyDesign,Deleted,Attributes/Relationships,rationale,Deleted,Cardinality,1,
+StudyDesign,Deleted,Attributes/Relationships,studyInterventions,Deleted,Data Type,StudyIntervention,
+StudyDesign,Deleted,Attributes/Relationships,studyInterventions,Deleted,Cardinality,0..*,
+StudyDesign,Deleted,Attributes/Relationships,id,Deleted,Data Type,string,
+StudyDesign,Deleted,Attributes/Relationships,id,Deleted,Cardinality,1,
+StudyDesign,Deleted,Attributes/Relationships,name,Deleted,Data Type,string,
+StudyDesign,Deleted,Attributes/Relationships,name,Deleted,Cardinality,1,
+StudyDesign,Deleted,Attributes/Relationships,objectives,Deleted,Data Type,Objective,
+StudyDesign,Deleted,Attributes/Relationships,objectives,Deleted,Cardinality,0..*,
+StudyDesign,Deleted,Attributes/Relationships,population,Deleted,Data Type,StudyDesignPopulation,
+StudyDesign,Deleted,Attributes/Relationships,population,Deleted,Cardinality,0..1,
+StudyDesign,Deleted,Attributes/Relationships,estimands,Deleted,Data Type,Estimand,
+StudyDesign,Deleted,Attributes/Relationships,estimands,Deleted,Cardinality,0..*,
+StudyDesign,Deleted,Attributes/Relationships,scheduleTimelines,Deleted,Data Type,ScheduleTimeline,
+StudyDesign,Deleted,Attributes/Relationships,scheduleTimelines,Deleted,Cardinality,0..*,
+StudyDesign,Deleted,Attributes/Relationships,trialIntentTypes,Deleted,Data Type,Code,
+StudyDesign,Deleted,Attributes/Relationships,trialIntentTypes,Deleted,Cardinality,0..*,
+StudyDesign,Deleted,Attributes/Relationships,bcSurrogates,Deleted,Data Type,BiomedicalConceptSurrogate,
+StudyDesign,Deleted,Attributes/Relationships,bcSurrogates,Deleted,Cardinality,0..*,
+StudyDesign,Deleted,Attributes/Relationships,epochs,Deleted,Data Type,StudyEpoch,
+StudyDesign,Deleted,Attributes/Relationships,epochs,Deleted,Cardinality,1..*,
+StudyDesign,Deleted,Attributes/Relationships,encounters,Deleted,Data Type,Encounter,
+StudyDesign,Deleted,Attributes/Relationships,encounters,Deleted,Cardinality,0..*,
+StudyDesign,Deleted,Attributes/Relationships,bcCategories,Deleted,Data Type,BiomedicalConceptCategory,
+StudyDesign,Deleted,Attributes/Relationships,bcCategories,Deleted,Cardinality,0..*,
+StudyDesign,Deleted,Attributes/Relationships,studyCells,Deleted,Data Type,StudyCell,
+StudyDesign,Deleted,Attributes/Relationships,studyCells,Deleted,Cardinality,1..*,
+StudyDesign,Deleted,Attributes/Relationships,conditions,Deleted,Data Type,Condition,
+StudyDesign,Deleted,Attributes/Relationships,conditions,Deleted,Cardinality,0..*,
+ResearchOrganization,Deleted,Attributes/Relationships,instanceType,Deleted,Data Type,string,
+ResearchOrganization,Deleted,Attributes/Relationships,instanceType,Deleted,Cardinality,1,
+ResearchOrganization,Deleted,Attributes/Relationships,manages,Deleted,Data Type,StudySite,
+ResearchOrganization,Deleted,Attributes/Relationships,manages,Deleted,Cardinality,1..*,
+ResearchOrganization,Deleted,Attributes/Relationships,identifier,Deleted,Data Type,string,
+ResearchOrganization,Deleted,Attributes/Relationships,identifier,Deleted,Cardinality,1,
+ResearchOrganization,Deleted,Attributes/Relationships,organizationType,Deleted,Data Type,Code,
+ResearchOrganization,Deleted,Attributes/Relationships,organizationType,Deleted,Cardinality,1,
+ResearchOrganization,Deleted,Attributes/Relationships,id,Deleted,Data Type,string,
+ResearchOrganization,Deleted,Attributes/Relationships,id,Deleted,Cardinality,1,
+ResearchOrganization,Deleted,Attributes/Relationships,legalAddress,Deleted,Data Type,Address,
+ResearchOrganization,Deleted,Attributes/Relationships,legalAddress,Deleted,Cardinality,0..1,
+ResearchOrganization,Deleted,Attributes/Relationships,name,Deleted,Data Type,string,
+ResearchOrganization,Deleted,Attributes/Relationships,name,Deleted,Cardinality,1,
+ResearchOrganization,Deleted,Attributes/Relationships,label,Deleted,Data Type,string,
+ResearchOrganization,Deleted,Attributes/Relationships,label,Deleted,Cardinality,0..1,
+ResearchOrganization,Deleted,Attributes/Relationships,identifierScheme,Deleted,Data Type,string,
+ResearchOrganization,Deleted,Attributes/Relationships,identifierScheme,Deleted,Cardinality,1,
+StudyProtocolDocumentVersion,Deleted,Attributes/Relationships,instanceType,Deleted,Data Type,string,
+StudyProtocolDocumentVersion,Deleted,Attributes/Relationships,instanceType,Deleted,Cardinality,1,
+StudyProtocolDocumentVersion,Deleted,Attributes/Relationships,dateValues,Deleted,Data Type,GovernanceDate,
+StudyProtocolDocumentVersion,Deleted,Attributes/Relationships,dateValues,Deleted,Cardinality,0..*,
+StudyProtocolDocumentVersion,Deleted,Attributes/Relationships,protocolStatus,Deleted,Data Type,Code,
+StudyProtocolDocumentVersion,Deleted,Attributes/Relationships,protocolStatus,Deleted,Cardinality,1,
+StudyProtocolDocumentVersion,Deleted,Attributes/Relationships,childIds,Deleted,Data Type,string,
+StudyProtocolDocumentVersion,Deleted,Attributes/Relationships,childIds,Deleted,Cardinality,0..*,
+StudyProtocolDocumentVersion,Deleted,Attributes/Relationships,protocolVersion,Deleted,Data Type,string,
+StudyProtocolDocumentVersion,Deleted,Attributes/Relationships,protocolVersion,Deleted,Cardinality,1,
+StudyProtocolDocumentVersion,Deleted,Attributes/Relationships,id,Deleted,Data Type,string,
+StudyProtocolDocumentVersion,Deleted,Attributes/Relationships,id,Deleted,Cardinality,1,
+StudyProtocolDocumentVersion,Deleted,Attributes/Relationships,contents,Deleted,Data Type,NarrativeContent,
+StudyProtocolDocumentVersion,Deleted,Attributes/Relationships,contents,Deleted,Cardinality,0..*,
+StudyProtocolDocument,Deleted,Attributes/Relationships,instanceType,Deleted,Data Type,string,
+StudyProtocolDocument,Deleted,Attributes/Relationships,instanceType,Deleted,Cardinality,1,
+StudyProtocolDocument,Deleted,Attributes/Relationships,versions,Deleted,Data Type,StudyProtocolDocumentVersion,
+StudyProtocolDocument,Deleted,Attributes/Relationships,versions,Deleted,Cardinality,0..*,
+StudyProtocolDocument,Deleted,Attributes/Relationships,label,Deleted,Data Type,string,
+StudyProtocolDocument,Deleted,Attributes/Relationships,label,Deleted,Cardinality,0..1,
+StudyProtocolDocument,Deleted,Attributes/Relationships,id,Deleted,Data Type,string,
+StudyProtocolDocument,Deleted,Attributes/Relationships,id,Deleted,Cardinality,1,
+StudyProtocolDocument,Deleted,Attributes/Relationships,name,Deleted,Data Type,string,
+StudyProtocolDocument,Deleted,Attributes/Relationships,name,Deleted,Cardinality,1,
+StudyProtocolDocument,Deleted,Attributes/Relationships,description,Deleted,Data Type,string,
+StudyProtocolDocument,Deleted,Attributes/Relationships,description,Deleted,Cardinality,0..1,
+GeographicScope,Modified,Attributes/Relationships,extensionAttributes,Added,Data Type,,ExtensionAttribute
+GeographicScope,Modified,Attributes/Relationships,extensionAttributes,Added,Cardinality,,0..*
+Quantity,Modified,Attributes/Relationships,extensionAttributes,Added,Data Type,,ExtensionAttribute
+Quantity,Modified,Attributes/Relationships,extensionAttributes,Added,Cardinality,,0..*
+StudySite,Modified,Attributes/Relationships,country,Added,Data Type,,Code
+StudySite,Modified,Attributes/Relationships,country,Added,Cardinality,,1
+StudySite,Modified,Attributes/Relationships,extensionAttributes,Added,Data Type,,ExtensionAttribute
+StudySite,Modified,Attributes/Relationships,extensionAttributes,Added,Cardinality,,0..*
+StudySite,Modified,Attributes/Relationships,currentEnrollment,Deleted,Data Type,SubjectEnrollment,
+StudySite,Modified,Attributes/Relationships,currentEnrollment,Deleted,Cardinality,0..1,
+AnalysisPopulation,Modified,Attributes/Relationships,notes,Added,Data Type,,CommentAnnotation
+AnalysisPopulation,Modified,Attributes/Relationships,notes,Added,Cardinality,,0..*
+AnalysisPopulation,Modified,Attributes/Relationships,extensionAttributes,Added,Data Type,,ExtensionAttribute
+AnalysisPopulation,Modified,Attributes/Relationships,extensionAttributes,Added,Cardinality,,0..*
+AnalysisPopulation,Modified,Attributes/Relationships,subsetOfIds,Added,Data Type,,string
+AnalysisPopulation,Modified,Attributes/Relationships,subsetOfIds,Added,Cardinality,,0..*
+StudyArm,Modified,Attributes/Relationships,notes,Added,Data Type,,CommentAnnotation
+StudyArm,Modified,Attributes/Relationships,notes,Added,Cardinality,,0..*
+StudyArm,Modified,Attributes/Relationships,extensionAttributes,Added,Data Type,,ExtensionAttribute
+StudyArm,Modified,Attributes/Relationships,extensionAttributes,Added,Cardinality,,0..*
+BiomedicalConceptCategory,Modified,Attributes/Relationships,notes,Added,Data Type,,CommentAnnotation
+BiomedicalConceptCategory,Modified,Attributes/Relationships,notes,Added,Cardinality,,0..*
+BiomedicalConceptCategory,Modified,Attributes/Relationships,extensionAttributes,Added,Data Type,,ExtensionAttribute
+BiomedicalConceptCategory,Modified,Attributes/Relationships,extensionAttributes,Added,Cardinality,,0..*
+Characteristic,Modified,Attributes/Relationships,notes,Added,Data Type,,CommentAnnotation
+Characteristic,Modified,Attributes/Relationships,notes,Added,Cardinality,,0..*
+Characteristic,Modified,Attributes/Relationships,extensionAttributes,Added,Data Type,,ExtensionAttribute
+Characteristic,Modified,Attributes/Relationships,extensionAttributes,Added,Cardinality,,0..*
+SubjectEnrollment,Modified,Attributes/Relationships,extensionAttributes,Added,Data Type,,ExtensionAttribute
+SubjectEnrollment,Modified,Attributes/Relationships,extensionAttributes,Added,Cardinality,,0..*
+SubjectEnrollment,Modified,Attributes/Relationships,forStudyCohortId,Added,Data Type,,string
+SubjectEnrollment,Modified,Attributes/Relationships,forStudyCohortId,Added,Cardinality,,0..1
+SubjectEnrollment,Modified,Attributes/Relationships,name,Added,Data Type,,string
+SubjectEnrollment,Modified,Attributes/Relationships,name,Added,Cardinality,,1
+SubjectEnrollment,Modified,Attributes/Relationships,label,Added,Data Type,,string
+SubjectEnrollment,Modified,Attributes/Relationships,label,Added,Cardinality,,0..1
+SubjectEnrollment,Modified,Attributes/Relationships,description,Added,Data Type,,string
+SubjectEnrollment,Modified,Attributes/Relationships,description,Added,Cardinality,,0..1
+SubjectEnrollment,Modified,Attributes/Relationships,forStudySiteId,Added,Data Type,,string
+SubjectEnrollment,Modified,Attributes/Relationships,forStudySiteId,Added,Cardinality,,0..1
+SubjectEnrollment,Modified,Attributes/Relationships,forGeographicScope,Added,Data Type,,GeographicScope
+SubjectEnrollment,Modified,Attributes/Relationships,forGeographicScope,Added,Cardinality,,0..1
+SubjectEnrollment,Modified,Attributes/Relationships,type,Deleted,Data Type,Code,
+SubjectEnrollment,Modified,Attributes/Relationships,type,Deleted,Cardinality,1,
+SubjectEnrollment,Modified,Attributes/Relationships,code,Deleted,Data Type,AliasCode,
+SubjectEnrollment,Modified,Attributes/Relationships,code,Deleted,Cardinality,0..1,
+Code,Modified,Attributes/Relationships,extensionAttributes,Added,Data Type,,ExtensionAttribute
+Code,Modified,Attributes/Relationships,extensionAttributes,Added,Cardinality,,0..*
+Objective,Modified,Attributes/Relationships,notes,Added,Data Type,,CommentAnnotation
+Objective,Modified,Attributes/Relationships,notes,Added,Cardinality,,0..*
+Objective,Modified,Attributes/Relationships,extensionAttributes,Added,Data Type,,ExtensionAttribute
+Objective,Modified,Attributes/Relationships,extensionAttributes,Added,Cardinality,,0..*
+Indication,Modified,Attributes/Relationships,notes,Added,Data Type,,CommentAnnotation
+Indication,Modified,Attributes/Relationships,notes,Added,Cardinality,,0..*
+Indication,Modified,Attributes/Relationships,extensionAttributes,Added,Data Type,,ExtensionAttribute
+Indication,Modified,Attributes/Relationships,extensionAttributes,Added,Cardinality,,0..*
+EligibilityCriterion,Modified,Attributes/Relationships,notes,Added,Data Type,,CommentAnnotation
+EligibilityCriterion,Modified,Attributes/Relationships,notes,Added,Cardinality,,0..*
+EligibilityCriterion,Modified,Attributes/Relationships,extensionAttributes,Added,Data Type,,ExtensionAttribute
+EligibilityCriterion,Modified,Attributes/Relationships,extensionAttributes,Added,Cardinality,,0..*
+EligibilityCriterion,Modified,Attributes/Relationships,criterionItemId,Added,Data Type,,string
+EligibilityCriterion,Modified,Attributes/Relationships,criterionItemId,Added,Cardinality,,1
+EligibilityCriterion,Modified,Attributes/Relationships,contextId,Deleted,Data Type,string,
+EligibilityCriterion,Modified,Attributes/Relationships,contextId,Deleted,Cardinality,0..1,
+EligibilityCriterion,Modified,Attributes/Relationships,dictionaryId,Deleted,Data Type,string,
+EligibilityCriterion,Modified,Attributes/Relationships,dictionaryId,Deleted,Cardinality,0..1,
+EligibilityCriterion,Modified,Attributes/Relationships,text,Deleted,Data Type,string,
+EligibilityCriterion,Modified,Attributes/Relationships,text,Deleted,Cardinality,1,
+Range,Modified,Attributes/Relationships,extensionAttributes,Added,Data Type,,ExtensionAttribute
+Range,Modified,Attributes/Relationships,extensionAttributes,Added,Cardinality,,0..*
+Range,Modified,Attributes/Relationships,unit,Deleted,Data Type,Code,
+Range,Modified,Attributes/Relationships,unit,Deleted,Cardinality,0..1,
+Range,Modified,Attributes/Relationships,minValue,Modified,Data Type,number,Quantity
+Range,Modified,Attributes/Relationships,maxValue,Modified,Data Type,number,Quantity
+StudyDesignPopulation,Modified,Attributes/Relationships,notes,Added,Data Type,,CommentAnnotation
+StudyDesignPopulation,Modified,Attributes/Relationships,notes,Added,Cardinality,,0..*
+StudyDesignPopulation,Modified,Attributes/Relationships,extensionAttributes,Added,Data Type,,ExtensionAttribute
+StudyDesignPopulation,Modified,Attributes/Relationships,extensionAttributes,Added,Cardinality,,0..*
+StudyDesignPopulation,Modified,Attributes/Relationships,criterionIds,Added,Data Type,,string
+StudyDesignPopulation,Modified,Attributes/Relationships,criterionIds,Added,Cardinality,,0..*
+StudyDesignPopulation,Modified,Attributes/Relationships,criteria,Deleted,Data Type,EligibilityCriterion,
+StudyDesignPopulation,Modified,Attributes/Relationships,criteria,Deleted,Cardinality,1..*,
+StudyDesignPopulation,Modified,Attributes/Relationships,plannedEnrollmentNumber,Modified,Data Type,Range,"Quantity, Range"
+StudyDesignPopulation,Modified,Attributes/Relationships,plannedSex,Modified,Cardinality,0..*,0..2
+StudyDesignPopulation,Modified,Attributes/Relationships,plannedCompletionNumber,Modified,Data Type,Range,"Quantity, Range"
+ParameterMap,Modified,Attributes/Relationships,extensionAttributes,Added,Data Type,,ExtensionAttribute
+ParameterMap,Modified,Attributes/Relationships,extensionAttributes,Added,Cardinality,,0..*
+TransitionRule,Modified,Attributes/Relationships,extensionAttributes,Added,Data Type,,ExtensionAttribute
+TransitionRule,Modified,Attributes/Relationships,extensionAttributes,Added,Cardinality,,0..*
+ScheduledActivityInstance,Modified,Attributes/Relationships,extensionAttributes,Added,Data Type,,ExtensionAttribute
+ScheduledActivityInstance,Modified,Attributes/Relationships,extensionAttributes,Added,Cardinality,,0..*
+StudyCell,Modified,Attributes/Relationships,extensionAttributes,Added,Data Type,,ExtensionAttribute
+StudyCell,Modified,Attributes/Relationships,extensionAttributes,Added,Cardinality,,0..*
+StudyCell,Modified,Attributes/Relationships,elementIds,Modified,Cardinality,0..*,1..*
+StudyAmendmentReason,Modified,Attributes/Relationships,extensionAttributes,Added,Data Type,,ExtensionAttribute
+StudyAmendmentReason,Modified,Attributes/Relationships,extensionAttributes,Added,Cardinality,,0..*
+Address,Modified,Attributes/Relationships,lines,Added,Data Type,,string
+Address,Modified,Attributes/Relationships,lines,Added,Cardinality,,0..*
+Address,Modified,Attributes/Relationships,extensionAttributes,Added,Data Type,,ExtensionAttribute
+Address,Modified,Attributes/Relationships,extensionAttributes,Added,Cardinality,,0..*
+Address,Modified,Attributes/Relationships,line,Deleted,Data Type,string,
+Address,Modified,Attributes/Relationships,line,Deleted,Cardinality,0..1,
+BiomedicalConcept,Modified,Attributes/Relationships,notes,Added,Data Type,,CommentAnnotation
+BiomedicalConcept,Modified,Attributes/Relationships,notes,Added,Cardinality,,0..*
+BiomedicalConcept,Modified,Attributes/Relationships,extensionAttributes,Added,Data Type,,ExtensionAttribute
+BiomedicalConcept,Modified,Attributes/Relationships,extensionAttributes,Added,Cardinality,,0..*
+Condition,Modified,Attributes/Relationships,notes,Added,Data Type,,CommentAnnotation
+Condition,Modified,Attributes/Relationships,notes,Added,Cardinality,,0..*
+Condition,Modified,Attributes/Relationships,extensionAttributes,Added,Data Type,,ExtensionAttribute
+Condition,Modified,Attributes/Relationships,extensionAttributes,Added,Cardinality,,0..*
+GovernanceDate,Modified,Attributes/Relationships,extensionAttributes,Added,Data Type,,ExtensionAttribute
+GovernanceDate,Modified,Attributes/Relationships,extensionAttributes,Added,Cardinality,,0..*
+ScheduledDecisionInstance,Modified,Attributes/Relationships,extensionAttributes,Added,Data Type,,ExtensionAttribute
+ScheduledDecisionInstance,Modified,Attributes/Relationships,extensionAttributes,Added,Cardinality,,0..*
+ScheduledDecisionInstance,Modified,Attributes/Relationships,timelineExitId,Deleted,Data Type,string,
+ScheduledDecisionInstance,Modified,Attributes/Relationships,timelineExitId,Deleted,Cardinality,0..1,
+ScheduledDecisionInstance,Modified,Attributes/Relationships,timelineId,Deleted,Data Type,string,
+ScheduledDecisionInstance,Modified,Attributes/Relationships,timelineId,Deleted,Cardinality,0..1,
+Organization,Modified,Attributes/Relationships,type,Added,Data Type,,Code
+Organization,Modified,Attributes/Relationships,type,Added,Cardinality,,1
+Organization,Modified,Attributes/Relationships,extensionAttributes,Added,Data Type,,ExtensionAttribute
+Organization,Modified,Attributes/Relationships,extensionAttributes,Added,Cardinality,,0..*
+Organization,Modified,Attributes/Relationships,managedSites,Added,Data Type,,StudySite
+Organization,Modified,Attributes/Relationships,managedSites,Added,Cardinality,,0..*
+Organization,Modified,Attributes/Relationships,organizationType,Deleted,Data Type,Code,
+Organization,Modified,Attributes/Relationships,organizationType,Deleted,Cardinality,1,
+AliasCode,Modified,Attributes/Relationships,extensionAttributes,Added,Data Type,,ExtensionAttribute
+AliasCode,Modified,Attributes/Relationships,extensionAttributes,Added,Cardinality,,0..*
+StudyEpoch,Modified,Attributes/Relationships,notes,Added,Data Type,,CommentAnnotation
+StudyEpoch,Modified,Attributes/Relationships,notes,Added,Cardinality,,0..*
+StudyEpoch,Modified,Attributes/Relationships,extensionAttributes,Added,Data Type,,ExtensionAttribute
+StudyEpoch,Modified,Attributes/Relationships,extensionAttributes,Added,Cardinality,,0..*
+NarrativeContent,Modified,Attributes/Relationships,displaySectionNumber,Added,Data Type,,boolean
+NarrativeContent,Modified,Attributes/Relationships,displaySectionNumber,Added,Cardinality,,1
+NarrativeContent,Modified,Attributes/Relationships,extensionAttributes,Added,Data Type,,ExtensionAttribute
+NarrativeContent,Modified,Attributes/Relationships,extensionAttributes,Added,Cardinality,,0..*
+NarrativeContent,Modified,Attributes/Relationships,displaySectionTitle,Added,Data Type,,boolean
+NarrativeContent,Modified,Attributes/Relationships,displaySectionTitle,Added,Cardinality,,1
+NarrativeContent,Modified,Attributes/Relationships,contentItemId,Added,Data Type,,string
+NarrativeContent,Modified,Attributes/Relationships,contentItemId,Added,Cardinality,,0..1
+NarrativeContent,Modified,Attributes/Relationships,text,Deleted,Data Type,string,
+NarrativeContent,Modified,Attributes/Relationships,text,Deleted,Cardinality,0..1,
+NarrativeContent,Modified,Attributes/Relationships,sectionTitle,Modified,Cardinality,1,0..1
+NarrativeContent,Modified,Attributes/Relationships,sectionNumber,Modified,Cardinality,1,0..1
+StudyIdentifier,Modified,Attributes/Relationships,text,Added,Data Type,,string
+StudyIdentifier,Modified,Attributes/Relationships,text,Added,Cardinality,,1
+StudyIdentifier,Modified,Attributes/Relationships,extensionAttributes,Added,Data Type,,ExtensionAttribute
+StudyIdentifier,Modified,Attributes/Relationships,extensionAttributes,Added,Cardinality,,0..*
+StudyIdentifier,Modified,Attributes/Relationships,scopeId,Added,Data Type,,string
+StudyIdentifier,Modified,Attributes/Relationships,scopeId,Added,Cardinality,,1
+StudyIdentifier,Modified,Attributes/Relationships,studyIdentifierScope,Deleted,Data Type,Organization,
+StudyIdentifier,Modified,Attributes/Relationships,studyIdentifierScope,Deleted,Cardinality,1,
+StudyIdentifier,Modified,Attributes/Relationships,studyIdentifier,Deleted,Data Type,string,
+StudyIdentifier,Modified,Attributes/Relationships,studyIdentifier,Deleted,Cardinality,1,
+StudyIntervention,Modified,Attributes/Relationships,notes,Added,Data Type,,CommentAnnotation
+StudyIntervention,Modified,Attributes/Relationships,notes,Added,Cardinality,,0..*
+StudyIntervention,Modified,Attributes/Relationships,extensionAttributes,Added,Data Type,,ExtensionAttribute
+StudyIntervention,Modified,Attributes/Relationships,extensionAttributes,Added,Cardinality,,0..*
+StudyIntervention,Modified,Attributes/Relationships,productDesignation,Deleted,Data Type,Code,
+StudyIntervention,Modified,Attributes/Relationships,productDesignation,Deleted,Cardinality,1,
+StudyIntervention,Modified,Attributes/Relationships,pharmacologicClass,Deleted,Data Type,Code,
+StudyIntervention,Modified,Attributes/Relationships,pharmacologicClass,Deleted,Cardinality,0..1,
+StudyIntervention,Modified,Attributes/Relationships,administrations,Modified,Data Type,AgentAdministration,Administration
+IntercurrentEvent,Modified,Attributes/Relationships,notes,Added,Data Type,,CommentAnnotation
+IntercurrentEvent,Modified,Attributes/Relationships,notes,Added,Cardinality,,0..*
+IntercurrentEvent,Modified,Attributes/Relationships,extensionAttributes,Added,Data Type,,ExtensionAttribute
+IntercurrentEvent,Modified,Attributes/Relationships,extensionAttributes,Added,Cardinality,,0..*
+IntercurrentEvent,Modified,Attributes/Relationships,dictionaryId,Added,Data Type,,string
+IntercurrentEvent,Modified,Attributes/Relationships,dictionaryId,Added,Cardinality,,0..1
+IntercurrentEvent,Modified,Attributes/Relationships,text,Added,Data Type,,string
+IntercurrentEvent,Modified,Attributes/Relationships,text,Added,Cardinality,,1
+ScheduleTimeline,Modified,Attributes/Relationships,plannedDuration,Added,Data Type,,Duration
+ScheduleTimeline,Modified,Attributes/Relationships,plannedDuration,Added,Cardinality,,0..1
+ScheduleTimeline,Modified,Attributes/Relationships,extensionAttributes,Added,Data Type,,ExtensionAttribute
+ScheduleTimeline,Modified,Attributes/Relationships,extensionAttributes,Added,Cardinality,,0..*
+Activity,Modified,Attributes/Relationships,notes,Added,Data Type,,CommentAnnotation
+Activity,Modified,Attributes/Relationships,notes,Added,Cardinality,,0..*
+Activity,Modified,Attributes/Relationships,extensionAttributes,Added,Data Type,,ExtensionAttribute
+Activity,Modified,Attributes/Relationships,extensionAttributes,Added,Cardinality,,0..*
+Activity,Modified,Attributes/Relationships,childIds,Added,Data Type,,string
+Activity,Modified,Attributes/Relationships,childIds,Added,Cardinality,,0..*
+BiomedicalConceptProperty,Modified,Attributes/Relationships,notes,Added,Data Type,,CommentAnnotation
+BiomedicalConceptProperty,Modified,Attributes/Relationships,notes,Added,Cardinality,,0..*
+BiomedicalConceptProperty,Modified,Attributes/Relationships,extensionAttributes,Added,Data Type,,ExtensionAttribute
+BiomedicalConceptProperty,Modified,Attributes/Relationships,extensionAttributes,Added,Cardinality,,0..*
+StudyTitle,Modified,Attributes/Relationships,extensionAttributes,Added,Data Type,,ExtensionAttribute
+StudyTitle,Modified,Attributes/Relationships,extensionAttributes,Added,Cardinality,,0..*
+ResponseCode,Modified,Attributes/Relationships,extensionAttributes,Added,Data Type,,ExtensionAttribute
+ResponseCode,Modified,Attributes/Relationships,extensionAttributes,Added,Cardinality,,0..*
+ResponseCode,Modified,Attributes/Relationships,name,Added,Data Type,,string
+ResponseCode,Modified,Attributes/Relationships,name,Added,Cardinality,,1
+ResponseCode,Modified,Attributes/Relationships,label,Added,Data Type,,string
+ResponseCode,Modified,Attributes/Relationships,label,Added,Cardinality,,0..1
+Timing,Modified,Attributes/Relationships,extensionAttributes,Added,Data Type,,ExtensionAttribute
+Timing,Modified,Attributes/Relationships,extensionAttributes,Added,Cardinality,,0..*
+Timing,Modified,Attributes/Relationships,relativeFromScheduledInstanceId,Modified,Cardinality,0..1,1
+StudyElement,Modified,Attributes/Relationships,notes,Added,Data Type,,CommentAnnotation
+StudyElement,Modified,Attributes/Relationships,notes,Added,Cardinality,,0..*
+StudyElement,Modified,Attributes/Relationships,extensionAttributes,Added,Data Type,,ExtensionAttribute
+StudyElement,Modified,Attributes/Relationships,extensionAttributes,Added,Cardinality,,0..*
+BiomedicalConceptSurrogate,Modified,Attributes/Relationships,notes,Added,Data Type,,CommentAnnotation
+BiomedicalConceptSurrogate,Modified,Attributes/Relationships,notes,Added,Cardinality,,0..*
+BiomedicalConceptSurrogate,Modified,Attributes/Relationships,extensionAttributes,Added,Data Type,,ExtensionAttribute
+BiomedicalConceptSurrogate,Modified,Attributes/Relationships,extensionAttributes,Added,Cardinality,,0..*
+StudyAmendment,Modified,Attributes/Relationships,extensionAttributes,Added,Data Type,,ExtensionAttribute
+StudyAmendment,Modified,Attributes/Relationships,extensionAttributes,Added,Cardinality,,0..*
+StudyAmendment,Modified,Attributes/Relationships,dateValues,Added,Data Type,,GovernanceDate
+StudyAmendment,Modified,Attributes/Relationships,dateValues,Added,Cardinality,,0..*
+StudyAmendment,Modified,Attributes/Relationships,notes,Added,Data Type,,CommentAnnotation
+StudyAmendment,Modified,Attributes/Relationships,notes,Added,Cardinality,,0..*
+StudyAmendment,Modified,Attributes/Relationships,impacts,Added,Data Type,,StudyAmendmentImpact
+StudyAmendment,Modified,Attributes/Relationships,impacts,Added,Cardinality,,0..*
+StudyAmendment,Modified,Attributes/Relationships,name,Added,Data Type,,string
+StudyAmendment,Modified,Attributes/Relationships,name,Added,Cardinality,,1
+StudyAmendment,Modified,Attributes/Relationships,label,Added,Data Type,,string
+StudyAmendment,Modified,Attributes/Relationships,label,Added,Cardinality,,0..1
+StudyAmendment,Modified,Attributes/Relationships,description,Added,Data Type,,string
+StudyAmendment,Modified,Attributes/Relationships,description,Added,Cardinality,,0..1
+StudyAmendment,Modified,Attributes/Relationships,changes,Added,Data Type,,StudyChange
+StudyAmendment,Modified,Attributes/Relationships,changes,Added,Cardinality,,1..*
+StudyAmendment,Modified,Attributes/Relationships,geographicScopes,Added,Data Type,,GeographicScope
+StudyAmendment,Modified,Attributes/Relationships,geographicScopes,Added,Cardinality,,1..*
+StudyAmendment,Modified,Attributes/Relationships,substantialImpact,Deleted,Data Type,boolean,
+StudyAmendment,Modified,Attributes/Relationships,substantialImpact,Deleted,Cardinality,1,
+StudyAmendment,Modified,Attributes/Relationships,enrollments,Modified,Cardinality,1..*,0..*
+Encounter,Modified,Attributes/Relationships,environmentalSettings,Added,Data Type,,Code
+Encounter,Modified,Attributes/Relationships,environmentalSettings,Added,Cardinality,,0..*
+Encounter,Modified,Attributes/Relationships,notes,Added,Data Type,,CommentAnnotation
+Encounter,Modified,Attributes/Relationships,notes,Added,Cardinality,,0..*
+Encounter,Modified,Attributes/Relationships,extensionAttributes,Added,Data Type,,ExtensionAttribute
+Encounter,Modified,Attributes/Relationships,extensionAttributes,Added,Cardinality,,0..*
+Encounter,Modified,Attributes/Relationships,environmentalSetting,Deleted,Data Type,Code,
+Encounter,Modified,Attributes/Relationships,environmentalSetting,Deleted,Cardinality,0..*,
+ScheduleTimelineExit,Modified,Attributes/Relationships,extensionAttributes,Added,Data Type,,ExtensionAttribute
+ScheduleTimelineExit,Modified,Attributes/Relationships,extensionAttributes,Added,Cardinality,,0..*
+Estimand,Modified,Attributes/Relationships,populationSummary,Added,Data Type,,string
+Estimand,Modified,Attributes/Relationships,populationSummary,Added,Cardinality,,1
+Estimand,Modified,Attributes/Relationships,extensionAttributes,Added,Data Type,,ExtensionAttribute
+Estimand,Modified,Attributes/Relationships,extensionAttributes,Added,Cardinality,,0..*
+Estimand,Modified,Attributes/Relationships,analysisPopulationId,Added,Data Type,,string
+Estimand,Modified,Attributes/Relationships,analysisPopulationId,Added,Cardinality,,1
+Estimand,Modified,Attributes/Relationships,notes,Added,Data Type,,CommentAnnotation
+Estimand,Modified,Attributes/Relationships,notes,Added,Cardinality,,0..*
+Estimand,Modified,Attributes/Relationships,name,Added,Data Type,,string
+Estimand,Modified,Attributes/Relationships,name,Added,Cardinality,,1
+Estimand,Modified,Attributes/Relationships,label,Added,Data Type,,string
+Estimand,Modified,Attributes/Relationships,label,Added,Cardinality,,0..1
+Estimand,Modified,Attributes/Relationships,description,Added,Data Type,,string
+Estimand,Modified,Attributes/Relationships,description,Added,Cardinality,,0..1
+Estimand,Modified,Attributes/Relationships,interventionIds,Added,Data Type,,string
+Estimand,Modified,Attributes/Relationships,interventionIds,Added,Cardinality,,1..*
+Estimand,Modified,Attributes/Relationships,analysisPopulation,Deleted,Data Type,AnalysisPopulation,
+Estimand,Modified,Attributes/Relationships,analysisPopulation,Deleted,Cardinality,1,
+Estimand,Modified,Attributes/Relationships,interventionId,Deleted,Data Type,string,
+Estimand,Modified,Attributes/Relationships,interventionId,Deleted,Cardinality,1,
+Estimand,Modified,Attributes/Relationships,summaryMeasure,Deleted,Data Type,string,
+Estimand,Modified,Attributes/Relationships,summaryMeasure,Deleted,Cardinality,1,
+ConditionAssignment,Modified,Attributes/Relationships,extensionAttributes,Added,Data Type,,ExtensionAttribute
+ConditionAssignment,Modified,Attributes/Relationships,extensionAttributes,Added,Cardinality,,0..*
+Study,Modified,Attributes/Relationships,extensionAttributes,Added,Data Type,,ExtensionAttribute
+Study,Modified,Attributes/Relationships,extensionAttributes,Added,Cardinality,,0..*
+Study,Modified,Attributes/Relationships,documentedBy,Modified,Data Type,StudyProtocolDocument,StudyDefinitionDocument
+Study,Modified,Attributes/Relationships,documentedBy,Modified,Cardinality,0..1,0..*
+SyntaxTemplateDictionary,Modified,Attributes/Relationships,extensionAttributes,Added,Data Type,,ExtensionAttribute
+SyntaxTemplateDictionary,Modified,Attributes/Relationships,extensionAttributes,Added,Cardinality,,0..*
+Endpoint,Modified,Attributes/Relationships,notes,Added,Data Type,,CommentAnnotation
+Endpoint,Modified,Attributes/Relationships,notes,Added,Cardinality,,0..*
+Endpoint,Modified,Attributes/Relationships,extensionAttributes,Added,Data Type,,ExtensionAttribute
+Endpoint,Modified,Attributes/Relationships,extensionAttributes,Added,Cardinality,,0..*
+Procedure,Modified,Attributes/Relationships,notes,Added,Data Type,,CommentAnnotation
+Procedure,Modified,Attributes/Relationships,notes,Added,Cardinality,,0..*
+Procedure,Modified,Attributes/Relationships,extensionAttributes,Added,Data Type,,ExtensionAttribute
+Procedure,Modified,Attributes/Relationships,extensionAttributes,Added,Cardinality,,0..*
+StudyCohort,Modified,Attributes/Relationships,notes,Added,Data Type,,CommentAnnotation
+StudyCohort,Modified,Attributes/Relationships,notes,Added,Cardinality,,0..*
+StudyCohort,Modified,Attributes/Relationships,extensionAttributes,Added,Data Type,,ExtensionAttribute
+StudyCohort,Modified,Attributes/Relationships,extensionAttributes,Added,Cardinality,,0..*
+StudyCohort,Modified,Attributes/Relationships,criterionIds,Added,Data Type,,string
+StudyCohort,Modified,Attributes/Relationships,criterionIds,Added,Cardinality,,0..*
+StudyCohort,Modified,Attributes/Relationships,indicationIds,Added,Data Type,,string
+StudyCohort,Modified,Attributes/Relationships,indicationIds,Added,Cardinality,,0..*
+StudyCohort,Modified,Attributes/Relationships,criteria,Deleted,Data Type,EligibilityCriterion,
+StudyCohort,Modified,Attributes/Relationships,criteria,Deleted,Cardinality,1..*,
+StudyCohort,Modified,Attributes/Relationships,plannedEnrollmentNumber,Modified,Data Type,Range,"Quantity, Range"
+StudyCohort,Modified,Attributes/Relationships,plannedSex,Modified,Cardinality,0..*,0..2
+StudyCohort,Modified,Attributes/Relationships,plannedCompletionNumber,Modified,Data Type,Range,"Quantity, Range"
+Masking,Modified,Attributes/Relationships,text,Added,Data Type,,string
+Masking,Modified,Attributes/Relationships,text,Added,Cardinality,,1
+Masking,Modified,Attributes/Relationships,extensionAttributes,Added,Data Type,,ExtensionAttribute
+Masking,Modified,Attributes/Relationships,extensionAttributes,Added,Cardinality,,0..*
+Masking,Modified,Attributes/Relationships,isMasked,Added,Data Type,,boolean
+Masking,Modified,Attributes/Relationships,isMasked,Added,Cardinality,,1
+Masking,Modified,Attributes/Relationships,Role,Deleted,Data Type,Code,
+Masking,Modified,Attributes/Relationships,Role,Deleted,Cardinality,1,
+Masking,Modified,Attributes/Relationships,description,Deleted,Data Type,string,
+Masking,Modified,Attributes/Relationships,description,Deleted,Cardinality,0..1,
+StudyVersion,Modified,Attributes/Relationships,dictionaries,Added,Data Type,,SyntaxTemplateDictionary
+StudyVersion,Modified,Attributes/Relationships,dictionaries,Added,Cardinality,,0..*
+StudyVersion,Modified,Attributes/Relationships,extensionAttributes,Added,Data Type,,ExtensionAttribute
+StudyVersion,Modified,Attributes/Relationships,extensionAttributes,Added,Cardinality,,0..*
+StudyVersion,Modified,Attributes/Relationships,abbreviations,Added,Data Type,,Abbreviation
+StudyVersion,Modified,Attributes/Relationships,abbreviations,Added,Cardinality,,0..*
+StudyVersion,Modified,Attributes/Relationships,narrativeContentItems,Added,Data Type,,NarrativeContentItem
+StudyVersion,Modified,Attributes/Relationships,narrativeContentItems,Added,Cardinality,,0..*
+StudyVersion,Modified,Attributes/Relationships,referenceIdentifiers,Added,Data Type,,ReferenceIdentifier
+StudyVersion,Modified,Attributes/Relationships,referenceIdentifiers,Added,Cardinality,,0..*
+StudyVersion,Modified,Attributes/Relationships,biomedicalConcepts,Added,Data Type,,BiomedicalConcept
+StudyVersion,Modified,Attributes/Relationships,biomedicalConcepts,Added,Cardinality,,0..*
+StudyVersion,Modified,Attributes/Relationships,notes,Added,Data Type,,CommentAnnotation
+StudyVersion,Modified,Attributes/Relationships,notes,Added,Cardinality,,0..*
+StudyVersion,Modified,Attributes/Relationships,studyInterventions,Added,Data Type,,StudyIntervention
+StudyVersion,Modified,Attributes/Relationships,studyInterventions,Added,Cardinality,,0..*
+StudyVersion,Modified,Attributes/Relationships,bcSurrogates,Added,Data Type,,BiomedicalConceptSurrogate
+StudyVersion,Modified,Attributes/Relationships,bcSurrogates,Added,Cardinality,,0..*
+StudyVersion,Modified,Attributes/Relationships,eligibilityCriterionItems,Added,Data Type,,EligibilityCriterionItem
+StudyVersion,Modified,Attributes/Relationships,eligibilityCriterionItems,Added,Cardinality,,0..*
+StudyVersion,Modified,Attributes/Relationships,administrableProducts,Added,Data Type,,AdministrableProduct
+StudyVersion,Modified,Attributes/Relationships,administrableProducts,Added,Cardinality,,0..*
+StudyVersion,Modified,Attributes/Relationships,roles,Added,Data Type,,StudyRole
+StudyVersion,Modified,Attributes/Relationships,roles,Added,Cardinality,,0..*
+StudyVersion,Modified,Attributes/Relationships,organizations,Added,Data Type,,Organization
+StudyVersion,Modified,Attributes/Relationships,organizations,Added,Cardinality,,0..*
+StudyVersion,Modified,Attributes/Relationships,bcCategories,Added,Data Type,,BiomedicalConceptCategory
+StudyVersion,Modified,Attributes/Relationships,bcCategories,Added,Cardinality,,0..*
+StudyVersion,Modified,Attributes/Relationships,medicalDevices,Added,Data Type,,MedicalDevice
+StudyVersion,Modified,Attributes/Relationships,medicalDevices,Added,Cardinality,,0..*
+StudyVersion,Modified,Attributes/Relationships,documentVersionIds,Added,Data Type,,string
+StudyVersion,Modified,Attributes/Relationships,documentVersionIds,Added,Cardinality,,0..*
+StudyVersion,Modified,Attributes/Relationships,conditions,Added,Data Type,,Condition
+StudyVersion,Modified,Attributes/Relationships,conditions,Added,Cardinality,,0..*
+StudyVersion,Modified,Attributes/Relationships,productOrganizationRoles,Added,Data Type,,ProductOrganizationRole
+StudyVersion,Modified,Attributes/Relationships,productOrganizationRoles,Added,Cardinality,,0..*
+StudyVersion,Modified,Attributes/Relationships,studyPhase,Deleted,Data Type,AliasCode,
+StudyVersion,Modified,Attributes/Relationships,studyPhase,Deleted,Cardinality,0..1,
+StudyVersion,Modified,Attributes/Relationships,documentVersionId,Deleted,Data Type,string,
+StudyVersion,Modified,Attributes/Relationships,documentVersionId,Deleted,Cardinality,0..1,
+StudyVersion,Modified,Attributes/Relationships,studyType,Deleted,Data Type,Code,
+StudyVersion,Modified,Attributes/Relationships,studyType,Deleted,Cardinality,0..1,
+StudyVersion,Modified,Attributes/Relationships,studyDesigns,Modified,Data Type,StudyDesign,"InterventionalStudyDesign, ObservationalStudyDesign"
+StudyVersion,Modified,Attributes/Relationships,studyIdentifiers,Modified,Cardinality,0..*,1..*
