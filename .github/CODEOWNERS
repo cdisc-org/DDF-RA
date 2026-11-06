@@ -1,0 +1,12 @@
+# Code owners for DDF-RA. The "Protect main" ruleset requires approval from a code owner
+# for pull requests into main that touch these paths. Later matches take precedence.
+# See https://docs.github.com/en/repositories/managing-your-repositorys-settings-and-features/customizing-your-repository/about-code-owners
+
+# Default: everything in the repository
+*                   @cdisc-org/ddf-ra-team
+
+# Canonical model artifacts (UML, API, CT) and the deliverables generated from them
+/Deliverables/      @cdisc-org/ddf-ra-team
+
+# CI workflows and repository configuration, including this file
+/.github/           @cdisc-org/ddf-ra-team
