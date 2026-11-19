@@ -101,9 +101,9 @@ UML, API and CT are now out of step.
 
 ### 2.2 UML fixes suggested before export
 
-- Add `id` (String, 1) to `InterventionAssignment`. Comparable owned classes such as `Masking` and `GeographicScope`
-  have one, and their API schemas require `id`. (Some value-type classes, such as `Range`, have no `id` in the UML, so
-  confirm which pattern this class should follow.)
+- Add `id` (String, 1) to `InterventionAssignment`. Every other concrete class in the `main` model has an `id`, either
+  directly (e.g. `Masking`, `GeographicScope`) or inherited (e.g. `Range` inherits it from `QuantityRange`), and every
+  API schema for them requires `id`.
 - Capitalize the types to `Boolean` and `String` to match the model's convention (259 `String`, 15 `Boolean`).
   The lowercase types are also used on `ConditionAssignment.id` and `ParameterMap.id` (already on `main`).
 - Decide whether `randomizationType` should be a coded value. Commit `e049c78` changed it to string, but a Code would
