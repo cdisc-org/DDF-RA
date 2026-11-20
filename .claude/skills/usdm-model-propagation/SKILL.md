@@ -6,7 +6,9 @@ description: >
   -Input/-Output schemas and property/required edits for USDM_API.json and USDM_API.yaml (and
   can apply them), Controlled Terminology rows for the 'DDF Entities&Attributes' sheet of
   USDM_CT.xlsx, UML convention problems (missing id, lowercase types, breaking required
-  attributes), and a checklist of affected examples, mappings, rules and docs. Use in the DDF-RA
+  attributes), and a checklist of affected examples, mappings, rules and docs. It follows the
+  spec's UGG-9 schema constraints (additionalProperties: false, minItems: 1) once the spec uses
+  them. Use in the DDF-RA
   repository when a class, attribute or association has been added, removed or changed in the
   UML; when asked what API or CT changes a model change needs; to "propagate", "carry through"
   or "sync" a model change; or to prepare the API/CT side of a release ticket.
@@ -29,6 +31,16 @@ what the other two need from the UML change and drafts it.
 
    `--base` is the previous release (default `main`). Add `--ref <branch>` to inspect a branch
    without checking it out. `--model xmi` diffs the exported XMI instead of the `.qea`.
+
+   `--constraints auto|on|off` controls the UGG-9 schema constraints in the drafts:
+   `additionalProperties: false` on new schemas, and `minItems: 1` on required (1..*) arrays.
+   - `auto` (default) includes them only if the spec at `--ref` already uses them. Constraining only
+     the new schemas in an otherwise open spec would make the release check's `auto` mode fail every
+     other schema.
+   - `on` forces them, e.g. when propagating together with UGG-9.
+   - `off` leaves them out.
+
+   Section 3 of the change pack says which mode applied and why.
 
 2. **Review it with the user.** Read section 2 (UML hygiene) first: problems there are best fixed
    in the UML before anything is propagated. In particular:
@@ -63,7 +75,8 @@ what the other two need from the UML change and drafts it.
    team's review.
 
 5. **Verify.** Run the `usdm-release-check` skill. After the API is applied, its checks 3 (JSON vs
-   YAML) and 4 (UML vs API) should pass. Checks 2 (XMI export) and 6 (CT) pass only after the XMI
+   YAML) and 4 (UML vs API) should pass, and so should check 7 (UGG-9 constraints) when the spec
+   uses them. Checks 2 (XMI export) and 6 (CT) pass only after the XMI
    is exported in Enterprise Architect and the CT rows are added. Then work through section 5 of the
    change pack, using the `usdm-core-rules-audit` skill (with `--base`) for the rules.
 
@@ -82,12 +95,15 @@ These conventions are taken from the 4.0.0 spec:
 | Class type 0..* / 1..* | array of `$ref`, with `"default": []` only when optional |
 | Abstract type (e.g. QuantityRange) | `anyOf` of its concrete subclasses |
 | Ref association | `<singular role>Id` (string) or `<singular role>Ids` (array of string) |
+| Any 1..*, **with UGG-9 constraints** | `"minItems": 1` right after `"type": "array"` (not on optional arrays) |
 
 - **Schemas:** `id`, then `extensionAttributes`, then the model's properties (inherited first), then
   `instanceType` (`const` = class name). `required` lists the required properties in that order,
   ending with `instanceType`. `title` is the name with only its first letter capitalized
   (`isStratified` → `Isstratified`). Abstract classes have no schema; their properties are added to
-  every concrete subclass.
+  every concrete subclass. With UGG-9 constraints, new schemas also get `"additionalProperties":
+  false` right after `"type": "object"`. Edited existing schemas keep whatever
+  `additionalProperties` they already have.
 - **CT rows:** no row for `id`. Primitives are `Attribute`; class-typed attributes (Code, Quantity,
   CommentAnnotation, …) are `Complex Datatype Relationship`; associations are `Relationship`, with no
   C-code, `Has Value List` = `N/A` and the definition "A USDM relationship between the X and Y

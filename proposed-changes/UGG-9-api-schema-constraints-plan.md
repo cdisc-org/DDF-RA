@@ -215,9 +215,15 @@ No changes. The constraints express cardinalities the UML already has, and CT ha
     or if a 0..* array has `minItems`.
   - **`--constraints auto|require|off`:** with the default `auto`, check 7 reports coverage only until the spec uses
     either constraint, then enforces it everywhere. Use `require` while implementing this plan.
-- **`usdm-model-propagation`** should, once UGG-9 is adopted, emit `additionalProperties: false` in new class schemas
-  and `minItems: 1` for 1..* arrays, so that future model changes (e.g. `InterventionAssignment` from UGG-57/61) follow
-  the new convention. The drafts it produces today don't.
+- **`usdm-model-propagation`: done** (added after this plan was first written). Its drafts now emit
+  `additionalProperties: false` on new class schemas and `minItems: 1` on 1..* arrays, with the same placement as
+  section 5.1, controlled by `--constraints auto|on|off`:
+  - With the default `auto`, the constraints are emitted only if the spec already uses them. Closing only the new
+    schemas in an otherwise open spec would make the release check fail the rest.
+  - Tested end to end: on a UGG-9-constrained spec, propagating UGG-57/61 with `--apply` closes the new
+    `InterventionAssignment` schemas, and `release_check.py --constraints require` passes (162/162).
+  - When UGG-9 and other model changes land together, either apply UGG-9 first and propagate with `auto`, or propagate
+    with `--constraints on`.
 
 ## 6. Implementation sequence
 

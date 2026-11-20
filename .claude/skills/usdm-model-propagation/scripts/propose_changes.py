@@ -151,8 +151,10 @@ def ref_schema(m: U.Model, t: str, io: str) -> dict:
     return {"$ref": f"#/components/schemas/{t}-{io}"}
 
 
-def prop_schema(m: U.Model, owner: str, p: U.Prop, io: str, kind: str) -> tuple[str, dict, bool]:
-    """(api property name, JSON schema, required?) for a UML property."""
+def prop_schema(m: U.Model, owner: str, p: U.Prop, io: str, kind: str,
+                constrain: bool = False) -> tuple[str, dict, bool]:
+    """(api property name, JSON schema, required?) for a UML property.
+    constrain: add the UGG-9 `minItems: 1` to required (1..*) arrays, right after `type`."""
     name, req = p.name, p.required
     if p.kind == "association" and kind == "Ref":
         name = singular(p.name) + ("Ids" if p.many else "Id")
@@ -169,7 +171,10 @@ def prop_schema(m: U.Model, owner: str, p: U.Prop, io: str, kind: str) -> tuple[
             base = ref_schema(m, types[0], io)
     is_ref_obj = "$ref" in base or ("anyOf" in base and "type" not in base)
     if p.many:
-        s = {"items": base, "type": "array", "title": title(name)}
+        s = {"items": base, "type": "array"}
+        if constrain and p.required:
+            s["minItems"] = 1
+        s["title"] = title(name)
         if not p.required:
             s["default"] = []
         return name, s, p.required
@@ -187,7 +192,9 @@ def prop_schema(m: U.Model, owner: str, p: U.Prop, io: str, kind: str) -> tuple[
     return name, s, req
 
 
-def class_schema(m: U.Model, cname: str, io: str, rels, new_classes) -> dict:
+def class_schema(m: U.Model, cname: str, io: str, rels, new_classes, constrain: bool = False) -> dict:
+    """A new -Input/-Output schema. constrain: add the UGG-9 constraints
+    (`additionalProperties: false` after `type`, `minItems: 1` on required arrays)."""
     props, required = {}, []
     allp = m.all_props(cname)
     if "id" in allp:
@@ -199,13 +206,30 @@ def class_schema(m: U.Model, cname: str, io: str, rels, new_classes) -> dict:
         if p.name == "id":
             continue
         kind = rel_kind(m, cname, p, rels, new_classes)[0] if p.kind == "association" else ""
-        n, s, req = prop_schema(m, cname, p, io, kind)
+        n, s, req = prop_schema(m, cname, p, io, kind, constrain)
         props[n] = s
         if req:
             required.append(n)
     props["instanceType"] = {"type": "string", "enum": [cname], "const": cname, "title": "Instancetype"}
     required.append("instanceType")
-    return {"properties": props, "type": "object", "required": required, "title": cname}
+    out = {"properties": props, "type": "object"}
+    if constrain:
+        out["additionalProperties"] = False
+    out.update({"required": required, "title": cname})
+    return out
+
+
+def constraints_in_use(api_path: Path | None) -> tuple[bool, str]:
+    """Whether the spec already uses the UGG-9 constraints, and a short description."""
+    if not api_path:
+        return False, "API spec not found"
+    S = U.load_api_json(api_path).get("components", {}).get("schemas", {})
+    model = [n for n in S if re.search(r"-(Input|Output)$", n) and not n.startswith("Wrapper-")]
+    n_ap = sum(1 for n in model if S[n].get("additionalProperties") is False)
+    n_mi = sum(1 for n in model for v in S[n].get("properties", {}).values()
+               if isinstance(v, dict) and v.get("minItems", 0) >= 1)
+    return (n_ap > 0 or n_mi > 0), (f"{n_ap}/{len(model)} model schemas have `additionalProperties: false`, "
+                                    f"{n_mi} properties have `minItems: 1`")
 
 
 # --------------------------------------------------------------------------- YAML emitter
@@ -323,7 +347,7 @@ def example_usage(repo: Path, ref: str | None, classes: set[str]) -> dict[str, d
 
 
 # --------------------------------------------------------------------------- apply
-def api_edits(cur: U.Model, added, changes, rels):
+def api_edits(cur: U.Model, added, changes, rels, constrain: bool = False):
     """Edits as data: (schema, op, name, schema-json, required?) with op in
     new_schema / set_prop / del_prop."""
     new_set = set(added)
@@ -332,7 +356,7 @@ def api_edits(cur: U.Model, added, changes, rels):
         if cur.classes[c].abstract:
             continue
         for io in ("Input", "Output"):
-            edits.append((f"{c}-{io}", "new_schema", None, class_schema(cur, c, io, rels, new_set), None))
+            edits.append((f"{c}-{io}", "new_schema", None, class_schema(cur, c, io, rels, new_set, constrain), None))
     for c, prop, kind, old, new in changes:
         for t in cur.concrete_for(c):
             for io in ("Input", "Output"):
@@ -340,7 +364,7 @@ def api_edits(cur: U.Model, added, changes, rels):
                     edits.append((f"{t}-{io}", "del_prop", prop, None, None))
                     continue
                 k = rel_kind(cur, c, new, rels, new_set)[0] if new.kind == "association" else ""
-                n, s, req = prop_schema(cur, c, new, io, k)
+                n, s, req = prop_schema(cur, c, new, io, k, constrain)
                 edits.append((f"{t}-{io}", "set_prop", n, s, req))
     return edits
 
@@ -486,6 +510,10 @@ def main():
     ap.add_argument("--apply", action="store_true",
                     help="write the section 3 API edits into the working-tree USDM_API.json and USDM_API.yaml")
     ap.add_argument("--set-version", help="with --apply, also set info.version in both API files (e.g. 4.1.0)")
+    ap.add_argument("--constraints", choices=["auto", "on", "off"], default="auto",
+                    help="UGG-9 schema constraints in the drafts (additionalProperties: false on new schemas, "
+                         "minItems: 1 on required arrays). auto = only if the spec at --ref already uses them "
+                         "(default); on = always; off = never")
     args = ap.parse_args()
     if args.apply and args.ref:
         sys.exit("--apply edits the working tree; run it without --ref")
@@ -495,6 +523,8 @@ def main():
     try:
         cur, base = src.model(args.ref, args.model), src.model(args.base, args.model)
         rels = relationship_types(src.path(args.ref, U.DATA_STRUCTURE))
+        in_use, usage = constraints_in_use(src.path(args.ref, U.API_JSON))
+        constrain = args.constraints == "on" or (args.constraints == "auto" and in_use)
         ct_last = ct_last_row(src.path(args.ref, U.CT))
         added, removed, changes, cls_changes = diff_models(cur, base)
         new_set = set(added)
@@ -563,13 +593,24 @@ def main():
         w("## 3. API drafts (`USDM_API.json` and `USDM_API.yaml`)\n")
         w("Make every edit in both files. Each class has an `-Input` and an `-Output` schema; they differ only "
           "in the `-Input`/`-Output` suffix of `$ref`s.\n")
+        if constrain:
+            w("UGG-9 schema constraints are **included**: `additionalProperties: false` on new schemas (after "
+              "`type: object`) and `minItems: 1` on required (1..*) arrays (after `type: array`). "
+              + (f"The spec already uses them ({usage})." if args.constraints == "auto"
+                 else "Forced with `--constraints on`.") + "\n")
+        else:
+            w("UGG-9 schema constraints (`additionalProperties: false`, `minItems: 1`) are **not included**: "
+              + ("the spec doesn't use them yet" if args.constraints == "auto" and not in_use
+                 else "turned off with `--constraints off`")
+              + f" ({usage}). Adding them to only the new schemas would make the release check fail the rest. "
+              "Use `--constraints on` while implementing UGG-9.\n")
         assoc_notes = []
         for c in added:
             if cur.classes[c].abstract:
                 w(f"### `{c}` (abstract): no schema; its properties go on each concrete subclass\n")
                 continue
             for io in ("Input", "Output"):
-                sch = class_schema(cur, c, io, rels, new_set)
+                sch = class_schema(cur, c, io, rels, new_set, constrain)
                 w(f"### New schema `{c}-{io}`\n")
                 w("```json")
                 w(f'"{c}-{io}": ' + json.dumps(sch, indent=2))
@@ -597,7 +638,7 @@ def main():
                 if new.kind == "association":
                     assoc_notes.append(f"`{c}.{prop}` → **{k[0]}** ({k[1]})")
                 for io in ("Input", "Output"):
-                    n, s, req = prop_schema(cur, c, new, io, k[0])
+                    n, s, req = prop_schema(cur, c, new, io, k[0], constrain)
                     w(f"- `-{io}`: {'set' if kind == 'changed' else 'add'} property `{n}`"
                       + ("; add to `required`" if req else "; not required") + ":")
                     w("  ```json")
@@ -691,7 +732,7 @@ def main():
         w("- [ ] Informative model diagram (`Documents/DDF USDM Model Informative.*`)")
         w("- [ ] Implementation Guide (`Deliverables/IG/USDM-IG.pdf`)")
         if args.apply:
-            edits = api_edits(cur, added, changes, rels)
+            edits = api_edits(cur, added, changes, rels, constrain)
             log = apply_json(repo / U.API_JSON, edits, args.set_version)
             log += apply_yaml(repo / U.API_YAML, edits, args.set_version)
             w("\n## Applied to the working tree\n")
