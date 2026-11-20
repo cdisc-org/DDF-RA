@@ -205,13 +205,16 @@ No changes. The constraints express cardinalities the UML already has, and CT ha
 
 ### 5.6 Repository tooling (the `.claude/skills` added in PR #723)
 
-- **`usdm-release-check` is blind to this change.** Its JSON-vs-YAML check compares property names and `required`
-  lists only, so a YAML file missing the constraints would pass. The test confirmed it: the report was identical with
-  and without the constraints applied.
-  - Add a check that every model schema except `Wrapper` has `additionalProperties: false`.
-  - Add a check that every required 1..* array has `minItems: 1`.
-  - Add a check that the constraints match between JSON and YAML. Optionally, use PyYAML when available for a full
-    semantic comparison.
+- **`usdm-release-check`: done** (added after this plan was first written). When the plan was written, its JSON-vs-YAML
+  check compared property names and `required` lists only, and its report was identical with and without the
+  constraints. It now has:
+  - **Check 3:** compares each schema's `additionalProperties` and each property's `minItems`/`maxItems` between JSON
+    and YAML, so a one-sided edit fails.
+  - **New check 7:** verifies `additionalProperties: false` on every model schema except `Wrapper-*`, and `minItems: 1`
+    on every array that is required in the API or 1..* in the UML (42 on the 4.1 spec). It warns if `Wrapper` is closed
+    or if a 0..* array has `minItems`.
+  - **`--constraints auto|require|off`:** with the default `auto`, check 7 reports coverage only until the spec uses
+    either constraint, then enforces it everywhere. Use `require` while implementing this plan.
 - **`usdm-model-propagation`** should, once UGG-9 is adopted, emit `additionalProperties: false` in new class schemas
   and `minItems: 1` for 1..* arrays, so that future model changes (e.g. `InterventionAssignment` from UGG-57/61) follow
   the new convention. The drafts it produces today don't.
@@ -240,8 +243,9 @@ so it gets no `minItems`. `InterventionAssignment-*` would get `additionalProper
    project's usual tooling or an OpenAPI validator.
 2. **Counts:** 160 schemas with `additionalProperties: false` (none on `Wrapper-*`, `HTTPValidationError`,
    `ValidationError`); 42 properties with `minItems: 1`; 202 lines added to each of JSON and YAML; no lines removed.
-3. **JSON = YAML:** a full semantic comparison of `components.schemas` (PyYAML) is identical. Also run the release
-   check: its existing checks should be unchanged from before.
+3. **JSON = YAML, and coverage:** run `release_check.py --constraints require`. Check 3 must pass (constraints
+   identical in JSON and YAML), and check 7 must report 160/160 and 42/42 with no failures. Optionally also compare
+   `components.schemas` in full with PyYAML.
 4. **Examples:** all five validate against `Wrapper-Input` with Draft 2020-12, after step 1.
 5. **Negative tests:** a misspelled property (e.g. `"labell"` on a `StudyArm`) and an empty `arms` array each produce
    exactly one validation error. The `Wrapper` still accepts an extra top-level key.

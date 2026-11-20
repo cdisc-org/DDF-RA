@@ -268,12 +268,31 @@ def load_api_json(path_or_bytes) -> dict:
     return json.loads(data)
 
 
+ITEM_BOUNDS = ("minItems", "maxItems")
+
+
 def api_schema_props(api: dict) -> dict[str, dict]:
-    """schema name -> {'props': set, 'required': set}"""
+    """schema name -> {'props': set, 'required': set,
+                       'additionalProperties': value or None if absent,
+                       'bounds': {prop: {'minItems': n, 'maxItems': n}} (only props that set one)}"""
     out = {}
     for name, s in api.get("components", {}).get("schemas", {}).items():
-        out[name] = {"props": set(s.get("properties", {})), "required": set(s.get("required", []))}
+        props = s.get("properties", {})
+        bounds = {}
+        for p, v in props.items():
+            b = {k: v[k] for k in ITEM_BOUNDS if isinstance(v, dict) and k in v}
+            if b:
+                bounds[p] = b
+        out[name] = {"props": set(props), "required": set(s.get("required", [])),
+                     "additionalProperties": s.get("additionalProperties"), "bounds": bounds}
     return out
+
+
+def _yaml_scalar(v: str):
+    v = v.strip().strip("'\"")
+    if v in ("true", "false"):
+        return v == "true"
+    return int(v) if re.fullmatch(r"-?\d+", v) else v
 
 
 def yaml_info_version(path: str | Path) -> str | None:
@@ -293,12 +312,14 @@ def yaml_info_version(path: str | Path) -> str | None:
 
 def yaml_schemas(path: str | Path) -> dict[str, dict]:
     """Indentation-based read of components/schemas in USDM_API.yaml (2-space indent, as
-    produced by the project's tooling): schema -> {'props': set, 'required': set}."""
+    produced by the project's tooling). Returns the same shape as api_schema_props():
+    schema -> {'props', 'required', 'additionalProperties', 'bounds'}."""
     out: dict[str, dict] = {}
     lines = Path(path).read_text(encoding="utf-8").splitlines()
     in_schemas = False
     cur = None
     section = None
+    prop = None
     for line in lines:
         if re.match(r"^  schemas:\s*$", line):
             in_schemas = True
@@ -310,19 +331,26 @@ def yaml_schemas(path: str | Path) -> dict[str, dict]:
         m4 = re.match(r"^    ([^\s:][^:]*):\s*$", line)
         if m4:
             cur = m4.group(1).strip("'\"")
-            out[cur] = {"props": set(), "required": set()}
-            section = None
+            out[cur] = {"props": set(), "required": set(), "additionalProperties": None, "bounds": {}}
+            section = prop = None
             continue
         if cur is None:
             continue
-        m6 = re.match(r"^      (\w+):", line)
+        m6 = re.match(r"^      (\w+):\s*(.*)$", line)
         if m6:
-            section = m6.group(1)
+            section, prop = m6.group(1), None
+            if section == "additionalProperties" and m6.group(2).strip():
+                out[cur]["additionalProperties"] = _yaml_scalar(m6.group(2))
             continue
         if section == "properties":
             m8 = re.match(r"^        ([^\s:][^:]*):", line)
             if m8:
-                out[cur]["props"].add(m8.group(1).strip("'\""))
+                prop = m8.group(1).strip("'\"")
+                out[cur]["props"].add(prop)
+                continue
+            mb = re.match(r"^          (minItems|maxItems):\s*(\S+)\s*$", line)
+            if mb and prop:
+                out[cur]["bounds"].setdefault(prop, {})[mb.group(1)] = _yaml_scalar(mb.group(2))
         elif section == "required":
             mr = re.match(r"^      - (.+?)\s*$", line)
             if mr:

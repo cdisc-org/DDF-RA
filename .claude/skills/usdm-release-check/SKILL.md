@@ -4,12 +4,14 @@ description: >
   Pre-push consistency check for DDF-RA (USDM) release branches. Runs one script that
   verifies the version numbers the "Generate Diff and Data Dict" CI workflow compares,
   detects UML changes saved in USDM_UML.qea but not exported to USDM_UML.xmi, checks
-  USDM_API.json and USDM_API.yaml are in sync, and checks every UML class/property has a
-  matching API schema property and Controlled Terminology (USDM_CT.xlsx) row. Optionally
-  runs DDF-RA-Tools and reports alignment.csv. Use in the DDF-RA repository before pushing
-  model, API or CT changes; when asked to check, validate or review a release branch; when CI
-  "Generate Diff and Data Dict" fails or did not run; when alignment.csv has rows; or when
-  asked whether UML, API and CT are aligned or a release is ready.
+  USDM_API.json and USDM_API.yaml are in sync (including their schema constraints), checks
+  every UML class/property has a matching API schema property and Controlled Terminology
+  (USDM_CT.xlsx) row, and verifies the UGG-9 schema constraints (additionalProperties: false,
+  minItems: 1 on required arrays). Optionally runs DDF-RA-Tools and reports alignment.csv. Use
+  in the DDF-RA repository before pushing model, API or CT changes; when asked to check,
+  validate or review a release branch; when CI "Generate Diff and Data Dict" fails or did not
+  run; when alignment.csv has rows; when adding or checking additionalProperties/minItems in the
+  API; or when asked whether UML, API and CT are aligned or a release is ready.
 ---
 
 # USDM release check
@@ -38,7 +40,8 @@ python3 -I .claude/skills/usdm-release-check/scripts/release_check.py --out "$TM
 | `--ref REF` | Check a git ref instead of the working tree |
 | `--prev-ref REF` | Previous release, as CI's `prev-branch` input (default `main`) |
 | `--branch NAME` | Override the branch name used for `CURRENT_VERSION` |
-| `--model qea\|xmi` | UML used for checks 4 and 6. Default `qea` (the model being edited); use `xmi` to see exactly what CI will see |
+| `--model qea\|xmi` | UML used for checks 4, 6 and 7. Default `qea` (the model being edited); use `xmi` to see exactly what CI will see |
+| `--constraints auto\|require\|off` | Check 7 (UGG-9 schema constraints). `auto` (default): report coverage only until the spec uses either constraint, then enforce it everywhere. `require`: always enforce, e.g. while implementing UGG-9. `off`: skip |
 | `--tools PATH` | Path to a DDF-RA-Tools checkout. Runs `main.py` on copies of the inputs and reports `alignment.csv` |
 | `--tools-python PY` | Python with DDF-RA-Tools' `requirements.txt` installed (default: the interpreter running the script) |
 
@@ -63,8 +66,9 @@ In the Claude Code sandbox, set `UV_CACHE_DIR="$TMPDIR/uvcache"` first.
    Any difference means the XMI was not re-exported, so CI and DDF-RA-Tools cannot see the change.
    The `Extensions` package is not exported and is reported for information only.
    *Fix:* export the XMI from Enterprise Architect and commit it with the `.qea` and PNGs.
-3. **API JSON vs YAML.** Schema names, property names and `required` lists must match. Nothing
-   else in the project checks the YAML.
+3. **API JSON vs YAML.** Schema names, property names, `required` lists and the schema
+   constraints must match: each schema's `additionalProperties`, and each property's
+   `minItems`/`maxItems`. Nothing else in the project checks the YAML.
 4. **UML vs API.** Every concrete class needs a `<Class>-Input` schema (the `-Output` schema
    mirrors it). Abstract classes have no schema; their properties are checked on each concrete
    subclass. An association can appear as a nested object (`definedProcedures`) or as an id
@@ -78,7 +82,21 @@ In the Claude Code sandbox, set `UV_CACHE_DIR="$TMPDIR/uvcache"` first.
 6. **UML vs CT.** Every concrete class needs an `Entity` row, and every property (own and
    inherited, except `id`) needs a row under that entity. Rows for names not in the UML are
    warnings (stale or misspelt).
-7. **DDF-RA-Tools alignment** (only with `--tools`). Runs the real generator and lists
+7. **API schema constraints (UGG-9).** The constraints CORE's schema validation uses
+   ([UGG-9](https://jira.cdisc.org/browse/UGG-9), DDF-RA #701), checked in the JSON:
+   - every model schema (`<Class>-Input`/`-Output`, except `Wrapper-*`) has
+     `additionalProperties: false`. A missing value, or any value other than `false`, fails;
+   - every array property that is required in the API, or 1..* in the UML, has `minItems: 1`, in
+     both `-Input` and `-Output`. On the 4.1 spec that is 21 properties × 2 = 42;
+   - a warning if `Wrapper-*` is closed (it must stay open for system-specific data), or if a
+     0..* array in the UML has `minItems` (the schema would be stricter than the model).
+
+   With the default `--constraints auto`, while the spec uses neither constraint the check only
+   reports coverage (e.g. "0/160 … 0/42"). As soon as any schema uses one, every gap is a failure,
+   so a partial rollout can't slip through.
+   *Fix:* add the missing constraint in **both** JSON and YAML (check 3 catches one-sided edits).
+   Put `additionalProperties` right after `type: object`, and `minItems` right after `type: array`.
+8. **DDF-RA-Tools alignment** (only with `--tools`). Runs the real generator and lists
    `alignment.csv` rows. This is authoritative; checks 4 and 6 are a faster approximation.
 
 ## Limits
@@ -88,6 +106,10 @@ In the Claude Code sandbox, set `UV_CACHE_DIR="$TMPDIR/uvcache"` first.
 - Id-reference names are matched with simple English singular rules plus the irregulars
   `children → child` and `criteria → criterion`. Add others to `IRREGULAR` in the script if a
   false "no API property" appears.
-- The script checks presence and required-ness, not data types or definitions.
+- The script checks presence, required-ness and the two UGG-9 constraints, not data types or
+  definitions. It doesn't validate instance data. To test the examples against the schema, use a
+  JSON Schema validator (e.g. `jsonschema`, Draft 2020-12, against `Wrapper-Input`).
+- In the YAML, constraints are read only at the indentation the project's file uses: schema level
+  (6 spaces) and property level (10 spaces).
 - `scripts/usdm_lib.py` is shared with the `usdm-model-propagation` and `usdm-core-rules-audit`
   skills. Keep the copies identical.

@@ -5,16 +5,20 @@ Checks, in order:
   1. Versions      the four values the "Generate Diff and Data Dict" CI workflow compares,
                    plus the YAML version and the .qea diagram version
   2. UML export    .qea (USDM package) vs the committed .xmi
-  3. API sync      USDM_API.json vs USDM_API.yaml (schemas, properties, required lists)
+  3. API sync      USDM_API.json vs USDM_API.yaml (schemas, properties, required lists,
+                   additionalProperties, minItems/maxItems)
   4. UML -> API    every concrete class and property has an API schema/property,
                    with matching required-ness
   5. CT structure  row order and 'Has Value List' format that DDF-RA-Tools depends on
   6. UML -> CT     every concrete class/property has a row in 'DDF Entities&Attributes'
-  7. (optional)    run DDF-RA-Tools and report alignment.csv
+  7. Constraints   UGG-9 schema constraints: additionalProperties=false on every model
+                   schema (not Wrapper), minItems=1 on every 1..* / required array
+  8. (optional)    run DDF-RA-Tools and report alignment.csv
 
 Usage:
   python3 release_check.py [--repo .] [--ref REF] [--prev-ref main] [--branch NAME]
-                           [--model qea|xmi] [--tools PATH_TO_DDF-RA-Tools] [--out FILE]
+                           [--model qea|xmi] [--constraints auto|require|off]
+                           [--tools PATH_TO_DDF-RA-Tools] [--out FILE]
 
 Exit status: 1 if any check FAILs, else 0. Standard library only.
 """
@@ -184,8 +188,97 @@ def check_api_sync(r: U.Report, a: Artifacts):
         if j[s]["required"] != y[s]["required"]:
             r.fail(S, f"`{s}` required differs: JSON-only {sorted(j[s]['required'] - y[s]['required'])}, "
                       f"YAML-only {sorted(y[s]['required'] - j[s]['required'])}"); bad = True
+        if j[s]["additionalProperties"] != y[s]["additionalProperties"]:
+            r.fail(S, f"`{s}` additionalProperties differs: JSON {_ap(j[s]['additionalProperties'])}, "
+                      f"YAML {_ap(y[s]['additionalProperties'])}"); bad = True
+        for p in sorted(set(j[s]["bounds"]) | set(y[s]["bounds"])):
+            jb, yb = j[s]["bounds"].get(p, {}), y[s]["bounds"].get(p, {})
+            if jb != yb:
+                r.fail(S, f"`{s}.{p}` item bounds differ: JSON {jb or 'none'}, YAML {yb or 'none'}"); bad = True
     if not bad:
-        r.ok(S, f"{len(j)} schemas, properties and required lists match")
+        n_ap = sum(1 for v in j.values() if v["additionalProperties"] is not None)
+        n_b = sum(len(v["bounds"]) for v in j.values())
+        r.ok(S, f"{len(j)} schemas: properties, required lists and constraints match "
+                f"({n_ap} with additionalProperties, {n_b} properties with minItems/maxItems)")
+
+
+def _ap(v) -> str:
+    return "absent" if v is None else f"`{str(v).lower() if isinstance(v, bool) else v}`"
+
+
+def is_model_schema(name: str) -> bool:
+    """`<Class>-Input`/`-Output` schemas except Wrapper (which stays open, per DDF-RA #701)."""
+    return bool(re.search(r"-(Input|Output)$", name)) and not name.startswith("Wrapper-")
+
+
+def _report_list(r: U.Report, status: str, S: str, head: str, items: list[str], limit: int = 25):
+    r.add(status, S, f"{head} ({len(items)}):")
+    for it in items[:limit]:
+        r.add(status, S, "  " + it)
+    if len(items) > limit:
+        r.add(status, S, f"  … {len(items) - limit} more")
+
+
+def check_constraints(r: U.Report, a: Artifacts, m: U.Model, mode: str):
+    """UGG-9: additionalProperties=false on model schemas, minItems=1 on 1..*/required arrays."""
+    S = "7. API schema constraints (UGG-9)"
+    if mode == "off":
+        r.info(S, "skipped (--constraints off)")
+        return
+    schemas = U.load_api_json(a.path(U.API_JSON)).get("components", {}).get("schemas", {})
+    model = sorted(n for n in schemas if is_model_schema(n))
+
+    # minItems targets: required arrays in the API, plus UML 1..* arrays (both Input/Output)
+    targets: dict[str, set[str]] = {n: set() for n in model}
+    optional_with_min: list[str] = []
+    for n in model:
+        s = schemas[n]
+        props, req = s.get("properties", {}), set(s.get("required", []))
+        for p, v in props.items():
+            if v.get("type") == "array" and p in req:
+                targets[n].add(p)
+        cname = re.sub(r"-(Input|Output)$", "", n)
+        if cname in m.classes:
+            for up in m.all_props(cname).values():
+                name = api_name_for(up, set(props))
+                if not name or props[name].get("type") != "array":
+                    continue
+                if up.many and up.required:
+                    targets[n].add(name)
+                elif props[name].get("minItems", 0) >= 1:
+                    optional_with_min.append(f"`{n}.{name}` (UML {up.card})")
+    n_targets = sum(len(v) for v in targets.values())
+
+    missing_ap = [n for n in model if schemas[n].get("additionalProperties") is not False]
+    bad_ap = [f"`{n}` = {_ap(schemas[n]['additionalProperties'])}" for n in model
+              if "additionalProperties" in schemas[n] and schemas[n]["additionalProperties"] is not False]
+    missing_min = [f"`{n}.{p}`" for n in model for p in sorted(targets[n])
+                   if schemas[n]["properties"][p].get("minItems", 0) < 1]
+    has_ap, has_min = len(model) - len(missing_ap), n_targets - len(missing_min)
+    adopted = has_ap > 0 or has_min > 0
+
+    summary = (f"additionalProperties: false on {has_ap}/{len(model)} model schemas; "
+               f"minItems ≥ 1 on {has_min}/{n_targets} required (1..*) array properties")
+    if mode == "auto" and not adopted:
+        r.info(S, f"Not adopted yet: {summary}. Use `--constraints require` to enforce them before adoption.")
+    else:
+        r.info(S, summary + ("" if mode == "require" else " (enforced: the spec has started using them)"))
+        if bad_ap:
+            _report_list(r, "FAIL", S, "additionalProperties set to something other than false", bad_ap)
+        missing_only = [f"`{n}`" for n in missing_ap if "additionalProperties" not in schemas[n]]
+        if missing_only:
+            _report_list(r, "FAIL", S, "model schemas without `additionalProperties: false`", missing_only)
+        if missing_min:
+            _report_list(r, "FAIL", S, "required/1..* array properties without `minItems: 1`", missing_min)
+        if not (bad_ap or missing_only or missing_min):
+            r.ok(S, "every model schema is closed and every required array has minItems: 1")
+
+    # checked in every mode except off
+    for w in sorted(n for n in schemas if n.startswith("Wrapper-") and schemas[n].get("additionalProperties") is False):
+        r.warn(S, f"`{w}` has `additionalProperties: false`; the Wrapper should stay open for "
+                  "system-specific data (DDF-RA #701)")
+    if optional_with_min:
+        _report_list(r, "WARN", S, "minItems on arrays that are optional (0..*) in the UML", optional_with_min)
 
 
 def check_uml_api(r: U.Report, a: Artifacts, m: U.Model):
@@ -285,7 +378,7 @@ def check_ct(r: U.Report, a: Artifacts, m: U.Model):
 
 
 def run_tools(r: U.Report, a: Artifacts, repo: Path, prev_ref: str, tools: Path, python: str):
-    S = "7. DDF-RA-Tools alignment"
+    S = "8. DDF-RA-Tools alignment"
     work = Path(tempfile.mkdtemp(prefix="ddf-ra-tools-"))
     try:
         shutil.copytree(tools, work / "tools", ignore=shutil.ignore_patterns(".git"))
@@ -328,7 +421,10 @@ def main():
     ap.add_argument("--prev-ref", default="main", help="previous release ref, as CI's prev-branch (default: main)")
     ap.add_argument("--branch", help="branch name used for CURRENT_VERSION (default: current branch, or --ref)")
     ap.add_argument("--model", choices=["qea", "xmi"], default="qea",
-                    help="UML source for checks 4-5 (default: qea, the model being edited)")
+                    help="UML source for checks 4, 6 and 7 (default: qea, the model being edited)")
+    ap.add_argument("--constraints", choices=["auto", "require", "off"], default="auto",
+                    help="check 7 (UGG-9 schema constraints): auto = enforce once the spec uses any of them, "
+                         "otherwise report coverage only; require = always enforce; off = skip (default: auto)")
     ap.add_argument("--tools", help="path to a DDF-RA-Tools checkout; runs the generator and reports alignment.csv")
     ap.add_argument("--tools-python", default=sys.executable,
                     help="python with DDF-RA-Tools requirements installed (default: this python)")
@@ -348,6 +444,7 @@ def main():
             r.info("4. UML vs API", f"UML source: `.{args.model}`")
             check_uml_api(r, a, m)
             check_ct(r, a, m)
+            check_constraints(r, a, m, args.constraints)
         if args.tools:
             run_tools(r, a, repo, args.prev_ref, Path(args.tools).resolve(), args.tools_python)
     finally:
