@@ -52,7 +52,20 @@ The workflow fails unless the version numbers line up (dots become hyphens, e.g.
 - The UML `USDM` diagram version must be a prefix of that version.
 - `info.version` in the previous branch's `USDM_API.json` must differ from the current version.
 
-To run it locally (from the workflow file's own comment):
+On a new release branch, bump `info.version` in `USDM_API.json` and `USDM_API.yaml`, and the `USDM` diagram version
+in the UML, before pushing model changes. Set the diagram version in Enterprise Architect, not only in the exported
+XMI: the `.qea` still says 3.13 even though the 4.0.0 XMI says 4.0.0, so a fresh export writes whatever the `.qea`
+holds.
+
+Before pushing, run the `usdm-release-check` skill (`.claude/skills/usdm-release-check/`). It recomputes the values
+CI compares (including the `.qea` diagram version), and also checks XMI export drift, JSON/YAML sync and UML coverage
+in the API and CT:
+
+```bash
+python3 -I .claude/skills/usdm-release-check/scripts/release_check.py
+```
+
+To run the workflow itself locally (from the workflow file's own comment):
 `gh act workflow_dispatch -P ubuntu-latest=catthehacker/ubuntu:act-latest --secret-file ../DDF-RA-Actions/my.secrets`
 
 ## Other content
